@@ -1,0 +1,34 @@
+
+ANSI SCCP Command
+
+SYNOPSIS
+    sa_set_tmr <tmr#> <value>
+
+DESCRIPTION
+    This command sets timer value for a given timer.
+
+PARAMETERS
+    tmr#    Timer Number as integer
+            Values of timer number are given below -
+            SCCP_T_statInfo         0
+            SCCP_T_coordChg         1
+            SCCP_T_ignoreSST        2
+            SCCP_T_rtgStatInfo      3
+            SCCP_T_conn             4
+            SCCP_T_release          5
+            SCCP_T_reset            6
+            SCCP_T_ias              7
+            SCCP_T_iar              8
+            SCCP_T_guard            9
+            SCCP_T_reassembly       10
+            SCCP_T_interval         11
+            SCCP_T_repeatRelease    12
+
+    value   timer value in seconds
+
+
+EXAMPLE
+    >> sa_set_tmr 2 2
+        Timer # 2 Set 
+
+

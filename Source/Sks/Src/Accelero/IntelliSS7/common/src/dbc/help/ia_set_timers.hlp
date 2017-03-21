@@ -1,0 +1,28 @@
+
+ANSI ISUP Command
+
+SYNOPSIS
+    ia_set_timers <opc> <dpc> <sio> <Tid> <TimerVal> <HandledBy>
+
+DESCRIPTION
+    This command modifies given timer value of the ISUP protocol.
+    The timeout handler may also be changed between STACK & APP.
+
+PARAMETERS
+    opc       Origination point code.
+    dpc       Destination point code.
+    sio       Service information octet.
+    Tid       Timer Id of the ISUP protocol.
+    TimerVal  Timer Value (in secs).
+    Handledby Handler of this Timer.
+
+    Possible Values for Handledby: STACK, APP.
+    Possible Values for Tid: any value from 1 to TSCGAD.
+
+    NOTE: The Tid is mapped directly with actual Timer symbol(eg T1<->1)
+
+EXAMPLE
+>> ia_set_timers 16 21 133 1 20 APP
+
+**** ISUP Set Timer Successful********
+

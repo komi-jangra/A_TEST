@@ -1,0 +1,2176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<u2 OMVersion="3.7" StorageVersion="4" ToolVersion="4.3.0.0.14276">
+<Resource Guid="BBAEEEmvAEEEYimr5LESm2EE">
+<cHiddenStereotypeInstance>
+<InstanceExpr Guid="vc2EEEeFEEEEHyJXGLESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="SysInc.u2">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="strUri">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Boolean@=@Boolean@Boolean@Boolean"/>
+<cRightOperand>
+<Ident Name="false">
+<rDefinition R="uid:@Predefined@Boolean@false"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="isLibrary">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@modelDependency"/>
+</InstanceExpr>
+<InstanceExpr Guid="ec2EEEeFEEEEHyJXGLESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="DbsInc.u2">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="strUri">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Boolean@=@Boolean@Boolean@Boolean"/>
+<cRightOperand>
+<Ident Name="false">
+<rDefinition R="uid:@Predefined@Boolean@false"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="isLibrary">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@modelDependency"/>
+</InstanceExpr>
+<InstanceExpr Guid="5c2EEEeFEEEEHyJXGLESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="urn:u2:etc/LineStyle.u2">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="strUri">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Boolean@=@Boolean@Boolean@Boolean"/>
+<cRightOperand>
+<Ident Name="true">
+<rDefinition R="uid:@Predefined@Boolean@true"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="isLibrary">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@modelDependency"/>
+</InstanceExpr>
+<InstanceExpr Guid="Bc2EEEeFEEEEHyJXGLESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="urn:u2:etc/TTDPredefinedStereotypes.u2">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="strUri">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Boolean@=@Boolean@Boolean@Boolean"/>
+<cRightOperand>
+<Ident Name="true">
+<rDefinition R="uid:@Predefined@Boolean@true"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="isLibrary">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@modelDependency"/>
+</InstanceExpr>
+<InstanceExpr Guid="Cc2EEEeFEEEEHyJXGLESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="urn:u2:etc/TTDStereotypeDetails.u2">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="strUri">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Boolean@=@Boolean@Boolean@Boolean"/>
+<cRightOperand>
+<Ident Name="true">
+<rDefinition R="uid:@Predefined@Boolean@true"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="isLibrary">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@modelDependency"/>
+</InstanceExpr>
+</cHiddenStereotypeInstance>
+<rRoot R="uid:xBAEEEmvAEEEYimr5LESm2EE"/>
+</Resource>
+<Package Guid="xBAEEEmvAEEEYimr5LESm2EE" Name="Interface">
+<cDiagram>
+<ClassDiagram Guid="z2AEEEmvAEEE6imr5LESm2EE" Name="Class diagram1" Size="4052 2734">
+<cHiddenStereotypeInstance>
+<InstanceExpr Guid="*2AEEEmvAEEE6imr5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="Tahoma">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="name">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@name"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="9">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="points">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@points"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Boolean@=@Boolean@Boolean@Boolean"/>
+<cRightOperand>
+<Ident Name="true">
+<rDefinition R="uid:@Predefined@Boolean@true"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="bold">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@bold"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@TTDLineStyles@presentationFont"/>
+</InstanceExpr>
+<InstanceExpr Guid="EWAEEEmvAEEE6imr5LESm2EE">
+<rInstanceOf R="uid:@TTDLineStyles@diagramAutosizing"/>
+</InstanceExpr>
+<InstanceExpr Guid="LWAEEEmvAEEE6imr5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="16773875">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="color">
+<rDefinition R="uid:@TTDLineStyles@symbolColor@color"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@TTDLineStyles@symbolColor"/>
+</InstanceExpr>
+<InstanceExpr Guid="VWAEEEmvAEEE6imr5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="1">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="horizontalMargin">
+<rDefinition R="uid:18KMeLwnOieLAG7jBI8QjjmV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@TTDLineStyles@textMargins"/>
+</InstanceExpr>
+</cHiddenStereotypeInstance>
+<cDiagramElement>
+<FrameSymbol Guid="-2AEEEmvAEEE6imr5LESm2EE" Position="100 100" Size="3840 2520">
+</FrameSymbol>
+<InterfaceSymbol Guid="xdAEEEmvAEEEnimr5LESm2EE" Position="260 220" Size="720 220" Text="CfgToGbh">
+<cHiddenStereotypeInstance>
+<InstanceExpr Guid="S9AEEEmvAEEEnimr5LESm2EE">
+<rInstanceOf R="uid:@TTDStereotypeDetails@NoWordWrap"/>
+</InstanceExpr>
+</cHiddenStereotypeInstance>
+<rDefinition R="uid:i9AEEEmvAEEEnimr5LESm2EE"/>
+<cCompartment>
+<Compartment Guid="ydAEEEmvAEEEnimr5LESm2EE">
+<cStereotypeInstance>
+<InstanceExpr Guid="zdAEEEmvAEEEnimr5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<ListExpr>
+<cExpression>
+<InstanceExpr Guid="-dAEEEmvAEEEnimr5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="Attribute">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="metaClass">
+<rDefinition R="uid:@Predefined@compartmentFilter@MetaclassFilter@metaClass"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@compartmentFilter@MetaclassFilter"/>
+</InstanceExpr>
+</cExpression>
+</ListExpr>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="filters">
+<rDefinition R="uid:@Predefined@compartmentFilter@filters"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@compartmentFilter"/>
+</InstanceExpr>
+<InstanceExpr Guid="*dAEEEmvAEEEnimr5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="AttributeLabel">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="metaClass">
+<rDefinition R="uid:@Predefined@compartmentLabelType@metaClass"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@compartmentLabelType"/>
+</InstanceExpr>
+</cStereotypeInstance>
+<cHiddenStereotypeInstance>
+<InstanceExpr Guid="A9AEEEmvAEEEnimr5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="Tahoma">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="name">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@name"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="8">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="points">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@points"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Boolean@=@Boolean@Boolean@Boolean"/>
+<cRightOperand>
+<Ident Name="false">
+<rDefinition R="uid:@Predefined@Boolean@false"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="bold">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@bold"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@TTDLineStyles@presentationFont"/>
+</InstanceExpr>
+</cHiddenStereotypeInstance>
+<cLabel>
+<AttributeLabel Guid="hdoEEEZHAEEEaz1t5LESm2EE">
+</AttributeLabel>
+</cLabel>
+</Compartment>
+<Compartment Guid="E9AEEEmvAEEEnimr5LESm2EE">
+<cStereotypeInstance>
+<InstanceExpr Guid="L9AEEEmvAEEEnimr5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<ListExpr>
+<cExpression>
+<InstanceExpr Guid="V9AEEEmvAEEEnimr5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="Operation">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="metaClass">
+<rDefinition R="uid:@Predefined@compartmentFilter@MetaclassFilter@metaClass"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@compartmentFilter@MetaclassFilter"/>
+</InstanceExpr>
+</cExpression>
+</ListExpr>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="filters">
+<rDefinition R="uid:@Predefined@compartmentFilter@filters"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@compartmentFilter"/>
+</InstanceExpr>
+<InstanceExpr Guid="I9AEEEmvAEEEnimr5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="OperationLabel">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="metaClass">
+<rDefinition R="uid:@Predefined@compartmentLabelType@metaClass"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@compartmentLabelType"/>
+</InstanceExpr>
+</cStereotypeInstance>
+<cHiddenStereotypeInstance>
+<InstanceExpr Guid="l9AEEEmvAEEEnimr5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="Tahoma">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="name">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@name"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="8">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="points">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@points"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Boolean@=@Boolean@Boolean@Boolean"/>
+<cRightOperand>
+<Ident Name="false">
+<rDefinition R="uid:@Predefined@Boolean@false"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="bold">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@bold"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@TTDLineStyles@presentationFont"/>
+</InstanceExpr>
+</cHiddenStereotypeInstance>
+<cLabel>
+<OperationLabel Guid="LPtEEEZHAEEE5hMt5LESm2EE" Text="signal OAMS_CFG_GBH_FIRST_NSVC_ENABLED(I_PVoid)">
+<rDefinition R="uid:K4tEEEZHAEEEKhMt5LESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="A7tEEEZHAEEEhhMt5LESm2EE" Text="signal OAMS_CFG_GBH_LAST_NSVC_DISABLED(I_PVoid)">
+<rDefinition R="uid:O6tEEEZHAEEErhMt5LESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="cI7EEEciAEEEZsO6BLxLLh2E" Text="signal OAMS_CFG_GBH_SIG_BVC_RESET_FAILED(I_PVoid)">
+<rDefinition R="uid:l57EEEciAEEErsO6BLxLLh2E"/>
+</OperationLabel>
+</cLabel>
+</Compartment>
+</cCompartment>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="37AEEEmvAEEE8imr5LESm2EE" Position="1300 140" Size="680 180" Autosize="true" Text="GbhToCfg">
+<cHiddenStereotypeInstance>
+<InstanceExpr Guid="R7AEEEmvAEEE8imr5LESm2EE">
+<rInstanceOf R="uid:@TTDStereotypeDetails@NoWordWrap"/>
+</InstanceExpr>
+</cHiddenStereotypeInstance>
+<rDefinition R="uid:U7AEEEmvAEEE8imr5LESm2EE"/>
+<cCompartment>
+<Compartment Guid="J7AEEEmvAEEE8imr5LESm2EE">
+<cStereotypeInstance>
+<InstanceExpr Guid="K7AEEEmvAEEE8imr5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<ListExpr>
+<cExpression>
+<InstanceExpr Guid="17AEEEmvAEEE8imr5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="Attribute">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="metaClass">
+<rDefinition R="uid:@Predefined@compartmentFilter@MetaclassFilter@metaClass"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@compartmentFilter@MetaclassFilter"/>
+</InstanceExpr>
+</cExpression>
+</ListExpr>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="filters">
+<rDefinition R="uid:@Predefined@compartmentFilter@filters"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@compartmentFilter"/>
+</InstanceExpr>
+<InstanceExpr Guid="M7AEEEmvAEEE8imr5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="AttributeLabel">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="metaClass">
+<rDefinition R="uid:@Predefined@compartmentLabelType@metaClass"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@compartmentLabelType"/>
+</InstanceExpr>
+</cStereotypeInstance>
+<cHiddenStereotypeInstance>
+<InstanceExpr Guid="47AEEEmvAEEE8imr5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="Tahoma">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="name">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@name"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="8">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="points">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@points"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Boolean@=@Boolean@Boolean@Boolean"/>
+<cRightOperand>
+<Ident Name="false">
+<rDefinition R="uid:@Predefined@Boolean@false"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="bold">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@bold"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@TTDLineStyles@presentationFont"/>
+</InstanceExpr>
+</cHiddenStereotypeInstance>
+</Compartment>
+<Compartment Guid="N7AEEEmvAEEE8imr5LESm2EE">
+<cStereotypeInstance>
+<InstanceExpr Guid="O7AEEEmvAEEE8imr5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<ListExpr>
+<cExpression>
+<InstanceExpr Guid="P7AEEEmvAEEE8imr5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="Operation">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="metaClass">
+<rDefinition R="uid:@Predefined@compartmentFilter@MetaclassFilter@metaClass"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@compartmentFilter@MetaclassFilter"/>
+</InstanceExpr>
+</cExpression>
+</ListExpr>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="filters">
+<rDefinition R="uid:@Predefined@compartmentFilter@filters"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@compartmentFilter"/>
+</InstanceExpr>
+<InstanceExpr Guid="Q7AEEEmvAEEE8imr5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="OperationLabel">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="metaClass">
+<rDefinition R="uid:@Predefined@compartmentLabelType@metaClass"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@compartmentLabelType"/>
+</InstanceExpr>
+</cStereotypeInstance>
+<cHiddenStereotypeInstance>
+<InstanceExpr Guid="T7AEEEmvAEEE8imr5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="Tahoma">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="name">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@name"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="8">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="points">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@points"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Boolean@=@Boolean@Boolean@Boolean"/>
+<cRightOperand>
+<Ident Name="false">
+<rDefinition R="uid:@Predefined@Boolean@false"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="bold">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@bold"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@TTDLineStyles@presentationFont"/>
+</InstanceExpr>
+</cHiddenStereotypeInstance>
+<cLabel>
+<OperationLabel Guid="ZjQEEEZHAEEEBQAs5LESm2EE" Text="signal OAMS_GBH_CFG_ALARM_IND(I_PVoid, I_U32)">
+<rDefinition R="uid:IwkEEEZHAEEEpT1t5LESm2EE"/>
+</OperationLabel>
+</cLabel>
+</Compartment>
+</cCompartment>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="gLlEEEmvAEEEPvmr5LESm2EE" Position="380 880" Size="820 200" Autosize="true" Text="GbhToBssgp">
+<cHiddenStereotypeInstance>
+<InstanceExpr Guid="pLlEEEmvAEEEPvmr5LESm2EE">
+<rInstanceOf R="uid:@TTDStereotypeDetails@NoWordWrap"/>
+</InstanceExpr>
+</cHiddenStereotypeInstance>
+<rDefinition R="uid:sLlEEEmvAEEEPvmr5LESm2EE"/>
+<cCompartment>
+<Compartment Guid="hLlEEEmvAEEEPvmr5LESm2EE">
+<cStereotypeInstance>
+<InstanceExpr Guid="7LlEEEmvAEEEPvmr5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<ListExpr>
+<cExpression>
+<InstanceExpr Guid="jLlEEEmvAEEEPvmr5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="Attribute">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="metaClass">
+<rDefinition R="uid:@Predefined@compartmentFilter@MetaclassFilter@metaClass"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@compartmentFilter@MetaclassFilter"/>
+</InstanceExpr>
+</cExpression>
+</ListExpr>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="filters">
+<rDefinition R="uid:@Predefined@compartmentFilter@filters"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@compartmentFilter"/>
+</InstanceExpr>
+<InstanceExpr Guid="kLlEEEmvAEEEPvmr5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="AttributeLabel">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="metaClass">
+<rDefinition R="uid:@Predefined@compartmentLabelType@metaClass"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@compartmentLabelType"/>
+</InstanceExpr>
+</cStereotypeInstance>
+<cHiddenStereotypeInstance>
+<InstanceExpr Guid="qLlEEEmvAEEEPvmr5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="Tahoma">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="name">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@name"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="8">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="points">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@points"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Boolean@=@Boolean@Boolean@Boolean"/>
+<cRightOperand>
+<Ident Name="false">
+<rDefinition R="uid:@Predefined@Boolean@false"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="bold">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@bold"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@TTDLineStyles@presentationFont"/>
+</InstanceExpr>
+</cHiddenStereotypeInstance>
+</Compartment>
+<Compartment Guid="6LlEEEmvAEEEPvmr5LESm2EE">
+<cStereotypeInstance>
+<InstanceExpr Guid="mLlEEEmvAEEEPvmr5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<ListExpr>
+<cExpression>
+<InstanceExpr Guid="nLlEEEmvAEEEPvmr5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="Operation">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="metaClass">
+<rDefinition R="uid:@Predefined@compartmentFilter@MetaclassFilter@metaClass"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@compartmentFilter@MetaclassFilter"/>
+</InstanceExpr>
+</cExpression>
+</ListExpr>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="filters">
+<rDefinition R="uid:@Predefined@compartmentFilter@filters"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@compartmentFilter"/>
+</InstanceExpr>
+<InstanceExpr Guid="oLlEEEmvAEEEPvmr5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="OperationLabel">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="metaClass">
+<rDefinition R="uid:@Predefined@compartmentLabelType@metaClass"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@compartmentLabelType"/>
+</InstanceExpr>
+</cStereotypeInstance>
+<cHiddenStereotypeInstance>
+<InstanceExpr Guid="rLlEEEmvAEEEPvmr5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="Tahoma">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="name">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@name"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="8">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="points">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@points"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Boolean@=@Boolean@Boolean@Boolean"/>
+<cRightOperand>
+<Ident Name="false">
+<rDefinition R="uid:@Predefined@Boolean@false"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="bold">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@bold"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@TTDLineStyles@presentationFont"/>
+</InstanceExpr>
+</cHiddenStereotypeInstance>
+<cLabel>
+<OperationLabel Guid="*dsEEEZHAEEECUMt5LESm2EE" Text="signal OAMS_GBH_BSSGP_SIG_BVC_RESET_ACK(I_PVoid, I_U32)">
+<rDefinition R="uid:3hsEEEZHAEEE3UMt5LESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="3AtEEEZHAEEEpgMt5LESm2EE" Text="signal OAMS_GBH_BSSGP_SIG_BVC_RESET(I_PVoid, I_U32)">
+<rDefinition R="uid:KvtEEEZHAEEE8gMt5LESm2EE"/>
+</OperationLabel>
+</cLabel>
+</Compartment>
+</cCompartment>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="I6mEEEZHAEEEC81t5LESm2EE" Position="920 520" Size="800 200" Autosize="true" Text="GbhToPsch">
+<cHiddenStereotypeInstance>
+<InstanceExpr Guid="C6mEEEZHAEEEC81t5LESm2EE">
+<rInstanceOf R="uid:@TTDStereotypeDetails@NoWordWrap"/>
+</InstanceExpr>
+</cHiddenStereotypeInstance>
+<rDefinition R="uid:F6mEEEZHAEEEC81t5LESm2EE"/>
+<cCompartment>
+<Compartment Guid="S6mEEEZHAEEEC81t5LESm2EE">
+<cStereotypeInstance>
+<InstanceExpr Guid="A6mEEEZHAEEEC81t5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<ListExpr>
+<cExpression>
+<InstanceExpr Guid="l6mEEEZHAEEEC81t5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="Attribute">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="metaClass">
+<rDefinition R="uid:@Predefined@compartmentFilter@MetaclassFilter@metaClass"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@compartmentFilter@MetaclassFilter"/>
+</InstanceExpr>
+</cExpression>
+</ListExpr>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="filters">
+<rDefinition R="uid:@Predefined@compartmentFilter@filters"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@compartmentFilter"/>
+</InstanceExpr>
+<InstanceExpr Guid="i6mEEEZHAEEEC81t5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="AttributeLabel">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="metaClass">
+<rDefinition R="uid:@Predefined@compartmentLabelType@metaClass"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@compartmentLabelType"/>
+</InstanceExpr>
+</cStereotypeInstance>
+<cHiddenStereotypeInstance>
+<InstanceExpr Guid="D6mEEEZHAEEEC81t5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="Tahoma">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="name">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@name"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="8">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="points">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@points"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Boolean@=@Boolean@Boolean@Boolean"/>
+<cRightOperand>
+<Ident Name="false">
+<rDefinition R="uid:@Predefined@Boolean@false"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="bold">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@bold"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@TTDLineStyles@presentationFont"/>
+</InstanceExpr>
+</cHiddenStereotypeInstance>
+</Compartment>
+<Compartment Guid="v6mEEEZHAEEEC81t5LESm2EE">
+<cStereotypeInstance>
+<InstanceExpr Guid="e6mEEEZHAEEEC81t5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<ListExpr>
+<cExpression>
+<InstanceExpr Guid="56mEEEZHAEEEC81t5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="Operation">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="metaClass">
+<rDefinition R="uid:@Predefined@compartmentFilter@MetaclassFilter@metaClass"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@compartmentFilter@MetaclassFilter"/>
+</InstanceExpr>
+</cExpression>
+</ListExpr>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="filters">
+<rDefinition R="uid:@Predefined@compartmentFilter@filters"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@compartmentFilter"/>
+</InstanceExpr>
+<InstanceExpr Guid="B6mEEEZHAEEEC81t5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="OperationLabel">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="metaClass">
+<rDefinition R="uid:@Predefined@compartmentLabelType@metaClass"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@compartmentLabelType"/>
+</InstanceExpr>
+</cStereotypeInstance>
+<cHiddenStereotypeInstance>
+<InstanceExpr Guid="06mEEEZHAEEEC81t5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="Tahoma">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="name">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@name"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="8">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="points">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@points"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Boolean@=@Boolean@Boolean@Boolean"/>
+<cRightOperand>
+<Ident Name="false">
+<rDefinition R="uid:@Predefined@Boolean@false"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="bold">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@bold"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@TTDLineStyles@presentationFont"/>
+</InstanceExpr>
+</cHiddenStereotypeInstance>
+<cLabel>
+<OperationLabel Guid="TOnEEEZHAEEEb81t5LESm2EE" Text="signal OAMS_GBH_PSCH_SIG_BVC_RESET_IND(I_PVoid, I_U32)">
+<rDefinition R="uid:aYnEEEZHAEEEUw1t5LESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="dVxEEEZHAEEErpMt5LESm2EE" Text="signal OAMS_GBH_PSCH_GB_DOWN_IND(I_PVoid, I_U32)">
+<rDefinition R="uid:hixEEEZHAEEElqMt5LESm2EE"/>
+</OperationLabel>
+</cLabel>
+</Compartment>
+</cCompartment>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="zf8EEEZHAEEEhmMt5LESm2EE" Position="1120 1140" Size="740 200" Autosize="true" Text="BssgpToGbh">
+<cHiddenStereotypeInstance>
+<InstanceExpr Guid="lg8EEEZHAEEEhmMt5LESm2EE">
+<rInstanceOf R="uid:@TTDStereotypeDetails@NoWordWrap"/>
+</InstanceExpr>
+</cHiddenStereotypeInstance>
+<rDefinition R="uid:eg8EEEZHAEEEhmMt5LESm2EE"/>
+<cCompartment>
+<Compartment Guid="-f8EEEZHAEEEhmMt5LESm2EE">
+<cStereotypeInstance>
+<InstanceExpr Guid="*f8EEEZHAEEEhmMt5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<ListExpr>
+<cExpression>
+<InstanceExpr Guid="Eg8EEEZHAEEEhmMt5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="Attribute">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="metaClass">
+<rDefinition R="uid:@Predefined@compartmentFilter@MetaclassFilter@metaClass"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@compartmentFilter@MetaclassFilter"/>
+</InstanceExpr>
+</cExpression>
+</ListExpr>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="filters">
+<rDefinition R="uid:@Predefined@compartmentFilter@filters"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@compartmentFilter"/>
+</InstanceExpr>
+<InstanceExpr Guid="Lg8EEEZHAEEEhmMt5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="AttributeLabel">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="metaClass">
+<rDefinition R="uid:@Predefined@compartmentLabelType@metaClass"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@compartmentLabelType"/>
+</InstanceExpr>
+</cStereotypeInstance>
+<cHiddenStereotypeInstance>
+<InstanceExpr Guid="ig8EEEZHAEEEhmMt5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="Tahoma">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="name">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@name"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="8">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="points">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@points"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Boolean@=@Boolean@Boolean@Boolean"/>
+<cRightOperand>
+<Ident Name="false">
+<rDefinition R="uid:@Predefined@Boolean@false"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="bold">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@bold"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@TTDLineStyles@presentationFont"/>
+</InstanceExpr>
+</cHiddenStereotypeInstance>
+<cLabel>
+<AttributeLabel Guid="1n8EEEZHAEEE6mMt5LESm2EE">
+</AttributeLabel>
+</cLabel>
+</Compartment>
+<Compartment Guid="Vg8EEEZHAEEEhmMt5LESm2EE">
+<cStereotypeInstance>
+<InstanceExpr Guid="Ig8EEEZHAEEEhmMt5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<ListExpr>
+<cExpression>
+<InstanceExpr Guid="Sg8EEEZHAEEEhmMt5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="Operation">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="metaClass">
+<rDefinition R="uid:@Predefined@compartmentFilter@MetaclassFilter@metaClass"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@compartmentFilter@MetaclassFilter"/>
+</InstanceExpr>
+</cExpression>
+</ListExpr>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="filters">
+<rDefinition R="uid:@Predefined@compartmentFilter@filters"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@compartmentFilter"/>
+</InstanceExpr>
+<InstanceExpr Guid="Ag8EEEZHAEEEhmMt5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="OperationLabel">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="metaClass">
+<rDefinition R="uid:@Predefined@compartmentLabelType@metaClass"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@compartmentLabelType"/>
+</InstanceExpr>
+</cStereotypeInstance>
+<cHiddenStereotypeInstance>
+<InstanceExpr Guid="vg8EEEZHAEEEhmMt5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="Tahoma">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="name">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@name"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="8">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="points">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@points"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Boolean@=@Boolean@Boolean@Boolean"/>
+<cRightOperand>
+<Ident Name="false">
+<rDefinition R="uid:@Predefined@Boolean@false"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="bold">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@bold"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@TTDLineStyles@presentationFont"/>
+</InstanceExpr>
+</cHiddenStereotypeInstance>
+<cLabel>
+<OperationLabel Guid="MHwEEEZHAEEE0nMt5LESm2EE" Text="signal PSSKS_BSSGP_GBH_SIG_BVC_RESET(I_PVoid)">
+<rDefinition R="uid:RMwEEEZHAEEEPnMt5LESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="A1wEEEZHAEEEPnMt5LESm2EE" Text="signal PSSKS_BSSGP_GBH_SIG_BVC_RESET_ACK(I_PVoid)">
+<rDefinition R="uid:FTwEEEZHAEEEfnMt5LESm2EE"/>
+</OperationLabel>
+</cLabel>
+</Compartment>
+</cCompartment>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="h*aLEEnJVEEEgPJ*5LESm2EE" Position="1760 820" Size="600 200" Autosize="true" Text="fromEnv">
+<cHiddenStereotypeInstance>
+<InstanceExpr Guid="q*aLEEnJVEEEgPJ*5LESm2EE">
+<rInstanceOf R="uid:@TTDStereotypeDetails@NoWordWrap"/>
+</InstanceExpr>
+</cHiddenStereotypeInstance>
+<rDefinition R="uid:t*aLEEnJVEEEgPJ*5LESm2EE"/>
+<cCompartment>
+<Compartment Guid="7*aLEEnJVEEEgPJ*5LESm2EE">
+<cStereotypeInstance>
+<InstanceExpr Guid="j*aLEEnJVEEEgPJ*5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<ListExpr>
+<cExpression>
+<InstanceExpr Guid="k*aLEEnJVEEEgPJ*5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="Attribute">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="metaClass">
+<rDefinition R="uid:@Predefined@compartmentFilter@MetaclassFilter@metaClass"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@compartmentFilter@MetaclassFilter"/>
+</InstanceExpr>
+</cExpression>
+</ListExpr>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="filters">
+<rDefinition R="uid:@Predefined@compartmentFilter@filters"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@compartmentFilter"/>
+</InstanceExpr>
+<InstanceExpr Guid="6*aLEEnJVEEEgPJ*5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="AttributeLabel">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="metaClass">
+<rDefinition R="uid:@Predefined@compartmentLabelType@metaClass"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@compartmentLabelType"/>
+</InstanceExpr>
+</cStereotypeInstance>
+<cHiddenStereotypeInstance>
+<InstanceExpr Guid="r*aLEEnJVEEEgPJ*5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="Tahoma">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="name">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@name"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="8">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="points">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@points"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Boolean@=@Boolean@Boolean@Boolean"/>
+<cRightOperand>
+<Ident Name="false">
+<rDefinition R="uid:@Predefined@Boolean@false"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="bold">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@bold"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@TTDLineStyles@presentationFont"/>
+</InstanceExpr>
+</cHiddenStereotypeInstance>
+</Compartment>
+<Compartment Guid="m*aLEEnJVEEEgPJ*5LESm2EE">
+<cStereotypeInstance>
+<InstanceExpr Guid="n*aLEEnJVEEEgPJ*5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<ListExpr>
+<cExpression>
+<InstanceExpr Guid="o*aLEEnJVEEEgPJ*5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="Operation">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="metaClass">
+<rDefinition R="uid:@Predefined@compartmentFilter@MetaclassFilter@metaClass"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@compartmentFilter@MetaclassFilter"/>
+</InstanceExpr>
+</cExpression>
+</ListExpr>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="filters">
+<rDefinition R="uid:@Predefined@compartmentFilter@filters"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@compartmentFilter"/>
+</InstanceExpr>
+<InstanceExpr Guid="p*aLEEnJVEEEgPJ*5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="OperationLabel">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="metaClass">
+<rDefinition R="uid:@Predefined@compartmentLabelType@metaClass"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@compartmentLabelType"/>
+</InstanceExpr>
+</cStereotypeInstance>
+<cHiddenStereotypeInstance>
+<InstanceExpr Guid="s*aLEEnJVEEEgPJ*5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="Tahoma">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="name">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@name"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="8">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="points">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@points"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Boolean@=@Boolean@Boolean@Boolean"/>
+<cRightOperand>
+<Ident Name="false">
+<rDefinition R="uid:@Predefined@Boolean@false"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="bold">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@bold"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@TTDLineStyles@presentationFont"/>
+</InstanceExpr>
+</cHiddenStereotypeInstance>
+<cLabel>
+<OperationLabel Guid="pFbLEEnJVEEECQJ*5LESm2EE" Text="signal GBH_INT_SELFCARD_STATE_CHANGE ()">
+<rDefinition R="uid:aKbLEEnJVEEEMQJ*5LESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="YIovEEKOSEEEtqKPGLESm2EE" Text="signal GBH_INT_STANDBY_TO_AIP(I_PVoid)">
+<rDefinition R="uid:HBovEEKOSEEE*qKPGLESm2EE"/>
+</OperationLabel>
+</cLabel>
+</Compartment>
+</cCompartment>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="YSbLEEnJVEEEqPJ*5LESm2EE" Position="2000 1040" Size="680 180" Autosize="true" Text="ToEnv">
+<cHiddenStereotypeInstance>
+<InstanceExpr Guid="hSbLEEnJVEEEqPJ*5LESm2EE">
+<rInstanceOf R="uid:@TTDStereotypeDetails@NoWordWrap"/>
+</InstanceExpr>
+</cHiddenStereotypeInstance>
+<rDefinition R="uid:kSbLEEnJVEEEqPJ*5LESm2EE"/>
+<cCompartment>
+<Compartment Guid="ZSbLEEnJVEEEqPJ*5LESm2EE">
+<cStereotypeInstance>
+<InstanceExpr Guid="aSbLEEnJVEEEqPJ*5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<ListExpr>
+<cExpression>
+<InstanceExpr Guid="bSbLEEnJVEEEqPJ*5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="Attribute">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="metaClass">
+<rDefinition R="uid:@Predefined@compartmentFilter@MetaclassFilter@metaClass"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@compartmentFilter@MetaclassFilter"/>
+</InstanceExpr>
+</cExpression>
+</ListExpr>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="filters">
+<rDefinition R="uid:@Predefined@compartmentFilter@filters"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@compartmentFilter"/>
+</InstanceExpr>
+<InstanceExpr Guid="cSbLEEnJVEEEqPJ*5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="AttributeLabel">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="metaClass">
+<rDefinition R="uid:@Predefined@compartmentLabelType@metaClass"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@compartmentLabelType"/>
+</InstanceExpr>
+</cStereotypeInstance>
+<cHiddenStereotypeInstance>
+<InstanceExpr Guid="7SbLEEnJVEEEqPJ*5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="Tahoma">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="name">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@name"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="8">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="points">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@points"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Boolean@=@Boolean@Boolean@Boolean"/>
+<cRightOperand>
+<Ident Name="false">
+<rDefinition R="uid:@Predefined@Boolean@false"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="bold">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@bold"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@TTDLineStyles@presentationFont"/>
+</InstanceExpr>
+</cHiddenStereotypeInstance>
+</Compartment>
+<Compartment Guid="dSbLEEnJVEEEqPJ*5LESm2EE">
+<cStereotypeInstance>
+<InstanceExpr Guid="9SbLEEnJVEEEqPJ*5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<ListExpr>
+<cExpression>
+<InstanceExpr Guid="fSbLEEnJVEEEqPJ*5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="Operation">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="metaClass">
+<rDefinition R="uid:@Predefined@compartmentFilter@MetaclassFilter@metaClass"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@compartmentFilter@MetaclassFilter"/>
+</InstanceExpr>
+</cExpression>
+</ListExpr>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="filters">
+<rDefinition R="uid:@Predefined@compartmentFilter@filters"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@compartmentFilter"/>
+</InstanceExpr>
+<InstanceExpr Guid="gSbLEEnJVEEEqPJ*5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="OperationLabel">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="metaClass">
+<rDefinition R="uid:@Predefined@compartmentLabelType@metaClass"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@compartmentLabelType"/>
+</InstanceExpr>
+</cStereotypeInstance>
+<cHiddenStereotypeInstance>
+<InstanceExpr Guid="jSbLEEnJVEEEqPJ*5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="Tahoma">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="name">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@name"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="8">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="points">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@points"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Boolean@=@Boolean@Boolean@Boolean"/>
+<cRightOperand>
+<Ident Name="false">
+<rDefinition R="uid:@Predefined@Boolean@false"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="bold">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@bold"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@TTDLineStyles@presentationFont"/>
+</InstanceExpr>
+</cHiddenStereotypeInstance>
+<cLabel>
+<OperationLabel Guid="kNbLEEnJVEEEUQJ*5LESm2EE" Text="signal GBH_INT_SELFCARD_STATE_CHANGE_RESP ()">
+<rDefinition R="uid:VTbLEEnJVEEEjQJ*5LESm2EE"/>
+</OperationLabel>
+</cLabel>
+</Compartment>
+</cCompartment>
+</InterfaceSymbol>
+</cDiagramElement>
+</ClassDiagram>
+</cDiagram>
+<cOwnedMember>
+<Interface Guid="i9AEEEmvAEEEnimr5LESm2EE" Name="CfgToGbh">
+<cOwnedMember>
+<Signal Guid="K4tEEEZHAEEEKhMt5LESm2EE" Name="OAMS_CFG_GBH_FIRST_NSVC_ENABLED">
+<cParameter>
+<Parameter Guid="zoHEEENlIEEElQOy5LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:ZENEEEknAEEEQT*4GLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="O6tEEEZHAEEErhMt5LESm2EE" Name="OAMS_CFG_GBH_LAST_NSVC_DISABLED">
+<cParameter>
+<Parameter Guid="zqnvEEKOSEEEWqKPGLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:ZENEEEknAEEEQT*4GLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="l57EEEciAEEErsO6BLxLLh2E" Name="OAMS_CFG_GBH_SIG_BVC_RESET_FAILED">
+<cParameter>
+<Parameter Guid="A57EEEciAEEErsO6BLxLLh2E">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:ZENEEEknAEEEQT*4GLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="U7AEEEmvAEEE8imr5LESm2EE" Name="GbhToCfg">
+<cOwnedMember>
+<Signal Guid="IwkEEEZHAEEEpT1t5LESm2EE" Name="OAMS_GBH_CFG_ALARM_IND">
+<cParameter>
+<Parameter Guid="36DvEEiqiEEELej85LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:ZENEEEknAEEEQT*4GLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="K6DvEEiqiEEELej85LESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:xENEEEknAEEEQT*4GLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="sLlEEEmvAEEEPvmr5LESm2EE" Name="GbhToBssgp">
+<cOwnedMember>
+<Signal Guid="3hsEEEZHAEEE3UMt5LESm2EE" Name="OAMS_GBH_BSSGP_SIG_BVC_RESET_ACK">
+<cParameter>
+<Parameter Guid="UB8LEEZHAEEEmCht5LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:ZENEEEknAEEEQT*4GLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="WB8LEEZHAEEEmCht5LESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:xENEEEknAEEEQT*4GLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="KvtEEEZHAEEE8gMt5LESm2EE" Name="OAMS_GBH_BSSGP_SIG_BVC_RESET">
+<cParameter>
+<Parameter Guid="-G8LEEZHAEEErCht5LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:ZENEEEknAEEEQT*4GLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="EH8LEEZHAEEErCht5LESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:xENEEEknAEEEQT*4GLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="F6mEEEZHAEEEC81t5LESm2EE" Name="GbhToPsch">
+<cOwnedMember>
+<Signal Guid="aYnEEEZHAEEEUw1t5LESm2EE" Name="OAMS_GBH_PSCH_SIG_BVC_RESET_IND">
+<cParameter>
+<Parameter Guid="aoDvEEiqiEEEDej85LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:ZENEEEknAEEEQT*4GLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="coDvEEiqiEEEDej85LESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:xENEEEknAEEEQT*4GLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="hixEEEZHAEEElqMt5LESm2EE" Name="OAMS_GBH_PSCH_GB_DOWN_IND">
+<cParameter>
+<Parameter Guid="srDvEEiqiEEEPej85LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:ZENEEEknAEEEQT*4GLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="urDvEEiqiEEEPej85LESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:xENEEEknAEEEQT*4GLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="eg8EEEZHAEEEhmMt5LESm2EE" Name="BssgpToGbh">
+<cOwnedMember>
+<Signal Guid="RMwEEEZHAEEEPnMt5LESm2EE" Name="PSSKS_BSSGP_GBH_SIG_BVC_RESET">
+<cParameter>
+<Parameter Guid="XVQEEENlIEEE9Zdy5LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:ZENEEEknAEEEQT*4GLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="FTwEEEZHAEEEfnMt5LESm2EE" Name="PSSKS_BSSGP_GBH_SIG_BVC_RESET_ACK">
+<cParameter>
+<Parameter Guid="RrqLEEZHAEEEOiht5LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:ZENEEEknAEEEQT*4GLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="t*aLEEnJVEEEgPJ*5LESm2EE" Name="fromEnv">
+<cOwnedMember>
+<Signal Guid="aKbLEEnJVEEEMQJ*5LESm2EE" Name="GBH_INT_SELFCARD_STATE_CHANGE">
+</Signal>
+<Signal Guid="HBovEEKOSEEE*qKPGLESm2EE" Name="GBH_INT_STANDBY_TO_AIP">
+<cParameter>
+<Parameter Guid="x4ovEEKOSEEEbrKPGLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:ZENEEEknAEEEQT*4GLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="kSbLEEnJVEEEqPJ*5LESm2EE" Name="ToEnv">
+<cOwnedMember>
+<Signal Guid="VTbLEEnJVEEEjQJ*5LESm2EE" Name="GBH_INT_SELFCARD_STATE_CHANGE_RESP">
+</Signal>
+</cOwnedMember>
+</Interface>
+</cOwnedMember>
+<cClientDependency>
+<Dependency Guid="4VNSEEg7iEEEnG1u5LESm2EE">
+<cStereotypeInstance>
+<InstanceExpr Guid="GSNSEEg7iEEEpG1u5LESm2EE">
+<rInstanceOf>
+<Ident Name="access">
+<rDefinition R="uid:@Predefined@access"/>
+</Ident>
+</rInstanceOf>
+</InstanceExpr>
+</cStereotypeInstance>
+<rSupplier>
+<Ident Name="SysInc">
+<rDefinition R="uid:OoCLEEZHAEEEu8Pt5LESm2EE"/>
+</Ident>
+</rSupplier>
+</Dependency>
+<Dependency Guid="5xXIEEA1SEEEVkqIBLESm2EE">
+<cStereotypeInstance>
+<InstanceExpr Guid="uyXIEEA1SEEEAkqIBLESm2EE">
+<rInstanceOf>
+<Ident Name="access">
+<rDefinition R="uid:@Predefined@access"/>
+</Ident>
+</rInstanceOf>
+</InstanceExpr>
+</cStereotypeInstance>
+<rSupplier>
+<Ident Name="DbsInc">
+<rDefinition R="uid:aqlVEEZHAEEED4kt5LESm2EE"/>
+</Ident>
+</rSupplier>
+</Dependency>
+</cClientDependency>
+</Package>
+</u2>

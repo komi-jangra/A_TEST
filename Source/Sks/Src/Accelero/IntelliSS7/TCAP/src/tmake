@@ -1,0 +1,62 @@
+
+VOLUME=$dsmscm
+
+$(VOLUME).tcap.ansicvto : $(VOLUME).tcap.ansicvtc
+	NMC /in $(VOLUME).tcap.ansicvtc / $(VOLUME).tcap.ansicvto ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1, define ANSI, define INCLUDE_CODEC, optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+	ar crv $(VOLUME).lib.libatcap $(VOLUME).tcap.ansicvto
+
+$(VOLUME).tcap.anstcapo : $(VOLUME).tcap.tcapc
+	NMC /in $(VOLUME).tcap.tcapc / $(VOLUME).tcap.anstcapo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1, define ANSI, optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+	ar crv $(VOLUME).lib.libatcap $(VOLUME).tcap.anstcapo
+
+$(VOLUME).tcap.itucvto : $(VOLUME).tcap.itucvtc
+	NMC /in $(VOLUME).tcap.itucvtc / $(VOLUME).tcap.itucvto ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  define CCITT, define INCLUDE_CODEC, optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+	ar crv $(VOLUME).lib.libitcap $(VOLUME).tcap.itucvto
+
+$(VOLUME).tcap.itutblao : $(VOLUME).tcap.itutblac
+	NMC /in $(VOLUME).tcap.itutblac / $(VOLUME).tcap.itutblao ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  define CCITT, optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+	ar crv $(VOLUME).lib.libitcap $(VOLUME).tcap.itutblao
+
+$(VOLUME).tcap.itutblo : $(VOLUME).tcap.itutblc
+	NMC /in $(VOLUME).tcap.itutblc / $(VOLUME).tcap.itutblo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  define CCITT, optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+	ar crv $(VOLUME).lib.libitcap $(VOLUME).tcap.itutblo
+
+$(VOLUME).tcap.itutcapo : $(VOLUME).tcap.tcapc
+	NMC /in $(VOLUME).tcap.tcapc / $(VOLUME).tcap.itutcapo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  define CCITT, optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+	ar crv $(VOLUME).lib.libitcap $(VOLUME).tcap.itutcapo

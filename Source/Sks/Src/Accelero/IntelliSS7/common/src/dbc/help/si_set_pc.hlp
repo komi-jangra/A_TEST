@@ -1,0 +1,22 @@
+
+ITU SCCP Command
+
+SYNOPSIS
+    si_set_pc <pc> <linkset>
+
+DESCRIPTION
+    This command adds point code entry corressponding tp given linkset. 
+    The network indicator value used for added point code is same as 
+    configured for given linkset.
+
+PARAMETERS
+    pc         Point Code
+    linkset    linkset number on which pc is to be added
+
+EXAMPLE
+    >> si_set_pc 6 1
+    ********* SCCP Point Code Entry Set********
+
+NOTE - 
+1. You can display configured linksets using command itu_dumpls
+2. You cannot add local point code using this command.

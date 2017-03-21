@@ -1,0 +1,26 @@
+include  ../../../../../Csapp/Util/make.opt
+HDR      = -I$(BSC_BASE)/Source/Oams/Inc/ \
+           -I$(BSC_BASE)/Source/Oams/Src/Bich/Inc/ \
+           -I$(BSC_BASE)/Source/Oams/TestStub/Bich/UTEnv/Inc/
+
+lib1=dlstublib.so
+objs1:= \
+    bicDistributor.o\
+    ToFromCFG.o\
+    ToFromABIHM.o\
+    ToFromTRXH.o\
+      
+all: lib1  
+
+lib1 : $(lib1)
+
+
+$(lib1): $(objs1)
+	gcc -shared -WL -o $@ $^
+
+%.o: %.c
+	gcc -D__C_APPL -g -c ${INC} ${HDR} $^ -o $@
+
+
+clean:
+	-rm $(lib1) $(objs1)

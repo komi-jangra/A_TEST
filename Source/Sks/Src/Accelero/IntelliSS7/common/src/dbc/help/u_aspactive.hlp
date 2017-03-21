@@ -1,0 +1,19 @@
+
+M3UA / SUA Command
+
+SYNOPSIS
+    u_aspactive <rkid>
+
+DESCRIPTION
+    This command send asp active for a given routing key identifier.
+
+PARAMETERS
+    rkid    Routing Key Identifer.
+            Configured values for routing key identifiers can be found by 
+            displaying AS Table. Command for displaying AS Table is u_astbl.
+
+EXAMPLE
+    >> u_aspactive 1
+    *********** ASP ACTIVE Sent *************
+
+

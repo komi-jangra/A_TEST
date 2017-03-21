@@ -1,0 +1,20 @@
+
+ANSI ISUP Command
+
+SYNOPSIS
+    ia_set_cong_lev  <congLevel> <congValue>
+
+DESCRIPTION
+    This command set the Local Automatic Congestion Levels in ISUP
+
+PARAMETERS
+    congLevel     Automatic Congestion Level
+    congValue     Congestion Level Value Threshold
+
+    Possible Values for congLevel: 1, 2
+
+EXAMPLE
+>> ia_set_cong_lev 1 2
+
+ *** Set Congestion Level Successful***
+

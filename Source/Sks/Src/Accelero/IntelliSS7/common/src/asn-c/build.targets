@@ -1,0 +1,4 @@
+AsnC         AsnC.mak         debug   "AsnC - Win32 Debug"
+AsnC         AsnC.mak         release "AsnC - Win32 Release"
+AsnC_V2      AsnC_V2.mak      debug   "AsnC_V2 - Win32 Debug"   
+AsnC_V2      AsnC_V2.mak      release "AsnC_V2 - Win32 Release"   

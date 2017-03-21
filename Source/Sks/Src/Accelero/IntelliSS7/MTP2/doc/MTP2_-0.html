@@ -1,0 +1,72 @@
+<HTML>
+<HEAD>
+<CENTER>
+<H2><BIG>IntelliSS7</BIG> <B>Application Developer's Toolkit</B></H2>
+</CENTER>
+<BR>
+</HEAD>
+<BODY>
+<TABLE ALIGN=JUSTIFY WIDTH=100% BGCOLOR=SILVER>
+<TR>
+    <TD ALIGN=LEFT><B>IntelliSS7 Function</B></TD>
+    <TD ALIGN=RIGHT><I>MTP2_Encode</I></TD>
+</TR>
+</TABLE>
+<BR>
+<BR>
+<B>NAME</B>
+<PRE>
+    MTP2_Encode()
+</PRE>
+<B>SCOPE</B>
+<PRE>
+    extern
+</PRE>
+<B>SYNOPSIS</B>
+<PRE>
+    SS7DLLAPI int
+    MTP2_Encode(ITS_EVENT *ev, MTP2_HEADER* hdr,
+                ITS_OCTET* sif, ITS_USHORT len);
+
+</PRE>
+<B>PURPOSE</B>
+<PRE>
+    Encode an ITS_EVENT with an MTP2 message
+
+</PRE>
+<B>INPUT PARAMETERS</B>
+<PRE>
+    hdr - the MTP2 header
+    sif - the SIF
+    len - byte count of data
+
+</PRE>
+<B>INPUT/OUTPUT PARAMETERS</B>
+<PRE>
+    None.
+
+</PRE>
+<B>OUTPUT PARAMETERS</B>
+<PRE>
+    ev - an ITS_EVENT containing the MTP2 message
+
+</PRE>
+<B>RETURN VALUE</B>
+<PRE>
+None.
+
+</PRE>
+<B>NOTES</B>
+<PRE>
+
+</PRE>
+<B>SEE ALSO</B>
+<PRE>
+    MTP2_Decode
+</PRE>
+<CENTER>
+<A HREF=mtp2_.html><I>back</I></A><BR>
+<BR>
+</CENTER>
+</BODY>
+</HTML>

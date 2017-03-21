@@ -1,0 +1,24 @@
+
+M2UA Command
+
+SYNOPSIS
+    mu_get_all_iids
+
+DESCRIPTION
+    This command displays all iids.
+
+PARAMETERS
+    None.
+
+EXAMPLE
+    >> mu_get_all_iids
+
+    IID      <21>
+    LinkSet  <1>
+    LinkCode <0>
+
+    IID      <22>
+    LinkSet  <1>
+    LinkCode <1>
+
+

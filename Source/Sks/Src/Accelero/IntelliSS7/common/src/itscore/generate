@@ -1,0 +1,3 @@
+#!/bin/sh
+
+$ITS_ROOT/tools/bin/gendoc core ../../doc < gendoc.in > gendoc.out

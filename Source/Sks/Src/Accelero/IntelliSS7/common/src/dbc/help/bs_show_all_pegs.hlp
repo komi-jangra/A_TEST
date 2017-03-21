@@ -1,0 +1,27 @@
+
+BSSAP Command
+
+SYNOPSIS
+    bs_show_all_pegs 
+
+DESCRIPTION
+    This command displays all peg values.
+
+PARAMETERS
+    None.
+
+     >> bs_show_all_pegs 
+
+	PEG_BSSAP_CR_RECV      0
+	PEG_BSSAP_DT1_RECV     1
+	PEG_BSSAP_CR_SEND      2
+	PEG_BSSAP_DT1_SEND     3
+	PEG_BSSAP_DTAP_SEND    4
+	PEG_BSSAP_DTAP_RECV    5
+	PEG_BSSAP_MAP_SEND     6
+	PEG_BSSAP_MAP_RECV     7
+	PEG_BSSAP_CONF_SEND    8
+	PEG_BSSAP_CONF_RECV    9
+	PEG_BSSAP_CMSERV_RECV  10
+	PEG_BSSAP_PAGRSP_RECV  11
+

@@ -1,0 +1,4 @@
+gdi		gdi	both	*.c
+gdi		gdi	both	*.c
+gdi		gdi	both	Makefile
+

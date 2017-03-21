@@ -1,0 +1,22 @@
+/home/amareshprasad/NIB/BSC/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c:144: warning: missing initializer
+/home/amareshprasad/NIB/BSC/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c:144: warning: (near initialization for ‘__operations.hash’)
+/home/amareshprasad/NIB/BSC/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c: In function ‘ss7_over_sigtran_err_log’:
+/home/amareshprasad/NIB/BSC/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c:781: warning: format ‘%08x’ expects type ‘unsigned int’, but argument 3 has type ‘time_t’
+/home/amareshprasad/NIB/BSC/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c:781: warning: format ‘%08x’ expects type ‘unsigned int’, but argument 4 has type ‘long unsigned int’
+ar: creating libcspl.a
+ar: creating libporting.a
+ar: creating libmpset.a
+ar: creating libcpset.a
+/home/amareshprasad/NIB/BSC/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c:144: warning: missing initializer
+/home/amareshprasad/NIB/BSC/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c:144: warning: (near initialization for ‘__operations.hash’)
+/home/amareshprasad/NIB/BSC/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c: In function ‘ss7_over_sigtran_err_log’:
+/home/amareshprasad/NIB/BSC/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c:781: warning: format ‘%08x’ expects type ‘unsigned int’, but argument 3 has type ‘time_t’
+/home/amareshprasad/NIB/BSC/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c:781: warning: format ‘%08x’ expects type ‘unsigned int’, but argument 4 has type ‘long unsigned int’
+ar: creating libcspl.a
+ar: creating libporting.a
+ar: creating libmpset.a
+ar: creating libcpset.a
+<command line>:1:12: warning: extra tokens at end of #undef directive
+<command line>:1:10: warning: extra tokens at end of #undef directive
+<command line>:1:13: warning: extra tokens at end of #undef directive
+ar: creating linux/libscommon.a

@@ -1,0 +1,50 @@
+
+VOLUME=$dsmscm
+
+$home.test.testo : $home.test.testc
+        NMC /in $home.test.testc / $home.test.testo ; \
+                symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+                nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+                define _XOPEN_SOURCE_EXTENDED 1, define CCITT, optimize 0, \
+                ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+                ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+                ssv6 "$home.include"
+
+$home.test.recv : $home.test.testo
+        NLD -o $home.test.recv $home.test.testo $system.system.crtlmain \
+                -libvol $home.lib -lib libcore -lib libvend -lib libitcap \
+                -lib libisccp -lib libimtp3 -lib libasnc -lib libvend \
+                -libname $nb130.csslib.nlibrary \
+                -obey $system.system.libcobey
+
+$home.test.gsmrecvo : $home.test.gsmrecvc
+        NMC /in $home.test.gsmrecvc / $home.test.gsmrecvo ; \
+                symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+                nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+                define _XOPEN_SOURCE_EXTENDED 1, define CCITT, optimize 0, \
+                ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+                ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+                ssv6 "$home.include"
+
+$home.test.gsmrecv : $home.test.gsmrecvo
+        NLD -o $home.test.gsmrecv $home.test.gsmrecvo $system.system.crtlmain \
+                -libvol $home.lib -lib libcore -lib libvend -lib libitcap \
+                -lib libisccp -lib libimtp3 -lib libasnc \
+                -libname $nb130.csslib.nlibrary \
+                -obey $system.system.libcobey
+
+$home.test.gsmsendo : $home.test.gsmsendc
+        NMC /in $home.test.gsmsendc / $home.test.gsmsendo ; \
+                symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+                nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+                define _XOPEN_SOURCE_EXTENDED 1, define CCITT, optimize 0, \
+                ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+                ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+                ssv6 "$home.include"
+
+$home.test.gsmsend : $home.test.gsmsendo
+        NLD -o $home.test.gsmsend $home.test.gsmsendo $system.system.crtlmain \
+                -libvol $home.lib -lib libcore -lib libvend -lib libitcap \
+                -lib libisccp -lib libimtp3 -lib libasnc \
+                -libname $nb130.csslib.nlibrary \
+                -obey $system.system.libcobey

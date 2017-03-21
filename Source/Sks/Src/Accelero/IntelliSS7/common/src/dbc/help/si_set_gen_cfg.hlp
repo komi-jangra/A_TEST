@@ -1,0 +1,38 @@
+
+ITU SCCP Command
+
+SYNOPSIS
+    si_set_gen_cfg <al> <trType> <trOutput> <on/off>
+
+DESCRIPTION
+    This command sets ITU SCCP alarm level and trace level. Alarm level controls 
+    SCCP alarms sent to Accelero application. Trace level controls generation of 
+    SCCP execution traces.
+
+PARAMETERS
+    al            Alarm Level.
+                  Possible values -
+                  CRITICAL
+                  MAJOR 
+                  MINOR
+                  INFO
+                  OFF
+
+    trType        Trace Type. Possible valuse
+                  DEBUG
+                  WARNING
+                  ERROR
+                  CRITICAL
+                  EVENT
+                  all - all trace types
+    traceOutput   Trace Output. Possible Values -
+                  stdout
+                  file
+                  syslog
+     ON/OFF       Set trace to on or off.
+
+
+EXAMPLE
+    >> si_set_gen_cfg CRITICAL DEBUG file on  
+    *********** SCCP General Config Set*************
+

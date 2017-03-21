@@ -1,0 +1,44 @@
+
+ANSI ISUP Command
+
+SYNOPSIS
+    ia_set_cic_state <opc> <dpc> <sio> <cic> <state>
+
+DESCRIPTION
+    Sets call state and maintenance state of ISUP Cic.
+
+PARAMETERS
+    dpc     Destination point code.
+    opc     Origination point code.
+    sio     service information octet.
+    cic     Circuit code number.
+    state   Circuit State in decimal.
+            TRANSIENT -------------------------------------------00
+            SPARE 1 ---------------------------------------------01
+            SPARE 2 ---------------------------------------------02
+            UNEQUIPPED ------------------------------------------03
+            INCOMING CIRCUIT BUSY, ACTIVE------------------------04
+            INCOMING CIRCUIT BUSY, LOCALLY BLOCKED --------------05
+            INCOMING CIRCUIT BUSY, REMOTELY BLOCKED--------------06
+            INCOMING CIRCUIT BUSY, LOCALLY & REMOTELY BLOCKED----07
+            OUTGOING CIRCUIT BUSY, ACTIVE------------------------08
+            OUTGOING CIRCUIT BUSY, LOCALLY BLOCKED---------------09
+            OUTGOING CIRCUIT BUSY, REMOTELY BLOCKED--------------10
+            OUTGOING CIRCUIT BUSY, LOCALLY &REMOTELY BLOCKED-----11
+            IDLE, LOCAL UNBLOCK, REMOTE UNBLOCK------------------12
+            IDLE, LOCALLY BLOCKED--------------------------------13
+            IDLE, REMOTELY BLOCKED-------------------------------14
+            IDLE, LOCALLY & REMOTELY BLOCKED---------------------15
+
+EXAMPLE
+
+   >> ia_set_cic_state 16 21 133 1 1
+
+   =======================================================
+   Cic States for cic 1:
+   ----------------------
+   virtual cic (vcic) = 0x2 (internal to stack)
+   original cic number = 1
+   cpc+mpc Circuit State: 0xc : IDLE, LOCAL UNBLOCK,REMOTE UNBLOCK
+
+   Call Processing Control Fsm State: IDLE 

@@ -1,0 +1,102 @@
+          Testing IntelliNet ISUP Stack (Load Test)
+----------------------------------------------------------------------
+
+1) Building Load Test App :-
+
+   a) Load Test application uses Make file to compile and link
+      all the files.
+
+   b)Give make command in this directory.(Please use gnu make
+     to build test app).
+
+   c) This will generate libload-intelli3-nms2-ANSID.so librirary and
+      load-intelli3-nms2-ANSID  executable in ./nmsmtp2 directory.
+
+
+
+2) Configuring the test application configuration(XML) file.
+
+   a) Before running test App you must have to configure the XML file.
+      Test App uses xml for storing configuration information.
+      It reads config information from this file at time of
+      initialization.
+
+   b) Type cd nmsmtp2( change directory to the ./nmsmtp2).
+                                               ----------
+   c) IntelliNet provides sample XML configuration file.
+      Open the file ftest.xml and configure the point codes
+      and route information.
+
+   d) The load test app reads the load configuration from the
+      load.ini file located in the same direcotry.In this file
+      you can specify how many calls per/sec you want generate.
+
+NOTE:    If you do not want change the default config
+         The defualt file is configured for LOCAL PC 0x10
+         REMOTE PC  0x15 and LinkSet 1 and 
+         Link code 0,1,2 and 3 for running load test.
+         This is the information to configure other Node.
+
+3) Running Load Test App :-
+
+   a)Change the directory to nmsmtp2 if you are not already there.
+   b)Make sure you have ftest-intelli3-nms2-ANSID executable
+     and libftest-intelli3-nms2-ANSID.so librarie in the directory.
+
+     Type  ./load-intelli3-nms2-ANSID and press Enter.
+
+  c)  After starting your test application, start the Debug client
+      if you not already started (Please see (4) how to start Debug client).
+
+  d)  Then on command prompt type start ,Then IntelliMTP3 will start the
+       alignment of the links.(see EXAMPLE 1)
+
+  e)  After alignment of links is completed,
+      Load test application is ready to generate load.
+
+
+NOTE: Load test App is only load generator,It generates IAM messages,
+      and Wait for ACM , ANM and REL msg from other side.After receiing
+      REL from remote it acknowledge with RLC.
+
+
+4) Running the Debug client console
+
+   a) Debug client is located in bin directory.
+   b) Change you derectory to bin.
+   c) Type ./DBGConsole -socket and press enter.
+   d) This will give command prompt >>.
+   e) Type ? to see all the commands that are avialable
+      (see exaple 2).
+
+
+-----------------------------------------------------------------------
+EXAMPLE 1:
+
+   On the Debug client command prompt type.
+
+command: >> start
+
+Result :    IntelliMTP3 starts the aligment of links.
+
+EXAMPLE 2:
+
+command: >> ?
+
+Result :    Prints the all available commands.
+
+EXAMPLE 3:
+
+command: >> statRSC 
+
+Result :    Starts the reseting all the cics configured.
+
+
+EXAMPLE 4:
+
+command: >> startIAM starts sending IAM messages.
+
+Result :    Prints the circuit state of the circuit code 1.
+
+---------------------------- End ----------------------------------------
+

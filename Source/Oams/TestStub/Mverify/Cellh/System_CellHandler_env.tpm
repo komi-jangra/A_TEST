@@ -1,0 +1,18 @@
+HDRFILES = -I../../../../../../Inc/Sys/ -I../../../../../../Inc/Ipc/ -I../../../../../../Inc/Dbs/ -I../../../../../../Inc/Csapp/ -I../../../../../../Inc/Oam/ -I../../../../../../Inc/Oams/  -I../../../../Inc/ -I../Inc/
+
+COMP_FLAG = -DXUSE_SIGNAL_NUMBERS -D__C_APPL # -DCPLUSPLUS
+
+sctUSERDEFS = -g $(COMP_FLAG) $(HDRFILES)
+
+USERTARGET = System_CellHandler_env$(sctOEXTENSION) System_CellHandler_cod$(sctOEXTENSION)
+
+USERLIBRARIES = -L../../../../../Dbs/Bin/Host/CommonLib/ -L../../../../../../Bin/Host/CommonLib/ -L../../../../Bin/Host/CommonLib/ -lmapLtrxPtrxEnt -lsysEncoder -lLtrxIdGen -lCLIB -llog -ltau -lfrm -linst-DB -ldbwrappers
+
+System_CellHandler_env$(sctOEXTENSION): System_CellHandler_env.c System_CellHandler.ifc System_CellHandler_cod.h
+	$(sctCC) $(sctCPPFLAGS) $(sctCCFLAGS) $(sctIFDEF) System_CellHandler_env.c -o System_CellHandler_env$(sctOEXTENSION)
+
+System_CellHandler_cod$(sctOEXTENSION) : System_CellHandler_cod.c System_CellHandler_cod.h
+	$(sctCC) $(sctCPPFLAGS) $(sctCCFLAGS) $(sctIFDEF) System_CellHandler_cod.c -o System_CellHandler_cod$(sctOEXTENSION)
+
+clean_user_objs:
+	$(sctRM) $(USERTARGET)

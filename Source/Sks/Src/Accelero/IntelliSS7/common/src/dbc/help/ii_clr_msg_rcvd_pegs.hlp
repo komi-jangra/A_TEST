@@ -1,0 +1,22 @@
+ITU ISUP Command
+
+SYNOPSIS
+ii_clr_msg_rcvd_pegs <opc> <dpc> <sio> [<PegId> (or) <All/all>]
+
+DESCRIPTION
+
+Reset Message Received Pegs
+
+PARAMETERS
+
+dpc     Destination point code.
+opc     Origination point code.
+sio     Service information octet.
+PegId   PegId to be reset.
+
+EXAMPLE
+
+>> ii_clr_msg_rcvd_pegs 16 21 133 All
+
+* Cleared all ISUP Message Pegs *
+

@@ -1,0 +1,796 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE Application SYSTEM "file:D:\cvsroot\Current\IntelliSS7\ENGINE\src\engine.dtd">
+
+<!-- Sample XML file for application configuration (INI). -->
+
+<Application name           = "test"
+             type           = "console-application"
+             globalStart    = "ITU-MTP3"
+             binding        = "C">
+
+    <AppOptions name = "traceFlushAfterWrite"         value = "no"/>
+    <AppOptions name = "memPoolChecksOn"              value = "no"/>
+
+    <Feature
+        name        = "Vendor Framework"
+        library     = "libVFrame.so"
+        classRec    = "itsSS7STACK_ClassCCITT"
+    />
+
+    <Feature
+        name        = "IntelliNet stack"
+        library     = "libCCITT-VENDOR.so"
+        classRec    = "itsINTELLISS7_ClassCCITT"
+    />
+
+    <Feature
+        name        = "ADAX Vendor lib"
+        library     = "libADAXVendor.so"
+        classRec    = "itsADAX_ClassCCITT"
+    />
+
+    <ToolkitTrace>
+        <Critical  output = "stdout"/>
+        <Critical  output = "file"/>
+        <Error     output = "stdout"/>
+        <Error     output = "file"/>
+        <Warning   output = "stdout"/>
+        <Warning   output = "file"/>
+        <Debug     output = "none"/>
+    </ToolkitTrace>
+
+    <ApplicationTrace>
+        <Critical  output = "file"/>
+        <Error     output = "file"/>
+        <Warning   output = "file"/>
+        <Debug     output = "file"/>
+    </ApplicationTrace>
+
+    <ParserExtension    library     = "libADAXVendor.so"
+                        elementName = "ADAX_Data"
+                        startFunc   = "ADAX_ParseStart"
+                        stopFunc    = "ADAX_ParseEnd"
+                        xlateFunc   = "ADAX_ConvertParserData"
+                        diffFunc    = "ADAX_Diff"
+    />
+
+    <ADAX_Data  sectionName = "ADAX SS7-1"
+                trunk       = "0"
+                TR_TYPE     = "1"
+                linkSet     = "1"
+                linkCodes   = "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15"
+    />
+
+    <!--/////////////// LINK SETS //////////////-->
+    <!-- link set for internal routing -->
+    <LinkSet id           = "0"
+             adjacentSTP  = "no"
+             numToStart   = "0"
+             family       = "ITU">
+        <NI     value = "0x80"/>
+        <APC    value = "0x0"/>
+        <LPC    value = "0x0"/>
+    </LinkSet>
+
+    <!-- link set for external routing -->
+    <LinkSet id           = "1"
+             adjacentSTP  = "no"
+             numToStart   = "1"
+             family       = "ITU">
+        <NI     value = "0x80"/>
+        <APC    value = "0x000009"/>
+        <LPC    value = "0x000008"/>
+    </LinkSet>
+
+    <!-- route for SNMM -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0"
+            family   = "ITU">
+        <DPC    value = "0x000008"/>
+        <SIO    value = "0x80"/>
+    </Route>
+
+    <!-- route for SLTM REG -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0"
+            family   = "ITU">
+        <DPC    value = "0x000008"/>
+        <SIO    value = "0x81"/>
+    </Route>
+
+    <!-- route for SLTM SPEC -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0"
+            family   = "ITU">
+        <DPC    value = "0x000008"/>
+        <SIO    value = "0x82"/>
+    </Route>
+
+    <!-- route for SCCP -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0"
+            family   = "ITU">
+        <DPC    value = "0x000008"/>
+        <SIO    value = "0x83"/>
+    </Route>
+
+    <!-- route for TUP -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0"
+            family   = "ITU">
+        <DPC    value = "0x000008"/>
+        <SIO    value = "0x84"/>
+    </Route>
+
+    <!-- route for ISUP -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0"
+            family   = "ITU">
+        <DPC    value = "0x000008"/>
+        <SIO    value = "0x85"/>
+    </Route>
+
+    <!-- route for DUP (call setup) -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0"
+            family   = "ITU">
+        <DPC    value = "0x000008"/>
+        <SIO    value = "0x86"/>
+    </Route>
+
+    <!-- route for DUP (facility) -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0"
+            family   = "ITU">
+        <DPC    value = "0x000008"/>
+        <SIO    value = "0x87"/>
+    </Route>
+
+    <!-- route for MTP testing -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0"
+            family   = "ITU">
+        <DPC    value = "0x000008"/>
+        <SIO    value = "0x88"/>
+    </Route>
+
+    <!-- route for B-ISUP -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0"
+            family   = "ITU">
+        <DPC    value = "0x000008"/>
+        <SIO    value = "0x89"/>
+    </Route>
+
+    <!-- route for S-ISUP -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0"
+            family   = "ITU">
+        <DPC    value = "0x000008"/>
+        <SIO    value = "0x8a"/>
+    </Route>
+
+    <!-- route for spare UP -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0"
+            family   = "ITU">
+        <DPC    value = "0x000008"/>
+        <SIO    value = "0x8b"/>
+    </Route>
+
+    <!-- route for spare UP -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0"
+            family   = "ITU">
+        <DPC    value = "0x000008"/>
+        <SIO    value = "0x8c"/>
+    </Route>
+
+    <!-- route for reserved UP -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0"
+            family   = "ITU">
+        <DPC    value = "0x000008"/>
+        <SIO    value = "0x8d"/>
+    </Route>
+
+    <!-- route for reserved UP -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0"
+            family   = "ITU">
+        <DPC    value = "0x000008"/>
+        <SIO    value = "0x8e"/>
+    </Route>
+
+    <!-- route for spare UP -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0"
+            family   = "ITU">
+        <DPC    value = "0x000008"/>
+        <SIO    value = "0x8f"/>
+    </Route>
+
+    <!-- route for TCAP -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio-ssn"
+            linkSet  = "0"
+            priority = "0"
+            family   = "ITU">
+        <DPC    value = "0x000008"/>
+        <SIO    value = "0x83"/>
+        <SSN    value = "5"/>
+    </Route>
+
+    <!-- route for adjacent node -->
+    <Route  type    = "remoteRoute"
+            style   = "dpc-ni"
+            linkSet = "1"
+            priority = "0"
+            family   = "ITU">
+        <DPC    value = "0x000009"/>
+        <SIO    value = "0x80"/>
+    </Route>
+
+    <!-- route for non-adjacent node -->
+    <Route  type    = "remoteRoute"
+            style   = "dpc-ni"
+            linkSet = "1"
+            priority = "0"
+            family   = "ITU">
+        <DPC    value = "0x000000"/>
+        <SIO    value = "0x80"/>
+    </Route>
+
+    <!--/////////////// DESTINATIONS //////////////-->
+    <!-- adjacent destination -->
+    <Destination    family      = "ITU"
+                    pointCode   = "0x0009"
+                    networkInd  = "0x80"
+                    mtp3Variant = "WhiteBook_97"
+                    isupVariant = "ITU_GENERIC_93"
+                    sccpVariant = "WhiteBook_97"
+                    tcapVariant = "WhiteBook_97"
+                    tupVariant  = "WhiteBook_97"
+                    dupVariant  = "WhiteBook_97">
+
+        <ISUPAttributes localPointCode    = "0x0008"
+                        sio               = "0x85"
+                        classRec          = "isupITU93_Class"
+                        library           = "libITU_GENERIC_93.so">
+
+              <!-- Only override timer value -->
+              <Timer name       = "T1"
+                     value      = "30"
+                     handledBy  = "STACK"/>
+              />
+
+              <!-- Turn off timer -->
+              <Timer name       = "T2"
+                     value      = "0"
+              />
+
+              <!-- Only override handling -->
+              <Timer name       = "T3"
+                     handledBy  = "APP"
+              />
+
+              <!-- Override both value and handling -->
+              <Timer name       = "T4"
+                     value      = "30"
+                     handledBy  = "APP"
+              />
+
+              <!-- Circuit Group #1 -->
+              <CircuitGroup huntRule = "DEF">
+                  <CircuitCodes start = "1"
+                                count = "10"
+                  />
+                  <CircuitCodes start = "20"
+                                count = "10"
+                  />
+              </CircuitGroup>  
+
+              <!-- Circuit Group #2 -->
+              <CircuitGroup huntRule = "ALL">
+                  <CircuitCodes  start = "33"/>
+              </CircuitGroup>  
+
+              <!-- Circuit Group #3 -->
+              <CircuitGroup huntRule = "EVEN">
+                  <CircuitCodes start = "65"
+                                count = "10"
+                  />
+                  <CircuitCodes start = "80"
+                  />
+              </CircuitGroup>  
+
+              <!-- Circuit Group #4 -->
+              <CircuitGroup huntRule = "ODD">
+                 <CircuitCodes start = "97"
+                               count = "5"
+                 />
+                <CircuitCodes  start = "107"
+                               count = "10"
+                />
+            </CircuitGroup>  
+        </ISUPAttributes>
+    </Destination>
+
+    <!-- non-adjacent destination -->
+    <Destination    family      = "ITU"
+                    pointCode   = "0x000000"
+                    networkInd  = "0x80"
+                    mtp3Variant = "WhiteBook_97"
+                    isupVariant = "WhiteBook_97"
+                    sccpVariant = "WhiteBook_97"
+                    tcapVariant = "WhiteBook_97"
+                    tupVariant  = "WhiteBook_97"
+                    dupVariant  = "WhiteBook_97"
+    />
+
+    <!--///////////////////////////////////////////////////////////////-->
+
+    <FaultTolerance
+        maxNumFtGroups      = "1"
+        maxNumProcesses     = "1"
+        maxNumNodes         = "1"
+        nodeId              = "0"
+        processId           = "0"
+        tcapFtGroupId       = "0"
+        sccpFtGroupId       = "0"
+        mtp3FtGroupId       = "0"
+        isupFtGroupId       = "0"
+        routingFtGroupId    = "0"
+        timersFtGroupId     = "0"
+        mgmtDataFtGroupId   = "0"
+    >
+
+        <Procedures>
+
+        </Procedures>
+
+        <Callbacks>
+
+        </Callbacks>
+
+        <FtGroups>
+
+            <FtGroup 
+                ftGroupId      = "0"
+                ftGroupName    = "FtGroup0"
+            >
+
+                <DsmConfig
+                     dsmSize         = "20971520"
+                     dsmBaseAddress  = "0x80000000"
+                     dsmMaxNumTables = "256"
+                     dsmType         = "STUB"
+                />
+
+                <!-- Note: MUST include itself. -->
+                <!-- Note: nodeName and processName are optional attributes. --> 
+
+                <FtGroupMembers>
+
+                    <FtGroupMember
+                        nodeId      = "0"
+                        nodeName    = "Node0"
+                        processId   = "0"
+                        processName = "Node0Process0"
+                    />
+
+                </FtGroupMembers>
+
+
+                <!-- Note: MUST NOT include itself. -->
+                <!-- Note: Master FtGroupMembers are tried in order. -->
+
+                <MasterFtGroupMembers>
+
+                </MasterFtGroupMembers>
+
+                <Callbacks>
+                
+                </Callbacks>
+
+            </FtGroup>
+
+        </FtGroups>
+
+    </FaultTolerance>
+
+    <!--///////////////////////////////////////////////////////////////-->
+
+    <BorderPool stackSize = "0">
+
+        <Transport  name    = "ADAX SS7-1"
+                    type    = "SS7"
+                    family  = "ITU">
+                    
+            <Modifier value = "MTP2"/>
+
+            <Vendor name        = "ADAX"
+                    library     = "libADAXVendor.so"
+                    vendorRec   = "itsADAX_ClassCCITT"
+            />
+
+            <Callbacks
+                type            = "blocking"
+                preInitialize   = "null"
+                postInitialize  = "null"
+                preNextEvent    = "null"
+                nextEventFailed = "null"
+                postNextEvent   = "null"
+                userMsgHandler  = "null"
+                SCCPMsgHandler  = "null"
+                ISUPMsgHandler  = "null"
+                preTerminate    = "null"
+                postTerminate   = "null"
+            />
+
+            <!-- 4 links on this transport -->
+            <Link   id              = "0"
+                    linkSet         = "1"
+                    initiallyActive = "yes"
+                    terminalFixed   = "yes"
+                    dataLinkFixed   = "yes"
+                    priority        = "0"
+                    terminal        = "0"
+                    dataLink        = "0"
+                    family          = "ITU"
+            />
+            <Link   id              = "1"
+                    linkSet         = "1"
+                    initiallyActive = "yes"
+                    terminalFixed   = "yes"
+                    dataLinkFixed   = "yes"
+                    priority        = "0"
+                    terminal        = "0"
+                    dataLink        = "0"
+                    family          = "ITU"
+            />
+            <Link   id              = "2"
+                    linkSet         = "1"
+                    initiallyActive = "yes"
+                    terminalFixed   = "yes"
+                    dataLinkFixed   = "yes"
+                    priority        = "0"
+                    terminal        = "0"
+                    dataLink        = "0"
+                    family          = "ITU"
+            />
+            <Link   id              = "3"
+                    linkSet         = "1"
+                    initiallyActive = "yes"
+                    terminalFixed   = "yes"
+                    dataLinkFixed   = "yes"
+                    priority        = "0"
+                    terminal        = "0"
+                    dataLink        = "0"
+                    family          = "ITU"
+            />
+            <Link   id              = "4"
+                    linkSet         = "1"
+                    initiallyActive = "yes"
+                    terminalFixed   = "yes"
+                    dataLinkFixed   = "yes"
+                    priority        = "0"
+                    terminal        = "0"
+                    dataLink        = "0"
+                    family          = "ITU"
+            />
+            <Link   id              = "5"
+                    linkSet         = "1"
+                    initiallyActive = "yes"
+                    terminalFixed   = "yes"
+                    dataLinkFixed   = "yes"
+                    priority        = "0"
+                    terminal        = "0"
+                    dataLink        = "0"
+                    family          = "ITU"
+            />
+            <Link   id              = "6"
+                    linkSet         = "1"
+                    initiallyActive = "yes"
+                    terminalFixed   = "yes"
+                    dataLinkFixed   = "yes"
+                    priority        = "0"
+                    terminal        = "0"
+                    dataLink        = "0"
+                    family          = "ITU"
+            />
+            <Link   id              = "7"
+                    linkSet         = "1"
+                    initiallyActive = "yes"
+                    terminalFixed   = "yes"
+                    dataLinkFixed   = "yes"
+                    priority        = "0"
+                    terminal        = "0"
+                    dataLink        = "0"
+                    family          = "ITU"
+            />
+            <Link   id              = "8"
+                    linkSet         = "1"
+                    initiallyActive = "yes"
+                    terminalFixed   = "yes"
+                    dataLinkFixed   = "yes"
+                    priority        = "0"
+                    terminal        = "0"
+                    dataLink        = "0"
+                    family          = "ITU"
+            />
+            <Link   id              = "9"
+                    linkSet         = "1"
+                    initiallyActive = "yes"
+                    terminalFixed   = "yes"
+                    dataLinkFixed   = "yes"
+                    priority        = "0"
+                    terminal        = "0"
+                    dataLink        = "0"
+                    family          = "ITU"
+            />
+            <Link   id              = "10"
+                    linkSet         = "1"
+                    initiallyActive = "yes"
+                    terminalFixed   = "yes"
+                    dataLinkFixed   = "yes"
+                    priority        = "0"
+                    terminal        = "0"
+                    dataLink        = "0"
+                    family          = "ITU"
+            />
+            <Link   id              = "11"
+                    linkSet         = "1"
+                    initiallyActive = "yes"
+                    terminalFixed   = "yes"
+                    dataLinkFixed   = "yes"
+                    priority        = "0"
+                    terminal        = "0"
+                    dataLink        = "0"
+                    family          = "ITU"
+            />
+            <Link   id              = "12"
+                    linkSet         = "1"
+                    initiallyActive = "yes"
+                    terminalFixed   = "yes"
+                    dataLinkFixed   = "yes"
+                    priority        = "0"
+                    terminal        = "0"
+                    dataLink        = "0"
+                    family          = "ITU"
+            />
+            <Link   id              = "13"
+                    linkSet         = "1"
+                    initiallyActive = "yes"
+                    terminalFixed   = "yes"
+                    dataLinkFixed   = "yes"
+                    priority        = "0"
+                    terminal        = "0"
+                    dataLink        = "0"
+                    family          = "ITU"
+            />
+            <Link   id              = "14"
+                    linkSet         = "1"
+                    initiallyActive = "yes"
+                    terminalFixed   = "yes"
+                    dataLinkFixed   = "yes"
+                    priority        = "0"
+                    terminal        = "0"
+                    dataLink        = "0"
+                    family          = "ITU"
+            />
+            <Link   id              = "15"
+                    linkSet         = "1"
+                    initiallyActive = "yes"
+                    terminalFixed   = "yes"
+                    dataLinkFixed   = "yes"
+                    priority        = "0"
+                    terminal        = "0"
+                    dataLink        = "0"
+                    family          = "ITU"
+            />
+
+        </Transport>
+
+        <Transport  name    = "User"
+                    type    = "TaskQueue"
+                    family  = "ITU">
+                    
+            <Callbacks
+                type            = "blocking"
+                preInitialize   = "null"
+                postInitialize  = "TrafficGenerator"
+                preNextEvent    = "null"
+                nextEventFailed = "null"
+                postNextEvent   = "null"
+                userMsgHandler  = "null"
+                SCCPMsgHandler  = "null"
+                ISUPMsgHandler  = "null"
+                preTerminate    = "null"
+                postTerminate   = "null"
+            />
+        </Transport>
+
+        <Transport  name    = "Debug Console"
+                    type    = "ServerSocket">
+                    
+            <StreamData socketDomain    = "INET"
+                        serverHostName  = "127.0.0.1"
+                        serverPort      = "7000"
+            />
+
+            <Callbacks
+                type            = "debug-console"
+            />
+
+        </Transport>
+
+    </BorderPool>
+
+    <!--///////////////////////////////////////////////////////////////-->
+
+    <SS7-Stacks>
+
+        <ManagementCallbacks
+            MTP3ManagementCallbackITU     = "MTP3Mgmt"
+        />
+
+        <IntelliNet>
+
+            <ITU-MTP3 variant = "WhiteBook_97">
+  
+                <StackTrace>
+                    <Critical output = "stdout"/>
+                    <Error    output = "stdout"/>
+                    <Warning  output = "stdout"/>
+                    <Debug    output = "none"/> 
+                </StackTrace>
+
+                <BehaviorControl
+                    STPFunction = "no"
+                />
+
+                <Timers
+                     T1 = "800"
+                     T2 = "1400"
+                     T3 = "800"
+                     T4 = "800"
+                     T5 = "800"
+                     T6 = "800"
+                     T7 = "800"
+                     T8 = "800"
+                     T9 = "0"
+                    T10 = "30000"
+                    T11 = "30000"
+                    T12 = "800"
+                    T13 = "800"
+                    T14 = "2000"
+                    T15 = "2000"
+                    T16 = "1400"
+                    T17 = "800"
+                    T18 = "0"
+                    T19 = "480000"
+                    T20 = "3000"
+                    T21 = "3000"
+                    T22 = "30000"
+                    T23 = "30000"
+                    T24 = "30000"
+                    T25 = "30000"
+                    T26 = "12000"
+                    T27 = "2000"
+                    T28 = "3000"
+                    T29 = "60000"
+                    T30 = "30000"
+                    T31 = "10000"
+                    T32 = "5000"
+                    T33 = "60000"
+                    T34 = "5000"
+                    SLT-T1 = "5000"
+                    SLT-T2 = "30000"
+                />
+
+            </ITU-MTP3>
+  
+            <ITU-SCCP variant = "WhiteBook">
+  
+                <StackTrace>
+                    <Critical output = "stdout"/>
+                    <Critical output = "file"/>
+                    <Error    output = "stdout"/>
+                    <Error    output = "file"/>
+                    <Warning  output = "stdout"/>
+                    <Warning  output = "file"/> 
+                    <Debug    output = "file"/> 
+                </StackTrace>
+  
+                <Timers
+                    TstatInfo    = "30"
+                    TcoordChg    = "30"
+                    TignoreSST   = "30"
+                    TrtgStatInfo = "30"
+                    Tconnect     = "30"
+                    Trelease     = "10"
+                    Treset       = "20"
+                    Tias         = "300"
+                    Tiar         = "660"
+                    Tguard       = "240"
+                />
+  
+                <BehaviorControl
+                    PropagateIT   = "no"
+                    PropagateERR  = "no"
+                    PropagateSCMG = "yes"
+                />
+  
+            </ITU-SCCP>
+  
+            <!--///////////////////////////////////////////////////////////////-->
+  
+            <ITU-TCAP variant = "WhiteBook">
+  
+                <StackTrace>
+                    <Critical output = "stdout"/>
+                    <Critical output = "file"/>
+                    <Error    output = "stdout"/>
+                    <Error    output = "file"/>
+                    <Warning  output = "stdout"/>
+                    <Warning  output = "file"/> 
+                    <Debug    output = "file"/> 
+                </StackTrace>
+  
+                <Timers
+                    Treject = "5"
+                />
+
+                <!-- Make TCAP routable -->
+                <Link   id              = "0"
+                        linkSet         = "0"
+                        initiallyActive = "yes"
+                        terminalFixed   = "yes"
+                        dataLinkFixed   = "yes"
+                        priority        = "0"
+                        terminal        = "0"
+                        dataLink        = "0"
+                        family          = "ITU"
+                />
+
+            </ITU-TCAP>
+
+        </IntelliNet>
+
+    </SS7-Stacks>
+
+</Application>

@@ -1,0 +1,24 @@
+
+ANSI SCCP Module :
+
+    sa_get_gen_cfg        SCCP Get General Config
+    sa_set_gen_cfg        SCCP Set General Config
+    sa_get_all_ssn        SCCP Get All Subsystem Entries
+    sa_set_rssn           SCCP Set Remote Subsystem Entry
+    sa_rem_rssn           SCCP Remove Remote Subsystem Entry
+    sa_set_lssn           SCCP Set Local Subsystem Entry
+    sa_rem_lssn           SCCP Remove Local Subsystem Entry
+    sa_get_all_cssn       SCCP Get All Concerned SSN Entry
+    sa_set_cssn           SCCP Set Concerned SSN Entry
+    sa_rem_cssn           SCCP Remove Concerned SSN Entry
+    sa_send_ssa           SCCP Send Sub System Allowed
+    sa_send_ssp           SCCP Send Sub System Prohibited
+    sa_send_sst           SCCP Send Sub System Test
+    sa_get_behavior       SCCP Get Behaviors
+    sa_set_behavior       SCCP Set Behaviors
+    sa_get_tmr            SCCP Get Timer
+    sa_set_tmr            SCCP Set Timer
+    sa_get_gen_peg        SCCP Get Pegs
+    sa_clr_gen_peg        SCCP Clear Peg
+
+For details about any command use "help <command name>"

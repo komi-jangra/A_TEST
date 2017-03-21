@@ -1,0 +1,28 @@
+#************ START ***********
+ROOT_PATH = ../../../../../BSC-Development/
+HDRFILES=-I $(ROOT_PATH)/Inc/Sys \
+				  -I $(ROOT_PATH)/Inc/Ipc \
+					 -I $(ROOT_PATH)/Inc/Dbs \
+					  -I $(ROOT_PATH)/Source/Oams/Inc \
+						 -I $(ROOT_PATH)/Inc/Oams \
+						  -I $(ROOT_PATH)/Inc/Oam \
+							 -I $(ROOT_PATH)/Source/Oams/Src/Cellh/CellhModel/Inc \
+							  -I $(ROOT_PATH)/Inc/Csapp
+
+CFLAGS=-g -D__C_APPL
+COMPILER=gcc 
+USRLIBPATH=-L$(ROOT_PATH)/Bin/Host/CommonLib/CP/
+TARGET=TestStubBich
+
+USRLIB= -lCLIB -ltau -lfrm -ldbwrappers -llog
+#CC=gcc -g -Wall $(HDRFILES)  $(LIBRARY_PATH) -D__C_APPL -DCPLUSPLUS   
+$(TARGET): ToFromBICH.c
+	$(COMPILER) $(CFLAGS) $(HDRFILES) $(USRLIBPATH) $(USRLIB) ToFromBICH.c -o $(TARGET)
+
+clean:
+	rm -rf *.o TestStubBich
+
+#$(TARGET): MapLtrxPtrxEntMain.c
+#	$(CC)  MapLtrxPtrxEntMain.c $(LIBRARIES) -o $@ 
+#$(OBJ) : MapLtrxPtrxEntMain.c
+#	$(CC) -c MapLtrxPtrxEntMain.c

@@ -1,0 +1,24 @@
+Changes: 12Oct07
+Running CFG Test Cases
+-----------------------
+
+
+Steps to run CFG test stub
+
+
+	-CFG Test stub code is placed in directory $VNLBSC/Source/Oams/TestStub/Cfg/Src
+
+	-To generate the executable for CFG Test Stub, run the Makefile placed in above TestStub directory 
+	 (as defined above).
+
+	-CFG stub stub_cfg.exe will be genarated in  $VNLBSC/Source/Oams/Bin/Host/Exec 
+
+	- Run stub_cfg.exe give option ALL .
+          All the test cases will be executed one by one.
+          Each Test case result can be viewed in the log displayed by the stub_cfg.exe process console
+
+---------------------------------------------
+Veerabhadra Sheelavant, 
+Email:veerabhadra.sheelavant@aricent.com
+Phone: 080-41068432
+

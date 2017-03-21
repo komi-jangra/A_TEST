@@ -1,0 +1,76 @@
+--------------------------------------------------------------------------------
+--
+-- AsnCC 2.4 test.
+--
+-- Based on INAP CS1 (simplified types). LRF format.
+--
+--------------------------------------------------------------------------------
+
+TEST15 DEFINITIONS IMPLICIT TAGS ::=
+
+BEGIN
+
+
+CollectedDigits ::= SEQUENCE {
+    minimumNbOfDigits   [0]     INTEGER (1..127)            DEFAULT 1,
+    maximumNbOfDigits   [1]     INTEGER (1..127),
+    endOfReplyDigit     [2]     OCTET STRING (SIZE (1..2))  OPTIONAL,
+    cancelDigit         [3]     OCTET STRING (SIZE (1..2))  OPTIONAL,
+    startDigit          [4]     OCTET STRING (SIZE (1..2))  OPTIONAL,
+    firstDigitTimeOut   [5]     INTEGER (1..127)            OPTIONAL,
+    interDigitTimeOut   [6]     INTEGER (1..127)            OPTIONAL,
+    errorTreatment      [7]     ErrorTreatment              DEFAULT reportErrorToScf,
+    interruptableAnnInd [8]     BOOLEAN                     DEFAULT TRUE,
+    voiceInformation    [9]     BOOLEAN                     DEFAULT FALSE,
+    voiceBack           [10]    BOOLEAN                     DEFAULT FALSE
+    }
+
+CollectedInfo ::= CHOICE {
+    collectedDigits [0] CollectedDigits,
+    iA5Information  [1] BOOLEAN
+    }
+
+PromptAndCollectUserInformationArg ::= SEQUENCE {
+    collectedInfo               [0] CollectedInfo,
+    disconnectFromIPForbidden   [1] BOOLEAN             DEFAULT TRUE,
+    ...
+    }
+
+ErrorTreatment ::= ENUMERATED {
+    reportErrorToScf(0),
+    help(1),
+    repeatPrompt(2) 
+    }
+
+
+EventReportBCSMArg ::= SEQUENCE {
+    eventTypeBCSM   [0] EventTypeBCSM,
+    miscCallInfo    [4] MiscCallInfo DEFAULT(
+                            "MiscCallInfo* miscCallInfo = new MiscCallInfo(&staticDesc);
+                             MiscCallInfo::MessageType* messageType = new MiscCallInfo::MessageType((long)0);
+                             miscCallInfo->SetMessageType(messageType);
+                             staticDesc.SetCloneForDefaultFactory(miscCallInfo);"), --{messageType request},
+    ...
+    }
+
+MiscCallInfo ::= SEQUENCE {
+    messageType [0] ENUMERATED {
+        request(0),
+        notification(1)
+        },
+dpAssignment    [1] ENUMERATED {
+        individualLine(0),
+        groupBased(1),
+        officeBased(2)
+        }   OPTIONAL
+    }
+
+EventTypeBCSM ::= ENUMERATED {
+    origAttemptAuthorized(1),
+    collectedInfo(2),
+    analysedInformation(3)
+    }
+
+
+
+END

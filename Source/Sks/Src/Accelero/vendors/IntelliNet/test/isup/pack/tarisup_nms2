@@ -1,0 +1,179 @@
+#!/bin/ksh
+############################################################################
+#                                                                          #
+#     Copyright 2002 IntelliNet Technologies, Inc. All Rights Reserved.    #
+#             Manufactured in the United States of America.                #
+#       1990 W. New Haven Ste. 312, Melbourne, Florida, 32904 U.S.A.       #
+#                                                                          #
+#   This product and related documentation is protected by copyright and   #
+#   distributed under licenses restricting its use, copying, distribution  #
+#   and decompilation.  No part of this product or related documentation   #
+#   may be reproduced in any form by any means without prior written       #
+#   authorization of IntelliNet Technologies and its licensors, if any.    #
+#                                                                          #
+#   RESTRICTED RIGHTS LEGEND:  Use, duplication, or disclosure by the      #
+#   government is subject to restrictions as set forth in subparagraph     #
+#   (c)(1)(ii) of the Rights in Technical Data and Computer Software       #
+#   clause at DFARS 252.227-7013 and FAR 52.227-19.                        #
+#                                                                          #
+############################################################################
+#                                                                          #
+# CONTRACT: INTERNAL                                                       #
+#                                                                          #
+#     FILE: tarisup_nms2                                                   #
+#                                                                          #
+############################################################################
+#
+# ID: $Id: tarisup_nms2,v 1.1.1.1 2007-10-08 11:12:23 bsccs2 Exp $
+#
+# LOG:$Log: not supported by cvs2svn $
+# LOG:Revision 1.1.1.1  2007/10/04 13:25:00  bsccs2
+# LOG:init tree
+# LOG:
+# LOG:Revision 1.1.1.1  2007/08/03 06:49:29  cvsadmin
+# LOG:BscCs2
+# LOG:
+# LOG:Revision 1.1.1.1  2007/03/08 15:15:19  cvsadmin
+# LOG:BSC project
+# LOG:
+# LOG:Revision 9.1  2005/03/23 12:55:17  cvsadmin
+# LOG:Begin PR6.5
+# LOG:
+# LOG:Revision 1.1  2003/02/17 05:12:28  ssingh
+# LOG:Base line for packing intellinet isup functional and Load tests.
+# LOG: 
+#
+############################################################################
+
+#
+# PUBLIC ACCESS - CHANGE ACCORDINGLY
+#
+TYPE="INELLINET ISUP FUNCTIONAL TEST" # Specify FUNCTIONAL or LOAD
+PROTOCOL="ANSI" # Specify ANSI or CCITT
+DBGSUFFIX=D
+
+MTP2LIB=$VENDOR_ROOT/nms/lib/lib$PROTOCOL-NMSVENDOR$DBGSUFFIX.so
+BINDIR=$VENDOR_ROOT/IntelliNet/test/isup/functionalxml/intellimtp3/nmsmtp2
+APPSO=$BINDIR/libftest-intelli3-nms2-$PROTOCOL$DBGSUFFIX.so
+APP=$BINDIR/ftest-intelli3-nms2-$PROTOCOL$DBGSUFFIX
+
+#
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+# PRIVATE ACCESS - USERS STAY OUT
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+#
+
+#set -x
+umask 022
+echo "$0"
+echo "Preparing Files needed for $TYPE"
+
+DBGSUFFIX=D
+BASESYSTEM=$HOME/cvsroot
+ITS_ROOT=$BASESYSTEM/IntelliSS7
+VENDOR_ROOT=$BASESYSTEM/vendors
+
+TAG=$(cvs stat $0 | grep -w "Sticky Tag" \
+| awk -F':' '{print $2}' \
+| awk -F'(' '{print$1}'\
+| awk -F' ' '{print $1}')
+
+NOW=$(date +%d%b%y-%H%M%S)
+
+TARGET="$TAG-$NOW"
+
+echo "*$TAG"
+echo "*$NOW"
+echo "*$TARGET"
+
+mkdir $NOW
+(cd $NOW; \
+echo "entering $(pwd)"; \
+mkdir bin lib doc; \
+echo "leaving $(pwd)")
+echo "Current: $(pwd)"
+echo "Created the directory structure"
+
+RELEASE_BIN_DIR=$NOW/bin
+RELEASE_LIB_DIR=$NOW/lib
+RELEASE_DOC_DIR=$NOW/doc
+
+#Libraries
+LIBRARIES="\
+    $ITS_ROOT/common/lib/libDRIVER$DBGSUFFIX.so \
+    $ITS_ROOT/common/lib/libENGINE$DBGSUFFIX.so \
+    $ITS_ROOT/common/lib/libDSM-STUB$DBGSUFFIX.so \
+    $ITS_ROOT/common/lib/libDSM-GCS$DBGSUFFIX.so \
+    $ITS_ROOT/common/lib/libGCS-CLIENT$DBGSUFFIX.so \
+    $ITS_ROOT/common/lib/libDISPATCH$DBGSUFFIX.so \
+    $ITS_ROOT/common/lib/libVFrame$DBGSUFFIX.so \
+    $VENDOR_ROOT/IntelliNet/lib/lib$PROTOCOL-VENDOR$DBGSUFFIX.so \
+    $VENDOR_ROOT/IntelliNet/lib/libANSI_GENERIC_92$DBGSUFFIX.so \
+    $VENDOR_ROOT/IntelliNet/lib/libANSI_ISUP_95$DBGSUFFIX.so \
+    $MTP2LIB \
+    $APPSO \
+    "
+cp $LIBRARIES $RELEASE_LIB_DIR
+echo "Copied libraries"
+
+
+#Executables and configuration files
+
+EXECUTABLES="\
+    $APP \
+    $BINDIR/ansi_msgs.txt \
+    $BINDIR/ftest.xml.ansi95 \
+    $BINDIR/dbc_console.ini \
+    $BINDIR/gcs_daemon.ini \
+    $ITS_ROOT/common/bin/DBGConsole$DBGSUFFIX \
+    "
+cp $EXECUTABLES $RELEASE_BIN_DIR
+echo "Copied Executables"
+
+# Future use:
+#DOCS="\
+#     "
+#cp $DOCS $RELEASE_DOC_DIR
+
+DIRS="$RELEASE_BIN_DIR $RELEASE_LIB_DIR $RELEASE_DOC_DIR"
+
+#
+# Take the tar now
+#
+
+tar cvf $NOW/$TARGET.tar $DIRS
+if [[ $? -eq 0 ]]
+then
+tar tf $NOW/$TARGET.tar |tee $RELEASE_DOC_DIR/contents
+fi
+echo "Date    : $NOW" >> $RELEASE_DOC_DIR/contents
+echo "TAGGED  : $TAG" >> $RELEASE_DOC_DIR/contents
+echo "PROTOCOL: $PROTOCOL" >> $RELEASE_DOC_DIR/contents
+echo "TYPE    : $TYPE" >> $RELEASE_DOC_DIR/contents
+tar uf $NOW/$TARGET.tar $RELEASE_DOC_DIR/contents
+echo 'PATH=.:$PATH' > $RELEASE_BIN_DIR/exports
+echo 'LD_LIBRARY_PATH=../lib:.:$LD_LIBRARY_PATH' >> $RELEASE_BIN_DIR/exports
+echo "export PATH LD_LIBRARY_PATH" >> $RELEASE_BIN_DIR/exports
+tar uf $NOW/$TARGET.tar $RELEASE_BIN_DIR/exports
+echo "$APP"
+BASEAPP="$(basename $APP)"
+echo "./$BASEAPP"
+echo ". ./exports" > $RELEASE_BIN_DIR/isup
+echo "./$BASEAPP" >> $RELEASE_BIN_DIR/isup
+chmod +x $RELEASE_BIN_DIR/isup
+tar uf $NOW/$TARGET.tar $RELEASE_BIN_DIR/isup
+(cd $NOW; \
+echo "Zipping the target: $TARGET......."; \
+gzip "$TARGET.tar";)&
+typeset -i t=15
+while [[ t -gt 0 ]]
+do
+sleep 1
+echo "...\c"
+t=t-1
+done
+
+echo "\n$TYPE Tar completed!"
+#
+# END
+#

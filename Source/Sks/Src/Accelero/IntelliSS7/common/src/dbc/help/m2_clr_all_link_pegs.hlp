@@ -1,0 +1,24 @@
+
+MTP2 Command
+
+SYNOPSIS
+    m2_clr_all_link_pegs <linkset> <linkcode>
+
+
+DESCRIPTION
+    This command clears all the peg values for the specified link.
+
+
+PARAMETERS
+	linkset			linkset that the link belongd to
+
+	linkcode		linkcode of the link
+
+
+EXAMPLE
+	>> m2_clr_all_link_pegs 1 0
+
+	********** Cleared MTP2 link pegs for  **********
+
+	    Linkset:0  Linkcode:1
+	

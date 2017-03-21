@@ -1,0 +1,12 @@
+
+ITU TCAP Module :
+   ti_get_gen_cfg      TCAP Get General Config
+   ti_set_gen_cfg      TCAP Set General Config
+   ti_get_tmr          TCAP Get Timers
+   ti_set_tmr          TCAP Set Timers
+   ti_get_behavior     TCAP Get Behaviors
+   ti_set_behavior     TCAP Set Behaviors
+   ti_get_gen_peg      TCAP Get Peg
+   ti_clr_gen_peg      TCAP Clear Peg
+
+For details about any command use "help <command name>"

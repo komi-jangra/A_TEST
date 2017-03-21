@@ -1,0 +1,1954 @@
+/********************************************************************16**
+
+                         (c) COPYRIGHT 2006 by 
+                         Continuous Computing Corporation.
+                         All rights reserved.
+
+     This software is confidential and proprietary to Continuous Computing 
+     Corporation (CCPU).  No part of this software may be reproduced,
+     stored, transmitted, disclosed or used in any form or by any means
+     other than as expressly provided by the written Software License 
+     Agreement between CCPU and its licensee.
+
+     CCPU warrants that for a period, as provided by the written
+     Software License Agreement between CCPU and its licensee, this
+     software will perform substantially to CCPU specifications as
+     published at the time of shipment, exclusive of any updates or 
+     upgrades, and the media used for delivery of this software will be 
+     free from defects in materials and workmanship.  CCPU also warrants 
+     that has the corporate authority to enter into and perform under the   
+     Software License Agreement and it is the copyright owner of the software 
+     as originally delivered to its licensee.
+
+     CCPU MAKES NO OTHER WARRANTIES, EXPRESS OR IMPLIED, INCLUDING
+     WITHOUT LIMITATION WARRANTIES OF MERCHANTABILITY OR FITNESS FOR
+     A PARTICULAR PURPOSE WITH REGARD TO THIS SOFTWARE, SERVICE OR ANY RELATED
+     MATERIALS.
+
+     IN NO EVENT SHALL CCPU BE LIABLE FOR ANY INDIRECT, SPECIAL,
+     CONSEQUENTIAL DAMAGES, OR PUNITIVE DAMAGES IN CONNECTION WITH OR ARISING
+     OUT OF THE USE OF, OR INABILITY TO USE, THIS SOFTWARE, WHETHER BASED
+     ON BREACH OF CONTRACT, TORT (INCLUDING NEGLIGENCE), PRODUCT
+     LIABILITY, OR OTHERWISE, AND WHETHER OR NOT IT HAS BEEN ADVISED
+     OF THE POSSIBILITY OF SUCH DAMAGE.
+
+                       Restricted Rights Legend
+
+     This software and all related materials licensed hereby are
+     classified as "restricted computer software" as defined in clause
+     52.227-19 of the Federal Acquisition Regulation ("FAR") and were
+     developed entirely at private expense for nongovernmental purposes,
+     are commercial in nature and have been regularly used for
+     nongovernmental purposes, and, to the extent not published and
+     copyrighted, are trade secrets and confidential and are provided
+     with all rights reserved under the copyright laws of the United
+     States.  The government's rights to the software and related
+     materials are limited and restricted as provided in clause
+     52.227-19 of the FAR.
+
+                    IMPORTANT LIMITATION(S) ON USE
+
+     The use of this software is limited to the use set
+     forth in the written Software License Agreement between CCPU and
+     its Licensee. Among other things, the use of this software
+     may be limited to a particular type of Designated Equipment, as 
+     defined in such Software License Agreement.
+     Before any installation, use or transfer of this software, please
+     consult the written Software License Agreement or contact CCPU at
+     the location set forth below in order to confirm that you are
+     engaging in a permissible use of the software.
+
+                    Continuous Computing Corporation
+                    9380, Carroll Park Drive
+                    San Diego, CA-92121, USA
+
+                    Tel: +1 (858) 882 8800
+                    Fax: +1 (858) 777 3388
+
+                    Email: support@trillium.com
+                    Web: http://www.ccpu.com
+
+*********************************************************************17*/
+
+
+/********************************************************************20**
+
+    Name:     ISUP - body 7
+
+    Type:     C source file
+
+    Desc:     C source code for ISUP timer functions. These functions
+              are called to start/stop the timers and the action
+              taken upon a timer's expiry.
+
+    File:     ci_bdy7.c
+
+    Sid:      ci_bdy7.c@@/main/10 - Thu Jan 17 10:31:38 2008
+ 
+    Prg:      rh
+
+*********************************************************************21*/
+/* header include files (.h) */
+
+#include "lbs.h"           /* layer management                             */
+#include "bs.h"            
+#include "bs_err.h"      
+#include "bsapp.h"    
+#include "bssapcom.h"       
+#include "bs_trace.h"
+
+#include "s7_typ.h"
+#include "s7_def.h"
+#include "s7_api.h"
+#include "sc_stgl.h"
+#include "sc_mgst.h"
+#include "sc_msgst.h"
+
+#include <pthread.h>
+#include <netinet/in.h>
+
+/* header/extern include files (.x) */
+#include "lbs.x"           /* layer management                             */
+#include "bs.x"           
+#include "bsapp.x"    
+#include "bssapcom.x"       
+#include "bs_trace.x"
+
+/* support functions */
+void bsHandleAssignReqTimeout (U8bit * cb,S16bit event);
+void bsHandleBlkUnBlkTimeout (U8bit * cb,S16bit event);
+void bsHandleCktGrpBlkUnBlkTimeout (U8bit * cb,S16bit event);
+void bsProcessBlockTimeout (BsCirCb *crec,S16bit event);
+void bsProcessUnBlockTimeout (BsCirCb *crec,S16bit event);
+void bsProcessCktGrpBlockTimeout (BsCirCb *crec,S16bit event);
+void bsProcessCktGrpUnBlockTimeout (BsCirCb *crec,S16bit event);
+void bsHandleResetTimeout (U8bit * cb,S16bit event);
+void bsHandleResetGuardTimeout (U8bit * cb,S16bit event);
+void bsHandleResetCktTimeout (U8bit * cb,S16bit event);
+void bsHandleResetIPTimeout (U8bit * cb,S16bit event);
+S16bit bsRmvConTq (BsCallCb *con,U8bit tmrNum);
+S16bit bsRmvCirTq (BsCirCb *con,U8bit tmrNum);
+S16bit bsRmvIntfTq (BsIntfCb *intf,U8bit tmrNum);
+
+
+#if 0 
+/* Commented by Amaresh bsHandleTmrEv defn in the file bs_mptop.c */
+/*
+*
+*       Fun:    bsActvTmr
+*
+*       Desc:   Processes Timing queues for ISUP
+*
+*       Ret:    ROK     - ok
+*
+*       Notes:  None
+*
+*       File:   ci_bdy7.c
+*
+*/
+  
+#ifdef ANSI
+PUBLIC S16bit bsActvTmr
+(
+Void
+)
+#else
+PUBLIC S16bit bsActvTmr()
+#endif
+{
+   TRC2(bsActvTmr)
+   /*BSDEBUGPRINT("Entering bsActvTmr() \n");*/
+   cmPrcTmr(&bsCb.nsapTmrTqCp, bsCb.nsapTmrTq, bsHandleTmrEv);
+   cmPrcTmr(&bsCb.callTqCp, bsCb.callTq, bsHandleTmrEv);
+   cmPrcTmr(&bsCb.cirTqCp, bsCb.cirTq, bsHandleTmrEv);
+
+   RETVALUE(ROK);
+} /* end of bsActvTmr */
+
+
+
+/*
+*
+*       Fun:    bsHandleTmrEv
+*
+*       Desc:   Processes bssap Timing Events
+*
+*       Ret:    ROK     - ok
+*
+*       Notes:  None
+*
+*       File:   ci_bdy7.c
+*
+*/
+#ifdef ANSI
+void bsHandleTmrEv
+(
+PTR cb,
+S16bit event
+)
+#else
+void bsHandleTmrEv(cb, event)
+PTR cb;
+S16bit event;
+#endif
+{
+#ifdef  ZS_DFTHA
+ZsRsetCb *rsetCb;
+#endif
+    TRC2(bsHandleTmrEv)
+    BSDBGP(BSDBGMASK_TMR, (bsCb.init.prntBuf,
+                          "%s\n\nBSSAP EXPIRE TMR: x %d 0x%x \n", BS_STR, event,
+                         event));
+#ifdef  ZS_DFTHA
+   if(zsCb.init.cfgDone)
+   {
+      rsetCb = zsCb.rsetCbList[zsCb.critRsetId];
+/*      printf("bsHandleTmrEv: rsetCb %x\n",rsetCb);*/
+      if(rsetCb)
+      {
+        if(!ZS_IS_MASTER(rsetCb))
+        {
+  /*        printf("bsHandleTmrEv:NODE IS STANDBY: therefore do nothing \n");*/
+          RETVOID;
+        }
+      }
+   }
+#endif
+      rsetCb = zsCb.rsetCbList[zsCb.critRsetId];
+   switch (event)
+   {
+      case TMR_TINT:
+          bsHandleNSAPBsndTmr(cb, event);
+      break;
+     case BSSAP_T_1:
+          BSERRORPRINT("BS: bsHandleTmrEv: BSSAP_T_1  Expire \n");
+          bsHandleBlkUnBlkTimeout(cb, event);
+      break;
+     case BSSAP_T_4:
+          BSERRORPRINT("BS: bsHandleTmrEv: BSSAP_T_4  Expire \n");
+          bsHandleResetTimeout(cb, event);
+      break;
+     case BSSAP_T_7: 
+          BSERRORPRINT("BS: bsHandleTmrEv: BSSAP_T_7  Expires:do nothing \n");
+      break;
+     case BSSAP_T_8:  
+          BSERRORPRINT("BS: bsHandleTmrEv: BSSAP_T_8  Expires:do nothing \n");
+      break;
+     case BSSAP_T_10:
+          BSERRORPRINT("BS: bsHandleTmrEv: BSSAP_T_10  Expire \n");
+          bsHandleAssignReqTimeout(cb, event);
+      break;
+     case BSSAP_T_11:
+          BSERRORPRINT("BS: bsHandleTmrEv: BSSAP_T_11  Expires:do nothing \n");
+      break;
+     case BSSAP_T_13:
+          BSERRORPRINT("BS: bsHandleTmrEv: BSSAP_T_13  Expire \n");
+          bsHandleResetGuardTimeout(cb, event);
+      break;
+     case BSSAP_T_17:
+     case BSSAP_T_18:
+          BSERRORPRINT("BS: bsHandleTmrEv: BSSAP_T_17 or BSSAP_T_18 Expires:do nothing \n");
+      break;
+     case BSSAP_T_19:
+          BSERRORPRINT("BS: bsHandleTmrEv: BSSAP_T_19  Expire \n");
+          bsHandleResetCktTimeout(cb, event);
+      break;
+     case BSSAP_T_20:
+          BSERRORPRINT("BS: bsHandleTmrEv: BSSAP_T_20  Expire \n");
+          bsHandleCktGrpBlkUnBlkTimeout(cb, event);
+      break;
+     case BSSAP_T_RBSC:
+          BSERRORPRINT("BS: bsHandleTmrEv: BSSAP_T_RBSC  Expire \n");
+          bsHandleResetIPTimeout(cb, event);
+      break;
+     case BSSAP_T_25:
+          BSERRORPRINT("bsHandleTmrEv: BSSAP_T_25 Expires:do nothing \n");
+      break;
+      default:
+         BSDBGP(BSDBGMASK_CERR, (bsCb.init.prntBuf,
+                      "invalid timer %d expired\n", event));
+#if (ERRCLASS & ERRCLS_DEBUG)
+         BSLOGERROR(ERRCLS_DEBUG, EBS832, (ErrVal) 0,
+                 "bsHandleTmrEv() Failed, invalid timer event");
+#endif
+       BSCORE(CRITICAL,BSERR_CORE_NONE,DEFAULT,DEFAULT,DEFAULT,DEFAULT,"bsHandleTmrEv():Invalid time ",DEFAULT);
+         RETVOID;
+   }
+  
+  RETVOID;
+} /* end of bsHandleTmrEv */
+
+/*
+*
+*       Fun:    bsRmvNSAPTq
+*
+*       Desc:   Removes Control Block from Timing Queue
+*
+*       Ret:    ROK     - ok
+*
+*       Notes:  None
+*
+*       File:   ci_bdy7.c
+*
+*/
+#ifdef ANSI
+PUBLIC S16bit bsRmvNSAPTq 
+(
+BsNSAPCb *cb,
+U8bit tmrNum
+)
+#else
+PUBLIC S16bit bsRmvNSAPTq(cb)
+BsNSAPCb *cb;
+U8bit tmrNum;
+#endif
+{
+   CmTmrArg arg;
+   
+   TRC2(bsRmvNSAPTq)
+
+/*   printf("bsRmvNSAPTq: Entering :\n");*/
+   arg.tq     = bsCb.nsapTmrTq;
+   arg.tqCp   = &bsCb.nsapTmrTqCp;
+   arg.timers = cb->timers;
+   arg.cb     = (PTR)cb;
+   arg.evnt   = NOTUSED;
+   arg.wait   = NOTUSED;
+   arg.tNum   = tmrNum;
+   arg.max    = MAXSIMTIMER;
+   BSDBGP(BSDBGMASK_TMR, (bsCb.init.prntBuf, "Removed NSAP BIND TMR: - %d 0x%x \n",
+                         tmrNum, tmrNum));
+   cmRmvCbTq(&arg);
+  /* printf("bsRmvNSAPTq: NSAP BIND TMR  REMOVED\n");*/
+
+   RETVALUE(ROK);
+} /* end of bsRmvNSAPTq */
+
+
+#endif /* Amaresh Commented */
+
+#if 0
+/*
+*
+*       Fun:    bsStopNSAPTmr
+*
+*       Desc:   Stops given NSAP Timer
+*
+*       Ret:    ROK     - ok
+*
+*       Notes:  None
+*
+*       File:   ci_bdy7.c
+*
+*/
+#ifdef ANSI
+PUBLIC S16bit bsStopNSAPTmr
+(
+BsNSAPCb *cb,
+S16bit     timer
+)
+#else
+PUBLIC S16bit bsStopNSAPTmr(cb, timer)
+BsNSAPCb *cb;
+S16bit     timer;
+#endif
+{
+
+   U8bit tmrNum;
+   TRC2(bsStopNSAPTmr)
+   for (tmrNum = 0; tmrNum < MAXSIMTIMER; tmrNum++)
+      if ((cb->timers[tmrNum].tmrEvnt == timer) || (timer == TMR_ALL))
+         bsRmvNSAPTq(cb, tmrNum);
+
+/*   printf("bsStopNSAPTmr: Stop NSAP timer:tmrNum[%d] \n",tmrNum);*/
+   RETVALUE(ROK);
+
+} /* end of bsStopNSAPTmr */
+
+
+
+/*
+*
+*       Fun:    bsHandleNSAPBsndTmr 
+*
+*       Desc:   Processes bssap NSAP Bsnd Timing Expiry Events
+*
+*       Ret:    ROK     - ok
+*
+*       Notes:  None
+*
+*       File:   ci_bdy7.c
+*
+*/
+#ifdef ANSI
+void bsHandleNSAPBsndTmr
+(
+PTR cb,
+S16bit event
+)
+#else
+void bsHandleNSAPBsndTmr(cb, event)
+PTR cb;
+S16bit event;
+#endif
+{
+   BsNSAPCb *nCb;
+   PrintData data;
+
+   U8bit event1;
+
+   TRC2(bsHandleNSAPBsndTmr)
+   cmMemset((U8bit *)&data, '\0',  sizeof(PrintData));
+   
+   event1 = (U8bit)event;
+   nCb = (BsNSAPCb *) cb;
+  /*      printf(" NSAP state:[%d] bndRetryCnt[%d]\n",nCb->state,nCb->bndRetryCnt);*/
+  if (nCb->state == BS_WT_BNDCFM)
+  {
+      /****************************/
+      data.timerId=BSSAP_T_19;
+      data.bndRetryCnt=nCb->bndRetryCnt;
+      data.suId=nCb->suId;
+      data.spId=nCb->spId;
+      BSCORE(INFO,BSDATA_TIMEREXP_RECV,DEFAULT,&data,BSDATA_BIND_TIMER,DEFAULT,DEFAULT,DEFAULT);
+     /******************************/
+     if (nCb->bndRetryCnt < BS_MAX_INTRETRY)
+     {
+        nCb->bndRetryCnt++;
+      /*  printf(" Restarting NSAP BIND TIMER AGAIN \n");*/
+        bsStartNSAPTmr(TMR_TINT, nCb);
+        BsLiSptBndReq(&nCb->pst, nCb->suId, nCb->spId, (U8bit) SS_BSSAP);
+     }
+     else
+     {
+       BSCORE(CRITICAL,BSERR_CORE_NONE,DEFAULT,DEFAULT,DEFAULT,DEFAULT,"bsHandleNSAPBsndTmr():max timer limit ",DEFAULT);
+/*        printf(" Raising ALARM for BIND TIMER EXPIRY as bndRetryCnt exceeds Max limit \n");*/
+          nCb->bndRetryCnt = 0;
+          nCb->state       = BS_UNBND;
+          bsInitUstaDgn(LBS_USTA_DGNVAL_SUID, (PTR) &nCb->suId,
+                                LBS_USTA_DGNVAL_EVENT, (PTR) &event1,
+                                LBS_USTA_DGNVAL_STATE, (PTR) &nCb->state,
+                                LBS_USTA_DGNVAL_SPID, (PTR) &nCb->spId);
+
+          bsGenAlarmNew(&bsCb.init.lmPst, LCM_CATEGORY_PROTOCOL,
+                                LCM_EVENT_BND_FAIL, LCM_CAUSE_TMR_EXPIRED,TRUE);
+      }
+  }
+ RETVOID;
+
+}
+
+#endif /* Commented by Amaresh */
+
+
+/*
+*
+*       Fun:    bsHandleAssignReqTimeout
+*
+*       Desc:   Processes T10(Assign Request) Timing Expiry Events
+*
+*       Ret:    ROK     - ok
+*
+*       Notes:  None
+*
+*       File:   ci_bdy7.c
+*
+*/
+#ifdef ANSI
+void bsHandleAssignReqTimeout
+(
+U8bit * cb,
+S16bit event
+)
+#else
+void bsHandleAssignReqTimeout(cb, event)
+U8bit * cb;
+S16bit event;
+#endif
+{
+  BsCallCb *call = SS7_NULL;
+  BsCallCb *nCb = SS7_NULL;
+  U8bit cause;
+  U16bit cic =0;
+  BsIntfCb  *bsIntfCb = SS7_NULL;
+  U32bit callRef = 0;
+  U32bit callId = 0;
+  U8bit msgtype = 0;
+
+   nCb = (BsCallCb *) cb;
+   cause = C_RADIO_INTERFACE_MSG_FAIL;
+   
+   callRef = nCb->suInstId;
+   LOG_PRINT(INFO,"bsHandleAssignReqTimeout: ProcessBSSAP ASSIGNMENT REQUEST Timeout:callref[%ld]\n",callRef);
+
+   bsIntfCb = nCb->intfCb;
+   if(bsIntfCb)
+   {
+     LOG_PRINT(INFO,"bsHandleAssignReqTimeout:INTF CB Present) \n");
+   }
+   else
+   {
+     BSCORE(CRITICAL,BSERR_CORE_NONE,DEFAULT,DEFAULT,DEFAULT,DEFAULT,"bsHandleAssignReqTimeout():Intf null",DEFAULT);
+     return ;
+   }
+   call = bsFindCall(bsIntfCb,callRef);  
+   if(call)
+   {
+      cic = call->cic;
+      callId = call->callId;
+      if(cic)
+      {
+
+        LOG_PRINT(INFO,"ASSIGNMENT REQ Timeout for CIC %d \n",cic);
+        if((bsIntfCb->cicDataList != SS7_NULL) && (bsIntfCb->cicDataList[cic].cic == cic))
+        {
+           BS_SET_CALLSTATE_IDLE(bsIntfCb->cicDataList[cic].flaglistSet);
+        }
+        else
+        {
+#if 0
+            /*Raise Alarm to Stack Manager */
+            msgtype = BSSAP_MSG_ASSIGN_REQUEST;
+            bsInitUstaDgn(LBS_USTA_DGNVAL_BSCID, (PTR)&bsIntfCb->bscId,
+                   LBS_USTA_DGNVAL_CIC, (PTR) &cic,
+                   LBS_USTA_DGNVAL_MSGTYPE,(PTR)&msgtype,
+                   LBS_USTA_DGNVAL_DPC, (PTR) &bsIntfCb->phyDpc);
+
+            bsGenAlarmNew(&bsCb.init.lmPst, LCM_CATEGORY_PROTOCOL,
+                    LBS_EVENT_CIC_CONTEXT_NOT_FOUND, LCM_CAUSE_INV_PAR_VAL,TRUE);
+#endif /* Amaresh */
+        }
+       LOG_PRINT(INFO,"bsHandleAssignReqTimeout:Send Assignment fail by BSSAP stack for T10 Timeout\n"); 
+       BsSendFailureMsg(call,BSSAP_MSG_ASSIGN_FAILURE,cause,SS7_NULL,0,bsIntfCb);
+       BsDispatchErrorToApp(call, BSSAP_MD_PROTOCOL, BSSAP_EASSREQFAIL,0,0,bsIntfCb);
+      }
+      else if(callId)
+      {
+	 LOG_PRINT(INFO," ASSIGNMENT REQ Timeout for CallId %d \n",callId);
+         LOG_PRINT(INFO,"bsHandleAssignReqTimeout:Send Assignment fail by BSSAP stack for T10 Timeout\n");
+         BsSendFailureMsg(call,BSSAP_MSG_ASSIGN_FAILURE,cause,SS7_NULL,0,bsIntfCb);
+         BsDispatchAOIPProtocolErrToApp(call,BSSAP_MD_PROTOCOL,BSSAP_EASSREQFAIL,&callId,sizeof(U32bit),BSSAP_MSG_ASSIGN_REQUEST,bsIntfCb);
+
+      }
+      else
+      {
+         LOG_PRINT(INFO,"bsHandleAssignReqTimeout: Neither CallId nor CIC  found in the Call pointer\n");
+#if (ERRCLASS & ERRCLS_INT_PAR)
+         BSLOGERROR(ERRCLS_INT_PAR, EBS088, (ErrVal) 0,
+                 "bsHandleAssignReqTimeout() Failed, No cic found");
+#endif
+         return ;
+      }
+    }
+    else
+    {
+/*      printf("bsHandleAssignReqTimeout: Absence of Call\n");*/
+      BSCORE(CRITICAL,BSERR_CORE_NONE,DEFAULT,DEFAULT,DEFAULT,DEFAULT,"bsHandleAssignReqTimeout():Absence of Call",DEFAULT);
+      return ; 
+    }
+   return ; 
+}
+/*
+*
+*       Fun:    bsHandleBlkUnBlkTimeout
+*
+*       Desc:   Processes T1(Block Unblock) Timing Expiry Events
+*
+*       Ret:    ROK     - ok
+*
+*       Notes:  None
+*
+*       File:   ci_bdy7.c
+*
+*/
+#ifdef ANSI_PROTO
+void bsHandleBlkUnBlkTimeout
+(
+U8bit * cb,
+S16bit event
+)
+#else
+void bsHandleBlkUnBlkTimeout(cb, event)
+U8bit *cb;
+S16bit event;
+#endif
+{
+  BsCirCb *nCb = SS7_NULL;
+  BsIntfCb *bsIntfCb = SS7_NULL;
+  U16bit cic = 0;
+
+  BSDEBUGPRINT("BS: bsHandleBlkUnBlkTimeout: ProcessBSSAP Blk/UnBlk Timeout\n");
+
+  nCb = (BsCirCb *) cb;
+  cic = nCb->cic;  
+  bsIntfCb = nCb->intfCb;
+  if(cic)
+  {
+     if(bsIntfCb)
+     {
+         if((bsIntfCb->cicDataList != SS7_NULL) && (bsIntfCb->cicDataList[cic].cic == cic))
+         {
+           if(nCb->msgtype ==  BSSAP_MSG_BLOCK)
+           {
+              BSDEBUGPRINT("BS: bsHandleBlkUnBlkTimeout: ProcessBSSAP BLOCK Timeout for CIC[%lu]\n",cic);
+              bsProcessBlockTimeout(nCb,event);
+           }
+           else if(nCb->msgtype ==  BSSAP_MSG_UNBLOCK)
+           {
+            BSDEBUGPRINT("BS: bsHandleBlkUnBlkTimeout: ProcessBSSAP UNBLOCK Timeout for CIC[%lu]\n",cic);
+            bsProcessUnBlockTimeout(nCb,event);
+           }
+           else
+           {   
+              BSDEBUGPRINT("BS: bsHandleBlkUnBlkTimeout: NO ProcessBSSAP BLOCK/UNBLOCK stored for  CIC[%d]\n",cic);
+              BSCORE(CRITICAL,BSERR_CORE_NONE,DEFAULT,DEFAULT,DEFAULT,DEFAULT,"bsHandleCktGrpBlkUnBlkTimeout():wrong msg",DEFAULT);
+           }
+         }
+         else
+         {
+              BSDEBUGPRINT("bsHandleBlkUnBlkTimeout: NO cic configured  CIC[%d]\n",cic);
+              BSCORE(CRITICAL,BSERR_CORE_NONE,DEFAULT,DEFAULT,DEFAULT,DEFAULT,"bsHandleCktGrpBlkUnBlkTimeout():no cic config",DEFAULT);
+         }
+     }
+     else
+     {
+       BSCORE(CRITICAL,BSERR_CORE_NONE,DEFAULT,DEFAULT,DEFAULT,DEFAULT,"bsHandleCktGrpBlkUnBlkTimeout():Intf null",DEFAULT);
+     } 
+  }
+  return ;	
+}
+
+/*
+*
+*       Fun:    bsHandleCktGrpBlkUnBlkTimeout
+*
+*       Desc:   Processes T20(Circuit Group Block Unblock) Timing Expiry Events
+*
+*       Ret:    ROK     - ok
+*
+*       Notes:  None
+*
+*       File:   ci_bdy7.c
+*
+*/
+#ifdef ANSI_PROTO
+void bsHandleCktGrpBlkUnBlkTimeout
+(
+U8bit * cb,
+S16bit event
+)
+#else
+void bsHandleCktGrpBlkUnBlkTimeout(cb, event)
+U8bit * cb;
+S16bit event;
+#endif
+{
+  BsCirCb *nCb = SS7_NULL;
+  BsIntfCb *bsIntfCb = SS7_NULL;
+  U16bit cic = 0;
+
+
+  LOG_PRINT(INFO,"bsHandleCktGrpBlkUnBlkTimeout: ProcessBSSAP Blk/UnBlk Timeout\n");
+
+  nCb = (BsCirCb *) cb;
+  cic = nCb->cic;
+  bsIntfCb = nCb->intfCb;
+  if(cic)
+  {
+     if(bsIntfCb)
+     {
+         if((bsIntfCb->cicDataList != SS7_NULL) && (bsIntfCb->cicDataList[cic].cic == cic))
+         {
+           if(nCb->msgtype ==  BSSAP_MSG_CKT_GROUP_BLOCK)
+           {
+              LOG_PRINT(INFO,"bsHandleCktGrpBlkUnBlkTimeout: ProcessBSSAP CIRCUIT GROUP BLOCK Timeout for CIC[%d]",cic);
+              bsProcessCktGrpBlockTimeout(nCb,event);
+           }
+           else if(nCb->msgtype ==  BSSAP_MSG_CKT_GRP_UNBLOCK)
+           {
+              LOG_PRINT(INFO,"bsHandleCktGrpBlkUnBlkTimeout: ProcessBSSAP CIRCUIT GROUP UNBLOCK Timeout for CIC[%d]\n",cic);
+              bsProcessCktGrpUnBlockTimeout(nCb,event);
+           }
+           else
+           {
+              
+              BSCORE(CRITICAL,BSERR_CORE_NONE,DEFAULT,DEFAULT,DEFAULT,DEFAULT,"bsHandleCktGrpBlkUnBlkTimeout():wrong msg",DEFAULT);
+           }
+         }
+         else
+         {
+            LOG_PRINT(INFO,"bsHandleCktGrpBlkUnBlkTimeout: NO cic configured  CIC[%d]\n",cic);
+         }
+     }
+     else
+     {
+        LOG_PRINT(INFO,"bsHandleCktGrpBlkUnBlkTimeout: No interface found (bsIntfCb NULL) for CIC [%d]",cic);
+     }
+  }
+  return ;
+
+}
+/*
+*
+*       Fun:    bsProcessBlockTimeout
+*
+*       Desc:   Processes T1(Block) Timing Expiry Events
+*
+*       Ret:    ROK     - ok
+*
+*       Notes:  None
+*
+*       File:   ci_bdy7.c
+*
+*/
+#ifdef ANSI_PROTO
+void bsProcessBlockTimeout
+(
+BsCirCb *crec,
+S16bit event
+)
+#else
+void bsProcessBlockTimeout(crec,event)
+BsCirCb *crec;
+S16bit event;
+#endif
+{
+   BsIntfCb *bsIntfCb = SS7_NULL;
+   S16bit ret;
+   U8bit event1;
+   
+   event1 = (U8bit)event;
+  
+   bsIntfCb = crec->intfCb;
+   if(bsIntfCb)
+   {
+     LOG_PRINT(INFO,"bsProcessBlockTimeout: Interface is found");
+   }
+   else
+   {
+     LOG_PRINT(INFO,"bsProcessBlockTimeout: NO Interface found(bsIntfCb NULL)");
+     BSCORE(CRITICAL,BSERR_CORE_NONE,DEFAULT,DEFAULT,DEFAULT,DEFAULT,"bsProcessBlockTimeout():Intf null",DEFAULT);
+     return ;
+   }
+   if(crec->blockReqRetryCount < BSSMAP_REQ_TRIES)
+   {
+        crec->blockReqRetryCount++;
+        bsStartCirTmr(BSSAP_T_1,crec,bsIntfCb);
+        LOG_PRINT(INFO,"bsProcessBlockTimeout: Sending BLOCK REQ AGAIN for CIC[%d]\n",crec->cic);
+        ret = BsSendUDataReq(crec->databuf,crec->datalen,bsIntfCb);
+        /*Increment peg counter */
+        BsIncrPegsCounter(BSSMAP,BSSAP_MSG_BLOCK,TRANSMIT,bsIntfCb);
+   }
+   else
+   {
+     BSCORE(CRITICAL,BSERR_CORE_NONE,DEFAULT,DEFAULT,DEFAULT,DEFAULT,"bsProcessBlockTimeout():retry exceed",DEFAULT);
+#if 0
+     /*Raise Alarm to Stack Manager */
+     bsInitUstaDgn(LBS_USTA_DGNVAL_BSCID, (PTR)&bsIntfCb->bscId,
+                   LBS_USTA_DGNVAL_EVENT, (PTR)&event1,
+                   LBS_USTA_DGNVAL_CIC, (PTR) &crec->cic,
+                   LBS_USTA_DGNVAL_DPC, (PTR) &bsIntfCb->phyDpc);
+
+     bsGenAlarmNew(&bsCb.init.lmPst, LCM_CATEGORY_PROTOCOL,
+                    LBS_EVENT_TIME_OUT_NO_BLOCK_ACK_RECEIVED, LCM_CAUSE_TMR_EXPIRED,TRUE);
+#endif /* Amaresh */
+    LOG_PRINT(INFO,"bsProcessBlockTimeout: Timeout no Block Ack received,exceed blockReqRetryCount[%d]\n",crec->blockReqRetryCount);
+    BsDispatchErrorToApp(SS7_NULL, BSSAP_MD_PROTOCOL, BSSAP_ENOBLKACK,crec->cic,BSSAP_MSG_BLOCK,bsIntfCb);
+   }
+     return ;
+}
+/*
+*
+*       Fun:    bsProcessUnBlockTimeout
+*
+*       Desc:   Processes T1(UnBlock) Timing Expiry Events
+*
+*       Ret:    ROK     - ok
+*
+*       Notes:  None
+*
+*       File:   ci_bdy7.c
+*
+*/
+#ifdef ANSI_PROTO
+void bsProcessUnBlockTimeout
+(
+BsCirCb *crec,
+S16bit event
+)
+#else
+void bsProcessUnBlockTimeout(crec,event)
+BsCirCb *crec;
+S16bit event;
+#endif
+{
+   BsIntfCb *bsIntfCb = SS7_NULL;
+   S16bit ret;
+   U8bit event1;
+
+   event1 = (U8bit)event;
+   
+   bsIntfCb = crec->intfCb;
+   if(bsIntfCb)
+   {
+     LOG_PRINT(INFO,"bsProcessUnBlockTimeout: Intf Cb present");
+   }
+   else
+   {
+     LOG_PRINTF(INFO,"bsProcessUnBlockTimeout: NO Interface found(bsIntfCb NULL) for CIC[%d]\n",crec->cic);
+     BSCORE(CRITICAL,BSERR_CORE_NONE,DEFAULT,DEFAULT,DEFAULT,DEFAULT,"bsProcessUnBlockTimeout():Intf null ",DEFAULT);
+     return ;	
+   }
+  if(crec->unBlockReqRetryCount < BSSMAP_REQ_TRIES)
+  {
+        crec->unBlockReqRetryCount++;
+        bsStartCirTmr(BSSAP_T_1,crec,bsIntfCb);
+        LOG_PRINT(INFO,"bsProcessUnBlockTimeout: Sending UNBLOCK REQ AGAIN\n");
+        ret = BsSendUDataReq(crec->databuf,crec->datalen,bsIntfCb);
+        /*Increment peg counter */
+        BsIncrPegsCounter(BSSMAP,BSSAP_MSG_UNBLOCK,TRANSMIT,bsIntfCb);
+  }
+  else
+  {
+     BSCORE(CRITICAL,BSERR_CORE_NONE,DEFAULT,DEFAULT,DEFAULT,DEFAULT,"bsProcessGrpUnBlockTimeout():retry exceed",DEFAULT);
+#if 0
+     /*Raise Alarm to Stack Manager */
+     bsInitUstaDgn(LBS_USTA_DGNVAL_BSCID, (PTR)&bsIntfCb->bscId,
+                   LBS_USTA_DGNVAL_EVENT, (PTR)&event1,
+                   LBS_USTA_DGNVAL_CIC, (PTR) &crec->cic,
+                   LBS_USTA_DGNVAL_DPC, (PTR) &bsIntfCb->phyDpc);
+
+     bsGenAlarmNew(&bsCb.init.lmPst, LCM_CATEGORY_PROTOCOL,
+                    LBS_EVENT_TIME_OUT_NO_UNBLOCK_ACK_RECEIVED, LCM_CAUSE_TMR_EXPIRED,TRUE);
+#endif /* Amaresh */
+
+/*     printf("bsProcessUnBlockTimeout: Timeout no UnBlock Ack received,exceed unBlockReqRetryCount[%d]\n",crec->unBlockReqRetryCount);*/
+     BsDispatchErrorToApp(SS7_NULL, BSSAP_MD_PROTOCOL, BSSAP_ENOUNBLKACK,crec->cic,BSSAP_MSG_UNBLOCK,bsIntfCb);
+  }
+     return ;	
+}
+/*
+*
+*       Fun:    bsProcessCktGrpBlockTimeout
+*
+*       Desc:   Processes T20(Circuit Group Block) Timing Expiry Events
+*
+*       Ret:    ROK     - ok
+*
+*       Notes:  None
+*
+*       File:   ci_bdy7.c
+*
+*/
+#ifdef ANSI_PROTO
+void bsProcessCktGrpBlockTimeout
+(
+BsCirCb *crec,
+S16bit event
+)
+#else
+void bsProcessCktGrpBlockTimeout(crec,event)
+BsCirCb *crec;
+S16bit event;
+#endif
+{
+   BsIntfCb *bsIntfCb = SS7_NULL;
+   S16bit ret;
+   U8bit event1;
+
+   event1 = (U8bit)event;
+
+   bsIntfCb = crec->intfCb;
+   if(bsIntfCb)
+   {
+      LOG_PRINT(INFO,"bsProcessCktGrpBlockTimeout:INTF CB present");
+   }
+   else
+   {
+     LOG_PRINT(INFO,"bsProcessCktGrpBlockTimeout:INTF CB is NULL");
+     return ;
+   }
+   LOG_PRINT(INFO,"bsProcessCktGrpBlockTimeout: CIRCUIT GROUP BLOCK Timeout For CIC[%d] : Timeout tries [%d]\n",crec->cic,crec->cktGrpblockReqRetryCount);
+   if(crec->cktGrpblockReqRetryCount < BSSMAP_REQ_TRIES)
+   {
+        crec->cktGrpblockReqRetryCount++;
+        bsStartCirTmr(BSSAP_T_20,crec,bsIntfCb);
+        LOG_PRINT(INFO,"bsProcessCktGrpBlockTimeout: Sending CIRCUIT GROUP BLOCK REQ AGAIN for CIC[%d]\n",crec->cic);
+        ret = BsSendUDataReq(crec->databuf,crec->datalen,bsIntfCb);
+        /*Increment peg counter */
+        BsIncrPegsCounter(BSSMAP,BSSAP_MSG_CKT_GROUP_BLOCK,TRANSMIT,bsIntfCb);
+   }
+   else
+   {
+     BSCORE(CRITICAL,BSERR_CORE_NONE,DEFAULT,DEFAULT,DEFAULT,DEFAULT,"bsProcessCktGrpBlockTimeout():retry exceed",DEFAULT);
+#if 0
+     /*Raise Alarm to Stack Manager */
+     bsInitUstaDgn(LBS_USTA_DGNVAL_BSCID, (PTR)&bsIntfCb->bscId,
+                   LBS_USTA_DGNVAL_EVENT, (PTR)&event1,
+                   LBS_USTA_DGNVAL_CIC, (PTR) &crec->cic,
+                   LBS_USTA_DGNVAL_DPC, (PTR) &bsIntfCb->phyDpc);
+
+     bsGenAlarmNew(&bsCb.init.lmPst, LCM_CATEGORY_PROTOCOL,
+                    LBS_EVENT_TIME_OUT_NO_BLOCK_ACK_RECEIVED, LCM_CAUSE_TMR_EXPIRED,TRUE);
+#endif /* Commented by Amaresh */
+
+     LOG_PRINT(INFO,"bsProcessCktGrpBlockTimeout: Timeout no Block Ack received,exceed cktGrpblockReqRetryCount[%d]\n",crec->cktGrpblockReqRetryCount);
+     BsDispatchErrorToApp(SS7_NULL, BSSAP_MD_PROTOCOL, BSSAP_ENOCKTGRPBLKACK,crec->cic,BSSAP_MSG_CKT_GROUP_BLOCK,bsIntfCb);
+   }
+   return ;
+}
+/*
+*
+*       Fun:    bsProcessCktGrpUnBlockTimeout
+*
+*       Desc:   Processes T20(Circuit Group UnBlock) Timing Expiry Events
+*
+*       Ret:    ROK     - ok
+*
+*       Notes:  None
+*
+*       File:   ci_bdy7.c
+*
+*/
+#ifdef ANSI_PROTO
+void bsProcessCktGrpUnBlockTimeout
+(
+BsCirCb *crec,
+S16bit event
+)
+#else
+void bsProcessCktGrpUnBlockTimeout(crec,event)
+BsCirCb *crec;
+S16bit event;
+#endif
+{
+   BsIntfCb *bsIntfCb = SS7_NULL;
+   S16bit ret;
+   U8bit event1;
+
+   event1 = (U8bit)event;
+
+   bsIntfCb = crec->intfCb;
+   if(bsIntfCb)
+   {
+       LOG_PRINT(INFO,"bsProcessCktGrpUnBlockTimeout: INTF CB Found");
+   }
+   else
+   {
+      LOG_PRINT(INFO,"bsProcessCktGrpUnBlockTimeout: NO Interface found(bsIntfCb NULL) for CIC[%d]\n",crec->cic);
+      return ;
+   }
+   LOG_PRINT(INFO,"bsProcessCktGrpUnBlockTimeout:CIRCUIT GROUP UNBLOCK Timeout for CIC[%d]: Timeout tries [%d]\n",crec->cic,crec->cktGrpUnblockReqRetryCount);
+  if(crec->cktGrpUnblockReqRetryCount < BSSMAP_REQ_TRIES)
+  {
+        crec->cktGrpUnblockReqRetryCount++;
+        bsStartCirTmr(BSSAP_T_20,crec,bsIntfCb);
+        LOG_PRINT(INFO,"bsProcessCktGrpUnBlockTimeout: Sending CIRCUIT GROUP UNBLOCK REQ AGAIN\n");
+        ret = BsSendUDataReq(crec->databuf,crec->datalen,bsIntfCb);
+        /*Increment peg counter */
+        BsIncrPegsCounter(BSSMAP,BSSAP_MSG_CKT_GRP_UNBLOCK,TRANSMIT,bsIntfCb);
+  }
+  else
+  {
+     BSCORE(CRITICAL,BSERR_CORE_NONE,DEFAULT,DEFAULT,DEFAULT,DEFAULT,"bsProcessCktGrpUnBlockTimeout():rety exceed",DEFAULT);
+#if 0
+     /*Raise Alarm to Stack Manager */
+     bsInitUstaDgn(LBS_USTA_DGNVAL_BSCID, (PTR)&bsIntfCb->bscId,
+                   LBS_USTA_DGNVAL_EVENT, (PTR)&event1,
+                   LBS_USTA_DGNVAL_CIC, (PTR) &crec->cic,
+                   LBS_USTA_DGNVAL_DPC, (PTR) &bsIntfCb->phyDpc);
+
+     bsGenAlarmNew(&bsCb.init.lmPst, LCM_CATEGORY_PROTOCOL,
+                    LBS_EVENT_TIME_OUT_NO_UNBLOCK_ACK_RECEIVED, LCM_CAUSE_TMR_EXPIRED,TRUE);
+#endif /* Commented by Amaresh */
+
+     LOG_PRINT(INFO,"bsProcessCktGrpUnBlockTimeout: Timeout no UnBlock Ack received,exceed cktGrpUnblockReqRetryCount[%d]\n",crec->cktGrpUnblockReqRetryCount);
+     BsDispatchErrorToApp(SS7_NULL, BSSAP_MD_PROTOCOL, BSSAP_ENOCKTGRPBLKACK,crec->cic,BSSAP_MSG_CKT_GRP_UNBLOCK,bsIntfCb);
+ }
+   return ;
+}
+
+/*
+*
+*       Fun:    bsHandleResetTimeout
+*
+*       Desc:   Processes T4(Reset) Timing Expiry Events
+*
+*       Ret:    ROK     - ok
+*
+*       Notes:  None
+*
+*       File:   ci_bdy7.c
+*
+*/
+#ifdef ANSI_PROTO
+void bsHandleResetTimeout
+(
+U8bit * cb,
+S16bit event
+)
+#else
+void bsHandleResetTimeout(cb, event)
+U8bit * cb;
+S16bit event;
+#endif
+{
+   BsIntfCb *bsIntfCb = SS7_NULL;
+   S16bit ret;
+   U8bit event1;
+   
+   event1 = (U8bit)event;
+   bsIntfCb = (BsIntfCb *) cb;
+   
+   if(bsIntfCb->resetRetryCount < BSSMAP_REQ_TRIES)
+   {
+      bsIntfCb->resetRetryCount++;
+      bsStartIntfTmr(BSSAP_T_4,bsIntfCb);
+      bsIntfCb->rstSndtimerId = BSSAP_T_4;      
+      LOG_PRINT(INFO,"bsHandleResetTimeout: Sending RESET REQ AGAIN: resetRetryCount[%d]\n",bsIntfCb->resetRetryCount);
+      /*Sending RESET REQ AGAIN*/
+      ret = BsSendUDataReq(bsIntfCb->databuf,bsIntfCb->datalen,bsIntfCb);
+      /*Increment peg counter */
+      BsIncrPegsCounter(BSSMAP,BSSAP_MSG_RESET,TRANSMIT,bsIntfCb);
+   }
+   else
+   {
+     LOG_PRINT("bsHandleResetTimeout:Timeout no Reset Ack received,exceed resetRetryCount[%d]\n",bsIntfCb->resetRetryCount);
+     BSCORE(CRITICAL,BSERR_CORE_NONE,DEFAULT,DEFAULT,DEFAULT,DEFAULT,"bsHandleResetTimeout():No Reset Ack",DEFAULT);
+      /* resetting the value of resetRetryCount */
+      BSDEBUGPRINT("BS: Reseting the Value of RESET Retry Count\n");
+      bsIntfCb->resetRetryCount = 0;
+#if 0
+     /*Raise Alarm to Stack Manager */
+     bsInitUstaDgn(LBS_USTA_DGNVAL_BSCID, (PTR)&bsIntfCb->bscId,
+                   LBS_USTA_DGNVAL_EVENT, (PTR)&event1,
+                   LBS_USTA_DGNVAL_SWTCH, (PTR) &bsIntfCb->swtch,
+                   LBS_USTA_DGNVAL_DPC, (PTR) &bsIntfCb->phyDpc);
+
+     bsGenAlarmNew(&bsCb.init.lmPst, LCM_CATEGORY_PROTOCOL,
+                    LBS_EVENT_TIME_OUT_NO_RESET_ACK_RECEIVED, LCM_CAUSE_TMR_EXPIRED,TRUE);
+#endif /* Amaresh */
+     BsDispatchErrorToApp(SS7_NULL, BSSAP_MD_PROTOCOL, BSSAP_ENORESETACK,0,BSSAP_MSG_RESET,bsIntfCb);
+   }
+   return ;	
+}
+
+/*
+*
+*       Fun:    bsHandleResetIPTimeout
+*
+*       Desc:   Processes T_RBSC(Reset IP) Timing Expiry Events
+*
+*       Ret:    ROK     - ok
+*
+*       Notes:  None
+*
+*       File:   ci_bdy7.c
+*
+*/
+#ifdef ANSI_PROTO
+void bsHandleResetIPTimeout
+(
+U8bit * cb,
+S16bit event
+)
+#else
+void bsHandleResetIPTimeout(cb, event)
+U8bit * cb;
+S16bit event;
+#endif
+{
+   BsIntfCb *bsIntfCb = SS7_NULL;
+   S16bit ret;
+   BSSAP_IE ies[30];
+   BSSAP_Hdr hdr;
+   S16bit iecount = 0;
+   S16bit  callIdLen;
+   U32bit CallIdListBuf[255];
+   BSSAP_IE *ieData = SS7_NULL;
+   U32bit i = 0;
+   U8bit event1;
+
+   event1 = (U8bit)event;
+   bsIntfCb = (BsIntfCb *) cb;
+   if(bsIntfCb)
+   {
+     LOG_PRINT(INFO,"bsHandleResetIPTimeout: Interface found");
+   }
+   else
+   {
+     LOG_PRINT(INFO,"bsHandleResetIPTimeout: NO Interface found(NULL)");
+     return ;
+   }
+   if(bsIntfCb->resetIPRetryCount < BSSMAP_REQ_TRIES)
+   {
+      bsIntfCb->resetIPRetryCount++;
+      bsStartIntfTmr(BSSAP_T_RBSC,bsIntfCb);
+      LOG_PRINT(INFO,"bsHandleResetIPTimeout: Sending RESET REQ AGAIN\n");
+      /*Sending RESET IP REQ AGAIN*/
+      ret = BsSendUDataReq(bsIntfCb->databuf,bsIntfCb->datalen,bsIntfCb);
+      /*Increment peg counter */
+      BsIncrPegsCounter(BSSMAP,BSSAP_MSG_RESET_IP,TRANSMIT,bsIntfCb);
+   }
+   else
+   {
+
+     LOG_PRINT(INFO,"bsHandleResetIPTimeout: Timeout no Reset Ack received,exceed resetRetryCount[%d]\n",bsIntfCb->resetIPRetryCount);
+     /* resetting the value of resetRetryCount */
+     BSDEBUGPRINT("BS: Reseting the Value of RESET IP Retry Count\n");
+     bsIntfCb->resetIPRetryCount = 0;
+
+     memset((U8bit *)&ies, '\0',  30);
+     memset((U8bit *)&hdr, '\0',  sizeof(BSSAP_Hdr));
+     memset((U8bit *)&CallIdListBuf, '\0', 255);
+     ret = BsDecode(bsIntfCb->databuf,bsIntfCb->datalen,ies,&iecount,&hdr); 
+     if(ret != SS7_SUCCESS)
+     {
+        LOG_PRINT(INFO,"bsHandleResetIPTimeout: BsDecode failed for RESET IP\n");
+        return ;
+     }
+     LOG_PRINT(INFO,"bsHandleResetIPTimeout: calling BsFindIE BSSAP_IEI_CALLID_LIST\n");
+     ieData = (BSSAP_IE*)BsFindIE(ies,iecount,BSSAP_IEI_CALLID_LIST);
+     if(ieData)
+     {
+        callIdLen = ieData->param_length; 
+     /*      printf("#####CallID length [%ld] \n",callIdLen);*/
+        for(i = 0; i < callIdLen/4 ; i++)
+        {
+/*           printf("#####Copying Call Id [%ld] \n",ieData->param_data.call_id_list.calllist[i].callId);*/
+           ss7_memcpy((U8bit*)&CallIdListBuf[i],(U8bit*)&ieData->param_data.call_id_list.calllist[i].callId,sizeof(BSSAP_CallIdentifier)); 
+        }
+     }
+#if 0
+     /*Raise Alarm to Stack Manager */
+     bsInitUstaDgn(LBS_USTA_DGNVAL_BSCID, (PTR)&bsIntfCb->bscId,
+                   LBS_USTA_DGNVAL_EVENT, (PTR)&event1,
+                   LBS_USTA_DGNVAL_SWTCH, (PTR) &bsIntfCb->swtch,
+                   LBS_USTA_DGNVAL_DPC, (PTR) &bsIntfCb->phyDpc);
+
+     bsGenAlarmNew(&bsCb.init.lmPst, LCM_CATEGORY_PROTOCOL,
+                    LBS_EVENT_TIME_OUT_NO_RESETIP_ACK_RECEIVED, LCM_CAUSE_TMR_EXPIRED,TRUE);
+#endif /* Commented By Amaresh */
+
+     BsDispatchAOIPProtocolErrToApp(SS7_NULL,BSSAP_MD_PROTOCOL,BSSAP_ENORESETIPACK,CallIdListBuf,callIdLen,BSSAP_MSG_RESET_IP,bsIntfCb);
+   }
+   return ;
+}
+/*
+*
+*       Fun:    bsHandleResetGuardTimeout
+*
+*       Desc:   Processes T13(Reset guard) Timing Expiry Events
+*
+*       Ret:    ROK     - ok
+*
+*       Notes:  None
+*
+*       File:   ci_bdy7.c
+*
+*/
+#ifdef ANSI
+void bsHandleResetGuardTimeout
+(
+U8bit * cb,
+S16bit event
+)
+#else
+void bsHandleResetGuardTimeout(cb, event)
+U8bit * cb;
+S16bit event;
+#endif
+{
+   BsIntfCb *bsIntfCb = SS7_NULL;
+   bsIntfCb = (BsIntfCb *) cb;
+   if(bsIntfCb)
+   {
+       LOG_PRINT(INFO,"bsHandleResetGuardTimeout: Interface found");
+   }
+   else
+   {
+     printf("bsHandleResetGuardTimeout: NO Interface found(bsIntfCb NULL)\n");
+     return ;
+   }
+   LOG_PRINT(INFO,"BS: bsHandleResetGuardTimeout: GUARD TIMER T13 EXPIRES for DPC[%d] INTFID[%d] GCNID[%d]\n",bsIntfCb->phyDpc,bsIntfCb->intfId,bsIntfCb->bscId);
+   bsIntfCb->rstRcvtimerId = BSSAP_INVALID_TMRID;
+   BsDispatchTimeoutErrorToApp(NULL,BSSAP_MD_TIMEOUT,BSSAP_T_13,0,bsIntfCb);
+}
+/*
+*
+*       Fun:    bsHandleResetCktTimeout
+*
+*       Desc:   Processes T19(Reset_ckt) Timing Expiry Events
+*
+*       Ret:    ROK     - ok
+*
+*       Notes:  None
+*
+*       File:   ci_bdy7.c
+*
+*/
+#ifdef ANSI_PROTO
+void bsHandleResetCktTimeout
+(
+U8bit * cb,
+S16bit event
+)
+#else
+void bsHandleResetCktTimeout(cb, event)
+U8bit * cb;
+S16bit event;
+#endif
+{
+   BsIntfCb *bsIntfCb = SS7_NULL;
+   BsCirCb *crec = SS7_NULL;
+   S16bit ret;
+   U16bit cic = 0;
+   U8bit event1;
+   
+  event1 = (U8bit)event;
+  crec = (BsCirCb *) cb;
+  if(crec == SS7_NULL)
+  {
+    /* printf("bsHandleResetCktTimeout: No Circuit pointer (crec NULL)\n");*/
+     BSCORE(CRITICAL,BSERR_CORE_NONE,DEFAULT,DEFAULT,DEFAULT,DEFAULT,"bsHandleResetCktTimeout:crec null",DEFAULT);
+     return ;
+  }
+  cic = crec->cic;
+
+  LOG_PRINT(INFO,"bsHandleResetCktTimeout: Reset Circuit timeout for CIC[%d]\n",cic);
+  bsIntfCb = crec->intfCb;
+
+   if(bsIntfCb)
+   {
+      LOG_PRINT(INFO,"bsHandleResetCktTimeout: Interface found(bsIntfCb)");
+   }
+   else
+   {
+     BSCORE(CRITICAL,BSERR_CORE_NONE,DEFAULT,DEFAULT,DEFAULT,DEFAULT,"bsHandleResetCktTimeout():Intf null",DEFAULT);
+     return ;
+   }
+   if(crec->resetCktRetryCount < BSSMAP_REQ_TRIES)
+   {
+      crec->resetCktRetryCount++;
+      bsStartCirTmr(BSSAP_T_19,crec,bsIntfCb);
+      LOG_PRINT(INFO,"bsHandleResetCktTimeout: Sending RESET CKT REQ AGAIN\n");
+      /*Sending RESET CKT REQ AGAIN*/
+      ret = BsSendUDataReq(crec->databuf,crec->datalen,bsIntfCb);
+      /*Increment peg counter */
+      BsIncrPegsCounter(BSSMAP,BSSAP_MSG_RESET_CIRCUIT,TRANSMIT,bsIntfCb);
+   }
+   else
+   {
+     BSCORE(CRITICAL,BSERR_CORE_NONE,DEFAULT,DEFAULT,DEFAULT,DEFAULT,"bsHandleResetCktTimeout():No Reset Ack",DEFAULT);
+#if 0
+     /*Raise Alarm to Stack Manager */
+     bsInitUstaDgn(LBS_USTA_DGNVAL_BSCID, (PTR)&bsIntfCb->bscId,
+                   LBS_USTA_DGNVAL_EVENT, (PTR)&event1,
+                   LBS_USTA_DGNVAL_CIC, (PTR) &cic,
+                   LBS_USTA_DGNVAL_DPC, (PTR) &bsIntfCb->phyDpc);
+
+     bsGenAlarmNew(&bsCb.init.lmPst, LCM_CATEGORY_PROTOCOL,
+                    LBS_EVENT_TIME_OUT_NO_RESET_CKT_ACK_RECEIVED, LCM_CAUSE_TMR_EXPIRED,TRUE);
+#endif /* Amaresh */
+
+   LOG_PRINT(INFO,"bsHandleResetCktTimeout: Timeout no Reset Circuit Ack received,exceed resetCktRetryCount[%d]\n",crec->resetCktRetryCount);
+     BsDispatchErrorToApp(SS7_NULL, BSSAP_MD_PROTOCOL, BSSAP_ENORESETCKTACK,0,BSSAP_MSG_RESET_CIRCUIT,bsIntfCb);
+   }
+   return ;
+}
+
+#if 0
+/*
+*
+*       Fun:   bsStartNSAPTmr
+*
+*       Desc:  start network SAP timer
+*
+*       Ret:   ROK      - ok
+*
+*       Notes: None
+*
+*       File:  ci_bdy7.c
+*
+*/
+
+#ifdef ANSI
+PUBLIC S16bit bsStartNSAPTmr
+(
+S16bit       timer,
+BsNSAPCb  *cb
+)
+#else
+PUBLIC S16bit bsStartNSAPTmr(timer, cb)
+S16bit      timer;
+BsNSAPCb *cb;
+#endif
+{
+
+   U16bit wait;
+   CmTmrArg arg;
+
+   TRC2(bsStartNSAPTmr)
+
+#if (ERRCLASS & ERRCLS_DEBUG)
+   if (cb == SS7_NULL)
+   {
+      BSCORE(CRITICAL,BSERR_CORE_NONE,DEFAULT,DEFAULT,DEFAULT,DEFAULT,"bsStartNSAPTmr():nsap null ",DEFAULT);
+      BSDBGP(BSDBGMASK_CERR, (bsCb.init.prntBuf, "Null NSAP control block.\n"));
+      BSLOGERROR(ERRCLS_DEBUG, EBS822, (ErrVal) 0,
+                 "bsStartNSAPTmr() Failed, control block is SS7_NULL");
+      RETVALUE(ROK);
+   }
+#endif
+   wait = 0;
+  switch (timer)
+   {
+      case TMR_TINT:
+         if (cb->tINT.enb == TRUE)
+            wait = cb->tINT.val;
+         break;
+
+#if (ERRCLASS & ERRCLS_DEBUG)
+      default:
+         BSDBGP(BSDBGMASK_CERR, (bsCb.init.prntBuf,
+                      "invalid timer : 0x%x %d\n", timer, timer));
+         BSLOGERROR(ERRCLS_DEBUG, EBS823, (ErrVal) 0,
+                 "bsStartNSAPTmr() Failed, invalid timer event");
+         BSCORE(CRITICAL,BSERR_CORE_NONE,DEFAULT,DEFAULT,DEFAULT,DEFAULT,"bsStartNSAPTmr():Invalid time ",DEFAULT);
+         RETVALUE(RFAILED);
+#endif
+   }
+   if (wait != 0)
+   {
+      arg.tq     = bsCb.nsapTmrTq;
+      arg.tqCp   = &bsCb.nsapTmrTqCp;
+      arg.timers = cb->timers;
+      arg.cb     = (PTR)cb;
+      arg.evnt   = timer;
+      arg.wait   = wait;
+      arg.tNum   = NOTUSED;
+      arg.max    = MAXSIMTIMER;
+
+      BSDBGP(BSDBGMASK_TMR, (bsCb.init.prntBuf,
+                            "NSAP TMR: + %d 0x%x [val:%d] \n",
+                            timer, timer, wait));
+   /*   printf("Starting Bsnd Timer :value[%d]\n",wait); */
+      cmPlcCbTq(&arg);
+      BSDEBUGPRINT("BS: bsStartNSAPTmr(): STARTED TIMER[%s] \n",BS_PRINT_TMR_EVT_STR(timer));
+   }
+   else
+   {
+      BSDBGP(BSDBGMASK_WARN, (bsCb.init.prntBuf,
+                             "NSAP TMR 0x%x %d has 0 timeout \n",
+                             timer, timer));
+       BSCORE(CRITICAL,BSERR_CORE_NONE,DEFAULT,DEFAULT,DEFAULT,DEFAULT,"bsStartNSAPTmr():Invalid timeout ",DEFAULT);
+   }
+   RETVALUE(ROK);
+} /* end of bsStartNSAPTmr */
+
+#endif /* Commented by Amaresh */
+
+/*
+*
+*       Fun:   bsStartConTmr
+*
+*       Desc:  start network connection timer
+*
+*       Ret:   ROK      - ok
+*
+*       Notes: None
+*
+*       File:  
+*
+*/
+
+#ifdef ANSI_PROTO
+void bsStartConTmr
+(
+S16bit timer,
+BsCallCb *con,
+BsIntfCb *cb
+)
+#else
+Void bsStartConTmr(timer, con, cb)
+S16bit timer;
+BsCallCb *con;
+BsIntfCb *cb;
+#endif
+{
+   U16bit wait;
+   error_t  ecode ;
+   return_t    result ;
+
+#if (ERRCLASS & ERRCLS_DEBUG)
+   if (cb == SS7_NULL)
+   {
+      BSDBGP(BSDBGMASK_CERR, (bsCb.init.prntBuf,
+                      "control block is null !\n"));
+      BSLOGERROR(ERRCLS_DEBUG, EBS824, (ErrVal) 0,
+                 "bsStartConTmr() Failed, control block is SS7_NULL");
+      BSCORE(CRITICAL,BSERR_CORE_NONE,DEFAULT,DEFAULT,DEFAULT,DEFAULT,"bsStartConTmr():cb null ",DEFAULT);
+      return void;
+   }
+#endif
+   wait = 0;
+   switch(timer)
+   {
+      case BSSAP_T_7:
+         if (cb->t7.enb == SS7_TRUE)
+         {
+            wait = cb->t7.val;
+            printf("BS: CIC %lu T7 VAL %d \n",con->cic,wait);
+         }
+         break;
+      case BSSAP_T_8:
+         if (cb->t8.enb == SS7_TRUE)
+         { 
+            wait = cb->t8.val;
+            printf("BS: CIC %lu T8 VAL %d \n",con->cic,wait);
+         }
+         break;
+      case BSSAP_T_10:
+         if (cb->t10.enb == SS7_TRUE)
+         {
+            wait = cb->t10.val;
+            printf("BS: CIC %lu T10 VAL %d \n",con->cic,wait);
+         }
+         break;
+      case BSSAP_T_11:
+         if (cb->t11.enb == SS7_TRUE)
+         {
+            wait = cb->t11.val;
+            printf("BS: CIC %lu T11 VAL %d \n",con->cic,wait);
+         }
+         break;
+#if (ERRCLASS & ERRCLS_DEBUG)
+      default:
+         BSDBGP(BSDBGMASK_CERR, (bsCb.init.prntBuf,
+                      "invalid timer : 0x%x %d\n", timer, timer));
+         BSLOGERROR(ERRCLS_DEBUG, EBS825, (ErrVal) 0,
+                   "bsStartConTmr() Failed, invalid timer event");
+         BSCORE(CRITICAL,BSERR_CORE_NONE,DEFAULT,DEFAULT,DEFAULT,DEFAULT,"bsStartConTmr():invalid timer ",DEFAULT);
+         RETVOID;
+#endif
+   }
+   if (wait != 0)
+   {
+   result = ss7_start_timer (wait, (pvoid)&con,
+               sizeof(BsCallCb), BSSAP_MODULE_ID, timer, p_ecode) ; 
+  if (result == SS7_SUCCESS)
+     {
+        con->timerId = timer;
+        LOG_PRINT(INFO,"Timer Started & Timer Id is updated in BsCallCb %d",con->timerId);
+     }
+     else
+     {
+        LOG_PRINT(INFO,"Timer Start Failure for BsCallCb");
+     }
+ 
+#if 0
+/*   printf("STARTING CONNECTION TIMER :[%s]\n",BS_PRINT_TMR_EVT_STR(timer));*/
+      con->timerId = timer;
+      arg.tq = bsCb.callTq;
+      arg.tqCp = &bsCb.callTqCp;
+      arg.timers = con->timers;
+      arg.cb = (PTR)con;
+      arg.evnt = timer;
+      arg.wait = wait;
+      arg.tNum = NOTUSED;
+      arg.max = MAXSIMTIMER;
+      BSDBGP(BSDBGMASK_TMR, (bsCb.init.prntBuf,
+              "CON TMR: + %d 0x%x [val:%d] \n", timer, timer, wait));
+      cmPlcCbTq(&arg);
+      BSDEBUGPRINT("BS: bsStartConTmr(): START TIMER[%s] \n",BS_PRINT_TMR_EVT_STR(timer));
+   }
+#endif
+   else
+   {
+      BS_A_TRC(("CON TMR 0x%x %d has 0 timeout", timer, timer));
+       BSCORE(CRITICAL,BSERR_CORE_NONE,DEFAULT,DEFAULT,DEFAULT,DEFAULT,"ibsStartConTmr():zero time ",DEFAULT);
+   }
+   return ;
+} /* end of bsStartConTmr */
+
+/*
+*
+*       Fun:    bsStopConTmr
+*
+*       Desc:   Stops all Connection Timers
+*
+*       Ret:    ROK     - ok
+*
+*       Notes:  None
+*
+*       File:   ci_bdy7.c
+*
+*/
+
+#ifdef ANSI_PROTO
+ Void bsStopConTmr
+(
+BsCallCb *con,
+S16bit timer
+)
+#else
+Void bsStopConTmr(con, timer)
+BsCallCb *con;
+S16bit timer;
+#endif
+{
+   U8bit tmrNum;
+   error_t  ecode ;
+
+
+   for (tmrNum = 0; tmrNum < MAXSIMTIMER; tmrNum++)
+      if ((con->timers[tmrNum].tmrEvnt == timer) || (timer == TMR_ALL))
+         bsRmvConTq(con, tmrNum);
+   return void;
+} /* end of bsStopConTmr */
+
+/*
+*
+*       Fun:    bsRmvConTq
+*
+*       Desc:   Removes Connection from Timing Queue
+*
+*       Ret:    ROK     - ok
+*
+*       Notes:  None
+*
+*       File:   ci_bdy7.c
+*
+*/
+
+#ifdef ANSI_PROTO
+S16bit bsRmvConTq
+(
+BsCallCb *con,
+U8bit tmrNum
+)
+#else
+S16bit bsRmvConTq(con, tmrNum)
+BsCallCb *con;
+U8bit tmrNum;
+#endif
+{
+   error_t  ecode ;
+   return_t    result ;
+
+   BSDEBUGPRINT("BS: bsRmvConTq(): STOPPING TIMER[%s] \n",BS_PRINT_TMR_EVT_STR(con->timers[tmrNum].tmrEvnt));
+   /*Call  Stop Timer of Aricent to stop the Timer Amaresh */
+
+   result = ss7_stop_timer (tmrNum, p_ecode) ;
+		
+   if (result != SS7_SUCCESS)
+  {
+    LOG_PRINT(INFO,"SCCP::SCOC: Couldn't stop Timer,tmrNum[%d]\n",tmrNum);
+    return(SS7_FAILURE);
+  }
+  else
+  {
+   /* cmRmvCbTq(&arg);*//* Commented by Amaresh */
+   con->timerId = BSSAP_INVALID_TMRID;
+  }
+
+  return (SS7_SUCCESS) ;
+
+} /* end of bsRmvConTq */
+/*
+*
+*       Fun:   bsStartCirTmr
+*
+*       Desc:  start timer for a particular circuit
+*
+*       Ret:   ROK      - ok
+*
+*       Notes: None
+*
+*       File:
+*
+*/
+
+#ifdef ANSI_PROTO
+void bsStartCirTmr
+(
+S16bit timer,
+BsCirCb *cir,
+BsIntfCb *cb
+)
+#else
+void bsStartCirTmr(timer, cir, cb)
+S16bit timer;
+BsCirCb *cir;
+BsIntfCb *cb;
+#endif
+{
+   U16bit   wait;
+   error_t  ecode;
+   return_t result;
+
+
+#if (ERRCLASS & ERRCLS_DEBUG)
+   if (cb == SS7_NULL)
+   {
+      BS_A_TRC(("Intf control block is null !\n"));
+      BSLOGERROR(ERRCLS_DEBUG, EBS824, (ErrVal) 0,
+                 "bsStartCirTmr() Failed, control block is SS7_NULL");
+      BSCORE(CRITICAL,BSERR_CORE_NONE,DEFAULT,DEFAULT,DEFAULT,DEFAULT,"bsStartCirTmr():cb null ",DEFAULT);
+      return ;
+   }
+#endif
+   wait = 0;
+   switch(timer)
+   {
+      case BSSAP_T_1:
+         if (cb->t1.enb == SS7_TRUE)
+         {
+            wait = cb->t1.val;
+         }
+         break;
+      case BSSAP_T_19:
+         if (cb->t19.enb == SS7_TRUE)
+         {
+            wait = cb->t19.val;
+         }
+         break;
+      case BSSAP_T_20:
+         if (cb->t20.enb == SS7_TRUE)
+         {
+            wait = cb->t20.val;
+         }
+         break;
+#if (ERRCLASS & ERRCLS_DEBUG)
+      default:
+         BS_A_TRC(("invalid timer : 0x%x %d\n", timer, timer));
+         BSLOGERROR(ERRCLS_DEBUG, EBS825, (ErrVal) 0,
+                 "bsStartCirTmr() Failed, invalid timer event");
+       BSCORE(CRITICAL,BSERR_CORE_NONE,DEFAULT,DEFAULT,DEFAULT,DEFAULT,"bsStartCirTmr():invalid timer ",DEFAULT);
+      return ;
+#endif
+   }
+   if (wait != 0)
+   {
+     result = ss7_start_timer (wait, (pvoid)&cir,
+               sizeof(BsCirCb), BSSAP_MODULE_ID, timer, p_ecode) ;
+     if (result == SS7_SUCCESS)
+     {
+      	cir->timerId = timer;
+	LOG_PRINT(INFO,"Timer Started & Timer Id is updated in BsCirCb %d",cir->timerId); 	
+     }			
+     else
+     {
+	LOG_PRINT(INFO,"Timer Start Failure for BsCirCb"); 	
+     }	
+#if 0	
+/*   printf(" STARTING CIRCUIT timer [%s] \n",BS_PRINT_TMR_EVT_STR(timer)); */
+      cir->timerId = timer;
+      arg.tq = bsCb.cirTq;
+      arg.tqCp = &bsCb.cirTqCp;
+      arg.timers = cir->timers;
+      arg.cb = (PTR)cir;
+      arg.evnt = timer;
+      arg.wait = wait;
+      arg.tNum = NOTUSED;
+      arg.max = MAXSIMTIMER;
+      BSDBGP(BSDBGMASK_TMR, (bsCb.init.prntBuf,
+              "CON TMR: + %d 0x%x [val:%d] \n", timer, timer, wait));
+      cmPlcCbTq(&arg);
+      BSDEBUGPRINT("BS: bsStartCirTmr(): STARTED TIMER[%s] \n",BS_PRINT_TMR_EVT_STR(timer));
+#endif /* Commented by Amaresh */
+   }
+   else
+   {
+      BS_A_TRC(("CON TMR 0x%x %d has 0 timeout \n", timer, timer));
+      BSCORE(CRITICAL,BSERR_CORE_NONE,DEFAULT,DEFAULT,DEFAULT,DEFAULT,"bsStartCirTmr():zero timeout ",DEFAULT);
+   }
+ return ;
+}
+/*
+*
+*       Fun:   bsStartIntfTmr
+*
+*       Desc:  start timer for a particular interface
+*
+*       Ret:   ROK      - ok
+*
+*       Notes: None
+*
+*       File:
+*
+*/
+#ifdef ANSI_PROTO
+Void bsStartIntfTmr
+(
+S16bit timer,
+BsIntfCb *cb
+)
+#else
+Void bsStartIntfTmr(timer,cb)
+S16bit timer;
+BsIntfCb *cb;
+#endif
+{
+   U16bit      wait;
+   error_t     ecode;
+   return_t    result;
+
+#if (ERRCLASS & ERRCLS_DEBUG)
+   if (cb == SS7_NULL)
+   {
+      BSDBGP(BSDBGMASK_CERR, (bsCb.init.prntBuf,
+                      "control block is null !\n"));
+      BSLOGERROR(ERRCLS_DEBUG, EBS824, (ErrVal) 0,
+                 "bsStartIntfTmr() Failed, control block is SS7_NULL");
+      BSCORE(CRITICAL,BSERR_CORE_NONE,DEFAULT,DEFAULT,DEFAULT,DEFAULT,"bsStartIntfTmr():cb null",DEFAULT);
+      return void;
+   }
+#endif
+   wait = 0;
+   switch(timer)
+   {
+      case BSSAP_T_4:
+         if (cb->t4.enb == SS7_TRUE)
+         {
+            wait = cb->t4.val;
+         }
+         break;
+      case BSSAP_T_13:
+         if (cb->t13.enb == SS7_TRUE)
+         {
+            wait = cb->t13.val;
+         }
+         break;
+      case BSSAP_T_17:
+         if (cb->t17.enb == SS7_TRUE)
+         {
+            wait = cb->t17.val;
+         }
+         break;
+      case BSSAP_T_18:
+         if (cb->t18.enb == SS7_TRUE)
+         {
+            wait = cb->t18.val;
+         }
+         break;
+     case BSSAP_T_RBSC:
+         if (cb->trbsc.enb == SS7_TRUE)
+         {
+            wait = cb->trbsc.val;
+         }
+         break;
+#if (ERRCLASS & ERRCLS_DEBUG)
+      default:
+         BS_A_TRC(("invalid timer : 0x%x %d", timer, timer));
+         BSLOGERROR(ERRCLS_DEBUG, EBS825, (ErrVal) 0,
+                 "bsStartIntfTmr() Failed, invalid timer event\n");
+        BSCORE(CRITICAL,BSERR_CORE_NONE,DEFAULT,DEFAULT,DEFAULT,DEFAULT,"bsStartIntfTmr():invalid timer ",DEFAULT);
+   /*      printf("bsStartIntfTmr() Failed, invalid timer event \n");*/
+      return ;
+#endif
+   }
+   if (wait != 0)
+   {
+        result = ss7_start_timer (wait, (pvoid)&cb,sizeof(BsIntfCb), BSSAP_MODULE_ID, timer, p_ecode) ;
+     if (result == SS7_SUCCESS)
+     {
+        cb->rstRcvtimerId = timer;
+        LOG_PRINT(INFO,"Timer Started & Timer Id is updated in BsIntfCb->rstRcvtimerId %d",cb->rstRcvtimerId);
+     }
+     else
+     {
+        LOG_PRINT(INFO,"Timer Start Failure for BsCallCb");
+     }
+
+#if 0
+      arg.tq = bsCb.nsapTmrTq;
+      arg.tqCp = &bsCb.nsapTmrTqCp;
+      arg.timers = cb->timers;
+      arg.cb = (PTR)cb;
+      arg.evnt = timer;
+      arg.wait = wait;
+      arg.tNum = NOTUSED;
+      arg.max = MAXSIMTIMER;
+      BSDBGP(BSDBGMASK_TMR, (bsCb.init.prntBuf,
+              "INTERFACE TMR: + %d 0x%x [val:%d] \n", timer, timer, wait));
+      cmPlcCbTq(&arg);
+#endif /* Commented by Amaresh */
+      BSDEBUGPRINT("BS: bsStartIntfTmr(): STARTED TIMER[%s] for INTFID[%d] : GCNID[%d]\n",BS_PRINT_TMR_EVT_STR(timer),cb->intfId,cb->bscId);
+   }
+   else
+   {
+      BS_A_TRC(("INTERFACE TMR 0x%x %d has 0 timeout", timer, timer));
+       BSCORE(CRITICAL,BSERR_CORE_NONE,DEFAULT,DEFAULT,DEFAULT,DEFAULT,"bsStartIntfTmr():Invalid time ",DEFAULT);
+   }
+   return ;
+
+}
+/*
+*
+*       Fun:    bsStopCirTmr
+*
+*       Desc:   Stops all Connection Timers
+*
+*       Ret:    ROK     - ok
+*
+*       Notes:  None
+*
+*       File:   ci_bdy7.c
+*
+*/
+
+#ifdef ANSI_PROTO
+Void bsStopCirTmr
+(
+BsCirCb *cir,
+S16bit timer
+)
+#else
+Void bsStopCirTmr(cir, timer)
+BsCirCb *cir;
+S16bit timer;
+#endif
+{
+   U8bit tmrNum;
+
+   for(tmrNum = 0; tmrNum < MAXSIMTIMER; tmrNum++)
+   {
+      if ((cir->timers[tmrNum].tmrEvnt == timer) || (timer == TMR_ALL))
+      {
+         bsRmvCirTq(cir, tmrNum);
+         cir->timerId = BSSAP_INVALID_TMRID;
+      }
+   }
+   return void;
+} /* end of bsStopCirTmr */
+/*
+*
+*       Fun:    bsRmvCirTq
+*
+*       Desc:   Removes Circuit from Timing Queue
+*
+*       Ret:    ROK     - ok
+*
+*       Notes:  None
+*
+*       File:   ci_bdy7.c
+*
+*/
+
+#ifdef ANSI_PROTO
+S16bit bsRmvCirTq
+(
+BsCirCb *cir,
+U8bit tmrNum
+)
+#else
+S16bit bsRmvCirTq(cir, tmrNum)
+BsCirCb *cir;
+U8bit tmrNum;
+#endif
+{
+   error_t  ecode ;
+   return_t    result ;
+   
+    BSDEBUGPRINT("BS: bsRmvCirTq(): STOPPING TIMER[%s] CIC[%d] INTFID[%d]\n",BS_PRINT_TMR_EVT_STR(cir->timers[tmrNum].tmrEvnt),cir->cic,cir->intfCb->intfId);
+
+  /*Call  Stop Timer of Aricent to stop the Timer Amaresh */
+   result = ss7_stop_timer (tmrNum, p_ecode) ;
+   if (result != SS7_SUCCESS)
+  {
+    LOG_PRINT(INFO,"BSSAP::bsRmvCirTq: Couldn't stop Timer,tmrNum[%d]\n",tmrNum);
+    return(SS7_FAILURE);
+  }
+  else
+  {
+   cir->timerId = BSSAP_INVALID_TMRID;
+  }
+    return(SS7_SUCCESS);
+}
+/* end of bsRmvCirTq */
+
+/*
+*
+*       Fun:    bsStopIntfTmr
+*
+*       Desc:   Stops Interface Timers
+*
+*       Ret:    ROK     - ok
+*
+*       Notes:  None
+*
+*       File:   ci_bdy7.c
+*
+*/
+
+#ifdef ANSI
+void bsStopIntfTmr
+(
+BsIntfCb *intf,
+S16bit timer
+)
+#else
+void bsStopIntfTmr(intf, timer)
+BsIntfCb *intf;
+S16bit timer;
+#endif
+{
+   U8bit tmrNum;
+
+   TRC2(bsStopIntfTmr)
+
+   for (tmrNum = 0; tmrNum < MAXSIMTIMER; tmrNum++)
+      if ((intf->timers[tmrNum].tmrEvnt == timer) || (timer == TMR_ALL))
+         bsRmvIntfTq(intf, tmrNum);
+   return void;
+} /* end of bsStopIntfTmr */
+
+/*
+*
+*       Fun:    bsRmvIntfTq
+*
+*       Desc:   Removes Interface timer from Timing Queue
+*
+*       Ret:    ROK     - ok
+*
+*       Notes:  None
+*
+*       File:   ci_bdy7.c
+*
+*/
+
+#ifdef ANSI_PROTO
+S16bit bsRmvIntfTq
+(
+BsIntfCb *intf,
+U8bit tmrNum
+)
+#else
+S16bit bsRmvIntfTq(intf, tmrNum)
+BsIntfCb *intf;
+U8bit tmrNum;
+#endif
+{
+   error_t  ecode ;
+   return_t    result ;
+
+   BSDEBUGPRINT("BS: bsRmvIntfTq(): STOPPING TIMER[%s] INTFId[%d]\n",BS_PRINT_TMR_EVT_STR(intf->timers[tmrNum].tmrEvnt),intf->intfId);
+   /*Call  Stop Timer of Aricent to stop the Timer Amaresh */
+
+   result = ss7_stop_timer (tmrNum, p_ecode) ;
+
+   if (result != SS7_SUCCESS)
+  {
+    LOG_PRINT(INFO,"BSSAP::SCOC: Couldn't stop Timer,tmrNum[%d]\n",tmrNum);
+    return(SS7_FAILURE);
+  }
+  else
+  {
+   /* cmRmvCbTq(&arg);*//* Commented by Amaresh */
+   intf->timerId = BSSAP_INVALID_TMRID;
+  }
+  return (SS7_SUCCESS) ;
+} /* end of bsRmvIntfTq */
+
+

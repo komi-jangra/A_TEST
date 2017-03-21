@@ -1,0 +1,27 @@
+include ../../../../Csapp/Util/make.opt
+USERTARGET = SystemClassPsscm_env$(sctOEXTENSION)
+USERLIBRARIES = $(LFLAGS) $(LIBS) -linst-DB -ldbwrappers -lsemaphore
+
+COMP_FLAG = -DXUSE_SIGNAL_NUMBERS -D__C_APPL $(CFLAGS)# 
+USER_FLAG = -D__UT_TEST
+
+HDRFILES = -I../../../../../Inc/Sys/ \
+           -I../../../../../Inc/Ipc/ \
+           -I../../../../../Inc/Dbs/ \
+           -I../../../../../Inc/Csapp/ \
+           -I../../../../../Inc/Oam/ \
+           -I../../../../../Inc/Bpm/ \
+           -I../../../../../Inc/Oams/ \
+	   -I../../../../../Inc/Pssks/ \
+           -I../../../Inc/ \
+           -I../Inc/
+
+
+
+SystemClassPsscm_env$(sctOEXTENSION): SystemClassPsscm_env.c SystemClassPsscm.ifc
+	$(sctCC) $(sctCPPFLAGS) $(sctCCFLAGS) $(sctIFDEF) SystemClassPsscm_env.c -o SystemClassPsscm_env$(sctOEXTENSION)
+
+sctUSERDEFS = -g $(COMP_FLAG) $(USER_FLAG) $(HDRFILES)
+
+clean_user_objs:
+	$(sctRM) $(USERTARGET)

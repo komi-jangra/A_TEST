@@ -1,0 +1,89 @@
+SCTP Command
+
+SYNOPSIS
+    s_get_gen_peg <trid> <pegid> 
+
+DESCRIPTION
+    This command displays peg count for given transport id and peg type.
+
+PARAMETERS
+    trid  - transport id
+    pegid - peg id
+
+    Different SCTP peg types and corresponding values are given below -
+
+    Peg Type                           Peg ID
+    -----------------------------------------
+
+    PEG_SCTP_CURR_ESTAB                     16
+    PEG_SCTP_ACTIVE_ESTAB                   17
+    PEG_SCTP_PASSIVE_ESTAB                  18
+    PEG_SCTP_ABORTED                        19
+    PEG_SCTP_SHUTDOWNS                      20
+
+    PEG_SCTP_GEN_STATES_STATISTICS          31 
+
+    PEG_SCTP_OOB                            32
+    PEG_SCTP_SENT_CHUNKS                    33
+    PEG_SCTP_REC_CHUNKS                     34
+    PEG_SCTP_OO_SENT_CHUNKS                 35
+    PEG_SCTP_OO_REC_CHUNKS                  36
+    PEG_SCTP_FRAG_DG                        37
+    PEG_SCTP_REASMB_DG                      38
+
+    PEG_SCTP_GEN_STATISTICS                 47
+
+    PEG_SCTP_T1_EXPIRED                     80
+    PEG_SCTP_T2_EXPIRED                     81
+    PEG_SCTP_RETR_CHUNKS                    82
+    PEG_SCTP_CKSUM_ERROR                    83
+
+    PEG_SCTP_ASSOC_STATISTICS               111
+
+EXAMPLE
+    >> s_get_gen_peg 0x4e22 80 
+  
+    Timer T1 expired         : 0
+
+
+NOTE
+
+1.  In order to display pegs 17-20 in one list use the following peg-id.
+
+    PEG_SCTP_GEN_STATES_STATISTICS          31 
+
+EXAMPLE
+    >> s_get_gen_peg  0x4e22 31
+
+    Active Establish state   : 1
+    Passive Establish state  : 0
+    Aborted                  : 0
+    Shutdowns                : 0
+
+2. In order to display pegs 32-38 in one list use the following peg-id.
+
+   PEG_SCTP_GEN_STATISTICS                  47
+
+EXAMPLE
+   >>  s_get_gen_peg 0x4e22 47
+
+    Out of blue              : 0
+    Sent chunks              : 10
+    Received chunks          : 10
+    Out of order sent        : 0
+    Out of order received    : 0
+    Fragmented user message  : 0
+    Reassembled user message : 0
+
+3. In order to display pegs 80-83 in one list use the following peg-id.
+
+   PEG_SCTP_ASSOC_STATISTICS              111
+
+EXAMPLE
+   >>  s_get_gen_peg 0x4e22 111
+
+   Timer T1 expired         : 1 
+   Timer T2 expired         : 0
+   Retransmitted chunks     : 0
+   Checksum error           : 0
+

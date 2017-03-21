@@ -1,0 +1,25 @@
+
+M3UA / SUA Command
+
+SYNOPSIS
+    u_gen_cfg
+
+DESCRIPTION
+    This command displays general configuration parameters for M3UA / SUA 
+     protocol layer. Alarm level controls UAL alarms sent to Accelero application.
+
+PARAMETERS
+    None.
+
+EXAMPLE
+    >> u_gen_cfg
+    ---------------------------------------------------
+    Dump of UAL Config:
+        Interworking Mode    <aspMode> 
+        Ack Timer            <600> 
+        Pending Timer        <2> 
+        Heart Beat Interval   <5> 
+        Alarm Level           <OFF>
+
+
+

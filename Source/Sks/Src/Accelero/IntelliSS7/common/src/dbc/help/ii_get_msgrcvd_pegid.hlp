@@ -1,0 +1,22 @@
+
+ITU ISUP Command
+
+SYNOPSIS
+ii_get_msgrcvd_pegid
+
+DESCRIPTION
+    Displays the Message Received Peg Id
+
+PARAMETERS
+    NONE
+
+EXAMPLE
+
+>> ii_get_msgrcvd_pegid
+
+Peg Name                            Peg Id
+-------                            --------
+PEG_ISUP_REMOTE_IAM_RCVD         0
+PEG_ISUP_REMOTE_ACM_RCVD         1
+PEG_ISUP_REMOTE_ANM_RCVD         2
+

@@ -1,0 +1,39 @@
+Scope
+-----
+This document explains the procedure to run the Integrated Setup of BICH and TestStubs ( CFG, ABIHM).
+Unit testing of BICH has been performed using this setup.
+
+Procedure to run setup:
+-----------------------
+Perform following steps to run the setup for testing:
+
+    Run the new IPC Framework, it will also run the dbServer.
+
+    Use Script_N_Packages to populate the data in dbServer.
+
+    Run the binaries of BICHandler on a terminals.
+      e.g.  ./System_BICHandler_apc.sct
+
+    Run the executables for Test Subs of ABIHM, CFG on 
+    different terminals from path  ./BSC-Development/Source/Oams/TestStub/Bich/ 
+    Names of testStub Executables are : TestStubCfg, TestStubAbihm.
+
+    The TestStubs of ABIHM and CFG have been automated for following messages: 
+    ABIHM:
+        CSAPP_ABIHM_BICH_BIC_HELLO
+        CSAPP_ABIHM_BICH_DS_LINK_EST
+        CSAPP_ABIHM_TRXH_LAPD_LINK_UP
+        CSAPP_ABIHM_TRXH_LAPD_LINK_DOWN
+	CSAPP_ABIHM_BICH_DS_LINK_FAIL
+    CFG:
+	OAMS_CFG_BICH_ADD_BIC_REQ
+	OAMS_CFG_BICH_DEL_BIC_REQ
+
+Procedure to compile Test stubs:
+-------------------------------
+    TestSubCfg   - make -f Makefile_CFG
+    TestSubAbihm - make -f Makefile_ABIHM
+
+-------------------------------
+Vikash Kumar
+Email:vikash2.kumar@aricent.com

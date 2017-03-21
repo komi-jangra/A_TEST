@@ -1,0 +1,18 @@
+
+
+ANSI SCCP Command
+
+SYNOPSIS
+    sa_clr_all_peg 
+
+DESCRIPTION
+    This command clears all SCCP pegs to 0.
+
+PARAMETERS
+    None.
+
+EXAMPLE
+    >> sa_clr_all_peg
+    Clearing All ANSI SCCP Pegs for  Now
+
+

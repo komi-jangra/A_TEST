@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<u2 OMVersion="3.7" StorageVersion="4" ToolVersion="4.3.0.0.14276">
+<Resource Guid="IdHLEEZHAEEEXEQt5LESm2EE">
+<cHiddenStereotypeInstance>
+<InstanceExpr Guid="gClVEEZHAEEEiRkt5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="urn:u2:etc/CppPredefined.u2">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="strUri">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Boolean@=@Boolean@Boolean@Boolean"/>
+<cRightOperand>
+<Ident Name="true">
+<rDefinition R="uid:@Predefined@Boolean@true"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="isLibrary">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@modelDependency"/>
+</InstanceExpr>
+<InstanceExpr Guid="hClVEEZHAEEEiRkt5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="urn:u2:etc/CApplicationProfile.u2">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="strUri">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Boolean@=@Boolean@Boolean@Boolean"/>
+<cRightOperand>
+<Ident Name="true">
+<rDefinition R="uid:@Predefined@Boolean@true"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="isLibrary">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@modelDependency"/>
+</InstanceExpr>
+<InstanceExpr Guid="7ClVEEZHAEEEiRkt5LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="urn:u2:etc/CppImport.u2">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="strUri">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Boolean@=@Boolean@Boolean@Boolean"/>
+<cRightOperand>
+<Ident Name="true">
+<rDefinition R="uid:@Predefined@Boolean@true"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="isLibrary">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@modelDependency"/>
+</InstanceExpr>
+</cHiddenStereotypeInstance>
+<rRoot R="uid:*dHLEEZHAEEEXEQt5LESm2EE"/>
+</Resource>
+<Package Guid="*dHLEEZHAEEEXEQt5LESm2EE" Name="UtilInc">
+<cStereotypeInstance>
+<InstanceExpr Guid="BR3LEEZHAEEE8EQt5LESm2EE">
+<rInstanceOf>
+<Ident Name="C Application">
+<rDefinition R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+</Ident>
+</rInstanceOf>
+</InstanceExpr>
+<InstanceExpr Guid="cR3LEEZHAEEE8EQt5LESm2EE">
+<rInstanceOf>
+<Ident Name="cppImportSpecification">
+<rDefinition R="uid:@TTDCppImport@cppImportSpecification"/>
+</Ident>
+</rInstanceOf>
+</InstanceExpr>
+<InstanceExpr Guid="D43LEEZHAEEE8EQt5LESm2EE">
+<rInstanceOf>
+<Ident Name="globalNamespace">
+<rDefinition R="uid:@TTDCppPredefined@globalNamespace"/>
+</Ident>
+</rInstanceOf>
+</InstanceExpr>
+</cStereotypeInstance>
+</Package>
+</u2>

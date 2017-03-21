@@ -1,0 +1,19 @@
+
+HDRFILES = -I../../../../../Inc/Sys/ -I../../../../../Inc/Ipc/ -I../../../../../Inc/Dbs/ -I../../../Inc/ -I../../../../../Inc/Csapp/ -I../../../../../Inc/Oam/ -I../../../../../Inc/Oams/
+
+USERLIBRARIES = -L../../../../../Bin/Host/CommonLib/ -L../../../../Dbs/Bin/Host/CommonLib/ -lCLIB -ltau -lfrm -llog -linst-DB -ldbwrappers
+
+COMP_FLAG = -DXUSE_SIGNAL_NUMBERS -D__C_APPL
+
+sctUSERDEFS = $(COMP_FLAG) $(HDRFILES)
+
+USERTARGET = System_TRXHM_env$(sctOEXTENSION) System_TRXHM_cod$(sctOEXTENSION)
+
+System_TRXHM_env$(sctOEXTENSION): System_TRXHM_env.c System_TRXHM.ifc System_TRXHM_cod.h
+	$(sctCC) $(sctCPPFLAGS) $(sctCCFLAGS) $(sctIFDEF) System_TRXHM_env.c -o System_TRXHM_env$(sctOEXTENSION)
+
+System_TRXHM_cod$(sctOEXTENSION) : System_TRXHM_cod.c System_TRXHM_cod.h
+	$(sctCC) $(sctCPPFLAGS) $(sctCCFLAGS) $(sctIFDEF) System_TRXHM_cod.c -o System_TRXHM_cod$(sctOEXTENSION)
+
+clean_user_objs:
+	$(sctRM) $(USERTARGET)

@@ -1,0 +1,7 @@
+all		c	both	its_advunix.h
+all		c	both	its_decunix.h
+all		c	both	its_genunix.h
+all		c	both	its_hpux.h
+all		c	both	its_linux.h
+all		c	both	its_solaris.h
+all		c	both	its_win.h

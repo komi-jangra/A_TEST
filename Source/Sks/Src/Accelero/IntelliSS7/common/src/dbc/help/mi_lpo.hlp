@@ -1,0 +1,18 @@
+
+ITU MTP3 Command
+
+SYNOPSIS
+    mi_lpo <linkset> <linkcode>
+
+DESCRIPTION
+    Sets Local Processor outage for the specified link
+
+PARAMETERS
+    linkset       linkset which owns the link
+    linkcode      link id within the specified linkset
+
+
+EXAMPLE
+    >> mi_lpo 1 1
+    *** sending Local Processor Outage to MTP3 for ls:1 lc:1 ***
+

@@ -1,0 +1,57 @@
+
+ANSI ISUP Command
+
+SYNOPSIS
+ia_get_msg_rcvd_pegid
+
+DESCRIPTION
+ Displays the Message Received Peg Id
+
+PARAMETERS
+    NONE
+
+EXAMPLE
+
+>> ia_get_msg_rcvd_pegid
+
+     Peg Name                             Peg id 
+     --------                             ------
+
+PEG_ISUP_REMOTE_IAM_RCVD                  0
+PEG_ISUP_REMOTE_ACM_RCVD                  1
+PEG_ISUP_REMOTE_ANM_RCVD                  2
+PEG_ISUP_REMOTE_REL_RCVD                  3
+PEG_ISUP_REMOTE_RLC_RCVD                  4
+PEG_ISUP_REMOTE_BLO_RCVD                  5
+PEG_ISUP_REMOTE_UBL_RCVD                  6
+PEG_ISUP_REMOTE_BLA_RCVD                  7
+PEG_ISUP_REMOTE_CPG_RCVD                  8
+PEG_ISUP_REMOTE_CGB_RCVD                  9
+PEG_ISUP_REMOTE_CGBA_RCVD                10
+PEG_ISUP_REMOTE_CQM_RCVD                 11
+PEG_ISUP_REMOTE_CQR_RCVD                 12
+PEG_ISUP_REMOTE_GRS_RCVD                 13
+PEG_ISUP_REMOTE_GRA_RCVD                 14
+PEG_ISUP_REMOTE_CGU_RCVD                 15
+PEG_ISUP_REMOTE_CGUA_RCVD                16
+PEG_ISUP_REMOTE_CRG_RCVD                 17
+PEG_ISUP_REMOTE_CFN_RCVD                 18
+PEG_ISUP_REMOTE_COT_RCVD                 19
+PEG_ISUP_REMOTE_CCR_RCVD                 20
+PEG_ISUP_REMOTE_FOT_RCVD                 21
+PEG_ISUP_REMOTE_INF_RCVD                 22
+PEG_ISUP_REMOTE_INR_RCVD                 23
+PEG_ISUP_REMOTE_LPA_RCVD                 24
+PEG_ISUP_REMOTE_PAM_RCVD                 25
+PEG_ISUP_REMOTE_RSC_RCVD                 26
+PEG_ISUP_REMOTE_RES_RCVD                 27
+PEG_ISUP_REMOTE_SUS_RCVD                 28
+PEG_ISUP_REMOTE_UBA_RCVD                 29
+PEG_ISUP_REMOTE_UCIC_RCVD                30
+PEG_ISUP_REMOTE_CRM_RCVD                 31
+PEG_ISUP_REMOTE_CRA_RCVD                 32
+PEG_ISUP_REMOTE_CVR_RCVD                 33
+PEG_ISUP_REMOTE_CVT_RCVD                 34
+PEG_ISUP_REMOTE_EXM_RCVD                 35
+PEG_ISUP_REMOTE_FAC_RCVD                 36 [ANSI-95 Specific]
+

@@ -1,0 +1,4 @@
+release		c	ansi	libANSI-MTP3.a		ANSI-MTP3.lib
+debug		c	ansi	libANSI-MTP3D.a		ANSI-MTP3D.lib
+release		c	itu	libCCITT-MTP3.a		CCITT-MTP3.lib
+debug		c	itu	libCCITT-MTP3D.a	CCITT-MTP3D.lib

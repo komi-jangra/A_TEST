@@ -1,0 +1,67 @@
+# This script extracts the SDT reference for a given symbol number.
+# Usage:
+#     perl5 readsymbol -D <sym-num>
+#
+
+$lookfor = '';
+
+ARGLOOP: while( $#ARGV >= 0 ) {
+
+	if( "@ARGV[0]" eq "-D" ) {
+		shift; 
+		$lookfor = "@ARGV[0]"; shift;
+	} else {
+		last ARGLOOP;
+	}
+}
+
+READLOOP: while( $ln = <>) {
+	@a = split(' ', $ln);
+
+	if( $#a < 2 ) {
+		next READLOOP;
+	}
+
+	if( (@a[0] eq "TIMESTAMP") || (@a[0] eq "Cmicro") ) {
+		next READLOOP;
+	}
+
+	if( (@a[1] eq "PACKAGE") ||
+	    (@a[1] eq "PROCEDURE") ||
+	    (@a[1] eq "SIGNALPAR") ||
+	    (@a[1] eq "FPAR") ||
+	    (@a[1] eq "NEWTYPE") ||
+	    (@a[1] eq "SYNTYPE") ||
+	    (@a[1] eq "LITERAL") ||
+	    (@a[1] eq "FIELD") ||
+	    (@a[1] eq "RESULT") ||
+	    (@a[1] eq "LITERAL") ||
+	    (@a[1] eq "SYSTEM") ||
+	    (@a[1] eq "BLOCK") ||
+	    (@a[1] eq "PROCESS") ||
+	    (@a[1] eq "DCL") ||
+	    (@a[1] eq "TIMER") ||
+	    (@a[1] eq "SIGNALROUTE") ||
+	    (@a[1] eq "CHANNEL") ||
+	    (@a[1] eq "SIGNAL") ) {
+		# Nothing
+		$type='';
+		$ref='';
+		$sym='';
+		next READLOOP;
+	} elsif( @a[1] eq "NEXTSTATE") {
+		$type=@a[1];
+		$ref=@a[5];
+		$sym=@a[4];
+	} else {
+		$type=@a[1];
+		$ref=@a[3];
+		$sym=@a[2];
+	}
+
+	if( $lookfor eq '' ) {
+		printf( "%s [%s] %s\n", $sym, $type, $ref )
+	} elsif ( $lookfor eq $sym ) {
+		printf( "%s\n", $ref )
+	}
+}

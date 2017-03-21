@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+
+<!-- XML file for application configuration TestDsmMntGcsNode2Win32. -->
+
+<!DOCTYPE Application SYSTEM "file:D:/hd/cvsroot/IntelliSS7/ENGINE/src/engine.dtd">
+
+<Application name           = "TestDsmMntGcsNode2Win32"
+             type           = "console-application"
+             globalStart    = ""
+             binding        = "CPP"
+             library        = ""
+             appSelector    = "ApplicationSelector">
+
+    <AppOptions name = "traceFlushAfterWrite" value = "yes"/>
+    <AppOptions name = "memPoolChecksOn"      value = "no"/>
+
+    <ParserExtension
+        library         = "DSM-GCSD.dll"
+        elementName     = "DsmGcsConfig"
+        startFunc       = "DSM_GCS_ConfigParseStart"
+        stopFunc        = "DSM_GCS_ConfigParseStop"
+        xlateFunc       = "DSM_GCS_ConfigConvertParserData"
+        diffFunc        = "DSM_GCS_ConfigDiff"
+    />
+                                            
+    <FaultTolerance
+        maxNumFtGroups      = "8"
+        maxNumProcesses     = "6"
+        maxNumNodes         = "4"
+        nodeId              = "2"
+        processId           = "5"
+        tcapFtGroupId       = "0"
+        sccpFtGroupId       = "0"
+        mtp3FtGroupId       = "0"
+        isupFtGroupId       = "0"
+        routingFtGroupId    = "0"
+        timersFtGroupId     = "0"
+        mgmtDataFtGroupId   = "0"
+    >
+
+        <Procedures>
+
+        </Procedures>
+
+        <Callbacks>
+
+        </Callbacks>
+
+        <FtGroups>
+
+            <FtGroup 
+                ftGroupId      = "0"
+                ftGroupName    = "FtGroup0"
+            >
+
+                <DsmConfig
+                     dsmSize         = "20971520"
+                     dsmBaseAddress  = "0x40000000"
+                     dsmMaxNumTables = "256"
+                     dsmType         = "GCS"
+                />
+
+                <DsmGcsConfig
+                     gcsFtGroupId        = "0"
+                     gcsDaemonName       = "8891@localhost"
+                     gcsSyncMemUseTcp    = "1"
+                     gcsSyncMemIpAddress = "192.168.1.62"
+                     gcsSyncMemIpPort    = "8892"
+                />
+
+                <!-- Note: MUST include itself. -->
+                <!-- Note: nodeName and processName are optional attributes. --> 
+
+                <FtGroupMembers>
+
+                    <FtGroupMember
+                        nodeId      = "2"
+                        nodeName    = "Node2"
+                        processId   = "5"
+                        processName = "Node2Process5"
+                    />
+
+                    <FtGroupMember
+                        nodeId      = "1"
+                        nodeName    = "Node1"
+                        processId   = "5"
+                        processName = "Node1Process5"
+                    />
+
+                </FtGroupMembers>
+
+
+                <!-- Note: MUST NOT include itself. -->
+                <!-- Note: Master FtGroupMembers are tried in order. -->
+
+                <MasterFtGroupMembers>
+
+                    <MasterFtGroupMember
+                        nodeId    = "1"
+                        processId = "5"
+                    />
+
+                </MasterFtGroupMembers>
+
+                <Callbacks>
+                
+                </Callbacks>
+
+            </FtGroup>
+
+        </FtGroups>
+
+    </FaultTolerance>
+
+    <ToolkitTrace>
+        <Critical  output = "stdout"/>
+        <Critical  output = "file"/>
+        <Error     output = "stdout"/>
+        <Error     output = "file"/>
+        <Warning   output = "stdout"/>
+        <Warning   output = "file"/>
+    </ToolkitTrace>
+
+    <ApplicationTrace>
+        <Critical  output = "stdout"/>
+        <Critical  output = "file"/>
+        <Error     output = "stdout"/>
+        <Error     output = "file"/>
+        <Warning   output = "stdout"/>
+        <Warning   output = "file"/>
+    </ApplicationTrace>
+
+    <BorderPool stackSize = "0">
+
+        <Transport  name        = "MntMain"
+                    type        = "TaskQueue">
+
+            <CustomDispatch
+                library         = ""
+                dispatch        = "MntMainFunction"
+            />
+            
+        </Transport>
+
+    </BorderPool>
+
+</Application>

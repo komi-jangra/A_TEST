@@ -1,0 +1,45 @@
+
+ITU ISUP Command
+
+SYNOPSIS
+    ii_get_dest_info <opc> <dpc> <sio> or  <*>
+
+DESCRIPTION
+    This command displays configuration and status information for one or more 
+    ISUP nodes provisioned in the ISUP database.
+
+PARAMETERS
+    opc   Origination point code.
+    dpc   Destination point code.
+    sio   Service information octet.
+
+EXAMPLE
+>> ii_get_dest_info *
+
+VARIANT TYPE  =  ITU_ISUP_97 
+OPC = 16 
+DPC = 21 
+SIO = 133 
+
+Circuit group id = 32 
+Provisioned cicRange        cicRule
+     1025-1031                 EVEN 
+     1033-1047                  ODD 
+     1049-1056                  ALL 
+
+Circuit group id = 33 
+Provisioned cicRange        cicRule
+     1057-1063                  ALL 
+
+Circuit group id = 31 
+Provisioned cicRange        cicRule
+     1002-1015                 NONE 
+     1016-1016                  ALL 
+     1017-1024                 EVEN 
+
+Remote ISUP Status:   REMOTE ISUP AVAILABLE
+
+Destination Status:   DESTINATION UNREACHABLE
+
+Local Exchange Type:   TYPE_A
+

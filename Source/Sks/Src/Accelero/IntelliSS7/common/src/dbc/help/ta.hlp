@@ -1,0 +1,10 @@
+
+ANSI TCAP Module :
+    ta_get_gen_cfg      TCAP Get General Config
+    ta_set_gen_cfg      TCAP Set General Config
+    ta_get_behavior     TCAP Get Behaviors
+    ta_set_behavior     TCAP Set Behaviors
+    ta_get_gen_peg      TCAP Get Peg
+    ta_clr_gen_peg      TCAP Clear Peg
+
+For details about any command use "help <command name>"

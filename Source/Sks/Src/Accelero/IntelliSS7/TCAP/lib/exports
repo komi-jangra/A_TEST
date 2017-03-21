@@ -1,0 +1,8 @@
+release		c	mixed	libANSI-CCITT-TCAP.a	ANSI-CCITT-TCAP.lib
+debug		c	mixed	libANSI-CCITT-TCAPD.a	ANSI-CCITT-TCAPD.lib
+release		c	ansi	libANSI-TCAP.a		ANSI-TCAP.lib
+debug		c	ansi	libANSI-TCAPD.a		ANSI-TCAPD.lib
+release		c	mixed	libCCITT-ANSI-TCAP.a	CCITT-ANSI-TCAP.lib
+debug		c	mixed	libCCITT-ANSI-TCAPD.a	CCITT-ANSI-TCAPD.lib
+release		c	itu	libCCITT-TCAP.a		CCITT-TCAP.lib
+debug		c	itu	libCCITT-TCAPD.a	CCITT-TCAPD.lib

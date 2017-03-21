@@ -1,0 +1,36 @@
+make: Warning: File `/home5/amaresh/NIB_BSC/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/lib/macros.mk' has modification time 1.3e+08 s in the future
+make[1]: Warning: File `/home5/amaresh/NIB_BSC/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/lib/macros.mk' has modification time 1.3e+08 s in the future
+make[2]: Warning: File `/home5/amaresh/NIB_BSC/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/port/os.mk' has modification time 1.3e+08 s in the future
+/home5/amaresh/NIB_BSC/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/port/port.c:144: warning: missing initializer
+/home5/amaresh/NIB_BSC/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/port/port.c:144: warning: (near initialization for `__operations.hash')
+/home5/amaresh/NIB_BSC/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/port/port.c: In function `ss7_over_sigtran_err_log':
+/home5/amaresh/NIB_BSC/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/port/port.c:781: warning: unsigned int format, time_t arg (arg 3)
+/home5/amaresh/NIB_BSC/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/port/port.c:781: warning: unsigned int format, long unsigned int arg (arg 4)
+ar: creating libcspl.a
+ar: creating libporting.a
+ar: creating libmpset.a
+ar: creating libcpset.a
+make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+make[1]: warning:  Clock skew detected.  Your build may be incomplete.
+make[1]: Warning: File `/home5/amaresh/NIB_BSC/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/lib/macros.mk' has modification time 1.3e+08 s in the future
+make[2]: Warning: File `/home5/amaresh/NIB_BSC/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/port/os.mk' has modification time 1.3e+08 s in the future
+/home5/amaresh/NIB_BSC/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/port/port.c:144: warning: missing initializer
+/home5/amaresh/NIB_BSC/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/port/port.c:144: warning: (near initialization for `__operations.hash')
+/home5/amaresh/NIB_BSC/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/port/port.c: In function `ss7_over_sigtran_err_log':
+/home5/amaresh/NIB_BSC/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/port/port.c:781: warning: unsigned int format, time_t arg (arg 3)
+/home5/amaresh/NIB_BSC/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/port/port.c:781: warning: unsigned int format, long unsigned int arg (arg 4)
+ar: creating libcspl.a
+ar: creating libporting.a
+ar: creating libmpset.a
+ar: creating libcpset.a
+make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+make[1]: warning:  Clock skew detected.  Your build may be incomplete.
+make[1]: Warning: File `Makefile' has modification time 1.3e+08 s in the future
+make[2]: Warning: File `/home5/amaresh/NIB_BSC/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/lib/macros.mk' has modification time 1.3e+08 s in the future
+<command line>:7:12: warning: extra tokens at end of #undef directive
+<command line>:8:10: warning: extra tokens at end of #undef directive
+<command line>:9:13: warning: extra tokens at end of #undef directive
+ar: creating linux/libscommon.a
+make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+make[1]: warning:  Clock skew detected.  Your build may be incomplete.
+make: warning:  Clock skew detected.  Your build may be incomplete.

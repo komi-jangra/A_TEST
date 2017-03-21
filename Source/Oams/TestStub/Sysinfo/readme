@@ -1,0 +1,35 @@
+How To Compile SysInfoEncoder:
+------------------------------
+
+From Current Location
+
+	cd Debug
+	
+	run command> make clean;make
+
+exe Will Get Generated In Debug.
+
+
+How To Run SysInfoEncoder:
+--------------------------
+
+To Run It You Need Of
+1. DB Populated With Data Required For Specific Table e.g. Bss Table, Cell Table etc.
+2. IPC FrameWork
+3. LOGGER < Log Gets Generated In CellH Logs>.
+4. export DB_CFG_PATH.
+5. export LD_LIBRARY_PATH
+
+OR
+Use Any UT SetUp.
+
+After Running IPC Frmwork & DB.
+Run This Exe.
+
+RESULT:
+-------
+All Logs Gets Printed On Console As Well As In PRC_LOG.
+
+LOGS Can Be Verified With Decoder.
+In Our Case SAGEM Has Been Used After Removing First Byte From DUMP For SysInfo 1, 2, 2ter, 3, 4, 5, 5ter, 6, 13 Logs.
+

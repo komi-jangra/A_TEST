@@ -1,0 +1,39 @@
+
+
+ENGINE Command
+
+SYNOPSIS
+    b_getborders
+
+DESCRIPTION
+    This command displays border transports configured in Accelero node.
+
+PARAMETERS
+    None.
+
+EXAMPLE
+    >> b_getborders
+    ________________________________________
+        Transport Name         <ASP 1>
+        Transport Type         <SCTP>
+        Mask                   <40a1180a>
+        Instance               <4e22>
+        isActive               <no>
+        Host                   <10.1.4.6>
+        Port                   <2960>
+        Payload                <M3UA>
+        isClient               <yes>
+    ________________________________________
+        Transport Name         <Debug Console>
+        Transport Type         <ServerSocket>
+        isIterative            <no>
+        Mask                   <10010000>
+        Instance               <4e23>
+        isActive               <yes>
+        Host                   <127.0.0.1>
+        Port                   <7111>
+    ________End Of Borders__________________
+
+
+
+

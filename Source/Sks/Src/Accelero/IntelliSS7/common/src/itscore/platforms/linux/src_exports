@@ -1,0 +1,3 @@
+all		cpp	both	*.c
+all		c	both	*.c
+

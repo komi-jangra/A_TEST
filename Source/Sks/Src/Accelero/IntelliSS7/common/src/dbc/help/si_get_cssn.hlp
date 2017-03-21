@@ -1,0 +1,22 @@
+
+ITU SCCP Command
+
+SYNOPSIS
+    si_get_cssn <sspc> <ni> <ssn> <cpc> <cssn>
+
+DESCRIPTION
+    This command finds a concerned subsystem entry for
+    given pc, ni, ssn, cpc, cssn.
+
+PARAMETERS
+    sspc  Local Point Code
+    ni    Network Indicator
+    ssn   Local Subsystem Number
+    cpc   Concerned Point Code
+    cssn  Concerned Subsystem Number
+
+
+EXAMPLE
+    >> si_get_cssn 2 0 2 5 5
+    ******** SCCP CSSN Entry Found************
+

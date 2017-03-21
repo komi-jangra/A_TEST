@@ -1,0 +1,6 @@
+automatedxml:
+This directory contains test code for the ISUP automated functional test.
+following sub-directories are defined:
+
+automatedxml - this contains common files for the following combinations.
+              [ IntelliNet ISUP + IntelliNet MTP3 + NMS MTP2 ].

@@ -1,0 +1,49 @@
+
+ANSI MTP3 Command
+
+SYNOPSIS
+    ma_set_gen_cfg <alarmlevel>  <tracetype> <traceOutput> <On/Off>
+
+DESCRIPTION
+    This command sets ANSI MTP3 alarm and trace level. Alarm level controls MTP3
+    alarms sent to Accelero application. Trace level controls generation of MTP3
+    execution traces.
+
+PARAMETERS
+    alarmlevel    Alarm Level.
+                  Possible values -
+                  CRITICAL
+                  MAJOR
+                  MINOR
+                  INFO
+                  OFF
+
+    tracetype     Trace Type. Possible values
+                  DEBUG
+                  WARNING
+                  ERROR
+                  CRITICAL
+                  all - all trace types
+
+    traceOutput   Trace Output. Possible Values -
+                  stdout
+                  file
+
+    On/Off        Trace Output on/off. Possible Values -  
+                  on 
+                  off
+
+
+EXAMPLE
+    >> ma_set_gen_cfg CRITICAL DEBUG file on
+
+    *********** MTP3 General Config Set*************
+
+NOTE
+    traceOutput can have two values: stdout and file.If user wants to have 
+    trace Output both in stdout and file aswell at the same time, it can 
+    be done in the following ways:
+
+                 ma_set_gen_cfg  <alarmlevel>  <traceType>  stdout on
+                 ma_set_gen_cfg  <alarmlevel>  <traceType>  file on
+

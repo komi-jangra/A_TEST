@@ -1,0 +1,43 @@
+
+ANSI ISUP Command
+
+SYNOPSIS
+    ia_clr_cic_pegs  <opc> <dpc> <sio> <cic> [<PegType> (or) <All/all>]
+
+DESCRIPTION
+    This command resets pegs for that particular Cic peg.
+
+PARAMETERS
+    opc      Origination point code.
+    dpc      Destination point code.
+    sio      Service information octet.
+    cic      Circuit code number.
+    PegType  Type of Cic peg.
+
+    Possible Values for pegType:
+
+    PEG_ISUP_CIC_NO_RLC_T5                  2
+    PEG_ISUP_CIC_REL_ABNORMAL               3
+    PEG_ISUP_CIC_MISSING_ACK_IN_CGBA        5
+    PEG_ISUP_CIC_MISSING_ACK_IN_CGUA        6
+    PEG_ISUP_CIC_ABNORMAL_ACK_IN_CGBA       7
+    PEG_ISUP_CIC_ABNORMAL_ACK_IN_CGUA       8
+    PEG_ISUP_CIC_UNEXP_CGBA_ABNORMAL_ACK    9
+    PEG_ISUP_CIC_UNEXP_CGUA_ABNORMAL_ACK    10
+    PEG_ISUP_CIC_UNEXP_BLA_ABNORMAL_ACK     11
+    PEG_ISUP_CIC_UNEXP_UBA_ABNORMAL_ACK     12
+    PEG_ISUP_CIC_NO_BLA_T13                 13
+    PEG_ISUP_CIC_NO_UBA_T15                 14
+    PEG_ISUP_CIC_NO_CGBA_T19                15
+    PEG_ISUP_CIC_NO_CGUA_T21                16
+    PEG_ISUP_CIC_MSG_FORMAT_ERR             17
+    PEG_ISUP_CIC_UNEXP_MSG_RCVD             18
+    PEG_ISUP_CIC_REL_UNRECOG_INFO           19
+
+    ALL_ISUP_PEGS                	    99
+
+EXAMPLE
+>>  ia_clr_cic_pegs 16 21 133 1025 all
+
+** Cleared all cic pegs for CIC 1025 **
+

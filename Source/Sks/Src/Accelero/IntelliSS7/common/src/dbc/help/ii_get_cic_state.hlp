@@ -1,0 +1,24 @@
+
+ITU ISUP Command
+
+SYNOPSIS
+    ii_get_cic_state <opc> <dpc> <sio> <cic>
+
+DESCRIPTION
+    This command displays call state, maintenance state of the Cic.
+
+PARAMETERS
+    opc     Origination point code.
+    dpc     Destination point code.
+    sio     Service information octet.
+    cic     Circuit code number.
+
+EXAMPLE
+>> ii_get_cic_state 16 21 133 1017
+
+CIC States for CIC 1017 
+------------------------
+Maintenance blocking state: LOCALLY & REMOTELY BLOCKED
+Call processing state: IDLE
+Hardware blocking state: UNBLOCKED
+

@@ -1,0 +1,128 @@
+-------------------------------------------------------------------------------
+--
+-- DSM Multi-Nodes Automatic Regression Testing.
+-- -> Test5 Node2.
+--
+
+node1 := 0
+node2 := 1
+numberOfSyncPoints := 10
+
+
+-----------------------------------------------------------
+--
+-- Initialization part.
+--
+
+InitializeNodes(node2, 2)
+InitializeNodesSyncPoints(numberOfSyncPoints)
+InitializeGcs()
+
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+--
+-- Wait for other nodes to join.
+--
+
+Print("\n\nNode 2 waiting for other node(s) to join...\n")
+
+joinTimeout := 20 -- Timeout is 20 secs.
+
+WaitForNodeJoinPoint(node2, joinTimeout)
+WaitForNodeJoinPoint(node1, joinTimeout)
+
+Sleep(2) -- MUST be second node to join...
+
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+--
+-- DSM test.
+--
+
+Print("\n\nReady to begin DSM test...\n")
+
+PublishNodeSyncPointReached(0)
+
+from 
+    i := 0
+until
+    i >= 100
+loop
+    syncTimeout := 20 -- Timeout is 20 secs.
+
+    WaitForNodeSyncPoint(node1, 0, syncTimeout)
+
+    Print("\n\nTable (tableId = 1) dump before freeing all rows...\n")
+
+    ftGroupId   := 0
+    tableId     := 1
+
+    DsmTableDump(ftGroupId, tableId)
+
+    from 
+        j := 0
+    until
+        j >= 10
+    loop
+        key := "key" + i + j
+
+        error := 0
+
+        objectPtr := DsmFindRow(
+                            ftGroupId,
+                            tableId,
+                            key,
+                            out error)
+
+        if (error /= 0) then
+            Print("\n\nDsmFindRow failed: " + error + "\n")
+        end
+
+        res := DsmFreeRow(
+                        ftGroupId,
+                        tableId,
+                        key,
+                        objectPtr)
+
+        if (res /= 0) then
+            Print("\n\nDsmFreeRow failed: " + res + "\n")
+        end
+
+        j := j + 1
+    end
+
+    Print("\n\nTable (tableId = 1) dump after freeing all rows...\n")
+
+    DsmTableDump(ftGroupId, tableId)
+
+    PublishNodeSyncPointReached(1)
+
+    i := i + 1
+end
+
+syncTimeout := 20 -- Timeout is 20 secs.
+
+WaitForNodeSyncPoint(node1, 1, syncTimeout)
+
+Print("\n\nLast table (tableId = 1) dump should show empty table...\n")
+
+-- Table should be empty.
+
+DsmTableDump(ftGroupId, tableId)
+
+PublishNodeSyncPointReached(2)
+
+Print("\n\nEnd of DSM test...\n")
+
+-----------------------------------------------------------
+--
+-- Termination part.
+--
+
+TerminateGcs()
+TerminateNodesSyncPoints()
+TerminateNodes()
+
+-----------------------------------------------------------

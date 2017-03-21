@@ -1,0 +1,19 @@
+
+M3UA / SUA Command
+
+SYNOPSIS
+    u_aspdown <trid>
+
+DESCRIPTION
+    This command sends asp down for a given transport identifier.
+
+PARAMETERS
+    trid    Transport Identifer value in hex.
+            Values for transport identifiers can be found by displaying 
+            ASP Table. Command for displaying ASP Table is u_asptbl.
+
+EXAMPLE
+    >> u_aspdown 0x4e22
+    *********** ASP DOWN Sent *************
+
+

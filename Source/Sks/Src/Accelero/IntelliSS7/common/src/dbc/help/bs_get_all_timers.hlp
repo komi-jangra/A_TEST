@@ -1,0 +1,44 @@
+BSSAP Command
+
+SYNOPSIS
+    bs_get_all_timers
+
+DESCRIPTION
+    This command gets all Timer (DTAP/MAP) values (in seconds) 
+
+PARAMETERS
+    None
+
+EXAMPLE
+    >> bs_get_all_timers
+
+    BSSAP_T_301 timer value set to 60  secs
+ 
+    BSSAP_T_303 timer value set to 60  secs
+ 
+    BSSAP_T_306 timer value set to 60  secs
+ 
+    BSSAP_T_308 timer value set to 60  secs
+ 
+    BSSAP_T_310 timer value set to 60  secs
+ 
+    BSSAP_T_313 timer value set to 60  secs
+ 
+    BSSAP_T_2 timer value set to 60  secs
+ 
+    BSSAP_T_5 timer value set to 60  secs
+ 
+    BSSAP_T_6 timer value set to 60  secs
+ 
+    BSSAP_T_12 timer value set to 60  secs
+ 
+    BSSAP_T_16 timer value set to 60  secs
+ 
+    BSSAP_T_21 timer value set to 60  secs
+ 
+    BSSAP_T_22 timer value set to 60  secs
+ 
+    BSSAP_T_3260 timer value set to 60  secs
+ 
+    BSSAP_T_3270 timer value set to 60  secs
+

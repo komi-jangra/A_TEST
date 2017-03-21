@@ -1,0 +1,139 @@
+-------------------------------------------------------------------------------
+--
+-- DSM Multi-Nodes Automatic Regression Testing.
+-- -> Test7 Node2.
+--
+
+node1 := 0
+node2 := 1
+numberOfSyncPoints := 10
+
+
+-----------------------------------------------------------
+--
+-- Initialization part.
+--
+
+InitializeNodes(node2, 2)
+InitializeNodesSyncPoints(numberOfSyncPoints)
+InitializeGcs()
+
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+--
+-- Wait for other nodes to join.
+--
+
+Print("\n\nNode 2 waiting for other node(s) to join...\n")
+
+joinTimeout := 20 -- Timeout is 20 secs.
+
+WaitForNodeJoinPoint(node2, joinTimeout)
+WaitForNodeJoinPoint(node1, joinTimeout)
+
+Sleep(2) -- MUST be second node to join...
+
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+--
+-- DSM test.
+--
+
+Print("\n\nReady to begin DSM test...\n")
+
+PublishNodeSyncPointReached(0)
+
+objectDataSuffix := " -- abcdefghijklmnopqrstuvwxyz"
+
+from 
+    i := 0
+until
+    i >= 1000
+loop
+    key :="key000"
+
+    ftGroupId   := 0    
+    tableId     := 1
+    objectSize  := 256
+    error       := 0
+
+    DsmLockTable(ftGroupId, tableId)
+    DsmLockTable(ftGroupId, tableId)
+
+    objectPtr := DsmAllocateRowNoLock(
+                                ftGroupId,
+                                tableId,
+                                key,
+                                objectSize,
+                                out error)
+
+    if (error /= 0) then
+        Print("\n\nDsmAllocateRowNoLock failed: " + error + "\n")
+    end
+
+    objectData := "" + i + objectDataSuffix
+
+    DsmWriteStringToAddress(objectPtr, objectData)
+
+    res := DsmCommitRowNoLock(
+                        ftGroupId,
+                        tableId,
+                        key,
+                        objectPtr)
+
+    if (res /= 0) then
+        Print("\n\nDsmCommitRowNoLock failed: " + res + "\n")
+    end
+
+    objectPtr := DsmFindRowNoLock(
+                            ftGroupId,
+                            tableId,
+                            key,
+                            out error)
+
+    if (error /= 0) then
+        Print("\n\nDsmFindRowNoLock failed: " + error + "\n")
+    end
+
+    res := DsmFreeRowNoLock(
+                        ftGroupId,
+                        tableId,
+                        key,
+                        objectPtr)
+
+    if (res /= 0) then
+        Print("\n\nDsmFreeRowNoLock failed: " + res + "\n")
+    end
+
+    DsmUnlockTable(ftGroupId, tableId)
+    DsmUnlockTable(ftGroupId, tableId)
+
+    Print("\n\nIteration number " + i + "...\n")
+
+    i := i + 1
+end
+
+syncTimeout := 20 -- Timeout is 20 secs.
+
+WaitForNodeSyncPoint(node1, 1, syncTimeout)
+
+Print("\n\nTable (tableId = 1) dump should be empty...\n")
+
+DsmTableDump(ftGroupId, tableId)
+
+PublishNodeSyncPointReached(2)
+
+Print("\n\nEnd of DSM test...\n")
+
+-----------------------------------------------------------
+--
+-- Termination part.
+--
+
+TerminateGcs()
+TerminateNodesSyncPoints()
+TerminateNodes()
+
+-----------------------------------------------------------

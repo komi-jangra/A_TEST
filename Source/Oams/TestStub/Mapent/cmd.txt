@@ -1,0 +1,6 @@
+gcc -I ../../Inc  -I ../../../../../../Inc/Sys/ -I ../../../../../../Inc/Db -I ../../../../Inc/ -I ../../../../../../Inc/Ipc/  -I ../../../../../../DB-Server-Rel-1.1/DBS/Src/DBLIB20/Inc -c MapLtrxPtrxEntMain.c
+
+
+gcc -g ./MapLtrxPtrxEntMain.o  -o MapLtrxPtrxEntMain -L /user/gur11278/VnlBsc/Bin/Host/CommonLib  -ldbwrappers -lmapLtrxPtrxEnt  -lDBLIB -lCLIB
+
+gcc -g -Wall -shared -W1,-soname  -L /user/gur11278/VnlBsc/Bin/Host/CommonLib -oMapLtrxPtrxEnt -ldbwrappers -lfrm -lmapLtrxPtrxEnt -lDBLIB -lCLIB 

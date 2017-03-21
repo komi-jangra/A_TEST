@@ -1,0 +1,128 @@
+
+VOLUME=$dsmscm
+
+$(VOLUME).itscore.itsappo : $(VOLUME).itscore.itsappc
+	NMC /in $(VOLUME).itscore.itsappc / $(VOLUME).itscore.itsappo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1, optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+	ar crv $(VOLUME).lib.libcore $(VOLUME).itscore.itsappo
+
+$(VOLUME).itscore.itscallo : $(VOLUME).itscore.itscallb
+	NMC /in $(VOLUME).itscore.itscallb / $(VOLUME).itscore.itscallo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+	ar crv $(VOLUME).lib.libcore $(VOLUME).itscore.itscallo
+
+$(VOLUME).itscore.itsclaso : $(VOLUME).itscore.itsclass
+	NMC /in $(VOLUME).itscore.itsclass / $(VOLUME).itscore.itsclaso ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  define STANDALONE, optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+	ar crv $(VOLUME).lib.libcore $(VOLUME).itscore.itsclaso
+
+$(VOLUME).itscore.itserroo : $(VOLUME).itscore.itserror
+	NMC /in $(VOLUME).itscore.itserror / $(VOLUME).itscore.itserroo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+	ar crv $(VOLUME).lib.libcore $(VOLUME).itscore.itserroo
+
+$(VOLUME).itscore.itsfeato : $(VOLUME).itscore.itsfeatu
+	NMC /in $(VOLUME).itscore.itsfeatu / $(VOLUME).itscore.itsfeato ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+	ar crv $(VOLUME).lib.libcore $(VOLUME).itscore.itsfeato
+
+$(VOLUME).itscore.itsinipo : $(VOLUME).itscore.itsinipa
+	NMC /in $(VOLUME).itscore.itsinipa / $(VOLUME).itscore.itsinipo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+	ar crv $(VOLUME).lib.libcore $(VOLUME).itscore.itsinipo
+
+$(VOLUME).itscore.itsliceo : $(VOLUME).itscore.itslicen
+	NMC /in $(VOLUME).itscore.itslicen / $(VOLUME).itscore.itsliceo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+	ar crv $(VOLUME).lib.libcore $(VOLUME).itscore.itsliceo
+
+$(VOLUME).itscore.itsobjeo : $(VOLUME).itscore.itsobjec
+	NMC /in $(VOLUME).itscore.itsobjec / $(VOLUME).itscore.itsobjeo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+	ar crv $(VOLUME).lib.libcore $(VOLUME).itscore.itsobjeo
+
+$(VOLUME).itscore.itsstano : $(VOLUME).itscore.itsstand
+	NMC /in $(VOLUME).itscore.itsstand / $(VOLUME).itscore.itsstano ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+	ar crv $(VOLUME).lib.libcore $(VOLUME).itscore.itsstano
+
+$(VOLUME).itscore.itstraco : $(VOLUME).itscore.itstrace
+	NMC /in $(VOLUME).itscore.itstrace / $(VOLUME).itscore.itstraco ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+	ar crv $(VOLUME).lib.libcore $(VOLUME).itscore.itstraco
+
+$(VOLUME).itscore.itsmuteo : $(VOLUME).itscore.itsmutex
+	NMC /in $(VOLUME).itscore.itsmutex / $(VOLUME).itscore.itsmuteo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+	ar crv $(VOLUME).lib.libcore $(VOLUME).itscore.itsmuteo
+
+#ipgwobjn.ipgwin : ipgwysrc.ipgwyic ipgwysrc.ipgwyh
+#
+#NMC /in ipgwysrc.ipgwyic, ipgwobjn.ipgwin ; \
+#     symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+#     nostdfiles, inline, extensions, define DEBUG, optimize 0, \
+#     ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+#     ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib",\
+#     ssv6 "ipgwysrc"##
+#
+#ipgwexen.ipgwin : ipgwobjn.ipgwin
+#
+#NLD /cpu 3/ipgwobjn.ipgwin -o ipgwexen.ipgwin -set highpin off -set runnamed on\
+#       -libname $nb130.csslib.nlibrary $system.system.crtlmain \
+#       -obey    $system.system.libcobey -noverbose
+

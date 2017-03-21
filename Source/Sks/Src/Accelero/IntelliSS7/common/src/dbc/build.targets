@@ -1,0 +1,4 @@
+dbc_console   dbc_console.mak         debug   "dbc_console - Win32 Debug"
+dbc_console   dbc_console.mak         release "dbc_console - Win32 Release"
+dbc_server    dbc_server.mak          debug   "dbc_server - Win32 Debug"
+dbc_server    dbc_server.mak          release "dbc_server - Win32 Release"

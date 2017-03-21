@@ -1,0 +1,278 @@
+--
+-- DEFINITIONS IMPLICIT TAGS ::=
+--* ANSI-T1.114-TCAP *-- ANSI-TCAP DEFINITIONS ::=
+--
+
+BEGIN
+
+--
+-- EXPORTS OPERATION ERROR;
+--
+-- ansiTCAPObjectIdentifier OBJECT IDENTIFIER ::= ?
+--
+
+--
+-- ComponentID
+-- this is a fancy way of saying invoke/correlation id.
+-- for INVOKE: INV optional, CORR reflected
+-- for RRL: INV absent, CORR reflected.
+-- for ERR: INV absent, CORR reflected
+-- for REJ: INV absent, CORR reflected
+--
+ComponentID ::= [PRIVATE 15] IMPLICIT OCTET STRING
+
+--
+-- OperationCode
+--
+OperationCode ::= CHOICE {
+    nationalOperation [PRIVATE 16] IMPLICIT INTEGER,
+    privateOperation  [PRIVATE 17] IMPLICIT INTEGER
+}
+
+--
+-- ErrorCode
+--
+ErrorCode ::= CHOICE {
+    nationalError  [PRIVATE 19] IMPLICIT INTEGER,
+    privateError   [PRIVATE 20] IMPLICIT INTEGER
+}
+
+--
+-- GeneralProblem
+--
+GeneralProblem ::= [PRIVATE 21] IMPLICIT INTEGER {
+    unrecognizedComponent(257),
+    incorrectComponentPortion(258),
+    badlyStructuredComponentPortion(259)
+}
+
+--
+-- InvokeProblem
+--
+InvokeProblem ::= [PRIVATE 22] IMPLICIT INTEGER {
+    duplicateInvokeID(513),
+    unrecognizedOperationCode(514),
+    incorrectParameter(515),
+    unrecognizedCorrelationID(516)
+}
+
+--
+-- ReturnResultProblem
+--
+ReturnResultProblem ::= [PRIVATE 23] IMPLICIT INTEGER {
+    unrecognizedCorrelationID(769),
+    unexpectedReturnResult(770),
+    incorrectParameter(771)
+}
+
+--
+-- ReturnErrorProblem
+--
+ReturnErrorProblem ::= [PRIVATE 24] IMPLICIT INTEGER {
+    unrecognizedCorrelationID(1025),
+    unexpectedReturnError(1026),
+    unrecognizedError(1027),
+    unexpectedError(1028),
+    incorrectParameter(1029)
+}
+
+--
+-- TransactionPortionProblem
+--
+TransactionPortionProblem ::= [PRIVATE 25] IMPLICIT INTEGER {
+    unrecognizedPackageType(1281),
+    incorrectTransPortion(1282),
+    badlyStructuredTransPortion(1283),
+    unrecognizedTransID(1284),
+    permissionToReleaseProblem(1285),
+    resourceUnavailable(1286)
+}
+
+--
+-- Problem
+--
+Problem ::= CHOICE {
+    GeneralProblem,
+    InvokeProblem,
+    ReturnResultProblem,
+    ReturnErrorProblem,
+    TransactionPortionProblem
+}
+
+--
+-- Invoke
+--
+Invoke ::= SEQUENCE {
+    componentID     ComponentID,
+    operationCode   OperationCode,
+    parameter       ANY DEFINED BY operationCode OPTIONAL
+}
+
+--
+-- ReturnResult
+--
+ReturnResult ::= SEQUENCE {
+    componentID     ComponentID,
+    parameter       ANY OPTIONAL
+}
+
+--
+-- ReturnError
+--
+ReturnError ::= SEQUENCE {
+    componentID     ComponentID,
+    errorCode       ErrorCode,
+    parameter       ANY DEFINED BY errorCode OPTIONAL
+}
+
+--
+-- Reject
+--
+Reject ::= SEQUENCE {
+    componentID     ComponentID,
+    problem         Problem,
+    parameter       ANY OPTIONAL
+}
+
+--
+-- ComponentPDU
+--
+ComponentPDU ::= CHOICE {
+    invoke              [PRIVATE 9]  IMPLICIT Invoke,
+    returnResultLast    [PRIVATE 10] IMPLICIT ReturnResult,
+    returnError         [PRIVATE 11] IMPLICIT ReturnError,
+    reject              [PRIVATE 12] IMPLICIT Reject,
+    invokeNotLast       [PRIVATE 13] IMPLICIT Invoke,
+    returnResultNotLast [PRIVATE 14] IMPLICIT ReturnResult
+}
+
+--
+-- ComponentSequence
+--
+ComponentSequence ::= [PRIVATE 8] IMPLICIT SEQUENCE OF ComponentPDU
+
+--
+-- TransactionID.  May be 0, 4, or 8 bytes (originatingID/respondingID).
+-- UNI no orig, no resp
+-- QWP orig only
+-- QWOP orig only
+-- RESP resp only
+-- CWP both
+-- CWOP both
+--
+TransactionID ::= [PRIVATE 7] IMPLICIT OCTET STRING
+
+--
+-- DialoguePortion
+--
+-- DialoguePortion ::= [PRIVATE 25] IMPLICIT ANY
+-- DialoguePortion ::= [PRIVATE 25] IMPLICIT SEQUENCE
+ProtocolVersion ::= [PRIVATE 26] IMPLICIT OCTET STRING (SIZE(1))
+
+--
+-- Application Context
+--
+IntegerApplicationContext ::= [PRIVATE 27] IMPLICIT INTEGER
+ObjectIDApplicationContext ::= [PRIVATE 28] IMPLICIT OBJECT IDENTIFIER
+
+--
+-- Application Context
+--
+ApplicationContext ::= CHOICE {
+   integerApplicationContext   IntegerApplicationContext,
+   objectIDApplicationContext  ObjectIDApplicationContext
+}
+
+--
+-- User Information
+--
+
+-- UserInformation ::= [PRIVATE 29] IMPLICIT SEQUENCE OF EXTERNAL
+
+UserInformation ::= [PRIVATE 29] IMPLICIT SEQUENCE {
+}
+
+--
+-- Dialogue Portion
+--
+DialoguePortion ::= [PRIVATE 25] IMPLICIT SEQUENCE {
+    protocolVersion ProtocolVersion OPTIONAL,
+    applicationContext ApplicationContext OPTIONAL,
+    userInformation UserInformation OPTIONAL,
+    securityContext CHOICE {
+        integerSecurityContext  [0] IMPLICIT INTEGER,
+        objectIDSecurityContext [1] IMPLICIT OBJECT IDENTIFIER
+    } OPTIONAL,
+    confidentiality [2] IMPLICIT SEQUENCE {
+        confidentialityAlgorithmID CHOICE {
+            integerSecurityContext  [0] IMPLICIT INTEGER,
+            objectIDSecurityContext [1] IMPLICIT OBJECT IDENTIFIER
+        },
+        confidentialityValue ANY OPTIONAL
+    } OPTIONAL
+}
+--
+-- P-Abort-cause
+--
+P-Abort-Cause ::= [PRIVATE 23] IMPLICIT INTEGER {
+    unrecognizedPackageType(1),
+    incorrectTransactionPortion(2),
+    badlyStructuredTransactionPortion(3),
+    unrecognizedTransactionID(4),
+    permissionToReleaseProblem(5),
+    resourceUnavailable(6),
+    unrecognizedDialoguePortionID(7),
+    badlyStructuredDialoguePortion(8),
+    missingDialoguePortion(9),
+    inconsistenDialoguePortion(10)
+}
+
+--
+-- UserAbortInformation
+--
+UserAbortInformation ::= [PRIVATE 24] ANY -- was EXTERNAL
+
+--
+-- Abort
+--
+Abort ::= SEQUENCE {
+    transactionID   TransactionID,
+    dialoguePortion DialoguePortion OPTIONAL,
+    CHOICE {
+        P-Abort-Cause,
+        UserAbortInformation
+    }
+}
+
+--
+-- UniTransactionPDU
+--
+UniTransactionPDU ::= SEQUENCE {
+    transactionID      TransactionID,
+    dialoguePortion    DialoguePortion OPTIONAL,
+    componentSequence  ComponentSequence
+}
+
+--
+-- TransactionPDU
+--
+TransactionPDU ::= SEQUENCE {
+    transactionID      TransactionID,
+    dialoguePortion    DialoguePortion OPTIONAL,
+    componentSequence  ComponentSequence OPTIONAL
+}
+
+--
+-- PackageType
+--
+PackageType ::= CHOICE {
+    unidirectional           [PRIVATE 1] IMPLICIT UniTransactionPDU,
+    queryWithPerm            [PRIVATE 2] IMPLICIT TransactionPDU,
+    queryWithoutPerm         [PRIVATE 3] IMPLICIT TransactionPDU,
+    response                 [PRIVATE 4] IMPLICIT TransactionPDU,
+    conversationWithPerm     [PRIVATE 5] IMPLICIT TransactionPDU,
+    conversationWithoutPerm  [PRIVATE 6] IMPLICIT TransactionPDU,
+    abort                    [PRIVATE 22] IMPLICIT Abort
+}
+
+END

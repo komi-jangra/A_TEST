@@ -1,0 +1,21 @@
+
+M2UA Command
+
+SYNOPSIS
+    mu_set_iid <iid> <ls> <lc> <Association Name>
+
+DESCRIPTION
+    This command adds iid.
+
+
+PARAMETERS
+    iid              Interface IID 
+    ls               LinkSet 
+    lc               LinkCode 
+    AssoName         Association Name
+    
+EXAMPLE
+>> mu_set_iid 20 1 1 ASP-1 
+
+********* M2UA IID Added *********
+

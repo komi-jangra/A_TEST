@@ -1,0 +1,22 @@
+
+LINK Command
+
+SYNOPSIS
+   ln_del <linkset> <linkcode> 
+
+DESCRIPTION
+   This command is used to delete link 
+
+PARAMETERS
+     linkset  
+           The linkset which owns this link
+
+     linkcode 
+            The linkcode to be deleted.
+
+
+EXAMPLE
+>> ln_del 1 4
+ls:1 lc:4 Deleted successfully
+
+

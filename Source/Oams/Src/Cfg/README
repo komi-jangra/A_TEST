@@ -1,0 +1,41 @@
+Changes: 12Oct07
+Running CFG Test Cases
+-----------------------
+
+
+Steps to run CFG test cases:
+
+	- Get base VNLBSC code from version controller and update it in your local directory structure. 
+
+	-Set environment variable VNLBSC  to corresponding local VNLBSC directory structure.
+
+	-Set LD_LIBRARY_PATH to $VNLBSC/Bin/Host/CommonLib/
+
+	-Run IPC Framework release 1.0.2 at backend.
+         Follow IPC framework running procedure in this case.
+
+	-Run Db Server v1.4 application at backend, delete any old generated *.dat files. 
+         Follow Db running procedure to run Db server.
+
+	-Run CFG executable cfg.exe from directory $VNLBSC/Source/Oams/Bin/Host/Exec
+         Generate the executable by building make -f Makefile in $VNLBSC/Source/Oams/Src/Cfg/Src  
+
+	-CFG Test stub code is placed in directory $VNLBSC/Source/Oams/TestStub/Cfg/Src
+
+	-To generate the executable for CFG Test Stub, run the Makefile placed in above TestStub directory 
+	 (as defined above).
+
+	-CFG stub stub_cfg.exe will be genarated in  $VNLBSC/Source/Oams/Bin/Host/Exec , run this executable.
+
+	- Run stub_cfg.exe give option ALL .
+          All the test cases will get execute one by one.
+          Each Test case result can be checked by the log displayed by the stub_cfg.exe process console. 
+
+        - CFG logs 
+          CFG logs will get generate @PRC_LOG/CFG_*.log              
+
+---------------------------------------------
+Veerabhadra Sheelavant, 
+Email:veerabhadra.sheelavant@aricent.com
+Phone: 080-41068432
+

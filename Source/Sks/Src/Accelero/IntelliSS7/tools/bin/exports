@@ -1,0 +1,6 @@
+release		c	both	exc		exc.exe
+debug		c	both	excD		excD.exe
+release		c	both	asnc		asnc.exe
+debug		c	both	asncD		asncD.exe
+release		c	both	asncc_v2	asncc_v2.exe
+debug		c	both	asncc_v2D	asncc_v2D.exe

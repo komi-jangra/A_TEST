@@ -1,0 +1,40 @@
+include $(ITS_ROOT)/config.vars
+
+OBJS=Test.o 
+
+ITS_LIBS=-lCCITT-ANSI-VENDORD -lCCITT-ANSI-TCAP\
+	-lANSI-MTP3D -lASN -lANSI-UALD -lSCTPD -lANSI-SCCPD -lSUPPORTD -lCORED -lSUPPORTD -lCORED
+
+LINK_FLAG=-L$(ITS_ROOT)/common/lib -L$(ITS_ROOT)/TCAP/lib\
+	-L$(ITS_ROOT)/SCCP/lib -L$(ITS_ROOT)/MTP3/lib\
+	-L$(VENDOR_ROOT)/$(VENDOR)/lib
+
+DEFINES:=$(DEFINES) -DUSE_INTELLINET_STACK
+
+ifeq ($(PROTOCOL),ANSI)
+ifeq ($(SCCPPROT),CCITT)
+CFLAGS := $(CFLAGS) -DUSE_ITU_SCCP
+CXXFLAGS := $(CXXFLAGS) -DUSE_ITU_SCCP
+endif
+endif
+ifeq ($(PROTOCOL),CCITT)
+ifeq ($(SCCPPROT),ANSI)
+CFLAGS := $(CFLAGS) -DUSE_ANSI_SCCP
+CXXFLAGS := $(CXXFLAGS) -DUSE_ANSI_SCCP
+endif
+endif
+
+CFLAGS:=$(CFLAGS) -I. -I$(ITS_ROOT)/SCCP/include \
+	-I$(ITS_ROOT)/common/include -I$(ITS_ROOT)/TCAP/include \
+	-I$(ITS_ROOT)/MTP3/include -I$(ITS_ROOT)/MTP2/include
+
+all: Test 
+
+clean:
+	$(RM) $(OBJS) .depend
+
+Test: $(OBJS)
+	$(CC) $(CFLAGS) $(LINK_FLAG) -o Test $(OBJS)\
+	$(ITS_LIBS) $(SOCKLIBS) $(THREADLIBS)
+
+include $(ITS_ROOT)/config.rules

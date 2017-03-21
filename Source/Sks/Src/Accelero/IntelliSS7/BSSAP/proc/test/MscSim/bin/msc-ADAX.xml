@@ -1,0 +1,462 @@
+<?xml version="1.0"?>
+
+<!-- Sample XML file for application configuration (INI). -->
+ 
+<Application name           = "MSC"
+             type           = "console-application"
+             globalStart    = "ITU-SCCP"
+             binding        = "CPP"
+             library        = ""
+             appSelector    = "RouteAPP"
+             preFunc        = "AppPreFunc">
+ 
+    <AppOptions name = "traceFlushAfterWrite"         value = "yes"/>
+    <AppOptions name = "routeUniqueLinkCodesRequired" value = "yes"/>
+    <AppOptions name = "memPoolChecksOn"              value = "no"/>
+
+    <Feature
+        name        = "DBC Server Class"
+        library     = "libENGINED.so"
+        classRec    = "itsDBC_ServerClass"
+    />
+
+    <FaultTolerance
+        maxNumFtGroups      = "1"
+        maxNumProcesses     = "1"
+        maxNumNodes         = "1"
+        nodeId              = "0"
+        processId           = "0"
+        tcapFtGroupId       = "0"
+        sccpFtGroupId       = "0"
+        mtp3FtGroupId       = "0"
+        isupFtGroupId       = "0"
+        routingFtGroupId    = "0"
+        timersFtGroupId     = "0"
+        mgmtDataFtGroupId   = "0"
+    >
+
+        <Procedures>
+
+        </Procedures>
+
+        <Callbacks>
+
+        </Callbacks>
+
+        <FtGroups>
+
+            <FtGroup
+                ftGroupId      = "0"
+                ftGroupName    = "FtGroup0"
+            >
+
+                <DsmConfig
+                     dsmSize         = "20971520"
+                     dsmBaseAddress  = "0x80000000"
+                     dsmMaxNumTables = "256"
+                     dsmType         = "STUB"
+                />
+
+             <!-- Note: MUST include itself. -->
+             <!-- Note: nodeName and processName are optional attributes. -->
+
+
+                <FtGroupMembers>
+                    <FtGroupMember
+                        nodeId      = "0"
+                        nodeName    = "Node0"
+                        processId   = "0"
+                        processName = "Node0Process0"
+                    />
+
+                </FtGroupMembers>
+
+
+                <!-- Note: MUST NOT include itself. -->
+                <!-- Note: Master FtGroupMembers are tried in order. -->
+
+                <MasterFtGroupMembers>
+
+                </MasterFtGroupMembers>
+
+                <Callbacks>
+
+                </Callbacks>
+
+            </FtGroup>
+
+        </FtGroups>
+
+    </FaultTolerance>
+
+ <ParserExtension    library     = "libCCITT-ADAXVendorD.so"
+                        elementName = "ADAX_Data"
+                        startFunc   = "ADAX_ParseStart"
+                        stopFunc    = "ADAX_ParseEnd"
+                        xlateFunc   = "ADAX_ConvertParserData"
+                        diffFunc    = "ADAX_Diff"
+    />
+
+    <ADAX_Data  sectionName = "ADAX SS7-1"
+                trunk       = "1"
+                TR_TYPE     = "E1"
+                linkSet     = "1"
+                timeSlots   = "0"
+    />
+
+
+    <!--/////////////// LINK SETS //////////////-->
+
+    <!-- link set for internal routing -->
+    <LinkSet id           = "0"
+             family       = "ITU"
+             adjacentSTP  = "no"
+             numToStart   = "0">
+        <NI     value = "0"/>
+        <APC    value = "0"/>
+        <LPC    value = "2"/>
+    </LinkSet>
+
+    <!-- link set for external routing -->
+    <LinkSet id           = "1"
+             family       = "ITU"
+             adjacentSTP  = "yes"
+             numToStart   = "1">
+        <NI     value = "0"/>
+        <APC    value = "1"/>
+        <LPC    value = "2"/>
+
+    </LinkSet>
+
+    <!-- Dummy link set for external routing -->
+    <LinkSet id           = "2"
+             family       = "ITU"
+             adjacentSTP  = "no"
+             numToStart   = "1">
+        <NI     value = "0x00"/>
+        <APC    value = "1"/>
+        <LPC    value = "2"/>
+    </LinkSet>
+ 
+
+    <!--///////////////Route Info //////////////-->
+
+    <!-- route for SCCP -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio-ssn"
+            family       = "ITU"
+            linkSet  = "0"
+            priority = "0">
+        <DPC    value = "2"/>
+        <SIO    value = "3"/>
+        <SSN    value = "8"/>
+    </Route>
+
+   <!-- local route for SCCP -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+             family       = "ITU"
+            linkSet  = "0"
+            priority = "0">
+        <DPC        value = "0x02"/>
+        <SIO    value = "0x03"/>
+    </Route>
+
+   <!-- route for SNMM -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            family       = "ITU"
+            linkSet  = "0"
+            priority = "0">
+        <DPC    value = "0x000002"/>
+        <SIO    value = "0x00"/>
+    </Route>
+
+ 
+
+ 
+    <!-- route for SLTM REG -->
+    <Route  type     = "localRoute"
+            family   = "ITU"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0">
+        <DPC    value = "0x02"/>
+        <SIO    value = "0x01"/>
+    </Route>
+
+    <!-- route for SLTM SPEC -->
+    <Route  type     = "localRoute"
+            family   = "ITU"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0">
+        <DPC    value = "0x02"/>
+        <SIO    value = "0x02"/>
+    </Route>
+  
+
+    <Route  type     = "remoteRoute"
+            style    = "dpc-ni"
+            family       = "ITU"
+            linkSet  = "1"
+            priority = "0">
+        <DPC        value = "1"/>
+        <SIO        value = "0"/>
+    </Route>
+
+    <!-- Dummy route is used for SCCP over MTP3 -->
+    <Route  type    = "remoteRoute"
+            style   = "dpc-sio-ssn"
+            family       = "ITU"
+            linkSet = "2"
+            priority = "0">
+        <DPC    value = "1"/>
+        <SIO    value = "0x03"/>
+        <SSN    value = "0xFE"/>
+    </Route>
+    <!-- Concerned route is -->
+    <Route type    = "concernedRoute"
+            style   = "dpc-opc-sio-ssn"
+            linkSet = "1"
+            priority = "0"
+            family       = "ITU">
+        <DPC    value = "1"/>
+        <LPC    value = "2"/>
+        <LSSN    value = "0x08"/>
+        <SIO    value = "0x03"/>
+        <SSN    value = "0xFE"/>
+    </Route>
+ 
+     <!--///////////////////////////////////////////////////////////////-->
+
+    <Feature
+        name        = "Vendor Framework ITU"
+        library     = "libVFrameD.so"
+        classRec    = "itsSS7STACK_ClassCCITT"
+    />
+
+    <Feature
+        name        = "IntelliNet stack CCITT"
+        library     = "libCCITT-VENDORD.so"
+        classRec    = "itsINTELLISS7_ClassCCITT"
+    />
+
+    <Feature
+        name        = "DSM Data Class - STUB"
+        library     = "libDSM-STUBD.so"
+        classRec    = "itsDSM_StubImplClass"
+    />
+
+    <Feature
+        name        = "ADAX Vendor lib"
+        library     = "libCCITT-ADAXVendorD.so"
+        classRec    = "itsADAX_ClassCCITT"
+    />
+
+    <ApplicationTrace>
+        <Critical  output = "stdout"/>
+        <Error     output = "stdout"/>
+        <Warning   output = "stdout"/>
+        <Debug     output = "stdout"/>
+    </ApplicationTrace>
+
+    <ToolkitTrace>
+        <Critical  output = ""/>
+        <Error     output = ""/>
+        <Warning   output = ""/>
+        <Debug     output = ""/> 
+    </ToolkitTrace>
+
+    <!--///////////////////////////////////////////////////////////////-->
+
+    <WorkerPool stackSize = "0">
+
+         <Transport  type  = "TaskQueue"
+                     count  = "20"
+                     family = "ITU">
+
+             <Callbacks
+                    library         = ""
+                    type            = "blocking"   
+                    postNextEvent   = ""
+                    userMsgHandler  = "ReceiverMsgHandler"
+             />
+        </Transport>
+
+    </WorkerPool>
+
+    <!--///////////////////////////////////////////////////////////////-->
+
+    <BorderPool stackSize = "0">
+  
+        <Transport  name    = "ADAX SS7-1"
+                    type    = "SS7"
+                    family  = "ITU">
+
+            <Modifier value = "MTP2"/>
+
+            <Vendor name        = "ADAX"
+                    library     = "libCCITT-ADAXVendorD.so"
+                    vendorRec   = "itsADAX_ClassCCITT"
+            />
+
+            <Callbacks
+                library         = ""
+                type            = "blocking"
+                preInitialize   = "null"
+                postInitialize  = "null"
+                preNextEvent    = "null"
+                nextEventFailed = "null"
+                postNextEvent   = "null"
+                userMsgHandler  = "null"
+                SCCPMsgHandler  = "null"
+                ISUPMsgHandler  = "null"
+                preTerminate    = "null"
+                postTerminate   = "null"
+            />
+
+            <Link   id              = "0"
+                    family          = "ITU"
+                    linkSet         = "1"
+                    initiallyActive = "yes"
+                    terminalFixed   = "yes"
+                    dataLinkFixed   = "yes"
+                    priority        = "0"
+                    terminal        = "0"
+                    dataLink        = "0"
+                    timeslot        = "0"
+            />
+        </Transport>
+        <Transport  name    = "Debug Console"
+                    type    = "ServerSocket">
+
+            <StreamData socketDomain    = "INET"
+                        serverHostName  = "127.0.0.1"
+                serverPort      = "5000"
+            />
+
+            <Callbacks
+                type            = "debug-console"
+            />
+
+        </Transport>
+    </BorderPool>
+
+    <!--///////////////////////////////////////////////////////////////-->
+
+    <SS7-Stacks>
+
+        <ManagementCallbacks
+            library = ""
+            MTP3ManagementCallbackCCITT     = "MTP3ManagementCallback"
+        />
+
+        <IntelliNet>
+
+            <ITU-SCCP variant = "WhiteBook">
+  
+                <Variant value = "WhiteBook"/>
+  
+                <StackTrace>
+                    <Critical output = "stdout"/>
+                    <Error    output = ""/>
+                    <Warning  output = ""/> 
+                    <Debug    output = ""/> 
+                </StackTrace>
+  
+                <Timers
+                    TstatInfo    = "300"
+                    TcoordChg    = "300"
+                    TignoreSST   = "300"
+                    TrtgStatInfo = "300"
+                    Tconnect     = "300"
+                    Trelease     = "100"
+                    Treset       = "200"
+                    Tias         = "300"
+                    Tiar         = "660"
+                    Tguard       = "240"
+                />
+  
+                <BehaviorControl
+                    PropagateIT   = "no"
+                    PropagateERR  = "no"
+                    PropagateSCMG = "no"
+                    EnableSCMG    = "no"
+                />
+  
+            </ITU-SCCP>
+            <ITU-MTP3 variant = "WhiteBook_97">
+
+                <StackTrace>
+                    <Critical output = "stdout"/>
+                    <Error    output = "stdout"/>
+                    <Warning  output = ""/>
+                    <Debug  output = ""/>
+                </StackTrace>
+
+                <BehaviorControl
+                    STPFunction = "no"
+                />
+
+                <Timers
+                     T1 = "800"
+                     T2 = "1400"
+                     T3 = "800"
+                     T4 = "800"
+                     T5 = "800"
+                     T6 = "800"
+                     T7 = "800"
+                     T8 = "800"
+                     T9 = "0"
+                    T10 = "30000"
+                    T11 = "30000"
+                    T12 = "800"
+                    T13 = "800"
+                    T14 = "2000"
+                    T15 = "2000"
+                    T16 = "1400"
+                    T17 = "800"
+                    T18 = "0"
+                    T19 = "480000"
+                    T20 = "3000"
+                    T21 = "3000"
+                    T22 = "30000"
+                    T23 = "30000"
+                    T24 = "30000"
+                    T25 = "30000"
+                    T26 = "12000"
+                    T27 = "2000"
+                    T28 = "3000"
+                    T29 = "60000"
+                    T30 = "30000"
+                    T31 = "10000"
+                    T32 = "5000"
+                    T33 = "60000"
+                    T34 = "5000"
+                    SLT-T1 = "5000"
+                    SLT-T2 = "30000"
+                />
+
+            </ITU-MTP3>
+ 
+  
+            <!--///////////////////////////////////////////////////////////////-->
+        </IntelliNet>
+       <Vendors>
+ 
+            <ADAX-MTP2>
+             <VendorTrace>
+                   <Critical output = "stdout"/>
+                   <Warning output = ""/>
+                   <Error output = "stdout"/>
+                   <Debug output = ""/>
+              </VendorTrace>
+            </ADAX-MTP2>
+
+        </Vendors>
+
+
+    </SS7-Stacks>
+
+ </Application>

@@ -1,0 +1,62 @@
+--------------------------------------------------------------------------------
+--
+-- AsnCC 2.0 test.
+--
+-- Test for CHOICE, ANY, ANY DEFINED BY tagging and multiple levels tagging.
+--
+-- LRF format.
+--
+--------------------------------------------------------------------------------
+
+
+TEST5 DEFINITIONS ::=
+
+BEGIN
+
+Foo ::= ANY
+
+Bar ::= [PRIVATE 3] Foo
+
+FooBar ::= [PRIVATE 3] IMPLICIT Foo
+
+BarBar ::= [PRIVATE 3] INTEGER
+
+ChoiceA ::= CHOICE
+{
+    int     [1] INTEGER,
+    bool    [2] BOOLEAN
+}
+
+BarFoo ::= [PRIVATE 3] IMPLICIT ChoiceA
+
+ChoiceB ::= CHOICE
+{
+    bar Bar,
+    foo Foo
+}
+
+SeqA ::= SEQUENCE
+{
+    foo1 [1] IMPLICIT Foo,
+    foo2 [2] Foo
+}
+
+SeqB ::= SEQUENCE
+{
+    choice1 [1] ChoiceA,
+    choice2 [2] ChoiceA,
+    choice3 [3] IMPLICIT ChoiceB,
+    choice4 [4] ChoiceB
+}
+
+SeqC ::= SEQUENCE
+{
+    choice1 [1] SEQUENCE OF CHOICE
+                {
+                    int [1] INTEGER,
+                    bool [2] INTEGER
+                }
+}
+
+
+END

@@ -1,0 +1,488 @@
+<!ELEMENT Application (AppOptions*, WindowsExtras?, Feature*, ParserExtension*,
+                       FaultTolerance, LinkSet*, Route*, Destination*, ToolkitTrace?, 
+                       ApplicationTrace?, WorkerPool?, WorkItemPool?, BorderPool?,
+                       SS7-Stacks?)>
+
+<!ATTLIST Application name          CDATA                           #REQUIRED
+                      type          (console-application | service) "console-application"
+                      globalStart   CDATA                           #IMPLIED
+                      binding       (C | CPP)                       "CPP"
+                      library       CDATA                           #IMPLIED
+                      ss7Selector   CDATA                           #IMPLIED
+                      appSelector   CDATA                           #IMPLIED
+                      appDeselector CDATA                           #IMPLIED
+                      hmiCallback   CDATA                           #IMPLIED
+                      alarmCallback CDATA                           #IMPLIED
+                      preFunc       CDATA                           #IMPLIED
+                      postFunc      CDATA                           #IMPLIED>
+
+<!ELEMENT AppOptions EMPTY>
+
+<!ATTLIST AppOptions name  CDATA #REQUIRED
+                     value CDATA #REQUIRED>
+
+<!ELEMENT FaultTolerance (Procedures?, Callbacks?, FtGroups)>
+
+<!ATTLIST FaultTolerance maxNumFtGroups         CDATA   #REQUIRED
+                         maxNumProcesses        CDATA   #REQUIRED
+                         maxNumNodes            CDATA   #REQUIRED
+                         nodeId                 CDATA   #REQUIRED
+                         processId              CDATA   #REQUIRED
+                         tcapFtGroupId          CDATA   #IMPLIED
+                         sccpFtGroupId          CDATA   #IMPLIED
+                         mtp3FtGroupId          CDATA   #IMPLIED
+                         isupFtGroupId          CDATA   #IMPLIED
+                         routingFtGroupId       CDATA   #IMPLIED
+                         timersFtGroupId        CDATA   #IMPLIED
+                         mgmtDataFtGroupId      CDATA   #IMPLIED>
+
+<!ELEMENT Procedures (FtmPreExecuteLogicProcedure?,
+                      FtmLoopExecuteLogicProcedure?,
+                      FtmPostExecuteLogicProcedure?)>
+
+<!ELEMENT FtmPreExecuteLogicProcedure EMPTY>
+
+<!ATTLIST FtmPreExecuteLogicProcedure
+                    library                     CDATA   #REQUIRED
+                    function                    CDATA   #REQUIRED>
+
+<!ELEMENT FtmLoopExecuteLogicProcedure EMPTY>
+
+<!ATTLIST FtmLoopExecuteLogicProcedure
+                    library                     CDATA   #REQUIRED
+                    function                    CDATA   #REQUIRED>
+
+<!ELEMENT FtmPostExecuteLogicProcedure EMPTY>
+
+<!ATTLIST FtmPostExecuteLogicProcedure
+                    library                     CDATA   #REQUIRED
+                    function                    CDATA   #REQUIRED>
+
+<!ELEMENT FtGroups (FtGroup+)>
+
+<!ELEMENT FtGroup (DsmConfig, DsmGcsConfig?, DsmSciConfig?, FtGroupMembers,
+                   MasterFtGroupMembers?, Callbacks*)>
+
+<!ATTLIST FtGroup ftGroupId                     CDATA   #REQUIRED
+                  ftGroupName                   CDATA   #REQUIRED>
+
+<!ELEMENT DsmConfig EMPTY>
+
+<!ATTLIST DsmConfig dsmSize                     CDATA   #REQUIRED
+                    dsmBaseAddress              CDATA   #REQUIRED
+                    dsmMaxNumTables             CDATA   #REQUIRED
+                    dsmType                     CDATA   #REQUIRED>
+
+<!ELEMENT DsmGcsConfig EMPTY>
+
+<!ATTLIST DsmGcsConfig gcsFtGroupId             CDATA   #REQUIRED
+                       gcsDaemonName            CDATA   #IMPLIED
+                       gcsConnectTimeout        CDATA   #IMPLIED
+                       gcsGroupName             CDATA   #IMPLIED
+                       gcsConnectionNameRoute   CDATA   #IMPLIED
+                       gcsReceiverAliveTimeout  CDATA   #IMPLIED
+                       gcsSyncMemUseTcp         CDATA   #IMPLIED
+                       gcsSyncMemUseGcs         CDATA   #IMPLIED
+                       gcsSyncMemTimeout        CDATA   #IMPLIED
+                       gcsSyncMemConnectTimeout CDATA   #IMPLIED
+                       gcsSelfJoinTimeout       CDATA   #IMPLIED
+                       gcsMasterJoinTimeout     CDATA   #IMPLIED
+                       gcsSyncMemIpAddress      CDATA   #IMPLIED
+                       gcsSyncMemIpPort         CDATA   #IMPLIED>
+
+<!ELEMENT DsmSciConfig EMPTY>
+
+<!ATTLIST DsmSciConfig sciFtGroupId             CDATA   #REQUIRED
+                       sciSegmentNumber         CDATA   #REQUIRED
+                       sciAdapterNumber         CDATA   #REQUIRED>
+
+<!ELEMENT FtGroupMembers (FtGroupMember+)>
+
+<!ELEMENT FtGroupMember EMPTY>
+
+<!ATTLIST FtGroupMember nodeId                  CDATA   #REQUIRED
+                        nodeName                CDATA   #IMPLIED
+                        processId               CDATA   #REQUIRED
+                        processName             CDATA   #IMPLIED>
+
+<!ELEMENT MasterFtGroupMembers (MasterFtGroupMember*)>
+
+<!ELEMENT MasterFtGroupMember EMPTY>
+
+<!ATTLIST MasterFtGroupMember nodeId            CDATA   #REQUIRED
+                              processId         CDATA   #REQUIRED>
+
+<!ELEMENT WindowsExtras (NetworkHome+)>
+
+<!ELEMENT NetworkHome EMPTY>
+
+<!ATTLIST NetworkHome localInterface  CDATA        #REQUIRED
+                      localMask       CDATA        #REQUIRED
+                      localBroadcast  CDATA        #REQUIRED>
+
+<!-- Is there a way to say ellipsis?  This ATTLIST needs one. -->
+
+<!ELEMENT FeatureOption EMPTY>
+
+<!ATTLIST FeatureOption name  CDATA #REQUIRED
+                        value CDATA #REQUIRED>
+
+<!ELEMENT Feature (FeatureOption*)>
+
+<!ATTLIST Feature name     CDATA #REQUIRED
+                  library  CDATA #IMPLIED
+                  classRec CDATA #REQUIRED>
+
+<!ELEMENT ParserExtension EMPTY>
+
+<!ATTLIST ParserExtension library     CDATA #IMPLIED
+                          elementName CDATA #REQUIRED
+                          startFunc   CDATA #IMPLIED
+                          stopFunc    CDATA #IMPLIED
+                          xlateFunc   CDATA #IMPLIED
+                          diffFunc    CDATA #IMPLIED>
+
+<!ELEMENT Critical EMPTY>
+<!ELEMENT Error EMPTY>
+<!ELEMENT Warning EMPTY>
+<!ELEMENT Debug EMPTY>
+
+<!ATTLIST Critical  output   (stdout | file)  #REQUIRED>
+<!ATTLIST Error     output   (stdout | file)  #REQUIRED>
+<!ATTLIST Warning   output   (stdout | file)  #REQUIRED>
+<!ATTLIST Debug     output   (stdout | file)  #REQUIRED>
+
+<!ENTITY % traceLevels "(Critical*, Error*, Warning*, Debug*)">
+
+<!ELEMENT ToolkitTrace %traceLevels;>
+
+<!ELEMENT ApplicationTrace %traceLevels;>
+
+<!ELEMENT Modifier EMPTY>
+
+<!ATTLIST Modifier value (MTP2 | MTP3 | ISUP | SCCP | TCAP |
+                          DATA | RUDP | TALI | IMAL | SCTP | GDI)  #REQUIRED>
+
+<!ELEMENT Vendor EMPTY>
+
+<!ATTLIST Vendor name      CDATA #REQUIRED
+                 library   CDATA #IMPLIED
+                 vendorRec CDATA #REQUIRED>
+
+<!ELEMENT StreamData EMPTY>
+
+<!ATTLIST StreamData socketDomain   (INET | UNIX) #REQUIRED
+                     serverHostName CDATA         #REQUIRED
+                     serverPort     CDATA         #REQUIRED>
+
+<!ELEMENT Associate EMPTY>
+
+<!ATTLIST Associate value CDATA #REQUIRED>
+
+<!ELEMENT DatagramData (Associate*)>
+
+<!ATTLIST DatagramData localHostName CDATA #REQUIRED
+                       localPort     CDATA #REQUIRED>
+
+<!ELEMENT FIFOData EMPTY>
+
+<!ATTLIST FIFOData clientPath CDATA #REQUIRED
+                   serverPath CDATA #REQUIRED>
+
+<!ELEMENT IMAL EMPTY>
+
+<!ATTLIST IMAL imalLocalPC          CDATA #REQUIRED
+               imalAdjacentPC       CDATA #REQUIRED
+               imalKeepAliveTimeOut CDATA #IMPLIED>
+
+<!ELEMENT TALI EMPTY>
+
+<!ATTLIST TALI taliLocalPC              CDATA #REQUIRED
+               taliAdjacentPC           CDATA #REQUIRED
+               taliUseUpperLayer        CDATA #IMPLIED
+               taliLocallyAllowedOnOpen CDATA #IMPLIED>
+
+<!ELEMENT GDI EMPTY>
+
+<!ATTLIST GDI gdiLocalPC   CDATA #REQUIRED
+              gdiRemotePC  CDATA #REQUIRED
+              gdiRemoteSSN CDATA #REQUIRED>
+
+<!ELEMENT OtherHome EMPTY>
+
+<!ATTLIST OtherHome localHostName CDATA #REQUIRED>
+
+<!ELEMENT SCTP (OtherHome*)>
+
+<!ATTLIST SCTP maxInStreams    CDATA      #IMPLIED
+               numOutStreams   CDATA      #IMPLIED
+               maxAttempts     CDATA      #IMPLIED
+               cookieLife      CDATA      #IMPLIED
+               hbOn            CDATA      #IMPLIED
+               initTimeOut     CDATA      #IMPLIED
+               sendTimeOut     CDATA      #IMPLIED
+               recvTimeOut     CDATA      #IMPLIED
+               hbTimeOut       CDATA      #IMPLIED
+               shutdownTimeOut CDATA      #IMPLIED
+               pmtuTimeOut     CDATA      #IMPLIED
+               isClient        (yes | no) #REQUIRED
+               payloadType     CDATA      #REQUIRED>
+
+<!ELEMENT CustomDispatch EMPTY>
+
+<!ATTLIST CustomDispatch library  CDATA #IMPLIED
+                         dispatch CDATA #REQUIRED>
+
+<!ELEMENT Callbacks (MembershipChangeAllFtGroupsCallback*,
+                     EventFromAllFtGroupMembersCallback*,
+                     MembershipChangeCallback*,
+                     EventFromFtGroupMemberCallback*)>
+
+<!ATTLIST Callbacks library         CDATA                     #IMPLIED
+                    type            (blocking | non-blocking) "blocking"
+                    preInitialize   CDATA                     #IMPLIED
+                    postInitialize  CDATA                     #IMPLIED
+                    preNextEvent    CDATA                     #IMPLIED
+                    nextEventFailed CDATA                     #IMPLIED
+                    postNextEvent   CDATA                     #IMPLIED
+                    userMsgHandler  CDATA                     #IMPLIED
+                    SCCPMsgHandler  CDATA                     #IMPLIED
+                    ISUPMsgHandler  CDATA                     #IMPLIED
+                    preAccept       CDATA                     #IMPLIED
+                    onAccept        CDATA                     #IMPLIED
+                    preTerminate    CDATA                     #IMPLIED
+                    postTerminate   CDATA                     #IMPLIED>
+
+<!ELEMENT MembershipChangeAllFtGroupsCallback EMPTY>
+
+<!ATTLIST MembershipChangeAllFtGroupsCallback
+                    library         CDATA                     #REQUIRED
+                    function        CDATA                     #REQUIRED>
+
+<!ELEMENT EventFromAllFtGroupMembersCallback EMPTY>
+
+<!ATTLIST EventFromAllFtGroupMembersCallback
+                    library         CDATA                     #REQUIRED
+                    function        CDATA                     #REQUIRED>
+
+<!ELEMENT MembershipChangeCallback EMPTY>
+
+<!ATTLIST MembershipChangeCallback
+                    library         CDATA                     #REQUIRED
+                    function        CDATA                     #REQUIRED>
+
+<!ELEMENT EventFromFtGroupMemberCallback EMPTY>
+
+<!ATTLIST EventFromFtGroupMemberCallback
+                    library         CDATA                     #REQUIRED
+                    function        CDATA                     #REQUIRED>
+
+<!ELEMENT APC EMPTY>
+
+<!ATTLIST APC value CDATA #REQUIRED>
+
+<!ELEMENT LPC EMPTY>
+
+<!ATTLIST LPC value CDATA #REQUIRED>
+
+<!ELEMENT NI EMPTY>
+
+<!ATTLIST NI value CDATA #REQUIRED>
+
+<!ELEMENT LinkSet (NI, APC, LPC)>
+
+<!ATTLIST LinkSet   id              CDATA           #REQUIRED
+                    family          CDATA           #REQUIRED
+                    adjacentSTP	    (yes | no)      "yes"
+                    isCLinkSet      (yes | no)      "no"
+                    is5Bit          (yes | no)      "no"
+                    numToStart      CDATA           #REQUIRED>
+
+<!ELEMENT DPC EMPTY>
+
+<!ATTLIST DPC value CDATA #REQUIRED>
+
+<!ELEMENT OPC EMPTY>
+
+<!ATTLIST OPC value CDATA #REQUIRED>
+
+<!ELEMENT SIO EMPTY>
+
+<!ATTLIST SIO value CDATA #REQUIRED>
+
+<!ELEMENT SSN EMPTY>
+
+<!ATTLIST SSN value CDATA #REQUIRED>
+
+<!ELEMENT CIC EMPTY>
+
+<!ATTLIST CIC value CDATA #REQUIRED>
+
+<!ELEMENT RangeBegin EMPTY>
+
+<!ATTLIST RangeBegin value CDATA #REQUIRED>
+
+<!ELEMENT RangeEnd EMPTY>
+
+<!ATTLIST RangeEnd value CDATA #REQUIRED>
+
+<!ELEMENT Route (DPC, NI?, OPC?, SIO?, SSN?, CIC?,
+                 (RangeBegin, RangeEnd)?)>
+
+<!ATTLIST Route type	(remoteRoute | localRoute | concernedRoute |
+                         duplicateRoute | routingKeyRoute)              #REQUIRED
+                style	(dpc-ni | dpc-opc-ni | dpc-sio | dpc-sio-ssn |
+                         dpc-sio-cic | dpc-sio-ssn-range |
+                         dpc-sio-cic-range | dpc-opc-sio |
+                         dpc-opc-sio-ssn | dpc-opc-sio-cic |
+                         dpc-opc-sio-ssn-range | dpc-opc-sio-cic-range) #REQUIRED
+                family   CDATA                                          #REQUIRED
+                linkSet  CDATA                                          #REQUIRED
+                priority CDATA                                          #REQUIRED>
+
+<!ELEMENT Timer EMPTY>
+
+<!ATTLIST Timer name            CDATA         #REQUIRED
+                value           CDATA         #REQUIRED
+                handledBy       (app | stack) #IMPLIED>
+
+<!ELEMENT CircuitCodes EMPTY>
+
+<!ATTLIST CircuitCodes start CDATA #REQUIRED
+                       count CDATA #IMPLIED>
+
+<!ELEMENT CircuitGroup (CircuitCodes?)>
+
+<!ATTLIST CircuitGroup huntRule (none | even | odd | all) #IMPLIED>
+
+<!ELEMENT ISUPAttributes (Timer*, CircuitGroup*)>
+
+<!ATTLIST ISUPAttributes localPointCode CDATA #REQUIRED
+                         classRec       CDATA #REQUIRED
+                         library        CDATA #IMPLIED>
+
+<!ELEMENT Destination (ISUPAttributes?)>
+
+<!ATTLIST Destination	family      CDATA   #REQUIRED
+                        pointCode   CDATA   #REQUIRED
+                        networkInd  CDATA   #REQUIRED
+                        mtp3Variant CDATA   #IMPLIED
+                        isupVariant CDATA   #IMPLIED
+                        sccpVariant CDATA   #IMPLIED
+                        tcapVariant CDATA   #IMPLIED
+                        tupVariant  CDATA   #IMPLIED
+                        dupVariant  CDATA   #IMPLIED>
+
+<!ELEMENT Link EMPTY>
+
+<!ATTLIST Link	id                  CDATA       #REQUIRED
+                family              CDATA       #REQUIRED
+                linkSet             CDATA       #REQUIRED
+                initiallyActive     (yes | no)  "yes"
+                terminalFixed       (yes | no)  "yes"
+                dataLinkFixed       (yes | no)  "yes"
+                isSAAL              (yes | no)  "no"
+                isLocal             (yes | no)  "yes"
+                priority            CDATA       #IMPLIED
+                terminal            CDATA       #IMPLIED
+                dataLink            CDATA       #IMPLIED>
+
+<!ELEMENT Transport (Modifier*,
+                     (Vendor |
+                      (StreamData, (IMAL | TALI | GDI)?) |
+                      (DatagramData, (IMAL | SCTP)?) |
+                      FIFOData)?,
+                     (Callbacks|CustomDispatch)?, Link*)>
+
+<!ATTLIST Transport name     CDATA                                      #IMPLIED
+                    type     (TaskQueue | ClientSocket |
+                              ServerSocket | IterativeServerSocket |
+                              Datagram | GatedFIFO | Virtual | SS7)     #REQUIRED
+                    family   (ITU | ANSI)                               #IMPLIED
+                    count    CDATA                                      #IMPLIED
+                    instance CDATA                                      #IMPLIED>
+
+<!ELEMENT WorkerPool (Transport+)>
+
+<!ATTLIST WorkerPool stackSize CDATA #IMPLIED>
+
+<!ELEMENT NumWorkers EMPTY>
+
+<!ATTLIST NumWorkers value CDATA #REQUIRED>
+
+<!ELEMENT WorkItem EMPTY>
+
+<!ATTLIST WorkItem type           (repeatable | non-repeatable) #REQUIRED
+                   library        CDATA                         #IMPLIED
+                   userDelegate   CDATA                         #REQUIRED
+                   count          CDATA                         #IMPLIED>
+
+<!ELEMENT WorkItemPool (NumWorkers, WorkItem+)>
+
+<!ATTLIST WorkItemPool stackSize CDATA #IMPLIED>
+
+<!ELEMENT BorderPool (Transport+)>
+
+<!ATTLIST BorderPool stackSize CDATA #IMPLIED>
+
+<!ELEMENT ManagementCallbacks EMPTY>
+
+<!ATTLIST ManagementCallbacks library                     CDATA #IMPLIED
+                              MTP3ManagementCallbackITU   CDATA #IMPLIED
+                              MTP3ManagementCallbackANSI  CDATA #IMPLIED
+                              ISUPManagementCallbackITU   CDATA #IMPLIED
+                              ISUPManagementCallbackANSI  CDATA #IMPLIED
+                              SCCPManagementCallbackITU   CDATA #IMPLIED
+                              SCCPManagementCallbackANSI  CDATA #IMPLIED
+                              SCCPGlobalTitleCallbackITU  CDATA #IMPLIED
+                              SCCPGlobalTitleCallbackANSI CDATA #IMPLIED
+                              SCCPSSNRoutingCallbackITU   CDATA #IMPLIED
+                              SCCPSSNRoutingCallbackANSI  CDATA #IMPLIED>
+
+<!ELEMENT StackTrace %traceLevels;>
+
+<!ELEMENT Timers EMPTY>
+
+<!ELEMENT BehaviorControl EMPTY>
+
+<!ELEMENT ANSI-MTP3 EMPTY>
+
+<!ATTLIST ANSI-MTP3 variant (ANSI-88 | ANSI-92 | ANSI-96) #REQUIRED>
+
+<!ELEMENT ANSI-ISUP EMPTY>
+
+<!ATTLIST ANSI-ISUP variant CDATA #REQUIRED>
+
+<!ELEMENT ANSI-SCCP (StackTrace?, Timers?, BehaviorControl?)>
+
+<!ATTLIST ANSI-SCCP variant    (ANSI-88 | ANSI-92 | ANSI-96) #REQUIRED
+                    numThreads CDATA                         #IMPLIED>
+
+<!ELEMENT ANSI-TCAP (StackTrace?, Timers?, Link*)>
+
+<!ATTLIST ANSI-TCAP variant    (ANSI-88 | ANSI-92 | ANSI-96) #REQUIRED
+                    numThreads CDATA                         #IMPLIED>
+
+<!ELEMENT ITU-MTP3 EMPTY>
+
+<!ATTLIST ITU-MTP3 variant (BlueBook | WhiteBook) #REQUIRED>
+
+<!ELEMENT ITU-ISUP EMPTY>
+
+<!ATTLIST ITU-ISUP variant CDATA #REQUIRED>
+
+<!ELEMENT ITU-SCCP (StackTrace?, Timers?, BehaviorControl?)>
+
+<!ATTLIST ITU-SCCP variant    (BlueBook | WhiteBook) #REQUIRED
+                   numThreads CDATA                  #IMPLIED>
+
+<!ELEMENT ITU-TCAP (StackTrace?, Timers?, Link*)>
+
+<!ATTLIST ITU-TCAP variant    (BlueBook | WhiteBook) #REQUIRED
+                   numThreads CDATA                  #IMPLIED>
+
+<!ELEMENT IntelliNet (ANSI-MTP3?, ANSI-ISUP?, ANSI-SCCP?, ANSI-TCAP?,
+                      ITU-MTP3?, ITU-ISUP?, ITU-SCCP?, ITU-TCAP?)>
+
+<!ELEMENT SS7-Stacks (ManagementCallbacks?, IntelliNet?)>
+

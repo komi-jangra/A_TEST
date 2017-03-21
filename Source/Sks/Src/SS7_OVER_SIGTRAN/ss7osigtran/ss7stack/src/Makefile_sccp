@@ -1,0 +1,19 @@
+INCLUDES= -I../h/ 
+
+CFLAGS= -g -DANSI_PROTO -DSCCP -DSCCP_STATS_ENABLED -DSCCP_ITU  -DSCCP_ERROR_ENABLED -DSCCP_TRACE_ENABLED
+
+SRCDIR= ./
+GCC= gcc
+ifeq ($(ARCH), ARM)
+GCC= $(VNL_COM_PREFIX)gcc
+endif
+
+OBJS = s7_sm.o s7_stdbg.o s7_sterr.o s7_stst.o 
+COMMONLIB = ./libcommon_sccp.a
+all:	$(OBJS)
+lib: $(OBJS)
+	$(AR) -r $(COMMONLIB) $(OBJS)
+clean:
+	$(RM) $(OBJS)
+.c.o:
+	$(GCC) $(CFLAGS) $(INCLUDES) -c $<

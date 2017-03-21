@@ -1,0 +1,4 @@
+release		c	ansi	libANSI-SNMM.a	ANSI-SNMM.lib
+debug		c	ansi	libANSI-SNMMD.a	ANSI-SNMMD.lib
+release		c	itu	libCCITT-SNMM.a	CCITT-SNMM.lib
+debug		c	itu	libCCITT-SNMMD.a	CCITT-SNMMD.lib

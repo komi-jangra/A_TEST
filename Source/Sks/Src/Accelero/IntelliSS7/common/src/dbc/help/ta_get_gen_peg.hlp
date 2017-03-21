@@ -1,0 +1,120 @@
+
+ANSI TCAP Command
+
+SYNOPSIS
+    ta_get_gen_peg <peg Id>
+
+DESCRIPTION
+    This command displays peg count for given peg type.
+
+PARAMETERS
+  peg Id     - The peg id to get the value
+
+             - ALL/all for All TCAP PEGS Values
+   
+NOTE
+    The TCAP pegs ids are:
+
+        PEG_TCAP_APP_MSG_SENT                     0
+        PEG_TCAP_APP_MSG_DISCARDED                1
+        PEG_TCAP_APP_CMP_SENT                     2
+        PEG_TCAP_APP_CMP_DISCARDED                3
+        PEG_TCAP_APP_DLG_SENT                     4
+        PEG_TCAP_REMOTE_DLG_RCVD                  5
+        PEG_TCAP_REMOTE_CMP_RCVD                  6
+        PEG_TCAP_REMOTE_CMP_DISCARDED             7
+        PEG_TCAP_REMOTE_MSG_RCVD                  8
+        PEG_TCAP_REMOTE_UNKNOWN_MSG_RCVD          9
+        PEG_TCAP_REMOTE_MSG_DISCARDED            10
+        PEG_TCAP_ACTIVE_DIALOGUE                 11
+        PEG_TCAP_ACTIVE_TRANSACTIONS             12
+        PEG_TCAP_APP_PREARRANGED_END_SENT        13
+        PEG_TCAP_INVALID_SCCP_RCVD               14
+        PEG_TCAP_REMOTE_SCCP_CLASS_0_RCVD        15
+        PEG_TCAP_REMOTE_SCCP_CLASS_1_RCVD        16
+        PEG_TCAP_REMOTE_UNI_RCVD                 17
+        PEG_TCAP_APP_SCCP_CLASS_0_SENT           18
+        PEG_TCAP_APP_SCCP_CLASS_1_SENT           19
+        PEG_TCAP_APP_UNI_SENT                    20
+        PEG_TCAP_APP_ABORT_SENT                  21
+        PEG_TCAP_REMOTE_ABORT_RCVD               22
+        PEG_TCAP_APP_REJECT_SENT                 23
+        PEG_TCAP_REMOTE_REJECT_RCVD              24
+        PEG_TCAP_LOCAL_CANCEL                    25
+        PEG_TCAP_DLG_SEND_REMOTE_FAIL            26
+        PEG_TCAP_DLG_SEND_APP_FAIL               27
+        PEG_TCAP_APP_INVOKE_SENT                 28
+        PEG_TCAP_APP_RESULT_SENT                 29
+        PEG_TCAP_APP_ERROR_SENT                  30
+        PEG_TCAP_REMOTE_INVOKE_RCVD              31
+        PEG_TCAP_REMOTE_RESULT_RCVD              32
+        PEG_TCAP_REMOTE_ERROR_RCVD               33
+
+        PEG_TCAP_APP_QWOP_SENT                   44
+        PEG_TCAP_REMOTE_QWOP_RCVD                45
+        PEG_TCAP_APP_QWIP_SENT                   46
+        PEG_TCAP_REMOTE_QWIP_RCVD                47
+        PEG_TCAP_APP_RESP_SENT                   48
+        PEG_TCAP_REMOTE_RESP_RCVD                49
+        PEG_TCAP_APP_CWOP_SENT                   50
+        PEG_TCAP_REMOTE_CWOP_RCVD                51
+        PEG_TCAP_APP_CWIP_SENT                   52
+        PEG_TCAP_REMOTE_CWIP_RCVD                53
+
+        ALL_TCAP_PEGS                            99
+  
+  EXAMPLE     
+	>> ta_get_gen_peg 0 
+           Getting the Peg for PEG_TCAP_APP_MSG_SENT Now
+           value is 0
+
+     	>> ta_get_gen_peg  all
+
+        **************** TCAP Pegs **************** 
+        
+        PEG_TCAP_APP_MSG_SENT                     :0  
+        PEG_TCAP_APP_MSG_DISCARDED                :0 
+        PEG_TCAP_APP_CMP_SENT                     :0 
+        PEG_TCAP_APP_CMP_DISCARDED                :0 
+        PEG_TCAP_APP_DLG_SENT                     :0 
+        PEG_TCAP_REMOTE_DLG_RCVD                  :0 
+        PEG_TCAP_REMOTE_CMP_RCVD                  :0 
+        PEG_TCAP_REMOTE_CMP_DISCARDED             :0 
+        PEG_TCAP_REMOTE_MSG_RCVD                  :0 
+        PEG_TCAP_REMOTE_UNKNOWN_MSG_RCVD          :0 
+        PEG_TCAP_REMOTE_MSG_DISCARDED             :0 
+        PEG_TCAP_ACTIVE_DIALOGUE                  :0 
+        PEG_TCAP_ACTIVE_TRANSACTIONS              :0 
+        PEG_TCAP_APP_PREARRANGED_END_SENT         :0 
+        PEG_TCAP_INVALID_SCCP_RCVD                :0 
+        PEG_TCAP_REMOTE_SCCP_CLASS_0_RCVD         :0 
+        PEG_TCAP_REMOTE_SCCP_CLASS_1_RCVD         :0 
+        PEG_TCAP_REMOTE_UNI_RCVD                  :0 
+        PEG_TCAP_APP_SCCP_CLASS_0_SENT            :0 
+        PEG_TCAP_APP_SCCP_CLASS_1_SENT            :0 
+        PEG_TCAP_APP_UNI_SENT                     :0 
+        PEG_TCAP_APP_ABORT_SENT                   :0 
+        PEG_TCAP_REMOTE_ABORT_RCVD                :0 
+        PEG_TCAP_APP_REJECT_SENT                  :0 
+        PEG_TCAP_REMOTE_REJECT_RCVD               :0 
+        PEG_TCAP_LOCAL_CANCEL                     :0 
+        PEG_TCAP_DLG_SEND_REMOTE_FAIL             :0 
+        PEG_TCAP_DLG_SEND_APP_FAIL                :0 
+        PEG_TCAP_APP_INVOKE_SENT                  :0 
+        PEG_TCAP_APP_RESULT_SENT                  :0 
+        PEG_TCAP_APP_ERROR_SENT                   :0 
+        PEG_TCAP_REMOTE_INVOKE_RCVD               :0 
+        PEG_TCAP_REMOTE_RESULT_RCVD               :0 
+        PEG_TCAP_REMOTE_ERROR_RCVD                :0 
+        PEG_TCAP_APP_QWOP_SENT                    :0 
+        PEG_TCAP_REMOTE_QWOP_RCVD                 :0 
+        PEG_TCAP_APP_QWIP_SENT                    :0 
+        PEG_TCAP_REMOTE_QWIP_RCVD                 :0 
+        PEG_TCAP_APP_RESP_SENT                    :0 
+        PEG_TCAP_REMOTE_RESP_RCVD                 :0 
+        PEG_TCAP_APP_CWOP_SENT                    :0 
+        PEG_TCAP_REMOTE_CWOP_RCVD                 :0 
+        PEG_TCAP_APP_CWIP_SENT                    :0 
+        PEG_TCAP_REMOTE_CWIP_RCVD                 :0 
+
+ 

@@ -1,0 +1,26 @@
+
+M3UA / SUA Command
+
+SYNOPSIS
+    u_asptbl
+
+DESCRIPTION
+    This command displays ASP table for a sigtran node.
+
+PARAMETERS
+    None.
+
+EXAMPLE
+    >> u_asptbl
+    --------------------------------------------------
+    Dump of Association Table(ASP).
+    --------------------------------------------------
+    state    = ASP ACTIVE   
+    TRID     = 0x4e22
+    Payload  = M3UA
+    ASP ID   = -39797927 
+        AS List: 
+            rCtxt  =  1   State  =  AS ACTIVE    
+
+
+

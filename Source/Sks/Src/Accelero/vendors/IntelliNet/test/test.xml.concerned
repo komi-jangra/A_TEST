@@ -1,0 +1,629 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE Application SYSTEM "file:D:\cvsroot\IntelliSS7\ENGINE\src\engine.dtd">
+
+<!-- Sample XML file for application configuration (INI). -->
+
+<Application name           = "test"
+             type           = "console-application"
+             globalStart    = "ANSI-MTP3 + ANSI-SCCP + ANSI-TCAP"
+             binding        = "C">
+
+    <AppOptions name = "traceFlushAfterWrite"         value = "no"/>
+    <AppOptions name = "memPoolChecksOn"              value = "no"/>
+
+    <Feature
+        name        = "Vendor Framework"
+        library     = "VFrameD.dll"
+        classRec    = "itsSS7STACK_ClassANSI"
+    />
+
+    <Feature
+        name        = "IntelliNet stack"
+        library     = "ANSIVendorD.dll"
+        classRec    = "itsINTELLISS7_ClassANSI"
+    />
+
+    <Feature
+        name        = "DSM Stub library"
+        library     = "DSM-STUBD.dll"
+        classRec    = "itsDSM_StubImplClass"
+    />
+<!--
+    <Feature
+        name        = "NMS Vendor lib"
+        library     = "NMSVendorD.dll"
+        classRec    = "itsNMS_ClassANSI"
+    />
+ -->
+    <ToolkitTrace>
+        <Critical  output = "stdout"/>
+        <Critical  output = "file"/>
+        <Error     output = "stdout"/>
+        <Error     output = "file"/>
+        <Warning   output = "stdout"/>
+        <Warning   output = "file"/>
+        <Debug     output = "file"/>
+    </ToolkitTrace>
+
+    <ApplicationTrace>
+        <Critical  output = "file"/>
+        <Error     output = "file"/>
+        <Warning   output = "file"/>
+        <Debug     output = "file"/>
+    </ApplicationTrace>
+
+<!--
+    <ParserExtension    library     = "NMSVendorD.dll"
+                        elementName = "NMS_Data"
+                        startFunc   = "NMS_ParseStart"
+                        stopFunc    = "NMS_ParseEnd"
+                        xlateFunc   = "NMS_ConvertParserData"
+                        diffFunc    = "NMS_Diff"
+    />
+
+    <NMS_Data   sectionName = "NMS SS7-1"
+                boardNum    = "1"
+                mtp2SrcEnt  = "32"
+                srcInst     = "0"
+                linkSets    = "1"
+                linkCodes   = "0,1,2,3"
+    />
+ -->
+
+    <!--/////////////// LINK SETS //////////////-->
+    <!-- link set for internal routing -->
+    <LinkSet id           = "0"
+             adjacentSTP  = "no"
+             numToStart   = "0"
+             family       = "ANSI">
+        <NI     value = "0x80"/>
+        <APC    value = "0x0"/>
+        <LPC    value = "0x0"/>
+    </LinkSet>
+
+    <!-- link set for external routing -->
+    <LinkSet id           = "1"
+             adjacentSTP  = "yes"
+             numToStart   = "1"
+             family       = "ANSI">
+        <NI     value = "0x80"/>
+        <APC    value = "0x010101"/>
+        <LPC    value = "0x010100"/>
+    </LinkSet>
+
+    <!-- route for SNMM -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0"
+            family   = "ANSI">
+        <DPC    value = "0x010100"/>
+        <SIO    value = "0x80"/>
+    </Route>
+
+    <!-- route for SLTM REG -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0"
+            family   = "ANSI">
+        <DPC    value = "0x010100"/>
+        <SIO    value = "0x81"/>
+    </Route>
+
+    <!-- route for SLTM SPEC -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0"
+            family   = "ANSI">
+        <DPC    value = "0x010100"/>
+        <SIO    value = "0x82"/>
+    </Route>
+
+    <!-- route for SCCP -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0"
+            family   = "ANSI">
+        <DPC    value = "0x010100"/>
+        <SIO    value = "0x83"/>
+    </Route>
+
+    <!-- route for TUP -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0"
+            family   = "ANSI">
+        <DPC    value = "0x010100"/>
+        <SIO    value = "0x84"/>
+    </Route>
+
+    <!-- route for ISUP -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0"
+            family   = "ANSI">
+        <DPC    value = "0x010100"/>
+        <SIO    value = "0x85"/>
+    </Route>
+
+    <!-- route for DUP (call setup) -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0"
+            family   = "ANSI">
+        <DPC    value = "0x010100"/>
+        <SIO    value = "0x86"/>
+    </Route>
+
+    <!-- route for DUP (facility) -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0"
+            family   = "ANSI">
+        <DPC    value = "0x010100"/>
+        <SIO    value = "0x87"/>
+    </Route>
+
+    <!-- route for MTP testing -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0"
+            family   = "ANSI">
+        <DPC    value = "0x010100"/>
+        <SIO    value = "0x88"/>
+    </Route>
+
+    <!-- route for B-ISUP -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0"
+            family   = "ANSI">
+        <DPC    value = "0x010100"/>
+        <SIO    value = "0x89"/>
+    </Route>
+
+    <!-- route for S-ISUP -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0"
+            family   = "ANSI">
+        <DPC    value = "0x010100"/>
+        <SIO    value = "0x8a"/>
+    </Route>
+
+    <!-- route for spare UP -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0"
+            family   = "ANSI">
+        <DPC    value = "0x010100"/>
+        <SIO    value = "0x8b"/>
+    </Route>
+
+    <!-- route for spare UP -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0"
+            family   = "ANSI">
+        <DPC    value = "0x010100"/>
+        <SIO    value = "0x8c"/>
+    </Route>
+
+    <!-- route for reserved UP -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0"
+            family   = "ANSI">
+        <DPC    value = "0x010100"/>
+        <SIO    value = "0x8d"/>
+    </Route>
+
+    <!-- route for reserved UP -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0"
+            family   = "ANSI">
+        <DPC    value = "0x010100"/>
+        <SIO    value = "0x8e"/>
+    </Route>
+
+    <!-- route for spare UP -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0"
+            family   = "ANSI">
+        <DPC    value = "0x010100"/>
+        <SIO    value = "0x8f"/>
+    </Route>
+
+    <!-- route for TCAP -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio-ssn"
+            linkSet  = "0"
+            priority = "0"
+            family   = "ANSI">
+        <DPC    value = "0x010100"/>
+        <SIO    value = "0x83"/>
+        <SSN    value = "5"/>
+    </Route>
+
+    <!-- route for adjacent node -->
+    <Route  type    = "remoteRoute"
+            style   = "dpc-ni"
+            linkSet = "1"
+            priority = "0"
+            family   = "ANSI">
+        <DPC    value = "0x010101"/>
+        <SIO    value = "0x80"/>
+    </Route>
+
+    <!-- route for non-adjacent node -->
+    <Route  type    = "remoteRoute"
+            style   = "dpc-ni"
+            linkSet = "1"
+            priority = "0"
+            family   = "ANSI">
+        <DPC    value = "0x010000"/>
+        <SIO    value = "0x80"/>
+    </Route>
+
+    <!-- route for concerned dest -->
+    <Route  type    = "concernedRoute"
+            style   = "dpc-opc-sio-ssn"
+            linkSet = "0"
+            priority = "0"
+            family   = "ANSI">
+        <DPC    value = "0x010101"/>
+        <SIO    value = "0x83"/>
+        <SSN    value = "5"/>
+        <LPC    value = "0x010100"/>
+        <LSSN   value = "5"/>
+    </Route>
+
+    <!--/////////////// DESTINATIONS //////////////-->
+    <!-- adjacent destination -->
+    <Destination    family      = "ANSI"
+                    pointCode   = "0x000101"
+                    networkInd  = "0x80"
+                    mtp3Variant = "ANSI_96"
+                    isupVariant = "ANSI_96"
+                    sccpVariant = "ANSI_96"
+                    tcapVariant = "ANSI_96"
+                    tupVariant  = "ANSI_96"
+                    dupVariant  = "ANSI_96"
+    />
+
+    <!-- non-adjacent destination -->
+    <Destination    family      = "ANSI"
+                    pointCode   = "0x000000"
+                    networkInd  = "0x80"
+                    mtp3Variant = "ANSI_96"
+                    isupVariant = "ANSI_96"
+                    sccpVariant = "ANSI_96"
+                    tcapVariant = "ANSI_96"
+                    tupVariant  = "ANSI_96"
+                    dupVariant  = "ANSI_96"
+    />
+
+    <!--///////////////////////////////////////////////////////////////-->
+
+    <FaultTolerance
+        maxNumFtGroups      = "1"
+        maxNumProcesses     = "1"
+        maxNumNodes         = "1"
+        nodeId              = "0"
+        processId           = "0"
+        tcapFtGroupId       = "0"
+        sccpFtGroupId       = "0"
+        mtp3FtGroupId       = "0"
+        isupFtGroupId       = "0"
+        routingFtGroupId    = "0"
+        timersFtGroupId     = "0"
+        mgmtDataFtGroupId   = "0"
+    >
+
+        <Procedures>
+
+        </Procedures>
+
+        <Callbacks>
+
+        </Callbacks>
+
+        <FtGroups>
+
+            <FtGroup 
+                ftGroupId      = "0"
+                ftGroupName    = "FtGroup0"
+            >
+
+                <DsmConfig
+                     dsmSize         = "20971520"
+                     dsmBaseAddress  = "0x80000000"
+                     dsmMaxNumTables = "256"
+                     dsmType         = "STUB"
+                />
+
+                <!-- Note: MUST include itself. -->
+                <!-- Note: nodeName and processName are optional attributes. --> 
+
+                <FtGroupMembers>
+
+                    <FtGroupMember
+                        nodeId      = "0"
+                        nodeName    = "Node0"
+                        processId   = "0"
+                        processName = "Node0Process0"
+                    />
+
+                </FtGroupMembers>
+
+
+                <!-- Note: MUST NOT include itself. -->
+                <!-- Note: Master FtGroupMembers are tried in order. -->
+
+                <MasterFtGroupMembers>
+
+                </MasterFtGroupMembers>
+
+                <Callbacks>
+                
+                </Callbacks>
+
+            </FtGroup>
+
+        </FtGroups>
+
+    </FaultTolerance>
+
+    <BorderPool stackSize = "0">
+
+<!--
+        <Transport  name    = "NMS SS7-1"
+                    type    = "SS7"
+                    family  = "ANSI">
+                    
+            <Modifier value = "MTP2"/>
+
+            <Vendor name        = "NMS"
+                    library     = "NMSVendorD.dll"
+                    vendorRec   = "itsNMS_ClassANSI"
+            />
+
+            <Callbacks
+                type            = "blocking"
+                preInitialize   = "null"
+                postInitialize  = "null"
+                preNextEvent    = "null"
+                nextEventFailed = "null"
+                postNextEvent   = "null"
+                userMsgHandler  = "null"
+                SCCPMsgHandler  = "null"
+                ISUPMsgHandler  = "null"
+                preTerminate    = "null"
+                postTerminate   = "null"
+            />
+
+            <Link   id              = "0"
+                    linkSet         = "1"
+                    initiallyActive = "yes"
+                    terminalFixed   = "yes"
+                    dataLinkFixed   = "yes"
+                    priority        = "0"
+                    terminal        = "0"
+                    dataLink        = "0"
+                    family          = "ANSI"
+            />
+            <Link   id              = "1"
+                    linkSet         = "1"
+                    initiallyActive = "yes"
+                    terminalFixed   = "yes"
+                    dataLinkFixed   = "yes"
+                    priority        = "0"
+                    terminal        = "0"
+                    dataLink        = "0"
+                    family          = "ANSI"
+            />
+            <Link   id              = "2"
+                    linkSet         = "1"
+                    initiallyActive = "yes"
+                    terminalFixed   = "yes"
+                    dataLinkFixed   = "yes"
+                    priority        = "0"
+                    terminal        = "0"
+                    dataLink        = "0"
+                    family          = "ANSI"
+            />
+            <Link   id              = "3"
+                    linkSet         = "1"
+                    initiallyActive = "yes"
+                    terminalFixed   = "yes"
+                    dataLinkFixed   = "yes"
+                    priority        = "0"
+                    terminal        = "0"
+                    dataLink        = "0"
+                    family          = "ANSI"
+            />
+
+        </Transport>
+ -->
+
+        <Transport  name    = "User"
+                    type    = "TaskQueue"
+                    family  = "ANSI">
+                    
+            <Callbacks
+                type            = "blocking"
+                preInitialize   = "TrafficGenerator"
+                postInitialize  = "null"
+                preNextEvent    = "null"
+                nextEventFailed = "null"
+                postNextEvent   = "null"
+                userMsgHandler  = "null"
+                SCCPMsgHandler  = "null"
+                ISUPMsgHandler  = "null"
+                preTerminate    = "null"
+                postTerminate   = "null"
+            />
+        </Transport>
+
+        <Transport  name    = "Debug Console"
+                    type    = "ServerSocket">
+                    
+            <StreamData socketDomain    = "INET"
+                        serverHostName  = "127.0.0.1"
+                        serverPort      = "7000"
+            />
+
+            <Callbacks
+                type            = "debug-console"
+            />
+
+        </Transport>
+
+    </BorderPool>
+
+    <!--///////////////////////////////////////////////////////////////-->
+
+    <SS7-Stacks>
+
+        <ManagementCallbacks
+            MTP3ManagementCallbackANSI      = "MTP3Mgmt"
+        />
+
+        <IntelliNet>
+
+            <ANSI-MTP3 variant = "ANSI_96">
+  
+                <StackTrace>
+                    <Critical output = "stdout"/>
+                    <Error    output = "stdout"/>
+                    <Warning  output = "stdout"/>
+                    <Debug    output = "stdout"/> 
+                </StackTrace>
+
+                <BehaviorControl
+                    STPFunction = "yes"
+                />
+
+                <Timers
+                     T1 = "800"
+                     T2 = "1400"
+                     T3 = "800"
+                     T4 = "800"
+                     T5 = "800"
+                     T6 = "800"
+                     T7 = "800"
+                     T8 = "800"
+                     T9 = "0"
+                    T10 = "30000"
+                    T11 = "30000"
+                    T12 = "800"
+                    T13 = "800"
+                    T14 = "2000"
+                    T15 = "2000"
+                    T16 = "1400"
+                    T17 = "800"
+                    T18 = "0"
+                    T19 = "480000"
+                    T20 = "3000"
+                    T21 = "3000"
+                    T22 = "30000"
+                    T23 = "30000"
+                    T24 = "30000"
+                    T25 = "30000"
+                    T26 = "12000"
+                    T27 = "2000"
+                    T28 = "3000"
+                    T29 = "60000"
+                    T30 = "30000"
+                    T31 = "10000"
+                    T32 = "5000"
+                    T33 = "60000"
+                    T34 = "5000"
+                    SLT-T1 = "5000"
+                    SLT-T2 = "30000"
+                />
+
+            </ANSI-MTP3>
+  
+            <ANSI-SCCP variant = "ANSI_96">
+  
+                <StackTrace>
+                    <Critical output = "stdout"/>
+                    <Critical output = "file"/>
+                    <Error    output = "stdout"/>
+                    <Error    output = "file"/>
+                    <Warning  output = "stdout"/>
+                    <Warning  output = "file"/> 
+                    <Debug    output = "file"/> 
+                </StackTrace>
+  
+                <Timers
+                    TstatInfo    = "30"
+                    TcoordChg    = "30"
+                    TignoreSST   = "30"
+                    TrtgStatInfo = "30"
+                    Tconnect     = "30"
+                    Trelease     = "10"
+                    Treset       = "20"
+                    Tias         = "300"
+                    Tiar         = "660"
+                    Tguard       = "240"
+                />
+  
+                <BehaviorControl
+                    PropagateIT   = "no"
+                    PropagateERR  = "no"
+                    PropagateSCMG = "yes"
+                />
+  
+            </ANSI-SCCP>
+
+            <ANSI-TCAP variant = "ANSI_96">
+  
+                <StackTrace>
+                    <Critical output = "stdout"/>
+                    <Critical output = "file"/>
+                    <Error    output = "stdout"/>
+                    <Error    output = "file"/>
+                    <Warning  output = "stdout"/>
+                    <Warning  output = "file"/> 
+                    <Debug    output = "file"/> 
+                </StackTrace>
+  
+                <!-- Make TCAP routable -->
+                <Link   id              = "0"
+                        linkSet         = "0"
+                        initiallyActive = "yes"
+                        terminalFixed   = "yes"
+                        dataLinkFixed   = "yes"
+                        priority        = "0"
+                        terminal        = "0"
+                        dataLink        = "0"
+                        family          = "ANSI"
+                />
+
+            </ANSI-TCAP>
+
+        </IntelliNet>
+
+    </SS7-Stacks>
+
+</Application>

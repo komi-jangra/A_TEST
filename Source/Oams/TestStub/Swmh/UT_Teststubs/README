@@ -1,0 +1,48 @@
+README:
+
+Pre Requrements
+---------------
+
+        -IPC Framework is up and running.
+       
+        -DB is up and running.
+
+        -DB Tool is running to insert data in DB.
+
+        -Logger is running.
+
+        -Message Dumper is running.
+ 
+Populating DB
+-------------
+
+        -Insert preconfig data in SwMPreConfigTable by using DB Tool..
+
+          -Insert couple of enteries for TRX and BIC in SwMNodeTablecflms.
+
+        -Insert number of instances for Download and Activation by executing 
+         ./NSTLIB_DB_STUB placed at /targetBin/repos/testStubs
+
+        -Insert and update the TrxTsTei and BicStatus Tables for LapdLinkStatus and ConnectionState for TRX and BIC according to test case scenerio.
+
+Running SWMH Test Cases
+-----------------------
+
+Steps to run SWMH test stub
+
+
+        -SWMH Test stub code is placed in directory $VNLBSC/Source/Oams/TestStub/Swmh/UT_Teststubs
+
+        -To generate the executable for SWMH Test Stub, run the Makefile placed in above TestStub directory 
+         (as defined above).
+                For example : To generate test stub executable for ABIHM execute the command "make -f Makefile_ABIHM". 
+                Similarly we can generate test stub executables for other stubs also.
+
+        -Copy the test stub executables generated at the above path to /targetBin/repos/testStubs/ in the setup.
+
+        -Run Stubs executables from the above path.
+
+        -Each Test case result can be viewed in the PRC_LOG.
+
+
+

@@ -1,0 +1,18 @@
+
+M2UA Command
+
+SYNOPSIS
+    mu_rem_iid <iid>
+
+DESCRIPTION
+    This command removes iid.
+
+
+PARAMETERS
+    iid              Interface IID 
+    
+EXAMPLE
+>> mu_rem_iid 20
+
+********* M2UA IID Removed *********
+

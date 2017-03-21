@@ -1,0 +1,138 @@
+#########################################################################################  
+#   FILE		:     README  
+#   DESCRIPTION		:     README for PSCH UT Environment 
+#   REVISION HISTORY	:  
+#   DATE (mm/dd/yyyy)     	NAME          		REFERENCE       
+#   -------------------------------------------------------------------------------------
+#   12/02/2010 	             Mayank Goel		Initial Version
+#  
+#########################################################################################
+
+
+This readme has provided the stpes for the compilation of PSCH for UT, configuration, 
+and running of Stubs required by PSCH. 
+
+SECTION 1:	Compilation of PSCH
+SECTION	2:	Compilation of Stub
+SECTION	3:	Configuring UT Environment
+
+#########################################################################################
+SECTION 1:				Compilation of PSCH
+#########################################################################################
+Pre-requisites:
+1. All compilation changes done in make.opt file.
+2. All Path are configured correctly.
+
+PSCH Module Compilation:
+1. Add Flag __UT_TEST in SystemClassPsch_env.tpm file:
+	COMP_FLAG = -D__UT_TEST
+
+2. Copy utenv.h file present at Path:/Source/Oams/TestStub/Psch/tester/Inc/ to 
+   Path:/Inc/Sys/
+	
+3. Open PSCH Module in TAU 4.3.
+
+4. Include utenv.h in Include files of System Inc.
+
+5. Re-Import System Inc.
+
+6. Go to Path:/Source/Oams/Src/Psch/Src/
+
+7. Run command: make clean;make
+
+8. PSCH Module is compiled with Instances.
+
+1. Go to Path:/Source/Oams/Src/Psch/Src/
+
+2. Run command: make clean;make
+
+
+
+#########################################################################################
+SECTION 2:				Compilation of Stub
+#########################################################################################
+Pre-requisites:
+1. Make sure that Check is installed and Path of Installed Check is updated in makefile
+   of UT Stub present at Path: /Source/Oams/TestStub/Psch/UT/tester/Src/makefile
+
+
+Stub Compilation:
+1. Go to Path: /Source/Oams/TestStub/Psch/UT/tester/Src/
+
+2. Run command: make clean;make
+
+3. The UT stub will simulate the following modules:
+a. Bssgp
+b. Cfg
+c. Trxh
+d. Cellh
+e. Psmsh
+f. Psscm
+g. Gbh
+h. Grhm
+
+
+#########################################################################################
+SECTION 3:				Configuring UT Environment
+#########################################################################################
+Pre-requisites:
+1. TC executer must have knowledge of running Host Environment provided by VNL.
+2. TC executer must make sure that all dependencies are resolved before executing
+   Psch UT and Host Environment is running properly.
+3. All dependent Binaries: DB, PSCH, BPM Stub, Psch UT Stub are replaced properly at 
+   there paths.
+
+PSCH UT: 
+1. Copy Script CreateApp from Path: /Source/Oams/TestStub/Psch/UT/tester/Scripts/ to 
+   Path: /targetBin/repos/testStubs/ 
+
+2. Copy Directory Psch_Ut from Path: /Source/Oams/TestStub/Psch/UT/tester/Scripts/ to  
+   Path: /targetBin/repos/testStubs/
+
+3. Copy binary utenv from Path: /Source/Oams/TestStub/Psch/UT/tester/Src to  
+   Path: /targetBin/repos/testStubs/Psch_Ut
+
+4. Copy library libcheck.so.0  from Path: /usr/local/lib to  
+   Path: /targetBin/repos/releasePath/r$Version/lib
+
+5. Open file /Source/Oams/TestStub/Psch/UT/tester/Scripts/Psch_Ut/SetPschUtEnv.sh and 
+   update Paths accordingly in exported variables.
+
+6. Remove the db data from the path /targetBin/repos/releasePath/r$Version/telecom/Master
+
+7. Remove the db data from the path /targetBin/repos/releasePath/r$Version/telecom/Replica
+
+8. Run UT Environment
+
+9. Open new xterm (Using Option 21)
+
+10. Change directory using command: cd Psch_Ut/
+
+11. Run Command: source SetPschUtEnv.sh
+
+12  Run TestStubBpm.
+
+13. Run Command: 
+   For Running TC: source runPsch.sh.
+   This script will call the scripts to fill data in Db and it will also fork Binary of Psch.
+
+14. From the Bpm stub give the following sequentially
+    1
+    1
+    1
+    3
+    1
+    4
+    This will bring the cardstate to ACTIVE.
+
+15. Copy utenv binary to the Path: /targetBin/repos/testStubs/Psch_Ut/ and
+   Run Command: 
+   For Running utenv: ./utenv 
+
+16. Logs will be created at Path: /targetBin/repos/testStubs/PRC_LOG/ with date.
+
+17. The report for testcases Pass/Fail will be generated in the file Model.txt at the Path:/targetBin/repos/testStubs/Psch_Ut/.
+
+#########################################################################################
+					END
+#########################################################################################

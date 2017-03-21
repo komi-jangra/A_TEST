@@ -1,0 +1,11 @@
+The following have poorly understood roles:
+isobject.c (not thread safe)
+ode2oid.c (not thread safe)
+pe2ps.c
+ps2pe.c
+qbuf2ps.c
+std2ps.c
+str2ps.c
+Those files ending in *ps.c seem to implement a VFS type
+output switch.  Those files beginning with ps_ seem to
+implement the interface to that switch.

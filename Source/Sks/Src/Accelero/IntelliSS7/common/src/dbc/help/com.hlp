@@ -1,0 +1,6 @@
+
+Common Module -
+    ansi_dumpls           Dump ANSI Linkset Table
+    itu_dumpls            Dump ITU Linkset Table
+
+For details about any command use "help <command name>"

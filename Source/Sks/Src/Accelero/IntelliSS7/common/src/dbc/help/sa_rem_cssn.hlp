@@ -1,0 +1,23 @@
+
+ANSI SCCP Command
+
+SYNOPSIS
+    sa_rem_cssn <sspc> <ni> <ssn> <cpc> <cssn>
+
+DESCRIPTION
+    This command removes concerned sunsystem entry corresponding to given 
+    pc, ni, ssn, cpc, cssn.
+
+
+PARAMETERS
+    sspc    Local Point Code
+    ni      Network Indicator
+    ssn     Local Subsystem
+    cpc     Concerned Point Code
+    cssn    Concerned subsystem
+
+EXAMPLE
+    >> sa_rem_cssn 2 0 2 5 5
+    ****** SCCP Concerned Subsystem Entry Removed*****
+
+

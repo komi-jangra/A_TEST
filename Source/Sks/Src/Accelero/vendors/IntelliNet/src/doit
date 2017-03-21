@@ -1,0 +1,7 @@
+#!/bin/bash
+#export LSP_PATH=/opt/montavista/cge/devkit/lsp/freescale-8560ads-ppc_85xx/linux-2.4.20_mvlcge31
+#export LSP_PATH=/home/linux-2.4.20_mvlcge31
+export LSP_PATH=/opt/imr-vdg-src-v1.10a/common/linux
+
+export TOPDIR=$LSP_PATH
+make -C $LSP_PATH modules SUBDIRS=$PWD BUILD_IMTP2=yes 

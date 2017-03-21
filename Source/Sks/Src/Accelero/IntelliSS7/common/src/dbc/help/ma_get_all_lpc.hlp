@@ -1,0 +1,26 @@
+
+Get LPC Command
+
+SYNOPSIS
+    ma_get_all_lpc  
+
+DESCRIPTION
+   This command gets all local pointcode details.
+
+PARAMETERS
+   None
+
+
+EXAMPLE
+
+>> ma_get_all_lpc
+------------------------------
+Local PC:         <8>
+Family:      <ANSI>
+------------------------------
+------------------------------
+Local PC:         <7>
+Family:      <ANSI>
+------------------------------
+
+

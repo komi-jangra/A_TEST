@@ -1,0 +1,10 @@
+This Direectory contains Test program that can be used as 
+Debug Console on Tandem system. The program can be compiled only 
+on tandem and requires two obey files.
+
+cobey - obey file to compile application
+lobey - obey file to link library
+
+Chnage the name of source file and executable in obey file
+as required. (tandem cannot take fie with any extensions.)
+

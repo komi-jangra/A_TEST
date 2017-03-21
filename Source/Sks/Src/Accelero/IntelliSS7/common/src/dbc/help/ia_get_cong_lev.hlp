@@ -1,0 +1,18 @@
+ANSI ISUP Command
+
+SYNOPSIS
+    ia_get_cong_lev  <congLevel>
+
+DESCRIPTION
+    This command displays the Local Automatic Congestion Level in ISUP
+
+PARAMETERS
+    congLevel     Automatic Congestion Level Type
+
+    Possible Values for congLevel: 1, 2
+
+EXAMPLE
+>> ia_get_cong_lev 1
+
+Congestion Level1:  10000
+

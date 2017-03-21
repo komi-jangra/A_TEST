@@ -1,0 +1,259 @@
+<?xml version="1.0"?>
+
+<!-- XML file for BSSAP configuration with sigtran -->
+
+<Application name           = "BSSAP"
+             type           = "console-application"
+             globalStart    = "ITU-TCAP"
+             binding        = "CPP"
+             library        = "libAPP.so"
+             preFunc        = "MyPreFunc"
+             postFunc       = "MyPostFunc">
+
+    <Options
+        traceFlushAfterWrite         = "no"
+        memPoolChecksOn              = "no"
+    />
+    
+    <Feature
+        name        = "IntelliNet stack"
+        library     = "libENGINED.so"
+        classRec    = "itsINTELLISS7_Class"
+    />
+
+    <Feature
+        name        = "SCTP"
+        library     = "libSCTPD.so"
+        classRec    = "itsSCTP_Class"
+    />
+
+    <Feature
+        name        = "CCITT-M3UA"
+        library     = "libCCITT-M3UAD.so"
+        classRec    = "itsM3UA_Class_CCITT"
+    />
+<ParserExtension library     = "libUALD.so"
+                     elementName = "UAL_Manager"
+                     startFunc   = "UAL_ParseStartFunc"
+                     stopFunc    = "UAL_ParseStop"
+                     xlateFunc   = "UAL_ResourceXlate"
+                     diffFunc    = "UAL_ExtensionDiff"
+    />
+
+    <UAL_Manager  useSCMGCallBack    = "no"
+                   heartBeat         = "off"
+                   hbInterval        = "5"
+                   ackTimer          = "600"
+                   pendingTimer      = "2"
+                   interworkingMode  = "endPointMode"
+                   version           = "1">
+
+           <AsInfo     routingKey     = "2"
+                       isMember       = "yes"
+                       asTrafficMode  = "overRideMode">
+           </AsInfo>
+
+           <UAL_Route   routeType  = "routingKeyRoute"
+                        routeStyle = "dpc">
+
+                 <routingKey value = "0x2"/>
+                 <DPC        value = "0x2"/>
+
+           </UAL_Route>
+
+    </UAL_Manager>
+
+    <Feature
+        name        = "UAL_Manager"
+        library     = "libUALD.so"
+        classRec    = "itsUAL_Class"
+    />
+
+
+    <ToolkitTrace>
+        <Critical  output = "file"/>
+        <Error     output = "file"/>
+        <Warning   output = ""/>
+        <Debug     output = ""/>
+    </ToolkitTrace>
+
+
+    <!--///////////////////////////////////////////////////////////////-->
+
+    <WorkerPool stackSize = "0">
+
+           <Transport  type    = "TaskQueue"
+                       count   = "20"
+                       family  = "ITU">
+
+            <Modifier value = "SCCP"/>
+
+            <Callbacks
+                library         = "libAPP.so"
+                type            = "blocking"
+                preInitialize   = "null"
+                postInitialize  = "SccpThreadFunction"
+                preNextEvent    = "null"
+                nextEventFailed = "null"
+                postNextEvent   = "null"
+                userDispatch    = "null"
+                preTerminate    = "null"
+                postTerminate   = "null"
+            />
+
+           </Transport>
+
+
+
+    </WorkerPool>
+
+    <!--///////////////////////////////////////////////////////////////-->
+  
+    <BorderPool stackSize = "0">
+
+        <Transport  name    = "SCTP Server"
+                    type    = "Datagram"
+                    family  = "ITU">
+
+            <Modifier value = "MTP3"/>
+            <Modifier value = "SCTP"/>
+
+            <DatagramData localHostName = "10.1.4.66"
+                          localPort     = "2960">
+                           <Associate   value  = "ASP 1"/>
+            </DatagramData>
+        
+            <SCTP   maxInStreams    = "32"
+                    numOutStreams   = "32"
+                    maxAttempts     = "5"
+                    cookieLife      = "30"
+                    hbOn            = "yes"
+                    initTimeOut     = "5,0"
+                    sendTimeOut     = "1,0"
+                    recvTimeOut     = "0,100000"
+                    hbTimeOut       = "30,0"
+                    shutdownTimeOut = "5,0"
+                    pmtuTimeOut     = "600,0"
+                    isClient        = "yes"
+                    payloadType     = "CCITT-M3UA">
+            </SCTP>
+
+            <Callbacks
+                library         = "libAPP.so"
+                type            = "blocking"
+                preInitialize   = "null"
+                postInitialize  = "null"
+                preNextEvent    = "null"
+                nextEventFailed = "null"
+                postNextEvent   = "null"
+                userDispatch    = "null"
+                SCCPDispatch    = "null"
+                ISUPDispatch    = "null"
+                onAccept        = "null"
+                preTerminate    = "null"
+                postTerminate   = "null"
+            />
+
+            <Route  routeType    = "routingKeyRoute"
+                     routeStyle   = "dpc">
+                <routingKey     value = "2"/>
+                <DPC            value = "2"/>
+                <LinkSet        value = "1"/>
+                <LinkCode       value = "1"/>
+            </Route>
+
+
+        </Transport>
+
+        <Transport  name    = "ASP 1"
+                    type    = "Virtual"
+                    family  = "ITU">
+
+            <DatagramData   socketDomain    = "INET"
+                            serverHostName  = "10.1.5.101"
+                            serverPort      = "2960"
+            />
+
+            <Route  routeType    = "remoteRoute"
+                    routeStyle   = "dpc">
+                <DPC            value = "4114"/>
+                <SIO            value = "3"/>
+                <SSN            value = "254"/>
+                <LinkSet        value = "1"/>
+                <LinkCode       value = "1"/>
+            </Route>
+
+        </Transport>
+
+
+    </BorderPool>
+
+    <!--///////////////////////////////////////////////////////////////-->
+
+    <SS7-Stacks>
+        
+        <!--///////////////////////////////////////////////////////////-->
+
+        <IntelliNet>
+
+            <ITU-SCCP variant = "WhiteBook">
+
+                <StackTrace>
+                    <Critical output = "file"/>
+                    <Error    output = "file"/>
+                    <Warning  output = ""/>
+                    <Debug    output = ""/>
+                </StackTrace>
+
+                <Timers
+                    TstatInfo    = "30"
+                    TcoordChg    = "30"
+                    TignoreSST   = "30"
+                    TrtgStatInfo = "30"
+                    Tconnect     = "30"
+                    Trelease     = "10"
+                    Treset       = "20"
+                    Tias         = "300"
+                    Tiar         = "660"
+                    Tguard       = "240"
+                />
+
+                <BehaviorControl
+                    PropagateIT   = "no"
+                    PropagateERR  = "no"
+                    PropagateSCMG = "no"
+                />
+
+            </ITU-SCCP>
+
+            <ITU-TCAP variant = "WhiteBook">
+ 
+                <StackTrace>
+                    <Critical output = "file"/>
+                    <Error    output = "file"/>
+                    <Warning  output = ""/>
+                    <Debug    output = ""/>
+                </StackTrace>
+ 
+
+                <Route  routeType    = "localRoute"
+                        routeStyle   = "dpc">
+                    <DPC        value = "2"/>
+                    <SIO        value = "3"/>
+                    <SSN        value = "8"/>
+                    <LinkSet    value = "1"/>
+                    <LinkCode   value = "1"/>
+                </Route>
+
+                <Timers
+                    Treject = "50"
+                />
+ 
+            </ITU-TCAP>
+
+
+        </IntelliNet>
+
+    </SS7-Stacks>
+
+</Application>

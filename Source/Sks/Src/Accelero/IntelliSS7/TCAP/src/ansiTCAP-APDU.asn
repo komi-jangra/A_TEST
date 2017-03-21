@@ -1,0 +1,49 @@
+--
+-- DEFINITIONS IMPLICIT TAGS ::=
+--* ANSI-T1.114-TCAP(3) *-- ANSI-TCAP-APDU DEFINITIONS ::=
+--
+
+BEGIN
+
+ProtocolVersion ::= [PRIVATE 26] IMPLICIT OCTET STRING (SIZE(1))
+
+--
+-- Application Context
+--
+IntegerApplicationContext ::= [PRIVATE 27] IMPLICIT INTEGER
+ObjectIDApplicationContext ::= [PRIVATE 28] IMPLICIT OBJECT IDENTIFIER
+
+--
+-- Application Context
+--
+ApplicationContext ::= CHOICE {
+   integerApplicationContext   IntegerApplicationContext,
+   objectIDApplicationContext  ObjectIDApplicationContext
+}
+
+--
+-- User Information
+--
+UserInformation ::= [PRIVATE 29] IMPLICIT SEQUENCE OF EXTERNAL
+
+--
+-- Dialogue Portion
+--
+DialoguePortion ::= [PRIVATE 25] IMPLICIT SEQUENCE {
+    protocolVersion ProtocolVersion OPTIONAL,
+    applicationContext ApplicationContext OPTIONAL,
+    userInformation UserInformation OPTIONAL,
+    securityContext CHOICE {
+        integerSecurityContext  [0] IMPLICIT INTEGER,
+        objectIDSecurityContext [1] IMPLICIT OBJECT IDENTIFIER
+    } OPTIONAL,
+    confidentiality [2] IMPLICIT SEQUENCE {
+        confidentialityAlgorithmID CHOICE {
+            integerSecurityContext  [0] IMPLICIT INTEGER,
+            objectIDSecurityContext [1] IMPLICIT OBJECT IDENTIFIER
+        },
+        confidentialityValue ANY OPTIONAL
+    } OPTIONAL
+}
+
+END

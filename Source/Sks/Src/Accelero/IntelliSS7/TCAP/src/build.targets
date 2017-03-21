@@ -1,0 +1,8 @@
+TCAP    TCAP.mak    debug   "TCAP - Win32 ANSI Debug"
+TCAP    TCAP.mak    release "TCAP - Win32 ANSI Release"
+TCAP    TCAP.mak    debug   "TCAP - Win32 CCITT Debug"
+TCAP    TCAP.mak    release "TCAP - Win32 CCITT Release"
+TCAP    TCAP.mak    debug   "TCAP - Win32 ANSI over CCITT Debug"
+TCAP    TCAP.mak    debug   "TCAP - Win32 CCITT over ANSI Debug"
+TCAP    TCAP.mak    release "TCAP - Win32 ANSI over CCITT Release"
+TCAP    TCAP.mak    release "TCAP - Win32 CCITT over ANSI Release"

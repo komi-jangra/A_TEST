@@ -1,0 +1,30 @@
+
+ITU SCCP Command
+
+SYNOPSIS
+    si_set_behavior <ps> <us> <pi> <pe>
+
+DESCRIPTION
+    This command sets ITU SCCP behavior.
+
+PARAMETERS
+      ps    Propagate SCMG Behavior. Possible values -
+             yes   set Propagate SCMG Behavior.
+             no    unset Propagate SCMG Behavior.
+
+      us    Use SCMG Behavior. 
+             yes   set Use SCMG Behavior. Possible values -
+             no    unset Use SCMG Behavior.
+
+      pi    Propagate Inactivity Behavior. Possible values -
+             yes   set Propagate Inactivity Behavior.
+             no    unset Propagate Inactivity Behavior.
+
+      pe    Propagate Error Behavior. Possible values -
+             yes   set Propagate Error Behavior.
+             no    unset Propagate Error Behavior.
+
+EXAMPLE
+    >> si_set_behavior yes yes yes yes
+    *******SCCP Behaviors Set*******
+

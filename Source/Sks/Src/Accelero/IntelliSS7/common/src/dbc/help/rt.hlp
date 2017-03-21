@@ -1,0 +1,8 @@
+
+ROUTING Module :
+    rt_add                ROUTE Add a route entry
+    rt_del                ROUTE Delete a route entry
+    rt_dump               ROUTE Dump Routing Table data
+    
+For details about any command use "help <command name>"
+

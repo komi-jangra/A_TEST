@@ -1,0 +1,21 @@
+
+ANSI ISUP Command
+
+SYNOPSIS
+    ia_get_gen_pegs
+
+DESCRIPTION
+    This command displays the general ISUP statistics.
+
+PARAMETERS
+    NONE
+
+EXAMPLE
+    >> ia_get_gen_pegs
+
+     Peg Name                   Peg Count 
+     --------                   --------
+
+PEG_ISUP_TOT_MSGS_SENT                0
+PEG_ISUP_TOT_MSGS_RCVD                0
+

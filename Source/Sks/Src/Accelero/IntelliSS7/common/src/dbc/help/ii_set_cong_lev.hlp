@@ -1,0 +1,16 @@
+
+ITU ISUP Command
+
+SYNOPSIS
+    ii_set_cong_lev  <congLevel> <congValue>
+
+DESCRIPTION
+    Set the Local Automatic Congestion Levels in ISUP 
+
+PARAMETERS
+    congLevel     Automatic Congestion Level ( 1 or 2)
+    congValue     Congestion Level Value Threshold 
+
+EXAMPLE
+    >> ii_set_cong_lev 1 5000
+       *** Successfully Set Cong Level ***

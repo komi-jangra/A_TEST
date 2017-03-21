@@ -1,0 +1,24 @@
+BSSAP Command
+
+SYNOPSIS
+    bs_get_all_cic_record
+
+DESCRIPTION
+    This command gets all CIC configurations  
+
+PARAMETERS 
+    NONE
+
+EXAMPLE
+    >> bs_get_all_cic_record
+
+    pcm          : 1 
+    time slot    : 0
+    Network Id   : 2
+    Local State  : BLOCK
+    Remote State : UN-BLOCK
+    Call State   : IDLE
+    Timer ID     : 0
+
+
+

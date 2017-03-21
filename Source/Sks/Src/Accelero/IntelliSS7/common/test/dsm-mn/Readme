@@ -1,0 +1,42 @@
+=======================================================
+== Examples of command line to run tests on 2 nodes. ==
+=======================================================
+
+- Standard (without auxiliary script):
+--------------------------------------
+
+Node1:
+
+test_dsm_mnD 
+    -appName TestDsmMntGcsNode1Unix 
+    -gcsDaemonName 8991 
+    -batch script_test1_node1.in
+
+
+Node2:
+
+test_dsm_mnD
+    -appName TestDsmMntGcsNode2Unix
+    -gcsDaemonName 8991
+    -batch script_test1_node2.in
+
+
+- Non-standard (with auxiliary script):
+---------------------------------------
+
+Node1:
+
+test_dsm_mnD 
+    -appName TestDsmMntGcsNode1Unix 
+    -gcsDaemonName 8991 
+    -batch script_test3_node1.in
+
+
+Node2:
+
+test_dsm_mnD
+    -appName MntOnly
+    -gcsDaemonName 8991
+    -batch script_test3_node2.in
+
+

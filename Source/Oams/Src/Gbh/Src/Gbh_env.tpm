@@ -1,0 +1,24 @@
+include ../../../../Csapp/Util/make.opt
+USERTARGET = Gbh_env$(sctOEXTENSION)
+USERLIBRARIES = $(LFLAGS) $(LIBS) -linst-DB -ldbwrappers -lsemaphore 
+
+COMP_FLAG = -DXUSE_SIGNAL_NUMBERS -D__C_APPL $(CFLAGS)# -DCPLUSPLUS
+
+USER_FLAG = -D__UT_TEST
+HDRFILES = -I../../../../../Inc/Sys/ \
+           -I../../../../../Inc/Ipc/ \
+           -I../../../../../Inc/Dbs/ \
+           -I../../../../../Inc/Csapp/ \
+           -I../../../../../Inc/Oam/ \
+	   -I../../../../../Inc/Bpm/ \
+           -I../../../../../Inc/Oams/ \
+           -I../../../Inc/ \
+           -I../Inc/
+
+Gbh_env$(sctOEXTENSION): Gbh_env.c Gbh.ifc
+	$(sctCC) $(sctCPPFLAGS) $(sctCCFLAGS) $(sctIFDEF) Gbh_env.c -o Gbh_env$(sctOEXTENSION)
+
+sctUSERDEFS = -g $(COMP_FLAG) $(USER_FLAG) $(HDRFILES)
+
+clean_user_objs:
+	$(sctRM) $(USERTARGET)

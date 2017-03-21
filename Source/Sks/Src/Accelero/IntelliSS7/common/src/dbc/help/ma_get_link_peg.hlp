@@ -1,0 +1,122 @@
+
+ITU MTP3 Command
+
+SYNOPSIS
+    ma_get_link_peg <linkset> <linkcode> <Peg Id>
+
+DESCRIPTION
+   Get a specific peg value for a link
+
+PARAMETERS
+    linkset       the link set which owns the link
+    linkcode      link id within the specified linkset
+    Peg Id        the peg string to get the value from
+
+ DESCRIPTION
+    This command displays peg value for given peg id.
+PARAMETERS
+  peg Id     - The peg id to get the value
+             - ALL/all for All MTP3  PEGS Values
+
+NOTE
+    The MTP3  Link pegs are:
+
+          PEG_MTP3_LINK_COO_TX             4        
+          PEG_MTP3_LINK_COO_RX             5       
+          PEG_MTP3_LINK_COA_TX             6      
+          PEG_MTP3_LINK_COA_RX             7     
+          PEG_MTP3_LINK_ECO_TX             8    
+          PEG_MTP3_LINK_ECO_RX             9   
+          PEG_MTP3_LINK_ECA_TX             10  
+          PEG_MTP3_LINK_ECA_RX             11 
+          PEG_MTP3_LINK_CBD_TX             12 
+          PEG_MTP3_LINK_CBD_RX             13 
+          PEG_MTP3_LINK_CBA_TX             14 
+          PEG_MTP3_LINK_CBA_RX             15 
+          PEG_MTP3_LINK_LIN_TX             16 
+          PEG_MTP3_LINK_LIN_RX             17 
+          PEG_MTP3_LINK_LIA_TX             18 
+          PEG_MTP3_LINK_LIA_RX             19  
+          PEG_MTP3_LINK_LUN_TX             20 
+          PEG_MTP3_LINK_LUN_RX             21 
+          PEG_MTP3_LINK_LUA_TX             22 
+          PEG_MTP3_LINK_LUA_RX             23 
+          PEG_MTP3_LINK_LID_TX             24 
+          PEG_MTP3_LINK_LID_RX             25
+          PEG_MTP3_LINK_LFU_TX             26       
+          PEG_MTP3_LINK_LFU_RX             27      
+          PEG_MTP3_LINK_LLI_TX             28
+          PEG_MTP3_LINK_LLI_RX             29    
+          PEG_MTP3_LINK_LRI_TX             30   
+          PEG_MTP3_LINK_LRI_RX             31  
+          PEG_MTP3_LINK_DLC_TX             32 
+          PEG_MTP3_LINK_DLC_RX             33 
+          PEG_MTP3_LINK_CSS_TX             34 
+          PEG_MTP3_LINK_CSS_RX             35 
+          PEG_MTP3_LINK_CNS_TX             36   
+          PEG_MTP3_LINK_CNS_RX             37  
+          PEG_MTP3_LINK_CNP_TX             38 
+          PEG_MTP3_LINK_CNP_RX             39 
+          PEG_MTP3_LINK_UPU_TX             40 
+          PEG_MTP3_LINK_UPU_RX             41  
+          PEG_MTP3_LINK_SLTM_TX            42 
+          PEG_MTP3_LINK_SLTM_RX            43 
+          PEG_MTP3_LINK_SLTA_TX            44 
+          PEG_MTP3_LINK_SLTA_RX            45
+
+    ALL_MTP3_PEGS                    99
+
+
+EXAMPLE
+      >> ma_get_link_peg 1 1 4 
+      Getting the Peg for PEG_MTP3_LINK_COO_TX Now
+
+         value is 0
+     
+
+      >> ma_get_link_peg 1 1  all
+  
+      ********** Printing Link Pegs **********
+      PEG_MTP3_LINK_COO_TX            :  0
+      PEG_MTP3_LINK_COO_RX            :  0
+      PEG_MTP3_LINK_COA_TX            :  0
+      PEG_MTP3_LINK_COA_RX            :  0
+      PEG_MTP3_LINK_ECO_TX            :  0
+      PEG_MTP3_LINK_ECO_RX            :  0
+      PEG_MTP3_LINK_ECA_TX            :  0
+      PEG_MTP3_LINK_ECA_RX            :  0
+      PEG_MTP3_LINK_CBD_TX            :  0
+      PEG_MTP3_LINK_CBD_RX            :  0
+      PEG_MTP3_LINK_CBA_TX            :  0
+      PEG_MTP3_LINK_CBA_RX            :  0
+      PEG_MTP3_LINK_LIN_TX            :  0
+      PEG_MTP3_LINK_LIN_RX            :  0
+      PEG_MTP3_LINK_LIA_TX            :  1
+      PEG_MTP3_LINK_LIA_RX            :  0
+      PEG_MTP3_LINK_LUN_TX            :  0
+      PEG_MTP3_LINK_LUN_RX            :  0
+      PEG_MTP3_LINK_LUA_TX            :  0
+      PEG_MTP3_LINK_LUA_RX            :  0
+      PEG_MTP3_LINK_LID_TX            :  0
+      PEG_MTP3_LINK_LID_RX            :  0
+      PEG_MTP3_LINK_LFU_TX            :  0
+      PEG_MTP3_LINK_LFU_RX            :  0
+      PEG_MTP3_LINK_LLI_TX            :  0
+      PEG_MTP3_LINK_LLI_RX            :  0
+      PEG_MTP3_LINK_LRI_TX            :  0
+      PEG_MTP3_LINK_LRI_RX            :  0
+      PEG_MTP3_LINK_DLC_TX            :  0
+      PEG_MTP3_LINK_DLC_RX            :  0
+      PEG_MTP3_LINK_CSS_TX            :  0
+      PEG_MTP3_LINK_CSS_RX            :  0
+      PEG_MTP3_LINK_CNS_TX            :  0
+      PEG_MTP3_LINK_CNS_RX            :  0
+      PEG_MTP3_LINK_CNP_TX            :  0
+      PEG_MTP3_LINK_CNP_RX            :  0
+      PEG_MTP3_LINK_UPU_TX            :  0
+      PEG_MTP3_LINK_UPU_RX            :  0
+      PEG_MTP3_LINK_SLTM_TX           :  0
+      PEG_MTP3_LINK_SLTM_RX           :  0
+      PEG_MTP3_LINK_SLTA_TX           :  0
+      PEG_MTP3_LINK_SLTA_RX           :  0
+

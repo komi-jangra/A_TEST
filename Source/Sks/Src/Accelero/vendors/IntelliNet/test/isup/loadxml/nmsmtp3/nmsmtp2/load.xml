@@ -1,0 +1,374 @@
+<?xml version="1.0"?>
+
+
+<!-- XML file for application configuration using IntelliNet ISUP and NMS MTP3 (INI). -->
+
+<Application name           = "ISUP-LOAD-TEST"
+             type           = "console-application"
+             globalStart    = "ITU-ISUP"
+             binding        = "C" 
+             library        = "libload-nms3-nms2-CCITT.so"
+             appSelector    = "SelectApplication"
+             preFunc        = "LoadPreFunc"
+             postFunc       = "LoadPostFunc">
+
+
+    <AppOptions name = "traceFlushAfterWrite"         value = "yes"/>
+    <AppOptions name = "memPoolChecksOn"              value = "no"/>
+
+    <Feature
+        name        = "Vendor Framework"
+        library     = "libVFrameD.so"
+        classRec    = "itsSS7STACK_ClassCCITT"
+    />
+
+    <Feature
+        name        = "IntelliNet stack"
+        library     = "libCCITT-VENDORD.so"
+        classRec    = "itsINTELLISS7_ClassCCITT"
+    />
+
+    <Feature
+        name        = "NMS Vendor lib"
+        library     = "libCCITT-NMSVENDORD.so"
+        classRec    = "itsNMS_ClassCCITT"
+    />
+
+    <Feature
+        name        = "ITU_GENERIC_93"
+        library     = "libITU_GENERIC_93D.so"
+        classRec    = "isupITU93_Class"
+    />
+
+
+
+    <ToolkitTrace>
+        <Critical  output = "stdout"/>
+        <Critical  output = "file"/>
+        <Error     output = "stdout"/>
+        <Error     output = "file"/>
+        <Warning   output = "stdout"/>
+        <Warning   output = "file"/>
+    </ToolkitTrace>
+
+    <ApplicationTrace>
+        <Critical  output = "file"/>
+        <Error     output = "file"/>
+        <Error     output = "stdout"/>
+        <Warning   output = "file"/>
+        <Warning   output = "stdout"/>
+    </ApplicationTrace>
+
+    <ParserExtension    library     = "libCCITT-NMSVENDORD.so"
+                        elementName = "NMS_Data"
+                        startFunc   = "NMS_ParseStart"
+                        stopFunc    = "NMS_ParseEnd"
+                        xlateFunc   = "NMS_ConvertParserData"
+                        diffFunc    = "NMS_Diff"
+    />
+
+    <NMS_Data   sectionName = "NMS SS7-1"
+                boardNum    = "1"
+                mtp3SapId   = "1"
+                isupSapId   = "0"
+                isupMgmtSrcEnt  = "31"
+                isupSrcEnt  = "32"
+                mtp3SrcEnt  = "33"
+                srcInst     = "0"
+                servUserId  = "0"
+                SIO         = "0x85"
+                linkSets    = "1"
+                linkCodes   = "0,1,2,3"
+    />
+
+    <!-- link set for external routing -->
+    <LinkSet id           = "1"
+             adjacentSTP  = "no"
+             isCLinkSet = "no"
+             is5Bit = "no"
+             numToActivate = "1"
+             numToStart   = "1" >
+        <APC    value = "0x15"/>
+        <LPC    value = "0x10"/>
+        <NI     value = "0x85"/>
+    </LinkSet>
+
+
+    <!-- route for ISUP -->
+    <Route  type     = "remoteRoute"
+            style    = "dpc-sio"
+            linkSet  = "1"
+            priority = "0">
+        <DPC    value = "0x15"/>
+        <SIO    value = "0x85"/>
+    </Route>
+
+
+    <!-- adjacent destination -->
+
+    <Destination    family      = "ITU"
+                    pointCode   = "0x15"
+                    networkInd  = "0x80"
+                    isupVariant = "ITU_GENERIC_93" >
+
+        <ISUPAttributes localPointCode    = "0x10"
+                        SIO               = "0x85"
+                        classRec          = "isupITU93_Class"
+                        library           = "libITU_GENERIC_93D.so">
+
+              <!-- Only override timer value -->
+              <Timer name       = "T1"
+                     value      = "45"
+                     handledBy  = "STACK"
+              />
+              <Timer name       = "T2"
+                     value      = ""
+                     handledBy  = ""
+              />
+
+              <Timer name       = "T3"
+                     value      = "45"
+              />
+              <Timer name       = "T4"
+                     value      = ""
+              />
+              <Timer name       = "T5"
+                     value      = "  "
+              />
+              <Timer name       = "T6"
+                     handledBy  = "STACK"
+              />
+              <Timer name       = "T7"
+                     value      = "30"
+                     handledBy  = "STACK"
+              />
+              <Timer name       = "T8"
+              />
+
+              <Timer name       = "T14"
+                     value      = "300"
+                     handledBy  = "STACK"
+              />
+
+              <Timer name       = "T15"
+                     value      = "400"
+                     handledBy  = "STACK"
+              />
+
+              <!-- Circuit Group #1 -->
+              <CircuitGroup huntRule = "DEF">
+                  <CircuitCodes start = "0"
+                                count = "64"
+                  />
+
+             </CircuitGroup>
+
+              <!-- Circuit Group #2 -->
+              <CircuitGroup huntRule = "EVEN">
+                  <CircuitCodes start = "64"
+                                count = "64"
+                  />
+              </CircuitGroup>
+
+              <!-- Circuit Group #3 -->
+              <CircuitGroup huntRule = "EVEN">
+                  <CircuitCodes start = "128"
+                                count = "64"
+                  />
+              </CircuitGroup>
+
+              <!-- Circuit Group #4 -->
+              <CircuitGroup huntRule = "EVEN">
+                  <CircuitCodes start = "192"
+                                count = "64"
+                  />
+              </CircuitGroup>
+
+              <!-- Circuit Group #5 -->
+              <CircuitGroup huntRule = "EVEN">
+                  <CircuitCodes start = "256"
+                                count = "64"
+                  />
+              </CircuitGroup>
+
+              <!-- Circuit Group #6 -->
+              <CircuitGroup huntRule = "EVEN">
+                  <CircuitCodes start = "320"
+                                count = "64"
+                  />
+              </CircuitGroup>
+
+              <!-- Circuit Group #7 -->
+              <CircuitGroup huntRule = "EVEN">
+                  <CircuitCodes start = "384"
+                                count = "64"
+                  />
+              </CircuitGroup>
+
+              <!-- Circuit Group #8 -->
+              <CircuitGroup huntRule = "EVEN">
+                  <CircuitCodes start = "448"
+                                count = "64"
+                  />
+              </CircuitGroup>
+
+        </ISUPAttributes>
+
+
+    </Destination>
+
+
+    <Destination    family      = "ITU"
+                    pointCode   = "0x22"
+                    networkInd  = "0x80"
+                    isupVariant = "ITU_GENERIC_93" >
+
+        <ISUPAttributes localPointCode    = "0x10"
+                        SIO               = "0x85"
+                        classRec          = "isupITU93_Class"
+                        library           = "libITU_GENERIC_93D.so">
+
+              <!-- Only override timer value -->
+              <Timer name       = "T1"
+                     value      = "45"
+                     handledBy  = "STACK"
+              />
+
+              <!-- Circuit Group #1 -->
+              <CircuitGroup huntRule = "DEF">
+                  <CircuitCodes start = "1"
+                                count = "50"
+                  />
+                  <CircuitCodes start = "51"
+                                count = "9"
+                  />
+              </CircuitGroup>
+
+        </ISUPAttributes>
+
+    </Destination>
+
+
+
+    <!--///////////////////////////////////////////////////////////////-->
+
+    <WorkerPool stackSize = "0">
+
+        <Transport type    = "TaskQueue"
+                   count   = "512"
+                   family  = "ITU">
+
+            <Modifier value = "ISUP"/>
+
+            <Callbacks
+                library         = "libload-nms3-nms2-CCITT.so"
+                type            = "blocking"
+                preInitialize   = "null"
+                postInitialize  = "null"
+                preNextEvent    = "null"
+                nextEventFailed = "null"
+                postNextEvent   = "null"
+                userDispatch    = "null"
+                preTerminate    = "null"
+                postTerminate   = "null"
+            />
+
+        </Transport>
+
+     </WorkerPool>
+
+
+
+    <!--///////////////////////////////////////////////////////////////-->
+
+    <BorderPool stackSize = "0">
+
+        <Transport  name    = "NMS SS7-1"
+                    type    = "SS7"
+                    family  = "ITU">
+
+            <Modifier value = "MTP3"/>
+
+            <Vendor name        = "NMS"
+                    library     = "libCCITT-NMSVENDORD.so"
+                    vendorRec   = "itsNMS_ClassCCITT"
+            />
+
+           <Callbacks
+                library         = "libload-nms3-nms2-CCITT.so"
+                type            = "blocking"
+                preInitialize   = "null"
+                postInitialize  = "null"
+                preNextEvent    = "null"
+                nextEventFailed = "null"
+                postNextEvent   = "null"
+                userMsgHandler  = "null"
+                SCCPMsgHandler  = "null"
+                ISUPMsgHandler  = "null"
+                preTerminate    = "null"
+                postTerminate   = "null"
+            />
+
+            <!-- 2 links on this transport -->
+            <Link   id              = "0"
+                    linkSet         = "1"
+                    initiallyActive = "yes"
+                    terminalFixed   = "yes"
+                    dataLinkFixed   = "yes"
+                    priority        = "0"
+                    terminal        = "0"
+                    dataLink        = "0"
+            />
+            <Link   id              = "1"
+                    linkSet         = "1"
+                    initiallyActive = "yes"
+                    terminalFixed   = "yes"
+                    dataLinkFixed   = "yes"
+                    priority        = "0"
+                    terminal        = "0"
+                    dataLink        = "0"
+            />
+         
+
+         </Transport>
+
+        <Transport  name    = "Debug Console"
+                    type    = "ServerSocket">
+
+            <StreamData socketDomain    = "INET"
+                        serverHostName  = "127.0.0.1"
+                        serverPort      = "9123"
+            />
+
+            <Callbacks
+                type            = "debug-console"
+            />
+
+        </Transport>
+
+    </BorderPool>
+
+    <!--///////////////////////////////////////////////////////////////-->
+
+    <SS7-Stacks>
+
+        <IntelliNet>
+
+            <ITU-ISUP variant = "ITU_GENERIC_93" >
+
+                <StackTrace>
+                    <Critical output = "stdout"/>
+                    <Critical output = "file"/>
+                    <Error    output = "stdout"/>
+                    <Warning  output = "file"/>
+                    <Debug    output = "none"/>
+                </StackTrace>
+
+            </ITU-ISUP>
+
+        </IntelliNet>
+
+    </SS7-Stacks>
+
+
+</Application>

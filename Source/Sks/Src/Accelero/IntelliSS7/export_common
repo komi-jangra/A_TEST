@@ -1,0 +1,20 @@
+#!/bin/sh
+
+if [ $# -ne 1 ]
+then
+	echo "You must supply a target directory".
+	exit 1
+fi
+
+./build_release all cpp both no $1 "SNMM SLTM MTP2 MTP3 ISUP SCCP TCAP ENGINE"
+./build_release all cpp both yes $1 "SNMM SLTM MTP2 MTP3 ISUP SCCP TCAP ENGINE"
+./build_release all rudp both no $1
+./build_release all rudp both yes $1
+./build_release all tali both no $1
+./build_release all tali both yes $1
+./build_release all imal both no $1
+./build_release all imal both yes $1
+./build_release all sctp both no $1
+./build_release all sctp both yes $1
+./build_release all gdi both no $1
+./build_release all gdi both yes $1

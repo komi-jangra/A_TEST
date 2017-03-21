@@ -1,0 +1,19 @@
+
+ITU MTP3 Command
+
+SYNOPSIS
+    mi_shutdown 
+
+DESCRIPTION
+   MTP3 Gracefully Shutdown MTP3 node. Every links on the
+   target node are deactivated first to minimize message lost.
+
+PARAMETERS
+    none
+
+
+EXAMPLE
+    >> mi_shutdown 
+    *********** Shutting down node **************
+
+

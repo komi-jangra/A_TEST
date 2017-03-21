@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+
+<!-- Sample XML file for application configuration (INI). -->
+
+<Application name           = "Sink"
+             type           = "console-application"
+             globalStart    = ""
+             binding        = "C"
+             library        = "libTHROUGH.so">
+
+    <Options
+        traceFlushAfterWrite         = "no"
+        routeUniqueLinkCodesRequired = "yes"
+        memPoolChecksOn              = "no"
+    />
+
+    <ToolkitTrace>
+        <Critical  output = "no"/>
+        <Error     output = "no"/>
+        <Warning   output = "no"/>
+        <Debug     output = "no"/>
+    </ToolkitTrace>
+
+    <ApplicationTrace>
+        <Critical  output = "no"/>
+        <Error     output = "no"/>
+        <Warning   output = "no"/>
+        <Debug     output = "no"/>
+    </ApplicationTrace>
+
+    <!--///////////////////////////////////////////////////////////////-->
+
+    <BorderPool stackSize = "0">
+
+        <Transport  name    = "Sink"
+                    type    = "ServerSocket"
+                    family  = "">
+                    
+            <StreamData socketDomain    = "INET"
+                        serverHostName  = "192.168.1.1"
+                        serverPort      = "30000"
+                        retryDelay      = "0"
+                        retryCount      = "0"
+            />
+
+            <Callbacks
+                library         = "libTHROUGH.so"
+                type            = "blocking"
+                preInitialize   = "null"
+                postInitialize  = "null"
+                preNextEvent    = "null"
+                nextEventFailed = "null"
+                postNextEvent   = "null"
+                userMsgHandler  = "discardFunc"
+                SCCPMsgHandler  = "null"
+                ISUPMsgHandler  = "null"
+                preTerminate    = "null"
+                postTerminate   = "null"
+            />
+
+        </Transport>
+
+    </BorderPool>
+
+    <!--///////////////////////////////////////////////////////////////-->
+
+</Application>

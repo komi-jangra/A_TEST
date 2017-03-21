@@ -1,0 +1,4 @@
+release		c	ansi	libANSI-ISUP.a	ANSI-ISUP.lib
+debug		c	ansi	libANSI-ISUPD.a	ANSI-ISUPD.lib
+release		c	itu	libCCITT-ISUP.a	CCITT-ISUP.lib
+debug		c	itu	libCCITT-ISUPD.a  CCITT-ISUPD.lib

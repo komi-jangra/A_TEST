@@ -1,0 +1,21 @@
+#! /bin/ksh
+#
+# 
+# Set USER_ROOT as per your config
+# Set ITS_ROOT as per your config
+# Set VENDOR_ROOT as per your config
+# NOTE: Configure the Client.xml file as well.
+###############################################################################
+USER_ROOT=/export/home/users/ssingh
+ITS_ROOT=$USER_ROOT/cvsroot/IntelliSS7
+VENDOR_ROOT=$USER_ROOT/cvsroot/vendors
+###############################################################################
+
+export DLL_LIBS=$ITS_ROOT/common/lib:$ITS_ROOT/TCAP/lib:$ITS_ROOT/MTP3/lib:$VENDOR_ROOT/IntelliNet/lib
+
+export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/reloc/lib:/usr/lib:$LD_LIBRARY_PATH:$DLL_LIBS
+
+#Usage :<Server > <PortName> <Routing Style > 
+./test -appName Client 172.16.1.35 7107 opc-dpc-ssn
+#gdb ./test
+exit 0

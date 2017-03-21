@@ -1,0 +1,23 @@
+
+ITU ISUP Command
+
+SYNOPSIS
+ii_get_msgsent_pegid
+
+DESCRIPTION
+    Displays the Message Sent Peg Id
+
+PARAMETERS
+    NONE
+
+EXAMPLE
+
+>> ii_get_msgsent_pegid
+
+Peg Name                          Peg Id
+-------                          --------
+PEG_ISUP_IAM_SENT_TO_REMOTE         0
+PEG_ISUP_ACM_SENT_TO_REMOTE         1
+PEG_ISUP_ANM_SENT_TO_REMOTE         2
+
+

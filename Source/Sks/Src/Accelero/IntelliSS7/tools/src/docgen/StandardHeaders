@@ -1,0 +1,236 @@
+
+This file is broken into several section.  Each section contains a standard
+header description for various objects.
+
+
+
+1. Standard C-file headers:
+
+This first header is for C source and header files.  The box MUST ALWAYS
+be the first line in the file.
+
+<cut-here>
+/*********************************-*-C-*-************************************
+ *                                                                          *
+ *             Copyright 1997,1998 IntelliNet Technologies, Inc.            *
+ *                            All Rights Reserved.                          *
+ *             Manufactured in the United States of America.                *
+ *       1990 W. New Haven Ste. 312, Melbourne, Florida, 32904 U.S.A.       *
+ *                                                                          *
+ *   This product and related documentation is protected by copyright and   *
+ *   distributed under licenses restricting its use, copying, distribution  *
+ *   and decompilation.  No part of this product or related documentation   *
+ *   may be reproduced in any form by any means without prior written       *
+ *   authorization of IntelliNet Technologies and its licensors, if any.    *
+ *                                                                          *
+ *   RESTRICTED RIGHTS LEGEND:  Use, duplication, or disclosure by the      *
+ *   government is subject to restrictions as set forth in subparagraph     *
+ *   (c)(1)(ii) of the Rights in Technical Data and Computer Software       *
+ *   clause at DFARS 252.227-7013 and FAR 52.227-19.                        *
+ *                                                                          *
+ ****************************************************************************
+ *                                                                          *
+ * CONTRACT: INTERNAL                                                       *
+ *                                                                          *
+ ****************************************************************************
+ *
+ * LOG: $Log: not supported by cvs2svn $
+ * LOG: Revision 1.1.1.1  2007/10/04 13:24:43  bsccs2
+ * LOG: init tree
+ * LOG:
+ * LOG: Revision 1.1.1.1  2007/08/03 06:49:20  cvsadmin
+ * LOG: BscCs2
+ * LOG:
+ * LOG: Revision 1.1.1.1  2007/03/08 15:14:55  cvsadmin
+ * LOG: BSC project
+ * LOG:
+ *
+ ****************************************************************************/
+
+#ident "$Id: StandardHeaders,v 1.1.1.1 2007-10-08 11:12:08 bsccs2 Exp $"
+
+</cut-here>
+
+
+
+2. Standard C++ file headers (usage optional):
+
+As an option for C++ source and header files, you may use the following format.
+Again, the box MUST ALWAYS be the first line in the file.
+
+<cut-here>
+//////////////////////////////////-*-C-*-////////////////////////////////////
+//                                                                         //
+//             Copyright 1997,1998 IntelliNet Technologies, Inc.           //
+//                            All Rights Reserved.                         //
+//             Manufactured in the United States of America.               //
+//       1990 W. New Haven Ste. 312, Melbourne, Florida, 32904 U.S.A.      //
+//                                                                         //
+//   This product and related documentation is protected by copyright and  //
+//   distributed under licenses restricting its use, copying, distribution //
+//   and decompilation.  No part of this product or related documentation  //
+//   may be reproduced in any form by any means without prior written      //
+//   authorization of IntelliNet Technologies and its licensors, if any.   //
+//                                                                         //
+//   RESTRICTED RIGHTS LEGEND:  Use, duplication, or disclosure by the     //
+//   government is subject to restrictions as set forth in subparagraph    //
+//   (c)(1)(ii) of the Rights in Technical Data and Computer Software      //
+//   clause at DFARS 252.227-7013 and FAR 52.227-19.                       //
+//                                                                         //
+/////////////////////////////////////////////////////////////////////////////
+//                                                                         //
+// CONTRACT: INTERNAL                                                      //
+//                                                                         //
+/////////////////////////////////////////////////////////////////////////////
+//
+// LOG: $Log: not supported by cvs2svn $
+// LOG: Revision 1.1.1.1  2007/10/04 13:24:43  bsccs2
+// LOG: init tree
+// LOG:
+// LOG: Revision 1.1.1.1  2007/08/03 06:49:20  cvsadmin
+// LOG: BscCs2
+// LOG:
+// LOG: Revision 1.1.1.1  2007/03/08 15:14:55  cvsadmin
+// LOG: BSC project
+// LOG:
+//
+/////////////////////////////////////////////////////////////////////////////
+
+#ident "$Id: StandardHeaders,v 1.1.1.1 2007-10-08 11:12:08 bsccs2 Exp $"
+
+</cut-here>
+
+
+
+3. Standard C/C++ interface descriptions:
+
+All header files must include an interface description if they are public.
+Interface descriptions should include all information a user needs to
+understand how to use the described object or functions.  The interface
+should include the object name (C++) or subsystem prefix (C)
+
+<cut-here>
+/*.interface:<object-or-prefix>
+ *****************************************************************************
+ *  Interface:
+ *      None.
+ *
+ *  Purpose:
+ *      None.
+ *
+ *  Usage:
+ *      None.
+ *
+ *****************************************************************************/
+</cut-here>
+
+
+4. Alternate C++ interface descriptions:
+
+For C++ users, the alternate form below can be used.
+
+<cut-here>
+//.interface:
+//////////////////////////////////////////////////////////////////////////////
+//  Interface:
+//      None.
+//
+//  Purpose:
+//      None.
+//
+//  Usage:
+//      None.
+//
+//////////////////////////////////////////////////////////////////////////////
+</cut-here>
+
+5. Standard C/C++ function implementation descriptions:
+
+ALL C and C++ functions MUST have a description box.  The standard box is
+below.  When writing functions, ALL relevant sections should be filled out.
+
+Note the text after the colon at the tag.  That text can include
+(scope,modifier,class)
+where scope is one of "extern", "static", "public", "protected", or "private"
+(without the quotes, of course).  Note that "static" implies static scope,
+NOT static C++ methods.  And yes, this does mean we document static functions
+(how else do we get LLD's for free?).
+
+The only modifiers are currently "inline" and abstract.  If the inline
+modifier is used, the class parameter MUST be present for C++ class inline
+methods.  If a method is NOT inline, then neither the modifier NOR the class
+should be present.
+The "abstract" modifier is used to tag function prototypes for pure virtual
+methods.  Such signatures are by definition inline, but have no braces
+associated with them.  The class parameter MUST be present for "abstract"
+modifiers.
+
+<cut-here>
+/*.implementation:public
+ ****************************************************************************
+ *  Purpose:
+ *      None.
+ *
+ *  Input Parameters:
+ *      None.
+ *
+ *  Input/Output Parameters:
+ *      None.
+ *
+ *  Output Parameters:
+ *      None.
+ *
+ *  Return Value:
+ *      None.
+ *
+ *  Notes:
+ *
+ *  See Also:
+ ****************************************************************************/
+</cut-here>
+
+
+
+6. Alternate C++ function implementation descriptions:
+
+As an alternative, the following description box may be used for C++.  The same
+text as described above should follow the colon:
+
+<cut-here>
+//.implementation:public
+/////////////////////////////////////////////////////////////////////////////
+//  Purpose:
+//      None.
+//
+//  Input Parameters:
+//      None.
+//
+//  Input/Output Parameters:
+//      None.
+//
+//  Output Parameters:
+//      None.
+//
+//  Return Value:
+//      None.
+//
+//  Notes:
+//
+//  See Also:
+/////////////////////////////////////////////////////////////////////////////
+</cut-here>
+
+
+
+7. Standard interface description for Java:
+
+<Somebody fill this in using Java syntax while making it look as much like
+ the C/C++ versions as possible>.
+
+
+
+8. Standard implementation description for Java:
+
+<Somebody fill this in using Java syntax while making it look as much like
+ the C/C++ versions as possible.  Add any new scope ids or modifiers as is
+ necessary>.

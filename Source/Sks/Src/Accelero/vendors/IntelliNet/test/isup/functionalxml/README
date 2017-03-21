@@ -1,0 +1,15 @@
+functionalxml:
+This directory contains test code for the ISUP functional test.
+following sub-directories are defined:
+
+functionalxml - this contains common files for the following combinations.
+
+./intellimtp3 - this contains code and config files for 
+              [ IntelliNet ISUP + IntelliNet MTP3 + NMS MTP2 ].
+
+./nmsmtp3 - this contains code and config files for 
+          [ IntelliNet ISUP + NMS MTP3 + NMS MTP2 ].
+
+./intellim3ua - this contains code and config files for
+              [ IntelliNet ISUP + IntelliNet M3UA + IntelliNet SCTP ].
+               

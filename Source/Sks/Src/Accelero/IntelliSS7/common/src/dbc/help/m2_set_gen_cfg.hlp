@@ -1,0 +1,44 @@
+
+MTP2 Command
+
+SYNOPSIS
+    m2_set_gen_cfg <al> <trType> <traceOutput> <ON/OFF>
+
+DESCRIPTION
+    This command sets MTP2 alarm and trace levels. Alarm level controls MTP2 
+    alarms sent to Accelero application. Trace level controls generation of MTP2 
+    execution traces. Setting the trace level will turn On/Off the MTP2 traces on
+    stdout,file or syslog.
+
+PARAMETERS
+         
+    al           Alarm Level 
+                 Possible values 
+                 CRITICAL
+                 MAJOR
+                 MINOR
+                 INFO
+                 OFF
+
+   trType        Trace Type
+                 Possible values 
+                 DEBUG
+                 WARNING
+                 ERROR
+                 CRITICAL
+                 all - all trace types
+
+  traceOutput    Trace Output
+                 Possible values
+                 stdout
+                 file
+                 syslog
+
+     ON/OFF      Set trace to on or off
+
+
+EXAMPLE
+>> m2_set_gen_cfg OFF debug stdout on
+
+********** MTP2 General Config Set **********
+

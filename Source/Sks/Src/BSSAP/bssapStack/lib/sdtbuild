@@ -1,0 +1,286 @@
+
+#
+#
+#
+
+# Function to clean up temporaries
+sub	cleantemp
+{
+	$thiscommand = sprintf( "rm -f %s.err %s.tsp %s.pr %s.prm %s.xrf %s %s", $sysname, $sysname, $sysname, $sysname, $sysname, $srclist, $objlist );
+	print STDOUT sprintf("--> %s\n\n", $thiscommand );
+	$retval = system $thiscommand;
+}
+
+
+# Function to clean up Generated Files
+sub	cleangen
+{
+	$thiscommand = sprintf( "rm -f %s sdl_cfg.h %s %s.sym %s %s", $hdrlist, $ifclist, $sysname, $target, $libtarget );
+	print STDOUT sprintf("--> %s\n\n", $thiscommand );
+	$retval = system $thiscommand;
+}
+
+# Set for Unbuffered Output
+$| = 1;
+
+$objlist="";
+$srclist="";
+$hdrlist="";
+$ifclist="";
+$possiblehdr="";
+$possiblehdrlvl="";
+$includes="";
+$ccflags="";
+$ldflags="";
+$arflags="rv";
+$cc_prog='gcc';
+$ld_prog='ld';
+$ar_prog='ar';
+$ranlib_prog='ranlib';
+$target='sdl.o';
+$libtarget='libsdl.a';
+$listgen='no';
+$list_type='';
+$tarlist='';
+$sysname='';
+$tarsysname='sdl';
+$prefix='';
+
+ARGLOOP: while( $#ARGV >= 0 ) {
+
+	if( "@ARGV[0]" eq "-C" ) {
+		shift; 
+		$ccflags = @ARGV[0]; shift;
+	} elsif ( "@ARGV[0]" eq "-L" ) {
+		shift; 
+		$ldflags = @ARGV[0]; shift;
+	} elsif ( "@ARGV[0]" eq '-I' ) {
+		shift;
+		$incl = @ARGV[0]; shift;
+		$includes=join(" ", $includes, "-I", $incl );
+	} elsif ( "@ARGV[0]" eq "-A" ) {
+		shift; 
+		$arflags = @ARGV[0]; shift;
+	} elsif ( "@ARGV[0]" eq '-cc' ) {
+		shift; 
+		$cc_prog = @ARGV[0]; shift;
+	} elsif ( "@ARGV[0]" eq '-ar' ) {
+		shift; 
+		$ar_prog = @ARGV[0]; shift;
+	} elsif ( "@ARGV[0]" eq '-ld' ) {
+		shift; 
+		$ld_prog = @ARGV[0]; shift;
+	} elsif ( "@ARGV[0]" eq '-ranlib' ) {
+		shift; 
+		$ranlib_prog = @ARGV[0]; shift;
+	} elsif ( "@ARGV[0]" eq "-prefix" ) {
+		shift; 
+		$prefix = @ARGV[0]; shift;
+	} elsif ( "@ARGV[0]" eq '-o' ) {
+		shift; 
+		$target = @ARGV[0]; shift;
+	} elsif ( "@ARGV[0]" eq '-listsrc' ) {
+		shift; 
+		while(<>) {
+			@a = split;
+
+			if ( (@a[1] == "1") || 
+	     		(@a[1] == "2") ||
+	     		(@a[1] == "3") ||
+	     		(@a[1] == "4") ||
+	     		(@a[1] == "5") ||
+	     		(@a[1] == "6") ||
+	     		(@a[1] == "7") ||
+	     		(@a[1] == "8") ||
+	     		(@a[1] == "9") ||
+	     		(@a[1] == "10") ||
+	     		(@a[1] == "11") ||
+	     		(@a[1] == "19") ) {
+				$srcfile = @a[6];
+				$filepath = @a[3];
+				$firstchar = substr( $filepath, 0, 1 );
+					if( $firstchar eq '/' ) {
+						;
+					} else {
+						$filepath = join( '', $prefix, $filepath );
+					}
+
+				printf( "%s ", $filepath );
+			}
+		}
+		printf("\n");
+		exit 0;
+	} elsif ( "@ARGV[0]" eq '-listgen' ) {
+		shift; 
+		$listgen = 'yes';
+		$list_type = 'all';
+	} elsif ( "@ARGV[0]" eq '-listgentype' ) {
+		shift; 
+		$listgen = 'yes';
+		$list_type = @ARGV[0]; shift;
+	} elsif ( "@ARGV[0]" eq '-tarlist' ) {
+		shift; 
+		$listgen = 'yes';
+		$list_type = 'tar'; 
+	} else {
+		last ARGLOOP;
+	}
+}
+
+if( $#ARGV >= 0 ) {
+	$scufile=@ARGV[0];
+	@C = split /\//, $scufile;
+	$scufile=@C[$#C];
+	if( $scufile =~ /(.*)\.scu/ )
+		{
+		$sysname=$1;
+		$tarsysname=$sysname;
+		$libtarget=sprintf("libsdl-%s.a", $sysname);
+		}
+}
+
+while(<>) {
+	@a = split;
+
+	# NOTE - Type 7 is a macro file, so no C, H or O files for it
+	if ( (@a[1] == "1") || 
+	     (@a[1] == "2") ||
+	     (@a[1] == "3") ||
+	     (@a[1] == "4") ||
+	     (@a[1] == "5") ||
+	     (@a[1] == "6") ||	
+	     (@a[1] == "8") ||
+	     (@a[1] == "9") ||
+	     (@a[1] == "10") ||
+	     (@a[1] == "11") ) {
+		$srcfile = @a[6];
+		$thiscommand = sprintf( "%s -c %s %s %s.c", $cc_prog, $ccflags, $includes, $srcfile, );
+		if( "$listgen" eq "no" ) {
+			print STDOUT sprintf("--> %s\n\n", $thiscommand );
+			$retval = system $thiscommand;
+			if( $retval != "0" ) {
+				cleantemp;
+				cleangen;
+				die '** Error in compilation'
+			}
+		}
+
+		$thisfile = join( '', $srcfile, '.o' );
+		$objlist = join(' ', $objlist, $thisfile );
+		$thisfile = join( '', $srcfile, '.c' );
+		$srclist = join(' ', $srclist, $thisfile );
+
+		if( @a[1] == "5" ) {
+			# Process - will have a header only if followed by a procedure
+			$possiblehdr = join( '', $srcfile, '.h' );
+			$possiblehdrlvl = @a[0];
+		} elsif ( @a[1] == "6" ) {
+			# Procedure - include the header of its parent if this 
+			# is the first listed procedure for process
+
+			if( @a[0] == ($possiblehdrlvl+1) ) {
+				$hdrlist = join(' ', $hdrlist, $possiblehdr );
+			}
+
+			$thisfile = join( '', $srcfile, '.h' );
+			$hdrlist = join(' ', $hdrlist, $thisfile );
+			$possiblehdr = '';
+			$possiblehdrlvl = '';
+		} else {
+			$thisfile = join( '', $srcfile, '.h' );
+			$hdrlist = join(' ', $hdrlist, $thisfile );
+			$possiblehdr = '';
+			$possiblehdrlvl = '';
+		}
+
+		if( @a[1] == "1" ) {
+			if( "$sysname" ne @a[6] ) {
+				if( "$sysname" ne "" ) {
+					print STDERR "** WARNING: System Name does not match SCU file name\n";
+				}
+				$sysname = @a[6];
+			}
+			$thisfile = join( '', $srcfile, '.ifc' );
+			$ifclist = join(' ', $ifclist, $thisfile );
+		} elsif ( @a[1] == "11" ) {
+			$thisfile = join( '', $srcfile, '.ifc' );
+			$ifclist = join(' ', $ifclist, $thisfile );
+		}
+	}
+}
+
+# Make a list of files to go into the tar file
+
+$tarlist = sprintf( "%s %s %s %s %s.sym sdl_cfg.h", $ifclist, $target, $libtarget, $hdrlist, $sysname );
+
+# Process the `list generated files' option
+
+if( "$listgen" eq "yes" ) {
+	if( "$list_type" eq "all" ) {
+		printf( "%s %s %s sdl_cfg.h %s %s %s.sym\n", $srclist, $ifclist, $hdrlist, $target, $libtarget, $sysname );
+		exit 0;
+	} elsif ( "$list_type" eq "clean" ) {
+		printf( "%s %s %s sdl_cfg.h %s %s %s.sym ", $srclist, $ifclist, $hdrlist, $libtarget, $target, $sysname );
+		printf( "%s.pr %s.prm %s.tsp %s.err %s.xrf\n", $sysname, $sysname, $sysname, $sysname, $sysname );
+		exit 0;
+	} elsif ( "$list_type" eq "h" ) {
+		printf( "%s sdl_cfg.h\n", $hdrlist );
+		exit 0;
+	} elsif ( "$list_type" eq "c" ) {
+		printf( "%s\n", $srclist );
+		exit 0;
+	} elsif ( "$list_type" eq "ifc" ) {
+		printf( "%s\n", $ifclist );
+		exit 0;
+	} elsif ( "$list_type" eq "tar" ) {
+		printf( "%s\n", $tarlist );
+		exit 0;
+	} else {
+		exit 0;
+	}
+}
+
+# Link (relocatable)
+$thiscommand = sprintf( "%s -r %s %s -o %s", $ld_prog, $ldflags, $objlist, $target );
+print STDOUT sprintf("--> %s\n\n", $thiscommand );
+$retval = system $thiscommand;
+if( $retval != "0" ) {
+	die '** Error in link'
+}
+
+# Build library 
+$thiscommand = sprintf( "%s %s %s %s", $ar_prog, $arflags, $libtarget, $objlist );
+print STDOUT sprintf("--> %s\n\n", $thiscommand );
+$retval = system $thiscommand;
+if( $retval != "0" ) {
+	die '** Error in building library'
+}
+$thiscommand = sprintf( "%s %s", $ranlib_prog, $libtarget );
+print STDOUT sprintf("--> %s\n\n", $thiscommand );
+$retval = system $thiscommand;
+if( $retval != "0" ) {
+	die '** Error in RANLIB'
+}
+
+# Clean the temporary files
+cleantemp;
+
+# TAR the files ...
+$thiscommand = sprintf( "tar cvf %s.tar %s", $tarsysname, $tarlist );
+print STDOUT sprintf("--> %s\n\n", $thiscommand );
+$retval = system $thiscommand;
+if( $retval != "0" ) {
+	die '** Error in tar'
+}
+
+# Touch the tar file - required to account for some discrepancies observed with NFS
+$thiscommand = sprintf( "touch %s.tar", $tarsysname );
+print STDOUT sprintf("--> %s\n\n", $thiscommand );
+$retval = system $thiscommand;
+if( $retval != "0" ) {
+	die '** Error in touch'
+}
+
+# Clean the generated files
+cleangen;
+

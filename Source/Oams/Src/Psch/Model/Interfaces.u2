@@ -1,0 +1,736 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<u2 OMVersion="3.7" StorageVersion="4" ToolVersion="4.3.0.0.14276">
+<Resource Guid="rR5VEE5hAEEE1tNu5LESm2EE">
+<cHiddenStereotypeInstance>
+<InstanceExpr Guid="j0yLEEjUlEEET70fFLESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="PschInc.u2">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="strUri">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Boolean@=@Boolean@Boolean@Boolean"/>
+<cRightOperand>
+<Ident Name="false">
+<rDefinition R="uid:@Predefined@Boolean@false"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="isLibrary">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@modelDependency"/>
+</InstanceExpr>
+<InstanceExpr Guid="k0yLEEjUlEEET70fFLESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="SysInc.u2">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="strUri">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Boolean@=@Boolean@Boolean@Boolean"/>
+<cRightOperand>
+<Ident Name="false">
+<rDefinition R="uid:@Predefined@Boolean@false"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="isLibrary">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@modelDependency"/>
+</InstanceExpr>
+<InstanceExpr Guid="60yLEEjUlEEET70fFLESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="urn:u2:etc/TTDPredefinedStereotypes.u2">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="strUri">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Boolean@=@Boolean@Boolean@Boolean"/>
+<cRightOperand>
+<Ident Name="true">
+<rDefinition R="uid:@Predefined@Boolean@true"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="isLibrary">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@modelDependency"/>
+</InstanceExpr>
+</cHiddenStereotypeInstance>
+<rRoot R="uid:n45VEE5hAEEE1tNu5LESm2EE"/>
+</Resource>
+<Package Guid="n45VEE5hAEEE1tNu5LESm2EE" Name="Interfaces">
+<cOwnedMember>
+<Interface Guid="g74EEE5hAEEEgOVt5LESm2EE" Name="toPsscm">
+<cOwnedMember>
+<Signal Guid="iaTEEE5hAEEENPVt5LESm2EE" Name="OAMS_PSCH_PSSCM_PROV_PTP_BVC">
+<cParameter>
+<Parameter Guid="MK3SEEo7LEEEkvrSBLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:jDOEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="OK3SEEo7LEEEkvrSBLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:A0OEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="lzTEEE5hAEEEmPVt5LESm2EE" Name="OAMS_PSCH_PSSCM_UNPROV_PTP_BVC">
+<cParameter>
+<Parameter Guid="LvKSEEo7LEEEIerSBLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:jDOEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="IvKSEEo7LEEEIerSBLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:A0OEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="foQEEE5hAEEEiNVt5LESm2EE" Name="fromGrhm">
+<cOwnedMember>
+<Signal Guid="tYREEE5hAEEEgNVt5LESm2EE" Name="CSAPP_GRHM_PSCH_ACT_PDCH_IND">
+<cParameter>
+<Parameter Guid="eNnEEERdIEEEqwF*5LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:jDOEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="9CBVEE5hAEEExtNu5LESm2EE" Name="fromBssgp">
+<cOwnedMember>
+<Signal Guid="fCBVEE5hAEEExtNu5LESm2EE" Name="PSSKS_BSSGP_PSCH_PTP_BVC_RESET_ACK">
+<cParameter>
+<Parameter Guid="yQ9EEERdIEEEv6F*5LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:jDOEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="hCBVEE5hAEEExtNu5LESm2EE" Name="PSSKS_BSSGP_PSCH_PTP_BVC_BLOCK_ACK">
+<cParameter>
+<Parameter Guid="WPdEEERdIEEEqhF*5LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:jDOEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="7CBVEE5hAEEExtNu5LESm2EE" Name="PSSKS_BSSGP_PSCH_PTP_BVC_UNBLOCK_ACK">
+<cParameter>
+<Parameter Guid="KkdEEERdIEEEO7F*5LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:jDOEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="jCBVEE5hAEEExtNu5LESm2EE" Name="PSSKS_BSSGP_PSCH_PTP_BVC_FLOW_CTRL_ACK">
+<cParameter>
+<Parameter Guid="zeASEEo7LEEEULrSBLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:jDOEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="YulSEEVpEEEEaGfy5LESm2EE" Name="PSSKS_BSSGP_PSCH_PTP_BVC_RESET">
+<cParameter>
+<Parameter Guid="SAfEEERdIEEEu6F*5LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:jDOEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="kCBVEE5hAEEExtNu5LESm2EE" Name="toCellh">
+<cOwnedMember>
+<Signal Guid="6CBVEE5hAEEExtNu5LESm2EE" Name="OAMS_PSCH_CELLH_PS_CELL_ENABLED">
+<cParameter>
+<Parameter Guid="tXpEEERdIEEEE-F*5LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:jDOEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="8XpEEERdIEEEE-F*5LESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:A0OEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="mCBVEE5hAEEExtNu5LESm2EE" Name="OAMS_PSCH_CELLH_PS_CELL_DISABLED">
+<cParameter>
+<Parameter Guid="4upEEERdIEEE1-F*5LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:jDOEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="UupEEERdIEEE1-F*5LESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:A0OEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="nCBVEE5hAEEExtNu5LESm2EE" Name="fromGbh">
+<cOwnedMember>
+<Signal Guid="oCBVEE5hAEEExtNu5LESm2EE" Name="OAMS_GBH_PSCH_SIG_BVC_RESET_IND">
+<cParameter>
+<Parameter Guid="trNEEEYIVEEE1N3LBLESm2EE">
+<rType>
+<Ident Name="I_U8">
+<rDefinition R="uid:10OEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="8rNEEEYIVEEE1N3LBLESm2EE">
+<rType>
+<Ident Name="I_Bool">
+<rDefinition R="uid:rDOEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="pCBVEE5hAEEExtNu5LESm2EE" Name="OAMS_GBH_PSCH_GB_DOWN_IND">
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="aCBVEE5hAEEExtNu5LESm2EE" Name="toCfg">
+<cOwnedMember>
+<Signal Guid="bCBVEE5hAEEExtNu5LESm2EE" Name="OAMS_PSCH_CFG_LOCK_RESP">
+<cParameter>
+<Parameter Guid="y8sLEEjUlEEEnh0fFLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:jDOEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="-8sLEEjUlEEEnh0fFLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:A0OEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="EwsLEEjUlEEEnh0fFLESm2EE">
+<rType>
+<Ident Name="I_U16">
+<rDefinition R="uid:D0OEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="VwsLEEjUlEEEnh0fFLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:A0OEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="cCBVEE5hAEEExtNu5LESm2EE" Name="OAMS_PSCH_CFG_UNLOCK_RESP">
+<cParameter>
+<Parameter Guid="GsuLEEjUlEEEL70fFLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:jDOEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="3suLEEjUlEEEL70fFLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:A0OEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="KsuLEEjUlEEEL70fFLESm2EE">
+<rType>
+<Ident Name="I_U16">
+<rDefinition R="uid:D0OEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="MsuLEEjUlEEEL70fFLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:A0OEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="dCBVEE5hAEEExtNu5LESm2EE" Name="OAMS_PSCH_CFG_ALARM_IND">
+<cParameter>
+<Parameter Guid="yncEEERdIEEE6gF*5LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:jDOEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="-ncEEERdIEEE6gF*5LESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:A0OEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="qCBVEE5hAEEExtNu5LESm2EE" Name="toGrhm">
+<cOwnedMember>
+<Signal Guid="rCBVEE5hAEEExtNu5LESm2EE" Name="OAMS_PSCH_GRHM_CRS_IND">
+<cParameter>
+<Parameter Guid="JsnEEERdIEEEKxF*5LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:jDOEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="1snEEERdIEEEKxF*5LESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:A0OEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="sCBVEE5hAEEExtNu5LESm2EE" Name="fromTrxh">
+<cOwnedMember>
+<Signal Guid="tCBVEE5hAEEExtNu5LESm2EE" Name="OAMS_TRXH_PSCH_PS_ALLOWED">
+<cParameter>
+<Parameter Guid="UXjEEERdIEEEJuF*5LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:jDOEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="uCBVEE5hAEEExtNu5LESm2EE" Name="OAMS_TRXH_PSCH_PS_NOT_ALLOWED">
+<cParameter>
+<Parameter Guid="pXdAEEh2EEEEfb1-5LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:jDOEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="XCBVEE5hAEEExtNu5LESm2EE" Name="fromPsscm">
+<cOwnedMember>
+<Signal Guid="YCBVEE5hAEEExtNu5LESm2EE" Name="OAMS_PSSCM_PSCH_PROV_PTP_BVC_CNF">
+<cParameter>
+<Parameter Guid="891SEEo7LEEEmerSBLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:jDOEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="ZCBVEE5hAEEExtNu5LESm2EE" Name="OAMS_PSSCM_PSCH_UNPROV_PTP_BVC_CNF">
+<cParameter>
+<Parameter Guid="ZnMSEEo7LEEE*erSBLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:jDOEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="JCBVEE5hAEEExtNu5LESm2EE" Name="toBssgp">
+<cOwnedMember>
+<Signal Guid="KCBVEE5hAEEExtNu5LESm2EE" Name="OAMS_PSCH_BSSGP_PTP_BVC_RESET">
+<cParameter>
+<Parameter Guid="3UfEEERdIEEEkmF*5LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:jDOEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="KUfEEERdIEEEkmF*5LESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:A0OEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="1CBVEE5hAEEExtNu5LESm2EE" Name="OAMS_PSCH_BSSGP_PTP_BVC_BLOCK">
+<cParameter>
+<Parameter Guid="9xfEEERdIEEEsnF*5LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:jDOEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="gxfEEERdIEEEsnF*5LESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:A0OEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="MCBVEE5hAEEExtNu5LESm2EE" Name="OAMS_PSCH_BSSGP_PTP_BVC_UNBLOCK">
+<cParameter>
+<Parameter Guid="s1gEEERdIEEEFoF*5LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:jDOEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="u1gEEERdIEEEFoF*5LESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:A0OEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="NCBVEE5hAEEExtNu5LESm2EE" Name="OAMS_PSCH_BSSGP_PTP_BVC_FLOW_CTRL_REQ">
+<cParameter>
+<Parameter Guid="7mESEEo7LEEEJ*qSBLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:jDOEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="kmESEEo7LEEEJ*qSBLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:A0OEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="s1kIEEVpEEEEalfy5LESm2EE" Name="OAMS_PSCH_BSSGP_PTP_BVC_RESET_ACK">
+<cParameter>
+<Parameter Guid="05hEEERdIEEE8oF*5LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:jDOEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="G5hEEERdIEEE8oF*5LESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:A0OEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="OCBVEE5hAEEExtNu5LESm2EE" Name="toPsmsh">
+<cOwnedMember>
+<Signal Guid="PCBVEE5hAEEExtNu5LESm2EE" Name="OAMS_PSCH_PSMSH_CRE_CELL_BVC_MAP">
+<cParameter>
+<Parameter Guid="QU2lEE5hAEEEpvP85LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:jDOEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="4U2lEE5hAEEEpvP85LESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:A0OEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="QCBVEE5hAEEExtNu5LESm2EE" Name="OAMS_PSCH_PSMSH_DEL_CELL_BVC_MAP">
+<cParameter>
+<Parameter Guid="SrhEEERdIEEEhqF*5LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:jDOEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="lrhEEERdIEEEhqF*5LESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:A0OEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="RCBVEE5hAEEExtNu5LESm2EE" Name="fromCfg">
+<cOwnedMember>
+<Signal Guid="4CBVEE5hAEEExtNu5LESm2EE" Name="OAMS_CFG_PSCH_UNLOCK_REQ">
+<cParameter>
+<Parameter Guid="83dEEEJJSEEEA5X9FLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:jDOEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="x3dEEEJJSEEEA5X9FLESm2EE">
+<rType>
+<Ident Name="I_U16">
+<rDefinition R="uid:D0OEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="TCBVEE5hAEEExtNu5LESm2EE" Name="OAMS_CFG_PSCH_LOCK_REQ">
+<cParameter>
+<Parameter Guid="YwgEEEJJSEEEQ5X9FLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:jDOEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="awgEEEJJSEEEQ5X9FLESm2EE">
+<rType>
+<Ident Name="I_U16">
+<rDefinition R="uid:D0OEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="UCBVEE5hAEEExtNu5LESm2EE" Name="OAMS_CFG_PSCH_SHUTDOWN_IND">
+<cParameter>
+<Parameter Guid="CuaEEERdIEEE1dF*5LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:jDOEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="2CBVEE5hAEEExtNu5LESm2EE" Name="OAMS_CFG_PSCH_CELL_BAR_ACCESS">
+<cParameter>
+<Parameter Guid="KAbEEERdIEEE-dF*5LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:jDOEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="WCBVEE5hAEEExtNu5LESm2EE" Name="OAMS_CFG_PSCH_BVC_OP_FAILED">
+<cParameter>
+<Parameter Guid="4ObEEERdIEEEg9F*5LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:jDOEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="xUKAEEh2EEEEyX1-5LESm2EE" Name="fromenv">
+<cOwnedMember>
+<Signal Guid="wIQAEEh2EEEEvZ1-5LESm2EE" Name="PSCH_INT_SELFCARD_STATE_CHANGE">
+</Signal>
+<Signal Guid="JMCVEESALEEEX*6MGLESm2EE" Name="PSCH_INT_STANDBY_TO_AIP">
+<cParameter>
+<Parameter Guid="cpHAEERNAEEEKr*NGLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:jDOEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="hiHAEEh2EEEEgX1-5LESm2EE" Name="toenv">
+<cOwnedMember>
+<Signal Guid="EFPAEEh2EEEEhY1-5LESm2EE" Name="PSCH_INT_SELFCARD_STATE_CHANGE_RESP">
+</Signal>
+<Signal Guid="IgCIEEsfVEEEZky-5LESm2EE" Name="PSCH_FREE_INST">
+</Signal>
+<Signal Guid="r-DIEEsfVEEEHmy-5LESm2EE" Name="OAMS_PSCH_ADD_TAU_INST_IN_INSTMAP">
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="yCteEEWHIEEE7nxVBLESm2EE" Name="toTrxh">
+<cOwnedMember>
+<Signal Guid="id-eEEWHIEEE4pxVBLESm2EE" Name="OAMS_PSCH_TRXH_PS_ATTR_CHANGE_IND">
+<cParameter>
+<Parameter Guid="AdCIEE7*IEEEbLUCBLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:jDOEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="idCIEE7*IEEEbLUCBLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:A0OEEExTIEEE-Rr9FLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="-D1EEEaTAEEEHIGlBLESm2EE" Name="fromSystemClasstoenv">
+<cOwnedMember>
+<Signal Guid="OwNEEEaTAEEE1iGlBLESm2EE" Name="PSCH_REG_SYS_CLASS">
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="JmJEEEaTAEEEvqFlBLESm2EE" Name="fromenvtoSystemClass">
+<cOwnedMember>
+<Signal Guid="5yOEEEaTAEEELvGlBLESm2EE" Name="PSCH_INT_ADD_TAU_INSTANCE">
+</Signal>
+</cOwnedMember>
+</Interface>
+</cOwnedMember>
+<cClientDependency>
+<Dependency Guid="L2KVEE5hAEEEUVOu5LESm2EE">
+<cStereotypeInstance>
+<InstanceExpr Guid="BXKVEE5hAEEE2VOu5LESm2EE">
+<rInstanceOf>
+<Ident Name="access">
+<rDefinition R="uid:@Predefined@access"/>
+</Ident>
+</rInstanceOf>
+</InstanceExpr>
+</cStereotypeInstance>
+<rSupplier>
+<Ident Name="SysInc">
+<rDefinition R="uid:IiCVEE5hAEEE8uNu5LESm2EE"/>
+</Ident>
+</rSupplier>
+</Dependency>
+<Dependency Guid="QodEEEdllEEEFCj85LESm2EE">
+<cStereotypeInstance>
+<InstanceExpr Guid="yqdEEEdllEEEQCj85LESm2EE">
+<rInstanceOf>
+<Ident Name="access">
+<rDefinition R="uid:@Predefined@access"/>
+</Ident>
+</rInstanceOf>
+</InstanceExpr>
+</cStereotypeInstance>
+<rSupplier>
+<Ident Name="PschInc">
+<rDefinition R="uid:zWcEEEdllEEEUvj85LESm2EE"/>
+</Ident>
+</rSupplier>
+</Dependency>
+</cClientDependency>
+</Package>
+</u2>

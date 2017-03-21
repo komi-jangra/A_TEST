@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DocViewStructure>
+<TabbedFrame frame_id="0xb6310f8" ntabs="2" active="true" placement="maximized">
+<Position x="-4" y="-23"/>
+</TabbedFrame>
+<Document URL="tlog://&lt;/misc/home4/cvsadmin/VNL-NIIB-VAR1/BSC-Development/Source/Oams/Src/Trxh/Model/TRXHM.ttp&gt;:u2:6faEEEHxiEEEj1NpGLESm2EE">
+<Tab frame_ref="0xb6310f8" active="false" index="0" />
+</Document>
+<Document URL="tlog://&lt;/misc/home4/cvsadmin/VNL-NIIB-VAR1/BSC-Development/Source/Oams/Src/Trxh/Model/TRXHM.ttp&gt;:u2:X6eEEEDqIEEE44AglLxXVh2E">
+<Tab frame_ref="0xb6310f8" active="true" index="1" />
+</Document>
+</DocViewStructure>

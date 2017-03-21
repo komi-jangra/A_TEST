@@ -1,0 +1,21 @@
+BSSAP Command
+
+SYNOPSIS
+    bs_get_all_cfg_record
+
+DESCRIPTION
+    This command lists all network configurations  
+
+PARAMETERS
+    NONE
+
+EXAMPLE
+    >> bs_get_all_cfg_record 
+
+    Network Id        : 2 
+    Local point code  : 2057
+    Remote point code : 4114
+    Local ssn         : 254
+    Remote ssn        : 8
+
+

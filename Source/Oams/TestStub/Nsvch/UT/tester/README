@@ -1,0 +1,130 @@
+#########################################################################################  
+#   FILE		:     README  
+#   DESCRIPTION		:     README for NSVCH UT Environment 
+#   REVISION HISTORY	:  
+#   DATE (mm/dd/yyyy)     	NAME          		REFERENCE       
+#   -------------------------------------------------------------------------------------
+#   10/02/2010 	             Suman Yadav		Initial Version
+#  
+#########################################################################################
+
+
+This readme has provided the stpes for the compilation of NSVCH for UT, configuration, 
+and running of Stubs required by NSVCH. 
+
+SECTION 1:	Compilation of NSVCH
+SECTION	2:	Compilation of Stub
+SECTION	3:	Configuring UT Environment
+
+#########################################################################################
+SECTION 1:				Compilation of NSVCH
+#########################################################################################
+Pre-requisites:
+1. All compilation changes done in make.opt file.
+2. All Path are configured correctly.
+
+
+NSVCH Module Compilation:
+1. Add Flag __UT_TEST in SystemClassPsscm_env.tpm file:
+	COMP_FLAG = -D__UT_TEST
+
+2. Copy utenv.h file present at Path:/Source/Oams/TestStub/Nsvch/UT/tester/Inc/ to 
+   Path:/Inc/Sys/
+	
+3. Open NSVCH Module in TAU 4.3.
+
+4. Include utenv.h in Include files of System Inc.
+
+5. Re-Import System Inc.
+
+6. Go to Path:/Source/Oams/Src/Psscm/Src/
+
+7. Run command: make clean;make
+
+#########################################################################################
+SECTION 2:				Compilation of Stub
+#########################################################################################
+Pre-requisites:
+1. Make sure that Check is installed and Path of Installed Check is updated in makefile
+   of UT Stub present at Path: /Source/Oams/TestStub/Nsvch/UT/tester/Src/makefile
+
+
+Stub Compilation:
+1. Go to Path: /Source/Oams/TestStub/Nsvch/UT/tester/Src/
+
+2. Run command: make clean;make
+
+
+#########################################################################################
+SECTION 3:				Configuring UT Environment
+#########################################################################################
+Pre-requisites:
+1. TC executer must have knowledge of running Host Environment provided by VNL.
+2. TC executer must make sure that all dependencies are resolved before executing
+   Nsvch UT and Host Environment is running properly.
+3. All dependent Binaries: DB, NSVCH, BPM Stub, Nsvch UT Stub are replaced properly at 
+   there paths.
+
+NSVCH UT: 
+1. Copy all(6) the utenv binaries from Path:/Source/Oams/TestStub/Nsvch/UT/tester/Src/ to
+   Path: /targetBin/repos/testStubs/
+
+2. Copy Script CreateApp from Path: /Source/Oams/TestStub/Nsvch/UT/tester/Src/Scripts/ to 
+   Path: /targetBin/repos/testStubs/ 
+
+3. Make Directory Nsvch_Ut at path: /targetBin/repos/testStubs/
+   Copy Scripts from Path: /Source/Oams/TestStub/Nsvch/UT/tester/Src/Scripts/ to Nsvch_Ut.
+
+4. Copy library libCheck.so.0 from path:/usr/local/lib/ to path:/targetBin/repos/releasePath/r.$VERSION/lib. 
+
+5. Open file /Source/Oams/TestStub/Nsvch/UT/tester/Src/Scripts/SetNsvchUtEnv.sh and 
+   update Paths accordingly in exported variables.
+
+6. Run UT Environment
+
+7. Open new xterm (Using Option 21)
+
+8. Change directory using command: cd Nsvch_Ut/
+
+9. Run Command: source SetNsvchUtEnv.sh
+
+10. Run Command: source runNsvchUt.sh 
+
+11. Logs will be created at Path: /targetBin/repos/testStubs/Nsvch_Ut/ with date as
+   folder name.
+
+12. All the verdicts of testcases will be copied to file result.txt generated at path:/targetBin/repos/testStubs/Nsvch_Ut/. 
+#########################################################################################
+SECTION 4:		Information regarding testcases and binaries				
+#########################################################################################
+
+As Per UTP,Mapping of testcases to utenv binaries and the scripts are as following:
+
+1) utenv_till_unlockedEnabled : 1-41
+   script: runUtEnv1.sh
+   Inputs required by the binary corresponding to these test cases:Same as the testcase num(for eg 30 -> 30).
+
+2) utenv_block_lockDown: 42-50
+   script: runUtEnv2.sh
+   Inputs required by the binary corresponding to these test cases: (42->1),(43->2),(44->3),(45->4)(46->5),(47->6),(48->7),(49->8),(50-9).
+
+3) utenv_indDown_unprov_states: 51-58
+   runUtEnv3.sh
+   Inputs required by the binary corresponding to these test cases: (51->1),(52->2),(53->3),(54->4),(55->5),(56->6),(57->7),(58->8).
+
+4) utenv_unlockedBlocked_db: 59-67
+   runUtEnv4.sh
+   Inputs required by the binary corresponding to these test cases: (59->1),(60->2),(61->3),(62->4),(63->5),(64->6),(65->7),(66->8),(67->9).
+
+5) utenv_statusInactive_in_IndDown: 68
+   runUtEnv5.sh
+   Inputs required by the binary corresponding to these test cases: (68->1).
+
+6) utenv_wrongDlci_conn_disc: 69-84
+   runUtEnv6.sh
+   Inputs required by the binary corresponding to these test cases: ((69-76) -> 1),((77-84) -> 2).
+
+
+#########################################################################################
+					END
+#########################################################################################

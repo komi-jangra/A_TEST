@@ -1,0 +1,18 @@
+
+ITU TCAP Command
+
+SYNOPSIS
+    ti_behavior
+
+DESCRIPTION
+    This command displays ITU TCAP behavior settings. If this behavior is set
+    TCAP layer uses network indicator  value of 0xc0 (Reserved NI) inside 
+    routing label while sending messages to SCCP.
+
+PARAMETERS
+    None.
+
+EXAMPLE
+  >> ti_behavior
+      TCAP_B_use_reserved_NI    <no> 
+

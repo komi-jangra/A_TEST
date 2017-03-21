@@ -1,0 +1,2 @@
+AsnCpp               AsnCpp.mak              debug   "AsnCpp - Win32 Debug"
+AsnCpp               AsnCpp.mak              release "AsnCpp - Win32 Release"

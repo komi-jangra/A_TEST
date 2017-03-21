@@ -1,0 +1,72 @@
+
+IntelliSS7
+
+IntelliSS7 provides a suite of vendor-neutral, language neutral, transport
+neutral application programming interfaces for SS7 protocols.  The application
+architecture provided by IntelliSS7 is inherently scaleable; deployed
+applications range from a 50-subscriber Wireless Office to an 8 million
+subscriber SCP.
+
+Executables:
+============
+ o The "asnc" ASN.1 compiler to "C".
+ o The "asncpp" ASN.1 compiler to "C++".
+ o The "exc" exception compiler.
+ o The "docgen" document generator.
+ o The "DBGConsole" process controller/debugger.
+
+Libraries:
+==========
+ o The "Support" library, a platform independent library for implementing
+   multithread processes using sophisticated inter-thread and inter-process
+   communication.
+ o The "AsnC" library, which provides run-time support for the 'asnc' compiler.
+ o The "AsnCpp" library, which provides run-time support for the 'asncpp'
+   compiler.
+ o The "DBGServer" library, which implements canned behavior for the
+   'DBGConsole' application.  The server is inherently extensible.
+ o The "MTP3" library, which provides ITU and ANSI interfaces for MTP3
+   behavior.  Note that a significant amount of MTP3 behavior is actually
+   provided by the 'Support' library.  'MTP3' provides both a "C" and "C++"
+   interface.
+ o The "ISUP" library, which provides an ITU interface for ISUP behavior.
+   The library provides a vendor-independent interface to the
+   ISDN User Part.  'ISUP' currently provides only a "C" interface, and
+   uses the services of 'MTP3'.  Support for ANSI ISUP as well as a "C++"
+   interface is planned for a future release.
+ o The "SCCP" library, which provides ITU and ANSI interfaces for SCCP
+   behavior.  The library provides a vendor-independent interface to the
+   Signalling Connection Control Part.  'SCCP' provides both a "C" and "C++"
+   interface, and uses the services of 'MTP3'.
+ o The "TCAP" library, which provides ITU and ANSI interfaces for TCAP
+   behavior.  The library provides a vendor-independent interface to the
+   Transaction Capabilities Application Part.  'TCAP' provides both a "C"
+   and "C++" interface, and uses the services of 'SCCP'.
+ o The "INAP" library, which provides a vendor-independent interface for
+   ITU INAP behavior.  Only the "C" interface is currently available,
+   although the C++ interface is planned for a future release.
+ o The "GSMMAP" library, which provides a vendor-independent interface for
+   ETSI GSMMAP.  Currently only a "C" version is available; however, a
+   C++ version is planned for a future release.
+ o The "LIDB" library, which provides a vendor-independent interface for
+   ANSI LIDB behavior.  Both "C" and "C++" interfaces are available.
+ o The "AIN" library, which provides a vendor-independent interface for
+   ANSI AIN 0.1 and parts of AIN 0.2.  Both "C" and "C++" versions are
+   available.  Support for AIN 1.0 is planned for a future release.
+ o The "IS41" library, which provides a vendor-independent interface for
+   ANSI IS41 revision C.  Both "C" and "C++" versions are available.
+ o The "IS634" library, which provides a vendor-independent interface for
+   TIA IS634.  Both "C" and "C++" versions are available.
+
+Supported platforms:
+====================
+Digital Unix 4.0D, HP-UX 10.20, Solaris 2.4, Linux 2.0 (RedHat 5.2),
+Windows NT 4.0 (ServicePack 3).
+
+Supported SS7 vendors:
+======================
+Natural Microsystems (Tx2000), DataKinetics, Digital (DECSS7), Excel (LNX),
+IntelliNet (TCAP/SCCP over TCP/IP).  Other vendors can be supported with
+minimal porting effort.
+
+

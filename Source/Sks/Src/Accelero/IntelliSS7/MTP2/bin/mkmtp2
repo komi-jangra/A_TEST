@@ -1,0 +1,27 @@
+#!/bin/sh
+
+mkdir -p /dev/mcc
+
+#
+# Create mtp2 minor devices.
+#
+MINOR="0 1 2 3 4 5 6 8 10 12 14 16 18 20"
+MINOR=$MINOR" 22 24 26 28 30 64 65 66 68 128"
+MINOR=$MINOR" 97 98 99 100"
+
+cd /dev/mcc
+
+for minor in $MINOR
+do 
+mknod $minor c 252 $minor
+done
+
+cd ..
+#
+# Create CTL device node.
+# Configuration happens via this device.
+#
+mknod mcc_ctl c 10 252
+
+exit 0
+

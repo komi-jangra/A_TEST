@@ -1,0 +1,48 @@
+
+LINK Command
+
+SYNOPSIS
+   ln_add <instance> <linkset> <linkcode> 
+
+DESCRIPTION
+   This command is used to configure a new link 
+
+PARAMETERS
+     instance 
+          The transport id associated with this link. To get the list of
+          existing transports, issue the command "b_getborders"
+
+     linkset  
+           The linkset which owns this link
+
+     linkcode 
+            The link id.
+
+
+EXAMPLE
+
+>> b_getborders
+________________________________________
+    Transport Name         <NMS SS7-1>
+    Transport Type         <ClientSocket>
+    Mask                   <1010801>
+    Instance               <4e21>
+    isActive               <yes>
+________________________________________
+    Transport Name         <NMS SS7-2>
+    Transport Type         <ClientSocket>
+    Mask                   <1010801>
+    Instance               <4e22>
+    isActive               <yes>
+
+________End Of Borders__________________
+
+>> ln_add 20002 2 8
+ls:2 lc:8 Added successfully
+
+( to activate this link at MTP3)
+>> mi_aln 2 8  
+
+
+
+

@@ -1,0 +1,41 @@
+USERLIBRARIES =$(LFLAGS) $(LIBS) -linst-DB -lmutex 
+COMP_FLAG = -DXUSE_SIGNAL_NUMBERS -D__C_APPL
+
+HDRFILES = -I../../../../../Inc/Sys/ \
+           -I../../../../../Inc/Ipc/ \
+           -I../../../../../Inc/Dbs/ \
+           -I../../../../../Inc/Csapp/ \
+           -I../../../../../Inc/Oam/ \
+           -I../../../../../Inc/Oams/ \
+           -I../../../../../Inc/Bpm/ \
+           -I../../../../../Inc/Dsp/ \
+           -I../../../../Psapp/Src/Tb/Inc/ \
+           -I../../../Inc/ \
+           -I../../Mutex/Inc/ \
+           -I../Inc/
+
+sctUSERDEFS = $(COMP_FLAG) $(CFLAGS) -DTAU_MODEL $(HDRFILES)
+
+USERTARGET = System_BICH_env$(sctOEXTENSION) \
+             oamsBich_abisChainHandler.o \
+             oamsbich_proc_hdlr.o \
+             bsc_sig_hdlr.o \
+             ute_instruments.o
+
+System_BICH_env$(sctOEXTENSION): System_BICH_env.c System_BICH.ifc oamsBich_abisChainHandler.o
+	$(sctCC) $(sctCPPFLAGS) $(sctCCFLAGS) -UTAU_MODEL $(sctIFDEF) System_BICH_env.c -o System_BICH_env$(sctOEXTENSION)
+
+oamsBich_abisChainHandler.o: oamsbich_abis_chain_mgr.c
+	$(sctCC) $(sctCPPFLAGS) $(sctCCFLAGS) -UTAU_MODEL $(sctIFDEF) oamsbich_abis_chain_mgr.c -o oamsBich_abisChainHandler.o
+
+oamsbich_proc_hdlr.o: oamsbich_proc_hdlr.c
+	$(sctCC) $(sctCPPFLAGS) $(sctCCFLAGS) -UTAU_MODEL $(sctIFDEF) oamsbich_proc_hdlr.c -o oamsbich_proc_hdlr.o
+
+bsc_sig_hdlr.o: bsc_sig_hdlr.c
+	$(sctCC) $(sctCPPFLAGS) $(sctCCFLAGS) -UTAU_MODEL $(sctIFDEF) bsc_sig_hdlr.c -o bsc_sig_hdlr.o
+
+ute_instruments.o: ute_instruments.c
+	$(sctCC) $(sctCPPFLAGS) $(sctCCFLAGS) -UTAU_MODEL $(sctIFDEF) ute_instruments.c -o ute_instruments.o
+
+clean_user_objs:
+	$(sctRM) $(USERTARGET)

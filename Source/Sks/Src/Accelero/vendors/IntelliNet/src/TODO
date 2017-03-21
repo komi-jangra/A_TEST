@@ -1,0 +1,144 @@
+
+ o Add MTP3 routing label into SCCP messages. [DONE]
+   What I know (outbound messages):
+   - For CLC
+       The destination addr is in the CDP.
+       If the DPC is present in the CDP, and the DPC is not self:
+         We do MTP-TRANSFER to DPC.
+         If no other destination information is present in CDP:
+           We do not include CDP in the message.
+         If SSN or GTT was provided:
+           The DPC is used to send to.
+       Else if DPC is self:
+         The message is passed to CLC. (For us, this may be an
+         IPC).
+       Else
+         Perform GTT (the DPC must be present after this)
+         If the DPC is not self:
+           We do MTP-TRANSFER to DPC.
+           If no other destination information is present in CDP:
+             We do not include CDP in the message.
+           If SSN or GTT was provided:
+             The DPC is used to send to.
+         Else if DPC is self:
+           The message is passed to CLC.
+   - For COC (ConnectionRequest only)
+       The destination addr is in the CDP.
+       If the DPC is present in the CDP, and the DPC is not self:
+         We do MTP-TRANSFER to DPC.
+         If no other destination information is present in CDP:
+           We do not include CDP in the message.
+         If SSN or GTT was provided:
+           If intermediate node (somebody's got to explain how you
+                                 determine that):
+             The DPC is used to send to.
+           Else
+             Routing failure?
+       Else if DPC is self:
+         The message is passed to COC. (For us, this may be an
+         IPC).
+       Else
+         Perform GTT (the DPC must be present after this)
+         If the DPC is not self:
+           We do MTP-TRANSFER to DPC.
+           If no other destination information is present in CDP:
+             We do not include CDP in the message.
+           If SSN or GTT was provided:
+             The DPC is used to send to.
+
+   Incoming messages
+   - The DPC in the CDP is unused.
+   - If the SSN is received, the receiving SCCP is the destination.
+   - If GTT only is received, translation is required.  This may
+     result in a new DPC for the message, and possibly a new
+     GTT and SSN, and possibly a new address indicator.  This seems
+     to be the indication of an intermediate node?  In which case,
+     we handle this in the HandleDown* functions.  How do we detect
+     this in SCOC?
+
+   HOWEVER, there is one major sticky point.  According to real-life
+   implementations, you can have SSN only, and send using the routing
+   label (SCMG).  This implies that the routing label CAN BE DIFFERENT
+   FROM THE DPC (if specified) in the CDP.  This must be a backwards
+   compat thing, as SCCP '92 seems to forbid this.
+
+ o SCCP should register as local for SCCP Management ssn.
+   [FIXED (configurable)]
+ o Near-term focus on SCMG!
+ o Longer-term focus on SCCP class 3.  Class 2 is pretty
+   much handled.
+ o Longest-term focus on SCCP as intermediate node.
+   [PARTIALLY DONE]
+ o Build generic MTP3 dispatcher (this may belong in
+   common/src/support).
+   [FIXED - that's where it is]
+ o Added in callbacks at transport registration/deregistration.  What should
+   happen here is that ISUP and SCCP should add callbacks to be called at
+   registration and deregistration.  These callbacks should then in turn
+   add callbacks to each transport's pauseCallbacks and resumeCallbacks (if the
+   transport passed in is flagged as using ITS_SS7|ITS_ISUP|ITS_SCCP);
+   these second callbacks should send MTP3_MSG_PAUSE or MTP3_MSG_RESUME
+   indications to the respective subsystem when a transport goes down/connects.
+   How this should be done is problematic; perhaps this should be as
+   TRANSPORT_SetState(), or better, that function (and
+   TRANSPORT_SetCongestion()) should move to the IntelliNet vendor code, where
+   it will send the appropriate message to the subsystems when the transport
+   status changes.
+   [DONE]
+ o What we should do on registration is to MTP-PAUSE all available routes.
+   [DONE]
+ o What we should do on deregistration is to MTP-PAUSE all available routes.
+   [DONE]
+ o What we need to add (to "support") is:
+   - on transport connection, call all resume callbacks.  This should send
+     MTP-RESUME to the relevant subsystems.
+   - on transport failure, call all pause callbacks.  This should send
+     MTP-PAUSE to the relevant subsystems.
+   [DONE]
+ o What this means is:
+   - on registration, add SCCP_Pause as a callback for pauseCallbacks.  Add
+     SCCP_Resume as a callback for resumeCallbacks.  Call the pause callback
+     list.  This should do what TRANSPORT_SetState(ITS_FALSE) currently does.
+   - on transport connection, "support" should call the resume callback list,
+     which should call SCCP_Resume.  This should do what
+     TRANSPORT_SetState(ITS_TRUE) currently does.
+   - on transport failure, "support" should call the pause callback list, which
+     should call SCCP_Pause.  This should do what TRANSPORT_SetState(ITS_TRUE)
+     currently does.
+   - on deregistration, remove SCCP_Pause, SCCP_Resume as callbacks.  Might as
+     well call SCCP_Pause first, as the routes will be deleted shortly,
+     and there is no sense in misdirecting a packet due to the race.
+ o Complete ITU.
+   [DONE]
+ o Distributed MTP3.  Hooie.
+   - split links between nodes?  How do we do inter-node traffic?
+   - link sets only within a node?  Dropping a node means dropping
+     a link set in this case, not good.
+   - in either case, what does changeover/changeback mean?
+   - how about an internode (maybe multicast) link set that holds
+     all the links for the buddy node.
+   - When a node drops, all other nodes should (based on the state transition
+     of the internode link set) issue L2_L3_OUT_OF_SERVICE to LSAC for each
+     virtual link.  The link table (in DSM) will ensure that only one COO is
+     issued (by the node that gets there first).
+   - Redundant DSM is required to avoid a single node declaring all other nodes
+     dead.
+   - In an N-way cluster, it may be necessary to designate buddy nodes (nodes
+     which recover timers for a down node) on a one-to-one basis.  This keeps
+     multiple timeout executions from happening.
+   - These variables need to go into DSM (to avoid racing between MML interfaces
+     on different nodes):
+     static ITS_BOOLEAN       spRestarting = ITS_FALSE;
+     static ITS_BOOLEAN       fullRestartNeeded = ITS_TRUE;
+     static ITS_BOOLEAN       sendingStatus = ITS_FALSE;
+   - The FR, CO, CB buffers are going to have to be in DSM to avoid special
+     messaging between nodes.  However, transport ID to link association MUST
+     be node local.  This means there needs to be two tables for representing
+     a single link.
+   - Configuration.  If each node tries to add the same config data right now
+     the code would become very confused.  Rule of thumb: if node is simplex,
+     EEXIST type errors must be paid attention to.  If node is not simplex,
+     EEXIST type errors must be ignored.
+   - If remote L4 is allowed, then some work needs to be done to SUPPORT to allow
+     for implementation specific activities if an IPC channel drops.  This would
+     be needed to signal UP unavailability (which we can't right now).

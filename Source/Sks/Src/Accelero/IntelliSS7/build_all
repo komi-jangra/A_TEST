@@ -1,0 +1,21 @@
+#!/bin/sh
+
+if [ $# -ne 2 ]
+then
+    echo "You must supply a major and minor release number."
+    exit
+fi
+
+make PROTOCOL=ANSI DEBUG_BUILD=yes clean
+make PROTOCOL=ANSI DEBUG_BUILD=yes
+
+make PROTOCOL=ANSI DEBUG_BUILD=no clean
+make PROTOCOL=ANSI DEBUG_BUILD=no
+
+make PROTOCOL=CCITT DEBUG_BUILD=yes clean
+make PROTOCOL=CCITT DEBUG_BUILD=yes
+
+make PROTOCOL=CCITT DEBUG_BUILD=no clean
+make PROTOCOL=CCITT DEBUG_BUILD=no
+
+./build_release $1 $2 $HOME/dist-$1.$2

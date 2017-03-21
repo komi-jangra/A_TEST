@@ -1,0 +1,4 @@
+../include/tcap++.h
+../include/itu/tcap.h itu-tcap_cvt.c ansi-tcap_cvt.c ./tcap.c ../../../vendors/IntelliNet/src/ansi-tcap_ifc.c ../../../vendors/IntelliNet/src/itu-tcap_ifc.c
+
+	

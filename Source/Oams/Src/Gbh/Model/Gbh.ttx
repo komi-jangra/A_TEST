@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DocViewStructure>
+<TabbedFrame frame_id="0x8f0ce40" ntabs="7" active="true" placement="maximized">
+<Position x="-4" y="-23"/>
+</TabbedFrame>
+<Document URL="tlog://&lt;Gbh.ttp&gt;:u2:ZUNEEELLAEEE6QIPGLESm2EE">
+<Tab frame_ref="0x8f0ce40" active="false" index="1" />
+</Document>
+<Document URL="tlog://&lt;Gbh.ttp&gt;:u2:DGbIEELLAEEEulSPGLESm2EE">
+<Tab frame_ref="0x8f0ce40" active="false" index="2" />
+</Document>
+<Document URL="tlog://&lt;Gbh.ttp&gt;:u2:FXSEEEmvAEEEdlmr5LESm2EE">
+<Tab frame_ref="0x8f0ce40" active="false" index="3" />
+</Document>
+<Document URL="tlog://&lt;Gbh.ttp&gt;:u2:DBsvEEiqiEEEvpEw5LESm2EE">
+<Tab frame_ref="0x8f0ce40" active="false" index="4" />
+</Document>
+<Document URL="tlog://&lt;Gbh.ttp&gt;:u2:LWsEEEgxVEEEkB9IBLESm2EE">
+<Tab frame_ref="0x8f0ce40" active="false" index="5" />
+</Document>
+<Document URL="tlog://&lt;Gbh.ttp&gt;:u2:LhbLEE0sAEEEtjdPBLESm2EE">
+<Tab frame_ref="0x8f0ce40" active="true" index="6" />
+</Document>
+</DocViewStructure>

@@ -1,0 +1,2 @@
+gcs_client	gcs_client.mak		debug   "gcs_client - Win32 Debug"
+gcs_client  gcs_client.mak      release "gcs_client - Win32 Release"

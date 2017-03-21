@@ -1,0 +1,722 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE Application SYSTEM "file:D:\cvsroot\Current\IntelliSS7\ENGINE\src\engine.dtd">
+
+<!-- Sample XML file for application configuration (INI). -->
+
+<Application name           = "SMSC"
+             type           = "console-application"
+             globalStart    = "ANSI-TCAP"
+             binding        = "C"
+             library        = ""
+             appSelector    = "ApplicationSelector"
+             preFunc        = "TcapTestPreFunc"
+             postFunc       = "TcapTestPostFunc">
+
+    <AppOptions name = "traceFlushAfterWrite"         value = "yes"/>
+    <AppOptions name = "memPoolChecksOn"              value = "no"/>
+
+    <ParserExtension
+        library         = "libDSM-GCSD.so"
+        elementName     = "DsmGcsConfig"
+        startFunc       = "DSM_GCS_ConfigParseStart"
+        stopFunc        = "DSM_GCS_ConfigParseStop"
+        xlateFunc       = "DSM_GCS_ConfigConvertParserData"
+        diffFunc        = "DSM_GCS_ConfigDiff"
+    />
+
+    <FaultTolerance
+        maxNumFtGroups  = "32"
+        maxNumProcesses = "10"
+        maxNumNodes     = "4"
+        nodeId          = "1"
+        processId       = "5"
+        tcapFtGroupId   = "0"
+        sccpFtGroupId   = "0"
+        mtp3FtGroupId   = "0"
+        routingFtGroupId = "0"
+        timersFtGroupId = "0"
+        mgmtDataFtGroupId = "0"
+    >
+
+
+        <FtGroups>
+
+            <FtGroup
+                ftGroupId      = "0"
+                ftGroupName    = "FtGroup0"
+            >
+
+                <!-- Note: dsmType attribute is reserved for future use. -->
+
+                <DsmConfig
+                     dsmSize         = "16777216"
+                     dsmBaseAddress  = "0x80000000"
+                     dsmMaxNumTables = "256"
+                     dsmType         = "STUB"
+                />
+
+                <DsmGcsConfig
+                     gcsFtGroupId        = "0"
+                     gcsDaemonName       = "4803"
+                     gcsSyncMemUseTcp    = "1"
+                     gcsSyncMemIpAddress = "10.1.4.31"
+                     gcsSyncMemIpPort    = "4805"
+                />
+
+                <!-- Note: DsmGcsConfig or DsmSciConfig (exclusif). -->
+                <!-- Note: nodeName and processName are optional attributes. --> 
+                <FtGroupMembers>
+
+                    <FtGroupMember
+                        nodeId      = "1"
+                        nodeName    = "Node1"
+                        processId   = "5"
+                        processName = "Node1Process5"
+                    />
+
+                    <FtGroupMember
+                        nodeId      = "2"
+                        nodeName    = "Node2"
+                        processId   = "5"
+                        processName = "Node2Process5"
+                    />
+
+
+                </FtGroupMembers>
+
+                <!-- Note: Master FtGroupMembers are tried in order. -->
+                <!-- Note: MUST NOT include itself. -->
+
+                <MasterFtGroupMembers>
+
+                    <MasterFtGroupMember
+                        nodeId    = "2"
+                        processId = "5"
+                    />
+
+                </MasterFtGroupMembers>
+
+                <Callbacks>
+
+                    <MembershipChangeCallback
+                        library     = ""
+                        function    = "MTP3_MembershipChangeCallBack_ANSI"
+                    />
+
+                </Callbacks>
+
+
+            </FtGroup>
+
+
+            <FtGroup
+                ftGroupId      = "1"
+                ftGroupName    = "FtGroup1"
+            >
+
+
+
+                <DsmConfig
+                     dsmSize         = "33554432"
+                     dsmBaseAddress  = "0x90000000"
+                     dsmMaxNumTables = "256"
+                     dsmType         = "STUB"
+                />
+
+                <DsmGcsConfig
+                     gcsFtGroupId        = "1"
+                     gcsDaemonName       = "4803"
+                     gcsSyncMemUseTcp    = "1"
+                     gcsSyncMemIpAddress = "10.1.4.31"
+                     gcsSyncMemIpPort    = "4804"
+                />
+
+                <FtGroupMembers>
+
+                    <FtGroupMember
+                        nodeId      = "1"
+                        nodeName    = "Node1"
+                        processId   = "5"
+                        processName = "Node1Process5"
+                    />
+
+                    <FtGroupMember
+                        nodeId      = "2"
+                        nodeName    = "Node2"
+                        processId   = "5"
+                        processName = "Node2Process5"
+                    />
+
+
+                </FtGroupMembers>
+
+                <MasterFtGroupMembers>
+
+                    <MasterFtGroupMember
+                        nodeId    = "2"
+                        processId = "5"
+                    />
+
+                </MasterFtGroupMembers>
+
+
+                <Callbacks>
+                    <MembershipChangeCallback
+                        library     = ""
+                        function    = "ApplicationMembershipChangeCb"
+                    />
+                </Callbacks>
+
+            </FtGroup>
+
+        </FtGroups>
+
+    </FaultTolerance>
+
+    <ToolkitTrace>
+        <Critical  output = "stdout"/>
+        <Error     output = "stdout"/>
+        <Warning   output = ""/>
+        <Debug     output = ""/>
+    </ToolkitTrace>
+
+    <Feature
+        name        = "DSM Data Class - STUB"
+        library     = "libDSM-STUBD.so"
+        classRec    = "itsDSM_StubImplClass"
+    />
+    <Feature
+        name        = "DSM Data Class - GCS "
+        library     = "libDSM-GCSD.so"
+        classRec    = "itsDSM_GcsImplClass"
+    />
+
+    <Feature
+        name        = "Vendor Framework"
+        library     = "libVFrameD.so"
+        classRec    = "itsSS7STACK_ClassANSI"
+    />
+
+    <Feature
+        name        = "IntelliNet stack"
+        library     = "libANSI-VENDORD.so"
+        classRec    = "itsINTELLISS7_ClassANSI"
+    />
+
+<!--
+    <Feature
+        name        = "ADAX Vendor lib"
+        library     = "libANSI-ADAXVendorD.so"
+        classRec    = "itsADAX_ClassANSI"
+    />
+
+    <ParserExtension    library     = "libANSI-ADAXVendorD.so"
+                        elementName = "ADAX_Data"
+                        startFunc   = "ADAX_ParseStart"
+                        stopFunc    = "ADAX_ParseEnd"
+                        xlateFunc   = "ADAX_ConvertParserData"
+                        diffFunc    = "ADAX_Diff"
+    />
+
+    <ADAX_Data  sectionName = "ADAX SS7-1"
+                trunk       = "2"
+                TR_TYPE     = "1"
+                linkSet     = "1"
+                timeSlots   = "1"
+    />
+-->
+    <Feature
+        name        = "SCTP"
+        library     = "libSCTPD.so"
+        classRec    = "itsSCTP_Class"
+    />
+
+    <!--/////////////////////////////////////////////////////////////////////-->
+    <!--/////////////// UAL Manager config for M3UADraft ver 10 /////////////-->
+    <!--/////////////////////////////////////////////////////////////////////-->
+
+    <Feature
+        name        = "UAL_Manager"
+        library     = "libUALD.so"
+        classRec    = "itsUAL_Class"
+    />
+
+    <Feature
+        name        = "ANSI-M3UA"
+        library     = "libANSI-M3UAD.so"
+        classRec    = "itsM3UA_Class_ANSI"
+    />
+
+    <ParserExtension library     = "libUALD.so"
+                     elementName = "UAL_Manager"
+                     startFunc   = "UAL_ParseStartFunc"
+                     stopFunc    = "UAL_ParseStop"
+                     xlateFunc   = "UAL_ResourceXlate"
+                     diffFunc    = "UAL_ExtensionDiff"
+    />
+
+    <UAL_Manager   useSCMGCallBack   = "no"
+                   heartBeat         = "off"
+                   hbInterval        = "5"
+                   ackTimer          = "600"
+                   pendingTimer      = "2"
+                   interworkingMode  = "endPointMode"
+                   localPointCode    = "0xFAFB"
+                   aspId             = "1"
+                   version           = "1">
+
+
+              <AsInfo   routingKey       = "1"
+                        isMember         = "yes"
+                        family           = "ANSI"
+                        networkIndicator = "0x80"
+                        asTrafficMode    = "overRideMode">
+
+                   <AspInfo
+                     aspId      = "1"
+                   />
+
+              </AsInfo>
+
+    </UAL_Manager>
+
+
+    <!--/////////////////////////////////////////////////////////////////////-->
+    <!--///////////////// End of UAL Manager config /////////////////////////-->
+    <!--/////////////////////////////////////////////////////////////////////-->
+
+    <!--/////////////// LINK SETS //////////////-->
+    <!-- link set for internal routing -->
+    <LinkSet id           = "0"
+             family       = "ANSI"
+             adjacentSTP  = "no"
+             numToStart   = "0">
+        <NI     value = "0x80"/>
+        <APC    value = "0x0"/>
+        <LPC    value = "0x0"/>
+    </LinkSet>
+
+    <!-- link set Connecting to the HLR  -->
+    <LinkSet id           = "1"
+             family       = "ANSI"
+             adjacentSTP  = "no"
+             numToStart   = "16">
+        <NI     value = "0x80"/>
+        <APC    value = "0xFCFD"/>
+        <LPC    value = "0xFAFB"/>
+    </LinkSet>
+
+
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            family       = "ANSI"
+            linkSet  = "0"
+            priority = "0">
+        <DPC    value = "0xFAFB"/>
+        <SIO    value = "0x80"/>
+    </Route>
+ 
+    <!-- route for SLTM REG -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            family       = "ANSI"
+            linkSet  = "0"
+            priority = "0">
+        <DPC    value = "0xFAFB"/>
+        <SIO    value = "0x81"/>
+    </Route>
+
+    <!-- route for SLTM SPEC -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            family       = "ANSI"
+            linkSet  = "0"
+            priority = "0">
+        <DPC    value = "0xFAFB"/>
+        <SIO    value = "0x82"/>
+    </Route>
+
+    <!-- route for SCCP -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            family       = "ANSI"
+            linkSet  = "0"
+            priority = "0">
+        <DPC    value = "0xFAFB"/>
+        <SIO    value = "0x83"/>
+    </Route>
+
+    <!-- route for SCCP Application -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio-ssn"
+            family       = "ANSI"
+            linkSet  = "0"
+            priority = "0">
+        <DPC    value = "0xFAFB"/>
+        <SIO    value = "0x83"/>
+        <SSN    value = "11"/>
+    </Route>
+
+
+    <!-- route used for SCCP over IP -->
+    <Route  type     = "remoteRoute"
+            style    = "dpc-sio-ssn"
+            family       = "ANSI"
+            linkSet  = "1"
+            priority = "0">
+        <DPC    value = "0xFCFD"/>
+        <SIO    value = "0x83"/>
+        <SSN    value = "4"/>
+    </Route>
+
+    <Route  type     = "routingKeyRoute"
+            style    = "dpc-sio-ssn"
+            family       = "ANSI">
+        <routingKey value = "0x000001"/>
+        <DPC        value = "0xFAFB"/>
+        <SIO        value = "0x83"/>
+        <SSN        value = "11"/>
+    </Route>
+
+
+    <!-- This route is used for SCCP over MTP3 --> 
+   
+    <!-- Remote Route to the SRF -->
+    <Route  type    = "remoteRoute"
+            style   = "dpc-ni"
+            family       = "ANSI"
+            linkSet = "1"
+            priority = "0">
+        <DPC    value = "0xFCFD"/>
+        <SIO    value = "0x80"/>
+    </Route>
+
+
+
+    <!--///////////////////////////////////////////////////////////////-->
+
+    <WorkItemPool stackSize = "0">
+
+        <NumWorkers value = "3"/>
+
+        <WorkItem
+            type            = "repeatable"
+            library         = ""
+            userDelegate    = "TcapEventHandler"
+            count           = "1"
+        />
+        <WorkItem
+            type            = "repeatable"
+            library         = ""
+            userDelegate    = "TrafficGenerator"
+            count           = "1"
+        />
+<!--
+        <WorkItem
+            type            = "repeatable"
+            library         = ""
+            userDelegate    = "TCAP_ShowStats"
+            count           = "1"
+        />
+-->
+    </WorkItemPool>
+
+
+    <!--///////////////////////////////////////////////////////////////-->
+
+
+    <!--///////////////////////////////////////////////////////////////-->
+
+    <BorderPool stackSize = "0">
+
+<!--
+        <Transport  name    = "ADAX SS7-1" 
+                    type    = "SS7"
+                    family  = "ANSI">
+
+            <Modifier value = "MTP2"/>
+
+            <Vendor name        = "ADAX"
+                    library     = "libANSI-ADAXVendorD.so"
+                    vendorRec   = "itsADAX_ClassANSI"
+            />
+-->        
+        <Transport  name    = "SCTPClient-1"
+                    type    = "Datagram"
+                    family  = "ANSI">
+
+            <Modifier value = "SCTP"/>
+            <Modifier value = "MTP3"/>
+
+            <DatagramData   localHostName   = "10.1.4.181"
+                            localPort       = "2960">
+
+                 <Associate  value  = "Connection to SG-1"/>
+
+            </DatagramData>
+
+            <SCTP   maxInStreams      = "32"
+                    numOutStreams     = "32"
+                    maxAttempts       = "-1"
+                    cookieLife        = "30"
+                    hbOn              = "yes"
+                    initTimeOut       = "5,0"
+                    sendTimeOut       = "1,0"
+                    recvTimeOut       = "0,300"
+                    hbTimeOut         = "10,0"
+                    shutdownTimeOut   = "5,0"
+                    pmtuTimeOut       = "600,0"
+                    isClient          = "yes"
+                    payloadType       = "ANSI-M3UA">
+            </SCTP>
+
+
+            <Callbacks
+                type            = "blocking"
+                preInitialize   = "null"
+                postInitialize  = "MTP3_TransportPostInit_ANSI" 
+                preNextEvent    = "null"
+                nextEventFailed = "null"
+                postNextEvent   = "null"
+                userMsgHandler  = "null"
+                SCCPMsgHandler  = "null"
+                ISUPMsgHandler  = "null"
+                preTerminate    = "null"
+                postTerminate   = "null"
+            />
+<!--
+            <Link   id              = "0"
+                    family       = "ANSI"
+                    linkSet         = "1"
+                    initiallyActive = "yes"
+                    terminalFixed   = "yes"
+                    dataLinkFixed   = "yes"
+                    priority        = "0"
+                    terminal        = "0"
+                    timeslot        = "1"
+            />
+-->
+        </Transport>
+
+        <Transport   name    = "Connection to SG-1"
+                     type    = "Virtual"
+                     family  = "ANSI">
+
+            <Modifier value = "SCTP"/>
+
+            <DatagramData   socketDomain    = "INET"
+                            serverHostName  = "10.1.4.33"
+                            serverPort      = "2960">
+
+            </DatagramData>
+
+            <Link   id       = "0"
+             family       = "ANSI"
+             linkSet         = "1"
+             initiallyActive = "yes"
+             terminalFixed   = "yes"
+             dataLinkFixed   = "yes"
+             priority        = "0"
+             terminal        = "0"
+             timeslot        = "0"
+            />
+
+        </Transport>
+
+
+
+<!--
+        <Transport  name    = "User"
+                    type    = "TaskQueue"
+                    family  = "ANSI">
+
+            <Modifier value = "SCCP"/>
+
+            <Callbacks
+                type            = "blocking"
+                preInitialize   = "null"
+                postInitialize  = "null"
+                preNextEvent    = "null"
+                nextEventFailed = "null"
+                postNextEvent   = "HandleSCCPMsg"
+                userMsgHandler  = "null"
+                SCCPMsgHandler  = "null"
+                ISUPMsgHandler  = "null"
+                preTerminate    = "null"
+                postTerminate   = "null"
+            />
+                <Link   id              = "1"
+                        family          = "ANSI"
+                        linkSet         = "0"
+                        initiallyActive = "yes"
+                        terminalFixed   = "yes"
+                        dataLinkFixed   = "yes"
+                        isSAAL          = "yes"
+                        isLocal         = "yes"
+                        priority        = "0"
+                        terminal        = "0"
+                        dataLink        = "0"
+                />
+
+
+
+        </Transport>
+-->
+
+        <Transport  name    = "Debug Console"
+                    type    = "ServerSocket">
+
+            <StreamData socketDomain    = "INET"
+                        serverHostName  = "127.0.0.1"
+                        serverPort      = "7003"
+            />
+
+            <Callbacks
+                type            = "debug-console"
+            />
+
+        </Transport>
+
+
+
+    </BorderPool>
+
+    <!--///////////////////////////////////////////////////////////////-->
+
+
+    <SS7-Stacks>
+
+        <ManagementCallbacks
+            MTP3ManagementCallbackANSI     = ""
+        />
+
+        <IntelliNet>
+
+        <IntelliNet>
+
+            <ANSI-TCAP variant = "WhiteBook">
+
+                <StackTrace>
+                    <Critical output = "stdout"/>
+                    <Error    output = "stdout"/>
+                    <Warning  output = ""/>
+                    <Debug    output = ""/>
+                </StackTrace>
+
+                <Timers
+                    Treject = "5"
+                />
+
+                <Link   id              = "1"
+                        family          = "ANSI"
+                        linkSet         = "0"
+                        initiallyActive = "yes"
+                        terminalFixed   = "yes"
+                        dataLinkFixed   = "yes"
+                        isSAAL          = "yes"
+                        isLocal         = "yes"
+                        priority        = "0"
+                        terminal        = "0"
+                        dataLink        = "0"
+                />
+
+            </ANSI-TCAP>
+
+
+
+            <ANSI-SCCP variant = "WhiteBook">
+ 
+                <Variant value = "WhiteBook"/>
+ 
+                <StackTrace>
+                    <Critical output = "stdout"/>
+                    <Error    output = "stdout"/>
+                    <Warning  output = ""/>
+                    <Debug    output = "stdout"/>
+                </StackTrace>
+ 
+                <Timers
+                    TstatInfo    = "30"
+                    TcoordChg    = "30"
+                    TignoreSST   = "30"
+                    TrtgStatInfo = "30"
+                    Tconnect     = "30"
+                    Trelease     = "10"
+                    Treset       = "20"
+                    Tias         = "300"
+                    Tiar         = "660"
+                    Tguard       = "240"
+                />
+
+                <BehaviorControl
+                    PropagateIT   = "no"
+                    PropagateERR  = "no"
+                    PropagateSCMG = "no"
+                    EnableSCMG    = "no"
+                />
+
+            </ANSI-SCCP>
+
+
+            <ANSI-MTP3 variant = "WhiteBook_97">
+
+                <StackTrace>
+                    <Critical output = "stdout"/>
+                    <Error    output = "stdout"/>
+                    <Warning  output = "stdout"/>
+                    <Debug    output = ""/>
+                </StackTrace>
+
+
+                <BehaviorControl
+                    STPFunction = "no"
+                />
+
+                <Timers
+                     T1 = "800"
+                     T2 = "1400"
+                     T3 = "800"
+                     T4 = "800"
+                     T5 = "800"
+                     T6 = "800"
+                     T7 = "800"
+                     T8 = "800"
+                     T9 = "0"
+                    T10 = "30000"
+                    T11 = "30000"
+                    T12 = "800"
+                    T13 = "800"
+                    T14 = "2000"
+                    T15 = "2000"
+                    T16 = "1400"
+                    T17 = "800"
+                    T18 = "0"
+                    T19 = "480000"
+                    T20 = "3000"
+                    T21 = "3000"
+                    T22 = "30000"
+                    T23 = "30000"
+                    T24 = "30000"
+                    T25 = "30000"
+                    T26 = "12000"
+                    T27 = "2000"
+                    T28 = "3000"
+                    T29 = "60000"
+                    T30 = "30000"
+                    T31 = "10000"
+                    T32 = "5000"
+                    T33 = "60000"
+                    T34 = "5000"
+                    SLT-T1 = "5000"
+                    SLT-T2 = "30000"
+                />
+
+            </ANSI-MTP3>
+
+        </IntelliNet>
+
+    </SS7-Stacks>
+
+</Application>
+

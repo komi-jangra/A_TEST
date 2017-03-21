@@ -1,0 +1,4 @@
+release		c	ansi	libANSI-SLTM.a	ANSI-SLTM.lib
+debug		c	ansi	libANSI-SLTMD.a	ANSI-SLTMD.lib
+release		c	itu	libCCITT-SLTM.a	CCITT-SLTM.lib
+debug		c	itu	libCCITT-SLTMD.a	CCITT-SLTMD.lib

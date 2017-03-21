@@ -1,0 +1,20 @@
+
+ITU SCCP Command
+
+SYNOPSIS
+    si_get_all_cpc
+
+DESCRIPTION
+    This command displays ITU SCCP concerned point code entries.
+
+PARAMETERS
+    None.
+
+EXAMPLE
+    >> si_get_all_cpc
+    ------------------------------
+    sspc    <2>
+    ni      <0>
+    ssn     <2>
+    cpc     <5>
+

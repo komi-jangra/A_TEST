@@ -1,0 +1,30 @@
+
+Get RPC Command
+
+SYNOPSIS
+    mi_get_all_rpc  
+
+DESCRIPTION
+   This command gets all remote pointcode .
+
+PARAMETERS
+   None
+
+
+EXAMPLE
+
+>>  mi_get_all_rpc
+------------------------------
+Remote PC:         <20>
+Family:      <ANSI>
+SIO:         <128>
+status:      <DESTINATION_UNAVAILABLE>
+------------------------------
+------------------------------
+Remote PC:         <40>
+Family:      <ANSI>
+SIO:         <128>
+status:      <DESTINATION_UNAVAILABLE>
+------------------------------
+
+

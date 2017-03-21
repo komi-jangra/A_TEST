@@ -1,0 +1,118 @@
+/****************************************************************************
+ *                                                                          *
+ *     Copyright 2002 IntelliNet Technologies, Inc. All Rights Reserved.    *
+ *             Manufactured in the United States of America.                *
+ *       1990 W. New Haven Ste. 312, Melbourne, Florida, 32904 U.S.A.       *
+ *                                                                          *
+ *   This product and related documentation is protected by copyright and   *
+ *   distributed under licenses restricting its use, copying, distribution  *
+ *   and decompilation.  No part of this product or related documentation   *
+ *   may be reproduced in any form by any means without prior written       *
+ *   authorization of IntelliNet Technologies and its licensors, if any.    *
+ *                                                                          *
+ *   RESTRICTED RIGHTS LEGEND:  Use, duplication, or disclosure by the      *
+ *   government is subject to restrictions as set forth in subparagraph     *
+ *   (c)(1)(ii) of the Rights in Technical Data and Computer Software       *
+ *   clause at DFARS 252.227-7013 and FAR 52.227-19.                        *
+ *                                                                          *
+ ****************************************************************************
+ *                                                                          *
+ * CONTRACT: INTERNAL                                                       *
+ *                                                                          *
+ ****************************************************************************
+ *
+ *  ID: $Id: Readme,v 1.1.1.1 2007-10-08 11:12:23 bsccs2 Exp $
+ *
+ * LOG: $Log: not supported by cvs2svn $
+ * LOG: Revision 1.1.1.1  2007/10/04 13:24:59  bsccs2
+ * LOG: init tree
+ * LOG:
+ * LOG: Revision 1.1.1.1  2007/08/03 06:49:29  cvsadmin
+ * LOG: BscCs2
+ * LOG:
+ * LOG: Revision 1.1.1.1  2007/03/08 15:15:19  cvsadmin
+ * LOG: BSC project
+ * LOG:
+ * LOG: Revision 9.1  2005/03/23 12:55:17  cvsadmin
+ * LOG: Begin PR6.5
+ * LOG:
+ * LOG: Revision 8.2  2005/03/21 13:54:28  cvsadmin
+ * LOG: PR6.4.2 Source Propagated to Current
+ * LOG:
+ * LOG: Revision 7.1  2002/08/26 22:10:40  mmiers
+ * LOG: Begin PR6.2
+ * LOG:
+ * LOG: Revision 1.2  2002/05/20 15:58:50  sjaddu
+ * LOG: Merge from PR6, remove unwanted directories.
+ * LOG:
+ * LOG: Revision 1.1.2.3  2002/05/13 16:16:28  hbalimid
+ * LOG: Updated with SBE LoopBack
+ * LOG:
+ * LOG: Revision 1.1.2.2  2002/05/10 14:30:44  hbalimid
+ * LOG: Updated with NMS loopback
+ * LOG:
+ * LOG: Revision 1.1.2.1  2002/05/10 00:05:20  hbalimid
+ * LOG: Baseline for the loopback configurations when using IntelliNet ISUP
+ * LOG: with accelero engine
+ * LOG:
+ *
+ ****************************************************************************/
+This module named "loopback" gives the user an idea about the xml configuration
+needed if we would like to use a loop-back (eg. portA to PortB in nms OR port1
+to port2 in sbe,...). Discussion is around the IntelliNet ISUP usage with
+Accelero and its Engine.
+
+
+1. NMS SCENARIO 
+   ------------
+ftest.xml.nmsA - NMS Port A Channel T1 with SLC 0
+ftest.xml.nmsA - NMS Port B Channel T9 with SLC 8
+
+After U align, try mtp2mgr and U should see the following:
+mtp2mgr[1]>status link *
+Num    Name   MTP2 Hi State    MTP2 Low State
+---    ----   -------------    --------------
+  0     T1    ENABLED          IN_SERVICE          
+  1     T2    CONFIG'D         IDLE                
+  2     T3    CONFIG'D         IDLE                
+  3     T4    CONFIG'D         IDLE                
+  4     T5    CONFIG'D         IDLE                
+  5     T6    CONFIG'D         IDLE                
+  6     T7    CONFIG'D         IDLE                
+  7     T8    CONFIG'D         IDLE                
+  8     T9    ENABLED          IN_SERVICE          
+  9     T10   CONFIG'D         IDLE                
+ 10     T11   CONFIG'D         IDLE                
+ 11     T12   CONFIG'D         IDLE                
+ 12     T13   CONFIG'D         IDLE                
+ 13     T14   CONFIG'D         IDLE                
+ 14     T15   CONFIG'D         IDLE                
+ 15     T16   CONFIG'D         IDLE                
+mtp2mgr[1]>
+
+
+If U want more links, open up more ports in TDMCp1.cfg and modify the MTP3Cfg with proper SLCs for those channels. Run tdmcfg -i TDMCp1.cfg and ss7load
+
+2. SBE SCENARIO
+   ------------
+ftest.xml.port0
+    <SBE_Data  sectionName = "SBE SS7-1"
+                board       = "0"
+                port1       = "0"
+                TR_TYPE     = "1"
+                linkSet_1A     = "1"
+                linkCodes_1A   = "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15"
+    />
+
+
+ftest.xml.port1
+    <SBE_Data  sectionName = "SBE SS7-1"
+                board       = "0"
+                port1       = "1"
+                TR_TYPE     = "1"
+                linkSet_1A     = "1"
+                linkCodes_1A   = "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15"
+    />
+
+
+Just the port numbers are different. Use the same links in Border Transport both sides

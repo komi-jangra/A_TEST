@@ -1,0 +1,13 @@
+nmc/in cmdmain,cpu 1/cmdmno; symbols, EXTENSIONS, &
+  suppress, nowarn(1506,770), nooverflow_traps, nostdfiles, &
+  inline, optimize 0, &
+  SSV0 "$nodea.sel", &
+  SSV1 "$nodea.bb", &
+  SSV2 "$system.system", &
+  SSV3 "$nodea.csslilib", &
+  SSV4 "$nodea.cssinc", &
+  SSV5 "$nodea.p2system", &
+  SSV6 "$nodea.eralilib", &
+  SSV7 "$nodea.erainc", &
+  SSV8 "$nodea", &
+  SSV9 "$system.ztcpip"

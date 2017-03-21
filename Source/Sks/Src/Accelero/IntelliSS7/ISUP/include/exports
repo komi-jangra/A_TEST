@@ -1,0 +1,5 @@
+all		c	ansi	ansi/*.h
+all		c	itu	itu/*.h
+all		cpp	both	isup++.h
+all		c	both	isup_cmn.h
+all		c	both	isup_sn.h

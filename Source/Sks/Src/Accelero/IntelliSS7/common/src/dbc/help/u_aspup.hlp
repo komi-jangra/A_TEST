@@ -1,0 +1,19 @@
+
+M3UA / SUA Command
+
+SYNOPSIS
+    u_aspup <trid>
+
+DESCRIPTION
+    This command sends asp up for a given transport identifier.
+
+PARAMETERS
+    trid    Transport Identifer value in hex.
+            Values for transport identifiers can be found by displaying 
+            ASP Table. Command for displaying ASP Table is u_asptbl.
+
+EXAMPLE
+    >> u_aspup 0x4e22
+    *********** ASP UP Sent *************
+
+

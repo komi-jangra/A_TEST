@@ -1,0 +1,172 @@
+CPP=cl.exe
+RSC=rc.exe
+!MESSAGE "$(OS)"
+!IF "$(OS)" == "Windows_NT"
+!MESSAGE "1"
+NULL=
+!ELSE 
+!MESSAGE "2"
+NULL=nul
+!ENDIF 
+
+OUTDIR=$(ROOTDIR)\build\Debug
+!MESSAGE "$(OUTDIR)"
+INTDIR=$(ROOTDIR)\build\Debug
+HDIR=$(ROOTDIR)\h
+PORTDIR=$(ROOTDIR)\ports\win32-console
+ALL : "$(OUTDIR)\libcspl.lib"
+
+CLEAN :
+	-@erase "$(INTDIR)\cpool.obj"
+	-@erase "$(INTDIR)\cspl.obj"
+	-@erase "$(INTDIR)\es.obj"
+	-@erase "$(INTDIR)\manifest.obj"
+	-@erase "$(INTDIR)\run.obj"
+	-@erase "$(INTDIR)\stacklayer.obj"
+	-@erase "$(INTDIR)\vc60.idb"
+	-@erase "$(INTDIR)\vc60.pdb"
+	-@erase "$(INTDIR)\ylib-bitmap.obj"
+	-@erase "$(INTDIR)\ylib-bitstring.obj"
+	-@erase "$(INTDIR)\ylib-bufop.obj"
+	-@erase "$(INTDIR)\ylib-crc.obj"
+	-@erase "$(INTDIR)\ylib-hash.obj"
+	-@erase "$(INTDIR)\ylib-list.obj"
+	-@erase "$(INTDIR)\ylib-pool.obj"
+	-@erase "$(INTDIR)\ylib-squeue.obj"
+	-@erase "$(INTDIR)\ylib-tree.obj"
+	-@erase "$(OUTDIR)\libcspl.lib"
+
+"$(OUTDIR)" :
+    if not exist "$(OUTDIR)/$(NULL)" mkdir "$(OUTDIR)"
+
+CPP_PROJ=/nologo /MLd /W3 /Gm /GX /ZI /Od /I "$(HDIR)" /I "$(PORTDIR)" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_LIB" /Fp"$(INTDIR)\libcspl.pch" /YX /Fo"$(INTDIR)\\" /Fd"$(INTDIR)\\" /FD /GZ  /c 
+
+LIB32=link.exe -lib
+LIB32_FLAGS=/nologo /out:"$(OUTDIR)\libcspl.lib" 
+LIB32_OBJS= \
+	"$(INTDIR)\cpool.obj" \
+	"$(INTDIR)\cspl.obj" \
+	"$(INTDIR)\es.obj" \
+	"$(INTDIR)\manifest.obj" \
+	"$(INTDIR)\run.obj" \
+	"$(INTDIR)\stacklayer.obj" \
+	"$(INTDIR)\ylib-bitmap.obj" \
+	"$(INTDIR)\ylib-bitstring.obj" \
+	"$(INTDIR)\ylib-bufop.obj" \
+	"$(INTDIR)\ylib-crc.obj" \
+	"$(INTDIR)\ylib-hash.obj" \
+	"$(INTDIR)\ylib-list.obj" \
+	"$(INTDIR)\ylib-pool.obj" \
+	"$(INTDIR)\ylib-squeue.obj" \
+	"$(INTDIR)\ylib-tree.obj"
+
+"$(OUTDIR)\libcspl.lib" : "$(OUTDIR)" $(DEF_FILE) $(LIB32_OBJS)
+    $(LIB32) @<<
+  $(LIB32_FLAGS) $(DEF_FLAGS) $(LIB32_OBJS)
+<<
+
+.c{$(INTDIR)}.obj::
+   $(CPP) @<<
+   $(CPP_PROJ) $< 
+<<
+
+
+.c{$(INTDIR)}.sbr::
+   $(CPP) @<<
+   $(CPP_PROJ) $< 
+<<
+
+
+
+!IF "$(CFG)" == "cspl - Win32 Release" || "$(CFG)" == "cspl - Win32 Debug"
+SOURCE=$(ROOTDIR)\src\cpool.c
+
+"$(INTDIR)\cpool.obj" : $(SOURCE) "$(INTDIR)"
+	$(CPP) $(CPP_PROJ) $(SOURCE)
+
+
+SOURCE=$(ROOTDIR)\src\cspl.c
+
+"$(INTDIR)\cspl.obj" : $(SOURCE) "$(INTDIR)"
+	$(CPP) $(CPP_PROJ) $(SOURCE)
+
+
+SOURCE=$(ROOTDIR)\src\es.c
+
+"$(INTDIR)\es.obj" : $(SOURCE) "$(INTDIR)"
+	$(CPP) $(CPP_PROJ) $(SOURCE)
+
+
+SOURCE=$(ROOTDIR)\src\manifest.c
+
+"$(INTDIR)\manifest.obj" : $(SOURCE) "$(INTDIR)"
+	$(CPP) $(CPP_PROJ) $(SOURCE)
+
+
+SOURCE=$(ROOTDIR)\src\run.c
+
+"$(INTDIR)\run.obj" : $(SOURCE) "$(INTDIR)"
+	$(CPP) $(CPP_PROJ) $(SOURCE)
+
+
+SOURCE=$(ROOTDIR)\src\stacklayer.c
+
+"$(INTDIR)\stacklayer.obj" : $(SOURCE) "$(INTDIR)"
+	$(CPP) $(CPP_PROJ) $(SOURCE)
+
+
+SOURCE="$(ROOTDIR)\src\ylib-bitmap.c"
+
+"$(INTDIR)\ylib-bitmap.obj" : $(SOURCE) "$(INTDIR)"
+	$(CPP) $(CPP_PROJ) $(SOURCE)
+
+
+SOURCE="$(ROOTDIR)\src\ylib-bitstring.c"
+
+"$(INTDIR)\ylib-bitstring.obj" : $(SOURCE) "$(INTDIR)"
+	$(CPP) $(CPP_PROJ) $(SOURCE)
+
+
+SOURCE="$(ROOTDIR)\src\ylib-bufop.c"
+
+"$(INTDIR)\ylib-bufop.obj" : $(SOURCE) "$(INTDIR)"
+	$(CPP) $(CPP_PROJ) $(SOURCE)
+
+
+SOURCE="$(ROOTDIR)\src\ylib-crc.c"
+
+"$(INTDIR)\ylib-crc.obj" : $(SOURCE) "$(INTDIR)"
+	$(CPP) $(CPP_PROJ) $(SOURCE)
+
+
+SOURCE="$(ROOTDIR)\src\ylib-hash.c"
+
+"$(INTDIR)\ylib-hash.obj" : $(SOURCE) "$(INTDIR)"
+	$(CPP) $(CPP_PROJ) $(SOURCE)
+
+
+SOURCE="$(ROOTDIR)\src\ylib-list.c"
+
+"$(INTDIR)\ylib-list.obj" : $(SOURCE) "$(INTDIR)"
+	$(CPP) $(CPP_PROJ) $(SOURCE)
+
+
+SOURCE="$(ROOTDIR)\src\ylib-pool.c"
+
+"$(INTDIR)\ylib-pool.obj" : $(SOURCE) "$(INTDIR)"
+	$(CPP) $(CPP_PROJ) $(SOURCE)
+
+
+SOURCE="$(ROOTDIR)\src\ylib-squeue.c"
+
+"$(INTDIR)\ylib-squeue.obj" : $(SOURCE) "$(INTDIR)"
+	$(CPP) $(CPP_PROJ) $(SOURCE)
+
+
+SOURCE="$(ROOTDIR)\src\ylib-tree.c"
+
+"$(INTDIR)\ylib-tree.obj" : $(SOURCE) "$(INTDIR)"
+	$(CPP) $(CPP_PROJ) $(SOURCE)
+
+
+!ENDIF 

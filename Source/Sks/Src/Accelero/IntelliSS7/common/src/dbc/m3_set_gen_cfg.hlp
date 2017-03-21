@@ -1,0 +1,36 @@
+
+M3UA Command
+
+SYNOPSIS
+    m3_set_gen_cfg <al> <trType> <trOutput> <on/off>
+
+DESCRIPTION
+    This command sets M3UA alarm level and trace level. Alarm level 
+    controls M3UA alarms sent to Accelero application. Trace level 
+    controls generation of M3UA execution traces.
+
+PARAMETERS
+    al            Alarm Level.
+                  Possible values -
+                  CRITICAL
+                  MAJOR 
+                  MINOR
+                  INFO
+                  OFF
+
+    trType        Trace Type. Possible valuse
+                  DEBUG
+                  WARNING
+                  ERROR
+                  CRITICAL
+                  all - all trace types
+    traceOutput   Trace Output. Possible Values -
+                  stdout
+                  file
+     ON/OFF       Set trace to on or off.
+
+
+EXAMPLE
+    >> m3_set_gen_cfg CRITICAL DEBUG file on  
+    *********** M3UA General Config Set*************
+

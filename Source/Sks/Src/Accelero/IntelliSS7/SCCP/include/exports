@@ -1,0 +1,6 @@
+all		c	ansi	ansi/*.h
+all		c	itu	itu/*.h
+all		cpp	both	sccp++.h
+all		c	both	sua.h
+all		c	both	sccp_cmn.h
+all		c	both	sccp_sn.h

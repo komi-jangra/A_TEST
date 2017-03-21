@@ -1,0 +1,74 @@
+<HTML>
+<HEAD>
+<CENTER>
+<H2><BIG>IntelliSS7</BIG> <B>Application Developer's Toolkit</B></H2>
+</CENTER>
+<BR>
+</HEAD>
+<BODY>
+<TABLE ALIGN=JUSTIFY WIDTH=100% BGCOLOR=SILVER>
+<TR>
+    <TD ALIGN=LEFT><B>IntelliSS7 Function</B></TD>
+    <TD ALIGN=RIGHT><I>SCCP_SendDataForm1</I></TD>
+</TR>
+</TABLE>
+<BR>
+<BR>
+<B>NAME</B>
+<PRE>
+    SCCP_SendDataForm1()
+</PRE>
+<B>SCOPE</B>
+<PRE>
+    extern
+</PRE>
+<B>SYNOPSIS</B>
+<PRE>
+    SS7DLLAPI int
+    SCCP_SendDataForm1(ITS_HANDLE handle, ITS_HDR *hdr,
+                       ITS_SCCP_IE *ies, int ieCount);
+
+</PRE>
+<B>PURPOSE</B>
+<PRE>
+    This function builds and sends a DataForm1
+    message.
+
+</PRE>
+<B>INPUT PARAMETERS</B>
+<PRE>
+    handle - the transport handle
+    hdr - the context for this message
+    ies - the information elements that make up the message
+    ieCount - the number of information elements
+
+</PRE>
+<B>INPUT/OUTPUT PARAMETERS</B>
+<PRE>
+    None.
+
+</PRE>
+<B>OUTPUT PARAMETERS</B>
+<PRE>
+    None.
+
+</PRE>
+<B>RETURN VALUE</B>
+<PRE>
+    If the message is successfully sent, ITS_SUCCESS is returned.
+    Any other return value indicates an IntelliSS7 error.
+
+</PRE>
+<B>NOTES</B>
+<PRE>
+
+</PRE>
+<B>SEE ALSO</B>
+<PRE>
+</PRE>
+<CENTER>
+<A HREF=sccp.html><I>back</I></A><BR>
+<BR>
+</CENTER>
+</BODY>
+</HTML>

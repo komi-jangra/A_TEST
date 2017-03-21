@@ -1,0 +1,186 @@
+<?xml version="1.0"?>
+
+<!-- Engine XML configuration file for TCAP MNT Test (node 1). -->
+ 
+<Application name           = "test_tcap_mn_unix"
+             type           = "console-application"
+             globalStart    = "ITU-TCAP ITU-SCCP"
+             binding        = "CPP"
+             appSelector    = "ApplicationSelector">
+ 
+    <AppOptions name = "traceFlushAfterWrite"         value = "yes"/>
+    <AppOptions name = "routeUniqueLinkCodesRequired" value = "yes"/>
+ 
+    <RedundancyInfo 
+        initialState    = "primary"
+        timerT1         = "1"
+        timerT2         = "1"
+        timerT3         = "1"
+        timerT4         = "1"
+        shmSize         = "16777216"
+        nodeId          = "1"
+        baseAddress     = "0x80000000"
+
+        segmentNum      = "0"
+        adapterNum      = "0"
+        remoteNode      = "0"
+        remoteAddr      = "0"
+        remotePort      = "0"
+
+        gcsSyncMemUseGcs    = "1"
+        gcsSyncMemUseTcp    = "0"
+        gcsSyncMemIpAddress = "192.168.1.62"
+        gcsSyncMemIpPort    = "4804"
+    />
+
+    <ApplicationTrace>
+        <Critical  output = "stdout"/>
+        <Error     output = "stdout"/>
+        <Warning   output = "stdout"/>
+        <Debug     output = ""/>
+    </ApplicationTrace>
+
+    <ToolkitTrace>
+        <Critical  output = "stdout"/>
+        <Error     output = "stdout"/>
+        <Warning   output = "stdout"/>
+        <Debug     output = ""/>
+    </ToolkitTrace>
+
+    <Feature
+        name        = "IntelliNet stack"
+        library     = "libENGINED.so"
+        classRec    = "itsINTELLISS7_Class"
+    />
+
+    <Feature
+        name        = "Keepalive manager"
+        library     = "libENGINED.so"
+        classRec    = "itsKEEPALIVE_Class"
+    />
+
+    <Feature
+        name                = "IMAL"
+        library             = "libCCITT-IMALD.so"
+        classRec            = "itsIMAL_Class_CCITT">
+
+        <FeatureOption name = "imalTraceKeepAlives" value = "yes"/>
+        <FeatureOption name = "imalTracePayload"    value = "yes"/>
+    </Feature>
+
+    <!--///////////////////////////////////////////////////////////////-->
+
+    <BorderPool stackSize = "0">
+
+        <Transport  name        = "MntMain"
+                    type        = "TaskQueue">
+
+            <CustomDispatch
+                library         = ""
+                dispatch        = "MntMainFunction"
+            />
+            
+        </Transport>
+
+        <Transport  name    = "TestTcapMntInterNode1To2"
+                    type    = "ServerSocket"
+                    family  = "ITU">
+
+            <Modifier value = "IMAL"/>
+            <Modifier value = "MTP3"/>
+
+            <StreamData socketDomain    = "INET"
+                        serverHostName  = "127.0.0.1"
+                        serverPort      = "6666"
+                        retryDelay      = "5"
+                        retryCount      = "5"
+            />
+
+            <IMAL   imalLocalPC             = "0x01"
+                    imalAdjacentPC          = "0x02"
+                    imalKeepAliveTimeOut    = "30"/>
+
+            <Route  routeType    = "remoteRoute"
+                    routeStyle   = "dpc-sio-ssn">
+                <DPC            value = "0x02"/>
+                <SIO            value = "3"/>
+                <SSN            value = "2"/>
+                <LinkSet        value = "1"/>
+                <LinkCode       value = "1"/>
+            </Route>
+
+        </Transport>
+
+    </BorderPool>
+
+    <!--///////////////////////////////////////////////////////////////-->
+
+    <SS7-Stacks>
+
+        <!--///////////////////////////////////////////////////////////-->
+
+        <IntelliNet>
+
+            <ITU-SCCP variant = "WhiteBook">
+  
+                <Variant value = "WhiteBook"/>
+  
+                <StackTrace>
+                    <Critical output = "stdout"/>
+                    <Error    output = "stdout"/>
+                    <Warning  output = "stdout"/>
+                    <Debug    output = "stdout"/> 
+                </StackTrace>
+  
+                <Timers
+                    TstatInfo    = "30"
+                    TcoordChg    = "30"
+                    TignoreSST   = "30"
+                    TrtgStatInfo = "30"
+                    Tconnect     = "30"
+                    Trelease     = "10"
+                    Treset       = "20"
+                    Tias         = "300"
+                    Tiar         = "660"
+                    Tguard       = "240"
+                />
+  
+                <BehaviorControl
+                    PropagateIT   = "no"
+                    PropagateERR  = "no"
+                    PropagateSCMG = "yes"
+                />
+  
+            </ITU-SCCP>
+  
+            <!--///////////////////////////////////////////////////////////////-->
+  
+            <ITU-TCAP variant = "WhiteBook">
+  
+                <StackTrace>
+                    <Critical output = "stdout"/>
+                    <Error    output = "stdout"/>
+                    <Warning  output = "stdout"/>
+                    <Debug    output = "stdout"/> 
+                </StackTrace>
+  
+                <Timers
+                    Treject = "5"
+                />
+
+                <Route  routeType    = "localRoute"
+                        routeStyle   = "dpc-sio-ssn">
+                    <DPC        value = "0x01"/>
+                    <SIO        value = "3"/>
+                    <SSN        value = "2"/>
+                    <LinkSet    value = "255"/>
+                    <LinkCode   value = "255"/>
+                </Route>
+  
+            </ITU-TCAP>
+
+        </IntelliNet>
+
+    </SS7-Stacks>
+
+ </Application>

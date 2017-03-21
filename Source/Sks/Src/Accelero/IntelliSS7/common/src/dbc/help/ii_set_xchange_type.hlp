@@ -1,0 +1,22 @@
+
+ITU ISUP Command
+
+SYNOPSIS
+    ii_set_xchange_type <opc> <dpc> <sio> <xchangeType>
+
+DESCRIPTION
+    This command sets the Local Exchange Type/Node
+
+PARAMETERS
+    opc         Origination point code.
+    dpc         Destination point code.
+    sio         Service information octet.
+    xchangeType Local Exchange Type.
+   
+    Possible Values for xchangeType: TYPE_A, TYPE_B
+
+EXAMPLE
+>> ii_set_xchange_type 16 21 133 TYPE_B
+
+ ****** Set Exchange Type Successful *******
+

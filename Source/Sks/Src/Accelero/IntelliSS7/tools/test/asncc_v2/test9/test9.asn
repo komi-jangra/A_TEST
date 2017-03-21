@@ -1,0 +1,83 @@
+--------------------------------------------------------------------------------
+--
+-- AsnCC 2.0 test.
+--
+-- Various types and values. LRF format.
+--
+--------------------------------------------------------------------------------
+
+TEST9 { ccitt identified-organization (4) etsi (0) version2 (2) } DEFINITIONS IMPLICIT TAGS ::=
+
+BEGIN
+
+EXPORTS
+;
+
+
+Bar1 ::= BIT STRING {
+            alt0(0),
+            alt1(1),
+            alt2(2),
+            alt3(3)
+            }
+
+Bar2 ::= OCTET STRING
+
+Bar3 ::= OBJECT IDENTIFIER
+
+Bar4 ::= INTEGER
+
+Bar5 ::= IA5String
+
+Bar6 ::= CHOICE {
+            choice1 [1] INTEGER,
+            choice2 [3] OCTET STRING
+            }
+
+Bar7 ::= SET {
+            elmt1 [1] INTEGER,
+            elmt2 [2] Bar6,
+            elmt3 [3] OCTET STRING
+            }
+
+Bar8 ::= SEQUENCE {
+            elmt1 [1] INTEGER,
+            elmt2 [2] Bar6,
+            elmt3 [3] OCTET STRING
+            }
+
+Bar9 ::= SET OF Bar7
+
+Bar10 ::= ENUMERATED { 
+                enum1(0),
+                enum2(1),
+                enum3(2) 
+                }
+
+
+bar1Val Bar1 ::= '0101'B
+
+bar2Val Bar2 ::= '0123456789ABCDEF'H
+
+bar3Val Bar3 ::= { ccitt identified-organization(4) etsi version2(2) }
+
+bar4Val Bar4 ::= 2000
+
+bar5Val Bar5 ::= "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+bar6Val Bar6 ::= choice1 : 1999
+
+bar7Val Bar7 ::= { elmt1 2001, elmt2 choice2 : 'ABCD'H, elmt3 '1234'H }
+
+bar8Val Bar8 ::= { elmt1 2001, elmt2 choice1 : 2222, elmt3 '1234'H }
+
+bar9Val Bar9 ::= { 
+                    { elmt1 2001, elmt2 choice2 : 'ABCD'H, elmt3 '1234'H }, 
+                    { elmt1 2001, elmt2 choice1 : 2222, elmt3 '1234'H }
+                 }
+
+bar10Val Bar10 ::= enum3
+
+
+
+END

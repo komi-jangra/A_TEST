@@ -1,0 +1,20 @@
+
+BSSAP :
+    bs_add_cfg_record           BSSAP add net config
+    bs_rem_cfg_record           BSSAP remove net config
+    bs_get_all_cfg_record       BSSAP get all net config
+    bs_get_cfg_record           BSSAP get single net config
+    bs_add_cic_record           BSSAP add CIC config
+    bs_rem_cic_record           BSSAP remove CIC config
+    bs_get_all_cic_record       BSSAP get all CIC config
+    bs_get_cic_record           BSSAP get single CIC config
+    bs_get_call_detail          BSSAP get all CDR
+    bs_set_timer                BSSAP set specific timer value
+    bs_set_timer_tries          BSSAP set specific timer tries
+    bs_get_all_timer_tries      BSSAP get specific timer tries
+    bs_get_all_timers           BSSAP get specific timer values
+    bs_set_gen_cfg              BSSAP set general config details
+    bs_get_gen_cfg              BSSAP get general config details
+    bs_show_all_pegs            BSSAP get all pegs
+
+For details about any command use "help <command name>"

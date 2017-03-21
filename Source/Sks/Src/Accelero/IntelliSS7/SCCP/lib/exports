@@ -1,0 +1,4 @@
+release		c	ansi	libANSI-SCCP.a	ANSI-SCCP.lib
+debug		c	ansi	libANSI-SCCPD.a	ANSI-SCCPD.lib
+release		c	itu	libCCITT-SCCP.a	CCITT-SCCP.lib
+debug		c	itu	libCCITT-SCCPD.a	CCITT-SCCPD.lib

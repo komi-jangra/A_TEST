@@ -1,0 +1,26 @@
+
+ITU SCCP Command
+
+SYNOPSIS
+    si_set_rssn <pc> <ni> <ssn> [<linkset>] 
+
+DESCRIPTION
+    This command adds a remote subsystem entry.
+
+PARAMETERS
+    pc      Remote Point Code
+    ni      Network indicator
+    ssn     Remote Subsystem Number
+    linkset Linkset
+
+EXAMPLE
+    >> si_set_rssn 4114 0 5 
+********* SCCP Remote Subsystem Entry Set ********
+
+    >> si_set_rssn 4114 0 5 1 
+********* SCCP Remote Subsystem Entry Set ********
+
+NOTE -
+1. If remote DPC-NI route is not already configured, no remote ssn entry is added.
+2. Linkset is an optional parameter. If IntelliMTP3 is used then the user 
+   should provide the linkset parameter.

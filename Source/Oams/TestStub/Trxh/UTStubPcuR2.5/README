@@ -1,0 +1,31 @@
+Scope
+-----
+This document explains the procedure to run the Integrated Setup of TRXH and TestStubs ( CFG, ABIHM, GRHM, PSCH, BICH, CELLH).
+Unit testing of TRXH has been performed using this setup.
+
+Procedure to run setup:
+-----------------------
+Perform following steps to run the setup for testing:
+
+    Run the new IPC Framework, it will also run the dbServer.
+
+    Use Script_N_Packages to populate the data in dbServer.
+
+    Run the binaries of TRXHandler on a terminals.
+      e.g.  ./System_TRXHandler_apc.sct
+
+    Run the executables for Test Subs of ABIHM, CFG on 
+    different terminals from path  ./PCU/Source/Oams/TestStub/Trxh/UTStubPcuR2.5 
+    Names of testStub Executables are : TestStubCfg, TestStubAbihm etc .
+
+Procedure to compile Test stubs:
+-------------------------------
+    TestSubCfg    - make -f  Makefile_CFG
+    TestSubAbihm  - make -f  Makefile_ABIHM
+    TestStubGrhm  - make -f  Makefile_GRHM
+    TestStubBich  - make -f  Makefile_BICH
+    TestStubCellh - make -f  Makefile_CELLH
+    TestStubPsch -  make -f  Makefile_PSCH
+-------------------------------
+Vikash Kumar
+Email:vikash2.kumar@aricent.com

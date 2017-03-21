@@ -1,0 +1,190 @@
+#!/bin/bash
+#
+# run from root of tree to cut release for
+#
+
+PLAT=$PLATFORM
+EXTRADIRS=""
+SOURCEDIR=""
+
+#
+# check args
+#
+if [ $# -lt 4 ]
+then
+    echo "Usage: $0 <rel-type> <binding> <family> <src rel> <release-dir> [extra-dirs]"
+    exit 1
+fi
+
+#
+# local args
+#
+RELTYPE=$1
+BINDING=$2
+FAMILY=$3
+SOURCEDIR=$4
+BUILDDIR=$5
+EXTRADIRS=$6
+
+#
+# compute export list
+#
+
+SUBDIRS="tools common $EXTRADIRS"
+
+#
+# style:
+#  0 - integrated tree
+#  1 - mirror of tree structure
+#
+STYLE=1
+
+#
+# make sure the release directory exists
+#
+mkdir -p $BUILDDIR
+
+#
+# ensure absolute pathname if using "solaris"
+#
+
+CURDIR=$PWD
+
+if [ $PLAT != "WIN32" ]
+then
+    cd $BUILDDIR
+    BUILDDIR=$PWD
+    cd $CURDIR
+fi
+
+#
+# get the subs and makefile
+#
+if [ "$SOURCEDIR" = "yes" ]
+then
+    cp ?subs $BUILDDIR
+    cp config.* $BUILDDIR
+    cp Makefile $BUILDDIR
+    mkdir -p $BUILDDIR/common/src
+    cp common/src/Makefile $BUILDDIR/common/src
+    cp common/src/?subs $BUILDDIR/common/src
+fi
+
+#
+# process each source directory
+#
+for dir in $SUBDIRS
+do
+    echo "Processing exports in $dir..."
+    cd $dir
+
+    #
+    # find the export files
+    #
+    
+    if [ "$SOURCEDIR" = "yes" ]
+    then
+        EXPORTS=`find . -name src_exports -print`
+    else
+        EXPORTS=`find . -name exports -print`
+    fi
+
+    for export in $EXPORTS
+    do
+        #
+        # determine target location
+        #
+        TARGETDIR=`dirname $export`
+        
+        
+        if [ $? -ne 0 ]
+        then
+            echo "Can't find directory info for 'exports'."
+            exit 1
+        fi
+
+        #
+        # create target location
+        #
+        if [ $STYLE -eq 0 ]
+        then
+            mkdir -p $BUILDDIR/$TARGETDIR
+        else
+            mkdir -p $BUILDDIR/$dir/$TARGETDIR
+        fi
+
+        #
+        # process the exports
+        #
+        while read type language pf target winlib
+        do
+            if [ "$type" = "$RELTYPE" -o "$type" = "all" -o \
+                 "$RELTYPE" = "all" ]
+            then
+                if [ "$language" = "$BINDING" -o "$language" = "c" ]
+                then
+                    if [ "$pf" = "$FAMILY" -o "$pf" = "both" -o \
+                         "$FAMILY" = "both" ]
+                    then
+                        SUBDIR=`dirname $target`
+                        if [ "$SUBDIR" != "" ]
+                        then
+                            if [ $STYLE -eq 0 ]
+                            then
+                                mkdir -p $BUILDDIR/$TARGETDIR/$SUBDIR
+                            else
+                                mkdir -p $BUILDDIR/$dir/$TARGETDIR/$SUBDIR
+                            fi
+                        fi
+            
+                        #
+                        # if we are under lib or bin test on platform
+                        #
+
+                        if [ "$TARGETDIR" = "./lib" -o "$TARGETDIR" = "./bin" \]
+                        then
+            
+                            #
+                            #if the platform is win32 copy the win32 libraries
+                            #
+                            if [ "$PLAT" = "WIN32" ]
+                            then
+                                cp -f $TARGETDIR/$winlib \
+                                $BUILDDIR/$dir/$TARGETDIR/$SUBDIR
+                            else
+                                if [ $STYLE -eq 0 ]
+                                then
+                                    cp -fr $TARGETDIR/$target \
+                                       $BUILDDIR/$TARGETDIR/$SUBDIR
+                                else
+                                    cp -fr $TARGETDIR/$target \
+                                       $BUILDDIR/$dir/$TARGETDIR/$SUBDIR
+                                fi
+                            fi
+                        else
+                            if [ $STYLE -eq 0 ]
+                            then
+                                cp -fr $TARGETDIR/$target \
+                                       $BUILDDIR/$TARGETDIR/$SUBDIR
+                            else
+                                cp -fr $TARGETDIR/$target \
+                                       $BUILDDIR/$dir/$TARGETDIR/$SUBDIR
+                            fi
+                        fi
+                    fi
+                fi
+            fi
+ 
+        done < $export
+    done
+
+    cd ..
+done
+
+if [ "$SOURCEDIR" = "yes" ]
+then
+    cd $ITS_ROOT/common/
+    cp $ITS_ROOT/common/include/its_license_stubs.h $BUILDDIR/common/include/its_license.h
+    mv $BUILDDIR/common/src/itscore/its_license_stubs.c \
+    $BUILDDIR/common/src/itscore/its_license.c
+fi

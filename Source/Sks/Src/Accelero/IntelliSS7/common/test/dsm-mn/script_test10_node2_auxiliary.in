@@ -1,0 +1,53 @@
+-------------------------------------------------------------------------------
+--
+-- DSM Multi-Nodes Automatic Regression Testing.
+-- -> Test10 Node2 Auxiliary.
+--
+
+node1 := 0
+node2 := 1
+
+
+RedirectStdout("test10_node2_auxiliary.out")
+
+Print("\nAuxiliary script running...\n")
+
+
+-----------------------------------------------------------
+--
+-- DSM test.
+--
+
+numberOfIterations := 10
+
+from 
+    i := 0
+until
+    i >= numberOfIterations
+loop
+    ftGroupId   := 0
+    tableId     := 1
+
+    DsmLockTable(ftGroupId, tableId)
+    DsmLockTable(ftGroupId, tableId)
+    DsmLockTable(ftGroupId, tableId)
+
+    DsmLockTable(ftGroupId, tableId)
+    DsmUnlockTable(ftGroupId, tableId)
+    DsmLockTable(ftGroupId, tableId)
+    DsmUnlockTable(ftGroupId, tableId)
+
+    DsmUnlockTable(ftGroupId, tableId)
+    DsmUnlockTable(ftGroupId, tableId)
+    DsmUnlockTable(ftGroupId, tableId)
+
+    Print("\n\nAuxiliary iteration number " + i + "...\n")
+
+    i := i + 1
+end
+
+Print("\nReady to sleep 5 seconds...\n") 
+
+Sleep(5)
+
+-----------------------------------------------------------

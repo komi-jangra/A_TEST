@@ -1,0 +1,9 @@
+USING INDEX ../doc/mtp2_index.html
+Generating for ../include/itu/mtp2.h ./mtp2.c
+Dumping interface notes for: MTP2_
+Dumping implementation notes for: MTP2_Encode
+Dumping link to MTP2_Encode for MTP2_
+Dumping implementation notes for: MTP2_Decode
+Dumping link to MTP2_Decode for MTP2_
+Dumping implementation notes for: MTP2_PPrint
+Dumping link to MTP2_PPrint for MTP2_

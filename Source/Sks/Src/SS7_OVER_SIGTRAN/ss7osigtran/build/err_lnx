@@ -1,0 +1,1070 @@
+make: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/lib/macros.mk' has modification time 1.3e+08 s in the future
+make[1]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/lib/macros.mk' has modification time 1.3e+08 s in the future
+make[2]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/os.mk' has modification time 1.3e+08 s in the future
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/cspl/build/../src/cspl.c:12:
+/home5/amaresh/1U-BSC/trunk/Tools/Bsc_build/../..//Inc/Bpm/../Sys/sysxxx_hashdefs.h:774:1: warning: C++ style comments are not allowed in ISO C90
+/home5/amaresh/1U-BSC/trunk/Tools/Bsc_build/../..//Inc/Bpm/../Sys/sysxxx_hashdefs.h:774:1: warning: (this will be reported only once per input file)
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/cspl/build/../src/cspl.c:18:
+/home5/amaresh/1U-BSC/trunk/Tools/Bsc_build/../..//Inc/Bpm/../Ipc/ipcfrm_syslog.h:46:36: warning: ISO C does not permit named variadic macros
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/cspl/build/../src/cspl.c:19:28: warning: ISO C does not permit named variadic macros
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/cspl/build/../src/cspl.c:20:27: warning: ISO C does not permit named variadic macros
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/cspl/build/../src/cspl.c:21:28: warning: ISO C does not permit named variadic macros
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/cspl/build/../src/cspl.c:22:31: warning: ISO C does not permit named variadic macros
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/cspl/build/../src/ylib-squeue.c:5:
+/home5/amaresh/1U-BSC/trunk/Tools/Bsc_build/../..//Inc/Bpm/../Sys/sysxxx_hashdefs.h:774:1: warning: C++ style comments are not allowed in ISO C90
+/home5/amaresh/1U-BSC/trunk/Tools/Bsc_build/../..//Inc/Bpm/../Sys/sysxxx_hashdefs.h:774:1: warning: (this will be reported only once per input file)
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/cspl/build/../src/ylib-squeue.c:11:
+/home5/amaresh/1U-BSC/trunk/Tools/Bsc_build/../..//Inc/Bpm/../Ipc/ipcfrm_syslog.h:46:36: warning: ISO C does not permit named variadic macros
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/cspl/build/../src/ylib-squeue.c:12:28: warning: ISO C does not permit named variadic macros
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/cspl/build/../src/ylib-squeue.c:13:27: warning: ISO C does not permit named variadic macros
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/cspl/build/../src/ylib-squeue.c:14:28: warning: ISO C does not permit named variadic macros
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/cspl/build/../src/ylib-squeue.c:15:31: warning: ISO C does not permit named variadic macros
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c:8:
+/home5/amaresh/1U-BSC/trunk/Tools/Bsc_build/../..//Inc/Bpm/../Sys/sysxxx_hashdefs.h:774:1: warning: C++ style comments are not allowed in ISO C90
+/home5/amaresh/1U-BSC/trunk/Tools/Bsc_build/../..//Inc/Bpm/../Sys/sysxxx_hashdefs.h:774:1: warning: (this will be reported only once per input file)
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c:14:
+/home5/amaresh/1U-BSC/trunk/Tools/Bsc_build/../..//Inc/Bpm/../Ipc/ipcfrm_syslog.h:24:1: warning: "LOG_DEBUG" redefined
+In file included from /usr/include/syslog.h:1,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/h/ss7oversigtran.h:13,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c:4:
+/usr/include/sys/syslog.h:58:1: warning: this is the location of the previous definition
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c:14:
+/home5/amaresh/1U-BSC/trunk/Tools/Bsc_build/../..//Inc/Bpm/../Ipc/ipcfrm_syslog.h:25:1: warning: "LOG_INFO" redefined
+In file included from /usr/include/syslog.h:1,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/h/ss7oversigtran.h:13,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c:4:
+/usr/include/sys/syslog.h:57:1: warning: this is the location of the previous definition
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c:14:
+/home5/amaresh/1U-BSC/trunk/Tools/Bsc_build/../..//Inc/Bpm/../Ipc/ipcfrm_syslog.h:46:36: warning: ISO C does not permit named variadic macros
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c:15:28: warning: ISO C does not permit named variadic macros
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c:16:27: warning: ISO C does not permit named variadic macros
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c:17:28: warning: ISO C does not permit named variadic macros
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c:18:31: warning: ISO C does not permit named variadic macros
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c:120:86: warning: ISO C99 requires rest arguments to be used
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c:168:48: warning: C++ style comments are not allowed in ISO C90
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c:168:48: warning: (this will be reported only once per input file)
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c:171:88: warning: ISO C99 requires rest arguments to be used
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c:182: warning: missing initializer
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c:182: warning: (near initialization for `__operations.hash')
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c:399:63: warning: ISO C99 requires rest arguments to be used
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c: In function `sl_event_deregister':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c:400: warning: ISO C90 forbids mixed declarations and code
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c: In function `ss7_over_sigtran_err_log':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c:823: warning: unsigned int format, time_t arg (arg 3)
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c:823: warning: unsigned int format, long unsigned int arg (arg 4)
+ar: creating libcspl.a
+ar: creating libporting.a
+ar: creating libmpset.a
+ar: creating libcpset.a
+make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+make[1]: warning:  Clock skew detected.  Your build may be incomplete.
+make[1]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/lib/macros.mk' has modification time 1.3e+08 s in the future
+make[2]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/os.mk' has modification time 1.3e+08 s in the future
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/cspl/build/../src/cspl.c:12:
+/home5/amaresh/1U-BSC/trunk/Tools/Bsc_build/../..//Inc/Bpm/../Sys/sysxxx_hashdefs.h:774:1: warning: C++ style comments are not allowed in ISO C90
+/home5/amaresh/1U-BSC/trunk/Tools/Bsc_build/../..//Inc/Bpm/../Sys/sysxxx_hashdefs.h:774:1: warning: (this will be reported only once per input file)
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/cspl/build/../src/cspl.c:18:
+/home5/amaresh/1U-BSC/trunk/Tools/Bsc_build/../..//Inc/Bpm/../Ipc/ipcfrm_syslog.h:46:36: warning: ISO C does not permit named variadic macros
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/cspl/build/../src/cspl.c:19:28: warning: ISO C does not permit named variadic macros
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/cspl/build/../src/cspl.c:20:27: warning: ISO C does not permit named variadic macros
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/cspl/build/../src/cspl.c:21:28: warning: ISO C does not permit named variadic macros
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/cspl/build/../src/cspl.c:22:31: warning: ISO C does not permit named variadic macros
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/cspl/build/../src/ylib-squeue.c:5:
+/home5/amaresh/1U-BSC/trunk/Tools/Bsc_build/../..//Inc/Bpm/../Sys/sysxxx_hashdefs.h:774:1: warning: C++ style comments are not allowed in ISO C90
+/home5/amaresh/1U-BSC/trunk/Tools/Bsc_build/../..//Inc/Bpm/../Sys/sysxxx_hashdefs.h:774:1: warning: (this will be reported only once per input file)
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/cspl/build/../src/ylib-squeue.c:11:
+/home5/amaresh/1U-BSC/trunk/Tools/Bsc_build/../..//Inc/Bpm/../Ipc/ipcfrm_syslog.h:46:36: warning: ISO C does not permit named variadic macros
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/cspl/build/../src/ylib-squeue.c:12:28: warning: ISO C does not permit named variadic macros
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/cspl/build/../src/ylib-squeue.c:13:27: warning: ISO C does not permit named variadic macros
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/cspl/build/../src/ylib-squeue.c:14:28: warning: ISO C does not permit named variadic macros
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/cspl/build/../src/ylib-squeue.c:15:31: warning: ISO C does not permit named variadic macros
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c:8:
+/home5/amaresh/1U-BSC/trunk/Tools/Bsc_build/../..//Inc/Bpm/../Sys/sysxxx_hashdefs.h:774:1: warning: C++ style comments are not allowed in ISO C90
+/home5/amaresh/1U-BSC/trunk/Tools/Bsc_build/../..//Inc/Bpm/../Sys/sysxxx_hashdefs.h:774:1: warning: (this will be reported only once per input file)
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c:14:
+/home5/amaresh/1U-BSC/trunk/Tools/Bsc_build/../..//Inc/Bpm/../Ipc/ipcfrm_syslog.h:24:1: warning: "LOG_DEBUG" redefined
+In file included from /usr/include/syslog.h:1,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/h/ss7oversigtran.h:13,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c:4:
+/usr/include/sys/syslog.h:58:1: warning: this is the location of the previous definition
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c:14:
+/home5/amaresh/1U-BSC/trunk/Tools/Bsc_build/../..//Inc/Bpm/../Ipc/ipcfrm_syslog.h:25:1: warning: "LOG_INFO" redefined
+In file included from /usr/include/syslog.h:1,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/h/ss7oversigtran.h:13,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c:4:
+/usr/include/sys/syslog.h:57:1: warning: this is the location of the previous definition
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c:14:
+/home5/amaresh/1U-BSC/trunk/Tools/Bsc_build/../..//Inc/Bpm/../Ipc/ipcfrm_syslog.h:46:36: warning: ISO C does not permit named variadic macros
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c:15:28: warning: ISO C does not permit named variadic macros
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c:16:27: warning: ISO C does not permit named variadic macros
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c:17:28: warning: ISO C does not permit named variadic macros
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c:18:31: warning: ISO C does not permit named variadic macros
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c:120:86: warning: ISO C99 requires rest arguments to be used
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c:168:48: warning: C++ style comments are not allowed in ISO C90
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c:168:48: warning: (this will be reported only once per input file)
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c:171:88: warning: ISO C99 requires rest arguments to be used
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c:182: warning: missing initializer
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c:182: warning: (near initialization for `__operations.hash')
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c:399:63: warning: ISO C99 requires rest arguments to be used
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c: In function `sl_event_deregister':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c:400: warning: ISO C90 forbids mixed declarations and code
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c: In function `ss7_over_sigtran_err_log':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c:823: warning: unsigned int format, time_t arg (arg 3)
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/port/port.c:823: warning: unsigned int format, long unsigned int arg (arg 4)
+ar: creating libcspl.a
+ar: creating libporting.a
+ar: creating libmpset.a
+ar: creating libcpset.a
+make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+make[1]: warning:  Clock skew detected.  Your build may be incomplete.
+make[1]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/build/linux/makefile.m3ua' has modification time 1.3e+08 s in the future
+make[2]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/build/linux/makefile.m3ua' has modification time 1.3e+08 s in the future
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_task.c:11:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:63:17: warning: ISO C requires whitespace after the macro name
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:64:17: warning: ISO C requires whitespace after the macro name
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:64:1: warning: "SCCP_MAX" redefined
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:63:1: warning: this is the location of the previous definition
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:65:17: warning: ISO C requires whitespace after the macro name
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:65:1: warning: "SCCP_MAX" redefined
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:64:1: warning: this is the location of the previous definition
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:66:17: warning: ISO C requires whitespace after the macro name
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:66:1: warning: "SCCP_MAX" redefined
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:65:1: warning: this is the location of the previous definition
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_task.c:58:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/sctp/basic/stack/dbg/h/s_dbg.h:48:1: warning: "STACK_PRINT" redefined
+<command line>:19:1: warning: this is the location of the previous definition
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_task.c:147: warning: type defaults to `int' in declaration of `register_m3ua'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_task.c:171: warning: function declaration isn't a prototype
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_task.c:172: warning: function declaration isn't a prototype
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_task.c:258: warning: function declaration isn't a prototype
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_task.c:307: warning: no previous prototype for 'sigtran_m3ua_init_config'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_task.c: In function `sigtran_m3ua_init_config':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_task.c:309: warning: control reaches end of non-void function
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_task.c: At top level:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_task.c:311: warning: no previous prototype for 'sigtran_m3ua_init'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_task.c: In function `sigtran_m3ua_init':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_task.c:446: warning: assignment makes integer from pointer without a cast
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_task.c:454: warning: implicit declaration of function `sigtran_m3ua_redn_init'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_task.c:454: warning: nested extern declaration of `sigtran_m3ua_redn_init'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_task.c: At top level:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_task.c:507: warning: no previous prototype for 'sigtran_vprintf'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_task.c: In function `m3ua_process_sm_api_from_stack':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_task.c:936: warning: implicit declaration of function `send_alarm_from_sigtran'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_task.c:936: warning: nested extern declaration of `send_alarm_from_sigtran'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_task.c:941: warning: nested extern declaration of `send_alarm_from_sigtran'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_task.c:946: warning: nested extern declaration of `send_alarm_from_sigtran'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_task.c:967: warning: nested extern declaration of `send_alarm_from_sigtran'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_task.c:1067: warning: nested extern declaration of `send_alarm_from_sigtran'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_task.c:1119: warning: implicit declaration of function `m3ua_sm_disconnect_cmd_resp'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_task.c:1119: warning: nested extern declaration of `m3ua_sm_disconnect_cmd_resp'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_task.c:904: warning: unused variable `sg_status'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_task.c:917: warning: unused variable `noctets'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_task.c:918: warning: unused variable `asp_retry_id'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_task.c: In function `m3ua_process_su_api_from_stack':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_task.c:1170: warning: unused variable `sg_status'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_task.c: In function `ss7_send_to_m3ua':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_task.c:1293: warning: unused variable `as_state'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_task.c: At top level:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_task.c:1382: warning: no previous prototype for 'sigtran_sctp_init'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_task.c: In function `sigtran_sctp_init':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_task.c:1407: warning: passing arg 1 of `inet_addr' from incompatible pointer type
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_task.c: At top level:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_task.c:1582: warning: no previous prototype for 'm3ua_pull_rm_db_data'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_task.c: In function `update_heartbeat_value':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_task.c:1715: warning: implicit declaration of function `update_value_of_heart_beat'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_task.c:1715: warning: nested extern declaration of `update_value_of_heart_beat'
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:5:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:63:17: warning: ISO C requires whitespace after the macro name
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:64:17: warning: ISO C requires whitespace after the macro name
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:64:1: warning: "SCCP_MAX" redefined
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:63:1: warning: this is the location of the previous definition
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:65:17: warning: ISO C requires whitespace after the macro name
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:65:1: warning: "SCCP_MAX" redefined
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:64:1: warning: this is the location of the previous definition
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:66:17: warning: ISO C requires whitespace after the macro name
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:66:1: warning: "SCCP_MAX" redefined
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:65:1: warning: this is the location of the previous definition
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:364: warning: no previous prototype for 'sigtran_m3ua_handle_omc_command'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: In function `sigtran_m3ua_handle_omc_command':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:368: warning: unused variable `m3ua_state'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:370: warning: unused variable `api_len'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: At top level:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:426: warning: no previous prototype for 'send_aspia_req_to_sg2'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: In function `send_aspia_req_to_sg_slot_down':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:620: warning: implicit declaration of function `m3ua_tl_hdl_endpoint_status_chg'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:620: warning: nested extern declaration of `m3ua_tl_hdl_endpoint_status_chg'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:549: warning: unused variable `ecode'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:581: warning: unused variable `red_info'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:582: warning: unused variable `rem_asp_info'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:583: warning: unused variable `conn_info'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: In function `m3ua_redn_handle_sm_cmd':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:706: warning: unused variable `param'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:706: warning: unused variable `put_param'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: In function `sctp_prov_handle_sm_cmd':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:913: warning: implicit declaration of function `sccp_redn_init'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:913: warning: nested extern declaration of `sccp_redn_init'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:915: warning: implicit declaration of function `sccp_register'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:915: warning: nested extern declaration of `sccp_register'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:922: warning: implicit declaration of function `sccp_pull_rm_data'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:922: warning: nested extern declaration of `sccp_pull_rm_data'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:925: warning: implicit declaration of function `m3ua_pull_rm_db_data'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:925: warning: nested extern declaration of `m3ua_pull_rm_db_data'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: In function `m3ua_handle_redn_sm_get_db':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:1014: warning: passing arg 5 of `m3ua_db_get_rem_as_state' from incompatible pointer type
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:1019: warning: passing arg 5 of `m3ua_db_get_rem_as_state' from incompatible pointer type
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:1024: warning: passing arg 5 of `m3ua_db_get_rem_as_state' from incompatible pointer type
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:1034: warning: passing arg 5 of `m3ua_db_get_assoc_from_sp' from incompatible pointer type
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:959: warning: unused variable `return_value'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:960: warning: unused variable `ecode'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:961: warning: unused variable `sm_get_db_data'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:962: warning: unused variable `m3ua_sm_module_id'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:963: warning: unused variable `m3ua_module_id'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:977: warning: unused variable `data_len'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:978: warning: unused variable `u8value'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:979: warning: unused variable `p_data'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:982: warning: unused variable `index'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:983: warning: unused variable `len'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:1140: warning: control reaches end of non-void function
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: In function `m3ua_handle_sm_add_asp':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:1265: warning: unused variable `ip_addr'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:1272: warning: unused variable `tmp_value'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:1272: warning: unused variable `i'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:1272: warning: unused variable `local_host_ip'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: In function `m3ua_handle_sm_del_asp':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:1396: warning: unused variable `tmp_value'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:1396: warning: unused variable `i'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: In function `m3ua_handle_sm_add_rem_asp':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:1459: warning: unused variable `tmp_value'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:1459: warning: unused variable `i'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:1459: warning: unused variable `remote_ip'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:1464: warning: unused variable `ip_addr'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: In function `m3ua_handle_sm_del_rem_asp':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:1664: warning: unused variable `tmp_value'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:1664: warning: unused variable `i'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: In function `m3ua_handle_sm_add_as':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:1734: warning: unused variable `tmp_value'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:1734: warning: unused variable `i'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:1735: warning: unused variable `index'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: In function `m3ua_handle_sm_del_as':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:1869: warning: unused variable `tmp_value'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:1869: warning: unused variable `i'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: In function `m3ua_handle_sm_add_rem_as':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:1935: warning: unused variable `tmp_value'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:1935: warning: unused variable `i'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: In function `m3ua_handle_sm_del_rem_as':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:2051: warning: unused variable `tmp_value'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:2051: warning: unused variable `i'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: In function `m3ua_ctrl_handle_sm_cmd':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:2134: warning: nested extern declaration of `sccp_redn_init'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:2135: warning: nested extern declaration of `sccp_register'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: In function `m3ua_handle_sm_connect':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:2200: warning: implicit declaration of function `connect_to_sg_aspid2'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:2200: warning: nested extern declaration of `connect_to_sg_aspid2'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: In function `m3ua_handle_sm_init':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:2365: warning: passing arg 9 of `sigtran_mem_init' from incompatible pointer type
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:2370: warning: passing arg 3 of `m3ua_stack_init' from incompatible pointer type
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:2375: warning: implicit declaration of function `m3ua_su_client_init'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:2375: warning: nested extern declaration of `m3ua_su_client_init'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:2380: warning: implicit declaration of function `m3ua_sm_client_init'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:2380: warning: nested extern declaration of `m3ua_sm_client_init'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:2283: warning: unused variable `sccp_init_param'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:2292: warning: unused variable `tmp_value'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:2293: warning: unused variable `index'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: In function `m3ua_handle_sm_deinit':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:2414: warning: unused variable `return_value'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:2415: warning: unused variable `sccp_init_param'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:2416: warning: unused variable `p_elem'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:2417: warning: unused variable `tmp_value'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:2418: warning: unused variable `api_len'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:2420: warning: control reaches end of non-void function
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: At top level:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:2468: warning: no previous prototype for 'm3ua_sm_connect_cmd_resp'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:2514: warning: no previous prototype for 'm3ua_sm_disconnect_cmd_resp'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: In function `sctp_handle_sm_init':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:2749: warning: implicit declaration of function `sctp_set_stack_envt'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:2749: warning: nested extern declaration of `sctp_set_stack_envt'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:2755: warning: implicit declaration of function `sctp_api_init_stack'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:2755: warning: nested extern declaration of `sctp_api_init_stack'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:2654: warning: unused variable `sctp_prot_params'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:2661: warning: unused variable `ip_addr'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: In function `sctp_handle_sm_config_stack_param_req':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:2866: warning: implicit declaration of function `sctp_api_config_stack_params'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:2866: warning: nested extern declaration of `sctp_api_config_stack_params'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:2805: warning: unused variable `tmp_value'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:2805: warning: unused variable `i'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: In function `sigtran_sctp_handle_omc_command':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:3064: warning: unused variable `m3ua_state'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: In function `sigtran_m3ua_handle_rm_response':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:3161: warning: unused variable `param'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:3161: warning: unused variable `put_param'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: In function `m3ua_handle_set_rm_db_req':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:3228: warning: unused variable `ret'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:3230: warning: unused variable `data_name'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:3231: warning: unused variable `databuff'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:3232: warning: unused variable `p_data'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:3233: warning: unused variable `index'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:3234: warning: unused variable `redn_data_len'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:3234: warning: unused variable `datalen'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:3342: warning: control reaches end of non-void function
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: In function `m3ua_handle_asp_state_update_req':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:3387: warning: passing arg 5 of `m3ua_dispatch_buffer' from incompatible pointer type
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:3366: warning: unused variable `ecode'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:3368: warning: unused variable `index'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:3396: warning: control reaches end of non-void function
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: In function `m3ua_handle_conn_state_update_req':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:3442: warning: passing arg 5 of `m3ua_dispatch_buffer' from incompatible pointer type
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:3421: warning: unused variable `ecode'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:3423: warning: unused variable `index'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:3451: warning: control reaches end of non-void function
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: In function `m3ua_handle_rem_asp_state_update_req':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:3497: warning: passing arg 5 of `m3ua_dispatch_buffer' from incompatible pointer type
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:3476: warning: unused variable `ecode'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:3478: warning: unused variable `index'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:3506: warning: control reaches end of non-void function
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: In function `m3ua_handle_rem_as_state_update_req':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:3552: warning: passing arg 5 of `m3ua_dispatch_buffer' from incompatible pointer type
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:3531: warning: unused variable `ecode'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:3533: warning: unused variable `index'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:3561: warning: control reaches end of non-void function
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: In function `sigtran_sctp_handle_rm_response':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:3586: warning: unused variable `ret_val'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:3587: warning: unused variable `param'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:3587: warning: unused variable `put_param'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:3588: warning: unused variable `ecode'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: At top level:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:3881: warning: no previous prototype for 'sigtran_m3ua_redn_init'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: In function `sigtran_m3ua_redn_init':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:3886: warning: unused variable `i'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:3886: warning: unused variable `local_found'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:3891: warning: unused variable `Xchng_val'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: At top level:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:3970: warning: function declaration isn't a prototype
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: In function `it_init_co_service':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:3971: warning: unused variable `i'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: At top level:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:3978: warning: no previous prototype for 'it_free_queue'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:3993: warning: no previous prototype for 'it_utl_add_to_rm_send_tcb_queue'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: In function `it_utl_send_tcb_msg':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:4041: warning: unused variable `result'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: In function `sigtran_m3ua_card2_config':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:4100: warning: passing arg 1 of `inet_addr' from incompatible pointer type
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:4122: warning: passing arg 1 of `inet_addr' from incompatible pointer type
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:4144: warning: passing arg 1 of `inet_addr' from incompatible pointer type
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:4148: warning: passing arg 1 of `inet_addr' from incompatible pointer type
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:4166: warning: passing arg 1 of `inet_addr' from incompatible pointer type
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:4170: warning: passing arg 1 of `inet_addr' from incompatible pointer type
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:4075: warning: unused variable `add_rem_sgp_req'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:4077: warning: unused variable `add_sg_req'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:4078: warning: unused variable `add_pc_req'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:4085: warning: unused variable `i'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: In function `sigtran_m3ua_scm_config_slot_1':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:4412: warning: nested extern declaration of `sccp_redn_init'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:4413: warning: nested extern declaration of `sccp_register'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:4333: warning: unused variable `i'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:4333: warning: unused variable `local_found'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: In function `sigtran_m3ua_scm_config_slot_2':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:4503: warning: nested extern declaration of `sccp_redn_init'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:4504: warning: nested extern declaration of `sccp_register'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:4425: warning: unused variable `i'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:4425: warning: unused variable `local_found'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: In function `sigtran_m3ua_config':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:4566: warning: passing arg 1 of `inet_addr' from incompatible pointer type
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:4587: warning: passing arg 1 of `inet_addr' from incompatible pointer type
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:4608: warning: passing arg 1 of `inet_addr' from incompatible pointer type
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:4625: warning: passing arg 1 of `inet_addr' from incompatible pointer type
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:4629: warning: passing arg 1 of `inet_addr' from incompatible pointer type
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:4516: warning: unused variable `add_rem_sgp_req'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:4518: warning: unused variable `add_sg_req'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:4519: warning: unused variable `add_pc_req'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:4526: warning: unused variable `i'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: At top level:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:5402: warning: no previous prototype for 'sctp_port_api_config_assoc_ctl'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:5485: warning: no previous prototype for 'm3ua_rm_buff_asp_state_update'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: In function `m3ua_rm_buff_asp_state_update':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:5552: warning: assignment makes integer from pointer without a cast
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:5554: warning: implicit declaration of function `m3ua_util_rm_make_api_header_buff'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:5554: warning: nested extern declaration of `m3ua_util_rm_make_api_header_buff'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:5574: warning: implicit declaration of function `ss7_dispatch_buffer'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:5574: warning: nested extern declaration of `ss7_dispatch_buffer'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: At top level:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:5607: warning: no previous prototype for 'm3ua_rm_buff_conn_state_update'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: In function `m3ua_rm_buff_conn_state_update':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:5673: warning: assignment makes integer from pointer without a cast
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:5675: warning: nested extern declaration of `m3ua_util_rm_make_api_header_buff'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:5694: warning: nested extern declaration of `ss7_dispatch_buffer'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:5611: warning: unused variable `count'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:5611: warning: unused variable `num_as'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: At top level:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:5726: warning: no previous prototype for 'm3ua_rm_buff_rem_asp_state_update'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: In function `m3ua_rm_buff_rem_asp_state_update':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:5792: warning: assignment makes integer from pointer without a cast
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:5794: warning: nested extern declaration of `m3ua_util_rm_make_api_header_buff'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:5813: warning: nested extern declaration of `ss7_dispatch_buffer'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: At top level:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:5843: warning: no previous prototype for 'm3ua_rm_buff_rem_as_state_update'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: In function `m3ua_rm_buff_rem_as_state_update':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:5900: warning: assignment makes integer from pointer without a cast
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:5902: warning: nested extern declaration of `m3ua_util_rm_make_api_header_buff'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:5921: warning: nested extern declaration of `ss7_dispatch_buffer'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:5847: warning: unused variable `count'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:5847: warning: unused variable `num_as'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: At top level:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:5935: warning: function declaration isn't a prototype
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: In function `send_alarm_for_peer_card_state':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:5979: warning: `return' with a value, in function returning void
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:5985: warning: passing arg 5 of `m3ua_db_get_rem_as_state' makes pointer from integer without a cast
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:5994: warning: passing arg 5 of `m3ua_rm_buff_asp_state_update' makes pointer from integer without a cast
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:5995: warning: passing arg 5 of `m3ua_rm_buff_rem_asp_state_update' makes pointer from integer without a cast
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:5996: warning: passing arg 4 of `m3ua_rm_buff_rem_as_state_update' makes pointer from integer without a cast
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:5997: warning: passing arg 7 of `m3ua_rm_buff_conn_state_update' makes pointer from integer without a cast
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:6006: warning: passing arg 5 of `m3ua_rm_buff_asp_state_update' makes pointer from integer without a cast
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:6007: warning: passing arg 5 of `m3ua_rm_buff_rem_asp_state_update' makes pointer from integer without a cast
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:6008: warning: passing arg 4 of `m3ua_rm_buff_rem_as_state_update' makes pointer from integer without a cast
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:6009: warning: passing arg 7 of `m3ua_rm_buff_conn_state_update' makes pointer from integer without a cast
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:5936: warning: unused variable `return_value'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:5938: warning: unused variable `sm_get_db_data'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:5939: warning: unused variable `m3ua_sm_module_id'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:5940: warning: unused variable `m3ua_module_id'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: In function `send_alarm_from_sigtran':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:6036: warning: `return' with a value, in function returning void
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:6050: warning: implicit declaration of function `m3ua_util_set_2bytesl'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:6050: warning: nested extern declaration of `m3ua_util_set_2bytesl'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:6052: warning: implicit declaration of function `m3ua_util_set_4bytesl'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:6052: warning: nested extern declaration of `m3ua_util_set_4bytesl'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:6061: warning: `return' with a value, in function returning void
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:6075: warning: nested extern declaration of `m3ua_util_set_2bytesl'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:6086: warning: `return' with a value, in function returning void
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:6100: warning: nested extern declaration of `m3ua_util_set_2bytesl'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:6111: warning: `return' with a value, in function returning void
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:6125: warning: nested extern declaration of `m3ua_util_set_2bytesl'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c: At top level:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/m3ua_config.c:78: warning: 'list_index' defined but not used
+ar: creating linux/libm3ua.a
+make[3]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/build/linux/makefile.m3ua' has modification time 1.3e+08 s in the future
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/basic/shared/src/m3apibuf.c:82: warning: no previous prototype for 'm3ua_util_rm_make_api_header_buff'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/basic/shared/src/m3apibuf.c:125: warning: no previous prototype for 'm3ua_util_rm_extract_api_header'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/basic/shared/src/m3apibuf.c:385: warning: no previous prototype for 'm3ua_util_set_2bytesl'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/basic/shared/src/m3apibuf.c:402: warning: no previous prototype for 'm3ua_util_set_4bytesl'
+make[3]: warning:  Clock skew detected.  Your build may be incomplete.
+make[3]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/build/linux/makefile.m3ua' has modification time 1.3e+08 s in the future
+make[3]: warning:  Clock skew detected.  Your build may be incomplete.
+make[3]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/build/linux/makefile.m3ua' has modification time 1.3e+08 s in the future
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/basic/shared/dbg/src/m3ua_dbg.c: In function `m3ua_dbg_update_rem_as_event_state_history':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/basic/shared/dbg/src/m3ua_dbg.c:104: warning: unused variable `current_index'
+make[3]: warning:  Clock skew detected.  Your build may be incomplete.
+make[3]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/build/linux/makefile.m3ua' has modification time 1.3e+08 s in the future
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/basic/stack/fsm/src/m3fsmisc.c: In function `m3ua_fsm_update_spmc_status':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/basic/stack/fsm/src/m3fsmisc.c:56: warning: unused variable `lsgp_id_result'
+make[3]: warning:  Clock skew detected.  Your build may be incomplete.
+make[3]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/build/linux/makefile.m3ua' has modification time 1.3e+08 s in the future
+make[3]: warning:  Clock skew detected.  Your build may be incomplete.
+make[3]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/build/linux/makefile.m3ua' has modification time 1.3e+08 s in the future
+make[3]: warning:  Clock skew detected.  Your build may be incomplete.
+make[3]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/build/linux/makefile.m3ua' has modification time 1.3e+08 s in the future
+make[3]: warning:  Clock skew detected.  Your build may be incomplete.
+make[3]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/build/linux/makefile.m3ua' has modification time 1.3e+08 s in the future
+make[3]: warning:  Clock skew detected.  Your build may be incomplete.
+make[3]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/build/linux/makefile.m3ua' has modification time 1.3e+08 s in the future
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/basic/stack/sm/src/m3smind.c: In function `m3ua_sm_stk_as_state_ind':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/basic/stack/sm/src/m3smind.c:308: warning: implicit declaration of function `m3ua_rm_buff_rem_as_state_update'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/basic/stack/sm/src/m3smind.c:308: warning: nested extern declaration of `m3ua_rm_buff_rem_as_state_update'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/basic/stack/sm/src/m3smind.c: In function `m3ua_sm_stk_asp_state_ind':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/basic/stack/sm/src/m3smind.c:461: warning: implicit declaration of function `m3ua_rm_buff_asp_state_update'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/basic/stack/sm/src/m3smind.c:461: warning: nested extern declaration of `m3ua_rm_buff_asp_state_update'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/basic/stack/sm/src/m3smind.c: In function `m3ua_sm_stk_conn_state_ind':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/basic/stack/sm/src/m3smind.c:647: warning: implicit declaration of function `m3ua_rm_buff_conn_state_update'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/basic/stack/sm/src/m3smind.c:647: warning: nested extern declaration of `m3ua_rm_buff_conn_state_update'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/basic/stack/sm/src/m3smind.c: In function `m3ua_sm_stk_rem_asp_state_ind':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/basic/stack/sm/src/m3smind.c:976: warning: implicit declaration of function `m3ua_rm_buff_rem_asp_state_update'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/basic/stack/sm/src/m3smind.c:976: warning: nested extern declaration of `m3ua_rm_buff_rem_asp_state_update'
+make[3]: warning:  Clock skew detected.  Your build may be incomplete.
+make[3]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/build/linux/makefile.m3ua' has modification time 1.3e+08 s in the future
+make[3]: warning:  Clock skew detected.  Your build may be incomplete.
+make[3]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/build/linux/makefile.m3ua' has modification time 1.3e+08 s in the future
+make[3]: warning:  Clock skew detected.  Your build may be incomplete.
+make[3]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/build/linux/makefile.m3ua' has modification time 1.3e+08 s in the future
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/basic/stack/tli/src/m3tlind.c:167: warning: no previous prototype for 'm3ua_process_sctp_indication'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/basic/stack/tli/src/m3ua_tl.c: In function `m3ua_tl_sctp_callback_fn':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/basic/stack/tli/src/m3ua_tl.c:168: warning: implicit declaration of function `m3ua_process_sctp_indication'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/basic/stack/tli/src/m3ua_tl.c:168: warning: nested extern declaration of `m3ua_process_sctp_indication'
+make[3]: warning:  Clock skew detected.  Your build may be incomplete.
+make[3]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/build/linux/makefile.m3ua' has modification time 1.3e+08 s in the future
+make[3]: warning:  Clock skew detected.  Your build may be incomplete.
+make[3]: Warning: File `makefile' has modification time 1.3e+08 s in the future
+../../src/../linux/src/sig_ipc_os.c:512: warning: 'raw_socket_enable_filter' defined but not used
+../../src/../linux/src/sig_ipc_os.c:512: warning: 'raw_socket_enable_filter' defined but not used
+make[3]: warning:  Clock skew detected.  Your build may be incomplete.
+make[3]: Warning: File `makefile' has modification time 1.3e+08 s in the future
+make[4]: Warning: File `../../../genlib/make/makegl.mk' has modification time 1.3e+08 s in the future
+ar: creating ../../../lib/linux/libgl_tm_mtl.a
+make[4]: warning:  Clock skew detected.  Your build may be incomplete.
+make[4]: Warning: File `../../../genlib/make/makegl.mk' has modification time 1.3e+08 s in the future
+ar: creating ../../../lib/linux/libgl_gscim_mtl.a
+make[4]: warning:  Clock skew detected.  Your build may be incomplete.
+make[4]: Warning: File `../../../genlib/make/makegl.mk' has modification time 1.3e+08 s in the future
+ar: creating ../../../lib/linux/libgl_mm_mtl.a
+make[4]: warning:  Clock skew detected.  Your build may be incomplete.
+make[4]: Warning: File `../../../genlib/make/makegl.mk' has modification time 1.3e+08 s in the future
+ar: creating ../../../lib/linux/libgl_tmportl.a
+make[4]: warning:  Clock skew detected.  Your build may be incomplete.
+make[4]: Warning: File `../../../genlib/make/makegl.mk' has modification time 1.3e+08 s in the future
+ar: creating ../../../lib/linux/libgl_ulml.a
+make[4]: warning:  Clock skew detected.  Your build may be incomplete.
+ar: creating /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/common/gw/lib/linux/libgl.a
+make[3]: warning:  Clock skew detected.  Your build may be incomplete.
+make[3]: Warning: File `makefile' has modification time 1.3e+08 s in the future
+make[4]: Warning: File `../../../genlib/make/makegl.mk' has modification time 1.3e+08 s in the future
+make[4]: warning:  Clock skew detected.  Your build may be incomplete.
+make[4]: Warning: File `../../../genlib/make/makegl.mk' has modification time 1.3e+08 s in the future
+make[4]: warning:  Clock skew detected.  Your build may be incomplete.
+make[4]: Warning: File `../../../genlib/make/makegl.mk' has modification time 1.3e+08 s in the future
+make[4]: warning:  Clock skew detected.  Your build may be incomplete.
+make[4]: Warning: File `../../../genlib/make/makegl.mk' has modification time 1.3e+08 s in the future
+make[4]: warning:  Clock skew detected.  Your build may be incomplete.
+make[4]: Warning: File `../../../genlib/make/makegl.mk' has modification time 1.3e+08 s in the future
+make[4]: warning:  Clock skew detected.  Your build may be incomplete.
+make[4]: Warning: File `../../../genlib/make/makegl.mk' has modification time 1.3e+08 s in the future
+ar: creating ../../../lib/linux/libgl_htm_mtl.a
+make[4]: warning:  Clock skew detected.  Your build may be incomplete.
+make[3]: warning:  Clock skew detected.  Your build may be incomplete.
+make[3]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/build/linux/makefile.m3ua' has modification time 1.3e+08 s in the future
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/cli_es.c: In function `m3ua_init_ipc':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/cli_es.c:208: warning: passing arg 9 of `sig_open_comm_channel' from incompatible pointer type
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/port/src/cli_es.c:173: warning: unused variable `send_handle_id'
+make[3]: warning:  Clock skew detected.  Your build may be incomplete.
+make[3]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/build/linux/makefile.m3ua' has modification time 1.3e+08 s in the future
+make[3]: warning:  Clock skew detected.  Your build may be incomplete.
+make[3]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/build/linux/makefile.m3ua' has modification time 1.3e+08 s in the future
+make[3]: warning:  Clock skew detected.  Your build may be incomplete.
+make[3]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/build/linux/makefile.m3ua' has modification time 1.3e+08 s in the future
+make[3]: warning:  Clock skew detected.  Your build may be incomplete.
+make[3]: Warning: File `makefile' has modification time 1.3e+08 s in the future
+../../src/../linux/src/sig_ipc_os.c:512: warning: 'raw_socket_enable_filter' defined but not used
+../../src/../linux/src/sig_ipc_os.c:512: warning: 'raw_socket_enable_filter' defined but not used
+make[3]: warning:  Clock skew detected.  Your build may be incomplete.
+make[3]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/build/linux/makefile.m3ua' has modification time 1.3e+08 s in the future
+make[3]: warning:  Clock skew detected.  Your build may be incomplete.
+make[3]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/build/linux/makefile.m3ua' has modification time 1.3e+08 s in the future
+make[3]: warning:  Clock skew detected.  Your build may be incomplete.
+make[3]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/build/linux/makefile.m3ua' has modification time 1.3e+08 s in the future
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/basic/client/sm/src/m3smcpk.c: In function `m3ua_sm_cli_pk_buff_add_as':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/basic/client/sm/src/m3smcpk.c:215: warning: implicit declaration of function `m3ua_sm_process_api_buffer'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/basic/client/sm/src/m3smcpk.c:215: warning: nested extern declaration of `m3ua_sm_process_api_buffer'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/basic/client/sm/src/m3smcpk.c: In function `m3ua_sm_cli_pk_buff_add_asp':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/basic/client/sm/src/m3smcpk.c:358: warning: nested extern declaration of `m3ua_sm_process_api_buffer'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/basic/client/sm/src/m3smcpk.c: In function `m3ua_sm_cli_pk_buff_del_as':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/basic/client/sm/src/m3smcpk.c:692: warning: nested extern declaration of `m3ua_sm_process_api_buffer'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/basic/client/sm/src/m3smcpk.c: In function `m3ua_sm_cli_pk_buff_del_rem_as':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/basic/client/sm/src/m3smcpk.c:790: warning: nested extern declaration of `m3ua_sm_process_api_buffer'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/basic/client/sm/src/m3smcpk.c: In function `m3ua_sm_cli_pk_buff_del_asp':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/basic/client/sm/src/m3smcpk.c:889: warning: nested extern declaration of `m3ua_sm_process_api_buffer'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/basic/client/sm/src/m3smcpk.c: In function `m3ua_sm_cli_pk_buff_add_rasp':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/basic/client/sm/src/m3smcpk.c:6159: warning: nested extern declaration of `m3ua_sm_process_api_buffer'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/basic/client/sm/src/m3smcpk.c: In function `m3ua_sm_cli_pk_buff_del_rasp':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/m3ua/basic/client/sm/src/m3smcpk.c:7135: warning: nested extern declaration of `m3ua_sm_process_api_buffer'
+make[3]: warning:  Clock skew detected.  Your build may be incomplete.
+make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+make[2]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/sctp/build/linux/sctp_mac.mk' has modification time 1.3e+08 s in the future
+make[3]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/sctp/build/linux/sctp_mac.mk' has modification time 1.3e+08 s in the future
+make[4]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/sctp/build/linux/sctp_mac.mk' has modification time 1.3e+08 s in the future
+make[5]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/sctp/build/linux/sctp_mac.mk' has modification time 1.3e+08 s in the future
+make[5]: warning:  Clock skew detected.  Your build may be incomplete.
+make[5]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/sctp/build/linux/sctp_mac.mk' has modification time 1.3e+08 s in the future
+make[5]: warning:  Clock skew detected.  Your build may be incomplete.
+make[4]: warning:  Clock skew detected.  Your build may be incomplete.
+make[4]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/sctp/build/linux/sctp_mac.mk' has modification time 1.3e+08 s in the future
+make[5]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/sctp/build/linux/sctp_mac.mk' has modification time 1.3e+08 s in the future
+make[5]: warning:  Clock skew detected.  Your build may be incomplete.
+make[5]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/sctp/build/linux/sctp_mac.mk' has modification time 1.3e+08 s in the future
+make[5]: warning:  Clock skew detected.  Your build may be incomplete.
+make[5]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/sctp/build/linux/sctp_mac.mk' has modification time 1.3e+08 s in the future
+make[5]: warning:  Clock skew detected.  Your build may be incomplete.
+make[5]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/sctp/build/linux/sctp_mac.mk' has modification time 1.3e+08 s in the future
+make[5]: warning:  Clock skew detected.  Your build may be incomplete.
+make[5]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/sctp/build/linux/sctp_mac.mk' has modification time 1.3e+08 s in the future
+make[5]: warning:  Clock skew detected.  Your build may be incomplete.
+make[5]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/sctp/build/linux/sctp_mac.mk' has modification time 1.3e+08 s in the future
+make[6]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/sctp/build/linux/sctp_mac.mk' has modification time 1.3e+08 s in the future
+make[6]: warning:  Clock skew detected.  Your build may be incomplete.
+make[6]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/sctp/build/linux/sctp_mac.mk' has modification time 1.3e+08 s in the future
+make[6]: warning:  Clock skew detected.  Your build may be incomplete.
+make[6]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/sctp/build/linux/sctp_mac.mk' has modification time 1.3e+08 s in the future
+make[6]: warning:  Clock skew detected.  Your build may be incomplete.
+make[6]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/sctp/build/linux/sctp_mac.mk' has modification time 1.3e+08 s in the future
+make[6]: warning:  Clock skew detected.  Your build may be incomplete.
+make[6]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/sctp/build/linux/sctp_mac.mk' has modification time 1.3e+08 s in the future
+make[6]: warning:  Clock skew detected.  Your build may be incomplete.
+make[5]: warning:  Clock skew detected.  Your build may be incomplete.
+make[5]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/sctp/build/linux/sctp_mac.mk' has modification time 1.3e+08 s in the future
+make[6]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/sctp/build/linux/sctp_mac.mk' has modification time 1.3e+08 s in the future
+make[6]: warning:  Clock skew detected.  Your build may be incomplete.
+make[6]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/sctp/build/linux/sctp_mac.mk' has modification time 1.3e+08 s in the future
+make[6]: warning:  Clock skew detected.  Your build may be incomplete.
+make[6]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/sctp/build/linux/sctp_mac.mk' has modification time 1.3e+08 s in the future
+make[6]: warning:  Clock skew detected.  Your build may be incomplete.
+make[6]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/sctp/build/linux/sctp_mac.mk' has modification time 1.3e+08 s in the future
+make[6]: warning:  Clock skew detected.  Your build may be incomplete.
+make[6]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/sctp/build/linux/sctp_mac.mk' has modification time 1.3e+08 s in the future
+make[6]: warning:  Clock skew detected.  Your build may be incomplete.
+make[5]: warning:  Clock skew detected.  Your build may be incomplete.
+make[5]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/sctp/build/linux/sctp_mac.mk' has modification time 1.3e+08 s in the future
+make[5]: warning:  Clock skew detected.  Your build may be incomplete.
+make[5]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/sctp/build/linux/sctp_mac.mk' has modification time 1.3e+08 s in the future
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/sctp/basic/stack/in/src/s_in.c:727: warning: no previous prototype for 'sigtran_sctp_redn_init'
+make[5]: warning:  Clock skew detected.  Your build may be incomplete.
+make[5]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/sctp/build/linux/sctp_mac.mk' has modification time 1.3e+08 s in the future
+make[5]: warning:  Clock skew detected.  Your build may be incomplete.
+make[5]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/sctp/build/linux/sctp_mac.mk' has modification time 1.3e+08 s in the future
+make[5]: warning:  Clock skew detected.  Your build may be incomplete.
+make[5]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/sctp/build/linux/sctp_mac.mk' has modification time 1.3e+08 s in the future
+make[5]: warning:  Clock skew detected.  Your build may be incomplete.
+make[4]: warning:  Clock skew detected.  Your build may be incomplete.
+make[4]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/sctp/build/linux/sctp_mac.mk' has modification time 1.3e+08 s in the future
+make[5]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/sctp/build/linux/sctp_mac.mk' has modification time 1.3e+08 s in the future
+make[5]: warning:  Clock skew detected.  Your build may be incomplete.
+make[5]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/sctp/build/linux/sctp_mac.mk' has modification time 1.3e+08 s in the future
+make[5]: warning:  Clock skew detected.  Your build may be incomplete.
+make[5]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/sctp/build/linux/sctp_mac.mk' has modification time 1.3e+08 s in the future
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/sctp/basic/client/sm/src/../port/src/s_smipc.c: In function `sctp_init_sm_client_ipc':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/sigtran/sctp/basic/client/sm/src/../port/src/s_smipc.c:333: warning: implicit declaration of function `ss7_over_sigtran_log_print'
+make[5]: warning:  Clock skew detected.  Your build may be incomplete.
+make[4]: warning:  Clock skew detected.  Your build may be incomplete.
+make[3]: warning:  Clock skew detected.  Your build may be incomplete.
+make[3]: Warning: File `makefile' has modification time 1.3e+08 s in the future
+../../src/../linux/src/sig_ipc_os.c:512: warning: 'raw_socket_enable_filter' defined but not used
+../../src/../linux/src/sig_ipc_os.c:512: warning: 'raw_socket_enable_filter' defined but not used
+make[3]: warning:  Clock skew detected.  Your build may be incomplete.
+make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+make[1]: warning:  Clock skew detected.  Your build may be incomplete.
+make[1]: Warning: File `Makefile' has modification time 1.3e+08 s in the future
+make[2]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/lib/macros.mk' has modification time 1.3e+08 s in the future
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/port/src/ss7_port.c:21:1: warning: "LOGGER_IMR" redefined
+<command line>:14:1: warning: this is the location of the previous definition
+ar: creating linux/libscommon.a
+make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+make[2]: Warning: File `/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/lib/macros.mk' has modification time 1.3e+08 s in the future
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/h/sc_shgl.h:39,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/src/sc_debug.c:26:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:29:1: warning: "LOGGER_IMR" redefined
+<command line>:27:1: warning: this is the location of the previous definition
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/h/sc_stgl.h:89,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/db/src/sc_dbadd.c:26:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:29:1: warning: "LOGGER_IMR" redefined
+<command line>:27:1: warning: this is the location of the previous definition
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/h/sc_stgl.h:89,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/db/src/sc_dbdel.c:25:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:29:1: warning: "LOGGER_IMR" redefined
+<command line>:27:1: warning: this is the location of the previous definition
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/h/sc_stgl.h:89,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/db/src/sc_dbhsh.c:22:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:29:1: warning: "LOGGER_IMR" redefined
+<command line>:27:1: warning: this is the location of the previous definition
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/h/sc_stgl.h:89,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/db/src/sc_dbini.c:22:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:29:1: warning: "LOGGER_IMR" redefined
+<command line>:27:1: warning: this is the location of the previous definition
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/h/sc_stgl.h:89,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/db/src/sc_dbloc.c:22:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:29:1: warning: "LOGGER_IMR" redefined
+<command line>:27:1: warning: this is the location of the previous definition
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/h/sc_stgl.h:89,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/db/src/sc_dbmsc.c:27:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:29:1: warning: "LOGGER_IMR" redefined
+<command line>:27:1: warning: this is the location of the previous definition
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/h/sc_stgl.h:89,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/disp/src/sc_disp.c:29:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:29:1: warning: "LOGGER_IMR" redefined
+<command line>:27:1: warning: this is the location of the previous definition
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/h/sc_stgl.h:89,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/errp/src/sc_err.c:25:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:29:1: warning: "LOGGER_IMR" redefined
+<command line>:27:1: warning: this is the location of the previous definition
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/h/sc_stgl.h:89,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/init/src/sc_init.c:52:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:29:1: warning: "LOGGER_IMR" redefined
+<command line>:27:1: warning: this is the location of the previous definition
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/h/sc_stgl.h:89,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/init/src/sc_main.c:44:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:29:1: warning: "LOGGER_IMR" redefined
+<command line>:27:1: warning: this is the location of the previous definition
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/init/src/sc_main.c:52:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:63:17: warning: ISO C requires whitespace after the macro name
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:64:17: warning: ISO C requires whitespace after the macro name
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:64:1: warning: "SCCP_MAX" redefined
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:63:1: warning: this is the location of the previous definition
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:65:17: warning: ISO C requires whitespace after the macro name
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:65:1: warning: "SCCP_MAX" redefined
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:64:1: warning: this is the location of the previous definition
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:66:17: warning: ISO C requires whitespace after the macro name
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:66:1: warning: "SCCP_MAX" redefined
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:65:1: warning: this is the location of the previous definition
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/h/sc_stgl.h:89,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/init/src/sc_prov.c:32:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:29:1: warning: "LOGGER_IMR" redefined
+<command line>:27:1: warning: this is the location of the previous definition
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/init/src/sc_prov.c:41: warning: type defaults to `int' in declaration of `sccp_deregister'
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/h/sc_stgl.h:89,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/init/src/sc_sys.c:24:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:29:1: warning: "LOGGER_IMR" redefined
+<command line>:27:1: warning: this is the location of the previous definition
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/h/sc_stgl.h:89,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/init/src/sc_ctrl.c:27:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:29:1: warning: "LOGGER_IMR" redefined
+<command line>:27:1: warning: this is the location of the previous definition
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/h/sc_stgl.h:89,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/redn/src/sc_redn.c:45:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:29:1: warning: "LOGGER_IMR" redefined
+<command line>:27:1: warning: this is the location of the previous definition
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/h/sc_stgl.h:89,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/sclc/src/sc_clbld.c:28:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:29:1: warning: "LOGGER_IMR" redefined
+<command line>:27:1: warning: this is the location of the previous definition
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/h/sc_stgl.h:89,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/sclc/src/sc_clc.c:33:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:29:1: warning: "LOGGER_IMR" redefined
+<command line>:27:1: warning: this is the location of the previous definition
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/h/sc_stgl.h:89,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/sclc/src/sc_clmsc.c:24:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:29:1: warning: "LOGGER_IMR" redefined
+<command line>:27:1: warning: this is the location of the previous definition
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/h/sc_stgl.h:89,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/sclc/src/sc_clprs.c:35:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:29:1: warning: "LOGGER_IMR" redefined
+<command line>:27:1: warning: this is the location of the previous definition
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/h/sc_stgl.h:89,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/sclc/src/sc_reas.c:36:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:29:1: warning: "LOGGER_IMR" redefined
+<command line>:27:1: warning: this is the location of the previous definition
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/h/sc_stgl.h:89,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/sclc/src/sc_routf.c:26:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:29:1: warning: "LOGGER_IMR" redefined
+<command line>:27:1: warning: this is the location of the previous definition
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/h/sc_stgl.h:89,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/sclc/src/sc_segm.c:27:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:29:1: warning: "LOGGER_IMR" redefined
+<command line>:27:1: warning: this is the location of the previous definition
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/h/sc_stgl.h:89,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/scmg/src/sc_bcast.c:33:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:29:1: warning: "LOGGER_IMR" redefined
+<command line>:27:1: warning: this is the location of the previous definition
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/h/sc_stgl.h:89,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/scmg/src/sc_cong.c:30:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:29:1: warning: "LOGGER_IMR" redefined
+<command line>:27:1: warning: this is the location of the previous definition
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/h/sc_stgl.h:89,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/scmg/src/sc_mgbld.c:27:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:29:1: warning: "LOGGER_IMR" redefined
+<command line>:27:1: warning: this is the location of the previous definition
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/h/sc_stgl.h:89,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/scmg/src/sc_mgprs.c:25:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:29:1: warning: "LOGGER_IMR" redefined
+<command line>:27:1: warning: this is the location of the previous definition
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/h/sc_stgl.h:89,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/scmg/src/sc_msgh.c:31:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:29:1: warning: "LOGGER_IMR" redefined
+<command line>:27:1: warning: this is the location of the previous definition
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/h/sc_stgl.h:89,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/scmg/src/sc_reg.c:36:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:29:1: warning: "LOGGER_IMR" redefined
+<command line>:27:1: warning: this is the location of the previous definition
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/h/sc_stgl.h:89,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/scmg/src/sc_spmg.c:41:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:29:1: warning: "LOGGER_IMR" redefined
+<command line>:27:1: warning: this is the location of the previous definition
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/scmg/src/sc_spmg.c:50:1: warning: "MARK_SS_PROHIBITED_ON_RESUME" redefined
+<command line>:43:1: warning: this is the location of the previous definition
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/h/sc_stgl.h:89,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/scmg/src/sc_ssmg.c:32:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:29:1: warning: "LOGGER_IMR" redefined
+<command line>:27:1: warning: this is the location of the previous definition
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/h/sc_stgl.h:89,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/scmg/src/sc_sstc.c:27:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:29:1: warning: "LOGGER_IMR" redefined
+<command line>:27:1: warning: this is the location of the previous definition
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/h/sc_stgl.h:89,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/scoc/src/sc_clsd.c:26:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:29:1: warning: "LOGGER_IMR" redefined
+<command line>:27:1: warning: this is the location of the previous definition
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/h/sc_stgl.h:89,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/scoc/src/sc_clsg.c:29:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:29:1: warning: "LOGGER_IMR" redefined
+<command line>:27:1: warning: this is the location of the previous definition
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/h/sc_stgl.h:89,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/scoc/src/sc_cobld.c:34:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:29:1: warning: "LOGGER_IMR" redefined
+<command line>:27:1: warning: this is the location of the previous definition
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/h/sc_stgl.h:89,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/scoc/src/sc_coc.c:47:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:29:1: warning: "LOGGER_IMR" redefined
+<command line>:27:1: warning: this is the location of the previous definition
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/h/sc_stgl.h:89,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/scoc/src/sc_coini.c:19:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:29:1: warning: "LOGGER_IMR" redefined
+<command line>:27:1: warning: this is the location of the previous definition
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/h/sc_stgl.h:89,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/scoc/src/sc_coprs.c:46:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:29:1: warning: "LOGGER_IMR" redefined
+<command line>:27:1: warning: this is the location of the previous definition
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/h/sc_stgl.h:89,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/scoc/src/sc_coutl.c:53:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:29:1: warning: "LOGGER_IMR" redefined
+<command line>:27:1: warning: this is the location of the previous definition
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/h/sc_stgl.h:89,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/scoc/src/sc_estab.c:51:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:29:1: warning: "LOGGER_IMR" redefined
+<command line>:27:1: warning: this is the location of the previous definition
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/h/sc_stgl.h:89,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/scoc/src/sc_idle.c:39:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:29:1: warning: "LOGGER_IMR" redefined
+<command line>:27:1: warning: this is the location of the previous definition
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/h/sc_stgl.h:89,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/scoc/src/sc_reset.c:30:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:29:1: warning: "LOGGER_IMR" redefined
+<command line>:27:1: warning: this is the location of the previous definition
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/h/sc_stgl.h:89,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/scoc/src/sc_start.c:34:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:29:1: warning: "LOGGER_IMR" redefined
+<command line>:27:1: warning: this is the location of the previous definition
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/h/sc_stgl.h:89,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/scrc/src/sc_rcbld.c:45:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:29:1: warning: "LOGGER_IMR" redefined
+<command line>:27:1: warning: this is the location of the previous definition
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/h/sc_stgl.h:89,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/scrc/src/sc_rcmsc.c:33:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:29:1: warning: "LOGGER_IMR" redefined
+<command line>:27:1: warning: this is the location of the previous definition
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/h/sc_stgl.h:89,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/scrc/src/sc_rcprs.c:61:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:29:1: warning: "LOGGER_IMR" redefined
+<command line>:27:1: warning: this is the location of the previous definition
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/h/sc_stgl.h:89,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/scrc/src/sc_rout.c:60:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:29:1: warning: "LOGGER_IMR" redefined
+<command line>:27:1: warning: this is the location of the previous definition
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/h/sc_stgl.h:89,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/stat/src/sc_stats.c:31:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:29:1: warning: "LOGGER_IMR" redefined
+<command line>:27:1: warning: this is the location of the previous definition
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/stack/h/sc_stgl.h:89,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/src/sccp_task.c:13:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:29:1: warning: "LOGGER_IMR" redefined
+<command line>:27:1: warning: this is the location of the previous definition
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/src/sccp_task.c:14:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:63:17: warning: ISO C requires whitespace after the macro name
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:64:17: warning: ISO C requires whitespace after the macro name
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:64:1: warning: "SCCP_MAX" redefined
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:63:1: warning: this is the location of the previous definition
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:65:17: warning: ISO C requires whitespace after the macro name
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:65:1: warning: "SCCP_MAX" redefined
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:64:1: warning: this is the location of the previous definition
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:66:17: warning: ISO C requires whitespace after the macro name
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:66:1: warning: "SCCP_MAX" redefined
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:65:1: warning: this is the location of the previous definition
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/src/sccp_task.c:171: warning: function declaration isn't a prototype
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/src/sccp_task.c: In function `sccp_initialization':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/src/sccp_task.c:2689: warning: `return' with a value, in function returning void
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/src/sccp_task.c: At top level:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/src/sccp_task.c:2693: warning: return type defaults to `int'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/src/sccp_task.c:2711: warning: return type defaults to `int'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/src/sccp_task.c:2730: warning: return type defaults to `int'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/src/sccp_task.c:2754: warning: return type defaults to `int'
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/src/sccp_task.c:2837: warning: return type defaults to `int'
+<command line>:8:12: warning: extra tokens at end of #undef directive
+<command line>:9:10: warning: extra tokens at end of #undef directive
+<command line>:10:13: warning: extra tokens at end of #undef directive
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/h/sc_shgl.h:39,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/src/sccp_port.c:11:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:29:1: warning: "LOGGER_IMR" redefined
+<command line>:27:1: warning: this is the location of the previous definition
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:34,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/h/sc_shgl.h:39,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/src/sccp_port.c:11:
+/home5/amaresh/1U-BSC/trunk/Tools/Bsc_build/../..//Inc/Bpm/../Ipc/ipcfrm_syslog.h:24:1: warning: "LOG_DEBUG" redefined
+In file included from /usr/include/syslog.h:1,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/h/ss7oversigtran.h:13,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/src/sccp_port.c:5:
+/usr/include/sys/syslog.h:58:1: warning: this is the location of the previous definition
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/dbg/h/sc_debug.h:34,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/basic/shared/h/sc_shgl.h:39,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/src/sccp_port.c:11:
+/home5/amaresh/1U-BSC/trunk/Tools/Bsc_build/../..//Inc/Bpm/../Ipc/ipcfrm_syslog.h:25:1: warning: "LOG_INFO" redefined
+In file included from /usr/include/syslog.h:1,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/h/ss7oversigtran.h:13,
+                 from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/src/sccp_port.c:5:
+/usr/include/sys/syslog.h:57:1: warning: this is the location of the previous definition
+In file included from /home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/src/sccp_port.c:13:
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:63:17: warning: ISO C requires whitespace after the macro name
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:64:17: warning: ISO C requires whitespace after the macro name
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:64:1: warning: "SCCP_MAX" redefined
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:63:1: warning: this is the location of the previous definition
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:65:17: warning: ISO C requires whitespace after the macro name
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:65:1: warning: "SCCP_MAX" redefined
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:64:1: warning: this is the location of the previous definition
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:66:17: warning: ISO C requires whitespace after the macro name
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:66:1: warning: "SCCP_MAX" redefined
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/h/sccp_port.h:65:1: warning: this is the location of the previous definition
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/src/sccp_port.c: In function `sccp_global_title_translate':
+/home5/amaresh/1U-BSC/trunk/Source/Sks/Src/SS7_OVER_SIGTRAN/ss7osigtran/ss7stack/sccp/port/src/sccp_port.c:856: warning: unsigned int format, long unsigned int arg (arg 3)
+ar: creating linux/libsccp.a
+make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+make[1]: warning:  Clock skew detected.  Your build may be incomplete.
+make: warning:  Clock skew detected.  Your build may be incomplete.

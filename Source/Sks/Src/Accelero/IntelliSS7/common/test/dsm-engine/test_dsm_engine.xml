@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+
+<!-- DSM (Distributed Shared Memory) with Engine test. -->
+
+<Application name           = "test_dsm_engine"
+             type           = "console-application"
+             globalStart    = ""
+             binding        = "CPP"
+             library        = "">
+
+    <Options
+        traceFlushAfterWrite         = "yes"
+        routeUniqueLinkCodesRequired = "no"
+        memPoolChecksOn              = "no"
+    />
+
+    <RedundancyInfo 
+        initialState    = "primary"
+        timerT1         = "1"
+        timerT2         = "1"
+        timerT3         = "1"
+        timerT4         = "1"
+        shmSize         = "16777216"
+        nodeId          = "1"
+        baseAddress     = "0x40000000"
+
+        segmentNum      = "0"
+        adapterNum      = "0"
+        remoteNode      = "0"
+        remoteAddr      = "0"
+        remotePort      = "0"
+
+        gcsSyncMemUseTcp    = "1"
+        gcsSyncMemIpAddress = "192.168.1.62"
+        gcsSyncMemIpPort    = "4804"
+    />
+
+    <ToolkitTrace>
+        <Critical  output = "stdout"/>
+        <Error     output = "stdout"/>
+        <Warning   output = "stdout"/>
+        <Debug     output = ""/>
+    </ToolkitTrace>
+
+    <ApplicationTrace>
+        <Critical  output = "stdout"/>
+        <Error     output = "stdout"/>
+        <Warning   output = "stdout"/>
+        <Debug     output = "stdout"/>
+    </ApplicationTrace>
+
+    <!--///////////////////////////////////////////////////////////////-->
+
+	<WorkerPool stackSize = "0">
+
+	</WorkerPool>
+
+
+    <!--///////////////////////////////////////////////////////////////-->
+
+    <BorderPool stackSize = "0">
+
+    </BorderPool>
+
+</Application>

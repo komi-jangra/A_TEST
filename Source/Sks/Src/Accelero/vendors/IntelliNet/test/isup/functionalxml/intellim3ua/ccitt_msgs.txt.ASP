@@ -1,0 +1,557 @@
+# Sample file to build CCITT ISUP C messages.
+#
+# Protocol: CCITT
+#
+#  OPC: 0X10 DPC: 0X15
+# 
+###############################################################
+#
+# M	MsgCode
+# P	ParCode		DataTyp		Data
+#
+# NOTE: Values may not be valid for data octets
+#	
+# No need to add EOP for the Messages - internally taken care of
+###############################################################
+#
+# Address Complete Message
+M	06				# ACM
+P	FF	05 05 15 00 04 00	# MTP3 Header
+P	11	02 10 14		# Backward Call Indicators
+P	29	01 04			# Optional backward call indicators
+P	01	05 03 01 02 03 02 14 00	# Call Reference
+P	12	02 c0 33		# Cause Indicator
+P	2A	01 00			# UserToUserIndicators
+P	20	02 07 01 05		# UserToUserInformation
+P	03	03 F1 F2 F3		# Access Transport
+P	2C	01 81			# GenericNotification
+P	35	01 00			# TransmissionMediumUsed
+P	37	01 00			# Echo Control Information
+P	2E	01 01			# Access Delivery Information
+P	0C	07 03 10 0A 04 87 76 32 19	# RedirectionNum:(407)867-2391
+P	39	05 04 0D 89 0E 80 		# ParameterCompatibilityInfo
+P	36	01 0B			# Call Diversion Information
+P	2F	04 01 11 22 01 33		# NetworkSpecificFacility
+P	32	01 80			# RemoteOperations
+P	33	05 F1 F2 F3 F4 F5		# ServiceActivation
+P	40	01 03			# RedirectionNumRestriction
+
+###############################################################
+#
+# Answer Message
+M	09			# ANM
+P	FF	05 05 15 00 04 00		# MTP3 Header
+P	11	02 FD 04		# Backward Call Indicators
+P	29	01 00		# OptBackwardCallInd
+P	01	05 03 01 02 03 02 01 02	# Call Reference
+P	2A	01 00		# UserToUserIndicators
+P	20	02 01 01 00	# UserToUserInformation
+P	21	03 01 13 01 35	# Connected Number
+P	03	03 F1 F2 F3	# Access Transport
+P	2E	01 01		# Access Delivery Information
+P	2C	01 81		# GenericNotification
+P	39	05 04 0D 89 0E 80 	# ParameterCompatibilityInfo
+P	2D	02 0A 0A		# Call History Information
+P	C0	08 01 00 0F 0A 04 77 23 45 12	# GenericNumber: (407)732-5421
+P	35	01 00		# TransmissionMediumUsed
+P	2F	04 01 11 22 01 33	# NetworkSpecificFacility
+P	32	01 80		# RemoteOperations
+P	0C	07 03 10 0A 04 87 76 32 19	# RedirectionNum:(407)867-2391
+P	33	05 F1 F2 F3 F4 F5	# ServiceActivation
+P	37	01 00		# Echo Control Information
+P	40	01 00		# RedirectionNumRestriction
+
+###############################################################
+# Blocking Message
+M	13			# BLO
+P	FF	05 05 15 00 04 00	# MTP3 Header
+
+###############################################################
+#
+# Blocking Acknowledgement Message
+M	15			# BLA
+P	FF	05 05 15 00 04 00	# MTP3 Header
+
+###############################################################
+#
+# Call Progress Message
+M	2C			# CPG
+P	FF	05 05 15 00 04 00	# MTP3 Header
+P	24	01 04		# EventInformation
+P	12	02 C0 33		# CauseIndicator
+P	01	05 03 01 02 03 02 01 02	# Call Reference
+P	11	02 FD 04		# Backward Call Indicators
+P	29	01 00		# OptBackwardCallInd
+P	03	03 F1 F2 F3	# Access Transport
+P	2A	01 00		# UserToUserIndicators
+P	0C	07 03 10 0A 04 87 76 32 19	# RedirectionNum:(407)867-2391
+P	20	02 01 01 00	# UserToUserInformation
+P	2C	01 81		# GenericNotification
+P	2F	04 01 11 22 01 33	# NetworkSpecificFacility
+P	32	01 80		# RemoteOperations
+P	35	01 00		# TransmissionMediumUsed
+P	2E	01 01		# Access Delivery Information
+P	39	05 04 0D 89 0E 80	# ParameterCompatibilityInfo
+P	36	01 0B		# Call Diversion Information
+P	33	05 F1 F2 F3 F4 F5	# ServiceActivation
+P	40	01 00		# RedirectionNumRestriction
+
+###############################################################
+#
+# Circuit Group Blocking Message
+M	18			# CGB (F)
+P	FF	05 05 15 00 04 00		# MTP3 Header
+P	15	01 00		# CircuitGrpSupervisionMsgType (F)
+P	16	02 04 1F 	# RangeandStatus (V)
+
+###############################################################
+#
+# Circuit Group Blocking Acknowledgement Message
+M	1A			# CGBA	
+P	FF	05 05 15 00 04 00		# MTP3 Header
+P	15	01 00		# CktGrpSupervisionMsgTypeInd.
+P	16	02 04 1F 	# RangeandStatus
+
+###############################################################
+#
+# Circuit Group Query Message
+M	2A			# CQM
+P	FF	05 05 15 00 04 00	# MTP3 Header
+P	16	01 0A		# RangeAndStatus (status subfield should not be present)
+
+###############################################################
+#
+# Circuit Group Query Response Message
+M	2B			# CQR
+P	FF	05 05 15 00 04 00	# MTP3 Header
+P	16	01 0A		# RangeAndStatus (status subfield should not be present)
+P	26	01 0C		# CircuitStateIndicators
+
+###############################################################
+#
+# Circuit Group Reset Message
+M	17			# GRS	
+P	FF	05 05 15 00 04 00		# MTP3 Header
+P	16	01 04		# RangeAndStatus (status subfield should not be present)
+
+###############################################################
+#
+# Circuit Group Reset Acknowledgement Message
+M	29			# GRA
+P	FF	05 05 15 00 04 00		# MTP3 Header
+P	16	02 04 1F	# RangeAndStatus
+#P	16	05 1F 00 00 00 00	# RangeAndStatus
+
+###############################################################
+#
+# Circuit Group Unblocking Message
+M	19			# CGU	
+P	FF	05 05 15 00 04 00		# MTP3 Header
+P	15	01 00		# CktGrpSupervisionMsgTypeInd.
+P	16	02 04 1F 	# RangeandStatus (V)
+
+###############################################################
+#
+# Circuit Group Unblocking Acknowledgement Message
+#
+M	1B			# CGUA
+P	FF	05 05 15 00 04 00		# MTP3 Header
+P	15	01 00		# CktGrpSupervisionMsgTypeInd.
+P	16	02 04 1F	# RangeandStatus
+
+###############################################################
+#
+# Charge Information
+#
+M	31			# CRG
+
+# The format of this message is a national matter
+
+###############################################################
+#
+# Confusion Message
+M	2F			# CFN
+P	FF	05 05 15 00 04 00	# MTP3 Header
+P	12	02 00 0A		# Cause Indicators
+
+###############################################################
+# Connect Message
+M	07			# CON
+P	FF	05 05 15 00 04 00		# MTP3 Header
+P	11	02 10 14		# Backward Call Indicators
+P	29	01 00		# OptBackwardCallInd
+P	21	03 01 13 01 35	# Connected Number
+P       2A      01 00                             # UserToUserIndicators
+P       20      02 01 01 00                       # UserToUserInformation
+P       03      03 F1 F2 F3                       # Access Transport
+P       2F      04 01 11 22 01 33                 # NetworkSpecificFacility
+P       2C      01 81                             # GenericNotification
+P       32      01 80                             # RemoteOperations
+P       35      01 00                             # TransmissionMediumUsed
+P       37      01 00                             # Echo Control Information
+P       2E      01 01                             # Access Delivery Information
+P       2D      02 0A 0A                          # Call History Information
+#P       0C      07 03 10 0A 04 87 76 32 19        # RedirectionNum:(407)867-2391
+P       C0      08 01 00 0F 0A 04 77 23 45 12     # GenericNumber: (407)732-5421
+P       40      01 00                             # RedirectionNumRestriction
+#P       E2      05 F1 F2 F3 F4 F5                 # ServiceActivation
+
+## ISUP Vendor LIB has problem converting this parameter
+#P       39      02 0D 99                          # ParameterCompatibilityInfo
+#P       01      05 03 01 02 03 02 01 02           # Call Reference (NMS not support)
+
+
+
+
+###############################################################
+#
+# Continuity Check Request Message
+M	11			# CCR 
+P	FF	05 05 15 00 04 00		# MTP3 Header
+
+
+###############################################################
+# Continuity Message
+M	05				# COT
+P	FF	05 05 15 00 04 00		# MTP3 Header
+P	10	01 01			# Continuity Indicators
+
+
+
+
+###############################################################
+# Facility Accepted Message
+M	20			                  # FAA	
+P	FF	05 05 15 00 04 00	# MTP3 Header
+P       18      01 02                             # FacilityIndicator
+#P       2A      01 00                             # UserToUserIndicators
+P       0D      07 03 01 02 03 02 01 02 01 01     # Connection Request
+P       00                                        # EOP
+
+## ISUP Vendor LIB has problem converting this parameter
+#P       39      02 0D 99                          # ParameterCompatibilityInfo
+#P       01      05 03 01 02 03 02 01 02           # Call Reference (NMS not support)
+
+
+###############################################################
+# Facility Request Message
+M	1F			                  # FAR	
+P	FF	05 05 15 00 04 00	# MTP3 Header
+P       18      01 02                             # FacilityIndicator
+#P       2A      01 00                             # UserToUserIndicators
+P       0D      07 03 01 02 03 02 01 02 01 01     # Connection Request
+P       00                                        # EOP
+
+#P       39      02 0D 99                          # ParameterCompatibilityInfo
+#P       01      05 03 01 02 03 02 01 02           # Call Reference (NMS not support)
+
+
+###############################################################
+# Facility Reject Message
+M	21			                  # FRJ	
+P	FF	05 05 15 00 04 00	# MTP3 Header
+P       18      01 02                             # FacilityIndicator
+P       12      02 C1 10                          # CauseIndicator
+#P       2A      01 00                             # UserToUserIndicators
+P       00                                        # EOP
+
+###############################################################
+# Facility
+M	33			                  # FAC	
+P	FF	05 05 15 00 04 00	# MTP3 Header
+#P       38      01 80                             # MsgCompatibilityInfo
+P       32      01 80                             # RemoteOperations
+P       E2      05 F1 F2 F3 F4 F5                 # ServiceActivation
+P       00                                        # EOP
+
+#P       39      02 0D 99                          # ParameterCompatibilityInfo
+
+
+###############################################################
+# Forward Transfer Message
+M	08                                        # FOT
+#P       00                                        # EOP
+
+#P       01      05 03 01 02 03 02 01 02           # Call Reference (NMS not support)
+
+
+
+###############################################################
+# Initial Address Message
+M	01				# IAM (F)
+P	FF	05 05 15 00 04 00	# MTP3 Header
+P	06	01 00			# NatureOfConnectionsInd(no cot chk) (F)
+P	07	02 21 04			# ForwardCallIndicators(international) (F)
+P	09	01 0A			# CallingParty'sCategory (F)
+P	02	01 00			# TransmMediumRequirement (F)
+P	04	07 83 10 0A 23 71 62 60 08	# 2 CldPrtyN IvrNor:(321) 726 068 (V)
+P	23	04 00 02 11 22		# TransitNetworkSelection (O)
+P	01	05 03 01 02 03 02 01 02	# Call Reference (NMS now support) (O)
+P	0A	07 03 10 0A 04 77 44 33 01	# CallingPrtyN: (407)744-3332 (O)
+P	08	01 00			# OptForwardCallInd
+P	0B	07 0A 00 0A 04 87 76 32 19	# RedirectingNum:(407)867-2391
+P	13	02 11 11			# RedirectionInformation
+P	1A	04 02 12 36 02 A0 B0	# ClosedUserGroupInterlock
+P	0D	07 03 01 02 03 02 01 02 01 01	# Connection Request
+P	28	07 0A 3C 0A 04 77 44 33 23	# OriglCalledNum:(407)744-3332
+P	20	02 00 01 00		# UserToUserInformation <need to work on>
+P	03	03 F1 F2 F3		# Access Transport
+P	1D	02 C0 10			# UserServiceInfo
+P	2A	01 06			# UserToUserIndicators
+P	C0	08 01 00 0F 0A 04 77 23 45 12	# GenericNumber: (407)732-5421
+P	31	02 FF FF			# PropagationDelayCounter
+P	30	03 C0 90 A2		# UserServiceInfoPrime
+P	2F	04 01 11 22 01 33		# NetworkSpecificFacility
+P	C1	06 03 0A 04 78 96 23 11	# GenericDigits: (408)769-3211
+P	2B	02 02 12 02		# OriginationISCPointCode(nms encode err)
+P	30	03 C0 90 A2		# UserServiceInfoPrime
+P	32	01 91			# RemoteOperations (national use)
+P	39	05 04 0D 89 0E 80 		# ParameterCompatibilityInfo
+P	2C	01 81			# GenericNotification
+P	33	05 F1 F2 F3 F4 F5		# ServiceActivation
+P	42	04 00 02 01 02		# Generic Reference (NMS not support)
+P	3A	06 03 10 33 12 34 56	# MLPPPrecedence(encode err)
+P	3E	01 00			# TransmMedRequirementPrime
+P	3F	07 03 10 0A 04 77 23 45 12	# LocationNumber:(407)732-5421(NMS eats it)
+
+
+#P      04      05 03 10 06 16 30 37        # 2 CldPrtyN IvrNor:(610)373-7721
+#P       06      01 00                             # NatureOfConnectionsInd(no cot check)
+#P       06      01 04                             # NatureOfConnectionsInd(cot check)
+#P       07      02 20 04                          # ForwardCallIndicators(national call)
+#P       32      01 01                             # RemoteOperations
+#P       33      05 F1 F2 F3 F4 F5                 # ServiceActivation
+#P       20      02 01 01 00                       # UserToUserInformation 
+#P       1D      03 C0 90 A2                       # UserServiceInfo
+#P       0D      07 03 01 02 03 02 01 02 01 01     # Connection Request
+#P       01      05 03 01 02 03 02 01 02           # Call Reference(now support)
+#P	34	03 00 00 00		# User Teleservice Information
+
+# In PPAS's routing.txt file
+#P	04	07 01 10 0A 04 77 62 60 38     # 1 CldPrtyN Norm:(407)726-0683 
+#P	04	07 01 10 0A 16 30 37 77 12     # 2 CldPrtyN IvrNor:(610)373-7721
+#P	04	07 01 10 0A 03 55 36 99 60     # 3 CldPrtyN IvrDis:(305)563-9906
+#P	04	07 01 10 0A 09 84 75 99 99     # 4 CldPrtyN NoRt:(904)857-9999
+
+
+###############################################################
+# Identification Request Message
+M	36			                  # IDR	
+P	FF	05 05 15 00 04 00	# MTP3 Header
+P       3B      01 01                             # MCIDRequestIndicators
+#P       38      02 00 00                          # MsgCompatibilityInfo
+
+## ISUP Vendor LIB has problem converting this parameter
+#P       39      02 0D 99                          # ParameterCompatibilityInfo
+
+
+###############################################################
+# Information Message
+M	04				  	  # INF
+P	FF	05 05 15 00 04 00	# MTP3 Header
+P       0F      02 01 00                          # InformationIndicators
+#P       09      01 0A                             # CallingParty'sCategory
+P       0A      07 03 10 0A 04 77 44 33 23        # CallingPrtyN: (407)744-3332
+P       0D      07 03 01 02 03 02 01 02 01 01     # Connected Request
+P       2F      04 01 11 22 01 33                 # NetworkSpecificFacility
+
+## ISUP Vendor LIB has problem converting this parameter
+#P       39      02 0D 99                          # ParameterCompatibilityInfo
+#P       01      05 03 01 02 03 02 01 02           # Call Reference (NMS not support)
+
+
+###############################################################
+# Information Request Message
+M	03				  	  # INR
+P	FF	05 05 15 00 04 00	# MTP3 Header
+P       0E      02 01 00                          # Information Request Indicators
+#P       2F      04 01 11 22 01 33                 # NetworkSpecificFacility
+
+## ISUP Vendor LIB has problem converting this parameter
+#P       39      02 0D 99                          # ParameterCompatibilityInfo
+#P       01      05 03 01 02 03 02 01 02           # Call Reference (NMS not support)
+
+
+###############################################################
+# Identification Response Message
+M	37			                  # IRS 
+P	FF	05 05 15 00 04 00	# MTP3 Header
+P       3C      01 03                             # MCIDResponseIndicators
+P       38      02 00 00                          # MsgCompatibilityInfo
+P       0A      07 03 10 0A 04 77 44 33 23        # CallingPrtyN: (407)744-3332
+P       03      03 F1 F2 F3                       # Access Transport
+P       C0      08 01 00 0F 0A 04 77 23 45 12     # GenericNumber: (407)732-5421
+
+## ISUP Vendor LIB has problem converting this parameter
+#P       39      02 0D 99                          # ParameterCompatibilityInfo
+
+
+###############################################################
+# Loopback Acknowledgement Message
+M	24			                  # LPA	
+P	FF	05 05 15 00 04 00	# MTP3 Header
+
+###############################################################
+# Pass Along Message: with Release Message
+M	28				        # PAM
+P	FF	05 05 15 00 04 00	# MTP3 Header
+P      AA      01 0C                           # Message: REL
+P      12      02 11 11                        # CauseIndicator
+#P	AA	01 03			        # Message: INR
+P       0E      02 01 00                        # Information Request Indicators
+
+#P	AA	01 36			        # Message: IDR
+P       3B      01 01                             # MCIDRequestIndicators
+
+#P	AA	01 0C			        # Message: REL
+#P	12	02 11 11			# CauseIndicator
+
+###############################################################
+#
+# Release
+M	0C			# REL
+P	FF	05 05 15 00 04 00	# MTP3 Header
+P	12	02 C1 10		# CauseIndicator
+P	13	02 11 11		# RedirectionInformation
+P	0C	07 03 10 0A 04 87 76 32 19	# RedirectionNum:(407)867-2391
+#P	03	03 F1 F2 F3	# Access Transport
+P	1E	02 F1 0A		# Signalling Point Code
+P	20	02 01 01 00	# UserToUserInformation
+P	27	01 01		# Automatic Congestion Level
+P	2F	04 01 11 22 01 33	# NetworkSpecificFacility
+P	2E	01 01		# Access Delivery Information
+P	40	01 00		# RedirectionNumRestriction
+P	2A	01 00		# UserToUserIndicators
+P	39	05 04 0D 89 0E 80 	# ParameterCompatibilityInfo
+
+
+## ISUP Vendor LIB has problem converting this parameter
+#P       39      02 0D 99                          # ParameterCompatibilityInfo
+#P       1E      02 F1 0A                          # Signalling Point Code
+###############################################################
+#
+# Resume Message
+M	0E			# RES
+P	FF	05 05 15 00 04 00	# MTP3 Header
+P	22	01 00		# SuspendResumeInd
+
+#P       01      05 03 01 02 03 02 01 02           # Call Reference (NMS not support)
+
+
+###############################################################
+#
+# Release Complete Message
+M	10			# RLC
+P	FF	05 05 15 00 04 00	# MTP3 Header
+P	12	02 C0 33		# CauseIndicator
+
+
+###############################################################
+# Reset Circuit Message
+M	12			                  # RSC	
+P	FF	05 05 15 00 04 00		# MTP3 Header
+
+###############################################################
+# Subsequent Address Message
+M	02	# SAM
+P	FF	05 05 15 00 04 00		# MTP3 Header
+P	05	06 00 04 77 86 23 22	# SubsequentNum:(407)768-3222
+#P       05      03 00 04 23 22           # SubsequentNum:(407)768-3222
+#P       00                                        # EOP
+
+
+
+###############################################################
+# Suspend Message
+M	0D			                  # SUS	
+P	FF	05 05 15 00 04 00		# MTP3 Header
+P       22      01 00                             # SuspendResumeInd
+
+#P       01      05 03 01 02 03 02 01 02           # Call Reference (NMS not support)
+
+
+###############################################################
+# Unblocking Message
+M	14				# UBL
+P	FF	05 05 15 00 04 00		# MTP3 Header
+
+###############################################################
+# Unblocking Acknowledgement Message
+M	16				# UBA	
+P	FF	05 05 15 00 04 00		# MTP3 Header
+
+###############################################################
+# User-to-user information Message
+M	2D                                        # USR
+P	FF	05 05 15 00 04 00	# MTP3 Header
+P       20      03 20 00 00                       # UserToUserInformation
+#P       20      01 20                             # UserToUserInformation
+#P       20      02 01 01 00                       # UserToUserInformation
+P       03      03 F1 F2 F3                       # Access Transport
+
+###############################################################
+########### The following messages are not used ###############
+###############################################################
+
+
+###############################################################
+# Network Resource Management Message
+M	32				# NRM	
+P	FF	05 85 15 00 04 00	# MTP3 Header
+P	37	01 00			# Echo Control Information
+P	38	02 00 00			# MsgCompatibilityInfo
+P	35	01 00			# TransmissionMediumUsed
+
+## ISUP Vendor LIB has problem converting this parameter
+#P       39      02 0D 99                          # ParameterCompatibilityInfo
+
+
+###############################################################
+# Segmentation Message
+M	38			# SGM 
+P	FF	05 85 15 00 04 00	# MTP3 Header
+P	03	03 F1 F2 F3	# Access Transport
+P	20	02 01 01 00	# UserToUserInformation
+P	38	01 80		# MsgCompatibilityInfo
+P	C1	06 03 0A 04 78 96 23 11	# GenericDigits: (408)769-3211
+P	2C	01 81		# GenericNotification
+P	C0	08 01 00 0F 0A 04 77 23 45 12	# GenericNumber: (407)732-5421
+
+###############################################################
+#
+# User Part Test Message
+M	34			# UPT	
+P	FF	05 85 15 00 04 00	# MTP3 Header
+P	39	05 04 0D 89 0E 80	# ParameterCompatibilityInfo
+
+###############################################################
+#
+# User Part Available Message
+#
+M	35			# UPA
+P	FF	05 85 15 00 04 00	# MTP3 Header
+P	39	05 04 0D 89 0E 80	# ParameterCompatibilityInfo
+
+###############################################################
+#
+# Unequipped Circuit Identification Code Message
+M	2E			# UCIC	
+P	FF	05 85 15 00 04 00	# MTP3 Header
+
+###############################################################
+#
+# Overload Message
+M	30			# OLM
+P	FF	05 85 15 00 04 00	# MTP3 Header
+
+###############################################################
+#
+# Loop Prevention Message
+M       40                           # LOP
+P       FF      05 85 15 00 04 00    # MTP3 Header
+P       38      01 80                # MsgCompatibilityInfo
+P       39      05 04 0D 89 0E 80    # ParameterCompatibilityInfo
+P       43      01 28                # Call Transfer Reference
+P       44      01 00                # Loop Prevention Indicators
+
+###############################################################

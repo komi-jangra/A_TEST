@@ -1,0 +1,224 @@
+--------------------------------------------------------------------------------
+--
+-- AsnCC 2.0 test.
+--
+-- Based on GSM MAP V4 (non-simplified types, one operation). LRF format. 
+--
+--------------------------------------------------------------------------------
+
+
+TEST6 DEFINITIONS ::=
+
+BEGIN
+
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--
+--  GSM MAP Parameters.
+--
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+
+BasicServiceCode ::= CHOICE
+{
+    bearerService   [2] IMPLICIT    BearerServiceCode,
+    teleservice     [3] IMPLICIT    TeleserviceCode
+}
+
+BasicServiceGroupList ::= SEQUENCE SIZE(1..13) OF BasicServiceCode
+
+BearerServiceCode ::= OCTET STRING (SIZE(1))
+
+BearerServiceList ::= SEQUENCE SIZE(1..50) OF BearerServiceCode
+
+CallBarringFeature ::= SEQUENCE
+{
+    basicService                    BasicServiceCode,
+    ss-Status       [4] IMPLICIT    SS-Status
+}
+
+CallBarringFeatureList ::= SEQUENCE SIZE(1..13) OF CallBarringFeature
+
+CallBarringInfo ::= SEQUENCE
+{
+    ss-Code                 SS-Code,
+    callBarringFeatureList  CallBarringFeatureList
+}
+
+Category ::= OCTET STRING (SIZE(1))
+
+CliRestrictionOption ::= ENUMERATED
+{
+    permanent                   (0),
+    temporaryDefaultRestricted  (1),
+    temporaryDefaultAllowed     (2)
+}
+
+CUG-Feature ::= SEQUENCE
+{
+    basicService                BasicServiceCode        OPTIONAL,
+    preferentialCUG-Indicator   CUG-Index               OPTIONAL,
+    interCUG-Restrictions       InterCUG-Restrictions
+}
+
+CUG-FeatureList ::= SEQUENCE SIZE (1..13) OF CUG-Feature
+
+CUG-Index ::= INTEGER (0..32767)
+
+CUG-Interlock ::= OCTET STRING (SIZE (4))
+
+CUG-Info ::= SEQUENCE
+{
+    cug-SubscriptionList    CUG-SubscriptionList,
+    cug-FeatureList         CUG-FeatureList         OPTIONAL
+}
+
+CUG-Subscription ::= SEQUENCE
+{
+    cug-Index               CUG-Index,
+    cug-Interlock           CUG-Interlock,
+    intraCUG-Options        IntraCUG-Options,
+    basicServiceGroupList   BasicServiceGroupList   OPTIONAL
+}
+
+CUG-SubscriptionList ::= SEQUENCE SIZE (1..10) OF CUG-Subscription
+
+ForwardingFeature ::= SEQUENCE
+{ 
+    basicService                            BasicServiceCode       OPTIONAL,
+    ss-Status               [4] IMPLICIT    SS-Status              OPTIONAL,
+    forwardedToNumber       [5] IMPLICIT    ISDN-AddressString     OPTIONAL, 
+    forwardedToSubaddress   [8] IMPLICIT    ISDN-SubaddressString  OPTIONAL,
+    forwardingOptions       [6] IMPLICIT    ForwardingOptions      OPTIONAL,
+    noReplyConditionTime    [7] IMPLICIT    NoReplyConditionTime   OPTIONAL
+}
+
+ForwardingFeatureList ::= SEQUENCE SIZE(1..13) OF ForwardingFeature
+
+ForwardingInfo ::= SEQUENCE
+{
+    ss-Code                 SS-Code                  OPTIONAL,
+    forwardingFeatureList   ForwardingFeatureList
+}
+
+ForwardingOptions ::= OCTET STRING (SIZE(1))
+
+IMSI ::= OCTET STRING (SIZE(3..8))
+
+IntraCUG-Options ::= ENUMERATED
+{
+    noCUG-Restrictions  (0),
+    cugIC-CallBarred    (1),
+    cugOG-CallBarred    (2)
+}
+
+InterCUG-Restrictions ::= OCTET STRING (SIZE(1))
+
+ISDN-AddressString ::= OCTET STRING (SIZE(1..9))
+
+ISDN-SubaddressString ::= OCTET STRING (SIZE(1..21))
+
+NoReplyConditionTime ::= INTEGER (5..30)
+
+ODB-Data ::= SEQUENCE
+{
+    odb-GeneralData     ODB-GeneralData,
+    odb-HPLMN-Data      ODB-HPLMN-Data      OPTIONAL
+}
+
+ODB-GeneralData ::= BIT STRING
+{
+    allOG-CallsBarred                               (0),
+    internationalOGCallsBarred                      (1),
+    internationalOGCallsNotToHPLMN-CountryBarred    (2),
+    premiumRateInformationOGCallsBarred             (3),
+    premiumRateEntertainementOGCallsBarred          (4),
+    ss-AccessBarred                                 (5)
+} (SIZE(6))
+
+ODB-HPLMN-Data ::= BIT STRING
+{
+    plmn-SpecificBarringType1 (0),
+    plmn-SpecificBarringType2 (1),
+    plmn-SpecificBarringType3 (2),
+    plmn-SpecificBarringType4 (3)
+} (SIZE (4))
+
+OverrideCategory ::= ENUMERATED
+{
+    overrideEnabled     (0),
+    overrideDisabled    (1)
+}
+
+SS-Data ::= SEQUENCE
+{
+    ss-Code                                 SS-Code                 OPTIONAL,
+    ss-Status               [4] IMPLICIT    SS-Status               OPTIONAL,
+    ss-SubscriptionOption                   SS-SubscriptionOption   OPTIONAL,
+    basicServiceGroupList                   BasicServiceGroupList   OPTIONAL
+}
+
+SS-Code ::= OCTET STRING (SIZE(1))
+
+SS-Info ::= CHOICE
+{
+    forwardingInfo  [0] IMPLICIT    ForwardingInfo,
+    callBarringInfo [1] IMPLICIT    CallBarringInfo,
+    cug-Info        [2] IMPLICIT    CUG-Info,
+    ss-Data         [3] IMPLICIT    SS-Data
+}
+
+SS-InfoList ::= SEQUENCE SIZE(1..30) OF SS-Info
+
+SS-SubscriptionOption ::= CHOICE
+{
+    cliRestrictionOption    [2] IMPLICIT    CliRestrictionOption,
+    overrideCategory        [1] IMPLICIT    OverrideCategory
+}
+
+SS-Status ::= OCTET STRING (SIZE(1))
+
+SubscriberStatus ::= ENUMERATED 
+{
+    serviceGranted (0),
+    operatorDeterminedBarring (1)
+}
+
+TeleserviceCode ::= OCTET STRING (SIZE(1))
+
+TeleserviceList ::= SEQUENCE SIZE(1..20) OF TeleserviceCode
+
+ZoneCode ::= OCTET STRING (SIZE (2))
+
+ZoneCodeList ::= SEQUENCE SIZE (1..10) OF ZoneCode
+
+
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--
+--  GSM MAP Operation(s).
+--
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+
+InsertSubscriberDataArg ::= SEQUENCE 
+{
+    imsi                                      [0]   IMPLICIT IMSI                   OPTIONAL,
+    msisdn                                    [1]   IMPLICIT ISDN-AddressString     OPTIONAL,
+    category                                  [2]   IMPLICIT Category               OPTIONAL,
+    subscriberStatus                          [3]   IMPLICIT SubscriberStatus       OPTIONAL,
+    bearerServiceList                         [4]   IMPLICIT BearerServiceList      OPTIONAL,
+    teleserviceList                           [6]   IMPLICIT TeleserviceList        OPTIONAL,
+    provisionedSS                             [7]   IMPLICIT SS-InfoList            OPTIONAL,
+    odb-Data                                  [8]   IMPLICIT ODB-Data               OPTIONAL,
+    roamingRestrictionDueToUnsupportedFeature [9]   IMPLICIT NULL                   OPTIONAL,
+    regionalSubscriptionData                  [10]  IMPLICIT ZoneCodeList           OPTIONAL
+}
+
+
+
+END

@@ -1,0 +1,61 @@
+<HTML>
+<HEAD>
+<CENTER>
+<H2><BIG>IntelliSS7</BIG> <B>Application Developer's Toolkit</B></H2>
+</CENTER>
+<BR>
+</HEAD>
+<BODY>
+<TABLE ALIGN=JUSTIFY WIDTH=100% BGCOLOR=SILVER>
+<TR>
+    <TD ALIGN=LEFT><B>IntelliSS7 Function</B></TD>
+    <TD ALIGN=RIGHT><I>TCAP_Component::ReceiveThis</I></TD>
+</TR>
+</TABLE>
+<BR>
+<BR>
+<B>NAME</B>
+<PRE>
+    TCAP_Component::ReceiveThis()
+</PRE>
+<B>SCOPE</B>
+<PRE>
+    protected
+</PRE>
+<B>SYNOPSIS</B>
+<PRE>
+    virtual int
+    TCAP_Component::ReceiveThis(ITS_HANDLE handle, ITS_HDR* hdr, its::Event& ev);
+
+</PRE>
+<B>PURPOSE</B>
+<PRE>
+    This method receives a TCAP component from an event structure.
+    Generically (i.e., in this base class) this means calling
+    TCAP_ReceiveComponent().  Derived classes perform more work
+    (e.g., validity checks on the component).
+
+</PRE>
+<B>INPUT PARAMETERS</B>
+<PRE>
+    handle - the transport that received this event
+    ev - the its::Event containing the component
+
+</PRE>
+<B>OUTPUT PARAMETERS</B>
+<PRE>
+    hdr - a pointer to an area to copy the transaction context to
+
+</PRE>
+<B>RETURN VALUE</B>
+<PRE>
+    If the component is successfully sent, ITS_SUCCESS is returned.
+    Any other return code indicates an IntelliSS7 error.
+
+</PRE>
+<CENTER>
+<A HREF=tcap_component.html><I>back</I></A><BR>
+<BR>
+</CENTER>
+</BODY>
+</HTML>

@@ -1,0 +1,39 @@
+#SIGTRAN_PH_CONF CONFIGURATION FILE: Don't delete any line, just modify.
+# This file has all configuirable parameters that are used at the time of system Initilisation.
+# This file contains IP ADDERESS,PORT ADDRESSES, REMOTE POINT CODE,LOCAL ASP,LOCAL AS,REMOTE ASP & REMOTE AS FOR INTERFACES WITH EXTERNAL ENTITIES.
+# These are the machines IP addresses on which your different components are running don't delete any line, just modify the IP addresses.
+
+#FOR USER TCP CONNECTIVITY
+HOST_IP_ADDRESS 192.168.11.38
+USER_IP_ADDRESS 192.168.11.38
+USER_PORT                           21414
+SELF_SERVER_PORT_USER               21714 
+
+# FOR BSSAP HA
+TCPPEER_IP_ADDRESS  192.168.11.47
+TCP_PORT                            6655
+MASTER  1
+
+#For SCM_CHG
+BS_SERVER_PORT                      2525
+
+#FOR SCCP IF TCP CONNECTIVITY
+
+SCCP_IF_IP_ADDRESS 192.168.11.38
+SCCP_IF_PORT			   49630
+SELF_SERVER_PORT_SCCP              22211
+	
+SSN_BSSAP                          254
+
+
+BS_LOG_USER_ID			   						 04 #Log User Id should be greater than 3.
+BS_INTF_ID			   								 02 #for local use of interface id from bsc-id.
+NWK_INDICATOR               	   	 01
+BSC_ID				   									 01 #Bsc-Id is equal to gcn id from APP 
+START_CIC		           						 01
+END_CIC			                       20				
+
+#Timer entry should be added for Timer  Id with duration of following timer.
+#T1 T4 T7 T8 T10 T11 T13 T17 T 18 T19 T20 T25
+  
+

@@ -1,0 +1,24 @@
+
+
+ANSI SCCP Command
+
+SYNOPSIS
+    si_set_ss <pc> <ssn> <linkset> 
+
+DESCRIPTION
+    This commonad adds a remote sub system to SCCP configuration. This is 
+    same as adding dpc-sio-ssn remote route to Accelero node.
+
+PARAMETERS
+    pc         Point Code
+    ssn        Subsystem Number
+    linkset    linkset number on which ssn is to be added
+
+EXAMPLE
+    >> sa_set_ss 5 5 1
+    ********* SCCP Subsystem Entry Set********
+
+
+NOTE - 
+1. You can display configured linksets using command ansi_dumpls
+2. You cannot add local subsystem using this command.

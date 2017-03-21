@@ -1,0 +1,15 @@
+
+ITU ISUP Command
+
+SYNOPSIS
+    ii_get_cong_lev  <congLevel>
+
+DESCRIPTION
+    Get the Local Automatic Congestion Level in ISUP 
+
+PARAMETERS
+    congLevel     Automatic Congestion Level ( 1 or 2)
+
+EXAMPLE
+    >> ii_get_cong_lev 1
+       CongLevel1  = 10000

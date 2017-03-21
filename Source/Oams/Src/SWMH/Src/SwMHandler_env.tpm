@@ -1,0 +1,15 @@
+USERLIBRARIES =$(LFLAGS) $(LIBS) -linst-DB -lmutex 
+COMP_FLAG = -DXUSE_SIGNAL_NUMBERS -D__C_APPL
+
+sctUSERDEFS = $(COMP_FLAG) $(CFLAGS)
+
+USERTARGET = SwMHandler_env$(sctOEXTENSION) SWMHLib.o
+
+SwMHandler_env$(sctOEXTENSION): SwMHandler_env.c SwMHandler.ifc
+	$(sctCC) $(sctCPPFLAGS) $(sctCCFLAGS) $(sctIFDEF) SwMHandler_env.c -o SwMHandler_env$(sctOEXTENSION)
+
+SWMHLib.o: SWMHLib.c ../Inc/oamsswmh_swmhlib.h
+	$(sctCC) $(sctCPPFLAGS) $(sctCCFLAGS) $(sctIFDEF) SWMHLib.c -o SWMHLib.o
+
+clean_user_objs:
+	$(sctRM) $(USERTARGET)

@@ -1,0 +1,23 @@
+
+
+ANSI TCAP Command
+
+SYNOPSIS
+    ta_set_local_ss <ssn>
+
+DESCRIPTION
+    This command adds a local subsystem to Acclero node. The local subsystem 
+    is added to linkset 0. This will allow TCAP application to start receiving 
+    traffic for added SSN.
+
+PARAMETERS
+    ssn    Subsystem Number
+
+EXAMPLE
+    >> ta_set_local_ss 5
+
+       ********* TCAP Local Subsystem Entry Set******** 
+
+    >>
+
+NOTE - You can display configured linksets using command ma_get_ls 

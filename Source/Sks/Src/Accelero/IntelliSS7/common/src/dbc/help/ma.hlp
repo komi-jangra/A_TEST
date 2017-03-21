@@ -1,0 +1,30 @@
+
+
+ANSI MTP3 Module :
+    ma_start              MTP3 Start Link Alignment
+    ma_get_gen_cfg        MTP3 Get General Config
+    ma_set_gen_cfg        MTP3 Set General Config
+    ma_in_link            MTP3 Inhibit Link
+    ma_unin_link          MTP3 Unhibit Link
+    ma_deact_link         MTP3 Deactivate Link
+    ma_act_link           MTP3 Activate Link
+    ma_deact_ls           MTP3 Deactivate Link Set
+    ma_act_ls             MTP3 Activate Link Set
+    ma_get_link           MTP3 Get Info on specific link
+    ma_get_ls             MTP3 Dump Link Set
+    ma_get_gen_peg        MTP3 Get General Peg
+    ma_get_link_peg       MTP3 Get Link Pegs
+    ma_get_route_peg      MTP3 Get Route Pegs
+    ma_clr_gen_peg        MTP3 Clear General Peg
+    ma_clr_link_peg       MTP3 Clear Link Peg
+    ma_clr_route_peg      MTP3 Clear Route Peg
+    ma_set_rpc            MTP3 Set Remote Point code
+    ma_rem_rpc            MTP3 Remove Remote Point code
+    ma_get_all_rpc        MTP3 Get All Remote Point codes
+    ma_get_all_lpc        MTP3 Get All Local Point codes
+    ma_shutdown           MTP3 Gracefully Shutdown node
+    ma_lpo                MTP3 Set Local Processor Outage
+    ma_lpr                MTP3 Set Local Processor Recovery
+
+For details about any command use "help <command name>"
+

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<u2 OMVersion="3.7" StorageVersion="4" ToolVersion="4.3.0.0.14276">
+<Resource Guid="m6GEEE8DIEEEKQUiBLESm2EE">
+<cHiddenStereotypeInstance>
+<InstanceExpr Guid="gsfLEELLAEEE6mIPGLESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="urn:u2:etc/CppPredefined.u2">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="strUri">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Boolean@=@Boolean@Boolean@Boolean"/>
+<cRightOperand>
+<Ident Name="true">
+<rDefinition R="uid:@Predefined@Boolean@true"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="isLibrary">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@modelDependency"/>
+</InstanceExpr>
+<InstanceExpr Guid="hsfLEELLAEEE6mIPGLESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="urn:u2:etc/CApplicationProfile.u2">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="strUri">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Boolean@=@Boolean@Boolean@Boolean"/>
+<cRightOperand>
+<Ident Name="true">
+<rDefinition R="uid:@Predefined@Boolean@true"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="isLibrary">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@modelDependency"/>
+</InstanceExpr>
+<InstanceExpr Guid="7sfLEELLAEEE6mIPGLESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="urn:u2:etc/CppImport.u2">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="strUri">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Boolean@=@Boolean@Boolean@Boolean"/>
+<cRightOperand>
+<Ident Name="true">
+<rDefinition R="uid:@Predefined@Boolean@true"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="isLibrary">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@modelDependency"/>
+</InstanceExpr>
+</cHiddenStereotypeInstance>
+<rRoot R="uid:Q3FEEEXuEEEE5hwEBLESm2EE"/>
+</Resource>
+<Package Guid="Q3FEEEXuEEEE5hwEBLESm2EE" Name="GbhInc">
+<cStereotypeInstance>
+<InstanceExpr Guid="01GEEEXuEEEEe7wEBLESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<ListExpr>
+<cExpression>
+<CharstringValue ValueString="../Inc/oamsgbh_hashdefs.h">
+</CharstringValue>
+</cExpression>
+</ListExpr>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="headers">
+<rDefinition R="uid:1kVeGLtL31iL0wmciEsOK8OL"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="GCC">
+<rDefinition R="uid:XLm4EIPcMGlLitKkyLasY--L"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="dialect">
+<rDefinition R="uid:k*HhGVHT4FALS3pdDVC38wkE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue>
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="preprocessorOptions">
+<rDefinition R="uid:wG6SSVPtVHLLC2C7IIiugamL"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Boolean@=@Boolean@Boolean@Boolean"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="false">
+<rDefinition R="uid:@Predefined@Boolean@false"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="depend">
+<rDefinition R="uid:Lww2SEKnsi5L*rx6kLn18vZI"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf>
+<Ident Name="cppImportSpecification">
+<rDefinition R="uid:@TTDCppImport@cppImportSpecification"/>
+</Ident>
+</rInstanceOf>
+</InstanceExpr>
+<InstanceExpr Guid="r1GEEEXuEEEEe7wEBLESm2EE">
+<rInstanceOf>
+<Ident Name="globalNamespace">
+<rDefinition R="uid:@TTDCppPredefined@globalNamespace"/>
+</Ident>
+</rInstanceOf>
+</InstanceExpr>
+<InstanceExpr Guid="l2LVEEhslEEEvJswCLESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+</InstanceExpr>
+</cStereotypeInstance>
+<cComment>
+<Comment Guid="Ii0VEEdELEEESTxEBLESm2EE">
+</Comment>
+</cComment>
+</Package>
+</u2>

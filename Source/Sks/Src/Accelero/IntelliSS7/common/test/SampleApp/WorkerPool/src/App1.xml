@@ -1,0 +1,159 @@
+<?xml version="1.0"?>
+
+<!-- Sample XML file for application configuration (INI). -->
+
+<Application name           = "App1"
+             type           = "console-application"
+             globalStart    = ""
+             binding        = "CPP"
+             library        = "libApp1D.so"
+             appSelector    = "RouteApp"
+             preFunc        = "ENGINE_PreFunc"
+             postFunc       = "ENGINE_PostFunc" >
+
+    <AppOptions name = "traceFlushAfterWrite"         value = "yes"/>
+    <AppOptions name = "routeUniqueLinkCodesRequired" value = "yes"/>
+    <AppOptions name = "memPoolChecksOn"              value = "no"/>
+
+    <FaultTolerance
+        maxNumFtGroups      = "1"
+        maxNumProcesses     = "1"
+        maxNumNodes         = "1"
+        nodeId              = "0"
+        processId           = "0"
+        tcapFtGroupId       = "0"
+        sccpFtGroupId       = "0"
+        mtp3FtGroupId       = "0"
+        isupFtGroupId       = "0"
+        routingFtGroupId    = "0"
+        timersFtGroupId     = "0"
+        mgmtDataFtGroupId   = "0"
+    >
+
+        <Procedures>
+
+        </Procedures>
+
+        <Callbacks>
+
+        </Callbacks>
+        <FtGroups>
+
+            <FtGroup
+                ftGroupId      = "0"
+                ftGroupName    = "FtGroup0"
+            >
+
+                <DsmConfig
+                     dsmSize         = "20971520"
+                     dsmBaseAddress  = "0x80000000"
+                     dsmMaxNumTables = "256"
+                     dsmType         = "STUB"
+                />
+
+             <!-- Note: MUST include itself. -->
+             <!-- Note: nodeName and processName are optional attributes. -->
+
+
+                <FtGroupMembers>
+                    <FtGroupMember
+                        nodeId      = "0"
+                        nodeName    = "Node0"
+                        processId   = "0"
+                        processName = "Node0Process0"
+                    />
+
+                </FtGroupMembers>
+
+
+                <!-- Note: MUST NOT include itself. -->
+                <!-- Note: Master FtGroupMembers are tried in order. -->
+
+                <MasterFtGroupMembers>
+
+                </MasterFtGroupMembers>
+
+                <Callbacks>
+                </Callbacks>
+
+            </FtGroup>
+
+        </FtGroups>
+
+    </FaultTolerance>
+
+     <!--///////////////////////////////////////////////////////////////-->
+
+
+    <Feature
+        name        = "DSM Data Class - STUB"
+        library     = "libDSM-STUBD.so"
+        classRec    = "itsDSM_StubImplClass"
+    />
+
+
+    <ApplicationTrace>
+        <Critical  output = "stdout"/>
+        <Error     output = "stdout"/>
+        <Warning   output = "stdout"/>
+        <Debug     output = "stdout"/>
+    </ApplicationTrace>
+
+    <ToolkitTrace>
+        <Critical  output = "stdout"/>
+        <Error     output = "stdout"/>
+        <Warning   output = "stdout"/>
+        <Debug     output = ""/>
+    </ToolkitTrace>
+
+    <!--///////////////////////////////////////////////////////////////-->
+
+    <WorkerPool stackSize = "0">
+
+        <Transport  type  = "TaskQueue"
+                     count  = "10"
+                     family = "ANSI">
+
+             <Callbacks
+                    library         = "libApp1D.so"
+                    type            = "blocking"
+                    PostNextEvent   = "null"
+             />
+        </Transport>
+
+    </WorkerPool>
+
+    <!--///////////////////////////////////////////////////////////////-->
+
+    <BorderPool stackSize = "0">
+
+            <Transport  name            = "AppClient"
+                        type            = "ClientSocket">
+
+            <StreamData socketDomain    = "INET"
+                        serverHostName  = "172.16.6.12"
+                        serverPort      = "9009"
+                        retryCount      = "-1"
+                        retryDelay      = "5"
+            />
+            <Callbacks
+                library         = "libApp1D.so"
+                type            = "blocking"
+                preInitialize   = "null"
+                postInitialize  = "App_PostInit"
+                preNextEvent    = "App_PreNext"
+                nextEventFailed = "App_NextEventFailed"
+                postNextEvent   = "App_PostNextEvent"
+                userDispatch    = "null"
+                preTerminate    = "null"
+                postTerminate   = "null"
+            />
+
+        </Transport>
+
+    </BorderPool>
+
+ </Application>
+
+
+

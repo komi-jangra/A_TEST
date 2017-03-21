@@ -1,0 +1,34 @@
+
+XML Persistancy Command
+
+SYNOPSIS
+    commit 
+
+DESCRIPTION
+    This command regenerates the XML file with the given XML file name. 
+
+PARAMETERS
+    <filename> - The filename where the XML needs to be stored. 
+
+EXAMPLE
+    >> commit abc.xml
+
+    Commit Success
+    Commit is performed on abc.xml
+
+NOTE 
+   This command is used to regenerate the XML file with the given name. If
+   the file is already exist then it will take a backup of the old file and
+   copies the current content into the file.
+
+   e.g. 
+   >> commit abc.xml
+
+   Commit Success
+   Commit is performed on abc.xml
+   The old contents are written in the backup file abc.xml_07_02_2005_11_36_31.bak
+
+   Here the abc.xml which already exists, so the contents of abc.xml 
+   is written into abc.xml_07_02_2005_11_36_31.bak and the current xml 
+   contents are written into abc.xml
+

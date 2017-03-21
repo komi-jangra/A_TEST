@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+
+<!-- Sample XML file for application configuration (INI). -->
+
+<Application name           = "Copy"
+             type           = "console-application"
+             globalStart    = ""
+             binding        = "C"
+             library        = "libTHROUGH.so">
+
+    <Options
+        traceFlushAfterWrite         = "no"
+        routeUniqueLinkCodesRequired = "yes"
+        memPoolChecksOn              = "yes"
+    />
+
+    <ToolkitTrace>
+        <Critical  output = "stdout"/>
+        <Error     output = "stdout"/>
+        <Warning   output = "stdout"/>
+        <Debug     output = "no"/>
+    </ToolkitTrace>
+
+    <ApplicationTrace>
+        <Critical  output = "no"/>
+        <Error     output = "no"/>
+        <Warning   output = "no"/>
+        <Debug     output = "no"/>
+    </ApplicationTrace>
+
+    <!--///////////////////////////////////////////////////////////////-->
+
+    <WorkerPool stackSize = "0">
+
+        <Transport  type = "TaskQueue">
+            <Callbacks
+                type           = "blocking"
+                library        = "libTHROUGH.so"
+                postInitialize = "null"
+                userMsgHandler = "copyMain"
+            />
+        </Transport>
+
+    </WorkerPool>
+
+    <!--///////////////////////////////////////////////////////////////-->
+
+    <BorderPool stackSize = "0">
+
+        <Transport  name    = "Sink"
+                    type    = "ServerSocket"
+                    family  = "">
+                    
+            <StreamData socketDomain    = "INET"
+                        serverHostName  = "127.0.0.1"
+                        serverPort      = "30001"
+                        retryDelay      = "0"
+                        retryCount      = "0"
+            />
+
+            <Callbacks
+                library         = "libTHROUGH.so"
+                type            = "blocking"
+                preInitialize   = "null"
+                postInitialize  = "initFunc"
+                preNextEvent    = "null"
+                nextEventFailed = "nextFail"
+                postNextEvent   = "null"
+                userMsgHandler  = "readFunc"
+                SCCPMsgHandler  = "null"
+                ISUPMsgHandler  = "null"
+                preTerminate    = "null"
+                postTerminate   = "null"
+            />
+
+        </Transport>
+
+        <Transport  name    = "Source"
+                    type    = "ClientSocket"
+                    family  = "">
+
+            <StreamData socketDomain    = "INET"
+                        serverHostName  = "127.0.0.1"
+                        serverPort      = "30000"
+                        retryDelay      = "0"
+                        retryCount      = "0"
+            />
+
+            <Callbacks
+                library         = "libTHROUGH.so"
+                type            = "blocking"
+                preInitialize   = "null"
+                postInitialize  = "null"
+                preNextEvent    = "null"
+                nextEventFailed = "null"
+                postNextEvent   = "null"
+                userMsgHandler  = "null"
+                SCCPMsgHandler  = "null"
+                ISUPMsgHandler  = "null"
+                preTerminate    = "null"
+                postTerminate   = "null"
+            />
+
+        </Transport>
+
+    </BorderPool>
+
+    <!--///////////////////////////////////////////////////////////////-->
+
+</Application>

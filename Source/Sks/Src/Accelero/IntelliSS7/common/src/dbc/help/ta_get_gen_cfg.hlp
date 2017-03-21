@@ -1,0 +1,26 @@
+
+ANSI TCAP Command
+
+SYNOPSIS
+    ta_get_gen_cfg
+
+DESCRIPTION
+    This command displays ANSI TCAP general configuration. This include TCAP 
+    Alarm Level and TCAP Trace Level. Alarm level controls TCAP alarms sent to 
+    Accelero application. Trace level controls generation of TCAP execution traces.
+
+PARAMETERS
+    None.
+
+EXAMPLE
+    >> ta_get_gen_cfg
+    *********** TCAP General Config *************
+     Alarm Level = CRITICAL
+        TCAP Trace -
+            Debug     =  stdout
+            Critical  =
+            Warning   =
+            Error     =
+            Event     = 
+    *********** End of TCAP General Config *************
+

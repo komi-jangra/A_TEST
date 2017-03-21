@@ -1,0 +1,23 @@
+
+ANSI ISUP Command
+
+SYNOPSIS
+ia_clr_msg_sent_pegs <opc> <dpc> <sio> [<PegId> (or) <All/all>]
+
+DESCRIPTION
+
+Reset Message Sent Pegs
+
+PARAMETERS
+
+dpc     Destination point code.
+opc     Origination point code.
+sio     Service information octet.
+pegId   PegId to be reset.
+
+EXAMPLE
+
+>> ia_clr_msg_sent_pegs 16 21 133 All
+
+** Cleared all ISUP Message pegs **
+

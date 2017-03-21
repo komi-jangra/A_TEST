@@ -1,0 +1,112 @@
+/**************Test Case Mapping **************/
+
+/*UT testCase id ----------------------PSCH UTP testCase id*/
+   TC_001                              PSCH_TC_1
+   TC_002                              PSCH_TC_13
+   TC_003                              PSCH_TC_16
+   TC_004                              PSCH_TC_15
+   TC_005                              PSCH_TC_18
+   TC_006                              PSCH_TC_21
+   TC_007                              PSCH_TC_22
+   TC_008                              PSCH_TC_17
+   TC_009                              PSCH_TC_20
+   TC_010                              PSCH_TC_19
+   TC_011/014                          PSCH_TC_24/25/27
+   TC_012/015                          PSCH_TC_24/26/27
+   TC_016/013                          PSCH_TC_28
+   TC_017                              PSCH_TC_31
+   TC_018                              PSCH_TC_30
+   TC_019                              PSCH_TC_32
+   TC_020                              PSCH_TC_35
+   TC_021                              PSCH_TC_34
+   TC_022                              PSCH_TC_36
+   TC_023                              PSCH_TC_29
+   TC_024                              PSCH_TC_37
+   TC_025                              PSCH_TC_33
+   TC_026                              PSCH_TC_53
+   TC_027                              PSCH_TC_52
+   TC_028                              PSCH_TC_51
+   TC_029                              PSCH_TC_63
+   TC_030                              PSCH_TC_64
+   TC_031                              PSCH_TC_54
+   TC_032                              PSCH_TC_55
+   TC_033                              PSCH_TC_50
+   TC_034                              PSCH_TC_56
+   TC_035                              PSCH_TC_48
+   TC_036                              PSCH_TC_49
+   TC_037                              PSCH_TC_57/58/59/61
+   TC_038                              PSCH_TC_57/58/60/61
+   TC_039                              PSCH_TC_62
+   TC_040                              PSCH_TC_44
+   TC_041                              PSCH_TC_43
+   TC_042                              PSCH_TC_41
+   TC_043                              PSCH_TC_45
+   TC_044                              PSCH_TC_40
+   TC_045                              PSCH_TC_46
+   TC_046                              PSCH_TC_42
+   TC_047                              PSCH_TC_39
+   TC_048                              PSCH_TC_73
+   TC_049                              PSCH_TC_77
+   TC_050                              PSCH_TC_72
+   TC_051                              PSCH_TC_75
+   TC_052                              PSCH_TC_76
+   TC_053                              PSCH_TC_74
+   TC_054                              PSCH_TC_78
+   TC_055                              PSCH_TC_71
+   TC_056                              PSCH_TC_79
+   TC_057                              PSCH_TC_80/81/82/84
+   TC_058                              PSCH_TC_80/81/83/84
+   TC_059                              PSCH_TC_80/85
+   TC_060                              PSCH_TC_66/67/69
+   TC_061                              PSCH_TC_66/68/69
+   TC_062                              PSCH_TC_70
+   TC_063                              PSCH_TC_118
+   TC_064                              PSCH_TC_117
+   TC_065                              PSCH_TC_115
+   TC_066                              PSCH_TC_126
+   TC_067                              PSCH_TC_113
+   TC_068                              PSCH_TC_114
+   TC_069                              PSCH_TC_116
+   TC_070                              PSCH_TC_119/120/121/123
+   TC_071                              PSCH_TC_119/120/122/123
+   TC_072                              PSCH_TC_119/124
+   TC_073                              PSCH_TC_112
+   TC_074                              PSCH_TC_127
+   TC_075                              NOT VALID
+   TC_076                              PSCH_TC_139
+   TC_077                              PSCH_TC_92
+   TC_078                              PSCH_TC_90(FOR CELLBAR = TRUE)/PSCH_TC_91(FOR CELLBAR= FALSE)
+   TC_079                              PSCH_TC_140
+   TC_080                              PSCH_TC_93
+   TC_081                              PSCH_TC_88
+   TC_082                              PSCH_TC_87
+   TC_083                              PSCH_TC_141
+   TC_084                              PSCH_TC_142
+   TC_085                              PSCH_TC_95
+   TC_086                              PSCH_TC_108
+   TC_087                              PSCH_TC_89
+   TC_088                              PSCH_TC_143
+   TC_089                              NOT VALID
+   TC_090                              PSCH_TC_109
+   TC_091                              PSCH_TC_94
+   TC_092                              PSCH_TC_105
+   TC_093                              PSCH_TC_96
+   TC_094                              PSCH_TC_97
+   TC_095                              PSCH_TC_14
+   TC_096                              NOT VALID
+   TC_097                              PSCH_TC_144
+   TC_098                              PSCH_TC_145
+   TC_099                              PSCH_TC_146
+   TC_100                              PSCH_TC_110
+
+NOTE:-
+1. UT stub cannot be used for testing of the timers.
+2. UT stub cannot be used for testing of Bpm messages.
+3. UT stub cannot be used for testing of db calls.
+4. UT stub cannot be used for negative testing.
+
+
+/********************EOF************************/
+
+
+

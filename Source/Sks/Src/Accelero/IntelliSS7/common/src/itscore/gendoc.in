@@ -1,0 +1,7 @@
+../../include/its.h ./its.c ./its_error.c
+../../include/its++.h ./its++.cpp
+../../include/its_app.h ./its_app.c
+../../include/its_mutex.h ./its_mutex++.cpp ./platforms/WIN32/its_mutex.c
+../../include/its_trace.h ./its_trace++.cpp ./its_trace.c
+../../include/its_object.h ./its_object.c ./its_features.c
+../../include/its_callback.h ./its_callback.c

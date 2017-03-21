@@ -1,0 +1,104 @@
+  Running IntelliNet ISUP server
+  -------------------------------------------------
+
+1) Configuring the ISUP server configuration(XML) file.
+
+   a) Before running ISUP server you must have to configure the XML file.
+      ISUP server uses xml for storing configuration information.
+      It reads config information from this file at time of
+      initialization.
+
+   b) Type cd ./etc (change directory to the ./etc) this directory
+      contains config files required to run ISUP server.
+                                               
+
+   c) IntelliNet provides sample XML configuration file. 
+      Open the file Server.xml and configure the point codes 
+      and route information.
+
+   d) Configuring Iterative Server Socket:
+      -----------------------------------
+          Iterative server socket accepts multiple connection request
+      request from the client application. Configure Ipaddress 
+      and the port number of the local host machine of the server. 
+      It is this ipaddress and the port number user has to configure
+      while running the ISUP Client application.
+
+NOTE: These IP address and port number will be used by client
+      applications to connect to the server.
+
+   e) Configuring SCTP border transport :
+      ----------------------------------
+         SCTP Border transport will have modifier value as SCTP . 
+      Configure the ipaddress and port of the local machine in that 
+      section. User has to associate the ASP with SG by specifying the 
+      transport name in Associate value field. In this associated 
+      transport specify ipaddress and the port number of the SG that 
+      is configured. 
+          
+NOTE:    If you do not want change the default routing config 
+         The default file is configured for LOCAL PC 0x10
+         REMOTE PC  0x15 and LinkSet 1 and Link code 0 and
+         routing key is 0x01.
+         This information useful to configure other Node.
+
+    f) Configuring ISUP Destination :
+       ----------------------------
+       User have to configure ISUP Destination section in the isupServer.xml
+       file. User has to configure variant type, destination point code and
+       local point code. To learn more about ISUP config please refer to
+       the IntelliNet ISUP API USER guide.
+
+
+2) Running ISUP server :-
+
+   a) To run ISUP server you must have both these isupServer.xml 
+      and its.lic in etc directory. Please make that your isupServer.xml file
+     is configured properly and you have right license file to
+     run ISUP server. If you have some problem with license file
+     please contact IntelliNet customer support.
+
+   b) All the libraries required for ISUP server will be in 
+      ../lib directory.
+
+NOTE: Please make sure that this lib directory path is included
+      in your LD_LIBRARY_PATH.
+
+   c) Change the directory to ./bin if you are not already there.
+
+NOTE NOTE:
+      To run the ISUP server on SIGTRAN, user must be logged in as "root".
+
+   d) Make sure you have run_ISUP executable in the same directory. 
+      
+     Type  ./run_ISUP and press Enter.
+
+3) Running the Debug client console 
+
+   a) Debug client is located in bin directory.
+   b) Change you directory to bin.
+   c) Type ./DBGConsole -socket and press enter. 
+   d) This will give command prompt >>.
+
+NOTE: To learn more about MML interface for ISUP server through Debug Console
+      please refer to ANSI-ISUP section in IntelliNet MML document.
+
+-----------------------------------------------------------------------
+EXAMPLE 1:
+
+   On the Debug client command prompt type.
+
+EXAMPLE 1:
+
+command: >> ia_get_cics 16 21 133 
+
+Result:  Prints all configured cics for particular destination (point-codes).
+
+command: >> ia_get_timers 
+
+Result:  Prints all Timer values configured.
+
+command: >> ia_get_cic_peg 16 21 133 1
+
+Result:  prints all ISUP CIC pegs for CIC 1.
+----------------------END---------------------------------------------

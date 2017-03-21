@@ -1,0 +1,19 @@
+
+LINKSET Command
+
+SYNOPSIS
+   ls_del <id> 
+
+DESCRIPTION
+   This command is used to delete a linkset
+
+PARAMETERS
+     id            The linkset id (1 - 255) to be deleted
+
+EXAMPLE
+
+>> ls_del 2
+Linket 2 deleted successfully...
+
+NOTE: All the link within the linkset must be deleted first.
+

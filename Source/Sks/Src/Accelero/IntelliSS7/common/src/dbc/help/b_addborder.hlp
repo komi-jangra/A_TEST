@@ -1,0 +1,23 @@
+
+
+ENGINE Command
+
+SYNOPSIS
+    b_addborder <name> <internode> 
+
+
+DESCRIPTION
+    This command adds a border transport to a Accelero node.
+    The b_settype, b_setfamily, and b_setmods commands must
+    be executed before this command.  Optionally, the b_setspecs,
+    b_setcallbacks, and b_addlink commands may also be performed
+    before this command.
+
+PARAMETERS
+    <name>                Test Name
+    <internode>           yes|no
+
+
+EXAMPLE
+
+    b_addborder New-Transport-27 no

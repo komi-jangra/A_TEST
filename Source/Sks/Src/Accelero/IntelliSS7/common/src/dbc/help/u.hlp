@@ -1,0 +1,16 @@
+
+Sigtran UAL (SUA / M3UA) :
+    u_get_gen_cfg         UAL Get General Config
+    u_set_gen_cfg         UAL Set General Config
+    u_asptbl              UAL View ASP Table
+    u_astbl               UAL View AS Table
+    u_add_rkey            UAL Add Routing Key
+    u_aspup               UAL Send ASP UP
+    u_aspdown             UAL Send ASP DOWN
+    u_aspactive           UAL Send ASP ACTIVE
+    u_aspinactive         UAL Send ASP INACTIVE
+    u_reg_req             UAL Send Registration Request
+    u_dereg_req           UAL Send Deregistration Request
+    u_get_gen_peg         UAL Get Peg 
+    u_clr_gen_peg         UAL Clr Peg 
+For details about any command use "help <command name>"

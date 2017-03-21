@@ -1,0 +1,30 @@
+include ../../../../Csapp/Util/make.opt
+ifeq ($(BPM_ENABLE), 1)
+USERLIBRARIES = $(LFLAGS) $(LIBS) -linst-DB -lmutex
+else
+USERLIBRARIES = $(LFLAGS) $(LIBS) -linst-DB -lmutex -lbpmget
+endif
+
+
+COMP_FLAG = -DXUSE_SIGNAL_NUMBERS -D__C_APPL $(CFLAGS)# -DCPLUSPLUS
+
+HDRFILES = -I../../../../../Inc/Sys/ \
+           -I../../../../../Inc/Ipc/ \
+           -I../../../../../Inc/Dbs/ \
+           -I../../../../../Inc/Csapp/ \
+           -I../../../../../Inc/Oam/ \
+           -I../../../../../Inc/Oams/ \
+           -I../../../../../Inc/Bpm/ \
+           -I../../../Inc/ \
+           -I../Inc/
+
+
+
+USERTARGET = System_CCUH_env$(sctOEXTENSION)
+sctUSERDEFS = -g $(COMP_FLAG) $(HDRFILES)
+
+System_CCUH_env$(sctOEXTENSION): System_CCUH_env.c System_CCUH.ifc
+	$(sctCC) $(sctCPPFLAGS) $(sctCCFLAGS) -UTAU_MODEL  $(sctIFDEF) System_CCUH_env.c -o System_CCUH_env$(sctOEXTENSION)
+
+clean_user_objs:
+	$(sctRM) $(USERTARGET)

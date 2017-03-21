@@ -1,0 +1,18 @@
+
+ITU ISUP Command
+
+SYNOPSIS
+    ii_add_variant <variant type> 
+
+DESCRIPTION
+    This command loads the given ITU ISUP variant feature dynamically.
+
+PARAMETERS
+    variant type    ISUP ITU Variant Type.
+                    Supported Types:
+                             "ITU_GENERIC_93"
+                             "ITU_ISUP_97"
+
+EXAMPLE
+>> ii_add_variant ITU_ISUP_97 
+ *** Added Variant Successfully ***

@@ -1,0 +1,28 @@
+
+ANSI SCCP Command
+
+SYNOPSIS
+    sa_get_gen_cfg
+
+DESCRIPTION
+    This command displays ANSI SCCP general configuration. This include SCCP 
+    Alarm Level and SCCP Trace Level. Alarm level controls SCCP alarms sent to 
+    Accelero application. Trace level controls generation of SCCP execution traces.
+
+PARAMETERS
+    None.
+
+EXAMPLE
+    >> sa_get_gen_cfg
+    *********** SCCP General Config *************
+        Alarm Level = CRITICAL
+        SCCP Trace -
+            Debug     =  stdout
+            Critical  = 
+            Warning   = 
+            Error     = 
+            Event     =
+    *********** End of SCCP General Config *************
+
+
+

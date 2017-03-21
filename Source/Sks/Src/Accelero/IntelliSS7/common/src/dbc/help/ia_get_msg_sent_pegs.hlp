@@ -1,0 +1,60 @@
+
+ANSI ISUP Command
+
+SYNOPSIS
+ia_get_msg_sent_pegs <opc> <dpc> <sio>
+
+DESCRIPTION
+  Displays the Message Sent Pegs
+
+PARAMETERS
+
+dpc     Destination point code.
+opc     Origination point code.
+sio     Service information octet.
+
+EXAMPLE
+
+>> ia_get_msg_sent_pegs 16 21 133
+
+     Peg Name                             Peg Count 
+     --------                             --------
+
+PEG_ISUP_IAM_SENT_TO_REMOTE                  0
+PEG_ISUP_ACM_SENT_TO_REMOTE                  0
+PEG_ISUP_ANM_SENT_TO_REMOTE                  0
+PEG_ISUP_REL_SENT_TO_REMOTE                  0
+PEG_ISUP_RLC_SENT_TO_REMOTE                  0
+PEG_ISUP_BLO_SENT_TO_REMOTE                  0
+PEG_ISUP_UBL_SENT_TO_REMOTE                  0
+PEG_ISUP_BLA_SENT_TO_REMOTE                  0
+PEG_ISUP_CPG_SENT_TO_REMOTE                  0
+PEG_ISUP_CGB_SENT_TO_REMOTE                  0
+PEG_ISUP_CGBA_SENT_TO_REMOTE                 0
+PEG_ISUP_CQM_SENT_TO_REMOTE                  0
+PEG_ISUP_CQR_SENT_TO_REMOTE                  0
+PEG_ISUP_GRS_SENT_TO_REMOTE                  0
+PEG_ISUP_GRA_SENT_TO_REMOTE                  0
+PEG_ISUP_CGU_SENT_TO_REMOTE                  0
+PEG_ISUP_CGUA_SENT_TO_REMOTE                 0
+PEG_ISUP_CRG_SENT_TO_REMOTE                  0
+PEG_ISUP_CFN_SENT_TO_REMOTE                  0
+PEG_ISUP_COT_SENT_TO_REMOTE                  0
+PEG_ISUP_CCR_SENT_TO_REMOTE                  0
+PEG_ISUP_FOT_SENT_TO_REMOTE                  0
+PEG_ISUP_INF_SENT_TO_REMOTE                  0
+PEG_ISUP_INR_SENT_TO_REMOTE                  0
+PEG_ISUP_LPA_SENT_TO_REMOTE                  0
+PEG_ISUP_PAM_SENT_TO_REMOTE                  0
+PEG_ISUP_RSC_SENT_TO_REMOTE                  0
+PEG_ISUP_RES_SENT_TO_REMOTE                  0
+PEG_ISUP_SUS_SENT_TO_REMOTE                  0
+PEG_ISUP_UBA_SENT_TO_REMOTE                  0
+PEG_ISUP_UCIC_SENT_TO_REMOTE                 0
+PEG_ISUP_CRM_SENT_TO_REMOTE                  0
+PEG_ISUP_CRA_SENT_TO_REMOTE                  0
+PEG_ISUP_CVR_SENT_TO_REMOTE                  0
+PEG_ISUP_CVT_SENT_TO_REMOTE                  0
+PEG_ISUP_EXM_SENT_TO_REMOTE                  0
+PEG_ISUP_FAC_SENT_TO_REMOTE                  0
+

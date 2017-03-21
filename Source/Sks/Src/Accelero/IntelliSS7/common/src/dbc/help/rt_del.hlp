@@ -1,0 +1,102 @@
+
+ROUTE Command
+
+SYNOPSIS
+    rt_del <direction> <family> <linkSet> <style> [style parameters]
+
+DESCRIPTION
+   This command deletes a route entry dynamically to the routing
+   subsystem.
+
+PARAMETERS
+    direction  
+        values are: <localRoute | remoteRoute>
+
+        -  localRoute: Local routing handles messages to be routed to 
+                       various mtp3 user parts (SCCP, ISUP) or TCAP.
+
+        - remoteRoute: Route entry for external routing to the network.
+                       a remoteRoute is commonly referred a "destination".
+      
+
+    family
+        values are: <ITU | ANSI | CHINA >
+
+ 
+    linkset 
+        The linkset id via which the node reaches the destination.
+        The specified linkset must be already configured.
+        NOTE: For localRoute, a default internal linkSet id (0) is 
+              specified.
+          
+
+    style
+        one of these values must be specified:
+            - dpc-ni
+            - dpc-sio
+            - dpc-sio-ssn
+            - dpc-sio-ssn-range
+            - dpc-sio-cic
+            - dpc-sio-cic-range
+
+            - dpc-opc-ni
+            - dpc-opc-sio
+            - dpc-opc-sio-ssn
+            - dpc-opc-sio-ssn-range
+            - dpc-opc-sio-cic
+            - dpc-opc-sio-cic-range
+            
+   style parameters 
+       this parameter specifies a set of values that match the 
+       corresponding fields selected for the style parameter.
+              
+
+NOTE: Network Indicator (NI) values are: 
+                  0x00 : International
+                  0x40 : International Reserved 
+                  0x80 : National
+                  0xC0 : National Spare 
+
+      Service Indicator Octet (SIO) is a combination of
+      the NI and SF (Service Field)
+            0000 0000  = SIO
+            (NI) (SF)
+
+      common SF values are:
+             0x00 :   MTP3 SNMM messages
+             0x01 :   MTP3 SLT REG
+             0x02 :   MTP3 SLT SPEC
+             0x03 :   SCCP
+             0x04 :   TUP
+             0x05 :   ISUP
+             0x09 :   B-ISUP
+
+NOTE: the NI and SIO parameter must be specified in decimal
+
+EXAMPLE
+    >> rt_del remoteRoute ITU 2 dpc-ni 6734 00  
+*********** Deleting a Route *************
+         direction:  remoteRoute 
+         family:     ITU 
+         linkSet:    2 
+         style:      dpc-ni 
+         parameters: 6734 00 
+
+
+   >> rt_del remoteRoute ITU 2 dpc-sio-cic-range 8547 05 1 75 
+*********** Deleting a Route *************
+         direction:  remoteRoute 
+         family:     ITU 
+         linkSet:    3 
+         style:      dpc-sio-cic-range 
+         parameters: 8547 05 1 75
+
+
+>> rt_del localRoute ITU 0 dpc-sio-ssn 3224 131 6 
+*********** Deleting a Route *************
+         direction:  localRoute 
+         family:     ITU 
+         linkSet:    0 
+         style:      dpc-sio-ssn 
+         parameters: 3224 131 6 
+

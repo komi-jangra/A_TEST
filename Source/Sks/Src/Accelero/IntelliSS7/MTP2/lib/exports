@@ -1,0 +1,4 @@
+release		c	ansi	libANSI-MTP2.a		ANSI-MTP2.lib
+debug		c	ansi	libANSI-MTP2D.a		ANSI-MTP2D.lib
+release		c	itu	libCCITT-MTP2.a		CCITT-MTP2.lib
+debug		c	itu	libCCITT-MTP2D.a	CCITT-MTP2D.lib

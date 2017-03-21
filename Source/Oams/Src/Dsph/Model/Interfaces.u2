@@ -1,0 +1,1075 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<u2 OMVersion="3.4" StorageVersion="4" ToolVersion="3.0.0.0.2032" xmlns="http://www.telelogic.com/tau">
+<Resource Guid="*ItEEEvTLEEEvtuc5LESm2EE">
+<cHiddenStereotypeInstance>
+<InstanceExpr Guid="Iy3EEEumIEEE*-bnDLESm2EE">
+<rInstanceOf R="uid:@Predefined@modelDependency"/>
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="urn:u2:etc/TTDFileModel.u2">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="strUri">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+<InstanceExpr Guid="Sy3EEEumIEEE*-bnDLESm2EE">
+<rInstanceOf R="uid:@Predefined@modelDependency"/>
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="SysInclude.u2">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="strUri">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+<InstanceExpr Guid="Ay3EEEumIEEE*-bnDLESm2EE">
+<rInstanceOf R="uid:@Predefined@modelDependency"/>
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="urn:u2:etc/TTDPredefinedStereotypes.u2">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="strUri">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+<InstanceExpr Guid="ly3EEEumIEEE*-bnDLESm2EE">
+<rInstanceOf R="uid:@Predefined@modelDependency"/>
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="urn:u2:etc/LineStyle.u2">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="strUri">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cHiddenStereotypeInstance>
+<rRoot R="uid:CJAEEEWtlEEEEqJb5LESm2EE"/>
+</Resource>
+<Package Guid="CJAEEEWtlEEEEqJb5LESm2EE" Name="Interfaces">
+<cDiagram>
+<ClassDiagram Guid="GIAEEEOeiEEE3oKb5LESm2EE" Name="InterfaceDiag" Size="4052 5468">
+<cHiddenStereotypeInstance>
+<InstanceExpr Guid="JIAEEEOeiEEE3oKb5LESm2EE">
+<rInstanceOf R="uid:@TTDLineStyles@diagramAutosizing"/>
+</InstanceExpr>
+<InstanceExpr Guid="KIAEEEOeiEEE3oKb5LESm2EE">
+<rInstanceOf R="uid:@TTDLineStyles@symbolColor"/>
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="16773875">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="color">
+<rDefinition R="uid:@TTDLineStyles@symbolColor@color"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+<InstanceExpr Guid="TBAEEEOeiEEE9oKb5LESm2EE">
+<rInstanceOf R="uid:@TTDLineStyles@presentationFont"/>
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="10">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="points">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@points"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="Arial">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="name">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@name"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cHiddenStereotypeInstance>
+<cDiagramElement>
+<FrameSymbol Guid="HIAEEEOeiEEE3oKb5LESm2EE" Position="100 100" Size="3840 5240">
+</FrameSymbol>
+<InterfaceSymbol Guid="7BAEEEOeiEEEfoKb5LESm2EE" Position="160 380" Size="1140 440" Autosize="true" Text="ToCFG">
+<rDefinition R="uid:AKiEEETwlEEErEKb5LESm2EE"/>
+<cOperationLabel>
+<OperationLabel Guid="niHEEEg-lEEE8wKd5LLOEm9V" Text="signal OAMS_DSPH_CFG_DSP_LOCK_RESP(I_PVoid,I_U16)">
+<rDefinition R="uid:heHEEEg-lEEECxKd5LLOEm9V"/>
+</OperationLabel>
+<OperationLabel Guid="vCHEEEg-lEEEXxKd5LLOEm9V" Text="signal OAMS_DSPH_CFG_DSP_UNLOCK_RESP(I_PVoid,I_U16)">
+<rDefinition R="uid:pCHEEEg-lEEEbxKd5LLOEm9V"/>
+</OperationLabel>
+<OperationLabel Guid="6CHEEEg-lEEEbxKd5LLOEm9V" Text="signal OAMS_DSPH_CFG_DSP_RESET_RESP(I_PVoid,I_U16)">
+<rDefinition R="uid:1DHEEEg-lEEE9xKd5LLOEm9V"/>
+</OperationLabel>
+<OperationLabel Guid="HDHEEEg-lEEE9xKd5LLOEm9V" Text="signal OAMS_DSPH_CFG_DSP_INIT_TRAU_SUCCESS(I_PVoid,I_U16)">
+<rDefinition R="uid:wDHEEEg-lEEEhxKd5LLOEm9V"/>
+</OperationLabel>
+<OperationLabel Guid="sDHEEEg-lEEEhxKd5LLOEm9V" Text="signal OAMS_DSPH_CFG_DSP_INIT_TRAU_FAIL(I_PVoid,I_U16)">
+<rDefinition R="uid:W0HEEEg-lEEEkxKd5LLOEm9V"/>
+</OperationLabel>
+<OperationLabel Guid="VZTLEEHUiEEEgNJ95LLOEm9V" Text="signal OAMS_DSPH_CFG_ALARM_IND(I_PVoid,I_U16)">
+<rDefinition R="uid:maTLEEHUiEEEwNJ95LLOEm9V"/>
+</OperationLabel>
+</cOperationLabel>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="ACAEEEOeiEEEhoKb5LESm2EE" Position="1580 300" Size="980 560" Autosize="true" Text="FromCFG">
+<rDefinition R="uid:kTiEEETwlEEEELKb5LESm2EE"/>
+<cOperationLabel>
+<OperationLabel Guid="jgvEEEOeiEEEAsKb5LESm2EE" Text="signal OAMS_CFG_DSPH_DSP_AVAIL_STATUS(I_PVoid)">
+<rDefinition R="uid:yhvEEEOeiEEEHsKb5LESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="W8GEEEg-lEEEHsKd5LLOEm9V" Text="signal OAMS_CFG_DSPH_DSP_BOOT_INFO(I_PVoid)">
+<rDefinition R="uid:t8GEEEg-lEEEJsKd5LLOEm9V"/>
+</OperationLabel>
+<OperationLabel Guid="JxGEEEg-lEEEitKd5LLOEm9V" Text="signal OAMS_CFG_DSPH_DSP_DOWN_INFO(I_PVoid)">
+<rDefinition R="uid:uxGEEEg-lEEENtKd5LLOEm9V"/>
+</OperationLabel>
+<OperationLabel Guid="3-GEEEg-lEEEntKd5LLOEm9V" Text="signal OAMS_CFG_DSPH_DSP_LOCK_REQ(I_PVoid)">
+<rDefinition R="uid:j-GEEEg-lEEEptKd5LLOEm9V"/>
+</OperationLabel>
+<OperationLabel Guid="i*GEEEg-lEEEeuKd5LLOEm9V" Text="signal OAMS_CFG_DSPH_DSP_UNLOCK_REQ(I_PVoid)">
+<rDefinition R="uid:t*GEEEg-lEEEGuKd5LLOEm9V"/>
+</OperationLabel>
+<OperationLabel Guid="KLHEEEg-lEEEl8Kd5LLOEm9V" Text="signal OAMS_CFG_DSPH_DSP_RESET_REQ(I_PVoid)">
+<rDefinition R="uid:8LHEEEg-lEEE08Kd5LLOEm9V"/>
+</OperationLabel>
+<OperationLabel Guid="NVHEEEg-lEEEh8Kd5LLOEm9V" Text="signal OAMS_CFG_DSPH_BSS_ADMINSTATE_IND(I_PVoid)">
+<rDefinition R="uid:yVHEEEg-lEEEn8Kd5LLOEm9V"/>
+</OperationLabel>
+<OperationLabel Guid="vZzEEEg2SEEErJZk5LESm2EE" Text="signal OAMS_CFG_DSPH_RESET_FAIL_INFO(I_PVoid)">
+<rDefinition R="uid:DazEEEg2SEEEIKZk5LESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="BdQEEEY8VEEER7HIGLESm2EE" Text="signal OAMS_CFG_DSPH_RTP_DSP_BOOT_INFO(I_PVoid)">
+<rDefinition R="uid:ymREEEY8VEEEk6HIGLESm2EE"/>
+</OperationLabel>
+</cOperationLabel>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="Aj*EEEOeiEEEPBwb5LLOEm9V" Position="320 1000" Size="780 220" Autosize="true" Text="ToEnv">
+<rDefinition R="uid:lj*EEEOeiEEEPBwb5LLOEm9V"/>
+<cOperationLabel>
+<OperationLabel Guid="i7ALEEOeiEEEzBwb5LLOEm9V" Text="signal OAMS_ADD_TAU_INST_IN_INSTMAP ()">
+<rDefinition R="uid:X7ALEEOeiEEEICwb5LLOEm9V"/>
+</OperationLabel>
+</cOperationLabel>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="q9ALEEOeiEEEqBwb5LLOEm9V" Position="2460 900" Size="1060 400" Autosize="true" Text="FromEnv">
+<rDefinition R="uid:r9ALEEOeiEEEqBwb5LLOEm9V"/>
+<cOperationLabel>
+<OperationLabel Guid="tPNLEEOeiEEE6Cwb5LLOEm9V" Text="signal CRE_INST_REQ()">
+<rDefinition R="uid:eQNLEEOeiEEEqCwb5LLOEm9V"/>
+</OperationLabel>
+<OperationLabel Guid="T9CEEE8ISEEENS3f5LLOEm9V" Text="signal OAMS_MAPENTDSP_DSPH_DSP_STATUS_ACK(I_PVoid)">
+<rDefinition R="uid:KfCEEE8ISEEEpi3f5LLOEm9V"/>
+</OperationLabel>
+<OperationLabel Guid="4wCEEEW*SEEEx37HBLLOEm9V" Text="signal STATE_CHANGE_ACTIVE_TO_INSERVICE ()">
+<rDefinition R="uid:WyCEEEW*SEEEDJ7HBLLOEm9V"/>
+</OperationLabel>
+<OperationLabel Guid="GjcEEE-OLEEEnPp6GLESm2EE" Text="signal DSPH_INT_STANDBY_TO_AIP (I_U8, I_U8, I_U32)">
+<rDefinition R="uid:MkcEEE-OLEEEDQp6GLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="oAtLEEm1AEEESNPmGLESm2EE">
+</OperationLabel>
+</cOperationLabel>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="cEELEE3hiEEE7qxb5LLOEm9V" Position="1840 1420" Size="580 260" Autosize="true" Text="SysToDsph">
+<rDefinition R="uid:4w8EEE3hiEEEVqxb5LLOEm9V"/>
+<cOperationLabel>
+<OperationLabel Guid="ELELEE3hiEEEkqxb5LLOEm9V" Text="signal ATTACH_INST(I_PVoid)">
+<rDefinition R="uid:JVELEE3hiEEEzqxb5LLOEm9V"/>
+</OperationLabel>
+<OperationLabel Guid="evTEEEW*SEEES4jHBLLOEm9V" Text="signal STATE_CHANGE_EVENT()">
+<rDefinition R="uid:aeTEEEW*SEEEP4jHBLLOEm9V"/>
+</OperationLabel>
+</cOperationLabel>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="VyHEEEg-lEEE4*Kd5LLOEm9V" Position="480 1880" Size="1300 520" Autosize="true" Text="ToGRHM">
+<rDefinition R="uid:9sHEEEg-lEEEB*Kd5LLOEm9V"/>
+<cOperationLabel>
+<OperationLabel Guid="TX3EEEg-lEEEyE1d5LLOEm9V" Text="signal OAMS_DSPH_GRHM_ADD_TRAU_RESOURCE(I_PVoid, I_U16)">
+<rDefinition R="uid:0a3EEEg-lEEE4L1d5LLOEm9V"/>
+</OperationLabel>
+<OperationLabel Guid="cbdEEEY8VEEEHJJIGLESm2EE" Text="signal OAMS_DSPH_GRHM_ADD_RTP_TRAU_RESOURCE(I_PVoid, I_U16)">
+<rDefinition R="uid:*Q9EEEY8VEEE9JJIGLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="jc3EEEg-lEEEaL1d5LLOEm9V" Text="signal OAMS_DSPH_GRHM_DEL_TRAU_RESOURCE( I_PVoid, I_U16)">
+<rDefinition R="uid:7d3EEEg-lEEEjL1d5LLOEm9V"/>
+</OperationLabel>
+<OperationLabel Guid="JjGEEE7clEEEakYAGLESm2EE" Text="signal OAMS_DSPH_GRHM_DEL_RTP_TRAU_RESOURCE( I_PVoid, I_U16)">
+<rDefinition R="uid:EoGEEE7clEEExkYAGLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="YQmEEEWQVEEEhJzNBLESm2EE" Text="signal OAMS_DSPH_GRHM_TRAU_CHAN_CONF_FAIL( I_PVoid, I_U16)">
+<rDefinition R="uid:B4mEEEWQVEEEtJzNBLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="XUmEEEWQVEEE9KzNBLESm2EE" Text="signal OAMS_DSPH_GRHM_TRAU_CHAN_DECONF_RESP(I_PVoid, I_U16)">
+<rDefinition R="uid:W2mEEEWQVEEEmKzNBLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="y-ZEEESEVEEESNKVGLESm2EE" Text="signal OAMS_DSPH_GRHM_RTP_TRAU_CHAN_CONF_FAIL(I_PVoid, I_U16)">
+<rDefinition R="uid:0yaEEESEVEEEcNKVGLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="SrgEEEsDIEEEGGPHGLESm2EE" Text="signal OAMS_DSPH_GRHM_RTP_TRAU_CHAN_DECONF_RESP(I_PVoid, I_U16)">
+<rDefinition R="uid:JmhEEEsDIEEEhGPHGLESm2EE"/>
+</OperationLabel>
+</cOperationLabel>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="sCLLEEngIEEEgwdd5LLOEm9V" Position="560 2440" Size="1180 440" Autosize="true" Text="ToTSM">
+<rDefinition R="uid:IVLLEEngIEEEVwdd5LLOEm9V"/>
+<cOperationLabel>
+<OperationLabel Guid="I1LLEEngIEEEixdd5LLOEm9V" Text="signal OAMS_DSPH_TSM_DSP_IP_INFO_TRIGGER(I_PVoid, I_U16)">
+<rDefinition R="uid:iNLLEEngIEEEMxdd5LLOEm9V"/>
+</OperationLabel>
+<OperationLabel Guid="7PLLEEngIEEEZxdd5LLOEm9V" Text="signal OAMS_DSPH_TSM_DSP_INIT(I_PVoid, I_U16)">
+<rDefinition R="uid:cRLLEEngIEEEqxdd5LLOEm9V"/>
+</OperationLabel>
+<OperationLabel Guid="hTLLEEngIEEEEydd5LLOEm9V" Text="signal OAMS_DSPH_TSM_TRAU_START(I_PVoid, I_U16)">
+<rDefinition R="uid:OULLEEngIEEElydd5LLOEm9V"/>
+</OperationLabel>
+<OperationLabel Guid="Y-tEEEWQVEEE75VOBLESm2EE" Text="signal OAMS_DSPH_TSM_TRAU_CHAN_CONF_REQ(I_PVoid, I_U16)">
+<rDefinition R="uid:H*tEEEWQVEEEp5VOBLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="D*tEEEWQVEEEp5VOBLESm2EE" Text="signal OAMS_DSPH_TSM_TRAU_CHAN_DECONF_REQ( I_PVoid, I_U16)">
+<rDefinition R="uid:HEuEEEWQVEEE-5VOBLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="33dEEE-3VEEE52AGGLESm2EE">
+</OperationLabel>
+</cOperationLabel>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="D0LLEEngIEEEqwdd5LLOEm9V" Position="2240 2360" Size="1080 360" Autosize="true" Text="FromTSM">
+<rDefinition R="uid:6iLLEEngIEEEQwdd5LLOEm9V"/>
+<cOperationLabel>
+<OperationLabel Guid="9XLLEEngIEEEcydd5LLOEm9V" Text="signal OAMS_TSM_DSPH_DSP_INIT_ACK(I_PVoid)">
+<rDefinition R="uid:cYLLEEngIEEEwydd5LLOEm9V"/>
+</OperationLabel>
+<OperationLabel Guid="kaLLEEngIEEEzydd5LLOEm9V" Text="signal OAMS_TSM_DSPH_TRAU_START_ACK(I_PVoid)">
+<rDefinition R="uid:ubLLEEngIEEEHzdd5LLOEm9V"/>
+</OperationLabel>
+<OperationLabel Guid="TluEEEWQVEEEjBVOBLESm2EE" Text="signal OAMS_TSM_DSPH_TRAU_CHAN_CONF_RESP(I_PVoid)">
+<rDefinition R="uid:yluEEEWQVEEE6BVOBLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="8luEEEWQVEEE6BVOBLESm2EE" Text="signal OAMS_TSM_DSPH_TRAU_CHAN_DECONF_RESP(I_PVoid)">
+<rDefinition R="uid:niuEEEWQVEEE4CVOBLESm2EE"/>
+</OperationLabel>
+</cOperationLabel>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="4AfEEEn-EEEEcIvf5LLOEm9V" Position="720 2940" Size="1000 220" Autosize="true" Text="ToOIL">
+<rDefinition R="uid:jx9EEEn-EEEE8Vvf5LLOEm9V"/>
+<cOperationLabel>
+<OperationLabel Guid="yefEEEn-EEEEa0vf5LLOEm9V" Text="signal OAMS_DSPH_OIL_DSP_RESET_REQ(I_PVoid, I_U16)">
+<rDefinition R="uid:-BfEEEn-EEEEs0vf5LLOEm9V"/>
+</OperationLabel>
+</cOperationLabel>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="rifEEEn-EEEEpIvf5LLOEm9V" Position="2440 2940" Size="900 220" Autosize="true" Text="FromOIL">
+<rDefinition R="uid:XEfEEEn-EEEEiIvf5LLOEm9V"/>
+<cOperationLabel>
+<OperationLabel Guid="W0fEEEn-EEEE-0vf5LLOEm9V" Text="signal OAMS_OIL_DSPH_DSP_RESET_RESP(I_PVoid)">
+<rDefinition R="uid:YFfEEEn-EEEEFFvf5LLOEm9V"/>
+</OperationLabel>
+</cOperationLabel>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="FZmEEEWQVEEEv1zNBLESm2EE" Position="140 1360" Size="1240 440" Autosize="true" Text="FromGRHM">
+<rDefinition R="uid:GZmEEEWQVEEEv1zNBLESm2EE"/>
+<cOperationLabel>
+<OperationLabel Guid="hdmEEEWQVEEEAMzNBLESm2EE" Text="signal CSAPP_GRHM_DSPH_TRAU_CHAN_CONF_REQ(I_PVoid)">
+<rDefinition R="uid:e9mEEEWQVEEEeMzNBLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="nTgEEEsnSEEEpKbLGLESm2EE" Text="signal CSAPP_GRHM_DSPH_RTP_TRAU_CHAN_CONF_REQ(I_PVoid)">
+<rDefinition R="uid:ctgEEEsnSEEEa1bLGLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="UUkSEEAWAEEEMk8bBLESm2EE" Text="signal CSAPP_GRHM_DSPH_ADD_TRAU_RESOURCE_RESP(I_PVoid)">
+<rDefinition R="uid:Y2kSEEAWAEEEZk8bBLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="RhmEEEWQVEEEqMzNBLESm2EE" Text="signal CSAPP_GRHM_DSPH_TRAU_CHAN_DECONF_REQ(I_PVoid)">
+<rDefinition R="uid:A7mEEEWQVEEEyMzNBLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="tEhEEESEVEEEDtDIGLESm2EE" Text="signal CSAPP_GRHM_DSPH_RTP_TRAU_CHAN_DECONF_REQ(I_PVoid)">
+<rDefinition R="uid:OmhEEESEVEEEZtDIGLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="g3vLEEY8VEEEFEcIGLESm2EE" Text="signal CSAPP_GRHM_DSPH_ADD_RTP_TRAU_RESOURCE_RESP(I_PVoid)">
+<rDefinition R="uid:2V5LEEY8VEEEoEcIGLESm2EE"/>
+</OperationLabel>
+</cOperationLabel>
+<cAttributeLabel>
+<AttributeLabel Guid="0dmEEEWQVEEE31zNBLESm2EE">
+</AttributeLabel>
+</cAttributeLabel>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="7MxEEEWQVEEEF3VOBLESm2EE" Position="2520 3280" Size="1020 220" Autosize="true" Text="ToTRXH">
+<rDefinition R="uid:jMxEEEWQVEEEF3VOBLESm2EE"/>
+<cOperationLabel>
+<OperationLabel Guid="fNxEEEWQVEEEK3VOBLESm2EE" Text="signal OAMS_DSPH_TRXH_DSP_STATUS_IND(I_PVoid,I_U16)">
+<rDefinition R="uid:GPxEEEWQVEEEj3VOBLESm2EE"/>
+</OperationLabel>
+</cOperationLabel>
+</InterfaceSymbol>
+</cDiagramElement>
+</ClassDiagram>
+</cDiagram>
+<cOwnedMember>
+<Interface Guid="AKiEEETwlEEErEKb5LESm2EE" Name="ToCFG">
+<cOwnedMember>
+<Signal Guid="heHEEEg-lEEECxKd5LLOEm9V" Name="OAMS_DSPH_CFG_DSP_LOCK_RESP">
+<cParameter>
+<Parameter Guid="qFHEEEg-lEEE6xKd5LLOEm9V">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:NIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="rFHEEEg-lEEE6xKd5LLOEm9V">
+<rType>
+<Ident Name="I_U16">
+<rDefinition R="uid:tIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="pCHEEEg-lEEEbxKd5LLOEm9V" Name="OAMS_DSPH_CFG_DSP_UNLOCK_RESP">
+<cParameter>
+<Parameter Guid="ZGHEEEg-lEEEyxKd5LLOEm9V">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:NIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="aGHEEEg-lEEEyxKd5LLOEm9V">
+<rType>
+<Ident Name="I_U16">
+<rDefinition R="uid:tIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="1DHEEEg-lEEE9xKd5LLOEm9V" Name="OAMS_DSPH_CFG_DSP_RESET_RESP">
+<cParameter>
+<Parameter Guid="yGHEEEg-lEEEiyKd5LLOEm9V">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:NIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="zGHEEEg-lEEEiyKd5LLOEm9V">
+<rType>
+<Ident Name="I_U16">
+<rDefinition R="uid:tIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="wDHEEEg-lEEEhxKd5LLOEm9V" Name="OAMS_DSPH_CFG_DSP_INIT_TRAU_SUCCESS">
+<cParameter>
+<Parameter Guid="2onLEELDlEEEcuud5LLOEm9V">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:NIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="WonLEELDlEEEcuud5LLOEm9V">
+<rType>
+<Ident Name="I_U16">
+<rDefinition R="uid:tIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="W0HEEEg-lEEEkxKd5LLOEm9V" Name="OAMS_DSPH_CFG_DSP_INIT_TRAU_FAIL">
+<cParameter>
+<Parameter Guid="SZTLEEHUiEEEgNJ95LLOEm9V">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:NIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="AZTLEEHUiEEEgNJ95LLOEm9V">
+<rType>
+<Ident Name="I_U16">
+<rDefinition R="uid:tIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="maTLEEHUiEEEwNJ95LLOEm9V" Name="OAMS_DSPH_CFG_ALARM_IND">
+<cParameter>
+<Parameter Guid="kaTLEEHUiEEEwNJ95LLOEm9V">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:NIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="6aTLEEHUiEEEwNJ95LLOEm9V">
+<rType>
+<Ident Name="I_U16">
+<rDefinition R="uid:tIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="kTiEEETwlEEEELKb5LESm2EE" Name="FromCFG">
+<cOwnedMember>
+<Signal Guid="yhvEEEOeiEEEHsKb5LESm2EE" Name="OAMS_CFG_DSPH_DSP_AVAIL_STATUS">
+<cParameter>
+<Parameter Guid="Y8GEEEg-lEEEHsKd5LLOEm9V">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:NIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="t8GEEEg-lEEEJsKd5LLOEm9V" Name="OAMS_CFG_DSPH_DSP_BOOT_INFO">
+<cParameter>
+<Parameter Guid="NOREEEY8VEEE26HIGLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:NIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="uxGEEEg-lEEENtKd5LLOEm9V" Name="OAMS_CFG_DSPH_DSP_DOWN_INFO">
+<cParameter>
+<Parameter Guid="K-GEEEg-lEEEntKd5LLOEm9V">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:NIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="j-GEEEg-lEEEptKd5LLOEm9V" Name="OAMS_CFG_DSPH_DSP_LOCK_REQ">
+<cParameter>
+<Parameter Guid="a*GEEEg-lEEEDuKd5LLOEm9V">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:NIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="t*GEEEg-lEEEGuKd5LLOEm9V" Name="OAMS_CFG_DSPH_DSP_UNLOCK_REQ">
+<cParameter>
+<Parameter Guid="MLHEEEg-lEEEl8Kd5LLOEm9V">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:NIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="8LHEEEg-lEEE08Kd5LLOEm9V" Name="OAMS_CFG_DSPH_DSP_RESET_REQ">
+<cParameter>
+<Parameter Guid="PVHEEEg-lEEEh8Kd5LLOEm9V">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:NIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="yVHEEEg-lEEEn8Kd5LLOEm9V" Name="OAMS_CFG_DSPH_BSS_ADMINSTATE_IND">
+<cParameter>
+<Parameter Guid="5ZzEEEg2SEEErJZk5LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:NIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="DazEEEg2SEEEIKZk5LESm2EE" Name="OAMS_CFG_DSPH_RESET_FAIL_INFO">
+<cParameter>
+<Parameter Guid="w*QEEEY8VEEERkHIGLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:NIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="ymREEEY8VEEEk6HIGLESm2EE" Name="OAMS_CFG_DSPH_RTP_DSP_BOOT_INFO">
+<cParameter>
+<Parameter Guid="xmREEEY8VEEEk6HIGLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:NIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="lj*EEEOeiEEEPBwb5LLOEm9V" Name="ToEnv">
+<cOwnedMember>
+<Signal Guid="X7ALEEOeiEEEICwb5LLOEm9V" Name="OAMS_ADD_TAU_INST_IN_INSTMAP">
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="r9ALEEOeiEEEqBwb5LLOEm9V" Name="FromEnv">
+<cOwnedMember>
+<Signal Guid="eQNLEEOeiEEEqCwb5LLOEm9V" Name="CRE_INST_REQ">
+</Signal>
+<Signal Guid="KfCEEE8ISEEEpi3f5LLOEm9V" Name="OAMS_MAPENTDSP_DSPH_DSP_STATUS_ACK">
+<cParameter>
+<Parameter Guid="iyCEEEW*SEEElJ7HBLLOEm9V">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:XXKLEEm1AEEE9VOmGLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="WyCEEEW*SEEEDJ7HBLLOEm9V" Name="STATE_CHANGE_ACTIVE_TO_INSERVICE">
+</Signal>
+<Signal Guid="MkcEEE-OLEEEDQp6GLESm2EE" Name="DSPH_INT_STANDBY_TO_AIP">
+<cParameter>
+<Parameter Guid="DYtLEEm1AEEEGNPmGLESm2EE">
+<rType>
+<Ident Name="I_U8">
+<rDefinition R="uid:*IHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="0YtLEEm1AEEEGNPmGLESm2EE">
+<rType>
+<Ident Name="I_U8">
+<rDefinition R="uid:*IHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="FYtLEEm1AEEEGNPmGLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:6IHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="4w8EEE3hiEEEVqxb5LLOEm9V" Name="SysToDsph">
+<cOwnedMember>
+<Signal Guid="JVELEE3hiEEEzqxb5LLOEm9V" Name="ATTACH_INST">
+<cParameter>
+<Parameter Guid="BvTEEEW*SEEES4jHBLLOEm9V">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:NIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="aeTEEEW*SEEEP4jHBLLOEm9V" Name="STATE_CHANGE_EVENT">
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="9sHEEEg-lEEEB*Kd5LLOEm9V" Name="ToGRHM">
+<cOwnedMember>
+<Signal Guid="0a3EEEg-lEEE4L1d5LLOEm9V" Name="OAMS_DSPH_GRHM_ADD_TRAU_RESOURCE">
+<cParameter>
+<Parameter Guid="VE9EEEY8VEEEOJJIGLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:NIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="IE9EEEY8VEEEOJJIGLESm2EE">
+<rType>
+<Ident Name="I_U16">
+<rDefinition R="uid:tIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="7d3EEEg-lEEEjL1d5LLOEm9V" Name="OAMS_DSPH_GRHM_DEL_TRAU_RESOURCE">
+<cParameter>
+<Parameter Guid="CmGEEE7clEEEmkYAGLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:NIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="DmGEEE7clEEEmkYAGLESm2EE">
+<rType>
+<Ident Name="I_U16">
+<rDefinition R="uid:tIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="B4mEEEWQVEEEtJzNBLESm2EE" Name="OAMS_DSPH_GRHM_TRAU_CHAN_CONF_FAIL">
+<cParameter>
+<Parameter Guid="IbdEEEY8VEEEDJJIGLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:NIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="SbdEEEY8VEEEDJJIGLESm2EE">
+<rType>
+<Ident Name="I_U16">
+<rDefinition R="uid:tIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="W2mEEEWQVEEEmKzNBLESm2EE" Name="OAMS_DSPH_GRHM_TRAU_CHAN_DECONF_RESP">
+<cParameter>
+<Parameter Guid="73hEEEsDIEEEPGPHGLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:XXKLEEm1AEEE9VOmGLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="j3hEEEsDIEEEPGPHGLESm2EE">
+<rType>
+<Ident Name="I_U16">
+<rDefinition R="uid:LYKLEEm1AEEE9VOmGLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="0yaEEESEVEEEcNKVGLESm2EE" Name="OAMS_DSPH_GRHM_RTP_TRAU_CHAN_CONF_FAIL">
+<cParameter>
+<Parameter Guid="lrgEEEsDIEEEGGPHGLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:NIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="irgEEEsDIEEEGGPHGLESm2EE">
+<rType>
+<Ident Name="I_U16">
+<rDefinition R="uid:tIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="*Q9EEEY8VEEE9JJIGLESm2EE" Name="OAMS_DSPH_GRHM_ADD_RTP_TRAU_RESOURCE">
+<cParameter>
+<Parameter Guid="zQ9EEEY8VEEE9JJIGLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:NIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="-Q9EEEY8VEEE9JJIGLESm2EE">
+<rType>
+<Ident Name="I_U16">
+<rDefinition R="uid:tIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="EoGEEE7clEEExkYAGLESm2EE" Name="OAMS_DSPH_GRHM_DEL_RTP_TRAU_RESOURCE">
+<cParameter>
+<Parameter Guid="-nGEEE7clEEExkYAGLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:NIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="*nGEEE7clEEExkYAGLESm2EE">
+<rType>
+<Ident Name="I_U16">
+<rDefinition R="uid:tIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="JmhEEEsDIEEEhGPHGLESm2EE" Name="OAMS_DSPH_GRHM_RTP_TRAU_CHAN_DECONF_RESP">
+<cParameter>
+<Parameter Guid="9QmEEEsDIEEEhNPHGLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:XXKLEEm1AEEE9VOmGLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="fQmEEEsDIEEEhNPHGLESm2EE">
+<rType>
+<Ident Name="I_U16">
+<rDefinition R="uid:LYKLEEm1AEEE9VOmGLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="IVLLEEngIEEEVwdd5LLOEm9V" Name="ToTSM">
+<cOwnedMember>
+<Signal Guid="iNLLEEngIEEEMxdd5LLOEm9V" Name="OAMS_DSPH_TSM_DSP_IP_INFO_TRIGGER">
+<cParameter>
+<Parameter Guid="mztEEEWQVEEEd5VOBLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:NIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="nztEEEWQVEEEd5VOBLESm2EE">
+<rType>
+<Ident Name="I_U16">
+<rDefinition R="uid:tIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="cRLLEEngIEEEqxdd5LLOEm9V" Name="OAMS_DSPH_TSM_DSP_INIT">
+<cParameter>
+<Parameter Guid="V3dEEE-3VEEEv2AGGLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:NIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="I3dEEE-3VEEEv2AGGLESm2EE">
+<rType>
+<Ident Name="I_U16">
+<rDefinition R="uid:tIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="OULLEEngIEEElydd5LLOEm9V" Name="OAMS_DSPH_TSM_TRAU_START">
+<cParameter>
+<Parameter Guid="52dEEE-3VEEE02AGGLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:NIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="B2dEEE-3VEEE02AGGLESm2EE">
+<rType>
+<Ident Name="I_U16">
+<rDefinition R="uid:tIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="H*tEEEWQVEEEp5VOBLESm2EE" Name="OAMS_DSPH_TSM_TRAU_CHAN_CONF_REQ">
+<cParameter>
+<Parameter Guid="xVuEEEWQVEEEDBVOBLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:NIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="yVuEEEWQVEEEDBVOBLESm2EE">
+<rType>
+<Ident Name="I_U16">
+<rDefinition R="uid:tIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="HEuEEEWQVEEE-5VOBLESm2EE" Name="OAMS_DSPH_TSM_TRAU_CHAN_DECONF_REQ">
+<cParameter>
+<Parameter Guid="hS4LEEsnSEEECdwLGLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:NIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="7S4LEEsnSEEECdwLGLESm2EE">
+<rType>
+<Ident Name="I_U16">
+<rDefinition R="uid:tIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="6iLLEEngIEEEQwdd5LLOEm9V" Name="FromTSM">
+<cOwnedMember>
+<Signal Guid="cYLLEEngIEEEwydd5LLOEm9V" Name="OAMS_TSM_DSPH_DSP_INIT_ACK">
+<cParameter>
+<Parameter Guid="5luEEEWQVEEEgBVOBLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:NIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="ubLLEEngIEEEHzdd5LLOEm9V" Name="OAMS_TSM_DSPH_TRAU_START_ACK">
+<cParameter>
+<Parameter Guid="2luEEEWQVEEEjBVOBLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:NIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="yluEEEWQVEEE6BVOBLESm2EE" Name="OAMS_TSM_DSPH_TRAU_CHAN_CONF_RESP">
+<cParameter>
+<Parameter Guid="xeuEEEWQVEEE9CVOBLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:NIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="niuEEEWQVEEE4CVOBLESm2EE" Name="OAMS_TSM_DSPH_TRAU_CHAN_DECONF_RESP">
+<cParameter>
+<Parameter Guid="W98EEEWQVEEEIDVOBLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:NIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="jx9EEEn-EEEE8Vvf5LLOEm9V" Name="ToOIL">
+<cOwnedMember>
+<Signal Guid="-BfEEEn-EEEEs0vf5LLOEm9V" Name="OAMS_DSPH_OIL_DSP_RESET_REQ">
+<cParameter>
+<Parameter Guid="yBfEEEn-EEEEs0vf5LLOEm9V">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:NIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="zBfEEEn-EEEEs0vf5LLOEm9V">
+<rType>
+<Ident Name="I_U16">
+<rDefinition R="uid:tIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="XEfEEEn-EEEEiIvf5LLOEm9V" Name="FromOIL">
+<cOwnedMember>
+<Signal Guid="YFfEEEn-EEEEFFvf5LLOEm9V" Name="OAMS_OIL_DSPH_DSP_RESET_RESP">
+<cParameter>
+<Parameter Guid="viILEETkVEEET-190LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:NIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="GZmEEEWQVEEEv1zNBLESm2EE" Name="FromGRHM">
+<cOwnedMember>
+<Signal Guid="e9mEEEWQVEEEeMzNBLESm2EE" Name="CSAPP_GRHM_DSPH_TRAU_CHAN_CONF_REQ">
+<cParameter>
+<Parameter Guid="pTgEEEsnSEEEpKbLGLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:NIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="A7mEEEWQVEEEyMzNBLESm2EE" Name="CSAPP_GRHM_DSPH_TRAU_CHAN_DECONF_REQ">
+<cParameter>
+<Parameter Guid="aOhEEESEVEEENtDIGLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:NIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="Y2kSEEAWAEEEZk8bBLESm2EE" Name="CSAPP_GRHM_DSPH_ADD_TRAU_RESOURCE_RESP">
+<cParameter>
+<Parameter Guid="bceLEEY8VEEEaEcIGLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:NIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="ctgEEEsnSEEEa1bLGLESm2EE" Name="CSAPP_GRHM_DSPH_RTP_TRAU_CHAN_CONF_REQ">
+<cParameter>
+<Parameter Guid="l5eLEEY8VEEEPEcIGLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:NIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="OmhEEESEVEEEZtDIGLESm2EE" Name="CSAPP_GRHM_DSPH_RTP_TRAU_CHAN_DECONF_REQ">
+<cParameter>
+<Parameter Guid="ikvLEEY8VEEE1EcIGLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:NIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="2V5LEEY8VEEEoEcIGLESm2EE" Name="CSAPP_GRHM_DSPH_ADD_RTP_TRAU_RESOURCE_RESP">
+<cParameter>
+<Parameter Guid="UV5LEEY8VEEEoEcIGLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:NIHEEEkKSEEE-ipQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="jMxEEEWQVEEEF3VOBLESm2EE" Name="ToTRXH">
+<cOwnedMember>
+<Signal Guid="GPxEEEWQVEEEj3VOBLESm2EE" Name="OAMS_DSPH_TRXH_DSP_STATUS_IND">
+<cParameter>
+<Parameter Guid="GTxEEEWQVEEE4JVOBLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:XXKLEEm1AEEE9VOmGLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="HTxEEEWQVEEE4JVOBLESm2EE">
+<rType>
+<Ident Name="I_U16">
+<rDefinition R="uid:LYKLEEm1AEEE9VOmGLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+</cOwnedMember>
+<cStereotypeInstance>
+<InstanceExpr Guid="6klEEEWtlEEENsJb5LESm2EE">
+<rInstanceOf>
+<Ident Name="saveOptions">
+<rDefinition R="uid:@TTDFileModel@saveOptions"/>
+</Ident>
+</rInstanceOf>
+</InstanceExpr>
+</cStereotypeInstance>
+<cClientDependency>
+<Dependency Guid="36MSEE3hiEEEDsyb5LLOEm9V">
+<cStereotypeInstance>
+<InstanceExpr Guid="knMSEE3hiEEE9syb5LLOEm9V">
+<rInstanceOf>
+<Ident Name="access">
+<rDefinition R="uid:@Predefined@access"/>
+</Ident>
+</rInstanceOf>
+</InstanceExpr>
+</cStereotypeInstance>
+<rSupplier>
+<Ident Name="SYSInclude">
+<rDefinition R="uid:K4iEEEynVEEEesWb5LESm2EE"/>
+</Ident>
+</rSupplier>
+</Dependency>
+</cClientDependency>
+</Package>
+</u2>

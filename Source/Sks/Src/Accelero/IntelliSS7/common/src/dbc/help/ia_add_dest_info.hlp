@@ -1,0 +1,28 @@
+
+ANSI ISUP Command
+
+SYNOPSIS
+    ia_add_dest_info <opc> <dpc> <sio> <variant type> <exchange type>
+
+DESCRIPTION
+    This command adds ISUP destination for the given opc, dpc, sio,
+    variant type and exchange type.
+
+PARAMETERS
+    opc             Origination point code.
+    dpc             Destination point code.
+    sio             Service information octet.
+    variant type    ISUP ANSI Variant Type.
+                    Supported Types:
+                             "ANSI_GENERIC_92"
+                             "ANSI_ISUP_95"
+
+    exchange type   ISUP Exchange Type.
+                    Possible Types:
+                             "TYPE_A"
+                             "TYPE_B"
+                             
+
+EXAMPLE
+>> ia_add_dest_info 16 21 133 ANSI_ISUP_95 TYPE_A
+ *** Added Destination Successfully ***

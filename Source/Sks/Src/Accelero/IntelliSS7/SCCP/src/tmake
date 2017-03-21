@@ -1,0 +1,23 @@
+
+VOLUME=$dsmscm
+
+$(VOLUME).sccp.anssccpo : $(VOLUME).sccp.sccpc
+	NMC /in $(VOLUME).sccp.sccpc / $(VOLUME).sccp.anssccpo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1, define ANSI, optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+	ar crv $(VOLUME).lib.libasccp $(VOLUME).sccp.anssccpo
+
+$(VOLUME).sccp.itusccpo : $(VOLUME).sccp.sccpc
+	NMC /in $(VOLUME).sccp.sccpc / $(VOLUME).sccp.itusccpo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  define CCITT, optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+	ar crv $(VOLUME).lib.libisccp $(VOLUME).sccp.itusccpo
+

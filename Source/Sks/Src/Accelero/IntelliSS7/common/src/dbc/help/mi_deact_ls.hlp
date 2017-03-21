@@ -1,0 +1,16 @@
+
+ITU MTP3 Command
+
+SYNOPSIS
+    mi_deact_ls <linkset>
+
+DESCRIPTION
+    To deactivate all links of the specified linkset 
+
+PARAMETERS
+    linkset       the link set which owns the link
+
+EXAMPLE
+    >> mi_deact_ls 1 
+
+    ***Linkset 1 Deactivation initiated***

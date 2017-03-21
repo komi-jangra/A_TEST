@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [ -x $ITS_ROOT/tools/bin/gendoc ]
+then
+	$ITS_ROOT/tools/bin/gendoc SCCP ../doc < gendoc.in > gendoc.out
+fi
+
+exit 0

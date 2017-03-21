@@ -1,0 +1,4 @@
+imal   imal.mak         debug   "imal - Win32 ANSI Debug"
+imal   imal.mak         debug   "imal - Win32 CCITT Debug"
+imal   imal.mak         release "imal - Win32 ANSI Release"
+imal   imal.mak         release "imal - Win32 CCITT Release"

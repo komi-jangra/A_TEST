@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DocViewStructure>
+<TabbedFrame frame_id="0x4555cc48" ntabs="2" active="true" placement="maximized">
+<Position x="-4" y="-23"/>
+</TabbedFrame>
+<Document URL="tlog://&lt;/home/geetanjali/R2.4/CSR2.4/BSC-Development/Source/Oams/Src/CCUH/Model/CCUH.ttp&gt;:u2:EIrEEEsvLEEE*4wV5LESm2EE">
+<Tab frame_ref="0x4555cc48" active="false" index="0" />
+</Document>
+<Document URL="tlog://&lt;/home/geetanjali/R2.4/CSR2.4/BSC-Development/Source/Oams/Src/CCUH/Model/CCUH.ttp&gt;:u2:8r5VEEdaLEEERxwS5LESm2EE">
+<Tab frame_ref="0x4555cc48" active="true" index="1" />
+</Document>
+</DocViewStructure>

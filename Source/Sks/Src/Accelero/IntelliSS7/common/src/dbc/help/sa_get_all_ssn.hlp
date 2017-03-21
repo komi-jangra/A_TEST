@@ -1,0 +1,32 @@
+
+ANSI SCCP Command
+
+SYNOPSIS
+    sa_get_all_ssn
+
+DESCRIPTION
+    This command displays ANSI SCCP subsystem entries. It displays all 
+    dpc-sio-ssn remote routes.
+
+PARAMETERS
+    None.
+
+EXAMPLE
+    >> sa_get_all_ssn
+        Total Entries  <1>
+    ------------------------------
+        pointcode      <1>
+        ni             <0>
+        ssn            <2>
+        linkset        <1>
+        inService      <yes>
+        testOn         <no>
+        hasConcernPC   <no>
+        maxHops        <0>
+        backupStatus   <standalone>
+        backupPC       <0>
+        backupNI       <0>
+        backupSSN      <0>
+        backupSSNState <down>
+
+

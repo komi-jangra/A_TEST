@@ -1,0 +1,93 @@
+###############################################################################
+#                                                                              #
+#      Copyright 2000 IntelliNet Technologies, Inc. All Rights Reserved.       #
+#              Manufactured in the United States of America.                   #
+#        1990 W. New Haven Ste. 312, Melbourne, Florida, 32904 U.S.A.          #
+#                                                                              #
+#     This product and related documentation is protected by copyright and     #
+#     distributed under licenses restricting its use, copying, distribution    #
+#     and decompilation.  No part of this product or related documentation     #
+#     may be reproduced in any form by any means without prior written         #
+#     authorization of IntelliNet Technologies and its licensors, if any.      #
+#                                                                              #
+#     RESTRICTED RIGHTS LEGEND:  Use, duplication, or disclosure by the        #
+#     government is subject to restrictions as set forth in subparagraph       #
+#     (c)(1)(ii) of the Rights in Technical Data and Computer Software         #
+#     clause at DFARS 252.227-7013 and FAR 52.227-19.                          #
+#                                                                              #
+################################################################################
+#                                                                              #
+# CONTRACT: Internal                                                           #
+#                                                                              #
+################################################################################
+#
+#  ID: $Id: Makefile.Sim,v 1.1.1.1 2007-10-08 11:11:24 bsccs2 Exp $
+#
+################################################################################
+
+#
+# get the vars
+#
+include $(ITS_ROOT)/config.vars
+
+
+CXXASPOBJS=ASPSim.o
+CXXSGPOBJS=SGPSim.o
+        
+CXXASPSRCS=ASPSim.cpp
+CXXSGPSRCS=SGPSim.cpp
+        
+ITS_LIBS=-lCCITT-VENDORD \
+	 -lCCITT-ISUPD \
+	 -lMAP-COMMON++D -lMAP-V4++D \
+	 -lCCITT-TCAPD \
+         -lCCITT-VENDORD \
+         -lCCITT-SCCPD \
+         -lCCITT-MTP3D \
+         -lCORED \
+         -lASN++D -lASND \
+         -lCCITT-M3UAMGNTD \
+         -lCCITT-M3UAD \
+         -lSCTPD \
+         -lSUPPORTD -lCORED
+
+LINK_FLAG = -L$(ITS_ROOT)/common/lib -L$(ITS_ROOT)/GSMMAP/lib \
+	    -L$(VENDOR_ROOT)/IntelliNet/lib -L$(ITS_ROOT)/TCAP/lib \
+            -L$(ITS_ROOT)/ISUP/lib \
+	    -L$(ITS_ROOT)/SCCP/lib -L$(ITS_ROOT)/MTP3/lib
+
+
+CXXFLAGS := $(CXXFLAGS) -I$(ITS_ROOT)/common/include \
+          -I$(ITS_ROOT)/common/include/asn-cpp \
+          -I$(ITS_ROOT)/GSMMAP/include/itu \
+	  -I$(ITS_ROOT)/TCAP/include \
+	  -I$(ITS_ROOT)/SCCP/include \
+	  -I$(ITS_ROOT)/MTP3/include \
+	  -I$(ITS_ROOT)/MTP2/include \
+	  -DUSE_INTELLINET_STACK     \
+	  -DUSE_SOCKETS
+
+
+asp: asp$(DBGSUFFIX)
+
+asp$(DBGSUFFIX): $(CXXASPOBJS)
+	$(CXX) -g $(LDFLAGS) \
+        $(LINK_FLAG) -o asp$(DBGSUFFIX) $(CXXASPOBJS) \
+        $(ITS_LIBS) $(SOCKLIBS) $(THREADLIBS) $(SYSLIBS)
+
+sgp: sgp$(DBGSUFFIX)
+
+sgp$(DBGSUFFIX): $(CXXSGPOBJS)
+	$(CXX) -g $(LDFLAGS) \
+	$(LINK_FLAG) -o sgp$(DBGSUFFIX) $(CXXSGPOBJS) \
+	$(ITS_LIBS) $(SOCKLIBS) $(THREADLIBS) $(SYSLIBS)
+
+clean:
+	$(RM) $(CXXASPOBJS) $(CXXSGPOBJS) sgp$(DBGSUFFIX) asp$(DBGSUFFIX) *.err .depend
+            
+#
+# get the rules
+#
+include $(ITS_ROOT)/config.rules
+
+

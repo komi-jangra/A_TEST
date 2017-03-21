@@ -1,0 +1,16 @@
+#! /bin/sh
+
+ITSPATH=/home/lbana/cvsroot/IntelliSS7
+VENDPATH=/home/lbana/cvsroot/vendors/IntelliNet
+export ITSPATH VENDPATH
+LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ITSPATH/common/lib:$VENDPATH/lib
+export LD_LIBRARY_PATH
+
+echo $LD_LIBRARY_PATH
+ldd test1
+#To capture stdout logs.
+#script aaa
+./test1 -configFile ./test.xml 
+
+exit 0
+

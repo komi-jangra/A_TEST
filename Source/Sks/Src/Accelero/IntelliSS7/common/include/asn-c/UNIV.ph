@@ -1,0 +1,17 @@
+0/22/1: IA5String |encode decode print
+0/18/1: NumericString |encode decode print
+0/19/1: PrintableString |encode decode print
+0/20/1: T61String |encode decode print
+0/20/1: TeletexString |encode decode print
+0/21/1: VideotexString |encode decode print
+0/25/1: GraphicString |encode decode print
+0/26/1: VisibleString |encode decode print
+0/26/1: ISO646String |encode decode print
+0/27/1: GeneralString |encode decode print
+0/28/1: CharacterString |encode decode print
+0/24/1: GeneralizedTime |encode decode print
+0/24/1: GeneralisedTime |encode decode print
+0/23/1: UTCTime |encode decode print
+0/23/1: UniversalTime |encode decode print
+0/7/1: ObjectDescriptor |encode decode print
+0/8/1: EXTERNAL |encode decode print

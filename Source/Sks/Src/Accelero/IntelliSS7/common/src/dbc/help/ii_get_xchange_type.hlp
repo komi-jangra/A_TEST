@@ -1,0 +1,19 @@
+
+ITU ISUP Command
+
+SYNOPSIS
+    ii_get_xchange_type <opc> <dpc> <sio>
+
+DESCRIPTION
+    This command displays the Local Exchange Type/Node
+
+PARAMETERS
+    opc   Origination point code.
+    dpc   Destination point code.
+    sio   Service information octet.
+
+EXAMPLE
+>> ii_get_xchange_type 16 21 133
+
+ ** Local ExchangeType: TYPE_A
+

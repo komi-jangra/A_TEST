@@ -1,0 +1,18 @@
+
+
+ENGINE Command
+
+SYNOPSIS
+    b_setfamily <family>
+
+
+DESCRIPTION
+    Set the family information for the current border transport.  This command
+    must be invoked to successfully add a border transport.
+
+PARAMETERS
+    <family>              ANSI|ITU
+
+EXAMPLE
+
+    b_setfamily ANSI

@@ -1,0 +1,93 @@
+
+# These flags have to be defined at the point this file is included.
+# (Example values are shown)
+# SYS = demongame
+# SYSNAME = ico
+# AR = gcc 
+# RANLIB = ranlib 
+# CC = gcc 
+# LD = ld
+# LDFLAGS = 
+# DEFINES = -DCPU=SIMHPPA 
+# INCLUDES= -I. -I/user/trimode/src/sdlkernel/sys-inc -I${WIND_BASE}/target/h 
+# CFLAGS=-nostdinc -Os -c $(DEFINES) $(INCLUDES)
+
+SDLKERNELPATH=${ccm_project_path}/sdt_kernel/h
+SDLTUNINGFLAGS=-DSDLDEBUG
+
+__SDL_CFLAGS=$(CFLAGS) $(SDLTUNINGFLAGS) -DXSYSID=$(SYSNAME) -I. -I$(SDLKERNELPATH)
+
+SCRIPTDIR = ${ccm_project_path}/lib/
+
+ifndef PERL
+PERL = perl5
+endif
+
+ifdef SYS_SRCDIR
+SCUFILE=$(SYS_SRCDIR)/$(SYS).scu
+PREFIX_OPT=-prefix $(SYS_SRCDIR)/
+else
+SCUFILE=$(SYS).scu
+PREFIX_OPT=
+endif
+
+__SDL_DEPEND := $(shell $(PERL) $(SCRIPTDIR)sdtbuild $(PREFIX_OPT) -listsrc $(SCUFILE))
+__SDL_GENERATED := $(shell $(PERL) $(SCRIPTDIR)sdtbuild $(PREFIX_OPT) -listgen $(SCUFILE))
+__SDL_TAR := $(shell $(PERL) $(SCRIPTDIR)sdtbuild $(PREFIX_OPT) -tarlist $(SCUFILE))
+__SDL_HEADERS := $(shell $(PERL) $(SCRIPTDIR)sdtbuild $(PREFIX_OPT) -listgentype h $(SCUFILE))
+__SDL_C := $(shell $(PERL) $(SCRIPTDIR)sdtbuild $(PREFIX_OPT) -listgentype c $(SCUFILE))
+__SDL_IFC := $(shell $(PERL) $(SCRIPTDIR)sdtbuild $(PREFIX_OPT) -listgentype ifc $(SCUFILE))
+__SDL_CLEAN := $(shell $(PERL) $(SCRIPTDIR)sdtbuild $(PREFIX_OPT) -listgentype clean $(SCUFILE))
+
+__SDL_SRCTAR = $(__SDL_C) $(__SDL_HEADERS) $(__SDL_IFC) $(SYS).sym
+
+CLEAN = $(SYS).tar $(SYS).src.tar $(__SDL_CLEAN) tmp.sdt core
+
+$(__SDL_TAR): $(SYS).tar
+	tar xvfo $< $@
+	touch -c $@
+
+# Depending on whether SYS_SRCDIR is defined, we select
+# the absolute or relative build strategies
+
+ifdef SYS_SRCDIR
+
+$(SYS).src.tar: $(SCUFILE) $(__SDL_DEPEND)
+	$(PERL) $(SCRIPTDIR)sdtconvert -absolute -prefix $(SYS_SRCDIR)/ -tosdt $(SCUFILE) > tmp.sdt
+	sdtbatch -m tmp.sdt
+	tar cvf $@ $(__SDL_SRCTAR)
+	rm -rf $(__SDL_CLEAN)
+	touch -c $@
+
+else
+
+$(SYS).src.tar: $(SCUFILE) $(__SDL_DEPEND)
+	$(PERL) $(SCRIPTDIR)sdtconvert -tosdt $(SCUFILE) > tmp.sdt
+	sdtbatch -m tmp.sdt
+	tar cvf $@ $(__SDL_SRCTAR)
+	rm -rf $(__SDL_CLEAN)
+	touch -c $@
+
+endif
+
+$(SYS).tar: $(SYS).src.tar $(SCUFILE)
+	tar xvfo $< $(__SDL_SRCTAR)
+	touch -c $(__SDL_SRCTAR)
+	$(PERL) $(SCRIPTDIR)sdtbuild $(PREFIX_OPT) -cc "$(CC)" -ld "$(LD)" -C "$(__SDL_CFLAGS)" -L "$(LDFLAGS)"  -ar "$(AR)" -ranlib "$(RANLIB)" $(SCUFILE)
+	rm -f tmp.sdt
+
+showdepend:	
+	@echo $(__SDL_DEPEND)
+
+showgen:	
+	@echo $(__SDL_GENERATED)
+
+showheaders:	
+	@echo $(__SDL_HEADERS)
+
+showifc:	
+	@echo $(__SDL_IFC)
+
+showtar:	
+	@echo $(__SDL_TAR)
+

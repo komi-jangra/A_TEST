@@ -1,0 +1,96 @@
+#************ START ************
+#If DBUTIL compilation is for MSC
+echo "MSC_FLAG = $(MSC_FLAG)"
+ifeq ($(MSC_FLAG),1)
+
+ROOT_PATH = $(MSC_BASE)
+DEFINES=-DMSC -DLOGGER_IMR
+
+LIBRARIES = 
+ifeq ($(OS),linux)
+ COMPILER = gcc -g
+ LINKER = gcc -g
+ BIN_PATH = ../../../Bin/Host/Exec
+ LIB_PATH = ../../../Bin/Host/CommonLib
+ SYS_LIB_PATH = $(ROOT_PATH)/Bin/Host/CommonLib/CP
+endif
+
+ifeq ($(OS),montavista)
+ COMPILER = ppc_85xx-gcc -g
+ LINKER = ppc_85xx-gcc -g
+ BIN_PATH = ../../../Bin/Target/Exec
+ LIB_PATH = ../../../Bin/Target/CommonLib
+ SYS_LIB_PATH = $(ROOT_PATH)/Bin/Target/CommonLib/CP
+endif 
+
+TARGET = $(LIB_PATH)/libsksdb.so
+ERRLOG=Err.log
+HDRFILES = -I ../Inc -I $(ROOT_PATH)/Inc/IPC -I $(ROOT_PATH)/Inc/SYS  \
+            -I $(ROOT_PATH)/Inc/DBS -I $(ROOT_PATH)/Inc/SKS/SCM       \
+	    -I $(ROOT_PATH)/Inc/OAM
+
+LIBRARY_PATH = -L $(SYS_LIB_PATH) -L $(LIB_PATH)
+endif
+
+#If DBUTIL compilation is for BSC 
+echo "BSC_FLAG = $(BSC_FLAG)"
+ifeq ($(BSC_FLAG),1)
+ROOT_PATH=$(BSC_BASE)/
+DEFINES=-DBSC -DLOGGER_IMR 
+LIBRARIES = 
+ifeq ($(OS),linux)
+ #COMPILER = gcc -g --save-temps
+ COMPILER = gcc -g 
+ LINKER = gcc -g
+ BIN_PATH = ../../../Bin/Host/Exec
+ LIB_PATH = ../../../Bin/Host/CommonLib
+ SYS_LIB_PATH = $(ROOT_PATH)/Bin/Host/CommonLib/CP
+endif
+
+ifeq ($(OS),montavista)
+ #COMPILER = ppc_85xx-gcc -g --save-temps
+ COMPILER = ppc_85xx-gcc -g
+ LINKER = ppc_85xx-gcc -g
+ BIN_PATH = ../../../Bin/Target/Exec
+ LIB_PATH = ../../../Bin/Target/CommonLib
+ SYS_LIB_PATH = $(ROOT_PATH)/Bin/Target/CommonLib/CP
+endif 
+
+TARGET = $(LIB_PATH)/libsksdb.so
+ERRLOG=Err.log
+HDRFILES = -I ../Inc -I $(ROOT_PATH)/Inc/Sys -I $(ROOT_PATH)/Inc/Ipc -I $(ROOT_PATH)/Inc/Sys  \
+            -I $(ROOT_PATH)/Inc/Dbs -I $(ROOT_PATH)/Inc/Sks/SCM       \
+	    -I $(ROOT_PATH)/Inc/Oam
+
+LIBRARY_PATH = -L $(SYS_LIB_PATH) -L $(LIB_PATH)
+endif
+
+CC = $(COMPILER)  -fsigned-char $(HDRFILES)  $(COMP_FLAG) $(DEFINES)
+
+All :   $(TARGET)
+
+clean:
+	rm -rf *.o $(TARGET)
+	rm -rf $(ERRLOG)
+
+ifeq ($(MSC_FLAG),1)
+
+OBJS =  sksdb_linkconfig.o  sksdb_init.o  sksdb_maptimer.o sksdb_routeconfig.o \
+       sksdb_bssaptimer.o sksdb_interfaceconfig.o sksdb_linksetconfig.o \
+       sksdb_initconfig.o sksdb_sccptimer.o sksdb_cssftimer.o sksdb_isuptimer.o \
+       sksdb_mapsecurityconfig.o  sksdb_mtp3timer.o sksdb_trunkcicconfig.o     \
+       sksdb_isupinitconfig.o sksdb_mapinitconfig.o sksdb_sksgenconfig.o       \
+       sksdb_sccpbehaviorconfig.o sksdb_gttconfig.o sksdb_dstStreamTsconfig.o
+endif
+ifeq ($(BSC_FLAG),1)
+
+OBJS = sksdb_linkconfig.o  sksdb_init.o  sksdb_routeconfig.o \
+       sksdb_bssaptimer.o sksdb_interfaceconfig.o sksdb_linksetconfig.o sksdb_lapdTeiConfig.o\
+       sksdb_initconfig.o sksdb_sccptimer.o sksdb_mtp3timer.o \
+       sksdb_trunkcicconfig.o   sksdb_sksgenconfig.o  sksdb_lapdTimerConfig.o \
+       sksdb_sccpbehaviorconfig.o sksdb_dstStreamTsconfig.o
+endif
+
+
+$(TARGET): $(OBJS)
+	$(LINKER) -shared -o $(TARGET) $(OBJS) > $(ERRLOG) 2>&1

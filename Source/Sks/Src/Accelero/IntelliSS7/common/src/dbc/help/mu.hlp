@@ -1,0 +1,10 @@
+
+Sigtran M2UA :
+    mu_get_gen_cfg             M2UA Get General Config
+    mu_set_gen_cfg             M2UA Set General Config
+    mu_get_all_iids            M2UA Retreive all IID 
+    mu_rem_iid                 M2UA remove IID 
+    mu_set_iid                 M2UA Add new IID
+
+
+For details about any command use "help <command name>"

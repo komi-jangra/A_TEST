@@ -1,0 +1,25 @@
+
+ITU SCCP Command
+
+SYNOPSIS
+    si_get_all_pc
+
+DESCRIPTION
+    This command displays point codes configured in the Accelero node. The 
+    point codes displayed corresspond to dpc-ni routes configured.
+
+PARAMETERS
+    None.
+
+EXAMPLE
+    >> si_get_all_pc
+        Total Entries          <1>
+    ------------------------------
+        pointCode              <5>
+        ni                     <0>
+        linkset                <1>
+        isPointcodeProhibited  <yes>
+        pcCongestLevel         <0>
+        isAdjacent             <no>
+
+

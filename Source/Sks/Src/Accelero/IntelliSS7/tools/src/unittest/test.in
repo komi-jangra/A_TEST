@@ -1,0 +1,35 @@
+##################### utUnitTest Unit Test #####################
+
+#
+# Test the ? command
+#
+?
+
+#
+# Test the RII command
+#
+RII 768 1515 
+
+#
+# Test the RISI command
+#
+RISI 2000 remember 1997
+
+#
+# Test the RML command
+#
+RML
+input with space
+END
+
+RML
+multiline input
+line2
+line3
+line4
+END
+
+#
+# Terminate the Unit Test
+#
+quit

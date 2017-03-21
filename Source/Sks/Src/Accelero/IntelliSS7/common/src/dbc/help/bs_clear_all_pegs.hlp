@@ -1,0 +1,15 @@
+
+BSSAP Command
+
+SYNOPSIS
+    bs_clear_all_pegs 
+
+DESCRIPTION
+    This command clears all peg values.
+
+PARAMETERS
+    None.
+
+     >> bs_clear_all_pegs 
+
+   Clearing all BSSAP pegs

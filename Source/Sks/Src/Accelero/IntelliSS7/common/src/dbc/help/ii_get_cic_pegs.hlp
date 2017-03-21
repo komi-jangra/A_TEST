@@ -1,0 +1,41 @@
+
+ITU ISUP Command
+
+SYNOPSIS
+    ii_get_cic_pegs <opc> <dpc> <sio> <cic>
+
+DESCRIPTION
+    This command displays the pegs for the particular ISUP Cic.
+
+PARAMETERS
+    opc     Origination point code.
+    dpc     Destination point code.
+    sio     Service information octet.
+    cic     Circuit code number.
+
+EXAMPLE
+>> ii_get_cic_pegs 16  21 133 1017
+
+     Peg Name                       Peg Count 
+     --------                       --------
+
+PEG_ISUP_CIC_NO_ACK_RSC_T17             0
+PEG_ISUP_CIC_NO_GRA_T23                 0
+PEG_ISUP_CIC_NO_RLC_T5                  0
+PEG_ISUP_CIC_REL_ABNORMAL               0
+PEG_ISUP_CIC_MISSING_ACK_IN_CGBA        0
+PEG_ISUP_CIC_MISSING_ACK_IN_CGUA        0
+PEG_ISUP_CIC_ABNORMAL_ACK_IN_CGBA       0
+PEG_ISUP_CIC_ABNORMAL_ACK_IN_CGUA       0
+PEG_ISUP_CIC_UNEXP_CGBA_ABNORMAL_ACK    0
+PEG_ISUP_CIC_UNEXP_CGUA_ABNORMAL_ACK    0
+PEG_ISUP_CIC_UNEXP_BLA_ABNORMAL_ACK     0
+PEG_ISUP_CIC_UNEXP_UBA_ABNORMAL_ACK     0
+PEG_ISUP_CIC_NO_BLA_T13                 0
+PEG_ISUP_CIC_NO_UBA_T15                 0
+PEG_ISUP_CIC_NO_CGBA_T19                0
+PEG_ISUP_CIC_NO_CGUA_T21                0
+PEG_ISUP_CIC_MSG_FORMAT_ERR             0
+PEG_ISUP_CIC_UNEXP_MSG_RCVD             0
+PEG_ISUP_CIC_REL_UNRECOG_INFO           0
+

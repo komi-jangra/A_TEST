@@ -1,0 +1,739 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- ALL THE SIMPLE TYPES -->
+    <xs:simpleType name="stringType">
+        <xs:restriction base="xs:string">
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="IntegerType">
+        <xs:restriction base="xs:integer">
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="ApplicationType">
+        <xs:restriction base="stringType">
+            <xs:pattern value="console-application|service"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="bindingType">
+        <xs:restriction base="stringType">
+            <xs:pattern value="C|CPP"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="familyType">
+        <xs:restriction base="stringType">
+            <xs:pattern value="ITU|ANSI"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="workItemType">
+        <xs:restriction base="stringType">
+            <xs:pattern value="repeatable|non-repeatable"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="TransportType">
+        <xs:restriction base="stringType">
+            <xs:pattern value="TaskQueue|ClientSocket|
+                               ServerSocket | IterativeServerSocket |
+                               Datagram | GatedFIFO | Virtual | SS7"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="booleanType">
+        <xs:restriction base="stringType">
+            <xs:pattern value="yes|no"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="socketDomainType">
+        <xs:restriction base="stringType">
+            <xs:pattern value="INET|UNIX"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="traceOutputType">
+        <xs:restriction base="stringType">
+            <xs:pattern value="stdout|file"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="modifierValueType">
+        <xs:restriction base="stringType">
+            <xs:pattern value="MTP2 |MTP3 |ISUP | SCCP | TCAP |
+                               DATA | RUDP | TALI | IMAL | SCTP | GDI"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="RouteType">
+        <xs:restriction base="stringType">
+            <xs:pattern value="remoteRoute | localRoute | concernedRoute |
+                               duplicateRoute | routingKeyRoute"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="RouteStyle">
+        <xs:restriction base="stringType">
+            <xs:pattern value="dpc-ni | dpc-opc-ni | dpc-sio | dpc-sio-ssn |
+                               dpc-sio-cic | dpc-sio-ssn-range |
+                               dpc-sio-cic-range | dpc-opc-sio |
+                               dpc-opc-sio-ssn | dpc-opc-sio-cic |
+                               dpc-opc-sio-ssn-range | dpc-opc-sio-cic-range"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="CallbacksCallType">
+        <xs:restriction base="stringType">
+            <xs:pattern value="blocking|non-blocking"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="dottedDecimalType">
+        <xs:restriction base="xs:integer">
+            <xs:pattern value="[0-255].[0-255].[0-255].[0-255]"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="handledByType">
+        <xs:restriction base="stringType">
+            <xs:pattern value="app|stack"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="huntRuleType">
+        <xs:restriction base="stringType">
+            <xs:pattern value="none | even | odd | all"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="ANSI-VariantType">
+        <xs:restriction base="stringType">
+            <xs:pattern value="ANSI-88 | ANSI-92 | ANSI-96"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="ITU-VariantType">
+        <xs:restriction base="stringType">
+            <xs:pattern value="BlueBook|WhiteBook"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <!-- END SIMPLE TYPES -->
+    
+    <!-- BEGIN COMPLEX TYPES -->
+    <xs:complexType name="ValueType">
+        <xs:attribute name="value" type="stringType" use="required"/>
+    </xs:complexType>
+    
+    <xs:complexType name="IMALTransType">
+        <xs:attribute name="imalLocalPC" type="stringType" use="required"/>
+        <xs:attribute name="imalAdjacentPC" type="stringType" use="required"/>
+        <xs:attribute name="imalKeepAliveTimeout" type="stringType"/>
+    </xs:complexType>
+    
+    <xs:complexType name="TALITransType">
+        <xs:attribute name="taliLocalPC" type="stringType" use="required"/>
+        <xs:attribute name="taliAdjacentPC" type="stringType" use="required"/>
+        <xs:attribute name="taliUseUpperLayer" type="stringType"/>
+        <xs:attribute name="taliLocallyAllowedOnOpen" type="stringType"/>
+    </xs:complexType>
+    
+    <xs:complexType name="GDITransType">
+        <xs:attribute name="gdiLocalPC" type="stringType" use="required"/>
+        <xs:attribute name="gdiRemotePC" type="stringType" use="required"/>
+        <xs:attribute name="gdiRemoteSSN" type="stringType" use="required"/>
+    </xs:complexType>
+    
+    <xs:complexType name="OtherHomeType">
+        <xs:attribute name="localHostName" type="stringType" use="required"/>
+    </xs:complexType>
+    
+    <xs:complexType name="SCTPTransType">
+        <xs:sequence>
+            <xs:element name="OtherHome" type="OtherHomeType" 
+                        maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="maxInStreams" type="stringType"/>
+        <xs:attribute name="maxOutStreams" type="stringType"/>
+        <xs:attribute name="cookieLife" type="stringType"/>
+        <xs:attribute name="hbOn" type="stringType"/>
+        <xs:attribute name="initTimeOut" type="stringType"/>
+        <xs:attribute name="sendTimeOut" type="stringType"/>
+        <xs:attribute name="recvTimeOut" type="stringType"/>
+        <xs:attribute name="hbTimeOut" type="stringType"/>
+        <xs:attribute name="shutdownTimeOut" type="stringType"/>
+        <xs:attribute name="pmtuTimeOut" type="stringType"/>
+        <xs:attribute name="isClient" type="booleanType" use="required"/>
+        <xs:attribute name="payloadType" type="stringType" use="required"/>
+    </xs:complexType>
+    
+    <xs:complexType name="StreamDataType">
+        <xs:attribute name="socketDomain" type="socketDomainType" use="required"/>
+        <xs:attribute name="serverHostName" type="stringType" use="required"/>
+        <xs:attribute name="serverPort" type="stringType" use="required"/>
+    </xs:complexType>
+    
+    <xs:complexType name="StreamDataClass">
+        <xs:sequence>
+            <xs:element name="StreamData" type="StreamDataType"/>
+            <xs:choice>
+                <xs:element name="IMAL" type="IMALTransType"/>
+                <xs:element name="TALI" type="TALITransType"/>
+                <xs:element name="GDI" type="GDITransType"/>
+            </xs:choice>
+        </xs:sequence>
+    </xs:complexType>
+        
+    <xs:complexType name="DatagramDataClass">
+        <xs:sequence>
+            <xs:element name="DatagramData" type="DatagramDataType"/>
+            <xs:choice>
+                <xs:element name="IMAL" type="IMALTransType"/>
+                <xs:element name="SCTP" type="SCTPTransType"/>
+            </xs:choice>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="VendorType">
+        <xs:attribute name="name" type="stringType" use="required"/>
+        <xs:attribute name="library" type="stringType"/>
+        <xs:attribute name="vendorRec" type="stringType" use="required"/>
+    </xs:complexType>
+    
+    <xs:complexType name="AssociateType">
+        <xs:attribute name="value" type="stringType" use="required"/>
+    </xs:complexType>
+    
+    <xs:complexType name="DatagramDataType">
+        <xs:sequence>
+            <xs:element name="Associate" type="AssociateType" 
+                        maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="localHostName" type="stringType" use="required"/>
+        <xs:attribute name="localPort" type="stringType" use="required"/>
+    </xs:complexType>
+    
+    <xs:complexType name="FIFODataType">
+        <xs:attribute name="clientPath" type="stringType" use="required"/>
+        <xs:attribute name="serverPath" type="stringType" use="required"/>
+    </xs:complexType>
+    
+    <xs:complexType name="AppOptionsType">
+        <xs:attribute name="name" type="stringType"/>
+        <xs:attribute name="value" type="stringType"/>
+    </xs:complexType>
+    
+    <xs:complexType name="TimerType">
+        <xs:attribute name="name" type="stringType" use="required"/>
+        <xs:attribute name="value" type="stringType" use="required"/>
+        <xs:attribute name="handledBy" type="handledByType"/>
+    </xs:complexType>
+    
+    <xs:complexType name="CircuitCodesType">
+        <xs:attribute name="start" type="stringType" use="required"/>
+        <xs:attribute name="count" type="stringType"/>
+    </xs:complexType>
+    
+    <xs:complexType name="CircuitGroupType">
+        <xs:sequence>
+            <xs:element name="CircuitCodes" type="CircuitCodesType" 
+                        maxOccurs="1" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="huntRule" type="huntRuleType"/>        
+    </xs:complexType>
+    
+    <xs:complexType name="CustomDispatchType">
+        <xs:attribute name="library" type="stringType"/>
+        <xs:attribute name="dispatch" type="stringType" use="required"/>
+    </xs:complexType>
+    
+    <xs:complexType name="ExecuteLogicProcedureType">
+        <xs:attribute name="library" type="stringType"/>
+        <xs:attribute name="function" type="stringType"/>
+    </xs:complexType>
+    
+    <xs:complexType name="ProceduresType">
+        <xs:sequence>
+            <xs:element name="FtmPreExecuteLogicProcedure" 
+                        type="ExecuteLogicProcedureType" 
+                        maxOccurs="unbounded" minOccurs="1"/>
+            <xs:element name="FtmLoopExecuteLogicProcedure" 
+                        type="ExecuteLogicProcedureType" 
+                        maxOccurs="unbounded" minOccurs="1"/>
+            <xs:element name="FtmPostExecuteLogicProcedure" 
+                        type="ExecuteLogicProcedureType" 
+                        maxOccurs="unbounded" minOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="DsmConfigType">
+        <xs:attribute name="dsmSize" type="stringType" use="required"/>
+        <xs:attribute name="dsmBaseAddress" type="stringType" use="required"/>
+        <xs:attribute name="dsmBaseMaxNumTables" type="stringType" use="required"/>
+        <xs:attribute name="dsmType" type="stringType" use="required"/>
+    </xs:complexType>
+    
+    <xs:complexType name="DsmGcsConfigType">
+        <xs:attribute name="gcsFtGroupId" type="stringType" use="required"/>
+        <xs:attribute name="gcsDaemonName" type="stringType"/>
+        <xs:attribute name="gcsConnectTimeout" type="stringType"/>
+        <xs:attribute name="gcsGroupName" type="stringType"/>
+        <xs:attribute name="gcsConnectionNameRoute" type="stringType"/>
+        <xs:attribute name="gcsReceiverAliveTimeout" type="stringType"/>
+        <xs:attribute name="gcsSyncMemUseTcp" type="stringType"/>
+        <xs:attribute name="gcsSyncMemUseGcs" type="stringType"/>
+        <xs:attribute name="gcsSyncMemTimeout" type="stringType"/>
+        <xs:attribute name="gcsSyncMemConnectTimeout" type="stringType"/>
+        <xs:attribute name="gcsSelfJoinTimeout" type="stringType"/>
+        <xs:attribute name="gcsMasterJoinTimeout" type="stringType"/>
+        <xs:attribute name="gcsSyncMemIpAddress" type="dottedDecimalType"/>
+        <xs:attribute name="gcsSyncMemIpPort" type="stringType"/>
+    </xs:complexType>
+    
+    <xs:complexType name="DsmSciConfigType">
+        <xs:attribute name="sciFtGroupId" type="stringType" use="required"/>
+        <xs:attribute name="sciSegmentNumber" type="stringType" use="required"/>
+        <xs:attribute name="sciAdapterNumber" type="stringType" use="required"/>
+    </xs:complexType>
+    
+    <xs:complexType name="FtGroupMemberType">
+        <xs:attribute name="nodeId" type="stringType" use="required"/>
+        <xs:attribute name="nodeName" type="stringType"/>
+        <xs:attribute name="processId" type="stringType" use="required"/>
+        <xs:attribute name="processName" type="stringType"/>
+    </xs:complexType>
+    
+    <xs:complexType name="FtGroupMembersType">
+        <xs:sequence>
+            <xs:element name="FtGroupMember" 
+                        type="FtGroupMemberType" 
+                        maxOccurs="unbounded" minOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="MasterFtGroupMemberType">
+        <xs:attribute name="nodeId" type="stringType" use="required"/>
+        <xs:attribute name="processId" type="stringType" use="required"/>
+    </xs:complexType>
+    
+    <xs:complexType name="MasterFtGroupMembersType">
+        <xs:sequence>
+            <xs:element name="MasterFtGroupMember" 
+                        type="MasterFtGroupMemberType" 
+                        maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="FtGroupType">
+        <xs:sequence>
+            <xs:element name="DsmConfig" type="DsmConfigType"/>
+            <xs:element name="DsmGcsConfig" type="DsmGcsConfigType"/>
+            <xs:element name="DsmSciConfig" type="DsmSciConfigType"/>
+            <xs:element name="FtGroupMembers" type="FtGroupMembersType"/>
+            <xs:element name="MasterFtGroupMembers" type="MasterFtGroupMembersType"/>
+            <xs:element name="Callbacks" type="CallbacksType"/>
+        </xs:sequence>
+        <xs:attribute name="ftGroupId" type="stringType"/>
+        <xs:attribute name="ftGroupName" type="stringType"/>        
+    </xs:complexType>
+    
+    <xs:complexType name="MembershipChangeCallbackType">
+        <xs:attribute name="library" type="stringType" use="required"/>
+        <xs:attribute name="function" type="stringType" use="required"/>
+    </xs:complexType>
+    
+    <xs:complexType name="ManagementCallbacksType">
+        <xs:attribute name="library" type="stringType"/>
+        <xs:attribute name="MTP3ManagementCallbackITU" type="stringType"/>
+        <xs:attribute name="MTP3ManagementCallbackANSI" type="stringType"/>
+        <xs:attribute name="ISUPManagementCallbackITU" type="stringType"/>
+        <xs:attribute name="ISUPManagementCallbackANSI" type="stringType"/>
+        <xs:attribute name="SCCPManagementCallbackITU" type="stringType"/>
+        <xs:attribute name="SCCPManagementCallbackANSI" type="stringType"/>
+        <xs:attribute name="SCCPGlobalTitleCallbackITU" type="stringType"/>
+        <xs:attribute name="SCCPGlobalTitleCallbackANSI" type="stringType"/>
+        <xs:attribute name="SCCPSSNRoutingCallbackITU" type="stringType"/>
+        <xs:attribute name="SCCPSSNRoutingCallbackANSI" type="stringType"/>
+    </xs:complexType>
+    
+    <xs:complexType name="CallbacksType">
+        <xs:sequence>
+            <xs:element name="MembershipChangeAllFtGroupsCallback" 
+                        type="MembershipChangeCallbackType"/>
+            <xs:element name="EventFromAllFtGroupMembersCallback" 
+                        type="MembershipChangeCallbackType"/>
+            <xs:element name="MembershipChangeCallback" 
+                        type="MembershipChangeCallbackType"/>
+            <xs:element name="EventFromFtGroupMemberCallback" 
+                        type="MembershipChangeCallbackType"/>
+        </xs:sequence>
+        <xs:attribute name="library" type="stringType"/>
+        <xs:attribute name="type" type="CallbacksCallType" default="blocking"/>
+        <xs:attribute name="preInitialize" type="stringType"/>
+        <xs:attribute name="postInitialize" type="stringType"/>
+        <xs:attribute name="preNextEvent" type="stringType"/>
+        <xs:attribute name="nextEventFailed" type="stringType"/>
+        <xs:attribute name="postNextEvent" type="stringType"/>
+        <xs:attribute name="userMsgHandler" type="stringType"/>
+        <xs:attribute name="SCCPMsgHandler" type="stringType"/>
+        <xs:attribute name="ISUPMsgHandler" type="stringType"/>
+        <xs:attribute name="preAccept" type="stringType"/>
+        <xs:attribute name="onAccept" type="stringType"/>
+        <xs:attribute name="preTerminate" type="stringType"/>
+        <xs:attribute name="postTerminate" type="stringType"/>
+         
+    </xs:complexType>
+    
+    <xs:complexType name="FtGroupsType">
+        <xs:sequence>
+            <xs:element name="FtGroup" type="FtGroupType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="FaultToleranceType">
+        <xs:sequence>
+            <xs:element name="Procedures" type="ProceduresType"/>
+            <xs:element name="Callbacks" type="CallbacksType"/>
+            <xs:element name="FtGroups" type="FtGroupsType"/>
+        </xs:sequence>
+        <xs:attribute name="maxNumFtGroups" type="stringType"/>
+        <xs:attribute name="maxNumProcesses" type="stringType"/>
+        <xs:attribute name="maxNumNodes" type="stringType"/>
+        <xs:attribute name="nodeId" type="stringType"/>
+        <xs:attribute name="processId" type="stringType"/>
+        <xs:attribute name="tcapFtGroupId" type="stringType"/>
+        <xs:attribute name="sccpFtGroupId" type="stringType"/>
+        <xs:attribute name="mtp3FtGroupId" type="stringType"/>
+        <xs:attribute name="isupFtGroupId" type="stringType"/>
+        <xs:attribute name="routingFtGroupId" type="stringType"/>
+        <xs:attribute name="timersFtGroupId" type="stringType"/>
+        <xs:attribute name="mgmtDataFtGroupId" type="stringType"/>        
+    </xs:complexType>
+    
+    <xs:complexType name="NetworkHomeType">
+        <xs:attribute name="localInterface" type="dottedDecimalType"/>
+        <xs:attribute name="localMask" type="dottedDecimalType"/>
+        <xs:attribute name="localBroadcast" type="dottedDecimalType"/>
+    </xs:complexType>
+    
+    <xs:complexType name="FeatureOptionType">
+        <xs:attribute name="name" type="stringType"/>
+        <xs:attribute name="value" type="stringType"/>
+    </xs:complexType>
+    
+    <xs:complexType name="FeatureType">
+        <xs:sequence>
+            <xs:element name="FeatureOption" type="FeatureOptionType" 
+                        maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="name" type="stringType"/>
+        <xs:attribute name="library" type="stringType"/>
+        <xs:attribute name="classRec" type="stringType"/>        
+    </xs:complexType>
+    
+    <xs:complexType name="traceLevelType">
+        <xs:attribute name="output" type="traceOutputType" use="required"/>
+    </xs:complexType>
+    
+    <xs:complexType name="ModifierType">
+        <xs:attribute name="value" type="modifierValueType" use="required"/>
+    </xs:complexType>
+    
+    <xs:complexType name="traceLevels">
+        <xs:sequence>
+            <xs:element name="Critical" type="traceLevelType"/>
+            <xs:element name="Error" type="traceLevelType"/>
+            <xs:element name="Warning" type="traceLevelType"/>
+            <xs:element name="Debug" type="traceLevelType"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="ParserExtensionType">
+        <xs:attribute name="library" type="stringType"/>
+        <xs:attribute name="elementName" type="stringType"/>
+        <xs:attribute name="startFunc" type="stringType"/>
+        <xs:attribute name="stopFunc" type="stringType"/>
+        <xs:attribute name="xlateFunc" type="stringType"/>
+        <xs:attribute name="diffFunc" type="stringType"/>
+    </xs:complexType>
+    
+    <xs:complexType name="LinkType">
+        <xs:attribute name="id" type="stringType" use="required"/>
+        <xs:attribute name="family" type="stringType" use="required"/>
+        <xs:attribute name="linkSet" type="stringType" use="required"/>
+        <xs:attribute name="initiallyActive" type="booleanType" default="yes"/>
+        <xs:attribute name="terminalFixed" type="booleanType" default="yes"/>
+        <xs:attribute name="dataLinkFixed" type="booleanType" default="yes"/>
+        <xs:attribute name="isSAAL" type="booleanType" default="no"/>
+        <xs:attribute name="isLocal" type="booleanType" default="yes"/>
+        <xs:attribute name="priority" type="stringType"/>
+        <xs:attribute name="terminal" type="stringType"/>
+        <xs:attribute name="dataLink" type="stringType"/>
+    </xs:complexType>
+    
+    <xs:complexType name="LinkSetType">
+        <xs:sequence>
+            <xs:element name="NI" type="ValueType" maxOccurs="1" minOccurs="1"/>
+            <xs:element name="APC" type="ValueType" maxOccurs="1" minOccurs="1"/>
+            <xs:element name="LPC" type="ValueType" maxOccurs="1" minOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="stringType" use="required"/>
+        <xs:attribute name="family" type="stringType" use="required"/>
+        <xs:attribute name="adjacentSTP" type="booleanType" default="yes"/>
+        <xs:attribute name="isCLinkSet" type="booleanType" default="no"/>
+        <xs:attribute name="is5Bit" type="booleanType" default="no"/>
+        <xs:attribute name="numToStart" type="stringType" use="required"/>    
+    </xs:complexType>
+    
+    <xs:complexType name="RouteClass">
+        <xs:sequence>
+            <xs:element name="DPC" type="ValueType" maxOccurs="1" minOccurs="1"/>
+            <xs:element name="NI" type="ValueType" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="OPC" type="ValueType" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="SIO" type="ValueType" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="SSN" type="ValueType" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="CIC" type="ValueType" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="RangeBegin" type="ValueType" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="RangeEnd" type="ValueType" maxOccurs="1" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="type" type="RouteType" use="required"/>
+        <xs:attribute name="style" type="RouteStyle" use="required"/>
+        <xs:attribute name="family" type="stringType" use="required"/>
+        <xs:attribute name="linkSet" type="stringType" use="required"/>
+        <xs:attribute name="priority" type="stringType" use="required"/>        
+    </xs:complexType>
+    
+    <xs:complexType name="ISUPAttributesType">
+        <xs:sequence>
+            <xs:element name="Timer" type="TimerType" 
+                        maxOccurs="unbounded" minOccurs="0"/>                       
+            <xs:element name="CircuitGroup" type="CircuitGroupType" 
+                        maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="localPointCode" type="stringType" use="required"/>
+        <xs:attribute name="classRec" type="stringType" use="required"/>
+        <xs:attribute name="library" type="stringType"/>        
+    </xs:complexType>
+    
+    <xs:complexType name="DestinationType">
+        <xs:sequence>
+            <xs:element name="ISUPAttributes" type="ISUPAttributesType" 
+                        maxOccurs="1" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="family" type="stringType" use="required"/>
+        <xs:attribute name="pointCode" type="stringType" use="required"/>
+        <xs:attribute name="networkInd" type="stringType" use="required"/>
+        <xs:attribute name="mtp3Variant" type="stringType"/>
+        <xs:attribute name="isupVariant" type="stringType"/>
+        <xs:attribute name="sccpVariant" type="stringType"/>
+        <xs:attribute name="tcapVariant" type="stringType"/>
+        <xs:attribute name="tupVariant" type="stringType"/>
+        <xs:attribute name="dupVariant" type="stringType"/>        
+    </xs:complexType>
+    
+    <xs:complexType name="TransportClass">
+        <xs:sequence>
+            <xs:element name="Modifier" type="ModifierType" 
+                        maxOccurs="unbounded" minOccurs="0"/>
+            <xs:choice>
+                <xs:element name="Vendor" type="VendorType"/>
+                <xs:element name="StreamData" type="StreamDataClass"/>
+                <xs:element name="DatagramData" type="DatagramDataClass"/>
+                <xs:element name="FIFOData" type="FIFODataType"/>
+            </xs:choice>
+            <xs:choice>
+                <xs:element name="Callbacks" type="CallbacksType"/>
+                <xs:element name="CustomDispatch" type="CustomDispatchType"/>
+            </xs:choice>
+            <xs:element name="Link" type="LinkType" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="name" type="stringType"/>
+        <xs:attribute name="type" type="TransportType" use="required"/>
+        <xs:attribute name="family" type="familyType"/>
+        <xs:attribute name="count" type="stringType"/>
+        <xs:attribute name="instance" type="stringType"/>        
+    </xs:complexType>
+    
+    <xs:complexType name="WorkerPoolType">
+        <xs:sequence>
+            <xs:element name="Transport" type="TransportClass" 
+                        maxOccurs="unbounded" minOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute name="stackSize" type="stringType"/>        
+    </xs:complexType>
+    
+    <xs:complexType name="WorkItemType">
+        <xs:attribute name="type" type="workItemType" use="required"/>
+        <xs:attribute name="library" type="stringType"/>
+        <xs:attribute name="userDelegate" type="stringType" use="required"/>
+        <xs:attribute name="count" type="IntegerType"/>
+    </xs:complexType>
+    
+    <xs:complexType name="WorkItemPoolType">
+        <xs:sequence>
+            <xs:element name="NumWorkers" type="ValueType" 
+                        maxOccurs="1" minOccurs="1"/>
+            <xs:element name="WorkItem" type="WorkItemType" 
+                        maxOccurs="unbounded" minOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute name="stackSize" type="stringType"/>        
+    </xs:complexType>
+    
+    <xs:complexType name="BorderPoolType">
+        <xs:sequence>
+            <xs:element name="Transport" type="TransportClass" 
+                        maxOccurs="unbounded" minOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute name="stackSize" type="stringType"/>        
+    </xs:complexType>
+    
+    <xs:complexType name="ANSI-MTP3Type">
+        <xs:attribute name="variant" type="ANSI-VariantType" use="required"/>
+    </xs:complexType>
+    
+    <xs:complexType name="TimersType">
+        <xs:anyAttribute/>
+    </xs:complexType>
+    
+    <xs:complexType name="BehaviorControlType">
+        <xs:anyAttribute/>
+    </xs:complexType>
+    
+    <xs:complexType name="ANSI-ISUPType">
+        <xs:attribute name="variant" type="stringType" use="required"/>
+    </xs:complexType>
+    
+    <xs:complexType name="ANSI-SCCPType">
+        <xs:sequence>
+            <xs:element name="StackTrace" type="traceLevels" 
+                        maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Timers" type="TimersType" 
+                        maxOccurs="1" minOccurs="0"/>
+            <xs:element name="BehaviorControl" type="BehaviorControlType" 
+                        maxOccurs="1" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="variant" type="ANSI-VariantType" use="required"/>
+        <xs:attribute name="numThreads" type="stringType"/>        
+    </xs:complexType>
+    
+    <xs:complexType name="ANSI-TCAPType">
+        <xs:sequence>
+            <xs:element name="StackTrace" type="traceLevels"
+                        maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Timers" type="TimersType" 
+                        maxOccurs="1" minOccurs="0"/>
+            <xs:element name="BehaviorControl" type="BehaviorControlType" 
+                        maxOccurs="1" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="variant" type="ANSI-VariantType" use="required"/>
+        <xs:attribute name="numThreads" type="stringType"/>        
+    </xs:complexType>
+    
+    <xs:complexType name="ITU-MTP3Type">
+        <xs:attribute name="variant" type="ITU-VariantType" use="required"/>
+    </xs:complexType>
+    
+    <xs:complexType name="ITU-ISUPType">
+        <xs:attribute name="variant" type="ITU-VariantType" use="required"/>
+    </xs:complexType>
+    
+    <xs:complexType name="ITU-SCCPType">
+        <xs:sequence>
+            <xs:element name="StackTrace" type="traceLevels" 
+                        maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Timers" type="TimersType" 
+                        maxOccurs="1" minOccurs="0"/>
+            <xs:element name="BehaviorControl" type="BehaviorControlType" 
+                        maxOccurs="1" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="variant" type="ITU-VariantType" use="required"/>
+        <xs:attribute name="numThreads" type="stringType"/>        
+    </xs:complexType>
+    
+    <xs:complexType name="ITU-TCAPType">
+        <xs:sequence>
+            <xs:element name="StackTrace" type="traceLevels" 
+                        maxOccurs="1" minOccurs="0"/>
+            <xs:element name="Timers" type="TimersType" 
+                        maxOccurs="1" minOccurs="0"/>
+            <xs:element name="BehaviorControl" type="BehaviorControlType" 
+                        maxOccurs="1" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="variant" type="ITU-VariantType" use="required"/>
+        <xs:attribute name="numThreads" type="stringType"/>        
+    </xs:complexType>
+    
+    <xs:complexType name="IntelliNetStackType">
+        <xs:sequence>
+            <xs:element name="ANSI-MTP3" type="ANSI-MTP3Type" 
+                        maxOccurs="1" minOccurs="0"/>
+            <xs:element name="ANSI-ISUP" type="ANSI-ISUPType" 
+                        maxOccurs="1" minOccurs="0"/>
+            <xs:element name="ANSI-SCCP" type="ANSI-SCCPType" 
+                        maxOccurs="1" minOccurs="0"/>
+            <xs:element name="ANSI-TCAP" type="ANSI-TCAPType" 
+                        maxOccurs="1" minOccurs="0"/>
+            <xs:element name="ITU-MTP3" type="ITU-MTP3Type" 
+                        maxOccurs="1" minOccurs="0"/>
+            <xs:element name="ITU-ISUP" type="ITU-ISUPType" 
+                        maxOccurs="1" minOccurs="0"/>
+            <xs:element name="ITU-SCCP" type="ITU-SCCPType" 
+                        maxOccurs="1" minOccurs="0"/>
+            <xs:element name="ITU-TCAP" type="ITU-TCAPType" 
+                        maxOccurs="1" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="SS7-StacksType">
+        <xs:sequence>
+            <xs:element name="ManagementCallbacks" 
+                        type="ManagementCallbacksType" 
+                        maxOccurs="1" minOccurs="0"/>
+            <xs:element name="IntelliNet" 
+                        type="IntelliNetStackType" 
+                        maxOccurs="1" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <!-- END COMPLEX TYPES -->
+    
+    <!-- Root Element -->
+    <xs:element name="Application">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="AppOptions" type="AppOptionsType"/>
+                <xs:element name="WindowsExtras" type="NetworkHomeType"/>
+                <xs:element name="Feature" type="FeatureType"/>
+                <xs:element name="ParserExtension" type="ParserExtensionType"/>
+                <xs:element name="FaultTolerance" type="FaultToleranceType"/>
+                <xs:element name="LinkSet" type="LinkSetType"/>
+                <xs:element name="Route" type="RouteClass"/>
+                <xs:element name="Destination" type="DestinationType"/>
+                <xs:element name="ToolkitTrace" type="traceLevels"/>
+                <xs:element name="ApplicationTrace" type="traceLevels"/>
+                <xs:element name="WorkerPool" type="WorkerPoolType"/>
+                <xs:element name="WorkItemPool" type="WorkItemPoolType"/>
+                <xs:element name="BorderPool" type="BorderPoolType"/>
+                <xs:element name="SS7-Stacks" type="SS7-StacksType"/>
+            </xs:sequence>
+            <xs:attribute name="name" type="stringType" use="required"/>
+            <xs:attribute name="type" type="ApplicationType" default="console-application"/>
+            <xs:attribute name="globalStart" type="stringType"/>
+            <xs:attribute name="binding" type="bindingType" default="CPP"/>
+            <xs:attribute name="library" type="stringType"/>
+            <xs:attribute name="ss7Selector" type="stringType"/>
+            <xs:attribute name="appSelector" type="stringType"/>
+            <xs:attribute name="appDeselector" type="stringType"/>
+            <xs:attribute name="hmiCallback" type="stringType"/>
+            <xs:attribute name="alarmCallback" type="stringType"/>
+            <xs:attribute name="preFunc" type="stringType"/>
+            <xs:attribute name="postFunc" type="stringType"/>            
+        </xs:complexType>
+    </xs:element>
+  <!-- End Root Element -->
+  
+</xs:schema>
+

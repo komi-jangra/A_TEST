@@ -1,0 +1,29 @@
+
+MTP2 Command
+
+SYNOPSIS
+    m2_get_gen_cfg
+
+DESCRIPTION
+    This command displays MTP2 general configuration. This includes MTP2
+    Alarm Level and MTP2 Trace Level. This MML can be used for both ADAX
+	and NMS vendors 
+
+PARAMETERS
+    None.
+
+EXAMPLE
+>> m2_get_gen_cfg
+
+********** MTP2 General Config **********
+
+    Alarm Level:  OFF
+
+    MTP2 Trace -
+        Critical  =  stdout
+        Error     =  stdout file
+        Warning   =  stdout
+        Debug     =  stdout
+
+********** End of MTP2 General Config **********
+

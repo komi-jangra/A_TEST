@@ -1,0 +1,18 @@
+BSSAP Command
+
+SYNOPSIS
+    bs_rem_cfg_record  <nwId> <rpc>
+
+DESCRIPTION
+    This command removes network configurations  
+
+PARAMETERS
+    nwId    Network ID (0-255)
+    rpc     Remote Point Code 
+
+EXAMPLE
+    >> bs_rem_cfg_record 2 4114
+
+    CFG record removed network Id <2>
+
+

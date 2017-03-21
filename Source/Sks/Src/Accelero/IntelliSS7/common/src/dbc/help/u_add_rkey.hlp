@@ -1,0 +1,28 @@
+
+M3UA / SUA Command
+
+SYNOPSIS
+    u_add_rkey <fm> <tm> <rkid> <style> <pc> <ni/sio> <ssn>
+
+DESCRIPTION
+    This command add a routing key to M3UA/SUA adaptation layers. One routing 
+    key corresponds to a single application server.
+
+PARAMETERS
+    fm      Protocol family. Possible values ITU|ANSI
+    tm      Traffice Mode. Possible values overRideMode|loadShareMode|broadcast
+    rkid    Integer value greater than zero. Note that we cannot have duplicate 
+            routing keys.
+    style   Routing style. Possible value dpc-ni|dpc-sio|dpc-sio-ssn
+    pc      Point Code
+    ni/sio  Network Indicator / SIO
+    ssn     Subsystem Number. 
+
+EXAMPLE
+  >>u_add_rkey ITU overRideMode 1 dpc-sio-ssn 2 3 2
+   *********** Routing Key Added *************
+  
+
+NOTE
+1. If style is dpc-ni or dpc-sio the ssn is not required.
+

@@ -1,0 +1,44 @@
+
+ANSI ISUP Command
+
+SYNOPSIS
+    ia_get_cic_state <opc> <dpc> <sio> <cic>
+
+DESCRIPTION
+    This command displays call state, maintenance state of the Cic.
+
+PARAMETERS
+    opc     Origination point code.
+    dpc     Destination point code.
+    sio     Service information octet.
+    cic     Circuit code number.
+
+EXAMPLE
+>> ia_get_cic_state 16 21 133 1017
+
+Cic States for cic 1017:
+----------------------
+Original cic number = 1017
+CIC Rule String =  DEF
+** (cpc, mpc) : Circuit State: 0xc : IDLE, LOCAL UNBLOCK, REMOTE UNBLOCK
+
+Call Processing Control Fsm State:
+CPC  State:  IDLE                  (CPC  Idle)
+
+Maintenance Processing Control Fsm States:
+BLS  State: BLS_IDLE              (BLS  Outgoing: Idle)
+BLR  State: BLR_IDLE              (BLR  Incoming: Idle)
+MGBS State: MGBS_IDLE             (MGBS Outgoing: Idle)
+MGBR State: MGBR_IDLE             (MGBR Incoming: Idle)
+CRS  State: CRS_IDLE              (CRS  Outgoing: Idle)
+CRR  State: CRR_IDLE              (CRR  Incoming: Idle)
+CGRS State: CGRS_IDLE             (CGRS Outgoing: Idle)
+CGRR State: CGRR_IDLE             (CGRR Incoming: Idle)
+CVTS State: CVTS_IDLE             (CVT  Outgoing: Idle)
+CVTR State: CVTR_IDLE             (CVT  Incoming: Idle)
+CCO State:  CCO_IDLE
+CCI State:  CCI_IDLE
+CRO State:  CRO_IDLE
+CRI State:  CRI_IDLE
+DCO State:  DCO_IDLE
+

@@ -1,0 +1,14 @@
+
+
+ENGINE Module
+    b_addborder             Add Border Transport
+    b_addlink               Add link Information
+    b_settype               Set Border Transport Type
+    b_reset                 Reset current border context.
+    b_setcallbacks          Set Callback Functions to border transport
+    b_setfamily             Set border transport family
+    b_setmods               Set border transport modifiers
+    b_setspecs              Set border transport specific parameters
+    b_getborders            Get All Border Transports
+
+For details about any command use "help <command name>"

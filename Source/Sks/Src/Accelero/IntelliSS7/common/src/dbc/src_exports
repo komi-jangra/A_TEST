@@ -1,0 +1,6 @@
+all		cpp	both	*.cpp
+all		cpp	both	*.h
+all		c	both	*.cpp
+all		c	both	*.h
+all		c	both	Makefile
+

@@ -1,0 +1,27 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: libmpset - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\TEMP\RSP1104.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /vmg /GX /ZI /Od /I "..\h" /I "..\ports\win32" /D "WIN32" /D "_DEBUG" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\cspl\src\mpoolset.c"
+]
+Creating command line "cl.exe @C:\TEMP\RSP1104.tmp" 
+Creating command line "link.exe -lib /nologo /out:"Debug\libmpset.lib"  .\Debug\mpoolset.obj "
+<h3>Output Window</h3>
+Compiling...
+mpoolset.c
+Creating library...
+
+
+
+<h3>Results</h3>
+libmpset.lib - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

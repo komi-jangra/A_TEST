@@ -1,0 +1,9 @@
+
+LINK/LINKSET Module :
+    ls_add                LINKSET Add a linkset
+    ls_del                LINKSET Delete a linkset
+    ln_add                LINK    Add a link
+    ln_del                LINK    Delete a link
+
+For details about any command use "help <command name>"
+

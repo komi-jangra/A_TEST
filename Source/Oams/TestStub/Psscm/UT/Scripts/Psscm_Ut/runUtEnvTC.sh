@@ -1,0 +1,6 @@
+$TESTSTUBS_PATH/$UTENV_STUB_BIN_NAME$1 << %%
+1
+$2
+0
+0
+%%

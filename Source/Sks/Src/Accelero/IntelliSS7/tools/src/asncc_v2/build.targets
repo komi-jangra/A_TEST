@@ -1,0 +1,2 @@
+AsnCC_V2            AsnCC_V2.mak            debug     "AsnCC_V2 - Win32 Debug"
+AsnCC_V2            AsnCC_V2.mak            release   "AsnCC_V2 - Win32 Release"

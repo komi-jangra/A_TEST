@@ -1,0 +1,20 @@
+
+ITU ISUP Command
+
+SYNOPSIS
+    ii_get_segsup_status <opc> <dpc> <sio>
+
+DESCRIPTION
+    This command displays if ITU ISUP Segmentation procedure is Supported or
+    Not
+
+PARAMETERS
+    opc     Origination point code.
+    dpc     Destination point code.
+    sio     service information octet.
+
+EXAMPLE
+>> ii_get_segsup_status 16 21 133
+
+ ** Segmentation Supported: no
+

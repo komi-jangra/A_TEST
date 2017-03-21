@@ -1,0 +1,42 @@
+
+ANSI MTP3 Command
+
+SYNOPSIS
+    ma_get_link  <linkset> <linkcode>
+
+DESCRIPTION
+    To view the status of the specified link 
+
+PARAMETERS
+    linkset       the link set which owns the link
+    linkcode      link id within the specified linkset
+
+
+EXAMPLE
+    >> ma_get_link  2 1 
+
+    --------- LINK INFO ----------
+    linkCode  :   00000001
+    family  :     ANSI
+    initActive:   yes
+    termFixed :   yes
+    linkFixed :   yes
+    isSAAL    :   no
+    localLink :   no
+    priority  :   0
+    trans id  :   20001
+    terminal  :   0
+    dataLink  :   0
+    is Up      :  yes
+    is Allowed :  yes
+    active    :   yes
+    congLevel :   0
+    --------- MTP3 STATUS --------
+    state     :   LINK_UNAVAILABLE
+    loc inh   :   no
+    rem inh   :   no
+    failed    :   no
+    RPO       :   no
+    SLT Passed:   no
+    ------------------------------
+

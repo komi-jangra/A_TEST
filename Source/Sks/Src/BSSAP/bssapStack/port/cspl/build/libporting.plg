@@ -1,0 +1,32 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: libporting - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\TEMP\RSP1105.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /vmg /GX /ZI /Od /I "..\h" /I "..\ports\win32" /I "..\drivers\winsock" /D "WIN32" /D "_DEBUG" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\cspl\ports\win32\eflow.c"
+"D:\cspl\ports\win32\os.c"
+"D:\cspl\drivers\winsock\shell.c"
+]
+Creating command line "cl.exe @C:\TEMP\RSP1105.tmp" 
+Creating command line "link.exe -lib /nologo /out:"Debug\libporting.lib"  .\Debug\eflow.obj .\Debug\os.obj .\Debug\shell.obj "
+<h3>Output Window</h3>
+Compiling...
+eflow.c
+os.c
+shell.c
+Generating Code...
+Creating library...
+
+
+
+<h3>Results</h3>
+libporting.lib - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

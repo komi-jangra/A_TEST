@@ -1,0 +1,25 @@
+
+LINKSET Command
+
+SYNOPSIS
+   ls_add <id> <family> <lpc> <apc> <ni>
+
+DESCRIPTION
+   This command is used to configure a new linkset
+
+PARAMETERS
+     id            The linkset id (1 - 255)
+     family        ITU | ANSI | CHINA | JAPAN 
+     lpc           local point code in decimal
+     apc           adajacent point code in decimal
+     ni            network indicator in decimal
+                       - 0x00 - international           (0   dec)
+                       - 0x40 - international reserved  (64  dec)
+                       - 0x80 - national                (128 dec)
+                       - 0xC0   national spare          (192 dec)
+
+EXAMPLE
+
+>> ls_add 2 ITU 10 9 128
+Linket 2 added successfully...
+

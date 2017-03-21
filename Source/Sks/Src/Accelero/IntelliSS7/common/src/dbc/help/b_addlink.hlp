@@ -1,0 +1,31 @@
+
+
+ENGINE Command
+
+SYNOPSIS
+    b_addlink <link id> <family> <link set id> <initiallyActive>
+              <terminalFixed> <dataLinkFixed> <isSAAL> <isLocal>
+              <priority> <terminal> <dataLink>
+
+
+DESCRIPTION
+    This command adds link information to the current border context
+    when adding a border transport.  Note that the b_settype, b_setfamily,
+    and b_setmods commands must be executed before this one.
+
+PARAMETERS
+    <link id>           The SLC for this link
+    <family>            The signalling family for this link (ANSI or ITU)
+    <link set id>       The link set to add this link into
+    <initally Active>   Should the link be added as an active link (always yes)
+    <terminal Fixed>    Is the signalling terminal fixed for this link (always yes)
+    <dataLinkFixed>     Is the data link fixed for this link (always yes)
+    <isSAAL>            Is this a SAAL link (ATM)
+    <isLocal>           Is this link local to this Accelero
+    <priority>          Link priority (always 0)
+    <terminal>          Signalling terminal ID (always 0)
+    <dataLink>          Data link ID (always 0)
+
+EXAMPLE
+
+    b_addlink   1 ANSI 1 yes yes yes no yes 0 0 0

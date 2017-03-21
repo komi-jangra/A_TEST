@@ -1,0 +1,12 @@
+#! /bin/ksh
+
+export USER_ROOT=/export/home/users/lbana
+
+export LD_LIBRARY_PATH=$USER_ROOT/cvsroot/IntelliSS7/common/lib:$USER_ROOT/cvsroot/vendors/IntelliNet/lib:.:$USER_ROOT/cvsroot/IntelliSS7/MTP3/lib:$LD_LIBRARY_PATH:
+
+export ISS7_CONFIG_DIR=
+
+./app_testD sgp opc 2 dpc 1 -configFile sctpSGv10.xml
+#./app_testD asp opc 2 dpc 1 -configFile sctpEPv10.xml
+#dbx ./app_testD $1
+

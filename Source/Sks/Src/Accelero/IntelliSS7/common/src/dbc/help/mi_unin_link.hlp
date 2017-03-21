@@ -1,0 +1,24 @@
+
+ITU MTP3 Command
+
+SYNOPSIS
+    mi_unin_link <linkset> <linkcode>
+
+DESCRIPTION
+    To uninhibit a link by user 
+
+PARAMETERS
+    linkset       the link set which owns the link
+    linkcode      link id within the specified linkset
+
+
+EXAMPLE
+    >> mi_unin_link 2 7
+
+    ***Link 2:7 Uninhibition initiated***
+
+
+NOTE 
+   link uninhibition is not allowed if the target link was not
+   previously locally inhibited  
+

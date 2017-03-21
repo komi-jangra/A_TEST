@@ -1,0 +1,39 @@
+
+ITU ISUP Module :
+     ii_get_gen_cfg             ISUP Get General Config
+     ii_set_gen_cfg             ISUP Set General Config
+     ii_add_variant             ISUP Add Variant info
+     ii_get_dest_info           ISUP Get Destination Info
+     ii_add_dest_info           ISUP Add Destination Info
+     ii_get_timers              ISUP Get Timer Info
+     ii_set_timers              ISUP Set Timer Info
+     ii_get_cics                ISUP Get Circuit Info
+     ii_add_cics                ISUP Add Circuit Info
+     ii_del_cics                ISUP Del Circuit Info
+     ii_get_cic_state           ISUP Get specified Circuit State
+     ii_get_gen_pegs            ISUP Get Genaral Pegs
+     ii_get_cic_pegs            ISUP Get CIC Pegs
+     ii_get_gen_pegid           ISUP Get General Peg Id
+     ii_get_cic_pegid           ISUP Get CIC Pegs Id
+     ii_clr_gen_pegs            ISUP Reset a perticular gen Peg
+     ii_clr_cic_pegs            ISUP Clear perticular Cic Peg
+     ii_set_cong_lev            ISUP Set Congestion Level Threshold 
+     ii_get_cong_lev            ISUP Get Congestion Level Threshold
+     ii_set_xchange_type        ISUP Set Local Exchange Type
+     ii_get_xchange_type        ISUP Get Local Exchamge Type 
+     ii_set_segsup_status       ISUP Set Segmentation Supported Status
+     ii_get_segsup_status       ISUP Get Segmentation Supported Status 
+     ii_send_rsc                ISUP Send Reset Circuit Msg
+     ii_send_rlc                ISUP Send Release confirmation Msg
+     ii_send_ubl                ISUP Send Unblocking Msg
+     ii_send_blo                ISUP Send Blocking Msg
+     ii_send_cgb                ISUP Send Circuit group reset Msg
+     ii_send_cgu                ISUP Send Circuit group unblocking Msg
+     ii_send_grs                ISUP Send Group reset Msg
+     ii_send_cqm                ISUP Send Circuit query Msg
+     ii_get_msgsent_pegs       ISUP Get Message Sent Pegs
+     ii_get_msgrcvd_pegs       ISUP Get Message Received Pegs
+     ii_clr_msgsent_pegs       ISUP Reset Message Sent Pegs
+     ii_clr_msgrcvd_pegs       ISUP Reset Message Received Pegs
+
+For details about any command use "help <command name>"

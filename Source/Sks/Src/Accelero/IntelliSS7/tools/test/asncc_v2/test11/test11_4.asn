@@ -1,0 +1,20 @@
+--------------------------------------------------------------------------------
+--
+-- AsnCC 2.0 test.
+--
+-- Based on GSM MAP. Merge test.
+--
+--------------------------------------------------------------------------------
+
+-- TEST11-4.
+
+
+TEST11-4 DEFINITIONS ::=
+
+BEGIN
+
+TeleserviceCode ::= OCTET STRING (SIZE(1))
+
+TeleserviceList ::= SEQUENCE SIZE(1..22) OF TeleserviceCode
+
+END

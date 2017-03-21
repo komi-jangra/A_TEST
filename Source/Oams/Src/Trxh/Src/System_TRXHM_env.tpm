@@ -1,0 +1,26 @@
+USERLIBRARIES =$(LFLAGS) $(LIBS) -linst-DB -lsemaphore
+
+COMP_FLAG = -DXUSE_SIGNAL_NUMBERS -D__C_APPL $(CFLAGS)
+
+HDRFILES = -I../../../../../Inc/Sys/ \
+     -I../../../../../Inc/Ipc/ \
+           -I../../../../../Inc/Dbs/ \
+           -I../../../../../Inc/Csapp/ \
+           -I../../../../../Inc/Oam/ \
+           -I../../../../../Inc/Oams/ \
+           -I../../../Inc/ \
+           -I../Inc/
+
+sctUSERDEFS = $(COMP_FLAG) $(CFLAGS) -DTAU_MODEL
+
+USERTARGET = System_TRXHM_env$(sctOEXTENSION) bsc_sig_hdlr.o 
+
+#sctUSERDEFS = -g $(COMP_FLAG) $(HDRFILES) 
+System_TRXHM_env$(sctOEXTENSION): System_TRXHM_env.c System_TRXHM.ifc 
+	$(sctCC) $(sctCPPFLAGS) $(sctCCFLAGS) $(sctIFDEF) -UTAU_MODEL System_TRXHM_env.c -o System_TRXHM_env$(sctOEXTENSION)
+
+bsc_sig_hdlr.o: bsc_sig_hdlr.c
+	$(sctCC) $(sctCPPFLAGS) $(sctCCFLAGS) -UTAU_MODEL $(sctIFDEF) bsc_sig_hdlr.c -o bsc_sig_hdlr.o 
+
+clean_user_objs:
+	$(sctRM) $(USERTARGET)

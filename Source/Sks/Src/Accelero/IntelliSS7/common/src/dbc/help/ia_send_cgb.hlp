@@ -1,0 +1,22 @@
+
+ANSI ISUP Command
+
+SYNOPSIS
+    ia_send_cgb <opc> <dpc> <sio> <cic> <msgType> <range> <status>
+
+DESCRIPTION
+    This command sends circuit group block message to the remote side.
+
+PARAMETERS
+    opc     Origination point code.
+    dpc     Destination point code.
+    sio     Service information octet.
+    cic     Circuit code number.
+    msgType Blocking Message type
+    range   Range of circuits
+    status  Circuit status field
+
+
+EXAMPLE
+    >>ia_send_cgb 16 21 133 1 1 23 16777215
+    **** Successfully sent the msg *******

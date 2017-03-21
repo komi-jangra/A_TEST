@@ -1,0 +1,23 @@
+
+ANSI SCCP Command
+
+SYNOPSIS
+    sa_get_pc <pc> <ni>
+
+DESCRIPTION
+    This command finds a point code entry for given pc, ni.
+
+PARAMETERS
+    pc    Point Code
+    ni    Network Indicator
+
+EXAMPLE
+    >> sa_get_pc 1 0
+        pointCode              <1>
+        ni                     <0>
+        isPointcodeProhibited  <yes>
+        pcCongestLevel         <0>
+        isAdjacent             <no>
+
+
+

@@ -1,0 +1,20 @@
+
+ITU SCCP Command
+
+SYNOPSIS
+    si_get_cpc <pc> <ni> <ssn> <cpc>
+
+DESCRIPTION
+    This command displays ITU SCCP finds a concerned point code entry for
+    given pc, ni, ssn, cpc.
+
+PARAMETERS
+    pc    Local Point Code
+    ni    Network Indicator
+    ssn   Local Subsystem Number
+    cpc   Concerned Point Code
+
+EXAMPLE
+    >> si_get_cpc 2 0 2 5
+    *********** SCCP CPC Entry Found*************
+

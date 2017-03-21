@@ -1,0 +1,8 @@
+
+SCTP Module :
+    s_get_gen_cfg        SCTP Get General Config
+    s_set_gen_cfg        SCTP Set General Config
+    s_get_gen_peg        SCTP Get Peg
+    s_clr_gen_peg        SCTP Clear Peg
+
+For details about any command use "help <command name>"

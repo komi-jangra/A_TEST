@@ -1,0 +1,218 @@
+##############################################################################
+#         Natural MicroSystems TX Series T1/E1 and MVIP / H.100 [H.110]
+#         Time Division Multiplexed Configuration File
+#
+#  General Information:
+#  -------------------------
+#    This file contains sample configuration information to
+#    help you set up communication between T1/E1/MVIP/H100 Channels
+#    and 'Ports' on the TX Board.  A separate instance of this
+#    file must be generated for each TX Series board with T1/E1
+#    or MVIP/H100 capabilities that is installed in your system.
+#
+#    Any given TX board may either support MVIP or H.100/H.110.
+#    Both H.100 and H.110 are treated identically in this file [BUS H100].
+#    See the hardware reference manual for your particular TX board
+#    to determine the type of bus provided.
+#    Example TX board types supporting MVIP include the TX2000 and TX3000.
+#    Example TX board types supporting H100 include the TX3220 and TX3220C.
+#
+#    This file allows for the definition of FULL-DUPLEX connections only.
+#    For the MVIP case, a FULL-DUPLEX connection is made by pairing
+#    stream n (0..7) with stream n+8.
+#    For the H100 case, a FULL-DUPLEX connection is made by pairing
+#    stream n (0..30 [even streams]) with stream n+1.
+#    Each port definition (see below) represents one of these FULL-DUPLEX
+#    pairs.  A direction indicator is used to control in/out for the pair.
+#
+#  Generating the completed Configuration text file:
+#  ----------------------------------------------------------
+#    After modifying this file, run the Configuration utility.
+#    Here is an example.
+#
+#             prompt> tdmcfg -i tdmcp1.txt
+#
+#    The TDM Configuration utility generates 2 files. The example
+#    above produces the following.
+#
+#      tdmcp1.bin : binary configuration file
+#      tdmcp1.dbg : text representation of the above binary file
+#
+#      Updates occur after the TX Series board is (re)loaded.
+#
+#  Clocking configuration options:
+#  -------------------------------------
+# CLOCK
+#        MASTER - TX Series adapter gets timing signals from
+#                 the MVIP/H100 bus [Default].
+#        BUS    - TX Series adapter drives the MVIP/H100 bus clock
+#                 signals from its internal clock.
+#        SEC8K  - TX Series adapter drives the MVIP/H100 bus clock
+#                 signals using the MVIP/H100 bus SEC8K signal as the
+#                 clock reference input.
+#        NETA   - TX Series adapter drives the MVIP/H100 bus clock
+#                 signals using T1/E1 adapter interface A
+#        NETB   - TX Series adapter drives the MVIP/H100 bus clock
+#                 signals using T1/E1 adapter interface B
+#
+# SEC8K
+#        MASTER - The TX Series MVIP/H100 adapter drives the SEC8K signal
+#                 from its internal clock.
+#        NETA   - The TX Series MVIP/H100 adapter drives the SEC8K signal
+#                 from T1/E1 adapter interface A
+#        NETB   - The TX Series MVIP/H100 adapter drives the SEC8K signal
+#                 from T1/E1 adapter interface B
+#        NONE   - SEC8K Not Driven
+#
+# BUS
+#        MVIP   - MVIP bus stream numbering
+#                 FULL-DUPLEX connections: stream (0..7) paired w/ (8..15)
+#        H100   - H.100 / H.110 bus stream numbering
+#                 FULL-DUPLEX connections: stream (0..30) paired w/ (1..31)
+#
+#  T1/E1 configuration options:
+#  ---------------------------------
+#         T1A   or  E1A   (A is the bottom physical interface)
+#         T1B   or  E1B   (B is on the top)
+#
+#  Framing  NONE   - Do not configure T1/E1 circuit
+#           D4     - [T1]D4 (193S) Framing
+#           ESF    - [T1]Extended Superframe Format
+#           CCS    - [E1]Frame alignment only (not multiframe)
+#           CAS    - [E1]Channel Associated Signaling
+#         CCSCRC   - [E1]CCS with CRC4
+#         CASCRC   - [E1]CAS with CRC4
+#
+#  Encoding  NONE   - No encoding
+#            NOZCS  - [T1/E1]AMI encoding with no Zero suppression
+#            B7ZS   - [T1]Bit 7 Stuffing
+#            B8ZS   - [T1]Bipolar Eight Zero Substitution
+#            HDB3   - [E1]High Density Bipolar Order 3
+#
+#  Buildout [T1]
+#           0 - 0 to 133 Feet
+#           1 - 133 to 266 Feet
+#           2 - 266 to 399 Feet
+#           3 - 399 to 533 Feet
+#           4 - 533 to 655 Feet
+#  Buildout [E1]
+#           4 - 120 Ohm with Protection Resisters (Default)
+#
+#  Robbed Bit  - TRUE or FALSE (default is False; ignored for E1)
+#  Loop Master - TRUE or FALSE  (indication of timing source for this circuit)
+#
+#  T1/E1/MVIP/H100 Channel to TX Series Port configuration:
+#  --------------------------------------------------------
+#
+#  PORT:
+#    The TX Series Serial Communications Controller(SCC) assigned
+#    to this data channel. There are 4 ports (SCC 1-4) available
+#    per Communications Processor. TX boards may provide up to 16 ports.
+#
+#  STREAM:
+#    MVIP Stream numbers are 0-7 for Standard direction
+#    H100 Stream numbers are 0-30 [even numbers] for Standard direction
+#    T1/E1 A Stream is identified using T1A or E1A
+#    T1/E1 B Stream is identified using T1B or E1B
+#
+#  CHANNEL:
+#    Refers to the starting channel number.
+#    MVIP uses channel numbers 0-31
+#    H100 uses channel numbers 0-127
+#    T1 uses channel numbers 0-23
+#    E1 uses channel numbers 1-31 (0 is used for framing)
+#
+#  COUNT:
+#    The number of timeslots allocated to this channel.
+#    The range is 1-32 (MVIP or H100).
+#    A special case exists for subrate (56Kb or 48Kb) on a single DS0.
+#    If count is set to 56, a single channel with a 56Kb subrate is allocated.
+#    If count is set to 48, a single channel with a 48Kb subrate is allocated.
+#
+#  DIRECTION:
+#    T1/E1 channels are always STANDARD.
+#    REVERSE is used for the remote half of the MVIP/H100 stream:channel pair.
+##############################################################################
+
+##############################################################################
+# The following are examples only and not meant to be configured together.
+##############################################################################
+
+##############################################################################
+# EXAMPLE T1 interface:
+##############################################################################
+#CLOCK          NETA
+#SEC8K          NONE
+
+#-----------------------------------------------------------------------------
+# T1   Framing   Encoding   Buildout   Robbed Bit   Loop Master
+
+#  T1A  ESF       B8ZS       0          FALSE        FALSE
+
+#-----------------------------------------------------------------------------
+# TX Port    Stream      Channel    Count     Direction
+
+#  Port1      T1A         Channel0   Count1    Standard
+
+##############################################################################
+# EXAMPLE E1 interface: 16 port configuration
+##############################################################################
+CLOCK          NETA
+SEC8K          NONE
+
+#-----------------------------------------------------------------------------
+# E1   Framing   Encoding   Buildout   Robbed Bit   Loop Master
+
+  E1A  CCS       HDB3       4          FALSE        FALSE
+# E1B  CCS       HDB3       4          FALSE        FALSE
+
+#-----------------------------------------------------------------------------
+# TX Port    Stream      Channel    Count     Direction
+
+ Port1      E1A         Channel1   Count1    Standard
+ Port2      E1A         Channel2   Count1    Standard
+ Port3      E1A         Channel3   Count1    Standard
+ Port4      E1A         Channel4   Count1    Standard
+# Port5      E1A         Channel5   Count1    Standard
+# Port6      E1A         Channel6   Count1    Standard
+# Port7      E1A         Channel7   Count1    Standard
+# Port8      E1A         Channel8   Count1    Standard
+
+# Port9      E1B         Channel1   Count1    Standard
+# Port10     E1B         Channel2   Count1    Standard
+# Port11     E1B         Channel3   Count1    Standard
+# Port12     E1B         Channel4   Count1    Standard
+# Port13     E1B         Channel5   Count1    Standard
+# Port14     E1B         Channel6   Count1    Standard
+# Port15     E1B         Channel7   Count1    Standard
+# Port16     E1B         Channel8   Count1    Standard
+
+##############################################################################
+# EXAMPLE MVIP interface:
+##############################################################################
+# CLOCK          BUS
+# SEC8K          NONE
+# BUS            MVIP
+
+#-----------------------------------------------------------------------------
+# TX Port    Stream      Channel    Count     Direction
+
+# Port1      Stream0     Channel0   Count1    Standard
+# Port2      Stream1     Channel2   Count1    Reverse
+# Port3      Stream2     Channel0   Count1    Standard
+# Port4      Stream3     Channel31  Count1    Reverse
+
+##############################################################################
+# EXAMPLE H.100 / H.110 interface:
+##############################################################################
+# CLOCK          BUS
+# SEC8K          NONE
+# BUS            H100
+
+#-----------------------------------------------------------------------------
+# TX Port    Stream      Channel    Count     Direction
+
+# Port1      Stream0     Channel0   Count1    Standard
+# Port2      Stream2     Channel2   Count1    Reverse
+# Port3      Stream4     Channel0   Count1    Standard
+# Port4      Stream6     Channel127 Count1    Reverse

@@ -1,0 +1,29 @@
+
+M3UA / SUA Command
+
+SYNOPSIS
+    u_astbl
+
+DESCRIPTION
+    This command displays AS table for a given sigtran node.
+
+PARAMETERS
+    None.
+
+EXAMPLE
+    >> u_astbl
+    ---------------------------------------------------
+    Dump of AS_Manager:
+    -------------------------------------------
+        rCtxt = 1
+        state = AS ACTIVE   
+        trafficMode = UAL_OVERRIDE
+        n+k redundancy = 0 + 0 
+        ROUTE_Info:
+            ROUTE_TYPE     = Remote route 
+            ROUTE_CRITERIA = DPC, SIO, SSN 
+            Point Code     = 2 
+        ASP List:  
+            Instance = 0
+
+

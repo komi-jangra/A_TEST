@@ -1,0 +1,40 @@
+
+ITU ISUP Command
+
+SYNOPSIS
+    ii_get_cic_pegid 
+
+DESCRIPTION
+    This command displays the id for cic-based peg type.
+
+PARAMETERS
+    NONE
+
+EXAMPLE
+
+>> ii_get_cic_pegid 
+
+     Peg Name                       Peg id 
+     --------                       ------
+
+PEG_ISUP_CIC_NO_ACK_RSC_T17             0
+PEG_ISUP_CIC_NO_GRA_T23                 1
+PEG_ISUP_CIC_NO_RLC_T5                  2
+PEG_ISUP_CIC_REL_ABNORMAL               3
+PEG_ISUP_CIC_MISSING_ACK_IN_CGBA        5
+PEG_ISUP_CIC_MISSING_ACK_IN_CGUA        6
+PEG_ISUP_CIC_ABNORMAL_ACK_IN_CGBA       7
+PEG_ISUP_CIC_ABNORMAL_ACK_IN_CGUA       8
+PEG_ISUP_CIC_UNEXP_CGBA_ABNORMAL_ACK    9
+PEG_ISUP_CIC_UNEXP_CGUA_ABNORMAL_ACK   10
+PEG_ISUP_CIC_UNEXP_BLA_ABNORMAL_ACK    11
+PEG_ISUP_CIC_UNEXP_UBA_ABNORMAL_ACK    12
+PEG_ISUP_CIC_NO_BLA_T13                13
+PEG_ISUP_CIC_NO_UBA_T15                14
+PEG_ISUP_CIC_NO_CGBA_T19               15
+PEG_ISUP_CIC_NO_CGUA_T21               16
+PEG_ISUP_CIC_MSG_FORMAT_ERR            17
+PEG_ISUP_CIC_UNEXP_MSG_RCVD            18
+PEG_ISUP_CIC_REL_UNRECOG_INFO          19
+
+

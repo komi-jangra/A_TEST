@@ -1,0 +1,23 @@
+
+ANSI ISUP Command
+
+SYNOPSIS
+    ia_add_cics  <opc> <dpc> <sio> <cic> <count> <control>
+
+DESCRIPTION
+     This command adds a circuit or range of circuits to ISUP.
+
+PARAMETERS
+    opc      Origination point code.
+    dpc      Destination point code.
+    sio      Service information octet.
+    startCic Starting Cic.
+    count    number of Cics including start Cic.
+    control  controlling type.
+
+    Possible Values for control: ODD, EVEN, ALL, DEFAULT, NONE.
+
+EXAMPLE
+>> ia_add_cics 16 21 133 1016 1 ALL
+
+Successfully added Cic(s)

@@ -1,0 +1,518 @@
+<?xml version="1.0"?>
+
+
+<!-- XML file for application configuration using IntelliNet ISUP and NMS MTP3 (INI). -->
+
+<Application name           = "ISUP-LOAD-TEST"
+             type           = "console-application"
+             globalStart    = "ITU-ISUP + ITU-MTP3"
+             binding        = "C" 
+             library        = "libload-intelli3-sbe2-CCITT.so"
+             appSelector    = "SelectApplication"
+             preFunc        = "LoadPreFunc"
+             postFunc       = "LoadPostFunc">
+
+
+    <AppOptions name = "traceFlushAfterWrite"         value = "yes"/>
+    <AppOptions name = "memPoolChecksOn"              value = "no"/>
+
+    <Feature
+        name        = "Vendor Framework"
+        library     = "libVFrameD.so"
+        classRec    = "itsSS7STACK_ClassCCITT"
+    />
+
+    <Feature
+        name        = "IntelliNet stack"
+        library     = "libCCITT-VENDORD.so"
+        classRec    = "itsINTELLISS7_ClassCCITT"
+    />
+
+    <Feature
+        name        = "SBE Vendor lib"
+        library     = "libSBEVendorD.so"
+        classRec    = "itsSBE_ClassCCITT"
+    />
+
+    <Feature
+        name        = "ITU_GENERIC_93"
+        library     = "libITU_GENERIC_93D.so"
+        classRec    = "isupITU93_Class"
+    />
+
+
+
+    <ToolkitTrace>
+        <Critical  output = "stdout"/>
+        <Critical  output = "file"/>
+        <Error     output = "stdout"/>
+        <Error     output = "file"/>
+        <Warning   output = "stdout"/>
+        <Warning   output = "file"/>
+    </ToolkitTrace>
+
+    <ApplicationTrace>
+        <Critical  output = "file"/>
+        <Error     output = "file"/>
+        <Error     output = "stdout"/>
+        <Warning   output = "file"/>
+        <Warning   output = "stdout"/>
+    </ApplicationTrace>
+
+    <ParserExtension    library     = "libSBEVendorD.so"
+                        elementName = "SBE_Data"
+                        startFunc   = "SBE_ParseStart"
+                        stopFunc    = "SBE_ParseEnd"
+                        xlateFunc   = "SBE_ConvertParserData"
+                        diffFunc    = "SBE_Diff"
+    />
+
+    <SBE_Data  sectionName = "SBE SS7-1"
+                board       = "0"
+                port1       = "0"
+                TR_TYPE     = "1"
+                linkSet_1A     = "1"
+                linkCodes_1A   = "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15"
+    />
+
+
+    <!--/////////////// LINK SETS //////////////-->
+    <!-- link set for internal routing -->
+    <LinkSet id           = "0"
+             adjacentSTP  = "no"
+             isCLinkSet = "no"
+             is5Bit = "no"
+             numToActivate = "1"
+             numToStart   = "1" >
+        <NI     value = "0x80"/>
+        <APC    value = "0x0"/>
+        <LPC    value = "0x0"/>
+    </LinkSet>
+
+    <!-- link set for external routing -->
+    <LinkSet id           = "1"
+             adjacentSTP  = "no"
+             numToStart   = "1">
+        <NI     value = "0x80"/>
+        <APC    value = "0x14"/>
+        <LPC    value = "0x0F"/>
+    </LinkSet>
+
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0">
+        <DPC    value = "0x0F"/>
+        <SIO    value = "0x80"/>
+    </Route>
+
+    <!-- route for SLTM REG -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0">
+        <DPC    value = "0x0F"/>
+        <SIO    value = "0x81"/>
+    </Route>
+
+    <!-- route for SLTM SPEC -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0">
+        <DPC    value = "0x0F"/>
+        <SIO    value = "0x82"/>
+    </Route>
+
+
+    <!-- route for ISUP -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "1"
+            priority = "0">
+        <DPC    value = "0x0F"/>
+        <SIO    value = "0x85"/>
+    </Route>
+
+    <!-- route for ISUP -->
+    <Route  type    = "remoteRoute"
+            style   = "dpc-ni"
+            linkSet = "1"
+            priority = "0">
+        <DPC    value = "0x14"/>
+        <SIO    value = "0x80"/>
+    </Route>
+
+    <!-- route for non-adjacent node -->
+    <Route  type    = "remoteRoute"
+            style   = "dpc-ni"
+            linkSet = "1"
+            priority = "0">
+        <DPC    value = "0x000000"/>
+        <SIO    value = "0x80"/>
+    </Route>
+
+    <!--/////////////// DESTINATIONS //////////////-->
+    <!-- adjacent destination -->
+    <Destination    family      = "ITU"
+                    pointCode   = "0x14"
+                    networkInd  = "0x80"
+                    mtp3Variant = "WhiteBook_97"
+                    isupVariant = "ITU_GENERIC_93"
+                    sccpVariant = "WhiteBook_97"
+                    tcapVariant = "WhiteBook_97"
+                    tupVariant  = "WhiteBook_97"
+                    dupVariant  = "WhiteBook_97">
+
+
+        <ISUPAttributes localPointCode    = "0x0f"
+                        SIO               = "0x85"
+                        classRec          = "isupITU93_Class"
+                        library           = "libITU_GENERIC_93D.so">
+
+              <!-- Only override timer value -->
+              <Timer name       = "T1"
+                     value      = "45"
+                     handledBy  = "STACK"
+              />
+              <Timer name       = "T2"
+                     value      = ""
+                     handledBy  = ""
+              />
+
+              <Timer name       = "T3"
+                     value      = "45"
+              />
+              <Timer name       = "T4"
+                     value      = ""
+              />
+              <Timer name       = "T5"
+                     value      = "  "
+              />
+              <Timer name       = "T6"
+                     handledBy  = "STACK"
+              />
+              <Timer name       = "T7"
+                     value      = "30"
+                     handledBy  = "STACK"
+              />
+              <Timer name       = "T8"
+              />
+
+              <Timer name       = "T14"
+                     value      = "300"
+                     handledBy  = "STACK"
+              />
+
+              <Timer name       = "T15"
+                     value      = "400"
+                     handledBy  = "STACK"
+              />
+
+              <!-- Circuit Group #1 -->
+              <CircuitGroup huntRule = "DEF">
+                  <CircuitCodes start = "0"
+                                count = "64"
+                  />
+
+             </CircuitGroup>
+
+              <!-- Circuit Group #2 -->
+              <CircuitGroup huntRule = "EVEN">
+                  <CircuitCodes start = "64"
+                                count = "64"
+                  />
+              </CircuitGroup>
+
+              <!-- Circuit Group #3 -->
+              <CircuitGroup huntRule = "EVEN">
+                  <CircuitCodes start = "128"
+                                count = "64"
+                  />
+              </CircuitGroup>
+
+              <!-- Circuit Group #4 -->
+              <CircuitGroup huntRule = "EVEN">
+                  <CircuitCodes start = "192"
+                                count = "64"
+                  />
+              </CircuitGroup>
+
+              <!-- Circuit Group #5 -->
+              <CircuitGroup huntRule = "EVEN">
+                  <CircuitCodes start = "256"
+                                count = "64"
+                  />
+              </CircuitGroup>
+
+              <!-- Circuit Group #6 -->
+              <CircuitGroup huntRule = "EVEN">
+                  <CircuitCodes start = "320"
+                                count = "64"
+                  />
+              </CircuitGroup>
+
+              <!-- Circuit Group #7 -->
+              <CircuitGroup huntRule = "EVEN">
+                  <CircuitCodes start = "384"
+                                count = "64"
+                  />
+              </CircuitGroup>
+
+              <!-- Circuit Group #8 -->
+              <CircuitGroup huntRule = "EVEN">
+                  <CircuitCodes start = "448"
+                                count = "64"
+                  />
+              </CircuitGroup>
+
+<!-- More than 512 circuits; with 512 workers...no worker threads? -->
+        </ISUPAttributes>
+
+    </Destination>
+
+
+    <Destination    family      = "ITU"
+                    pointCode   = "0x22"
+                    networkInd  = "0x80"
+                    isupVariant = "ITU_GENERIC_93" >
+
+        <ISUPAttributes localPointCode    = "0x0f"
+                        SIO               = "0x85"
+                        classRec          = "isupITU93_Class"
+                        library           = "libITU_GENERIC_93D.so">
+
+              <!-- Only override timer value -->
+              <Timer name       = "T1"
+                     value      = "45"
+                     handledBy  = "STACK"
+              />
+
+              <!-- Circuit Group #1 -->
+              <CircuitGroup huntRule = "DEF">
+                  <CircuitCodes start = "1"
+                                count = "50"
+                  />
+                  <CircuitCodes start = "51"
+                                count = "9"
+                  />
+              </CircuitGroup>
+
+        </ISUPAttributes>
+
+    </Destination>
+
+    <!-- non-adjacent destination -->
+    <Destination    family      = "ITU"
+                    pointCode   = "0x000000"
+                    networkInd  = "0x80"
+                    mtp3Variant = "WhiteBook_97"
+                    isupVariant = "WhiteBook_97"
+                    sccpVariant = "WhiteBook_97"
+                    tcapVariant = "WhiteBook_97"
+                    tupVariant  = "WhiteBook_97"
+                    dupVariant  = "WhiteBook_97"
+    />
+
+
+    <!--///////////////////////////////////////////////////////////////-->
+
+    <WorkerPool stackSize = "0">
+
+        <Transport type    = "TaskQueue"
+                   count   = "512"
+                   family  = "ITU">
+
+            <Modifier value = "ISUP"/>
+
+            <Callbacks
+                library         = "libload-intelli3-sbe2-CCITT.so"
+                type            = "blocking"
+                preInitialize   = "null"
+                postInitialize  = "null"
+                preNextEvent    = "null"
+                nextEventFailed = "null"
+                postNextEvent   = "null"
+                userDispatch    = "null"
+                preTerminate    = "null"
+                postTerminate   = "null"
+            />
+
+        </Transport>
+
+     </WorkerPool>
+
+
+    <!--///////////////////////////////////////////////////////////////-->
+
+    <BorderPool stackSize = "0">
+
+        <Transport  name    = "SBE SS7-1"
+                    type    = "SS7"
+                    family  = "ITU">
+                    
+            <Modifier value = "MTP2"/>
+
+            <Vendor name        = "SBE"
+                    library     = "libSBEVendorD.so"
+                    vendorRec   = "itsSBE_ClassCCITT"
+            />
+
+            <Callbacks
+                library         = "libload-intelli3-sbe2-CCITT.so"
+                type            = "blocking"
+                preInitialize   = "null"
+                postInitialize  = "null"
+                preNextEvent    = "null"
+                nextEventFailed = "null"
+                postNextEvent   = "null"
+                userMsgHandler  = "null"
+                SCCPMsgHandler  = "null"
+                ISUPMsgHandler  = "null"
+                preTerminate    = "null"
+                postTerminate   = "null"
+            />
+
+            <!-- 4 links on this transport -->
+
+            <Link   id              = "0"
+                    linkSet         = "1"
+                    initiallyActive = "yes"
+                    terminalFixed   = "yes"
+                    dataLinkFixed   = "yes"
+                    priority        = "0"
+                    terminal        = "0"
+                    dataLink        = "0"
+            />
+
+            <Link   id              = "1"
+                    linkSet         = "1"
+                    initiallyActive = "yes"
+                    terminalFixed   = "yes"
+                    dataLinkFixed   = "yes"
+                    priority        = "0"
+                    terminal        = "0"
+                    dataLink        = "0"
+            />
+
+            <Link   id              = "2"
+                    linkSet         = "1"
+                    initiallyActive = "yes"
+                    terminalFixed   = "yes"
+                    dataLinkFixed   = "yes"
+                    priority        = "0"
+                    terminal        = "0"
+                    dataLink        = "0"
+            />
+
+            <Link   id              = "3"
+                    linkSet         = "1"
+                    initiallyActive = "yes"
+                    terminalFixed   = "yes"
+                    dataLinkFixed   = "yes"
+                    priority        = "0"
+                    terminal        = "0"
+                    dataLink        = "0"
+            />
+
+        </Transport>
+
+
+        <Transport  name    = "Debug Console"
+                    type    = "ServerSocket">
+                    
+            <StreamData socketDomain    = "INET"
+                        serverHostName  = "127.0.0.1"
+                        serverPort      = "9123"
+            />
+
+            <Callbacks
+                type            = "debug-console"
+            />
+
+        </Transport>
+
+    </BorderPool>
+
+    <!--///////////////////////////////////////////////////////////////-->
+
+    <SS7-Stacks>
+
+        <ManagementCallbacks
+            MTP3ManagementCallbackITU     = "MTP3Mgmt"
+        />
+
+        <IntelliNet>
+
+            <ITU-MTP3 variant = "WhiteBook_97">
+  
+                <StackTrace>
+                    <Critical output = "stdout"/>
+                    <Error    output = "stdout"/>
+                    <Warning  output = "stdout"/>
+                </StackTrace>
+
+                <BehaviorControl
+                    STPFunction = "no"
+                />
+
+                <Timers
+                     T1 = "800"
+                     T2 = "1400"
+                     T3 = "800"
+                     T4 = "800"
+                     T5 = "800"
+                     T6 = "800"
+                     T7 = "800"
+                     T8 = "800"
+                     T9 = "0"
+                    T10 = "30000"
+                    T11 = "30000"
+                    T12 = "800"
+                    T13 = "800"
+                    T14 = "2000"
+                    T15 = "2000"
+                    T16 = "1400"
+                    T17 = "800"
+                    T18 = "0"
+                    T19 = "480000"
+                    T20 = "3000"
+                    T21 = "3000"
+                    T22 = "30000"
+                    T23 = "30000"
+                    T24 = "30000"
+                    T25 = "30000"
+                    T26 = "12000"
+                    T27 = "2000"
+                    T28 = "3000"
+                    T29 = "60000"
+                    T30 = "30000"
+                    T31 = "10000"
+                    T32 = "5000"
+                    T33 = "60000"
+                    T34 = "5000"
+                    SLT-T1 = "5000"
+                    SLT-T2 = "30000"
+                />
+
+            </ITU-MTP3>
+
+            <ITU-ISUP variant = "ITU_GENERIC_93" >
+
+                <StackTrace>
+                    <Critical output = "stdout"/>
+                    <Critical output = "file"/>
+                    <Error    output = "stdout"/>
+                    <Warning  output = "file"/>
+                    <Debug    output = "null"/>
+                </StackTrace>
+
+            </ITU-ISUP>
+
+  
+        </IntelliNet>
+
+
+    </SS7-Stacks>
+
+</Application>

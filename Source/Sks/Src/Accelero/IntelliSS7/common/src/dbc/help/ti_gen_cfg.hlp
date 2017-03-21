@@ -1,0 +1,21 @@
+
+ITU TCAP Command
+
+SYNOPSIS
+    ti_gen_cfg
+
+DESCRIPTION
+    This command displays ITU TCAP general configuration. This include TCAP 
+    Alarm Level and TCAP Trace Level. Alarm level controls TCAP alarms sent to 
+    Accelero application. Trace level controls generation of TCAP execution traces.
+
+PARAMETERS
+    None.
+
+EXAMPLE
+    >> ti_gen_cfg
+    *********** TCAP General Config *************
+        Alarm Level = OFF
+        TCAP Trace On
+    *********** End of TCAP General Config *************
+

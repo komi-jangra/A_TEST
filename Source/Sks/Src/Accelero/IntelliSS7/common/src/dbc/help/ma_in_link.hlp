@@ -1,0 +1,24 @@
+
+ANSI MTP3 Command
+
+SYNOPSIS
+    ma_in_link <linkset> <linkcode>
+
+DESCRIPTION
+    To inhibit a link by user 
+
+PARAMETERS
+    linkset       the link set which owns the link
+    linkcode      link id within the specified linkset
+
+
+EXAMPLE
+    >> ma_in_link 2 9 
+
+    ***Link 2:9 Inhibition initiated***
+
+
+NOTE 
+   link inhibition is not allowed if the target link is the only 
+   available link in the linkset.
+

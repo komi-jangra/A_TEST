@@ -1,0 +1,30 @@
+
+ANSI MTP3 Command
+
+SYNOPSIS
+    ma_start 
+
+DESCRIPTION
+    Manually start MTP3 Link Alignment
+
+PARAMETERS
+    none
+
+
+EXAMPLE
+    >> ma_start 
+
+    *********** Starting MTP3 **************
+
+NOTE 
+   This command is used to manually start the link alignment. However, 
+   the user can instruct the application to automatically start the 
+   link alignment process upon startup. The user need to invoke the
+   function:
+
+   MGMT_Main_ANSI(MTP3_USER, MGMT_TRIGGER_RESTART, NULL, 0, 
+            ITS_SS7_DEFAULT_LINK_SET, ITS_SS7_DEFAULT_LINK_CODE);
+    
+   The ideal place to invoke this function call is in the application 
+   "preFunc" callback function.
+

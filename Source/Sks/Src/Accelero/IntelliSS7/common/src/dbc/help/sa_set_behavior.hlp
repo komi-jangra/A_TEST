@@ -1,0 +1,31 @@
+
+ANSI SCCP Command
+
+SYNOPSIS
+    sa_set_behavior <ps> <us> <pi> <pe>
+
+DESCRIPTION
+    This command sets ANSI SCCP behavior.
+
+PARAMETERS
+      ps    Propagate SCMG Behavior. 
+             yes set Propagate SCMG Behavior.
+             no  unset Propagate SCMG Behavior.
+
+      us    Use SCMG Behavior. 
+             yes set Use SCMG Behavior.
+             no  unset Use SCMG Behavior.
+
+      pi    Propagate Inactivity Behavior. 
+             yes set Propagate Inactivity Behavior.
+             no  unset Propagate Inactivity Behavior.
+
+      pe    Propagate Error Behavior. 
+             yes set Propagate Error Behavior.
+             no  unset Propagate Error Behavior.
+
+EXAMPLE
+    >> sa_set_behavior yes yes yes yes
+    *******SCCP Behaviors Set*******
+
+

@@ -1,0 +1,48 @@
+--------------------------------------------------------------------------------
+--
+-- AsnCC 2.0 test.
+--
+-- Various ASN.1 types. LRF and non-LRF formats.
+--
+--------------------------------------------------------------------------------
+
+TEST8 { ccitt identified-organization (4) etsi (0) version2 (2) } DEFINITIONS IMPLICIT TAGS ::=
+
+BEGIN
+
+EXPORTS
+;
+
+
+AuthenticationDirectiveRRL ::= [PRIVATE 18] IMPLICIT SET 
+{
+    callHistoryCount [38] IMPLICIT OCTET STRING (SIZE(2)) OPTIONAL,
+
+    foo [45] IMPLICIT OCTET STRING (SIZE(1999..2000)) OPTIONAL,
+
+    foo1 [23] ANY,
+
+    foo2 [34] BIT STRING {
+                alt0(0),
+                alt1(1),
+                alt2(2),
+                alt3(3)
+                },
+
+    foo3 [56] INTEGER,
+
+    foo4 [47] ANY DEFINED BY foo3,
+
+    foo5 [36] CHOICE {
+                choice1 [1] INTEGER,
+                choice2 [2] REAL,
+                choice3 [3] NULL,
+                choice4 [4] OBJECT IDENTIFIER
+                }
+}
+
+Bar1 ::= SET SIZE(10) OF AuthenticationDirectiveRRL
+
+Bar2 ::= SET SIZE(127..MAX) OF INTEGER
+
+END

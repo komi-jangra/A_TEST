@@ -1,0 +1,27 @@
+ANSI ISUP Command
+
+SYNOPSIS
+    ia_get_dest_pegs <opc> <dpc> <sio> 
+
+DESCRIPTION
+    This command displays the pegs for the particular ISUP Destination.
+
+PARAMETERS
+    opc     Origination point code.
+    dpc     Destination point code.
+    sio     Service information octet.
+
+EXAMPLE
+
+>> ia_get_dest_pegs 16 21 133
+
+     Peg Name                       Peg Count
+     --------                       --------
+
+PEG_ISUP_DEST_REM_AVAIL               0
+PEG_ISUP_DEST_REM_UNAVAIL             0
+PEG_ISUP_DEST_REM_CONGES              0
+PEG_ISUP_DEST_REM_CONGES_SEIZED       0
+PEG_ISUP_DEST_PAUSE                   0
+PEG_ISUP_DEST_RESUME                  0
+

@@ -1,0 +1,72 @@
+#!/bin/sh
+#
+# generate documents
+#
+
+#
+# get what we have to have
+#
+if [ $# -ne 2 ]
+then
+    echo "Usage: $0: <LibraryName> <DocDirPath> < <list-of-files>"
+    echo "Where <list-of-files> is a file containing matched sets"
+    echo "of input files for generation."
+    exit 1
+fi
+
+#
+#
+LIBRARY=$1
+DOCDIR=$2
+INAME=`echo $LIBRARY | tr A-Z a-z`
+INDEX=`printf "%s/%s_index.html" $2 $INAME`
+
+#
+# record all interfaces in an index file for this library
+#
+printf "USING INDEX %s\n" $INDEX
+
+#
+# start the index file
+#
+> $INDEX
+printf "<HTML>\n"  > $INDEX
+printf "<HEAD>\n"  >> $INDEX
+printf "<CENTER>\n"  >> $INDEX
+printf "<H2><BIG>IntelliSS7</BIG> "  >> $INDEX
+printf "<B>Application Developer's Toolkit</B></H2>\n"  >> $INDEX
+printf "</CENTER>\n"  >> $INDEX
+printf "<BR>\n"  >> $INDEX
+printf "</HEAD>\n"  >> $INDEX
+printf "<BODY>\n"  >> $INDEX
+printf "\n"  >> $INDEX
+
+printf "<A NAME=#topLocation></A>"  >> $INDEX
+printf "<TABLE ALIGN=JUSTIFY WIDTH=100%% BGCOLOR=SILVER>\n" >> $INDEX
+printf "<TR>\n"  >> $INDEX
+printf "    <TD ALIGN=LEFT><B>IntelliSS7 Interfaces</B></TD>\n"  >> $INDEX
+printf "    <TD ALIGN=RIGHT><B>%s Library</B></TD>\n" $LIBRARY  >> $INDEX
+printf "</TR>\n"  >> $INDEX
+printf "</TABLE>\n"  >> $INDEX
+printf "<BR>\n"  >> $INDEX
+printf "Interfaces in this library:\n"  >> $INDEX
+printf "<BR>\n"  >> $INDEX
+printf "<TABLE WIDTH=100%% BORDER=0>\n"  >> $INDEX
+
+#
+# handle the input
+#
+while read args
+do
+    echo Generating for $args
+	gawk -f $ITS_ROOT/tools/src/docgen/docgen \
+        Library=$LIBRARY  DocDir=$DOCDIR \
+        $args
+done
+
+#
+# end the index file
+#
+printf "</TABLE>\n"  >> $INDEX
+printf "</BODY>\n"  >> $INDEX
+printf "</HTML>\n"  >> $INDEX

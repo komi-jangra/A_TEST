@@ -1,0 +1,21 @@
+
+
+ENGINE Command
+
+SYNOPSIS
+    b_setmods <modifiers>
+
+
+DESCRIPTION
+    This command sets the modifiers for the current border transport context.
+    This command must be invoked before the current border transport can be
+    added.  Note that a combination of the mask, modifiers, and transport type
+    are required.
+
+PARAMETERS
+    <modifiers>           DATA|RUDP|IMAL|TALI|GDI|SCTP|MTP2|MTP3|ISUP|SCCP|TCAP
+
+
+EXAMPLE
+
+    b_setmods   IMAL|SCCP|ISUP

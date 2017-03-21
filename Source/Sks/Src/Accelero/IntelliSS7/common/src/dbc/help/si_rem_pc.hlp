@@ -1,0 +1,18 @@
+
+ITU SCCP Command
+
+SYNOPSIS
+    si_rem_pc <pc> <linkset>
+
+DESCRIPTION
+    This command removes point code entry corresponding to given 
+    pc and linkset.
+
+PARAMETERS
+    pc      Point Code
+    linkset Linkset
+
+EXAMPLE
+    >> si_rem_pc 6 1
+    ********* SCCP Point Code Entry Removed********
+

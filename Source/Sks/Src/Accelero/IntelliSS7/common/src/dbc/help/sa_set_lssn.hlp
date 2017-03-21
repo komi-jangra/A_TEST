@@ -1,0 +1,23 @@
+
+ANSISCCP Command
+
+SYNOPSIS
+    sa_set_lssn <pc> <ni> <ssn>
+
+DESCRIPTION
+    This command adds local sub system entry.
+
+
+PARAMETERS
+    pc      Local Point Code
+    ni      Network indicator
+    ssn     Local Subsystem
+    
+EXAMPLE
+>> sa_set_lssn 1 1 5
+
+********* SCCP Local Subsystem Entry Set *********
+
+NOTE -
+1. Local subsystem gets added to pre-configured linkset 0
+

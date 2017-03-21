@@ -1,0 +1,782 @@
+
+VOLUME=$dsmscm
+
+$(VOLUME).asnc.asprinto : $(VOLUME).asnc.asprintf
+	NMC /in $(VOLUME).asnc.asprintf / $(VOLUME).asnc.asprinto ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1, optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.asprinto
+
+$(VOLUME).asnc.bit2prio : $(VOLUME).asnc.bit2prim
+	NMC /in $(VOLUME).asnc.bit2prim / $(VOLUME).asnc.bit2prio ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.bit2prio
+
+$(VOLUME).asnc.bitopso : $(VOLUME).asnc.bitopsc
+	NMC /in $(VOLUME).asnc.bitopsc / $(VOLUME).asnc.bitopso ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.bitopso
+
+$(VOLUME).asnc.bitstr2o : $(VOLUME).asnc.bitstr2s
+	NMC /in $(VOLUME).asnc.bitstr2s / $(VOLUME).asnc.bitstr2o ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.bitstr2o
+
+$(VOLUME).asnc.deco : $(VOLUME).asnc.decc
+	NMC /in $(VOLUME).asnc.decc / $(VOLUME).asnc.deco ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.deco
+
+$(VOLUME).asnc.enco : $(VOLUME).asnc.encc
+	NMC /in $(VOLUME).asnc.encc / $(VOLUME).asnc.enco ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.enco
+
+$(VOLUME).asnc.flag2pro : $(VOLUME).asnc.flag2pri
+	NMC /in $(VOLUME).asnc.flag2pri / $(VOLUME).asnc.flag2pro ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.flag2pro
+
+$(VOLUME).asnc.freo : $(VOLUME).asnc.frec
+	NMC /in $(VOLUME).asnc.frec / $(VOLUME).asnc.freo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.freo
+
+$(VOLUME).asnc.generalo : $(VOLUME).asnc.generalc
+	NMC /in $(VOLUME).asnc.generalc / $(VOLUME).asnc.generalo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.generalo
+
+$(VOLUME).asnc.gtimeo : $(VOLUME).asnc.gtimec
+	NMC /in $(VOLUME).asnc.gtimec / $(VOLUME).asnc.gtimeo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.gtimeo
+
+$(VOLUME).asnc.isobjeco : $(VOLUME).asnc.isobject
+	NMC /in $(VOLUME).asnc.isobject / $(VOLUME).asnc.isobjeco ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.isobjeco
+
+$(VOLUME).asnc.num2prio : $(VOLUME).asnc.num2prim
+	NMC /in $(VOLUME).asnc.num2prim / $(VOLUME).asnc.num2prio ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.num2prio
+
+$(VOLUME).asnc.obj2prio : $(VOLUME).asnc.obj2prim
+	NMC /in $(VOLUME).asnc.obj2prim / $(VOLUME).asnc.obj2prio ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.obj2prio
+
+$(VOLUME).asnc.ode2oido : $(VOLUME).asnc.ode2oidc
+	NMC /in $(VOLUME).asnc.ode2oidc / $(VOLUME).asnc.ode2oido ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.ode2oido
+
+$(VOLUME).asnc.oid2odeo : $(VOLUME).asnc.oid2odec
+	NMC /in $(VOLUME).asnc.oid2odec / $(VOLUME).asnc.oid2odeo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.oid2odeo
+
+$(VOLUME).asnc.oidcmpo : $(VOLUME).asnc.oidcmpc
+	NMC /in $(VOLUME).asnc.oidcmpc / $(VOLUME).asnc.oidcmpo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.oidcmpo
+
+$(VOLUME).asnc.oidcpyo : $(VOLUME).asnc.oidcpyc
+	NMC /in $(VOLUME).asnc.oidcpyc / $(VOLUME).asnc.oidcpyo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.oidcpyo
+
+$(VOLUME).asnc.oidfreeo : $(VOLUME).asnc.oidfreec
+	NMC /in $(VOLUME).asnc.oidfreec / $(VOLUME).asnc.oidfreeo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.oidfreeo
+
+$(VOLUME).asnc.pe2pso : $(VOLUME).asnc.pe2psc
+	NMC /in $(VOLUME).asnc.pe2psc / $(VOLUME).asnc.pe2pso ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.pe2pso
+
+$(VOLUME).asnc.pe2qbfo : $(VOLUME).asnc.pe2qbfc
+	NMC /in $(VOLUME).asnc.pe2qbfc / $(VOLUME).asnc.pe2qbfo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.pe2qbfo
+
+$(VOLUME).asnc.pe2ssduo : $(VOLUME).asnc.pe2ssduc
+	NMC /in $(VOLUME).asnc.pe2ssduc / $(VOLUME).asnc.pe2ssduo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.pe2ssduo
+
+$(VOLUME).asnc.pealloco : $(VOLUME).asnc.peallocc
+	NMC /in $(VOLUME).asnc.peallocc / $(VOLUME).asnc.pealloco ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.pealloco
+
+$(VOLUME).asnc.pecpyo : $(VOLUME).asnc.pecpyc
+	NMC /in $(VOLUME).asnc.pecpyc / $(VOLUME).asnc.pecpyo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.pecpyo
+
+$(VOLUME).asnc.peerroro : $(VOLUME).asnc.peerrorc
+	NMC /in $(VOLUME).asnc.peerrorc / $(VOLUME).asnc.peerroro ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.peerroro
+
+$(VOLUME).asnc.pefreeo : $(VOLUME).asnc.pefreec
+	NMC /in $(VOLUME).asnc.pefreec / $(VOLUME).asnc.pefreeo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.pefreeo
+
+$(VOLUME).asnc.prim2bio : $(VOLUME).asnc.prim2bit
+	NMC /in $(VOLUME).asnc.prim2bit / $(VOLUME).asnc.prim2bio ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.prim2bio
+
+$(VOLUME).asnc.prim2flo : $(VOLUME).asnc.prim2fla
+	NMC /in $(VOLUME).asnc.prim2fla / $(VOLUME).asnc.prim2flo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.prim2flo
+
+$(VOLUME).asnc.prim2nuo : $(VOLUME).asnc.prim2num
+	NMC /in $(VOLUME).asnc.prim2num / $(VOLUME).asnc.prim2nuo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.prim2nuo
+
+$(VOLUME).asnc.prim2oio : $(VOLUME).asnc.prim2oid
+	NMC /in $(VOLUME).asnc.prim2oid / $(VOLUME).asnc.prim2oio ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.prim2oio
+
+$(VOLUME).asnc.prim2qbo : $(VOLUME).asnc.prim2qbc
+	NMC /in $(VOLUME).asnc.prim2qbc / $(VOLUME).asnc.prim2qbo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.prim2qbo
+
+$(VOLUME).asnc.prim2reo : $(VOLUME).asnc.prim2rea
+	NMC /in $(VOLUME).asnc.prim2rea / $(VOLUME).asnc.prim2reo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.prim2reo
+
+$(VOLUME).asnc.prim2seo : $(VOLUME).asnc.prim2set
+	NMC /in $(VOLUME).asnc.prim2set / $(VOLUME).asnc.prim2seo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.prim2seo
+
+$(VOLUME).asnc.prim2sto : $(VOLUME).asnc.prim2str
+	NMC /in $(VOLUME).asnc.prim2str / $(VOLUME).asnc.prim2sto ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.prim2sto
+
+$(VOLUME).asnc.prim2tio : $(VOLUME).asnc.prim2tim
+	NMC /in $(VOLUME).asnc.prim2tim / $(VOLUME).asnc.prim2tio ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.prim2tio
+
+$(VOLUME).asnc.prnto : $(VOLUME).asnc.prntc
+	NMC /in $(VOLUME).asnc.prntc / $(VOLUME).asnc.prnto ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.prnto
+
+$(VOLUME).asnc.ps2peo : $(VOLUME).asnc.ps2pec
+	NMC /in $(VOLUME).asnc.ps2pec / $(VOLUME).asnc.ps2peo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.ps2peo
+
+$(VOLUME).asnc.psalloco : $(VOLUME).asnc.psallocc
+	NMC /in $(VOLUME).asnc.psallocc / $(VOLUME).asnc.psalloco ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.psalloco
+
+$(VOLUME).asnc.pserroro : $(VOLUME).asnc.pserrorc
+	NMC /in $(VOLUME).asnc.pserrorc / $(VOLUME).asnc.pserroro ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.pserroro
+
+$(VOLUME).asnc.psflusho : $(VOLUME).asnc.psflushc
+	NMC /in $(VOLUME).asnc.psflushc / $(VOLUME).asnc.psflusho ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.psflusho
+
+$(VOLUME).asnc.psfreeo : $(VOLUME).asnc.psfreec
+	NMC /in $(VOLUME).asnc.psfreec / $(VOLUME).asnc.psfreeo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.psfreeo
+
+$(VOLUME).asnc.psgetabo : $(VOLUME).asnc.psgetabs
+	NMC /in $(VOLUME).asnc.psgetabs / $(VOLUME).asnc.psgetabo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.psgetabo
+
+$(VOLUME).asnc.psioo : $(VOLUME).asnc.psioc
+	NMC /in $(VOLUME).asnc.psioc / $(VOLUME).asnc.psioo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.psioo
+
+$(VOLUME).asnc.psprimeo : $(VOLUME).asnc.psprimec
+	NMC /in $(VOLUME).asnc.psprimec / $(VOLUME).asnc.psprimeo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.psprimeo
+
+$(VOLUME).asnc.qbcpyo : $(VOLUME).asnc.qbcpyc
+	NMC /in $(VOLUME).asnc.qbcpyc / $(VOLUME).asnc.qbcpyo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.qbcpyo
+
+$(VOLUME).asnc.qb2peo : $(VOLUME).asnc.qb2pec
+	NMC /in $(VOLUME).asnc.qb2pec / $(VOLUME).asnc.qb2peo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.qb2peo
+
+$(VOLUME).asnc.qb2primo : $(VOLUME).asnc.qb2primc
+	NMC /in $(VOLUME).asnc.qb2primc / $(VOLUME).asnc.qb2primo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.qb2primo
+
+$(VOLUME).asnc.qb2stro : $(VOLUME).asnc.qb2strc
+	NMC /in $(VOLUME).asnc.qb2strc / $(VOLUME).asnc.qb2stro ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.qb2stro
+
+$(VOLUME).asnc.qbfreeo : $(VOLUME).asnc.qbfreec
+	NMC /in $(VOLUME).asnc.qbfreec / $(VOLUME).asnc.qbfreeo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.qbfreeo
+
+$(VOLUME).asnc.qbpulluo : $(VOLUME).asnc.qbpullup
+	NMC /in $(VOLUME).asnc.qbpullup / $(VOLUME).asnc.qbpulluo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.qbpulluo
+
+$(VOLUME).asnc.qbuf2peo : $(VOLUME).asnc.qbuf2pec
+	NMC /in $(VOLUME).asnc.qbuf2pec / $(VOLUME).asnc.qbuf2peo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.qbuf2peo
+
+$(VOLUME).asnc.qbuf2pso : $(VOLUME).asnc.qbuf2psc
+	NMC /in $(VOLUME).asnc.qbuf2psc / $(VOLUME).asnc.qbuf2pso ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.qbuf2pso
+
+$(VOLUME).asnc.rcmdsrco : $(VOLUME).asnc.rcmdsrch
+	NMC /in $(VOLUME).asnc.rcmdsrch / $(VOLUME).asnc.rcmdsrco ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.rcmdsrco
+
+$(VOLUME).asnc.real2pro : $(VOLUME).asnc.real2pri
+	NMC /in $(VOLUME).asnc.real2pri / $(VOLUME).asnc.real2pro ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.real2pro
+
+$(VOLUME).asnc.seqaddo : $(VOLUME).asnc.seqaddc
+	NMC /in $(VOLUME).asnc.seqaddc / $(VOLUME).asnc.seqaddo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.seqaddo
+
+$(VOLUME).asnc.seqaddoo : $(VOLUME).asnc.seqaddon
+	NMC /in $(VOLUME).asnc.seqaddon / $(VOLUME).asnc.seqaddoo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.seqaddoo
+
+$(VOLUME).asnc.setaddo : $(VOLUME).asnc.setaddc
+	NMC /in $(VOLUME).asnc.setaddc / $(VOLUME).asnc.setaddo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.setaddo
+
+$(VOLUME).asnc.setaddoo : $(VOLUME).asnc.setaddon
+	NMC /in $(VOLUME).asnc.setaddon / $(VOLUME).asnc.setaddoo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.setaddoo
+
+$(VOLUME).asnc.setfindo : $(VOLUME).asnc.setfindc
+	NMC /in $(VOLUME).asnc.setfindc / $(VOLUME).asnc.setfindo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.setfindo
+
+$(VOLUME).asnc.smalloco : $(VOLUME).asnc.smallocc
+	NMC /in $(VOLUME).asnc.smallocc / $(VOLUME).asnc.smalloco ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.smalloco
+
+$(VOLUME).asnc.sprintoo : $(VOLUME).asnc.sprintoi
+	NMC /in $(VOLUME).asnc.sprintoi / $(VOLUME).asnc.sprintoo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.sprintoo
+
+$(VOLUME).asnc.ssdu2peo : $(VOLUME).asnc.ssdu2pec
+	NMC /in $(VOLUME).asnc.ssdu2pec / $(VOLUME).asnc.ssdu2peo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.ssdu2peo
+
+$(VOLUME).asnc.std2pso : $(VOLUME).asnc.std2psc
+	NMC /in $(VOLUME).asnc.std2psc / $(VOLUME).asnc.std2pso ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.std2pso
+
+$(VOLUME).asnc.str2eleo : $(VOLUME).asnc.str2elem
+	NMC /in $(VOLUME).asnc.str2elem / $(VOLUME).asnc.str2eleo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.str2eleo
+
+$(VOLUME).asnc.str2oido : $(VOLUME).asnc.str2oidc
+	NMC /in $(VOLUME).asnc.str2oidc / $(VOLUME).asnc.str2oido ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.str2oido
+
+$(VOLUME).asnc.str2peo : $(VOLUME).asnc.str2pec
+	NMC /in $(VOLUME).asnc.str2pec / $(VOLUME).asnc.str2peo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.str2peo
+
+$(VOLUME).asnc.str2prio : $(VOLUME).asnc.str2prim
+	NMC /in $(VOLUME).asnc.str2prim / $(VOLUME).asnc.str2prio ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.str2prio
+
+$(VOLUME).asnc.str2pso : $(VOLUME).asnc.str2psc
+	NMC /in $(VOLUME).asnc.str2psc / $(VOLUME).asnc.str2pso ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.str2pso
+
+$(VOLUME).asnc.str2qbo : $(VOLUME).asnc.str2qbc
+	NMC /in $(VOLUME).asnc.str2qbc / $(VOLUME).asnc.str2qbo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.str2qbo
+
+$(VOLUME).asnc.str2veco : $(VOLUME).asnc.str2vecc
+	NMC /in $(VOLUME).asnc.str2vecc / $(VOLUME).asnc.str2veco ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.str2veco
+
+$(VOLUME).asnc.strb2bio : $(VOLUME).asnc.strb2bit
+	NMC /in $(VOLUME).asnc.strb2bit / $(VOLUME).asnc.strb2bio ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.strb2bio
+
+$(VOLUME).asnc.strb2ino : $(VOLUME).asnc.strb2int
+	NMC /in $(VOLUME).asnc.strb2int / $(VOLUME).asnc.strb2ino ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.strb2ino
+
+$(VOLUME).asnc.time2pro : $(VOLUME).asnc.time2pri
+	NMC /in $(VOLUME).asnc.time2pri / $(VOLUME).asnc.time2pro ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.time2pro
+
+$(VOLUME).asnc.time2sto : $(VOLUME).asnc.time2str
+	NMC /in $(VOLUME).asnc.time2str / $(VOLUME).asnc.time2sto ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.time2sto
+
+$(VOLUME).asnc.tm2uto : $(VOLUME).asnc.tm2utc
+	NMC /in $(VOLUME).asnc.tm2utc / $(VOLUME).asnc.tm2uto ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.tm2uto
+
+$(VOLUME).asnc.ut2tmo : $(VOLUME).asnc.ut2tmc
+	NMC /in $(VOLUME).asnc.ut2tmc / $(VOLUME).asnc.ut2tmo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.ut2tmo
+
+$(VOLUME).asnc.utilo : $(VOLUME).asnc.utilc
+	NMC /in $(VOLUME).asnc.utilc / $(VOLUME).asnc.utilo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.utilo
+
+$(VOLUME).asnc.univtabo : $(VOLUME).asnc.univtabl
+	NMC /in $(VOLUME).asnc.univtabl / $(VOLUME).asnc.univtabo ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.univtabo
+
+$(VOLUME).asnc.vprinto : $(VOLUME).asnc.vprintc
+	NMC /in $(VOLUME).asnc.vprintc / $(VOLUME).asnc.vprinto ; \
+		symbols, suppress, nowarn(1506,770), nooverflow_traps, \
+		nostdfiles, inline, extensions, define DEBUG, define TANDEM, \
+		define _XOPEN_SOURCE_EXTENDED 1,  optimize 0, \
+		ssv0 "$system.system", ssv1 "$nb130.csslilib", ssv2 "$nb130", \
+		ssv3 "$nb130.cssinc", ssv4 "$nb130.p2system",ssv5 "$nb130.eralilib", \
+		ssv6 "$(VOLUME).include"
+    ar crv $(VOLUME).lib.libasnc $(VOLUME).asnc.vprinto

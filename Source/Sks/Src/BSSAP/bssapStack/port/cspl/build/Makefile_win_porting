@@ -1,0 +1,97 @@
+CPP=cl.exe
+RSC=rc.exe
+!MESSAGE "$(OS)"
+!IF "$(OS)" == "Windows_NT"
+!MESSAGE "1"
+NULL=
+!ELSE 
+!MESSAGE "2"
+NULL=nul
+!ENDIF 
+
+OUTDIR=$(ROOTDIR)\build\Debug
+!MESSAGE "$(OUTDIR)"
+INTDIR=$(ROOTDIR)\build\Debug
+HDIR=$(ROOTDIR)\h
+COMMON=$(ROOTDIR)\drivers\common
+!MESSAGE "$(COMMON)"
+ALL : "$(OUTDIR)\libporting.lib"
+!ifdef PORTDIR
+CLEAN :
+	-@erase "$(INTDIR)\port.obj"
+	-@erase "$(INTDIR)\vc60.idb"
+	-@erase "$(OUTDIR)\libporting.lib"
+!else
+CLEAN :
+	-@erase "$(INTDIR)\os.obj"
+	-@erase "$(INTDIR)\eflow.obj"
+	-@erase "$(INTDIR)\shell.obj"
+	-@erase "$(INTDIR)\vc60.idb"
+	-@erase "$(OUTDIR)\libporting.lib"
+!endif
+!MESSAGE "$(PORTDIR)"
+!ifndef PORTDIR
+PORT_DEF_DIR=$(ROOTDIR)\ports\win32-console
+!MESSAGE "$(PORT_DEF_DIR)"
+!endif
+
+"$(OUTDIR)" :
+    if not exist "$(OUTDIR)/$(NULL)" mkdir "$(OUTDIR)"
+!ifdef PORTDIR
+CPP_PROJ=/nologo /MLd /W3 /Gm /GX /ZI /Od /I "$(HDIR)" /I "$(PORTDIR)" /I "$(COMMON)" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_LIB" /Fp"$(INTDIR)\libporting.pch" /YX /Fo"$(INTDIR)\\" /Fd"$(INTDIR)\\" /FD /GZ  /c 
+!else
+CPP_PROJ=/nologo /MLd /W3 /Gm /GX /ZI /Od /I "$(HDIR)" /I "$(PORT_DEF_DIR)" /I "$(COMMON)" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_LIB" /Fp"$(INTDIR)\libporting.pch" /YX /Fo"$(INTDIR)\\" /Fd"$(INTDIR)\\" /FD /GZ  /c 
+!endif
+LIB32=link.exe -lib
+LIB32_FLAGS=/nologo /out:"$(OUTDIR)\libporting.lib" 
+!ifdef PORTDIR
+LIB32_OBJS= \
+	"$(INTDIR)\port.obj" 
+!else
+LIB32_OBJS= \
+	"$(INTDIR)\os.obj" \
+	"$(INTDIR)\eflow.obj" \
+	"$(INTDIR)\shell.obj"
+!endif
+"$(OUTDIR)\libporting.lib" : "$(OUTDIR)" $(DEF_FILE) $(LIB32_OBJS)
+    $(LIB32) @<<
+  $(LIB32_FLAGS) $(DEF_FLAGS) $(LIB32_OBJS)
+<<
+
+.c{$(INTDIR)}.obj::
+   $(CPP) @<<
+   $(CPP_PROJ) $< 
+<<
+
+
+.c{$(INTDIR)}.sbr::
+   $(CPP) @<<
+   $(CPP_PROJ) $< 
+<<
+
+
+
+!IF "$(CFG)" == "libporting - Win32 Release" || "$(CFG)" == "libporting - Win32 Debug"
+SOURCE=$(ROOTDIR)\ports\win32-console\os.c
+
+"$(INTDIR)\os.obj" : $(SOURCE) "$(INTDIR)"
+	$(CPP) $(CPP_PROJ) $(SOURCE)
+
+SOURCE=$(ROOTDIR)\ports\win32-console\eflow.c
+
+"$(INTDIR)\eflow.obj" : $(SOURCE) "$(INTDIR)"
+	$(CPP) $(CPP_PROJ) $(SOURCE)
+
+
+SOURCE=$(ROOTDIR)\drivers\winsock\shell.c
+
+"$(INTDIR)\shell.obj" : $(SOURCE) "$(INTDIR)"
+	$(CPP) $(CPP_PROJ) $(SOURCE)
+
+SOURCE=$(PORTDIR)\port.c
+
+"$(INTDIR)\port.obj" : $(SOURCE) "$(INTDIR)"
+	$(CPP) $(CPP_PROJ) $(SOURCE)
+
+
+!ENDIF 

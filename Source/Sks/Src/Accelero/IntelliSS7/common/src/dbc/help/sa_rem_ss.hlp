@@ -1,0 +1,19 @@
+
+ANSI SCCP Command
+
+SYNOPSIS
+    sa_rem_ss <pc> <ssn> <linkset>
+
+DESCRIPTION
+    This command removes subsystem entry corresponding to given 
+    pc, ssn, linkset.
+
+PARAMETERS
+    pc      Point Code
+    ssn     Subsystem Number
+    linkset Linkset
+
+EXAMPLE
+    >> sa_rem_ss 5 5 1
+    ********* SCCP Subsystem Entry Removed********
+

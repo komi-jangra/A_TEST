@@ -1,0 +1,22 @@
+
+ANSI ISUP Command
+
+SYNOPSIS
+    ia_clr_gen_pegs [<PegType> (or) <All/all>]
+
+DESCRIPTION
+    This command reset a perticular general peg.
+
+PARAMETERS
+    PegId   Id of peg to clear
+
+    Possible values are:
+
+    PEG_ISUP_TOT_MSGS_SENT       7
+    PEG_ISUP_TOT_MSGS_RCVD       8
+
+    ALL_ISUP_PEGS                99
+
+EXAMPLE
+>> ia_clr_gen_pegs 7
+** Cleared ISUP general peg id 7 **

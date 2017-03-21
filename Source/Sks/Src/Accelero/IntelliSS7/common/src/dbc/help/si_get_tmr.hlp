@@ -1,0 +1,29 @@
+
+ITU SCCP Command
+
+SYNOPSIS
+    si_get_tmr
+
+DESCRIPTION
+    This command displays configured  timers and associated values.
+
+PARAMETERS
+    None.
+
+EXAMPLE
+    >> si_get_tmr
+        SCCP_T_statInfo       <30> 
+        SCCP_T_coordChg       <30> 
+        SCCP_T_ignoreSST      <30> 
+        SCCP_T_rtgStatInfo    <30> 
+        SCCP_T_conn           <30> 
+        SCCP_T_release        <10> 
+        SCCP_T_reset          <20> 
+        SCCP_T_ias            <300> 
+        SCCP_T_iar            <660> 
+        SCCP_T_guard          <240> 
+        SCCP_T_reassembly     <10> 
+        SCCP_T_interval       <30> 
+        SCCP_T_repeatRelease  <10> 
+
+

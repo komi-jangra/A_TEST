@@ -1,0 +1,22 @@
+
+ITU ISUP Command
+
+SYNOPSIS
+    ii_set_segsup_status <opc> <dpc> <sio> <segFlag>
+
+DESCRIPTION
+    This command sets ITU ISUP Segmentation Procedure Supported Flag 
+
+PARAMETERS
+    opc     Origination point code.
+    dpc     Destination point code.
+    sio     Service information octet.
+    segFlag Segmentation Supported Flag.
+
+    Possible Values for segFlag: yes, no 
+
+EXAMPLE
+>> ii_set_segsup_status 16 21 133 no
+
+ ****** Set Segmentation Supported Successful *******
+

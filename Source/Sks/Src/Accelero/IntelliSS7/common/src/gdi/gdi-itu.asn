@@ -1,0 +1,224 @@
+
+--
+-- GDI operations
+--
+
+SR-5202
+DEFINITIONS ::=
+BEGIN
+
+--
+-- NOTES:
+--
+-- 1) For ITU, the dialogue portion MUST be omitted.
+-- 2) Note that the operation family is always included, even
+--    in SR-5202.
+-- 3) The operation and error codes appear in gdi_msgs.h
+-- 4) At some point this file and the ANSI version should become
+--    one file.  As of now, there are several differences that
+--    preclude this from happening.
+--
+
+--
+-- GetData ::=  OPERATION
+-- PARAMETER    SEQUENCE {
+--              serviceKey              ServiceKey,
+--              securityIdentifier      SecurityIdentifier OPTIONAL,
+--              requestedDataElements   DataElementList
+--              }
+-- RESULT       SEQUENCE {
+--              resultType              ResultType,
+--              dataElementsReturned    DataElementBlock
+--              }
+-- ERRORS       {
+--              generalFailure,
+--              missingCustomerRecord,
+--              dataUnavailable,
+--              taskRefused,
+--              queueFull,
+--              timerExpired,
+--              systemNotResponding,
+--              unauthorizedRequest,
+--              incompatibleVersions,
+--              resultsTooLong
+--              }
+-- ::= 59137    aka 0x00E701
+--
+-- SendData ::= OPERATION
+-- PARAMETER    SEQUENCE {
+--              serviceKey              ServiceKey,
+--              securityIdentifier      SecurityIdentifier OPTIONAL,
+--              updateDataElements      DataElementBlock
+--              }
+-- RESULT       SEQUENCE {
+--              resultType              ResultType,
+--              dataElementsUpdated     DataElementBlock OPTIONAL
+--              }
+-- ERRORS       {
+--              generalFailure,
+--              missingCustomerRecord,
+--              dataUnavailable,
+--              taskRefused,
+--              queueFull,
+--              timerExpired,
+--              systemNotResponding,
+--              unauthorizedRequest,
+--              incompatibleVersions,
+--              resultsTooLong
+--              }
+-- ::= 59138    aka 0x00E702
+--
+-- InvokeApp ::=    OPERATION
+-- PARAMETER        SEQUENCE {
+--                  originatingSysID        OCTET STRING (1..32),
+--                  accessID                OCTET STRING (1..16),
+--                  receiverID              OCTET STRING (1..16),
+--                  appName                 ApplicationName,
+--                  actionID                ActionID,
+--                  securityID              SecurityIdentifier OPTIONAL,
+--                  invokeAppReq            InvokeAppRequest OPTIONAL
+--                  }
+-- RESULT           SEQUENCE {
+--                  respondingSysID         OCTET STRING (1..32),
+--                  accessID                OCTET STRING (1..16),
+--                  receiverID              OCTET STRING (1..16),
+--                  appName                 ApplicationName,
+--                  actionID                ActionID,
+--                  resultType              INTEGER,    ** Success(0),
+--                                                      ** value must be >= 0
+--                  securityID              SecurityIdentifier OPTIONAL,
+--                  invokeAppResp           InvokeAppResponse OPTIONAL
+--                  }
+-- ERRORS           {
+--                  generalFailure,
+--                  missingCustomerRecord,
+--                  dataUnavailable,
+--                  taskRefused,
+--                  queueFull,
+--                  timerExpired,
+--                  systemNotResponding,
+--                  unauthorizedRequest,
+--                  incompatibleVersions,
+--                  resultsTooLong
+--                  }
+-- ::= 59140        aka 0x00E701
+--
+
+Digits ::=              OCTET STRING
+
+ElementError ::=        ENUMERATED {
+                        ee-successfulUpdate         (0),
+                        ee-generalFailure           (1),
+                        ee-missingCustomerRecord    (4),
+                        ee-dataUnavailable          (6),
+                        ee-taskRefused              (7),
+                        ee-timerExpired             (10),
+                        ee-systemNotResponding      (15),
+                        ee-unauthorizedRequest      (20)
+                        }
+
+ElementData ::=         CHOICE {
+                        elemBoolean         [0] IMPLICIT BOOLEAN,
+                        elemInteger         [1] IMPLICIT INTEGER,
+                        elemString          [2] IMPLICIT OCTET STRING,
+                        elemDigits          [3] IMPLICIT Digits,
+                        elemReal            [4] IMPLICIT REAL,
+                        elemErrorIdentifier [7] IMPLICIT ElementError   -- InvokeApp only
+                        }
+
+ElementIdentifier ::=   INTEGER
+
+ElementValue ::=        CHOICE {
+                        elementError    [0] IMPLICIT ElementError,
+                        elementData     [1] ElementData
+                        }
+                        
+ServiceKey ::=          [10] CHOICE {
+                        lineNumber  [0] IMPLICIT Digits -- Digits defined in 4.1.5
+                        }
+
+SecurityIdentifier ::=  [202] CHOICE {
+                        pin     [0] IMPLICIT Digits,
+                        userId  [1] OCTET STRING (1..8) -- InvokeApp only
+                        }
+
+DataElementList ::=     SET OF ElementIdentifier
+
+ResultType ::=          [203] IMPLICIT ENUMERATED {
+                        completeSuccess (0),
+                        partialSuccess  (1),
+                        completeFailure (2)
+                        }
+
+DataElement ::=         SEQUENCE {
+                        elementIdentifier   ElementIdentifier,
+                        elementValue        ElementValue
+                        }
+
+DataElementBlock ::=    SET OF DataElement
+
+ApplicationName ::=     [204] CHOICE {
+                        appNameString   [0] IMPLICIT OCTET STRING (1..16),
+                        appNameInteger  [1] IMPLICIT INTEGER,
+                        appNameDigits   [2] IMPLICIT Digits
+                        }
+
+ActionID ::=            [205] CHOICE {
+                        actionString    [0] IMPLICIT OCTET STRING (1..16),
+                        actionInteger   [1] IMPLICIT INTEGER,
+                        actionDigits    [2] IMPLICIT Digits
+                        }
+
+InvokeAppData ::=       SEQUENCE {
+                        elementId       ElementIdentifier,
+                        elementValue    ElementData
+                        }
+
+InvokeAppRequest ::=    SET OF InvokeAppData
+
+InvokeAppResponse ::=   SET OF InvokeAppData
+
+GetDataParam ::=        SEQUENCE {
+                        serviceKey              ServiceKey,
+                        securityIdentifier      SecurityIdentifier OPTIONAL,
+                        requestedDataElements   DataElementList
+                        }
+
+GetDataResult ::=       SEQUENCE {
+                        resultType              ResultType,
+                        dataElementsReturned    DataElementBlock
+                        }
+
+SendDataParam ::=       SEQUENCE {
+                        serviceKey              ServiceKey,
+                        securityIdentifier      SecurityIdentifier OPTIONAL,
+                        updateDataElements      DataElementBlock
+                        }
+
+SendDataResult ::=      SEQUENCE {
+                        resultType              ResultType,
+                        dataElementsUpdated     DataElementBlock OPTIONAL
+                        }
+
+InvokeAppParam ::=      SEQUENCE {
+                        originatingSysID        OCTET STRING (1..32),
+                        accessID                OCTET STRING (1..16),
+                        receiverID              OCTET STRING (1..16),
+                        appName                 ApplicationName,
+                        actionID                ActionID,
+                        securityID              SecurityIdentifier OPTIONAL,
+                        invokeAppReq            InvokeAppRequest OPTIONAL
+                        }
+
+InvokeAppResult ::=     SEQUENCE {
+                        respondingSysID         OCTET STRING (1..32),
+                        accessID                OCTET STRING (1..16),
+                        receiverID              OCTET STRING (1..16),
+                        appName                 ApplicationName,
+                        actionID                ActionID,
+                        resultType              INTEGER,
+                        securityID              SecurityIdentifier OPTIONAL,
+                        invokeAppResp           InvokeAppResponse OPTIONAL
+                        }
+
+END

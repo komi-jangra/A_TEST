@@ -1,0 +1,72 @@
+-------------------------------------------------------------------------------
+--
+-- DSM Multi-Nodes Automatic Regression Testing.
+-- -> Test1 Node1.
+--
+
+node1 := 0
+node2 := 1
+numberOfSyncPoints := 10
+
+
+-----------------------------------------------------------
+--
+-- Initialization part.
+--
+
+InitializeNodes(node1, 2)
+InitializeNodesSyncPoints(numberOfSyncPoints)
+InitializeGcs()
+
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+--
+-- Wait for other nodes to join.
+--
+
+Print("\n\nNode 1 waiting for other node(s) to join...\n")
+
+joinTimeout := 20 -- Timeout is 20 secs.
+
+WaitForNodeJoinPoint(node1, joinTimeout)
+WaitForNodeJoinPoint(node2, joinTimeout)
+
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+--
+-- DSM test.
+--
+
+Print("\n\nReady to begin DSM test...\n")
+
+syncTimeout := 20 -- Timeout is 20 secs.
+
+WaitForNodeSyncPoint(node2, 0, syncTimeout)
+
+ftGroupId       := 0
+tableId         := 1
+numberOfRows    := 20
+sizeOfRows      := 64
+
+DsmAllocateCommitBulkOfRows(ftGroupId, tableId, numberOfRows, sizeOfRows)
+
+DsmTableDump(ftGroupId, tableId)
+
+PublishNodeSyncPointReached(0)
+
+WaitForNodeSyncPoint(node2, 1, syncTimeout)
+
+Print("\n\nEnd of DSM test...\n")
+
+-----------------------------------------------------------
+--
+-- Termination part.
+--
+
+TerminateGcs()
+TerminateNodesSyncPoints()
+TerminateNodes()
+
+-----------------------------------------------------------

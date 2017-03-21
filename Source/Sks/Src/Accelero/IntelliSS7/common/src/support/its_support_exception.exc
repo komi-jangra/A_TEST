@@ -1,0 +1,745 @@
+--------------------------------------------------------------------------------
+--
+-- ITS support exceptions source.
+--
+-- To be processed by IntelliExc.
+--
+-- (C) IntelliNet Technologies 1998.
+--
+--------------------------------------------------------------------------------
+--  
+--  ID: $Id: its_support_exception.exc,v 1.1.1.1 2007-10-08 11:11:57 bsccs2 Exp $
+--
+-- LOG: $Log: not supported by cvs2svn $
+-- LOG: Revision 1.1.1.1  2007/10/04 13:24:29  bsccs2
+-- LOG: init tree
+-- LOG:
+-- LOG: Revision 1.1.1.1  2007/08/03 06:49:12  cvsadmin
+-- LOG: BscCs2
+-- LOG:
+-- LOG: Revision 1.1.1.1  2007/03/08 15:14:20  cvsadmin
+-- LOG: BSC project
+-- LOG:
+-- LOG: Revision 9.1  2005/03/23 12:53:40  cvsadmin
+-- LOG: Begin PR6.5
+-- LOG:
+-- LOG: Revision 8.3  2005/03/21 13:52:01  cvsadmin
+-- LOG: PR6.4.2 Source Propagated to Current
+-- LOG:
+-- LOG: Revision 7.1  2002/08/26 22:10:04  mmiers
+-- LOG: Begin PR6.2
+-- LOG:
+-- LOG: Revision 6.1  2002/02/28 16:14:24  mmiers
+-- LOG: Begin PR7.
+-- LOG:
+-- LOG: Revision 5.2  2001/11/15 23:56:58  hdivoux
+-- LOG: Update for better performance.
+-- LOG:
+-- LOG: Revision 5.1  2001/08/16 20:46:12  mmiers
+-- LOG: Start PR6.
+-- LOG:
+-- LOG: Revision 4.1  2001/05/01 00:53:16  mmiers
+-- LOG: Begin PR5
+-- LOG:
+-- LOG: Revision 3.3  2001/02/05 22:05:02  mmiers
+-- LOG: Move log back (more complaints than applause).
+-- LOG: Make C service take event log.
+-- LOG: Rename C++ classes to remove the prefix (its_bc.h provides old
+-- LOG: bindings).
+-- LOG:
+-- LOG: Revision 3.2  2000/11/30 17:50:27  mmiers
+-- LOG: Portability fix (HPUX)
+-- LOG:
+-- LOG: Revision 3.1  2000/08/16 00:05:41  mmiers
+-- LOG:
+-- LOG: Begin round 4.
+-- LOG:
+-- LOG: Revision 2.2  2000/05/01 19:53:06  hdivoux
+-- LOG: Update to rely on its_assertion.h for printing.
+-- LOG:
+-- LOG: Revision 2.1  2000/05/01 17:17:58  hdivoux
+-- LOG: Update to not throw an exception if an assertion is wrong.
+-- LOG:
+-- LOG: Revision 2.0  1999/12/03 23:28:12  mmiers
+-- LOG:
+-- LOG: Begin third iteration.
+-- LOG:
+-- LOG: Revision 1.6  1999/08/18 16:48:25  hdivoux
+-- LOG: For UNIX only use macro ITS_ASSERT_PRINT instead of assert.
+-- LOG:
+-- LOG: Revision 1.5  1999/06/18 19:20:40  hdivoux
+-- LOG: Added call to _ASSERTE (Win32) or assert (Unix) for all assertions.
+-- LOG:
+-- LOG: Revision 1.4  1998/06/17 20:45:24  hdivoux
+-- LOG: Added ITS_Error exception (IntelliSS7 exception).
+-- LOG:
+-- LOG: Revision 1.3  1998/05/28 14:27:58  hdivoux
+-- LOG: Updated UnknownException.
+-- LOG:
+-- LOG: Revision 1.2  1998/05/27 23:39:46  hdivoux
+-- LOG: Creation.
+-- LOG:
+-- LOG: Revision 1.1  1998/05/19 23:44:06  hdivoux
+-- LOG: Creation.
+-- LOG:
+--
+--------------------------------------------------------------------------------
+
+subsystem its
+
+    number      is   1
+    prefix      is
+    file_name   is   "its_support_exception"
+
+    code_header_before is
+
+        "\n"
+        "#if defined(WIN32)                     \n"
+        "#include <windows.h>                   \n"
+        "#include <crtdbg.h>                    \n"
+        "#else // !defined(WIN32)               \n"
+        "#include <assert.h>                    \n"
+        "#endif // defined(WIN32)               \n"
+        "#if defined(HPUX)                      \n"
+        "#define its                            \n"
+        "#endif                                 \n"
+        "\n"
+
+        "\n"
+        "\n"
+        "// Helper macros.                      \n"
+
+        "\n"
+        "#if defined(ITS_NAMESPACE)             \n"
+        "\n"
+
+        "#if defined(WIN32)                     \n"
+        "\n"
+
+        "#define ITS_ASSERT(assertion)                                                      \\\n"
+        "    {                                                                              \\\n"
+        "        _ASSERTE(assertion);                                                       \\\n"
+        "    }                                                                              \n"
+        "\n"
+        "#define ITS_REQUIRE(assertion)                                                     \\\n"
+        "    {                                                                              \\\n"
+        "        _ASSERTE(assertion);                                                       \\\n"
+        "    }                                                                              \n"
+        "\n"
+        "#define ITS_ENSURE(assertion)                                                      \\\n"
+        "    {                                                                              \\\n"
+        "        _ASSERTE(assertion);                                                       \\\n"
+        "    }                                                                              \n"
+        "\n"
+        "#define ITS_INVARIANT(assertion)                                                   \\\n"
+        "    {                                                                              \\\n"
+        "        _ASSERTE(assertion);                                                       \\\n"
+        "    }                                                                              \n"
+        "\n"
+
+        "#define ITS_THROW_ASSERT(assertion)                                                \\\n"
+        "    if (!(assertion))                                                              \\\n"
+        "    {                                                                              \\\n"
+        "        _ASSERTE(assertion);                                                       \\\n"
+        "        throw its::Assert(#assertion, __FILE__, __LINE__);                         \\\n"
+        "    }                                                                              \n"
+        "\n"
+        "#define ITS_THROW_REQUIRE(assertion)                                               \\\n"
+        "    if (!(assertion))                                                              \\\n"
+        "    {                                                                              \\\n"
+        "        _ASSERTE(assertion);                                                       \\\n"
+        "        throw its::Precondition(#assertion, __FILE__, __LINE__);                   \\\n"
+        "    }                                                                              \n"
+        "\n"
+        "#define ITS_THROW_ENSURE(assertion)                                                \\\n"
+        "    if (!(assertion))                                                              \\\n"
+        "    {                                                                              \\\n"
+        "        _ASSERTE(assertion);                                                       \\\n"
+        "        throw its::Postcondition(#assertion, __FILE__, __LINE__);                  \\\n"
+        "    }                                                                              \n"
+        "\n"
+        "#define ITS_THROW_INVARIANT(assertion)                                             \\\n"
+        "    if (!(assertion))                                                              \\\n"
+        "    {                                                                              \\\n"
+        "        _ASSERTE(assertion);                                                       \\\n"
+        "        throw its::Invariant(#assertion, __FILE__, __LINE__);                      \\\n"
+        "    }                                                                              \n"
+        "\n"
+
+        "#else // !defined(WIN32)               \n"
+        "\n"
+
+        "#define ITS_ASSERT(assertion)                                                      \\\n"
+        "    if (!(assertion))                                                              \\\n"
+        "    {                                                                              \\\n"
+        "        ITS_ASSERT_PRINT(assertion);                                               \\\n"
+        "        abort();                                                                   \\\n"
+        "    }                                                                              \n"
+        "\n"
+        "#define ITS_REQUIRE(assertion)                                                     \\\n"
+        "    if (!(assertion))                                                              \\\n"
+        "    {                                                                              \\\n"
+        "        ITS_PRECONDITION_PRINT(assertion);                                         \\\n"
+        "        abort();                                                                   \\\n"
+        "    }                                                                              \n"
+        "\n"
+        "#define ITS_ENSURE(assertion)                                                      \\\n"
+        "    if (!(assertion))                                                              \\\n"
+        "    {                                                                              \\\n"
+        "        ITS_POSTCONDITION_PRINT(assertion);                                        \\\n"
+        "        abort();                                                                   \\\n"
+        "    }                                                                              \n"
+        "\n"
+        "#define ITS_INVARIANT(assertion)                                                   \\\n"
+        "    if (!(assertion))                                                              \\\n"
+        "    {                                                                              \\\n"
+        "        ITS_INVARIANT_PRINT(assertion);                                            \\\n"
+        "        abort();                                                                   \\\n"
+        "    }                                                                              \n"
+        "\n"
+
+        "#define ITS_THROW_ASSERT(assertion)                                                \\\n"
+        "    if (!(assertion))                                                              \\\n"
+        "    {                                                                              \\\n"
+        "        ITS_ASSERT_PRINT(assertion);                                               \\\n"
+        "        throw its::Assert(#assertion, __FILE__, __LINE__);                         \\\n"
+        "    }                                                                              \n"
+        "\n"
+        "#define ITS_THROW_REQUIRE(assertion)                                               \\\n"
+        "    if (!(assertion))                                                              \\\n"
+        "    {                                                                              \\\n"
+        "        ITS_PRECONDITION_PRINT(assertion);                                         \\\n"
+        "        throw its::Precondition(#assertion, __FILE__, __LINE__);                   \\\n"
+        "    }                                                                              \n"
+        "\n"
+        "#define ITS_THROW_ENSURE(assertion)                                                \\\n"
+        "    if (!(assertion))                                                              \\\n"
+        "    {                                                                              \\\n"
+        "        ITS_POSTCONDITION_PRINT(assertion);                                        \\\n"
+        "        throw its::Postcondition(#assertion, __FILE__, __LINE__);                  \\\n"
+        "    }                                                                              \n"
+        "\n"
+        "#define ITS_THROW_INVARIANT(assertion)                                             \\\n"
+        "    if (!(assertion))                                                              \\\n"
+        "    {                                                                              \\\n"
+        "        ITS_INVARIANT_PRINT(assertion);                                            \\\n"
+        "        throw its::Invariant(#assertion, __FILE__, __LINE__);                      \\\n"
+        "    }                                                                              \n"
+        "\n"
+
+        "#endif // defined(WIN32)               \n"
+        "\n"
+
+        "#define ITS_LOG_ERROR(number)                                                      \\\n"
+        "    {                                                                              \\\n"
+        "        its::Error _iTS_Error(number, __FILE__, __LINE__);                         \\\n"
+        "        _iTS_Error.Log();                                                          \\\n"
+        "    }                                                                              \n"
+        "\n"
+
+        "#define ITS_THROW_ERROR(number)                                                    \\\n"
+        "    throw its::Error(number, __FILE__, __LINE__);                                  \n"
+        "\n"
+
+        "#if defined(WIN32)                     \n"
+        "\n"
+
+        "#define ITS_LOG_WIN32_ERROR(error)                                                 \\\n"
+        "    {                                                                              \\\n"
+        "        its::Win32Error _iTS_Win32Error((error), __FILE__, __LINE__);              \\\n"
+        "        _iTS_Win32Error.Log()                                                      \\\n"
+        "    }                                                                              \n"
+        "\n"
+
+        "#define ITS_THROW_WIN32_ERROR(error)                                               \\\n"
+        "    throw its::Win32Error((error), __FILE__, __LINE__);                            \n"
+        "\n"
+
+        "#endif // defined(WIN32)               \n"
+        "\n"
+
+        "#else // !defined(ITS_NAMESPACE)       \n"
+        "\n"
+
+        "#if defined(WIN32)                     \n"
+        "\n"
+
+        "#define ITS_ASSERT(assertion)                                                      \\\n"
+        "    {                                                                              \\\n"
+        "        _ASSERTE(assertion);                                                       \\\n"
+        "    }                                                                              \n"
+        "\n"
+        "#define ITS_REQUIRE(assertion)                                                     \\\n"
+        "    {                                                                              \\\n"
+        "        _ASSERTE(assertion);                                                       \\\n"
+        "    }                                                                              \n"
+        "\n"
+        "#define ITS_ENSURE(assertion)                                                      \\\n"
+        "    {                                                                              \\\n"
+        "        _ASSERTE(assertion);                                                       \\\n"
+        "    }                                                                              \n"
+        "\n"
+        "#define ITS_INVARIANT(assertion)                                                   \\\n"
+        "    {                                                                              \\\n"
+        "        _ASSERTE(assertion);                                                       \\\n"
+        "    }                                                                              \n"
+        "\n"
+
+        "#define ITS_THROW_ASSERT(assertion)                                                \\\n"
+        "    if (!(assertion))                                                              \\\n"
+        "    {                                                                              \\\n"
+        "        _ASSERTE(assertion);                                                       \\\n"
+        "        throw Assert(#assertion, __FILE__, __LINE__);                              \\\n"
+        "    }                                                                              \n"
+        "\n"
+        "#define ITS_THROW_REQUIRE(assertion)                                               \\\n"
+        "    if (!(assertion))                                                              \\\n"
+        "    {                                                                              \\\n"
+        "        _ASSERTE(assertion);                                                       \\\n"
+        "        throw Precondition(#assertion, __FILE__, __LINE__);                        \\\n"
+        "    }                                                                              \n"
+        "\n"
+        "#define ITS_THROW_ENSURE(assertion)                                                \\\n"
+        "    if (!(assertion))                                                              \\\n"
+        "    {                                                                              \\\n"
+        "        _ASSERTE(assertion);                                                       \\\n"
+        "        throw Postcondition(#assertion, __FILE__, __LINE__);                       \\\n"
+        "    }                                                                              \n"
+        "\n"
+        "#define ITS_THROW_INVARIANT(assertion)                                             \\\n"
+        "    if (!(assertion))                                                              \\\n"
+        "    {                                                                              \\\n"
+        "        _ASSERTE(assertion);                                                       \\\n"
+        "        throw Invariant(#assertion, __FILE__, __LINE__);                           \\\n"
+        "    }                                                                              \n"
+        "\n"
+
+        "#else // !defined(WIN32)               \n"
+        "\n"
+
+        "#define ITS_ASSERT(assertion)                                                      \\\n"
+        "    if (!(assertion))                                                              \\\n"
+        "    {                                                                              \\\n"
+        "        ITS_ASSERT_PRINT(assertion);                                               \\\n"
+        "        abort();                                                                   \\\n"
+        "    }                                                                              \n"
+        "\n"
+        "#define ITS_REQUIRE(assertion)                                                     \\\n"
+        "    if (!(assertion))                                                              \\\n"
+        "    {                                                                              \\\n"
+        "        ITS_PRECONDITION_PRINT(assertion);                                         \\\n"
+        "        abort();                                                                   \\\n"
+        "    }                                                                              \n"
+        "\n"
+        "#define ITS_ENSURE(assertion)                                                      \\\n"
+        "    if (!(assertion))                                                              \\\n"
+        "    {                                                                              \\\n"
+        "        ITS_POSTCONDITION_PRINT(assertion);                                        \\\n"
+        "        abort();                                                                   \\\n"
+        "    }                                                                              \n"
+        "\n"
+        "#define ITS_INVARIANT(assertion)                                                   \\\n"
+        "    if (!(assertion))                                                              \\\n"
+        "    {                                                                              \\\n"
+        "        ITS_INVARIANT_PRINT(assertion);                                            \\\n"
+        "        abort();                                                                   \\\n"
+        "    }                                                                              \n"
+        "\n"
+
+        "#define ITS_THROW_ASSERT(assertion)                                                \\\n"
+        "    if (!(assertion))                                                              \\\n"
+        "    {                                                                              \\\n"
+        "        ITS_ASSERT_PRINT(assertion);                                               \\\n"
+        "        throw Assert(#assertion, __FILE__, __LINE__);                              \\\n"
+        "    }                                                                              \n"
+        "\n"
+        "#define ITS_THROW_REQUIRE(assertion)                                               \\\n"
+        "    if (!(assertion))                                                              \\\n"
+        "    {                                                                              \\\n"
+        "        ITS_PRECONDITION_PRINT(assertion);                                         \\\n"
+        "        throw Precondition(#assertion, __FILE__, __LINE__);                        \\\n"
+        "    }                                                                              \n"
+        "\n"
+        "#define ITS_THROW_ENSURE(assertion)                                                \\\n"
+        "    if (!(assertion))                                                              \\\n"
+        "    {                                                                              \\\n"
+        "        ITS_POSTCONDITION_PRINT(assertion);                                        \\\n"
+        "        throw Postcondition(#assertion, __FILE__, __LINE__);                       \\\n"
+        "    }                                                                              \n"
+        "\n"
+        "#define ITS_THROW_INVARIANT(assertion)                                             \\\n"
+        "    if (!(assertion))                                                              \\\n"
+        "    {                                                                              \\\n"
+        "        ITS_INVARIANT_PRINT(assertion);                                            \\\n"
+        "        throw Invariant(#assertion, __FILE__, __LINE__);                           \\\n"
+        "    }                                                                              \n"
+        "\n"
+
+        "#endif // defined(WIN32)               \n"
+        "\n"
+
+        "#define ITS_LOG_ERROR(number)                                                      \\\n"
+        "    {                                                                              \\\n"
+        "        Error _iTS_Error(number, __FILE__, __LINE__);                              \\\n"
+        "        _iTS_Error.Log();                                                          \\\n"
+        "    }                                                                              \n"
+        "\n"
+
+        "#define ITS_THROW_ERROR(number)                                                    \\\n"
+        "    throw Error(number, __FILE__, __LINE__);                                       \n"
+        "\n"
+
+        "#if defined(WIN32)                     \n"
+        "\n"
+
+        "#define ITS_LOG_WIN32_ERROR(error)                                                 \\\n"
+        "    {                                                                              \\\n"
+        "        Win32Error _iTS_Win32Error((error), __FILE__, __LINE__);                   \\\n"
+        "        _iTS_Win32Error.Log();                                                     \\\n"
+        "    }                                                                              \n"
+        "\n"
+
+        "#define ITS_THROW_WIN32_ERROR(error)                                               \\\n"
+        "    throw Win32Error((error), __FILE__, __LINE__);                                 \n"
+        "\n"
+
+        "#endif // defined(WIN32)               \n"
+        "\n"
+
+        "#endif // defined(ITS_NAMESPACE)       \n"
+        "\n"
+
+        "\n"
+        "// Namespaces.                         \n"
+        "\n"
+        "#if defined(ITS_NAMESPACE)             \n"
+        "namespace its                          \n"
+        "{                                      \n"
+        "#endif // defined(ITS_NAMESPACE)       \n"
+        "\n"
+        "\n"
+
+    code_header_after is
+
+        "\n"
+        "#if defined(ITS_NAMESPACE)             \n"
+        "}                                      \n"
+        "#endif // defined(ITS_NAMESPACE)       \n"
+        "\n"
+
+    -------------------------------
+    -- Assert - standard assertion.
+    -------------------------------
+   
+    exception Assert
+
+        number is 1
+        reason is "Assertion failed"
+
+        description information
+
+            value is "Assertion <%s>"
+
+            argument
+
+                assertion
+                    option
+                        code_after is ".c_str()"
+                    end
+
+            end
+
+        end
+
+        attribute assertion
+
+            attribute_type is "std::string"
+
+            parameter_type is "const std::string&"
+
+        end
+
+    end
+
+
+    ----------------------------------------
+    -- Precondition - standard precondition.
+    ----------------------------------------
+
+    exception Precondition
+
+        number is 2
+        reason is "Precondition failed"
+
+        description information
+
+            value is "Precondition <%s>"
+
+            argument
+
+                precondition
+                    option
+                        code_after is ".c_str()"
+                    end
+
+            end
+
+        end
+
+        attribute precondition
+
+            attribute_type is "std::string"
+
+            parameter_type is "const std::string&"
+
+        end
+
+    end
+
+
+    ------------------------------------------
+    -- Postcondition - standard postcondition.
+    ------------------------------------------
+
+    exception Postcondition
+
+        number is 3
+        reason is "Postcondition failed"
+
+        description information
+
+            value is "Postcondition <%s>"
+
+            argument
+
+                postcondition
+                    option
+                        code_after is ".c_str()"
+                    end
+
+            end
+
+        end
+
+        attribute postcondition
+
+            attribute_type is "std::string"
+
+            parameter_type is "const std::string&"
+
+        end
+
+    end
+
+
+    ----------------------------------
+    -- Invariant - standard invariant.
+    ----------------------------------
+
+    exception Invariant
+
+        number is 4
+        reason is "Invariant failed"
+
+        description information
+
+            value is "Invariant <%s>"
+
+            argument
+
+                invariant
+                    option
+                        code_after is ".c_str()"
+                    end
+
+            end
+
+        end
+
+        attribute invariant
+
+            attribute_type is "std::string"
+
+            parameter_type is "const std::string&"
+
+        end
+
+    end
+
+
+    ------------------------------------------------------
+    -- StandardException - standard C++ library exception.
+    ------------------------------------------------------
+
+    exception StandardException
+
+        number is 5
+        reason is "Standard C++ library exception"
+
+        description information
+
+            value is "C string value returned by what() is <%s>"
+
+            argument
+
+                what
+
+            end
+
+        end
+
+        attribute what
+
+            attribute_type is "const char*"
+
+            parameter_type is "const char*"
+
+        end
+
+    end
+
+
+    --------------------------------------------
+    -- UnknownException - unknown C++ exception.
+    --------------------------------------------
+
+    exception UnknownException
+
+        number is 6
+        reason is "Unknown C++ exception"
+
+    end
+
+
+    ----------------------------------
+    -- Error - IntelliSS7 error.
+    ----------------------------------
+
+    exception Error
+
+        number is 7
+        reason is "IntelliSS7 Error"
+
+        description errorNumber
+
+            value is "Error number <%d>"
+
+            argument
+
+                errorNumber
+
+            end
+
+        end
+
+        description errorText
+    
+            value is "Error text <%s>"
+
+            argument
+
+                errorNumber
+                    option
+                        code_before is "ITS_GetErrorText("
+                        code_after is ")"
+                    end
+            end
+        end
+                    
+        attribute errorNumber
+
+            attribute_type is "int"
+
+            parameter_type is "int"
+
+        end
+
+    end
+
+
+    --------------------------------------------------
+    -- Win32Error - Win32 API call error (Windows NT).
+    --------------------------------------------------     
+
+    exception Win32Error
+
+        number is 8
+        reason is "Win32 API call error"
+
+        code_header_before is "#if defined(WIN32)\n"
+
+        code_header_after is  "#endif // defined(WIN32)\n"
+
+        code_source_before is "#if defined(WIN32)\n"
+
+        code_source_after is  "#endif // defined(WIN32)\n"
+
+        description information
+
+            value is "Last error code <%lu>"
+
+            argument
+
+                lastError
+
+            end
+
+        end
+
+        attribute lastError
+
+            attribute_type is "DWORD"
+
+            parameter_type is "DWORD"
+
+        end
+
+    end
+
+
+    ---------------------------------------------
+    -- ServiceError - service error (Windows NT).
+    ---------------------------------------------
+
+    exception ServiceError
+
+        number is 9
+        reason is "Service error"
+
+        code_header_before is "#if defined(WIN32)\n"
+
+        code_header_after is  "#endif // defined(WIN32)\n"
+
+        code_source_before is "#if defined(WIN32)\n"
+
+        code_source_after is  "#endif // defined(WIN32)\n"
+
+        description information
+
+            value is "Explanation <%s>"
+
+            argument
+
+                explanation
+                    option
+                        code_after is ".c_str()"
+                    end
+            end
+
+        end
+
+        attribute explanation
+
+            attribute_type is "std::string"
+
+            parameter_type is "const std::string&"
+
+        end
+
+    end
+
+end
+
+--------------------------------------------------------------------------------
+
+

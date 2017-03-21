@@ -1,0 +1,9 @@
+/***********************CONFIGURATION FILE ********************************/
+isupClientPort = 40000
+tcapClientPort = 13000
+mmClientPort   = 14000
+ServerPort     = 15555
+CPIPAddress  = 192.168.4.201
+PPIPAddress  = 192.168.4.201
+localPort    = 16000
+remotePort   = 16001

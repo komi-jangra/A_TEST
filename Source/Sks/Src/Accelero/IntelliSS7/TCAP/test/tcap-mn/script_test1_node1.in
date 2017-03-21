@@ -1,0 +1,162 @@
+-------------------------------------------------------------------------------
+--
+-- TCAP Multi-Nodes Automatic Regression Testing.
+-- -> Test1 Node1.
+--
+
+node1 := 0
+node2 := 1
+numberOfSyncPoints := 10
+
+
+-----------------------------------------------------------
+--
+-- Initialization part.
+--
+
+InitializeNodes(node1, 2)
+InitializeNodesSyncPoints(numberOfSyncPoints)
+InitializeGcs()
+
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+--
+-- Wait for other nodes to join.
+--
+
+Print("\n\nNode 1 waiting for other node(s) to join...\n")
+
+joinTimeout := 20 -- Timeout is 20 secs.
+
+WaitForNodeJoinPoint(node1, joinTimeout)
+WaitForNodeJoinPoint(node2, joinTimeout)
+
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+--
+-- TCAP MN test.
+--
+
+Print("\n\nReady to begin TCAP MN test...\n")
+
+Sleep(3) -- Must wait to send Begin and Invoke.
+
+-------------------------------------------------
+--
+-- Sending (Begin and Invoke) part.
+--
+
+dialogueId := 0
+
+res := TcapAllocateDialogueId(out dialogueId)
+
+if (res /= 0) then
+    Print("\n\nTcapAllocateDialogueId failed: " + res + "\n")
+end
+
+originationAddress := TcapSccpAddressToByteArray(
+                            SCCP_CPA_ROUTE_NAT_CCITT    + 
+                            SCCP_CPA_ROUTE_SSN          +
+                            SCCP_CPA_HAS_PC_CCITT       +
+                            SCCP_CPA_HAS_SSN_CCITT,
+                            1,
+                            2,
+                            <<byte>>)
+
+destinationAddress := TcapSccpAddressToByteArray(
+                            SCCP_CPA_ROUTE_NAT_CCITT    + 
+                            SCCP_CPA_ROUTE_SSN          +
+                            SCCP_CPA_HAS_PC_CCITT       +
+                            SCCP_CPA_HAS_SSN_CCITT,
+                            2,
+                            2,
+                            <<byte>>)
+
+beginDialogue := TcapAssembleBeginDialogue(
+                            <<byte>>,
+                            <<byte>>,
+                            <<byte>>,
+                            originationAddress,
+                            destinationAddress,
+                            <<byte>>,
+                            <<byte>>)
+
+TcapPrintDialogue(dialogueId, beginDialogue)
+
+invokeComponent := TcapAssembleInvokeComponent(
+                            1,
+                            TcapInvokeIdToByteArray(1),
+                            <<byte>>,
+                            TcapOperationToByteArray(10),
+                            <<0x02, 0x04, 0xAA, 0xBB, 0xCC, 0xDD>>,
+                            30)
+
+TcapPrintComponent(dialogueId, invokeComponent)
+
+res := TcapSendComponent(dialogueId, invokeComponent)
+
+if (res /= 0) then
+    Print("\n\nTcapSendComponent failed: " + res + "\n")
+end
+
+res := TcapSendDialogue(dialogueId, beginDialogue)
+
+if (res /= 0) then
+    Print("\n\nTcapSendDialogue failed: " + res + "\n")
+end
+
+
+syncTimeout := 20 -- Timeout is 20 secs.
+
+WaitForNodeSyncPoint(node2, 0, syncTimeout)
+
+-------------------------------------------------
+--
+-- Receiving (End) part.
+--
+
+dialogueId  := 0
+event       := <<byte>>
+dialogue    := <<byte>>
+component   := <<byte>>
+
+res := TcapGetNextEvent(out event)
+
+if (res /= 0) then
+    Print("\n\nTcapGetNextEvent failed: " + res + "\n")
+else
+    Print("\n\nReceived event...\n")
+end
+
+if (TcapIsDialogueEvent(event) /= true) then
+    Print("\n\nReceived event is not a dialogue\n")
+end
+
+res := TcapReceiveDialogue(event, out dialogueId, out dialogue)
+
+if (res /= 0) then
+    Print("\n\nTcapReceiveDialogue failed: " + res + "\n")
+else
+    Print("\n\nReceived dialogue...\n")
+    TcapPrintDialogue(dialogueId, dialogue)
+end
+
+PublishNodeSyncPointReached(0)
+
+Print("\n\nEnd of TCAP MN test...\n")
+
+-----------------------------------------------------------
+--
+-- Termination part.
+--
+
+
+TerminateGcs()
+TerminateNodesSyncPoints()
+TerminateNodes()
+
+-----------------------------------------------------------
+
+

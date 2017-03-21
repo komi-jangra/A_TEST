@@ -1,0 +1,21 @@
+BSSAP Command
+
+SYNOPSIS
+    bs_add_cfg_record  <nwId> <lpc> <rpc> <lssn> <rssn>
+
+DESCRIPTION
+    This command adds network configurations  
+
+PARAMETERS
+    nwId    Network ID (0-255)
+    lpc     Local Point Code
+    rpc     Remote Point Code 
+    lssn    Local Subsystem
+    rssn    Remote Subsystem 
+
+EXAMPLE
+    >> bs_add_cfg_record 2 2057 4114 254 8
+
+    CFG record added network Id <2>
+
+

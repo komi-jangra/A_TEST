@@ -1,0 +1,203 @@
+
+#
+# Copyright (C) 2000-2000 IntelliNet Technologies, Inc.  All rights reserved.
+#
+#
+
+
+#################  Creating a new project ##############################
+
+/new/ 	{
+	getline testdirectory
+	getline bindirectory
+	command = ("cp " bindirectory "/prefix.test .")
+	system (command)
+	getline projectname
+	}
+
+################# Displaying the help text file ########################
+
+/help/ {system ("winword gatorc.doc")}
+/hello/ {print "\n back to work stop playing"}
+
+################# Compiling the test using Oss compiler ################
+
+/compile/ {
+	  printf(" \n please wait compiling........\n")
+	  system("asn1 oss_codec.asn -ber -test")
+	  command = ("cp oss_codec.c " testdirectory "/oss_codec.c")
+	  system (command)
+	  command = ("cp oss_codec.h " testdirectory "/oss_codec.h")
+	  system (command)
+	  printf(" \n\nASN1 file successfully compiled with oss\n\n")
+	  }
+
+################# Exiting the program ###################################
+
+/exit/  {
+	printf("\n BYE \n")
+	exit(0) 
+        }
+
+################# Editing asncc BER generated code ######################
+
+/edit/&&/asncc/&&/ber/ 	{
+			system("notepad generated_ber_code_asncc.test")
+			}
+
+################# Editing Oss BER generated code ########################
+
+/edit/&&/oss/&&/ber/ 	{
+			system("notepad generated_ber_code_oss.test")
+			} 
+
+################# Editing ASN generated code ############################
+
+/edit/&&/asncc/&&/asn/&&!/ber/	{
+				system("notepad generated_asn.test")
+				}
+
+################# Displaying asncc BER generated code ###################
+
+
+/asncc/&&/ber/ 	{
+		system("cat generated_ber_code_asncc.test")
+		} 
+
+################# Displaying Oss BER generated code #####################
+
+/oss/&&/ber/ 	{
+		system("cat generated_ber_code_oss.test")
+		} 
+
+################# Displaying diff file between Oss and Asncc ############
+
+/diff/ 		{
+		system("diff generated_ber_code_asncc.test generated_ber_code_oss.test")
+		
+		} 
+
+################# Displaying generated ASN code ###########################
+
+/asncc/&&/asn/&&!/ber/  {
+			system("cat generated_asn.test")
+			}
+
+################# Displaying error file ###################################
+
+/error/	 	{
+		system("cat " testdirectory "/debug/generated_error.test")
+		system(command)
+		}
+
+################# Concatenating ASN file with value notations file ########
+
+/concat/ 	{
+		
+		k=0;
+		i=0;
+		getline asnfile
+		getline valuenotation
+		valuenotation =(testdirectory "/" valuenotation)
+		while ((getline < asnfile) != 0)
+		{
+			if ($0 !~ /END/) 
+			{
+			printf ("%s\n", $0) > "oss_codec.asn";
+			}
+		}
+
+		while ((getline < valuenotation) != 0)
+		{
+			if ($0 !~ /END/) 
+			{
+			printf ("%s\n", $0) > "oss_codec.asn";
+			}
+		}	
+		#fflush("oss_codec.asn")
+		printf ("END") > "oss_codec.asn";	
+		printf(" \n concatenation done between %s and %s\n", asnfile, valuenotation)
+		printf(" output file is oss_codec.asn\n")
+		printf(" \n please wait compiling........\n")
+		#system("chmod 777 oss_codec.asn")
+	  	system("asn1 oss_codec.asn -ber -test")
+		command = ("cp oss_codec.c " bindirectory "/oss_codec.c")
+	  	system (command)
+	  	command = ("cp oss_codec.h " bindirectory "/oss_codec.h")
+	  	system (command)
+		
+		printf("\n\n\n===============================================\n")
+		printf(" Extracted asn definitions:\n")
+		printf("===============================================\n")
+		deffile = "oss_codec.h"
+
+		while ((getline < deffile) != 0)
+		{
+			if ($0 ~ /#define   /)
+			{
+	
+			buf = $0;
+			sub ("#define", "", buf);
+			sub ("         ","", buf);
+			sub ("[0-9]+","",buf);
+			sub ("  ","", buf);
+			sub (" ","", buf);
+			sub (" ","", buf);
+			#sub (" ","", buf);
+			#sub (" ","", buf);
+				if (buf !~ /   /)
+				{
+				print buf;
+				print buf > "functions.test";
+				}
+			}
+ 
+		}
+	close ("functions.test")
+	close (asnfile)
+	close (valuenotation)
+	close("oss_codec.asn")	  	 
+	#system("rm oss_codec.asn")	
+	printf ("\n\n please enter next command:\n\n")
+	}
+
+
+######################## Compiling with Asncc and running the test ############
+
+/run/&&/test/ 	{
+		printf ("=====================================================\n\n")
+		printf ("\n creating generated test file......\n")
+		printf ("\n please press a key to continue\n")
+		system ("rm generated.cpp")
+		
+		system ("awk -f generator >> generated.cpp")
+		command = ("cp generated.cpp " bindirectory "/runtime_test.cpp")
+		system (command)
+		printf ("\n test generated successfully\n")
+		printf ("=====================================================\n\n")
+		printf ("\n please wait while compiling test with new values......\n")
+		
+		command = ("msdev " bindirectory projectname ".dsp /MAKE all /REBUILD")
+		system (command)
+		printf ("\n test compiled successfully\n")
+		printf ("=====================================================\n\n")
+		command = (bindirectory  "/debug/" projectname ".exe")
+		system(command)
+		printf ("\n Testing done............\n\n")
+		print("          ===============================================\n")
+		printf ("*to view diff file between asncc and oss type diff\n")
+		printf ("*type help for more specific output\n\n")
+		printf (" This file contains the generated differences found between\n") > "dif.test"
+		printf (" the two generated BER codes from Asncc and OSS\n\n") > "dif.test"
+		printf (" If the file is empty, the test passed.......\n\n") > "dif.test"
+		system("diff generated_ber_code_asncc.test generated_ber_code_oss.test >> dif.test")
+		system("vi dif.test")
+		}
+
+######################### Exit the program  ######################################
+
+/bye/  		{
+		printf("\n BYE \n")
+		exit(0) 
+        	}
+

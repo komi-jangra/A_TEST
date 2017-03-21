@@ -1,0 +1,27 @@
+
+ANSI MTP3 Command
+
+SYNOPSIS
+    ma_get_gen_cfg
+
+DESCRIPTION
+    This command displays ANSI MTP3 general configuration. This includes MTP3
+    Alarm Level and MTP3 Trace Level.  
+
+PARAMETERS
+    None.
+
+EXAMPLE
+    >> ma_get_gen_cfg
+
+*********** MTP3 General Config *************
+
+    Alarm Level:  OFF
+
+    MTP3 Trace -
+        Debug     =  stdout
+        Critical  =  stdout
+        Warning   =  file
+        Error     =  stdout
+
+*********** End of MTP3 General Config ***********

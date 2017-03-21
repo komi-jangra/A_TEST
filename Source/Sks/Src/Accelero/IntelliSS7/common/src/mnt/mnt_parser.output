@@ -1,0 +1,2109 @@
+Terminals which are not used
+
+   TK_DO
+   TK_IMPORT
+   TK_PROCEDURE
+   TK_FUNCTION
+   TK_RESULT
+   TK_IS
+   TK_GLOBAL
+   TK_ANY
+   TK_NONE
+   TK_POINTER_KEYWORD
+
+
+Grammar
+
+    0 $accept: mnt_script $end
+
+    1 mnt_script: /* empty */
+    2           | instruction_list
+
+    3 instruction_list: instruction
+    4                 | instruction_list instruction
+    5                 | instruction_list ';' instruction
+
+    6 instruction: command_instruction
+    7            | assignment_instruction
+    8            | array_elt_assignment_instruction
+    9            | conditional_instruction
+   10            | loop_instruction
+
+   11 argument_list: argument
+   12              | argument_list ',' argument
+
+   13 argument: expr
+   14         | TK_OUT TK_IDENTIFIER
+
+   15 command_instruction: TK_IDENTIFIER '(' ')'
+   16                    | TK_IDENTIFIER '(' argument_list ')'
+
+   17 assignment_instruction: TK_IDENTIFIER TK_ASSIGN_OP expr
+
+   18 array_elt_assignment_instruction: TK_IDENTIFIER '[' argument ']' TK_ASSIGN_OP expr
+
+   19 conditional_instruction: TK_IF then_part_list TK_END
+   20                        | TK_IF then_part_list else_part TK_END
+
+   21 then_part_list: then_part
+   22               | then_part_list TK_ELSEIF then_part
+
+   23 then_part: expr TK_THEN instruction_list
+
+   24 else_part: TK_ELSE instruction_list
+
+   25 loop_instruction: TK_FROM instruction_list TK_UNTIL expr TK_LOOP instruction_list TK_END
+
+   26 primary_expr: TK_IDENTIFIER
+   27             | TK_BYTE
+   28             | TK_INTEGER
+   29             | TK_STRING
+   30             | TK_BOOLEAN
+   31             | manifest_array
+   32             | '(' expr ')'
+
+   33 manifest_array: string_manifest_array
+   34               | integer_manifest_array
+   35               | boolean_manifest_array
+   36               | byte_manifest_array
+
+   37 string_manifest_array: TK_ARRAY_BEGIN string_list TK_ARRAY_END
+   38                      | TK_ARRAY_BEGIN TK_STRING_KEYWORD TK_ARRAY_END
+
+   39 integer_manifest_array: TK_ARRAY_BEGIN integer_list TK_ARRAY_END
+   40                       | TK_ARRAY_BEGIN TK_INTEGER_KEYWORD TK_ARRAY_END
+
+   41 boolean_manifest_array: TK_ARRAY_BEGIN boolean_list TK_ARRAY_END
+   42                       | TK_ARRAY_BEGIN TK_BOOLEAN_KEYWORD TK_ARRAY_END
+
+   43 byte_manifest_array: TK_ARRAY_BEGIN byte_list TK_ARRAY_END
+   44                    | TK_ARRAY_BEGIN TK_BYTE_KEYWORD TK_ARRAY_END
+
+   45 string_list: TK_STRING
+   46            | string_list ',' TK_STRING
+
+   47 integer_list: TK_INTEGER
+   48             | integer_list ',' TK_INTEGER
+
+   49 boolean_list: TK_BOOLEAN
+   50             | boolean_list ',' TK_BOOLEAN
+
+   51 byte_list: TK_BYTE
+   52          | byte_list ',' TK_BYTE
+
+   53 postfix_expr: primary_expr
+   54             | postfix_expr '(' ')'
+   55             | postfix_expr '(' argument_list ')'
+   56             | TK_IDENTIFIER '[' argument ']'
+
+   57 unary_expr: postfix_expr
+   58           | unary_operator primary_expr
+
+   59 unary_operator: '+'
+   60               | '-'
+   61               | TK_NOT_OP
+
+   62 multiplicative_expr: unary_expr
+   63                    | multiplicative_expr '*' unary_expr
+   64                    | multiplicative_expr '/' unary_expr
+   65                    | multiplicative_expr TK_MOD_OP unary_expr
+
+   66 additive_expr: multiplicative_expr
+   67              | additive_expr '+' multiplicative_expr
+   68              | additive_expr '-' multiplicative_expr
+
+   69 relational_expr: additive_expr
+   70                | relational_expr '<' additive_expr
+   71                | relational_expr '>' additive_expr
+   72                | relational_expr TK_LE_OP additive_expr
+   73                | relational_expr TK_GE_OP additive_expr
+
+   74 equality_expr: relational_expr
+   75              | equality_expr '=' relational_expr
+   76              | equality_expr TK_NE_OP relational_expr
+
+   77 logical_and_expr: equality_expr
+   78                 | logical_and_expr TK_AND_OP equality_expr
+
+   79 logical_or_expr: logical_and_expr
+   80                | logical_or_expr TK_OR_OP logical_and_expr
+
+   81 expr: logical_or_expr
+
+
+Terminals, with rules where they appear
+
+$end (0) 0
+'(' (40) 15 16 32 54 55
+')' (41) 15 16 32 54 55
+'*' (42) 63
+'+' (43) 59 67
+',' (44) 12 46 48 50 52
+'-' (45) 60 68
+'/' (47) 64
+';' (59) 5
+'<' (60) 70
+'=' (61) 75
+'>' (62) 71
+'[' (91) 18 56
+']' (93) 18 56
+error (256)
+TK_IDENTIFIER (258) 14 15 16 17 18 26 56
+TK_BYTE (259) 27 51 52
+TK_INTEGER (260) 28 47 48
+TK_STRING (261) 29 45 46
+TK_ASSIGN_OP (262) 17 18
+TK_LE_OP (263) 72
+TK_GE_OP (264) 73
+TK_NE_OP (265) 76
+TK_MOD_OP (266) 65
+TK_AND_OP (267) 78
+TK_OR_OP (268) 80
+TK_NOT_OP (269) 61
+TK_END (270) 19 20 25
+TK_IF (271) 19 20
+TK_THEN (272) 23
+TK_ELSEIF (273) 22
+TK_ELSE (274) 24
+TK_FROM (275) 25
+TK_UNTIL (276) 25
+TK_LOOP (277) 25
+TK_DO (278)
+TK_IMPORT (279)
+TK_PROCEDURE (280)
+TK_FUNCTION (281)
+TK_RESULT (282)
+TK_IS (283)
+TK_GLOBAL (284)
+TK_OUT (285) 14
+TK_ANY (286)
+TK_NONE (287)
+TK_BOOLEAN (288) 30 49 50
+TK_STRING_KEYWORD (289) 38
+TK_BYTE_KEYWORD (290) 44
+TK_INTEGER_KEYWORD (291) 40
+TK_BOOLEAN_KEYWORD (292) 42
+TK_POINTER_KEYWORD (293)
+TK_ARRAY_BEGIN (294) 37 38 39 40 41 42 43 44
+TK_ARRAY_END (295) 37 38 39 40 41 42 43 44
+
+
+Nonterminals, with rules where they appear
+
+$accept (54)
+    on left: 0
+mnt_script (55)
+    on left: 1 2, on right: 0
+instruction_list (56)
+    on left: 3 4 5, on right: 2 4 5 23 24 25
+instruction (57)
+    on left: 6 7 8 9 10, on right: 3 4 5
+argument_list (58)
+    on left: 11 12, on right: 12 16 55
+argument (59)
+    on left: 13 14, on right: 11 12 18 56
+command_instruction (60)
+    on left: 15 16, on right: 6
+assignment_instruction (61)
+    on left: 17, on right: 7
+array_elt_assignment_instruction (62)
+    on left: 18, on right: 8
+conditional_instruction (63)
+    on left: 19 20, on right: 9
+then_part_list (64)
+    on left: 21 22, on right: 19 20 22
+then_part (65)
+    on left: 23, on right: 21 22
+else_part (66)
+    on left: 24, on right: 20
+loop_instruction (67)
+    on left: 25, on right: 10
+primary_expr (68)
+    on left: 26 27 28 29 30 31 32, on right: 53 58
+manifest_array (69)
+    on left: 33 34 35 36, on right: 31
+string_manifest_array (70)
+    on left: 37 38, on right: 33
+integer_manifest_array (71)
+    on left: 39 40, on right: 34
+boolean_manifest_array (72)
+    on left: 41 42, on right: 35
+byte_manifest_array (73)
+    on left: 43 44, on right: 36
+string_list (74)
+    on left: 45 46, on right: 37 46
+integer_list (75)
+    on left: 47 48, on right: 39 48
+boolean_list (76)
+    on left: 49 50, on right: 41 50
+byte_list (77)
+    on left: 51 52, on right: 43 52
+postfix_expr (78)
+    on left: 53 54 55 56, on right: 54 55 57
+unary_expr (79)
+    on left: 57 58, on right: 62 63 64 65
+unary_operator (80)
+    on left: 59 60 61, on right: 58
+multiplicative_expr (81)
+    on left: 62 63 64 65, on right: 63 64 65 66 67 68
+additive_expr (82)
+    on left: 66 67 68, on right: 67 68 69 70 71 72 73
+relational_expr (83)
+    on left: 69 70 71 72 73, on right: 70 71 72 73 74 75 76
+equality_expr (84)
+    on left: 74 75 76, on right: 75 76 77 78
+logical_and_expr (85)
+    on left: 77 78, on right: 78 79 80
+logical_or_expr (86)
+    on left: 79 80, on right: 80 81
+expr (87)
+    on left: 81, on right: 13 17 18 23 25 32
+
+
+state 0
+
+    0 $accept: . mnt_script $end
+
+    TK_IDENTIFIER  shift, and go to state 1
+    TK_IF          shift, and go to state 2
+    TK_FROM        shift, and go to state 3
+
+    $default  reduce using rule 1 (mnt_script)
+
+    mnt_script                        go to state 4
+    instruction_list                  go to state 5
+    instruction                       go to state 6
+    command_instruction               go to state 7
+    assignment_instruction            go to state 8
+    array_elt_assignment_instruction  go to state 9
+    conditional_instruction           go to state 10
+    loop_instruction                  go to state 11
+
+
+state 1
+
+   15 command_instruction: TK_IDENTIFIER . '(' ')'
+   16                    | TK_IDENTIFIER . '(' argument_list ')'
+   17 assignment_instruction: TK_IDENTIFIER . TK_ASSIGN_OP expr
+   18 array_elt_assignment_instruction: TK_IDENTIFIER . '[' argument ']' TK_ASSIGN_OP expr
+
+    TK_ASSIGN_OP  shift, and go to state 12
+    '('           shift, and go to state 13
+    '['           shift, and go to state 14
+
+
+state 2
+
+   19 conditional_instruction: TK_IF . then_part_list TK_END
+   20                        | TK_IF . then_part_list else_part TK_END
+
+    TK_IDENTIFIER   shift, and go to state 15
+    TK_BYTE         shift, and go to state 16
+    TK_INTEGER      shift, and go to state 17
+    TK_STRING       shift, and go to state 18
+    TK_NOT_OP       shift, and go to state 19
+    TK_BOOLEAN      shift, and go to state 20
+    TK_ARRAY_BEGIN  shift, and go to state 21
+    '('             shift, and go to state 22
+    '+'             shift, and go to state 23
+    '-'             shift, and go to state 24
+
+    then_part_list          go to state 25
+    then_part               go to state 26
+    primary_expr            go to state 27
+    manifest_array          go to state 28
+    string_manifest_array   go to state 29
+    integer_manifest_array  go to state 30
+    boolean_manifest_array  go to state 31
+    byte_manifest_array     go to state 32
+    postfix_expr            go to state 33
+    unary_expr              go to state 34
+    unary_operator          go to state 35
+    multiplicative_expr     go to state 36
+    additive_expr           go to state 37
+    relational_expr         go to state 38
+    equality_expr           go to state 39
+    logical_and_expr        go to state 40
+    logical_or_expr         go to state 41
+    expr                    go to state 42
+
+
+state 3
+
+   25 loop_instruction: TK_FROM . instruction_list TK_UNTIL expr TK_LOOP instruction_list TK_END
+
+    TK_IDENTIFIER  shift, and go to state 1
+    TK_IF          shift, and go to state 2
+    TK_FROM        shift, and go to state 3
+
+    instruction_list                  go to state 43
+    instruction                       go to state 6
+    command_instruction               go to state 7
+    assignment_instruction            go to state 8
+    array_elt_assignment_instruction  go to state 9
+    conditional_instruction           go to state 10
+    loop_instruction                  go to state 11
+
+
+state 4
+
+    0 $accept: mnt_script . $end
+
+    $end  shift, and go to state 44
+
+
+state 5
+
+    2 mnt_script: instruction_list .
+    4 instruction_list: instruction_list . instruction
+    5                 | instruction_list . ';' instruction
+
+    TK_IDENTIFIER  shift, and go to state 1
+    TK_IF          shift, and go to state 2
+    TK_FROM        shift, and go to state 3
+    ';'            shift, and go to state 45
+
+    $default  reduce using rule 2 (mnt_script)
+
+    instruction                       go to state 46
+    command_instruction               go to state 7
+    assignment_instruction            go to state 8
+    array_elt_assignment_instruction  go to state 9
+    conditional_instruction           go to state 10
+    loop_instruction                  go to state 11
+
+
+state 6
+
+    3 instruction_list: instruction .
+
+    $default  reduce using rule 3 (instruction_list)
+
+
+state 7
+
+    6 instruction: command_instruction .
+
+    $default  reduce using rule 6 (instruction)
+
+
+state 8
+
+    7 instruction: assignment_instruction .
+
+    $default  reduce using rule 7 (instruction)
+
+
+state 9
+
+    8 instruction: array_elt_assignment_instruction .
+
+    $default  reduce using rule 8 (instruction)
+
+
+state 10
+
+    9 instruction: conditional_instruction .
+
+    $default  reduce using rule 9 (instruction)
+
+
+state 11
+
+   10 instruction: loop_instruction .
+
+    $default  reduce using rule 10 (instruction)
+
+
+state 12
+
+   17 assignment_instruction: TK_IDENTIFIER TK_ASSIGN_OP . expr
+
+    TK_IDENTIFIER   shift, and go to state 15
+    TK_BYTE         shift, and go to state 16
+    TK_INTEGER      shift, and go to state 17
+    TK_STRING       shift, and go to state 18
+    TK_NOT_OP       shift, and go to state 19
+    TK_BOOLEAN      shift, and go to state 20
+    TK_ARRAY_BEGIN  shift, and go to state 21
+    '('             shift, and go to state 22
+    '+'             shift, and go to state 23
+    '-'             shift, and go to state 24
+
+    primary_expr            go to state 27
+    manifest_array          go to state 28
+    string_manifest_array   go to state 29
+    integer_manifest_array  go to state 30
+    boolean_manifest_array  go to state 31
+    byte_manifest_array     go to state 32
+    postfix_expr            go to state 33
+    unary_expr              go to state 34
+    unary_operator          go to state 35
+    multiplicative_expr     go to state 36
+    additive_expr           go to state 37
+    relational_expr         go to state 38
+    equality_expr           go to state 39
+    logical_and_expr        go to state 40
+    logical_or_expr         go to state 41
+    expr                    go to state 47
+
+
+state 13
+
+   15 command_instruction: TK_IDENTIFIER '(' . ')'
+   16                    | TK_IDENTIFIER '(' . argument_list ')'
+
+    TK_IDENTIFIER   shift, and go to state 15
+    TK_BYTE         shift, and go to state 16
+    TK_INTEGER      shift, and go to state 17
+    TK_STRING       shift, and go to state 18
+    TK_NOT_OP       shift, and go to state 19
+    TK_OUT          shift, and go to state 48
+    TK_BOOLEAN      shift, and go to state 20
+    TK_ARRAY_BEGIN  shift, and go to state 21
+    '('             shift, and go to state 22
+    ')'             shift, and go to state 49
+    '+'             shift, and go to state 23
+    '-'             shift, and go to state 24
+
+    argument_list           go to state 50
+    argument                go to state 51
+    primary_expr            go to state 27
+    manifest_array          go to state 28
+    string_manifest_array   go to state 29
+    integer_manifest_array  go to state 30
+    boolean_manifest_array  go to state 31
+    byte_manifest_array     go to state 32
+    postfix_expr            go to state 33
+    unary_expr              go to state 34
+    unary_operator          go to state 35
+    multiplicative_expr     go to state 36
+    additive_expr           go to state 37
+    relational_expr         go to state 38
+    equality_expr           go to state 39
+    logical_and_expr        go to state 40
+    logical_or_expr         go to state 41
+    expr                    go to state 52
+
+
+state 14
+
+   18 array_elt_assignment_instruction: TK_IDENTIFIER '[' . argument ']' TK_ASSIGN_OP expr
+
+    TK_IDENTIFIER   shift, and go to state 15
+    TK_BYTE         shift, and go to state 16
+    TK_INTEGER      shift, and go to state 17
+    TK_STRING       shift, and go to state 18
+    TK_NOT_OP       shift, and go to state 19
+    TK_OUT          shift, and go to state 48
+    TK_BOOLEAN      shift, and go to state 20
+    TK_ARRAY_BEGIN  shift, and go to state 21
+    '('             shift, and go to state 22
+    '+'             shift, and go to state 23
+    '-'             shift, and go to state 24
+
+    argument                go to state 53
+    primary_expr            go to state 27
+    manifest_array          go to state 28
+    string_manifest_array   go to state 29
+    integer_manifest_array  go to state 30
+    boolean_manifest_array  go to state 31
+    byte_manifest_array     go to state 32
+    postfix_expr            go to state 33
+    unary_expr              go to state 34
+    unary_operator          go to state 35
+    multiplicative_expr     go to state 36
+    additive_expr           go to state 37
+    relational_expr         go to state 38
+    equality_expr           go to state 39
+    logical_and_expr        go to state 40
+    logical_or_expr         go to state 41
+    expr                    go to state 52
+
+
+state 15
+
+   26 primary_expr: TK_IDENTIFIER .
+   56 postfix_expr: TK_IDENTIFIER . '[' argument ']'
+
+    '['  shift, and go to state 54
+
+    $default  reduce using rule 26 (primary_expr)
+
+
+state 16
+
+   27 primary_expr: TK_BYTE .
+
+    $default  reduce using rule 27 (primary_expr)
+
+
+state 17
+
+   28 primary_expr: TK_INTEGER .
+
+    $default  reduce using rule 28 (primary_expr)
+
+
+state 18
+
+   29 primary_expr: TK_STRING .
+
+    $default  reduce using rule 29 (primary_expr)
+
+
+state 19
+
+   61 unary_operator: TK_NOT_OP .
+
+    $default  reduce using rule 61 (unary_operator)
+
+
+state 20
+
+   30 primary_expr: TK_BOOLEAN .
+
+    $default  reduce using rule 30 (primary_expr)
+
+
+state 21
+
+   37 string_manifest_array: TK_ARRAY_BEGIN . string_list TK_ARRAY_END
+   38                      | TK_ARRAY_BEGIN . TK_STRING_KEYWORD TK_ARRAY_END
+   39 integer_manifest_array: TK_ARRAY_BEGIN . integer_list TK_ARRAY_END
+   40                       | TK_ARRAY_BEGIN . TK_INTEGER_KEYWORD TK_ARRAY_END
+   41 boolean_manifest_array: TK_ARRAY_BEGIN . boolean_list TK_ARRAY_END
+   42                       | TK_ARRAY_BEGIN . TK_BOOLEAN_KEYWORD TK_ARRAY_END
+   43 byte_manifest_array: TK_ARRAY_BEGIN . byte_list TK_ARRAY_END
+   44                    | TK_ARRAY_BEGIN . TK_BYTE_KEYWORD TK_ARRAY_END
+
+    TK_BYTE             shift, and go to state 55
+    TK_INTEGER          shift, and go to state 56
+    TK_STRING           shift, and go to state 57
+    TK_BOOLEAN          shift, and go to state 58
+    TK_STRING_KEYWORD   shift, and go to state 59
+    TK_BYTE_KEYWORD     shift, and go to state 60
+    TK_INTEGER_KEYWORD  shift, and go to state 61
+    TK_BOOLEAN_KEYWORD  shift, and go to state 62
+
+    string_list   go to state 63
+    integer_list  go to state 64
+    boolean_list  go to state 65
+    byte_list     go to state 66
+
+
+state 22
+
+   32 primary_expr: '(' . expr ')'
+
+    TK_IDENTIFIER   shift, and go to state 15
+    TK_BYTE         shift, and go to state 16
+    TK_INTEGER      shift, and go to state 17
+    TK_STRING       shift, and go to state 18
+    TK_NOT_OP       shift, and go to state 19
+    TK_BOOLEAN      shift, and go to state 20
+    TK_ARRAY_BEGIN  shift, and go to state 21
+    '('             shift, and go to state 22
+    '+'             shift, and go to state 23
+    '-'             shift, and go to state 24
+
+    primary_expr            go to state 27
+    manifest_array          go to state 28
+    string_manifest_array   go to state 29
+    integer_manifest_array  go to state 30
+    boolean_manifest_array  go to state 31
+    byte_manifest_array     go to state 32
+    postfix_expr            go to state 33
+    unary_expr              go to state 34
+    unary_operator          go to state 35
+    multiplicative_expr     go to state 36
+    additive_expr           go to state 37
+    relational_expr         go to state 38
+    equality_expr           go to state 39
+    logical_and_expr        go to state 40
+    logical_or_expr         go to state 41
+    expr                    go to state 67
+
+
+state 23
+
+   59 unary_operator: '+' .
+
+    $default  reduce using rule 59 (unary_operator)
+
+
+state 24
+
+   60 unary_operator: '-' .
+
+    $default  reduce using rule 60 (unary_operator)
+
+
+state 25
+
+   19 conditional_instruction: TK_IF then_part_list . TK_END
+   20                        | TK_IF then_part_list . else_part TK_END
+   22 then_part_list: then_part_list . TK_ELSEIF then_part
+
+    TK_END     shift, and go to state 68
+    TK_ELSEIF  shift, and go to state 69
+    TK_ELSE    shift, and go to state 70
+
+    else_part  go to state 71
+
+
+state 26
+
+   21 then_part_list: then_part .
+
+    $default  reduce using rule 21 (then_part_list)
+
+
+state 27
+
+   53 postfix_expr: primary_expr .
+
+    $default  reduce using rule 53 (postfix_expr)
+
+
+state 28
+
+   31 primary_expr: manifest_array .
+
+    $default  reduce using rule 31 (primary_expr)
+
+
+state 29
+
+   33 manifest_array: string_manifest_array .
+
+    $default  reduce using rule 33 (manifest_array)
+
+
+state 30
+
+   34 manifest_array: integer_manifest_array .
+
+    $default  reduce using rule 34 (manifest_array)
+
+
+state 31
+
+   35 manifest_array: boolean_manifest_array .
+
+    $default  reduce using rule 35 (manifest_array)
+
+
+state 32
+
+   36 manifest_array: byte_manifest_array .
+
+    $default  reduce using rule 36 (manifest_array)
+
+
+state 33
+
+   54 postfix_expr: postfix_expr . '(' ')'
+   55             | postfix_expr . '(' argument_list ')'
+   57 unary_expr: postfix_expr .
+
+    '('  shift, and go to state 72
+
+    $default  reduce using rule 57 (unary_expr)
+
+
+state 34
+
+   62 multiplicative_expr: unary_expr .
+
+    $default  reduce using rule 62 (multiplicative_expr)
+
+
+state 35
+
+   58 unary_expr: unary_operator . primary_expr
+
+    TK_IDENTIFIER   shift, and go to state 73
+    TK_BYTE         shift, and go to state 16
+    TK_INTEGER      shift, and go to state 17
+    TK_STRING       shift, and go to state 18
+    TK_BOOLEAN      shift, and go to state 20
+    TK_ARRAY_BEGIN  shift, and go to state 21
+    '('             shift, and go to state 22
+
+    primary_expr            go to state 74
+    manifest_array          go to state 28
+    string_manifest_array   go to state 29
+    integer_manifest_array  go to state 30
+    boolean_manifest_array  go to state 31
+    byte_manifest_array     go to state 32
+
+
+state 36
+
+   63 multiplicative_expr: multiplicative_expr . '*' unary_expr
+   64                    | multiplicative_expr . '/' unary_expr
+   65                    | multiplicative_expr . TK_MOD_OP unary_expr
+   66 additive_expr: multiplicative_expr .
+
+    TK_MOD_OP  shift, and go to state 75
+    '*'        shift, and go to state 76
+    '/'        shift, and go to state 77
+
+    $default  reduce using rule 66 (additive_expr)
+
+
+state 37
+
+   67 additive_expr: additive_expr . '+' multiplicative_expr
+   68              | additive_expr . '-' multiplicative_expr
+   69 relational_expr: additive_expr .
+
+    '+'  shift, and go to state 78
+    '-'  shift, and go to state 79
+
+    $default  reduce using rule 69 (relational_expr)
+
+
+state 38
+
+   70 relational_expr: relational_expr . '<' additive_expr
+   71                | relational_expr . '>' additive_expr
+   72                | relational_expr . TK_LE_OP additive_expr
+   73                | relational_expr . TK_GE_OP additive_expr
+   74 equality_expr: relational_expr .
+
+    TK_LE_OP  shift, and go to state 80
+    TK_GE_OP  shift, and go to state 81
+    '<'       shift, and go to state 82
+    '>'       shift, and go to state 83
+
+    $default  reduce using rule 74 (equality_expr)
+
+
+state 39
+
+   75 equality_expr: equality_expr . '=' relational_expr
+   76              | equality_expr . TK_NE_OP relational_expr
+   77 logical_and_expr: equality_expr .
+
+    TK_NE_OP  shift, and go to state 84
+    '='       shift, and go to state 85
+
+    $default  reduce using rule 77 (logical_and_expr)
+
+
+state 40
+
+   78 logical_and_expr: logical_and_expr . TK_AND_OP equality_expr
+   79 logical_or_expr: logical_and_expr .
+
+    TK_AND_OP  shift, and go to state 86
+
+    $default  reduce using rule 79 (logical_or_expr)
+
+
+state 41
+
+   80 logical_or_expr: logical_or_expr . TK_OR_OP logical_and_expr
+   81 expr: logical_or_expr .
+
+    TK_OR_OP  shift, and go to state 87
+
+    $default  reduce using rule 81 (expr)
+
+
+state 42
+
+   23 then_part: expr . TK_THEN instruction_list
+
+    TK_THEN  shift, and go to state 88
+
+
+state 43
+
+    4 instruction_list: instruction_list . instruction
+    5                 | instruction_list . ';' instruction
+   25 loop_instruction: TK_FROM instruction_list . TK_UNTIL expr TK_LOOP instruction_list TK_END
+
+    TK_IDENTIFIER  shift, and go to state 1
+    TK_IF          shift, and go to state 2
+    TK_FROM        shift, and go to state 3
+    TK_UNTIL       shift, and go to state 89
+    ';'            shift, and go to state 45
+
+    instruction                       go to state 46
+    command_instruction               go to state 7
+    assignment_instruction            go to state 8
+    array_elt_assignment_instruction  go to state 9
+    conditional_instruction           go to state 10
+    loop_instruction                  go to state 11
+
+
+state 44
+
+    0 $accept: mnt_script $end .
+
+    $default  accept
+
+
+state 45
+
+    5 instruction_list: instruction_list ';' . instruction
+
+    TK_IDENTIFIER  shift, and go to state 1
+    TK_IF          shift, and go to state 2
+    TK_FROM        shift, and go to state 3
+
+    instruction                       go to state 90
+    command_instruction               go to state 7
+    assignment_instruction            go to state 8
+    array_elt_assignment_instruction  go to state 9
+    conditional_instruction           go to state 10
+    loop_instruction                  go to state 11
+
+
+state 46
+
+    4 instruction_list: instruction_list instruction .
+
+    $default  reduce using rule 4 (instruction_list)
+
+
+state 47
+
+   17 assignment_instruction: TK_IDENTIFIER TK_ASSIGN_OP expr .
+
+    $default  reduce using rule 17 (assignment_instruction)
+
+
+state 48
+
+   14 argument: TK_OUT . TK_IDENTIFIER
+
+    TK_IDENTIFIER  shift, and go to state 91
+
+
+state 49
+
+   15 command_instruction: TK_IDENTIFIER '(' ')' .
+
+    $default  reduce using rule 15 (command_instruction)
+
+
+state 50
+
+   12 argument_list: argument_list . ',' argument
+   16 command_instruction: TK_IDENTIFIER '(' argument_list . ')'
+
+    ','  shift, and go to state 92
+    ')'  shift, and go to state 93
+
+
+state 51
+
+   11 argument_list: argument .
+
+    $default  reduce using rule 11 (argument_list)
+
+
+state 52
+
+   13 argument: expr .
+
+    $default  reduce using rule 13 (argument)
+
+
+state 53
+
+   18 array_elt_assignment_instruction: TK_IDENTIFIER '[' argument . ']' TK_ASSIGN_OP expr
+
+    ']'  shift, and go to state 94
+
+
+state 54
+
+   56 postfix_expr: TK_IDENTIFIER '[' . argument ']'
+
+    TK_IDENTIFIER   shift, and go to state 15
+    TK_BYTE         shift, and go to state 16
+    TK_INTEGER      shift, and go to state 17
+    TK_STRING       shift, and go to state 18
+    TK_NOT_OP       shift, and go to state 19
+    TK_OUT          shift, and go to state 48
+    TK_BOOLEAN      shift, and go to state 20
+    TK_ARRAY_BEGIN  shift, and go to state 21
+    '('             shift, and go to state 22
+    '+'             shift, and go to state 23
+    '-'             shift, and go to state 24
+
+    argument                go to state 95
+    primary_expr            go to state 27
+    manifest_array          go to state 28
+    string_manifest_array   go to state 29
+    integer_manifest_array  go to state 30
+    boolean_manifest_array  go to state 31
+    byte_manifest_array     go to state 32
+    postfix_expr            go to state 33
+    unary_expr              go to state 34
+    unary_operator          go to state 35
+    multiplicative_expr     go to state 36
+    additive_expr           go to state 37
+    relational_expr         go to state 38
+    equality_expr           go to state 39
+    logical_and_expr        go to state 40
+    logical_or_expr         go to state 41
+    expr                    go to state 52
+
+
+state 55
+
+   51 byte_list: TK_BYTE .
+
+    $default  reduce using rule 51 (byte_list)
+
+
+state 56
+
+   47 integer_list: TK_INTEGER .
+
+    $default  reduce using rule 47 (integer_list)
+
+
+state 57
+
+   45 string_list: TK_STRING .
+
+    $default  reduce using rule 45 (string_list)
+
+
+state 58
+
+   49 boolean_list: TK_BOOLEAN .
+
+    $default  reduce using rule 49 (boolean_list)
+
+
+state 59
+
+   38 string_manifest_array: TK_ARRAY_BEGIN TK_STRING_KEYWORD . TK_ARRAY_END
+
+    TK_ARRAY_END  shift, and go to state 96
+
+
+state 60
+
+   44 byte_manifest_array: TK_ARRAY_BEGIN TK_BYTE_KEYWORD . TK_ARRAY_END
+
+    TK_ARRAY_END  shift, and go to state 97
+
+
+state 61
+
+   40 integer_manifest_array: TK_ARRAY_BEGIN TK_INTEGER_KEYWORD . TK_ARRAY_END
+
+    TK_ARRAY_END  shift, and go to state 98
+
+
+state 62
+
+   42 boolean_manifest_array: TK_ARRAY_BEGIN TK_BOOLEAN_KEYWORD . TK_ARRAY_END
+
+    TK_ARRAY_END  shift, and go to state 99
+
+
+state 63
+
+   37 string_manifest_array: TK_ARRAY_BEGIN string_list . TK_ARRAY_END
+   46 string_list: string_list . ',' TK_STRING
+
+    TK_ARRAY_END  shift, and go to state 100
+    ','           shift, and go to state 101
+
+
+state 64
+
+   39 integer_manifest_array: TK_ARRAY_BEGIN integer_list . TK_ARRAY_END
+   48 integer_list: integer_list . ',' TK_INTEGER
+
+    TK_ARRAY_END  shift, and go to state 102
+    ','           shift, and go to state 103
+
+
+state 65
+
+   41 boolean_manifest_array: TK_ARRAY_BEGIN boolean_list . TK_ARRAY_END
+   50 boolean_list: boolean_list . ',' TK_BOOLEAN
+
+    TK_ARRAY_END  shift, and go to state 104
+    ','           shift, and go to state 105
+
+
+state 66
+
+   43 byte_manifest_array: TK_ARRAY_BEGIN byte_list . TK_ARRAY_END
+   52 byte_list: byte_list . ',' TK_BYTE
+
+    TK_ARRAY_END  shift, and go to state 106
+    ','           shift, and go to state 107
+
+
+state 67
+
+   32 primary_expr: '(' expr . ')'
+
+    ')'  shift, and go to state 108
+
+
+state 68
+
+   19 conditional_instruction: TK_IF then_part_list TK_END .
+
+    $default  reduce using rule 19 (conditional_instruction)
+
+
+state 69
+
+   22 then_part_list: then_part_list TK_ELSEIF . then_part
+
+    TK_IDENTIFIER   shift, and go to state 15
+    TK_BYTE         shift, and go to state 16
+    TK_INTEGER      shift, and go to state 17
+    TK_STRING       shift, and go to state 18
+    TK_NOT_OP       shift, and go to state 19
+    TK_BOOLEAN      shift, and go to state 20
+    TK_ARRAY_BEGIN  shift, and go to state 21
+    '('             shift, and go to state 22
+    '+'             shift, and go to state 23
+    '-'             shift, and go to state 24
+
+    then_part               go to state 109
+    primary_expr            go to state 27
+    manifest_array          go to state 28
+    string_manifest_array   go to state 29
+    integer_manifest_array  go to state 30
+    boolean_manifest_array  go to state 31
+    byte_manifest_array     go to state 32
+    postfix_expr            go to state 33
+    unary_expr              go to state 34
+    unary_operator          go to state 35
+    multiplicative_expr     go to state 36
+    additive_expr           go to state 37
+    relational_expr         go to state 38
+    equality_expr           go to state 39
+    logical_and_expr        go to state 40
+    logical_or_expr         go to state 41
+    expr                    go to state 42
+
+
+state 70
+
+   24 else_part: TK_ELSE . instruction_list
+
+    TK_IDENTIFIER  shift, and go to state 1
+    TK_IF          shift, and go to state 2
+    TK_FROM        shift, and go to state 3
+
+    instruction_list                  go to state 110
+    instruction                       go to state 6
+    command_instruction               go to state 7
+    assignment_instruction            go to state 8
+    array_elt_assignment_instruction  go to state 9
+    conditional_instruction           go to state 10
+    loop_instruction                  go to state 11
+
+
+state 71
+
+   20 conditional_instruction: TK_IF then_part_list else_part . TK_END
+
+    TK_END  shift, and go to state 111
+
+
+state 72
+
+   54 postfix_expr: postfix_expr '(' . ')'
+   55             | postfix_expr '(' . argument_list ')'
+
+    TK_IDENTIFIER   shift, and go to state 15
+    TK_BYTE         shift, and go to state 16
+    TK_INTEGER      shift, and go to state 17
+    TK_STRING       shift, and go to state 18
+    TK_NOT_OP       shift, and go to state 19
+    TK_OUT          shift, and go to state 48
+    TK_BOOLEAN      shift, and go to state 20
+    TK_ARRAY_BEGIN  shift, and go to state 21
+    '('             shift, and go to state 22
+    ')'             shift, and go to state 112
+    '+'             shift, and go to state 23
+    '-'             shift, and go to state 24
+
+    argument_list           go to state 113
+    argument                go to state 51
+    primary_expr            go to state 27
+    manifest_array          go to state 28
+    string_manifest_array   go to state 29
+    integer_manifest_array  go to state 30
+    boolean_manifest_array  go to state 31
+    byte_manifest_array     go to state 32
+    postfix_expr            go to state 33
+    unary_expr              go to state 34
+    unary_operator          go to state 35
+    multiplicative_expr     go to state 36
+    additive_expr           go to state 37
+    relational_expr         go to state 38
+    equality_expr           go to state 39
+    logical_and_expr        go to state 40
+    logical_or_expr         go to state 41
+    expr                    go to state 52
+
+
+state 73
+
+   26 primary_expr: TK_IDENTIFIER .
+
+    $default  reduce using rule 26 (primary_expr)
+
+
+state 74
+
+   58 unary_expr: unary_operator primary_expr .
+
+    $default  reduce using rule 58 (unary_expr)
+
+
+state 75
+
+   65 multiplicative_expr: multiplicative_expr TK_MOD_OP . unary_expr
+
+    TK_IDENTIFIER   shift, and go to state 15
+    TK_BYTE         shift, and go to state 16
+    TK_INTEGER      shift, and go to state 17
+    TK_STRING       shift, and go to state 18
+    TK_NOT_OP       shift, and go to state 19
+    TK_BOOLEAN      shift, and go to state 20
+    TK_ARRAY_BEGIN  shift, and go to state 21
+    '('             shift, and go to state 22
+    '+'             shift, and go to state 23
+    '-'             shift, and go to state 24
+
+    primary_expr            go to state 27
+    manifest_array          go to state 28
+    string_manifest_array   go to state 29
+    integer_manifest_array  go to state 30
+    boolean_manifest_array  go to state 31
+    byte_manifest_array     go to state 32
+    postfix_expr            go to state 33
+    unary_expr              go to state 114
+    unary_operator          go to state 35
+
+
+state 76
+
+   63 multiplicative_expr: multiplicative_expr '*' . unary_expr
+
+    TK_IDENTIFIER   shift, and go to state 15
+    TK_BYTE         shift, and go to state 16
+    TK_INTEGER      shift, and go to state 17
+    TK_STRING       shift, and go to state 18
+    TK_NOT_OP       shift, and go to state 19
+    TK_BOOLEAN      shift, and go to state 20
+    TK_ARRAY_BEGIN  shift, and go to state 21
+    '('             shift, and go to state 22
+    '+'             shift, and go to state 23
+    '-'             shift, and go to state 24
+
+    primary_expr            go to state 27
+    manifest_array          go to state 28
+    string_manifest_array   go to state 29
+    integer_manifest_array  go to state 30
+    boolean_manifest_array  go to state 31
+    byte_manifest_array     go to state 32
+    postfix_expr            go to state 33
+    unary_expr              go to state 115
+    unary_operator          go to state 35
+
+
+state 77
+
+   64 multiplicative_expr: multiplicative_expr '/' . unary_expr
+
+    TK_IDENTIFIER   shift, and go to state 15
+    TK_BYTE         shift, and go to state 16
+    TK_INTEGER      shift, and go to state 17
+    TK_STRING       shift, and go to state 18
+    TK_NOT_OP       shift, and go to state 19
+    TK_BOOLEAN      shift, and go to state 20
+    TK_ARRAY_BEGIN  shift, and go to state 21
+    '('             shift, and go to state 22
+    '+'             shift, and go to state 23
+    '-'             shift, and go to state 24
+
+    primary_expr            go to state 27
+    manifest_array          go to state 28
+    string_manifest_array   go to state 29
+    integer_manifest_array  go to state 30
+    boolean_manifest_array  go to state 31
+    byte_manifest_array     go to state 32
+    postfix_expr            go to state 33
+    unary_expr              go to state 116
+    unary_operator          go to state 35
+
+
+state 78
+
+   67 additive_expr: additive_expr '+' . multiplicative_expr
+
+    TK_IDENTIFIER   shift, and go to state 15
+    TK_BYTE         shift, and go to state 16
+    TK_INTEGER      shift, and go to state 17
+    TK_STRING       shift, and go to state 18
+    TK_NOT_OP       shift, and go to state 19
+    TK_BOOLEAN      shift, and go to state 20
+    TK_ARRAY_BEGIN  shift, and go to state 21
+    '('             shift, and go to state 22
+    '+'             shift, and go to state 23
+    '-'             shift, and go to state 24
+
+    primary_expr            go to state 27
+    manifest_array          go to state 28
+    string_manifest_array   go to state 29
+    integer_manifest_array  go to state 30
+    boolean_manifest_array  go to state 31
+    byte_manifest_array     go to state 32
+    postfix_expr            go to state 33
+    unary_expr              go to state 34
+    unary_operator          go to state 35
+    multiplicative_expr     go to state 117
+
+
+state 79
+
+   68 additive_expr: additive_expr '-' . multiplicative_expr
+
+    TK_IDENTIFIER   shift, and go to state 15
+    TK_BYTE         shift, and go to state 16
+    TK_INTEGER      shift, and go to state 17
+    TK_STRING       shift, and go to state 18
+    TK_NOT_OP       shift, and go to state 19
+    TK_BOOLEAN      shift, and go to state 20
+    TK_ARRAY_BEGIN  shift, and go to state 21
+    '('             shift, and go to state 22
+    '+'             shift, and go to state 23
+    '-'             shift, and go to state 24
+
+    primary_expr            go to state 27
+    manifest_array          go to state 28
+    string_manifest_array   go to state 29
+    integer_manifest_array  go to state 30
+    boolean_manifest_array  go to state 31
+    byte_manifest_array     go to state 32
+    postfix_expr            go to state 33
+    unary_expr              go to state 34
+    unary_operator          go to state 35
+    multiplicative_expr     go to state 118
+
+
+state 80
+
+   72 relational_expr: relational_expr TK_LE_OP . additive_expr
+
+    TK_IDENTIFIER   shift, and go to state 15
+    TK_BYTE         shift, and go to state 16
+    TK_INTEGER      shift, and go to state 17
+    TK_STRING       shift, and go to state 18
+    TK_NOT_OP       shift, and go to state 19
+    TK_BOOLEAN      shift, and go to state 20
+    TK_ARRAY_BEGIN  shift, and go to state 21
+    '('             shift, and go to state 22
+    '+'             shift, and go to state 23
+    '-'             shift, and go to state 24
+
+    primary_expr            go to state 27
+    manifest_array          go to state 28
+    string_manifest_array   go to state 29
+    integer_manifest_array  go to state 30
+    boolean_manifest_array  go to state 31
+    byte_manifest_array     go to state 32
+    postfix_expr            go to state 33
+    unary_expr              go to state 34
+    unary_operator          go to state 35
+    multiplicative_expr     go to state 36
+    additive_expr           go to state 119
+
+
+state 81
+
+   73 relational_expr: relational_expr TK_GE_OP . additive_expr
+
+    TK_IDENTIFIER   shift, and go to state 15
+    TK_BYTE         shift, and go to state 16
+    TK_INTEGER      shift, and go to state 17
+    TK_STRING       shift, and go to state 18
+    TK_NOT_OP       shift, and go to state 19
+    TK_BOOLEAN      shift, and go to state 20
+    TK_ARRAY_BEGIN  shift, and go to state 21
+    '('             shift, and go to state 22
+    '+'             shift, and go to state 23
+    '-'             shift, and go to state 24
+
+    primary_expr            go to state 27
+    manifest_array          go to state 28
+    string_manifest_array   go to state 29
+    integer_manifest_array  go to state 30
+    boolean_manifest_array  go to state 31
+    byte_manifest_array     go to state 32
+    postfix_expr            go to state 33
+    unary_expr              go to state 34
+    unary_operator          go to state 35
+    multiplicative_expr     go to state 36
+    additive_expr           go to state 120
+
+
+state 82
+
+   70 relational_expr: relational_expr '<' . additive_expr
+
+    TK_IDENTIFIER   shift, and go to state 15
+    TK_BYTE         shift, and go to state 16
+    TK_INTEGER      shift, and go to state 17
+    TK_STRING       shift, and go to state 18
+    TK_NOT_OP       shift, and go to state 19
+    TK_BOOLEAN      shift, and go to state 20
+    TK_ARRAY_BEGIN  shift, and go to state 21
+    '('             shift, and go to state 22
+    '+'             shift, and go to state 23
+    '-'             shift, and go to state 24
+
+    primary_expr            go to state 27
+    manifest_array          go to state 28
+    string_manifest_array   go to state 29
+    integer_manifest_array  go to state 30
+    boolean_manifest_array  go to state 31
+    byte_manifest_array     go to state 32
+    postfix_expr            go to state 33
+    unary_expr              go to state 34
+    unary_operator          go to state 35
+    multiplicative_expr     go to state 36
+    additive_expr           go to state 121
+
+
+state 83
+
+   71 relational_expr: relational_expr '>' . additive_expr
+
+    TK_IDENTIFIER   shift, and go to state 15
+    TK_BYTE         shift, and go to state 16
+    TK_INTEGER      shift, and go to state 17
+    TK_STRING       shift, and go to state 18
+    TK_NOT_OP       shift, and go to state 19
+    TK_BOOLEAN      shift, and go to state 20
+    TK_ARRAY_BEGIN  shift, and go to state 21
+    '('             shift, and go to state 22
+    '+'             shift, and go to state 23
+    '-'             shift, and go to state 24
+
+    primary_expr            go to state 27
+    manifest_array          go to state 28
+    string_manifest_array   go to state 29
+    integer_manifest_array  go to state 30
+    boolean_manifest_array  go to state 31
+    byte_manifest_array     go to state 32
+    postfix_expr            go to state 33
+    unary_expr              go to state 34
+    unary_operator          go to state 35
+    multiplicative_expr     go to state 36
+    additive_expr           go to state 122
+
+
+state 84
+
+   76 equality_expr: equality_expr TK_NE_OP . relational_expr
+
+    TK_IDENTIFIER   shift, and go to state 15
+    TK_BYTE         shift, and go to state 16
+    TK_INTEGER      shift, and go to state 17
+    TK_STRING       shift, and go to state 18
+    TK_NOT_OP       shift, and go to state 19
+    TK_BOOLEAN      shift, and go to state 20
+    TK_ARRAY_BEGIN  shift, and go to state 21
+    '('             shift, and go to state 22
+    '+'             shift, and go to state 23
+    '-'             shift, and go to state 24
+
+    primary_expr            go to state 27
+    manifest_array          go to state 28
+    string_manifest_array   go to state 29
+    integer_manifest_array  go to state 30
+    boolean_manifest_array  go to state 31
+    byte_manifest_array     go to state 32
+    postfix_expr            go to state 33
+    unary_expr              go to state 34
+    unary_operator          go to state 35
+    multiplicative_expr     go to state 36
+    additive_expr           go to state 37
+    relational_expr         go to state 123
+
+
+state 85
+
+   75 equality_expr: equality_expr '=' . relational_expr
+
+    TK_IDENTIFIER   shift, and go to state 15
+    TK_BYTE         shift, and go to state 16
+    TK_INTEGER      shift, and go to state 17
+    TK_STRING       shift, and go to state 18
+    TK_NOT_OP       shift, and go to state 19
+    TK_BOOLEAN      shift, and go to state 20
+    TK_ARRAY_BEGIN  shift, and go to state 21
+    '('             shift, and go to state 22
+    '+'             shift, and go to state 23
+    '-'             shift, and go to state 24
+
+    primary_expr            go to state 27
+    manifest_array          go to state 28
+    string_manifest_array   go to state 29
+    integer_manifest_array  go to state 30
+    boolean_manifest_array  go to state 31
+    byte_manifest_array     go to state 32
+    postfix_expr            go to state 33
+    unary_expr              go to state 34
+    unary_operator          go to state 35
+    multiplicative_expr     go to state 36
+    additive_expr           go to state 37
+    relational_expr         go to state 124
+
+
+state 86
+
+   78 logical_and_expr: logical_and_expr TK_AND_OP . equality_expr
+
+    TK_IDENTIFIER   shift, and go to state 15
+    TK_BYTE         shift, and go to state 16
+    TK_INTEGER      shift, and go to state 17
+    TK_STRING       shift, and go to state 18
+    TK_NOT_OP       shift, and go to state 19
+    TK_BOOLEAN      shift, and go to state 20
+    TK_ARRAY_BEGIN  shift, and go to state 21
+    '('             shift, and go to state 22
+    '+'             shift, and go to state 23
+    '-'             shift, and go to state 24
+
+    primary_expr            go to state 27
+    manifest_array          go to state 28
+    string_manifest_array   go to state 29
+    integer_manifest_array  go to state 30
+    boolean_manifest_array  go to state 31
+    byte_manifest_array     go to state 32
+    postfix_expr            go to state 33
+    unary_expr              go to state 34
+    unary_operator          go to state 35
+    multiplicative_expr     go to state 36
+    additive_expr           go to state 37
+    relational_expr         go to state 38
+    equality_expr           go to state 125
+
+
+state 87
+
+   80 logical_or_expr: logical_or_expr TK_OR_OP . logical_and_expr
+
+    TK_IDENTIFIER   shift, and go to state 15
+    TK_BYTE         shift, and go to state 16
+    TK_INTEGER      shift, and go to state 17
+    TK_STRING       shift, and go to state 18
+    TK_NOT_OP       shift, and go to state 19
+    TK_BOOLEAN      shift, and go to state 20
+    TK_ARRAY_BEGIN  shift, and go to state 21
+    '('             shift, and go to state 22
+    '+'             shift, and go to state 23
+    '-'             shift, and go to state 24
+
+    primary_expr            go to state 27
+    manifest_array          go to state 28
+    string_manifest_array   go to state 29
+    integer_manifest_array  go to state 30
+    boolean_manifest_array  go to state 31
+    byte_manifest_array     go to state 32
+    postfix_expr            go to state 33
+    unary_expr              go to state 34
+    unary_operator          go to state 35
+    multiplicative_expr     go to state 36
+    additive_expr           go to state 37
+    relational_expr         go to state 38
+    equality_expr           go to state 39
+    logical_and_expr        go to state 126
+
+
+state 88
+
+   23 then_part: expr TK_THEN . instruction_list
+
+    TK_IDENTIFIER  shift, and go to state 1
+    TK_IF          shift, and go to state 2
+    TK_FROM        shift, and go to state 3
+
+    instruction_list                  go to state 127
+    instruction                       go to state 6
+    command_instruction               go to state 7
+    assignment_instruction            go to state 8
+    array_elt_assignment_instruction  go to state 9
+    conditional_instruction           go to state 10
+    loop_instruction                  go to state 11
+
+
+state 89
+
+   25 loop_instruction: TK_FROM instruction_list TK_UNTIL . expr TK_LOOP instruction_list TK_END
+
+    TK_IDENTIFIER   shift, and go to state 15
+    TK_BYTE         shift, and go to state 16
+    TK_INTEGER      shift, and go to state 17
+    TK_STRING       shift, and go to state 18
+    TK_NOT_OP       shift, and go to state 19
+    TK_BOOLEAN      shift, and go to state 20
+    TK_ARRAY_BEGIN  shift, and go to state 21
+    '('             shift, and go to state 22
+    '+'             shift, and go to state 23
+    '-'             shift, and go to state 24
+
+    primary_expr            go to state 27
+    manifest_array          go to state 28
+    string_manifest_array   go to state 29
+    integer_manifest_array  go to state 30
+    boolean_manifest_array  go to state 31
+    byte_manifest_array     go to state 32
+    postfix_expr            go to state 33
+    unary_expr              go to state 34
+    unary_operator          go to state 35
+    multiplicative_expr     go to state 36
+    additive_expr           go to state 37
+    relational_expr         go to state 38
+    equality_expr           go to state 39
+    logical_and_expr        go to state 40
+    logical_or_expr         go to state 41
+    expr                    go to state 128
+
+
+state 90
+
+    5 instruction_list: instruction_list ';' instruction .
+
+    $default  reduce using rule 5 (instruction_list)
+
+
+state 91
+
+   14 argument: TK_OUT TK_IDENTIFIER .
+
+    $default  reduce using rule 14 (argument)
+
+
+state 92
+
+   12 argument_list: argument_list ',' . argument
+
+    TK_IDENTIFIER   shift, and go to state 15
+    TK_BYTE         shift, and go to state 16
+    TK_INTEGER      shift, and go to state 17
+    TK_STRING       shift, and go to state 18
+    TK_NOT_OP       shift, and go to state 19
+    TK_OUT          shift, and go to state 48
+    TK_BOOLEAN      shift, and go to state 20
+    TK_ARRAY_BEGIN  shift, and go to state 21
+    '('             shift, and go to state 22
+    '+'             shift, and go to state 23
+    '-'             shift, and go to state 24
+
+    argument                go to state 129
+    primary_expr            go to state 27
+    manifest_array          go to state 28
+    string_manifest_array   go to state 29
+    integer_manifest_array  go to state 30
+    boolean_manifest_array  go to state 31
+    byte_manifest_array     go to state 32
+    postfix_expr            go to state 33
+    unary_expr              go to state 34
+    unary_operator          go to state 35
+    multiplicative_expr     go to state 36
+    additive_expr           go to state 37
+    relational_expr         go to state 38
+    equality_expr           go to state 39
+    logical_and_expr        go to state 40
+    logical_or_expr         go to state 41
+    expr                    go to state 52
+
+
+state 93
+
+   16 command_instruction: TK_IDENTIFIER '(' argument_list ')' .
+
+    $default  reduce using rule 16 (command_instruction)
+
+
+state 94
+
+   18 array_elt_assignment_instruction: TK_IDENTIFIER '[' argument ']' . TK_ASSIGN_OP expr
+
+    TK_ASSIGN_OP  shift, and go to state 130
+
+
+state 95
+
+   56 postfix_expr: TK_IDENTIFIER '[' argument . ']'
+
+    ']'  shift, and go to state 131
+
+
+state 96
+
+   38 string_manifest_array: TK_ARRAY_BEGIN TK_STRING_KEYWORD TK_ARRAY_END .
+
+    $default  reduce using rule 38 (string_manifest_array)
+
+
+state 97
+
+   44 byte_manifest_array: TK_ARRAY_BEGIN TK_BYTE_KEYWORD TK_ARRAY_END .
+
+    $default  reduce using rule 44 (byte_manifest_array)
+
+
+state 98
+
+   40 integer_manifest_array: TK_ARRAY_BEGIN TK_INTEGER_KEYWORD TK_ARRAY_END .
+
+    $default  reduce using rule 40 (integer_manifest_array)
+
+
+state 99
+
+   42 boolean_manifest_array: TK_ARRAY_BEGIN TK_BOOLEAN_KEYWORD TK_ARRAY_END .
+
+    $default  reduce using rule 42 (boolean_manifest_array)
+
+
+state 100
+
+   37 string_manifest_array: TK_ARRAY_BEGIN string_list TK_ARRAY_END .
+
+    $default  reduce using rule 37 (string_manifest_array)
+
+
+state 101
+
+   46 string_list: string_list ',' . TK_STRING
+
+    TK_STRING  shift, and go to state 132
+
+
+state 102
+
+   39 integer_manifest_array: TK_ARRAY_BEGIN integer_list TK_ARRAY_END .
+
+    $default  reduce using rule 39 (integer_manifest_array)
+
+
+state 103
+
+   48 integer_list: integer_list ',' . TK_INTEGER
+
+    TK_INTEGER  shift, and go to state 133
+
+
+state 104
+
+   41 boolean_manifest_array: TK_ARRAY_BEGIN boolean_list TK_ARRAY_END .
+
+    $default  reduce using rule 41 (boolean_manifest_array)
+
+
+state 105
+
+   50 boolean_list: boolean_list ',' . TK_BOOLEAN
+
+    TK_BOOLEAN  shift, and go to state 134
+
+
+state 106
+
+   43 byte_manifest_array: TK_ARRAY_BEGIN byte_list TK_ARRAY_END .
+
+    $default  reduce using rule 43 (byte_manifest_array)
+
+
+state 107
+
+   52 byte_list: byte_list ',' . TK_BYTE
+
+    TK_BYTE  shift, and go to state 135
+
+
+state 108
+
+   32 primary_expr: '(' expr ')' .
+
+    $default  reduce using rule 32 (primary_expr)
+
+
+state 109
+
+   22 then_part_list: then_part_list TK_ELSEIF then_part .
+
+    $default  reduce using rule 22 (then_part_list)
+
+
+state 110
+
+    4 instruction_list: instruction_list . instruction
+    5                 | instruction_list . ';' instruction
+   24 else_part: TK_ELSE instruction_list .
+
+    TK_IDENTIFIER  shift, and go to state 1
+    TK_IF          shift, and go to state 2
+    TK_FROM        shift, and go to state 3
+    ';'            shift, and go to state 45
+
+    $default  reduce using rule 24 (else_part)
+
+    instruction                       go to state 46
+    command_instruction               go to state 7
+    assignment_instruction            go to state 8
+    array_elt_assignment_instruction  go to state 9
+    conditional_instruction           go to state 10
+    loop_instruction                  go to state 11
+
+
+state 111
+
+   20 conditional_instruction: TK_IF then_part_list else_part TK_END .
+
+    $default  reduce using rule 20 (conditional_instruction)
+
+
+state 112
+
+   54 postfix_expr: postfix_expr '(' ')' .
+
+    $default  reduce using rule 54 (postfix_expr)
+
+
+state 113
+
+   12 argument_list: argument_list . ',' argument
+   55 postfix_expr: postfix_expr '(' argument_list . ')'
+
+    ','  shift, and go to state 92
+    ')'  shift, and go to state 136
+
+
+state 114
+
+   65 multiplicative_expr: multiplicative_expr TK_MOD_OP unary_expr .
+
+    $default  reduce using rule 65 (multiplicative_expr)
+
+
+state 115
+
+   63 multiplicative_expr: multiplicative_expr '*' unary_expr .
+
+    $default  reduce using rule 63 (multiplicative_expr)
+
+
+state 116
+
+   64 multiplicative_expr: multiplicative_expr '/' unary_expr .
+
+    $default  reduce using rule 64 (multiplicative_expr)
+
+
+state 117
+
+   63 multiplicative_expr: multiplicative_expr . '*' unary_expr
+   64                    | multiplicative_expr . '/' unary_expr
+   65                    | multiplicative_expr . TK_MOD_OP unary_expr
+   67 additive_expr: additive_expr '+' multiplicative_expr .
+
+    TK_MOD_OP  shift, and go to state 75
+    '*'        shift, and go to state 76
+    '/'        shift, and go to state 77
+
+    $default  reduce using rule 67 (additive_expr)
+
+
+state 118
+
+   63 multiplicative_expr: multiplicative_expr . '*' unary_expr
+   64                    | multiplicative_expr . '/' unary_expr
+   65                    | multiplicative_expr . TK_MOD_OP unary_expr
+   68 additive_expr: additive_expr '-' multiplicative_expr .
+
+    TK_MOD_OP  shift, and go to state 75
+    '*'        shift, and go to state 76
+    '/'        shift, and go to state 77
+
+    $default  reduce using rule 68 (additive_expr)
+
+
+state 119
+
+   67 additive_expr: additive_expr . '+' multiplicative_expr
+   68              | additive_expr . '-' multiplicative_expr
+   72 relational_expr: relational_expr TK_LE_OP additive_expr .
+
+    '+'  shift, and go to state 78
+    '-'  shift, and go to state 79
+
+    $default  reduce using rule 72 (relational_expr)
+
+
+state 120
+
+   67 additive_expr: additive_expr . '+' multiplicative_expr
+   68              | additive_expr . '-' multiplicative_expr
+   73 relational_expr: relational_expr TK_GE_OP additive_expr .
+
+    '+'  shift, and go to state 78
+    '-'  shift, and go to state 79
+
+    $default  reduce using rule 73 (relational_expr)
+
+
+state 121
+
+   67 additive_expr: additive_expr . '+' multiplicative_expr
+   68              | additive_expr . '-' multiplicative_expr
+   70 relational_expr: relational_expr '<' additive_expr .
+
+    '+'  shift, and go to state 78
+    '-'  shift, and go to state 79
+
+    $default  reduce using rule 70 (relational_expr)
+
+
+state 122
+
+   67 additive_expr: additive_expr . '+' multiplicative_expr
+   68              | additive_expr . '-' multiplicative_expr
+   71 relational_expr: relational_expr '>' additive_expr .
+
+    '+'  shift, and go to state 78
+    '-'  shift, and go to state 79
+
+    $default  reduce using rule 71 (relational_expr)
+
+
+state 123
+
+   70 relational_expr: relational_expr . '<' additive_expr
+   71                | relational_expr . '>' additive_expr
+   72                | relational_expr . TK_LE_OP additive_expr
+   73                | relational_expr . TK_GE_OP additive_expr
+   76 equality_expr: equality_expr TK_NE_OP relational_expr .
+
+    TK_LE_OP  shift, and go to state 80
+    TK_GE_OP  shift, and go to state 81
+    '<'       shift, and go to state 82
+    '>'       shift, and go to state 83
+
+    $default  reduce using rule 76 (equality_expr)
+
+
+state 124
+
+   70 relational_expr: relational_expr . '<' additive_expr
+   71                | relational_expr . '>' additive_expr
+   72                | relational_expr . TK_LE_OP additive_expr
+   73                | relational_expr . TK_GE_OP additive_expr
+   75 equality_expr: equality_expr '=' relational_expr .
+
+    TK_LE_OP  shift, and go to state 80
+    TK_GE_OP  shift, and go to state 81
+    '<'       shift, and go to state 82
+    '>'       shift, and go to state 83
+
+    $default  reduce using rule 75 (equality_expr)
+
+
+state 125
+
+   75 equality_expr: equality_expr . '=' relational_expr
+   76              | equality_expr . TK_NE_OP relational_expr
+   78 logical_and_expr: logical_and_expr TK_AND_OP equality_expr .
+
+    TK_NE_OP  shift, and go to state 84
+    '='       shift, and go to state 85
+
+    $default  reduce using rule 78 (logical_and_expr)
+
+
+state 126
+
+   78 logical_and_expr: logical_and_expr . TK_AND_OP equality_expr
+   80 logical_or_expr: logical_or_expr TK_OR_OP logical_and_expr .
+
+    TK_AND_OP  shift, and go to state 86
+
+    $default  reduce using rule 80 (logical_or_expr)
+
+
+state 127
+
+    4 instruction_list: instruction_list . instruction
+    5                 | instruction_list . ';' instruction
+   23 then_part: expr TK_THEN instruction_list .
+
+    TK_IDENTIFIER  shift, and go to state 1
+    TK_IF          shift, and go to state 2
+    TK_FROM        shift, and go to state 3
+    ';'            shift, and go to state 45
+
+    $default  reduce using rule 23 (then_part)
+
+    instruction                       go to state 46
+    command_instruction               go to state 7
+    assignment_instruction            go to state 8
+    array_elt_assignment_instruction  go to state 9
+    conditional_instruction           go to state 10
+    loop_instruction                  go to state 11
+
+
+state 128
+
+   25 loop_instruction: TK_FROM instruction_list TK_UNTIL expr . TK_LOOP instruction_list TK_END
+
+    TK_LOOP  shift, and go to state 137
+
+
+state 129
+
+   12 argument_list: argument_list ',' argument .
+
+    $default  reduce using rule 12 (argument_list)
+
+
+state 130
+
+   18 array_elt_assignment_instruction: TK_IDENTIFIER '[' argument ']' TK_ASSIGN_OP . expr
+
+    TK_IDENTIFIER   shift, and go to state 15
+    TK_BYTE         shift, and go to state 16
+    TK_INTEGER      shift, and go to state 17
+    TK_STRING       shift, and go to state 18
+    TK_NOT_OP       shift, and go to state 19
+    TK_BOOLEAN      shift, and go to state 20
+    TK_ARRAY_BEGIN  shift, and go to state 21
+    '('             shift, and go to state 22
+    '+'             shift, and go to state 23
+    '-'             shift, and go to state 24
+
+    primary_expr            go to state 27
+    manifest_array          go to state 28
+    string_manifest_array   go to state 29
+    integer_manifest_array  go to state 30
+    boolean_manifest_array  go to state 31
+    byte_manifest_array     go to state 32
+    postfix_expr            go to state 33
+    unary_expr              go to state 34
+    unary_operator          go to state 35
+    multiplicative_expr     go to state 36
+    additive_expr           go to state 37
+    relational_expr         go to state 38
+    equality_expr           go to state 39
+    logical_and_expr        go to state 40
+    logical_or_expr         go to state 41
+    expr                    go to state 138
+
+
+state 131
+
+   56 postfix_expr: TK_IDENTIFIER '[' argument ']' .
+
+    $default  reduce using rule 56 (postfix_expr)
+
+
+state 132
+
+   46 string_list: string_list ',' TK_STRING .
+
+    $default  reduce using rule 46 (string_list)
+
+
+state 133
+
+   48 integer_list: integer_list ',' TK_INTEGER .
+
+    $default  reduce using rule 48 (integer_list)
+
+
+state 134
+
+   50 boolean_list: boolean_list ',' TK_BOOLEAN .
+
+    $default  reduce using rule 50 (boolean_list)
+
+
+state 135
+
+   52 byte_list: byte_list ',' TK_BYTE .
+
+    $default  reduce using rule 52 (byte_list)
+
+
+state 136
+
+   55 postfix_expr: postfix_expr '(' argument_list ')' .
+
+    $default  reduce using rule 55 (postfix_expr)
+
+
+state 137
+
+   25 loop_instruction: TK_FROM instruction_list TK_UNTIL expr TK_LOOP . instruction_list TK_END
+
+    TK_IDENTIFIER  shift, and go to state 1
+    TK_IF          shift, and go to state 2
+    TK_FROM        shift, and go to state 3
+
+    instruction_list                  go to state 139
+    instruction                       go to state 6
+    command_instruction               go to state 7
+    assignment_instruction            go to state 8
+    array_elt_assignment_instruction  go to state 9
+    conditional_instruction           go to state 10
+    loop_instruction                  go to state 11
+
+
+state 138
+
+   18 array_elt_assignment_instruction: TK_IDENTIFIER '[' argument ']' TK_ASSIGN_OP expr .
+
+    $default  reduce using rule 18 (array_elt_assignment_instruction)
+
+
+state 139
+
+    4 instruction_list: instruction_list . instruction
+    5                 | instruction_list . ';' instruction
+   25 loop_instruction: TK_FROM instruction_list TK_UNTIL expr TK_LOOP instruction_list . TK_END
+
+    TK_IDENTIFIER  shift, and go to state 1
+    TK_END         shift, and go to state 140
+    TK_IF          shift, and go to state 2
+    TK_FROM        shift, and go to state 3
+    ';'            shift, and go to state 45
+
+    instruction                       go to state 46
+    command_instruction               go to state 7
+    assignment_instruction            go to state 8
+    array_elt_assignment_instruction  go to state 9
+    conditional_instruction           go to state 10
+    loop_instruction                  go to state 11
+
+
+state 140
+
+   25 loop_instruction: TK_FROM instruction_list TK_UNTIL expr TK_LOOP instruction_list TK_END .
+
+    $default  reduce using rule 25 (loop_instruction)

@@ -1,0 +1,19 @@
+
+ANSI TCAP Command
+
+SYNOPSIS
+    ta_clr_all_peg
+
+DESCRIPTION
+    This command clears all TCAP pegs to 0.
+
+PARAMETERS
+    None.
+
+
+EXAMPLE
+>> ta_clr_all_peg
+Clearing All ANSI TCAP Pegs for  Now
+
+
+

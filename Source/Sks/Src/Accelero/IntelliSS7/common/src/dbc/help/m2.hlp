@@ -1,0 +1,11 @@
+
+MTP2 Module :
+
+    m2_get_gen_cfg        MTP2 Get General Config
+    m2_set_gen_cfg        MTP2 Set General Config
+    m2_get_gen_peg        MTP2 Get General Peg
+    m2_clr_gen_peg        MTP2 Clear General Peg
+    m2_get_all_link_pegs  MTP2 Get All Link Pegs
+    m2_clr_all_link_pegs  MTP2 Clear All Link Pegs
+
+For details about any command use "help <command name>"

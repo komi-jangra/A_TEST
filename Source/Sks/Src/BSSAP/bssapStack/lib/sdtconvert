@@ -1,0 +1,136 @@
+
+# Master script for SCU <-> SDT conversions
+#
+# perl sdtconvert [-prefix <dir>] -tosdt <name.scu> > <name.sdt>
+# perl sdtconvert [-prefix <dir>] -absolute <name.scu> > <name.sdt>	(implies -tosdt)
+# perl sdtconvert [-prefix <dir>] -toscu <name.sdt> > <name.scu>
+#
+
+# Function to print a SDT/SCU entry
+sub	printentry
+{
+	# Note - Uses global variable $prefix
+
+	my	$filepath = @_[3];
+	my	$firstchar;
+
+	$firstchar = substr( $filepath, 0, 1 );
+	if( $firstchar eq '/' ) {
+		;
+	} else {
+		$filepath = join( '', $prefix, $filepath );
+	}
+
+	if ( (@_[1] == "1") || 
+	     (@_[1] == "2") ||
+	     (@_[1] == "3") ||
+	     (@_[1] == "4") ||
+	     (@_[1] == "5") ||
+	     (@_[1] == "6") ||
+	     (@_[1] == "7") ||
+	     (@_[1] == "8") ||
+	     (@_[1] == "9") ||
+	     (@_[1] == "10") ||
+	     (@_[1] == "11") ||
+	     (@_[1] == "19") ) {
+			printf( "%s %s %s %s %s %s %s %s\n", @_[0], @_[1], @_[2], $filepath, (@_[4] & 1), "0", @_[6], '""');
+	}
+}
+
+$absolute='no';
+$tosdt='no';
+$prefix='';
+
+ARGLOOP: while( $#ARGV >= 0 ) {
+
+	if( "@ARGV[0]" eq "-toscu" ) {
+		shift; 
+		$tosdt = 'no';
+	} elsif ( "@ARGV[0]" eq '-tosdt' ) {
+		shift;
+		$tosdt = 'yes';
+	} elsif ( "@ARGV[0]" eq '-prefix' ) {
+		shift; 
+		$prefix=@ARGV[0]; shift;
+	} elsif ( "@ARGV[0]" eq '-absolute' ) {
+		shift; 
+		$tosdt = 'yes';
+		$absolute = 'yes';
+	} else {
+		last ARGLOOP;
+	}
+}
+
+if( "$tosdt" eq "yes" ) {
+	printf( "%s\n", 'SDT-SYSTEM-3.4' );
+
+	printf( "%s\n", '[DRIVES]' );
+	printf( "%s\n", '[SOURCE-TARGET-DIRECTORY]' );
+
+	if( "$absolute" eq "yes" ) {
+		printf( "%s=%s\n", 'AbsolutePath', 'True' );
+	} else {
+		printf( "%s=%s\n", 'AbsolutePath', 'False' );
+	}
+	printf( "%s=%s\n", 'SourceDirectory', '' );
+	printf( "%s=%s\n", 'TargetDirectory', '' );
+
+	printf( "%s\n", '[LINKS]' );
+	printf( "%s\n", '[DIAGRAMS]' );
+
+	while(<>) {
+		@b = split;
+
+		printentry @b ;
+	}
+
+	printf( "%s\n", '[VIEWOPTIONS]' );
+
+	printf( "%s\n", '[ANALYSEROPTIONS]' );
+	printf( "%s=%s\n", 'ErrorLimit', '100' );
+	printf( "%s=%s\n", 'ExpandPR', 'True' );
+	printf( "%s=%s\n", 'Filter', 'False' );
+	printf( "%s=%s\n", 'ImplicitTypeConvControl', 'False' );
+	printf( "%s=%s\n", 'InstanceFile', 'False' );
+	printf( "%s=%s\n", 'MacroExpansion', 'True' );
+	printf( "%s=%s\n", 'OptionalParamControl', 'False' );
+	printf( "%s=%s\n", 'UsageControl', 'False' );
+	printf( "%s=%s\n", 'XRef', 'False' );
+
+	printf( "%s\n", '[H2SDLOPTIONS]' );
+
+	printf( "%s\n", '[MAKEOPTIONS]' );
+	printf( "%s=%s\n", 'Capitalization', 'AsDefined' );
+	printf( "%s=%s\n", 'CCompilerDriver', 'False' );
+	printf( "%s=%s\n", 'CompileAndLink', 'False' );
+	printf( "%s=%s\n", 'GenerateEnvHeader', 'True' );
+	printf( "%s=%s\n", 'GenerateEnvFunctions', 'False' );
+	printf( "%s=%s\n", 'GenerateSignalNumbers', 'True' );
+	printf( "%s=%s\n", 'GenerateCode', 'True' );
+	printf( "%s=%s\n", 'MakeFileMode', 'UserDefined' );
+	printf( "%s=%s\n", 'Separation', 'Full' );
+	printf( "%s=%s\n", 'PrefixType', 'Full' );
+	printf( "%s=%s\n", 'StandardKernel', 'False' );
+	printf( "%s=%s\n", 'TargetLanguage', 'Cmicro' );
+	printf( "%s=%s\n", 'UserKernel', '.' );
+	printf( "%s=%s\n", 'UserMakefile', '' );
+	printf( "%s=%s\n", 'UserTemplate', '' );
+
+	printf( "%s\n", '[PRINTOPTIONS]' );
+} else {
+	$x = 0;
+	while(<>) {
+		if( /^\[.*\]$/ ) {
+			if ( /^\[DIAGRAMS\]$/ ) {
+				$x = 1;
+			} else {
+			$x = 0;
+			}
+		} else {
+			if( $x ) {
+				@a = split;
+				printentry( @a );
+			}
+		}
+	}
+}

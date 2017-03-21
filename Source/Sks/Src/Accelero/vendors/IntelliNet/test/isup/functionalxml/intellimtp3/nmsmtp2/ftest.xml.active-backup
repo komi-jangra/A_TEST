@@ -1,0 +1,585 @@
+<?xml version="1.0"?>
+
+<!-- Sample XML file for application configuration (INI). -->
+
+<Application name           = "ISUP-FUNCTIONAL-TEST"
+             type           = "console-application"
+             globalStart    = "ANSI-ISUP + ANSI-MTP3"
+             binding        = "C"
+             library        = "libftest-intelli3-nms2-ANSID.so"
+             appSelector    = "RouteApp"
+             preFunc        = "ftestPreFunc"
+             postFunc       = "ftestPostFunc">
+
+    <AppOptions name = "traceFlushAfterWrite"         value = "yes"/>
+    <AppOptions name = "memPoolChecksOn"              value = "no"/>
+
+    <!-- Use this when you want to config active-backup & to be active -->
+    <AppOptions name = "nodeState"              value = "active"/>
+
+    <!-- Use this when you want to config active-backup & to be backup -->
+    <!-- <AppOptions name = "nodeState"              value = "backup"/> -->
+
+    <!-- this is for only active-active only -->
+    <!-- <AppOptions name = "appSelectAll"              value = "RouteApp"/> -->
+
+    <!--+++++++++++++++ DSM GCS ++++++++++++++-->
+
+    <ParserExtension
+        library         = "libDSM-GCSD.so"
+        elementName     = "DsmGcsConfig"
+        startFunc       = "DSM_GCS_ConfigParseStart"
+        stopFunc        = "DSM_GCS_ConfigParseStop"
+        xlateFunc       = "DSM_GCS_ConfigConvertParserData"
+        diffFunc        = "DSM_GCS_ConfigDiff"
+    />
+
+    <!--+++++++++++++++ FAULT TOLERANCE ++++++++++++++-->
+
+    <FaultTolerance
+        maxNumFtGroups      = "3"
+        maxNumProcesses     = "10"
+        maxNumNodes         = "4"
+        nodeId              = "1"
+        processId           = "5"
+        tcapFtGroupId       = "0"
+        sccpFtGroupId       = "0"
+        mtp3FtGroupId       = "0"
+        isupFtGroupId       = "0"
+        routingFtGroupId    = "0"
+        timersFtGroupId     = "0"
+        mgmtDataFtGroupId   = "0"
+    >
+
+        <Procedures>
+
+        </Procedures>
+
+        <Callbacks>
+
+        </Callbacks>
+
+        <FtGroups>
+
+            <FtGroup
+                ftGroupId      = "0"
+                ftGroupName    = "FtGroup0"
+            >
+
+                <DsmConfig
+                     dsmSize         = "16777216"
+                     dsmBaseAddress  = "0x80000000"
+                     dsmMaxNumTables = "256"
+                     dsmType         = "GCS"
+                />
+
+                <DsmGcsConfig
+                     gcsFtGroupId        = "0"
+                     gcsDaemonName       = "4811"
+                     gcsSyncMemUseTcp    = "1"
+                     gcsSyncMemIpAddress = "172.16.1.25" 
+                     gcsSyncMemIpPort    = "4805"
+                />
+
+
+                <!-- Note: MUST include itself. -->
+                <!-- Note: nodeName and processName are optional attributes. -->
+
+               <FtGroupMembers>
+
+                    <FtGroupMember
+                        nodeId      = "1"
+                        nodeName    = "Node1"
+                        processId   = "5"
+                        processName = "Node1Process5"
+                    />
+
+                    <FtGroupMember
+                        nodeId      = "2"
+                        nodeName    = "Node2"
+                        processId   = "5"
+                        processName = "Node2Process5"
+                    />
+
+                </FtGroupMembers>
+
+                <!-- Note: MUST NOT include itself. -->
+                <!-- Note: Master FtGroupMembers are tried in order. -->
+
+                <MasterFtGroupMembers>
+
+                    <MasterFtGroupMember
+                        nodeId    = "2"
+                        processId = "5"
+                    />
+
+                </MasterFtGroupMembers>
+
+                <Callbacks>
+                    <MembershipChangeCallback
+                        library     = ""
+                        function    = "MTP3_MembershipChangeCallBack_ANSI"
+                    />
+<!--
+                    <MembershipChangeCallback
+                        library     = ""
+                        function    = "ApplicationMembershipChangeCb"
+                    />
+-->
+
+                </Callbacks>
+
+            </FtGroup>
+
+            <FtGroup
+                ftGroupId      = "1"
+                ftGroupName    = "FtGroup0"
+            >
+
+                <DsmConfig
+                     dsmSize         = "20971520"
+                     dsmBaseAddress  = "0x80000000"
+                     dsmMaxNumTables = "256"
+                     dsmType         = "STUB"
+                />
+
+                <!-- Note: MUST include itself. -->
+                <!-- Note: nodeName and processName are optional attributes. -->
+
+                <FtGroupMembers>
+
+                    <FtGroupMember
+                        nodeId      = "1"
+                        nodeName    = "Node0"
+                        processId   = "5"
+                        processName = "Node0Process5"
+                    />
+
+                </FtGroupMembers>
+
+
+                <!-- Note: MUST NOT include itself. -->
+                <!-- Note: Master FtGroupMembers are tried in order. -->
+
+                <MasterFtGroupMembers>
+
+                </MasterFtGroupMembers>
+
+                <Callbacks>
+
+                </Callbacks>
+
+            </FtGroup>
+
+        </FtGroups>
+
+    </FaultTolerance>
+
+    <!--+++++++++++++++ FEATURES ++++++++++++++-->
+
+
+    <!-- This feature needs to added when you want to config
+         either active-active or active-backup
+    -->
+    <Feature
+        name        = "Redundancy-Type"
+        library     = "libITS-REDUNDANCYD.so"
+        classRec    = "itsREDUNDANCY_Class"
+    />
+
+
+    <Feature
+        name        = "Vendor Framework"
+        library     = "libVFrameD.so"
+        classRec    = "itsSS7STACK_ClassANSI"
+    />
+
+    <Feature
+        name        = "DSM  - STUB"
+        library     = "libDSM-STUBD.so"
+        classRec    = "itsDSM_StubImplClass"
+    />
+
+   <Feature
+        name        = "DSM  - GCS"
+        library     = "libDSM-GCSD.so"
+        classRec    = "itsDSM_GcsImplClass"
+    />
+
+    <Feature
+        name        = "IntelliNet stack"
+        library     = "libANSI-VENDORD.so"
+        classRec    = "itsINTELLISS7_ClassANSI"
+    />
+
+    <Feature
+        name        = "NMS Vendor lib"
+        library     = "libANSI-NMSVENDORD.so"
+        classRec    = "itsNMS_ClassANSI"
+    />
+
+    <Feature
+        name        = "ANSI_ISUP_95"
+        library     = "libANSI_ISUP_95D.so"
+        classRec    = "isupANSI95_Class"
+    />
+
+    <!--+++++++++++++++ TRACE ++++++++++++++-->
+
+    <ToolkitTrace>
+        <Critical  output = "stdout"/>
+        <Error     output = "stdout"/>
+        <Warning   output = "stdout"/>
+        <Debug     output = ""/>
+    </ToolkitTrace>
+
+    <ApplicationTrace>
+        <Critical  output = "file"/>
+        <Error     output = "file"/>
+        <Warning   output = "file"/>
+        <Debug     output = "file"/>
+    </ApplicationTrace>
+
+    <ParserExtension    library     = "libANSI-VENDORD.so"
+                        elementName = "ISUP_Data"
+                        startFunc   = "ISUP_ParseStart"
+                        stopFunc    = "ISUP_ParseEnd"
+                        xlateFunc   = "ISUP_ConvertParserData"
+                        diffFunc    = "ISUP_Diff"
+    />
+
+    <ISUP_Data   sectionName   = "ANSI-ISUP"
+                 congLevel1    = "20000"
+                 congLevel2    = "30000"
+                 localcongTimer = "20"
+    />
+
+    <!--+++++++++++++++ MTP2 VENDOR ++++++++++++++-->
+
+    <ParserExtension    library     = "libANSI-NMSVENDORD.so"
+                        elementName = "NMS_Data"
+                        startFunc   = "NMS_ParseStart"
+                        stopFunc    = "NMS_ParseEnd"
+                        xlateFunc   = "NMS_ConvertParserData"
+                        diffFunc    = "NMS_Diff"
+    />
+
+    <NMS_Data   sectionName = "NMS SS7-1"
+                boardNum    = "1"
+                mtp2SrcEnt  = "36"
+                srcInst     = "0"
+                linkSets    = "1"
+                linkCodes   = "0,1"
+    />
+
+    <!--+++++++++++++++ LINK SETS ++++++++++++++-->
+
+    <!-- link set for internal routing -->
+    <LinkSet id            = "0"
+             family        = "ANSI"
+             adjacentSTP   = "no"
+             isCLinkSet    = "no"
+             is5Bit        = "no"
+             numToActivate = "1"
+             numToStart    = "1" >
+        <NI     value = "0x80"/>
+        <APC    value = "0x15"/>
+        <LPC    value = "0x10"/>
+    </LinkSet>
+
+    <!-- link set for external routing -->
+    <LinkSet id           = "1"
+            family        = "ANSI"
+             adjacentSTP  = "no"
+             numToStart   = "1">
+        <NI     value = "0x80"/>
+        <APC    value = "0x15"/>
+        <LPC    value = "0x10"/>
+    </LinkSet>
+
+    <!--+++++++++++++++ ROUTES ++++++++++++++-->
+
+    <Route  type     = "localRoute"
+            family   = "ANSI"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0">
+        <DPC    value = "0x10"/>
+        <SIO    value = "0x80"/>
+    </Route>
+
+    <!-- route for SLTM REG -->
+    <Route  type     = "localRoute"
+            family   = "ANSI"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0">
+        <DPC    value = "0x10"/>
+        <SIO    value = "0x81"/>
+    </Route>
+
+    <!-- route for SLTM SPEC -->
+    <Route  type     = "localRoute"
+            family   = "ANSI"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0">
+        <DPC    value = "0x10"/>
+        <SIO    value = "0x82"/>
+    </Route>
+
+
+    <!-- route for ISUP -->
+    <Route  type     = "localRoute"
+            family   = "ANSI"
+            style    = "dpc-sio"
+            linkSet  = "1"
+            priority = "0">
+        <DPC    value = "0x10"/>
+        <SIO    value = "0x85"/>
+    </Route>
+
+    <!-- route for ISUP -->
+    <Route  type    = "remoteRoute"
+            family   = "ANSI"
+            style   = "dpc-ni"
+            linkSet = "1"
+            priority = "0">
+        <DPC    value = "0x15"/>
+        <SIO    value = "0x80"/>
+    </Route>
+
+    <!--+++++++++++++++ DESTINATIONS ++++++++++++++-->
+
+    <!-- adjacent destination -->
+    <Destination    family      = "ANSI"
+                    pointCode   = "0x15"
+                    networkInd  = "0x85"
+                    mtp3Variant = "ANSI-96"
+                    isupVariant = "ANSI_ISUP_95"
+                    sccpVariant = "WhiteBook_95"
+                    tcapVariant = "WhiteBook_95"
+                    tupVariant  = "WhiteBook_95"
+                    dupVariant  = "WhiteBook_95">
+
+        <ISUPAttributes localPointCode    = "0x10"
+                        SIO               = "0x85"
+                        classRec          = "isupANSI95_Class"
+                        exchangeType      = "TYPE_A" 
+                        segmentationSupported = "no"
+                        library           = "libANSI_ISUP_95D.so">
+
+              <!-- Circuit Group #1 -->
+              <CircuitGroup huntRule = "DEF">
+                  <CircuitCodes start = "1"
+                                count = "24"
+                  />
+              </CircuitGroup>  
+
+        </ISUPAttributes>
+    </Destination>
+
+    <!--+++++++++++++++ WORKER POOL ++++++++++++++-->
+
+    <WorkerPool stackSize = "0">
+
+        <Transport type    = "TaskQueue"
+                   count   = "100"
+                   family  = "ANSI">
+
+            <Callbacks
+                library         = ""
+                type            = "blocking"
+                preInitialize   = "null"
+                postInitialize  = "null"
+                preNextEvent    = "null"
+                nextEventFailed = "null"
+                postNextEvent   = "null"
+                userDispatch    = "null"
+                preTerminate    = "null"
+                postTerminate   = "null"
+            />
+
+        </Transport>
+
+     </WorkerPool>
+
+    <!--+++++++++++++++ BORDER POOL ++++++++++++++-->
+
+    <BorderPool stackSize = "0">
+
+        <Transport  name    = "NMS SS7-1"
+                    type    = "SS7"
+                    family  = "ANSI">
+
+            <Modifier value = "MTP2"/>
+
+            <Vendor name        = "NMS"
+                    library     = "libANSI-NMSVENDORD.so"
+                    vendorRec   = "itsNMS_ClassANSI"
+            />
+
+            <Callbacks
+                library         = ""
+                type            = "blocking"
+                preInitialize   = "null"
+                postInitialize  = "MTP3_TransportPostInit_ANSI"
+                preNextEvent    = "null"
+                nextEventFailed = "null"
+                postNextEvent   = "null"
+                userMsgHandler  = "null"
+                SCCPMsgHandler  = "null"
+                ISUPMsgHandler  = "null"
+                preTerminate    = "null"
+                postTerminate   = "null"
+            />
+
+            <Link   id              = "0"
+                    family          = "ANSI"
+                    linkSet         = "1"
+                    initiallyActive = "yes"
+                    terminalFixed   = "yes"
+                    dataLinkFixed   = "yes"
+                    priority        = "0"
+                    terminal        = "0"
+                    dataLink        = "0"
+            />
+
+        </Transport>
+
+        <Transport  name    = "Debug Console"
+                    type    = "ServerSocket">
+                    
+            <StreamData socketDomain    = "INET"
+                        serverHostName  = "127.0.0.1"
+                        serverPort      = "29123"
+            />
+
+            <Callbacks
+                type            = "debug-console"
+            />
+
+        </Transport>
+
+        <Transport  name    = "MTP3 InterNode"
+                    type    = "ServerSocket"
+                    isInterNode = "yes"
+                    family  = "ANSI">
+
+            <Modifier value = "MTP2"/>
+
+            <StreamData socketDomain   = "INET"
+                        serverHostName = "172.16.1.25"
+                        serverPort     = "30001"
+            />
+
+            <Callbacks
+                type            = "blocking"
+                preInitialize   = "null"
+                postInitialize  = "null"
+                preNextEvent    = "null"
+                nextEventFailed = "null"
+                postNextEvent   = "MTP3_INodeEvent_ANSI"
+                userMsgHandler  = "null"
+                SCCPMsgHandler  = "null"
+                ISUPMsgHandler  = "null"
+                preTerminate    = "null"
+                postTerminate   = "null"
+            />
+
+            <Link   id              = "2"
+                    family          = "ANSI"
+                    linkSet         = "1"
+                    initiallyActive = "yes"
+                    terminalFixed   = "yes"
+                    dataLinkFixed   = "yes"
+                    priority        = "0"
+                    terminal        = "0"
+                    dataLink        = "0"
+            />
+
+        </Transport>
+
+    </BorderPool>
+
+    <!--+++++++++++++++ INTELLINET STACK ++++++++++++++-->
+
+    <SS7-Stacks>
+
+        <ManagementCallbacks
+            MTP3ManagementCallbackANSI     = "MTP3Mgmt"
+            ISUPManagementCallbackANSI     = "ISUPMgmt"
+        />
+
+        <IntelliNet>
+
+            <ANSI-MTP3 variant = "ANSI-96">
+ 
+                <StackTrace>
+                    <Critical output = "stdout"/>
+                    <Error    output = "stdout"/>
+                    <Warning  output = "stdout"/>
+                    <Debug  output = ""/>
+                </StackTrace>
+
+                <BehaviorControl
+                    STPFunction = "no"
+                />
+
+                <Timers
+                     T1 = "800"
+                     T2 = "1400"
+                     T3 = "800"
+                     T4 = "800"
+                     T5 = "800"
+                     T6 = "800"
+                     T7 = "800"
+                     T8 = "800"
+                     T9 = "0"
+                    T10 = "30000"
+                    T11 = "30000"
+                    T12 = "800"
+                    T13 = "800"
+                    T14 = "2000"
+                    T15 = "2000"
+                    T16 = "1400"
+                    T17 = "800"
+                    T18 = "0"
+                    T19 = "480000"
+                    T20 = "3000"
+                    T21 = "3000"
+                    T22 = "30000"
+                    T23 = "30000"
+                    T24 = "30000"
+                    T25 = "30000"
+                    T26 = "12000"
+                    T27 = "2000"
+                    T28 = "3000"
+                    T29 = "60000"
+                    T30 = "30000"
+                    T31 = "10000"
+                    T32 = "5000"
+                    T33 = "60000"
+                    T34 = "5000"
+                    SLT-T1 = "5000"
+                    SLT-T2 = "30000"
+                />
+
+            </ANSI-MTP3>
+
+            <ANSI-ISUP variant = "ANSI_ISUP_95" >
+
+                <StackTrace>
+                    <Critical output = "stdout"/>
+                    <Error    output = "stdout"/>
+                    <Warning  output = "stdout"/>
+                    <Debug    output = ""/>
+                </StackTrace>
+
+            </ANSI-ISUP>
+  
+        </IntelliNet>
+
+    </SS7-Stacks>
+
+</Application>

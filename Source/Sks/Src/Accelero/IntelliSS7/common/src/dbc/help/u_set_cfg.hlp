@@ -1,0 +1,23 @@
+
+M3UA / SUA Command
+
+SYNOPSIS
+    u_set_cfg <al>
+
+DESCRIPTION
+    This command sets alarm level for M3UA / SUA layer.
+
+PARAMETERS
+    al    Alarm Level.
+          Possible values -
+          CRITICAL        
+          MAJOR        
+          MINOR      
+          INFO     
+          OFF
+
+EXAMPLE
+    >> u_set_cfg CRITICAL
+    ***********UAL General Config Set*************
+
+

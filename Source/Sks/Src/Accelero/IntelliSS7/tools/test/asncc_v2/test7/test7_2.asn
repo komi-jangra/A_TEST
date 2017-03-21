@@ -1,0 +1,53 @@
+--------------------------------------------------------------------------------
+--
+-- AsnCC 2.0 test.
+--
+-- Linking between different ASN.1 modules. LRF format.
+--
+--------------------------------------------------------------------------------
+
+TEST7-2 DEFINITIONS IMPLICIT TAGS ::=
+
+BEGIN
+
+IMPORTS
+    AuthenticationDirectiveRRL,
+    unspecified,
+    A
+FROM TEST7-1
+;
+
+FeatureRequestRRL ::= SET
+{
+    featureResult [146] IMPLICIT ENUMERATED
+    {
+        notUsed (0),
+        unsuccessful (1),
+        successful (2)
+    },
+
+    groupInformation [163] IMPLICIT OCTET STRING (SIZE(4)) OPTIONAL,
+
+    terminationList [120] IMPLICIT SEQUENCE SIZE(1..20) OF CHOICE
+    { 
+        localTermination [91] IMPLICIT SEQUENCE
+        { 
+            electronicSerialNumber [9] IMPLICIT OCTET STRING (SIZE(4)), 
+            alertCode [75] IMPLICIT OCTET STRING (SIZE(2)) OPTIONAL
+        },
+                   
+        pSTNTermination [95] IMPLICIT SEQUENCE
+        { 
+            destinationDigits [4] IMPLICIT OCTET STRING (SIZE(5..200)), 
+            carrierDigits [86] IMPLICIT OCTET STRING (SIZE(5..200)) OPTIONAL
+        } 
+    } OPTIONAL
+}
+
+
+C ::= SET
+{
+    a A OPTIONAL
+}
+
+END

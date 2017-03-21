@@ -1,0 +1,245 @@
+--------------------------------------------------------------------------------
+--
+-- ASN run-time exceptions source.
+--
+-- To be processed by IntelliExc.
+--
+-- (C) 1999 - 2002 IntelliNet Technologies.
+--
+--------------------------------------------------------------------------------
+--  
+--  ID: $Id: AsnException.exc,v 1.1.1.1 2007-10-08 11:11:42 bsccs2 Exp $
+--
+--------------------------------------------------------------------------------
+
+subsystem asn
+
+    number      is   2
+    prefix      is   Asn
+    file_name   is   "AsnException"
+
+    code_header_before is
+
+        "#include <Asn.h>\n"
+        "#include <Octets.h>\n"
+        "#include <Characters.h>\n"
+        "#include <AsnError.h>\n"
+        "\n"
+
+        "\n"
+        "\n"
+        "// Helper macros.\n"
+		"\n"
+        "#define ASN_THROW_DECODE_ERROR(error, octets)                  \\\n"
+        "    throw its::AsnDecodeError((error), GetDecodeExtendedErrorText((error), (octets)), (octets), __FILE__, __LINE__);\n"
+        "\n"
+		"\n"
+        "#define ASN_THROW_CHARACTERS_DECODE_ERROR(error, characters)   \\\n"
+        "    throw its::AsnCharactersDecodeError((error), GetDecodeExtendedErrorText((error), (characters)), (characters), __FILE__, __LINE__);\n"
+        "\n"
+        "#define ASN_THROW_ENCODE_ERROR(error)                          \\\n"
+        "    throw its::AsnEncodeError((error), GetEncodeExtendedErrorText((error)), __FILE__, __LINE__);\n"
+        "\n"
+        "\n"
+        "namespace its {\n"
+        "\n"
+
+    code_header_after is
+
+        "\n"
+        "} // namespace its.\n"
+        "\n"
+
+	------------------------------------
+	-- DecodeError - ASN.1 decode error.
+	------------------------------------
+   
+    exception DecodeError
+
+        number is 1
+        reason is "ASN.1 decode error"
+
+        description information
+
+            value is "Error text <%s>"
+
+            argument
+
+                error
+                    option
+                        code_before is "AsnErrorGetText("
+                        code_after is ").c_str()"
+                    end
+
+            end
+
+        end
+
+        description extendedInformation
+
+            value is "Extended error text <%s>"
+
+            argument
+
+                extendedError
+                    option
+                        code_after is ".c_str()"
+                    end
+
+            end
+
+        end
+
+        attribute error
+
+            attribute_type is "AsnError"
+
+            parameter_type is "AsnError"
+
+        end
+
+        attribute extendedError
+
+            attribute_type is "std::string"
+
+            parameter_type is "const std::string&"
+
+        end
+
+        attribute octets
+
+            attribute_type is "Octets"
+
+            parameter_type is "const Octets&"
+
+        end
+
+    end
+
+	---------------------------------------------------------
+	-- CharactersDecodeError - ASN.1 characters decode error.
+	---------------------------------------------------------
+   
+    exception CharactersDecodeError
+
+        number is 1
+        reason is "ASN.1 decode error"
+
+        description information
+
+            value is "Error text <%s>"
+
+            argument
+
+                error
+                    option
+                        code_before is "AsnErrorGetText("
+                        code_after is ").c_str()"
+                    end
+
+            end
+
+        end
+
+        description extendedInformation
+
+            value is "Extended error text <%s>"
+
+            argument
+
+                extendedError
+                    option
+                        code_after is ".c_str()"
+                    end
+
+            end
+
+        end
+
+        attribute error
+
+            attribute_type is "AsnError"
+
+            parameter_type is "AsnError"
+
+        end
+
+        attribute extendedError
+
+            attribute_type is "std::string"
+
+            parameter_type is "const std::string&"
+
+        end
+
+        attribute characters
+
+            attribute_type is "Characters"
+
+            parameter_type is "const Characters&"
+
+        end
+
+    end
+
+	------------------------------------
+	-- EecodeError - ASN.1 encode error.
+	------------------------------------
+   
+    exception EncodeError
+
+        number is 1
+        reason is "ASN.1 encode error"
+
+        description information
+
+            value is "Error text <%s>"
+
+            argument
+
+                error
+                    option
+                        code_before is "AsnErrorGetText("
+                        code_after is ").c_str()"
+                    end
+
+            end
+
+        end
+
+        description extendedInformation
+
+            value is "Extended error text <%s>"
+
+            argument
+                
+                extendedError
+                    option
+                        code_after is ".c_str()"
+                    end
+
+            end
+
+        end
+
+        attribute error
+
+            attribute_type is "AsnError"
+
+            parameter_type is "AsnError"
+
+        end
+
+        attribute extendedError
+
+            attribute_type is "std::string"
+
+            parameter_type is "const std::string&"
+
+        end
+
+    end
+
+end
+
+--------------------------------------------------------------------------------

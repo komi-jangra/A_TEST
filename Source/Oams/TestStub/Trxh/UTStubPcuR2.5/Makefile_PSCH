@@ -1,0 +1,26 @@
+#************ START ***********
+ROOT_PATH = ../../../../../../PCU/
+HDRFILES=-I $(ROOT_PATH)/Inc/Sys \
+                                  -I $(ROOT_PATH)/Inc/Ipc \
+                                   -I $(ROOT_PATH)/Inc/Dbs \
+                                    -I $(ROOT_PATH)/Source/Oams/Inc \
+                                     -I $(ROOT_PATH)/Inc/Oams \
+                                      -I $(ROOT_PATH)/Inc/Oam \
+                                        -I $(ROOT_PATH)/Inc/Csapp \
+					-I $(ROOT_PATH)/Inc/Bpm \
+					-I $(ROOT_PATH)/Inc/Dsp
+
+
+CFLAGS=-g -D__C_APPL
+COMPILER=gcc
+USRLIBPATH=-L$(ROOT_PATH)/Bin/Host/CommonLib/CP
+TARGET=TestStubPsch
+
+USRLIB= -llog -lfrm -ltau
+
+#CC=gcc -g -Wall $(HDRFILES)  $(LIBRARY_PATH) -D__C_APPL -DCPLUSPLUS
+$(TARGET): ToFromPSCH.c
+	$(COMPILER) $(CFLAGS) $(HDRFILES) $(USRLIBPATH) $(USRLIB) ToFromPSCH.c -o $(TARGET)
+
+clean:
+	rm -rf *.o TestStubPsch

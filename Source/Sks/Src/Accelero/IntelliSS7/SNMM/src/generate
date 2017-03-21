@@ -1,0 +1,6 @@
+#!/bin/sh
+
+if [ -f $ITS_ROOT/tools/bin/gendoc ]
+then
+	$ITS_ROOT/tools/bin/gendoc SNMM ../doc < gendoc.in > gendoc.out
+fi

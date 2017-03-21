@@ -1,0 +1,91 @@
+
+MTP2 Command
+
+SYNOPSIS
+    m2_get_gen_peg <peg id>
+
+
+DESCRIPTION
+    This command displays peg value based on the peg id.
+
+
+PARAMETERS
+   peg id      - The peg id to get the value
+               - ALL/all for All MTP2 PEGS Values
+NOTE
+    The MTP2 general pegs ids are:
+
+	PEG_MTP2_GET_DATA_FAILED        0
+	PEG_MTP2_SEND_DATA_FAILED       1
+	PEG_MTP2_LOCAL_PROC_DOWN        2
+	PEG_MTP2_LOCAL_PROC_UP          3
+	PEG_MTP2_REMOTE_PROC_DOWN       4
+	PEG_MTP2_REMOTE_PROC_UP         5
+	PEG_MTP2_STAT_IND               6
+	PEG_MTP2_SUERM_EXPIRY           7
+	PEG_MTP2_INCORRECT_FIB_BSN      8
+	PEG_MTP2_CONG_DETECTED          9
+	PEG_MTP2_CONG_RECOVERED         10
+	PEG_MTP2_MSU_TX                 11
+	PEG_MTP2_MSU_RX                 12
+	PEG_MTP2_T2_EXPIRED             13
+	PEG_MTP2_T6_EXPIRED             14
+	PEG_MTP2_T7_EXPIRED             15
+
+	--- ADAX Specific Global Pegs ---
+	PEG_MTP2_T1_EXPIRED             16
+	PEG_MTP2_T3_EXPIRED             17
+	PEG_MTP2_REMOTE_CONG_DETECTED   18
+	PEG_MTP2_REMOTE_CONG_RECOVERED  19
+
+	ALL_MTP2_PEGS					99
+
+	The Peg Ids used for NMS MTP2 are 0 to 15
+	The Peg Ids used for ADAX MTP2 are 0 to 19
+
+
+EXAMPLE
+     >> m2_get_gen_peg 3
+	 
+        PEG_MTP2_LOCAL_PROC_UP
+
+        value is 0
+
+
+     >> m2_get_gen_peg all
+	
+	 ********** Printing Global Pegs **********
+
+	   PEG_MTP2_GET_DATA_FAILED:              value 0
+
+	  PEG_MTP2_SEND_DATA_FAILED:              value 0
+
+	   PEG_MTP2_LOCAL_PROC_DOWN:              value 0
+
+	     PEG_MTP2_LOCAL_PROC_UP:              value 0
+
+	  PEG_MTP2_REMOTE_PROC_DOWN:              value 0
+
+	    PEG_MTP2_REMOTE_PROC_UP:              value 2
+
+	          PEG_MTP2_STAT_IND:              value 0
+
+	      PEG_MTP2_SUERM_EXPIRY:              value 0
+
+	 PEG_MTP2_INCORRECT_FIB_BSN:              value 0
+
+	     PEG_MTP2_CONG_DETECTED:              value 0
+
+	    PEG_MTP2_CONG_RECOVERED:              value 0
+
+	            PEG_MTP2_MSU_TX:              value 5
+
+	            PEG_MTP2_MSU_RX:              value 5
+
+	        PEG_MTP2_T2_EXPIRED:              value 0
+
+	        PEG_MTP2_T6_EXPIRED:              value 0
+
+	        PEG_MTP2_T7_EXPIRED:              value 0
+
+	*******************************************

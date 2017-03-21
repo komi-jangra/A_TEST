@@ -1,0 +1,239 @@
+-------------------------------------------------------------------------------
+--
+-- Example of MNT script...
+--
+--
+
+Print("\nBegin MNT script #1 example...\n\n")
+
+---------------------------------------------------------------------
+--
+-- Variable creation examples.
+--
+
+-- Base types (integer, byte, boolean, string).
+
+intVar := 1
+byteVar := 0x01
+boolVar := true
+stringVar := "abcdef"
+
+
+-- Arrays of base types (integer, byte, boolean, string).
+
+intArrayVar[0] := 0
+intArrayVar[1] := 1
+intArrayVar[2] := 2
+
+byteArrayVar[0] := 0x00
+byteArrayVar[1] := 0x01
+byteArrayVar[2] := 0x02
+
+boolArrayVar[0] := true
+boolArrayVar[1] := false
+
+stringArrayVar[0] := "abc"
+stringArrayVar[1] := "def"
+
+
+-- Manifest arrays of base types (mutable).
+
+intManifestArrayVar := <<0, 1, 2, 3, 4, 5, 6, 7, 8>>
+
+byteManifestArrayVar := <<0x00, 0x01, 0x02, 0x03, 0x04, 0x05>>
+
+boolManifestArrayVar := <<true, true, false, true, false, false>>
+
+stringManifestArrayVar := <<"abc", "def", "ghi", "jkl">>
+
+
+-- Printing of base types and arrays of base types.
+
+Print("\n\nOriginal values of variables:\n")
+Print("=============================\n")
+
+Print("\n")
+Print("intVar = " + intVar + "\n")
+Print("byteVar = " + byteVar + "\n")
+Print("boolVar = " + boolVar + "\n")
+Print("stringVar = " + stringVar + "\n")
+Print("\n")
+Print("intArrayVar = " + intArrayVar + "\n")
+Print("byteArrayVar = " + byteArrayVar + "\n")
+Print("boolArrayVar = " + boolArrayVar + "\n")
+Print("stringArrayVar = " + stringArrayVar + "\n")
+Print("\n")
+Print("intManifestArrayVar = " + intManifestArrayVar + "\n")
+Print("byteManifestArrayVar = " + byteManifestArrayVar + "\n")
+Print("boolManifestArrayVar = " + boolManifestArrayVar + "\n")
+Print("stringManifestArrayVar = " + stringManifestArrayVar + "\n")
+Print("\n")
+
+---------------------------------------------------------------------
+--
+-- Variable update examples.
+--
+
+intVar := 1024 * 100 + 100 / 2 + 10 mod 7 + intVar
+byteVar := byteVar + 0x01
+boolVar := false
+stringVar := stringVar + "ijk"
+
+
+-- Intermediate array elements (indexes from 3 to 8) are initialized
+-- to zero (default value for integer).
+
+intArrayVar[9] := 9
+
+byteArrayVar[0] := 0xAA
+byteArrayVar[1] := 0xBB
+byteArrayVar[2] := 0xCC
+byteArrayVar[3] := 0xDD
+
+boolArrayVar[0] := false
+boolArrayVar[1] := true
+
+stringArrayVar[0] := "111"
+stringArrayVar[1] := "222"
+
+intManifestArrayVar[9] := 9
+byteManifestArrayVar[6] := 0x06
+boolManifestArrayVar[6] := true
+stringManifestArrayVar[6] := "mno"
+stringManifestArrayVar[7] := "pqr"
+
+-- Printing of changed base types and arrays of base types.
+
+Print("\n\nUpdated values of variables:\n")
+Print("============================\n")
+
+Print("\n")
+Print("intVar = " + intVar + "\n")
+Print("byteVar = " + byteVar + "\n")
+Print("boolVar = " + boolVar + "\n")
+Print("stringVar = " + stringVar + "\n")
+Print("\n")
+Print("intArrayVar = " + intArrayVar + "\n")
+Print("byteArrayVar = " + byteArrayVar + "\n")
+Print("boolArrayVar = " + boolArrayVar + "\n")
+Print("stringArrayVar = " + stringArrayVar + "\n")
+Print("\n")
+Print("intManifestArrayVar = " + intManifestArrayVar + "\n")
+Print("byteManifestArrayVar = " + byteManifestArrayVar + "\n")
+Print("boolManifestArrayVar = " + boolManifestArrayVar + "\n")
+Print("stringManifestArrayVar = " + stringManifestArrayVar + "\n")
+Print("\n")
+
+
+---------------------------------------------------------------------
+--
+-- Loop and conditional instruction examples.
+--
+
+Print("\n\nLoop and conditional instructions:\n")
+Print("==================================\n")
+
+from
+    i := 0
+until
+    i >= 10
+loop
+    Print("\n\nValue of i = " + i + "\n")
+
+    if (i = 2) then
+        Print("\nAlternative 2\n")
+    elseif (i = 5) then
+        Print("\nAlternative 5\n")
+    else
+        Print("\nDefault alternative\n")
+    end
+
+    i := i + 1
+end
+
+
+---------------------------------------------------------------------
+--
+-- Various built-in commands.
+--
+
+Print("\n\nSleep 2 seconds:\n")
+Print("================\n")
+
+Sleep(1)
+
+Print("\n...Just slept 2 seconds...\n")
+
+
+Print("\n\nSystem(\"ls\"):\n")
+Print("=============\n")
+Print("\n")
+
+System("ls")
+
+Print("\n...Just listed current directory...\n")
+
+
+---------------------------------------------------------------------
+--
+-- Various additional (test) commands.
+--
+
+Print("\n\nTestUpdateInteger:\n")
+Print("==================\n")
+
+intArg := 1
+
+-- Note use of 'out' specifier (if 'out' specifier is missing then 
+-- intArg is NOT updated).
+TestUpdateInteger(out intArg)
+
+Print("\n")
+Print("intArg = " + intArg + "\n")
+
+
+Print("\n\nTestReturnInteger:\n")
+Print("==================\n")
+
+intRes := TestReturnInteger()
+
+Print("\n")
+Print("intRes = " + intRes + "\n")
+
+intRes := TestReturnInteger()
+
+Print("\n")
+Print("intRes = " + intRes + "\n")
+
+
+Print("\n\nTestUpdateByteArray:\n")
+Print("====================\n")
+
+byteArrayArg := <<0x01, 0x02, 0x03, 0x04>>
+
+-- Note use of 'out' specifier (if 'out' specifier is missing then 
+-- byteArrayArg is NOT updated).
+TestUpdateByteArray(out byteArrayArg)
+
+Print("\n")
+Print("byteArrayArg = " + byteArrayArg + "\n")
+
+
+Print("\n\nTestReturnByteArray:\n")
+Print("====================\n")
+
+byteArrayRes := TestReturnByteArray()
+
+Print("\n")
+Print("byteArrayRes = " + byteArrayRes + "\n")
+
+byteArrayRes := TestReturnByteArray()
+
+Print("\n")
+Print("byteArrayRes = " + byteArrayRes + "\n")
+
+
+Print("\n\nEnd MNT script #1 example.\n\n\n")
+
+
+

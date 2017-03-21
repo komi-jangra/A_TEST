@@ -1,0 +1,52 @@
+
+MTP2 Command
+
+SYNOPSIS
+    m2_get_all_link_pegs <linkset> <linkcode>
+
+
+DESCRIPTION
+    This command displays all the peg values for the specified link.
+
+
+PARAMETERS
+	linkset			linkset that the link belongd to
+
+	linkcode		linkcode of the link
+
+
+EXAMPLE
+     >> m2_get_all_link_pegs 1 0
+	 
+	********** Printing Link Pegs for **********
+
+	    Linkset:1  Linkcode:0
+
+	   PEG_MTP2_LINK_FAIL_ALL_REASON:              value 0
+
+	      PEG_MTP2_LINK_SUERM_EXPIRY:              value 0
+
+	 PEG_MTP2_LINK_INCORRECT_FIB_BSN:              value 0
+
+	        PEG_MTP2_LINK_T6_EXPIRED:              value 0
+
+	        PEG_MTP2_LINK_T7_EXPIRED:              value 0
+
+	 PEG_MTP2_LINK_PROV_ALIGN_FAILED:              value 0
+
+	            PEG_MTP2_LINK_ERR_SU:              value 0
+
+	           PEG_MTP2_LINK_NEG_ACK:              value 0
+
+	            PEG_MTP2_LINK_MSU_TX:              value 0
+
+	            PEG_MTP2_LINK_MSU_RX:              value 0
+
+	  PEG_MTP2_LINK_SIF_SIO_OCTET_TX:              value 0
+
+	  PEG_MTP2_LINK_SIF_SIO_OCTET_RX:              value 0
+
+	         PEG_MTP2_LINK_OCTET_RTX:              value 0
+
+	*******************************************
+	

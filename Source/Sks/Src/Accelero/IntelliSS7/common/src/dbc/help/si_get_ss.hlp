@@ -1,0 +1,34 @@
+
+
+ITU SCCP Command
+
+SYNOPSIS
+    si_get_ss <pc> <ni> <ssn>
+
+DESCRIPTION
+    This command finds ITU SCCP subsystem entry. 
+
+PARAMETERS
+    pc   Point Code
+    ni   Network Indicator
+    ssn  Subsystem Number
+
+EXAMPLE
+    >> si_get_ss 1 0 2
+    *********** SCCP Found SSN Entry*************
+        pointcode          <1>
+        ni                 <0>
+        ssn                <2>
+        inService          <yes>
+        testOn             <no>
+        hasConcernPC       <no>
+        maxHops            <0>
+        backupStatus       <standalone>
+        backupPC           <0>
+        backupNI           <0>
+        backupSSN          <0>
+        backupSSNState     <down>
+
+NOTE -:
+1. You can have same ssn configured for different ni values.
+

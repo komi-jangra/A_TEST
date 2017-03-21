@@ -1,0 +1,25 @@
+
+ITU ISUP Command
+
+SYNOPSIS
+    ii_send_cgu <opc> <dpc> <sio> <cic> <msgType> <range> <status>
+
+DESCRIPTION
+    Sends circuit group unblock message to the remote side.
+
+PARAMETERS
+    opc     Origination point code.
+    dpc     Destination point code.
+    sio     Service information octet.
+    cic     Circuit code number.
+    msgType Blocking Message type(0 - Maintenace Blocking/1 - HWR Blocking)
+    range   Range of circuits
+    status  Circuit status field
+
+    Possible Values for range: 1 to 31
+
+
+EXAMPLE
+>> ii_send_cgu 16 21 133 1 0 4 255
+
+**** Successfully sent CGU msg *******

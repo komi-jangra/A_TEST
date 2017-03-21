@@ -1,0 +1,527 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE Application SYSTEM "file:/home/mmiers/dtd/engine.dtd">
+
+<!-- Sample XML file for application configuration (INI). -->
+ 
+<Application name           = "Server"
+             type           = "console-application"
+             globalStart    = "ANSI-ISUP"
+             binding        = "C"
+             library        = "libServer-LayerD.so"
+             appSelector    = "SL_RouteToApp"
+             preFunc        = "SL_PreFunc"
+             postFunc       = "SL_PostFunc">
+ 
+    <AppOptions name = "traceFlushAfterWrite"         value = "yes"/>
+    <AppOptions name = "routeUniqueLinkCodesRequired" value = "no"/>
+    <AppOptions name = "memPoolChecksOn"              value = "no"/>
+    <AppOptions name = "SIO"                          value = "0x85"/>
+    />
+
+             
+    <Feature
+        name        = "Vendor Framework ANSI"
+        library     = "libVFrameD.so"
+        classRec    = "itsSS7STACK_ClassANSI"
+    />
+
+    <Feature
+        name        = "IntelliNet stack ANSI"
+        library     = "libANSI-VENDORD.so"
+        classRec    = "itsINTELLISS7_ClassANSI"
+    />
+
+    <Feature
+        name        = "DSM  - STUB"
+        library     = "libDSM-STUBD.so"
+        classRec    = "itsDSM_StubImplClass"
+    />
+
+    <Feature
+        name        = "SCTP"
+        library     = "libSCTPD.so"
+        classRec    = "itsSCTP_Class"
+    />
+
+    <Feature
+        name        = "ANSI_ISUP_95"
+        library     = "libANSI_ISUP_95D.so"
+        classRec    = "isupANSI95_Class"
+    />
+
+    <FaultTolerance
+        maxNumFtGroups      = "8"
+        maxNumProcesses     = "6"
+        maxNumNodes         = "1"
+        nodeId              = "0"
+        processId           = "5"
+        tcapFtGroupId       = "0"
+        sccpFtGroupId       = "0"
+        mtp3FtGroupId       = "0"
+        isupFtGroupId       = "0"
+        routingFtGroupId    = "0"
+        timersFtGroupId     = "0"
+        mgmtDataFtGroupId   = "0"
+    >
+
+        <Procedures>
+
+        </Procedures>
+
+        <Callbacks>
+
+        </Callbacks>
+
+        <FtGroups>
+
+            <FtGroup
+                ftGroupId      = "0"
+                ftGroupName    = "FtGroup0"
+            >
+
+                <DsmConfig
+                     dsmSize         = "20971520"
+                     dsmBaseAddress  = "0x80000000"
+                     dsmMaxNumTables = "256"
+                     dsmType         = "STUB"
+                />
+
+                <!-- Note: MUST include itself. -->
+                <!-- Note: nodeName and processName are optional attributes. -->
+
+                <FtGroupMembers>
+
+                    <FtGroupMember
+                        nodeId      = "0"
+                        nodeName    = "Node0"
+                        processId   = "5"
+                        processName = "Node0Process5"
+                    />
+
+                </FtGroupMembers>
+
+
+                <!-- Note: MUST NOT include itself. -->
+                <!-- Note: Master FtGroupMembers are tried in order. -->
+
+                <MasterFtGroupMembers>
+
+                </MasterFtGroupMembers>
+
+                <Callbacks>
+
+                </Callbacks>
+
+            </FtGroup>
+
+        </FtGroups>
+
+    </FaultTolerance>
+
+    <!--/////////////// LINK SETS //////////////-->
+
+    <!-- link set for internal routing -->
+    <LinkSet id           = "0"
+             family       = "ANSI"
+             adjacentSTP  = "no"
+             numToStart   = "0">
+        <NI     value = "0x80"/>
+        <APC    value = "0x15"/>
+        <LPC    value = "0x10"/>
+    </LinkSet>
+
+    <!--///////////////END of LINK SETS //////////////-->
+ 
+    <!--///////////////Route Info //////////////-->
+
+    <Route  type     = "localRoute"
+            family = "ANSI"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0">
+        <DPC    value = "0x10"/>
+        <SIO    value = "0x85"/>
+    </Route>
+
+
+
+    <Route  type     = "remoteRoute"
+            family   = "ANSI"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0">
+        <DPC        value = "0x15"/>
+        <SIO        value = "0x85"/>
+
+    </Route>
+
+
+
+    <Route  type     = "remoteRoute"
+            family   = "ANSI"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0">
+        <DPC        value = "0x17"/>
+        <SIO        value = "0x85"/>
+
+    </Route>
+
+
+    <Route  type     = "routingKeyRoute"
+            family   = "ANSI"
+            style    = "dpc-sio">
+        <routingKey value = "0x01"/>
+        <DPC        value = "0x17"/>
+        <SIO        value = "0x85"/>
+
+    </Route>
+
+<!--
+    <Route  type     = "routingKeyRoute"
+            family   = "ANSI"
+            style    = "dpc-sio">
+        <routingKey value = "0x01"/>
+        <DPC        value = "0x15"/>
+        <SIO        value = "0x85"/>
+
+    </Route>
+-->
+
+    <Route  type     = "routingKeyRoute"
+            family   = "ANSI"
+            style    = "dpc-sio">
+        <routingKey value = "0x02"/>
+        <DPC        value = "0x15"/>
+        <SIO        value = "0x85"/>
+
+    </Route>
+
+    <!--/////////////////////////////////////////////////////////////////////////-->
+    <!--///////////////// UAL Manager config for M3UADraft ver 10 ///////////////-->
+    <!--/////////////////////////////////////////////////////////////////////////-->
+
+    <Feature
+        name        = "ANSI-M3UA"
+        library     = "libANSI-M3UAD.so"
+        classRec    = "itsM3UA_Class_ANSI"
+    />
+ 
+    <Feature
+        name        = "UAL_Manager"
+        library     = "libUALD.so"
+        classRec    = "itsUAL_Class"
+    />
+
+    <ParserExtension library     = "libUALD.so"
+                     elementName = "UAL_Manager"
+                     startFunc   = "UAL_ParseStartFunc"
+                     stopFunc    = "UAL_ParseStop"
+                     xlateFunc   = "UAL_ResourceXlate"
+                     diffFunc    = "UAL_ExtensionDiff"
+    />
+
+    <UAL_Manager   useSCMGCallBack   = "no"
+                   heartBeat         = "off"
+                   hbInterval        = "5"
+                   ackTimer          = "600"
+                   pendingTimer      = "2"
+                   interworkingMode  = "sgMode"
+                   localPointCode    = "0x10"
+                   networkIndicator  = "0x80"
+                   version           = "1">
+
+              <AsInfo   routingKey       = "1"
+                        family           = "ANSI"
+                        asTrafficMode    = "overRideMode"> 
+              </AsInfo>
+
+    </UAL_Manager>
+
+    <!--/////////////////////////////////////////////////////////////////////////-->
+    <!--///////////////// End of UAL Manager config /////////////////////////////-->
+    <!--/////////////////////////////////////////////////////////////////////////-->
+
+
+    <Destination    family      = "ANSI"
+                    pointCode   = "0x15"
+                    networkInd  = "0x80"
+                    mtp3Variant = "WhiteBook_97"
+                    isupVariant = "ANSI_ISUP_95"
+                    sccpVariant = "WhiteBook_97"
+                    tcapVariant = "WhiteBook_97"
+                    tupVariant  = "WhiteBook_97"
+                    dupVariant  = "WhiteBook_97">
+
+        <ISUPAttributes localPointCode    = "0x10"
+                        SIO               = "0x85"
+                        classRec          = "isupANSI95_Class"
+                        library           = "libANSI_ISUP_95D.so">
+
+              <!-- Only override timer value -->
+              <Timer name       = "T1"
+                     value      = "30"
+                     handledBy  = "STACK"/>
+              />
+
+              <!-- Turn off timer -->
+              <Timer name       = "T2"
+                     value      = "0"
+              />
+
+              <!-- Only override handling -->
+              <Timer name       = "T3"
+                     handledBy  = "APP"
+              />
+
+              <!-- Override both value and handling -->
+              <Timer name       = "T4"
+                     value      = "3"
+                     handledBy  = "APP"
+              />
+              <Timer name       = "T14"
+                     value      = "3000"
+                     handledBy  = "APP"
+              />
+              <Timer name       = "T15"
+                     value      = "30000"
+                     handledBy  = "APP"
+              />
+              <!-- Circuit Group #1 -->
+              <CircuitGroup huntRule = "DEF">
+                  <CircuitCodes start = "1"
+                                count = "24"
+                  />
+              </CircuitGroup>
+
+        </ISUPAttributes>
+    </Destination>
+
+    <Destination    family      = "ANSI"
+                    pointCode   = "0x17"
+                    networkInd  = "0x80"
+                    mtp3Variant = "WhiteBook_97"
+                    isupVariant = "ANSI_ISUP_95"
+                    sccpVariant = "WhiteBook_97"
+                    tcapVariant = "WhiteBook_97"
+                    tupVariant  = "WhiteBook_97"
+                    dupVariant  = "WhiteBook_97">
+
+        <ISUPAttributes localPointCode    = "0x10"
+                        SIO               = "0x85"
+                        classRec          = "isupANSI95_Class"
+                        library           = "libANSI_ISUP_95D.so">
+
+              <!-- Only override timer value -->
+              <Timer name       = "T1"
+                     value      = "30"
+                     handledBy  = "STACK"/>
+              />
+
+              <!-- Turn off timer -->
+              <Timer name       = "T2"
+                     value      = "0"
+              />
+
+              <!-- Only override handling -->
+              <Timer name       = "T3"
+                     handledBy  = "APP"
+              />
+
+              <!-- Override both value and handling -->
+              <Timer name       = "T4"
+                     value      = "3"
+                     handledBy  = "APP"
+              />
+              <Timer name       = "T14"
+                     value      = "3000"
+                     handledBy  = "APP"
+              />
+              <Timer name       = "T15"
+                     value      = "30000"
+                     handledBy  = "APP"
+              />
+              <!-- Circuit Group #1 -->
+              <CircuitGroup huntRule = "DEF">
+                  <CircuitCodes start = "1"
+                                count = "24"
+                  />
+              </CircuitGroup>
+
+        </ISUPAttributes>
+    </Destination>
+
+    <ToolkitTrace>
+        <Critical  output = "file"/>
+        <Error     output = "file"/>
+        <Warning   output = "stdout"/>
+        <Debug     output = "file"/>
+    </ToolkitTrace>
+
+    <!--///////////////////////////////////////////////////////////////-->
+
+    <WorkerPool stackSize = "0">
+
+        <Transport  type   = "TaskQueue"
+                    count  = "6"
+                    family = "ANSI">
+
+             <Modifier value = "ISUP"/>
+
+             <Callbacks
+                 library          = "libServer-LayerD.so"
+                 type             = "blocking"
+                 postInitialize   = ""
+             />
+
+        </Transport> 
+
+    </WorkerPool>
+
+    <!--///////////////////////////////////////////////////////////////-->
+
+    <BorderPool stackSize = "0">
+
+        <Transport  name    = "SCTP Server"
+                    type    = "Datagram"
+                    family  = "ANSI">
+
+            <Modifier value = "SCTP"/>
+            <Modifier value = "MTP3"/>
+
+            <DatagramData   localHostName   = "172.16.1.32"
+                            localPort       = "2961">
+                    <Associate  value  = "ASP 2"/>
+            </DatagramData>
+
+            <SCTP   maxInStreams      = "32"
+                    numOutStreams     = "32"
+                    maxAttempts       = "5"
+                    cookieLife        = "30"
+                    hbOn              = "yes"
+                    initTimeOut       = "5,0"
+                    sendTimeOut       = "1,0"
+                    recvTimeOut       = "0,300"
+                    hbTimeOut         = "10,0"
+                    shutdownTimeOut   = "5,0"
+                    pmtuTimeOut       = "600,0"
+                    isClient          = "yes"
+                    payloadType       = "ANSI-M3UA">
+            </SCTP>
+
+            <Callbacks
+                library         = "libServer-LayerD.so"
+                type            = "blocking"
+                preInitialize   = ""
+                postInitialize  = ""
+                postNextEvent   = ""
+                userDispatch    = ""
+            />
+
+       </Transport>
+
+       <Transport   name    = "ASP 2"
+                    type    = "Virtual"
+                    family  = "ANSI">
+
+            <Modifier value = "SCTP"/>
+
+            <DatagramData   socketDomain    = "INET"
+                            serverHostName  = "172.16.1.33"
+                            serverPort      = "2961">
+            </DatagramData>
+
+          <Link        id             = "1"
+                         family         = "ANSI"
+                         linkSet        = "0"
+                         initialActive  = "yes"
+                         terminalFixed  = "yes"
+                         dataLinkFixed  = "yes"
+                         priority       = "0"
+                         terminal       = "0"
+                         dataLink       = "0"
+            />
+
+
+       </Transport>
+
+       <Transport   name   = "SSLayer"
+                    type   = "IterativeServerSocket"
+                    count  = "6"
+                    family = "ANSI">
+
+	     <StreamData socketDomain    = "INET" 
+			 serverHostName  = "172.16.1.32"
+			 serverPort      = "7472" 
+	     /> 
+
+             <Callbacks
+                 library          = "libServer-LayerD.so"
+                 type             = "blocking"
+                 preInitialize    = ""
+                 postInitialize   = ""
+                 preNextEvent     = ""
+                 nextEventFailed  = "SL_NextEventFailed"
+                 postNextEvent    = "SL_PostNextEvent"
+                 userDispatch     = "null"
+                 preTerminate     = "null"
+                 postTerminate    = "null"
+
+             />
+
+        </Transport>
+
+
+        <Transport  name    = "Debug Console"
+                    type    = "ServerSocket">
+
+            <StreamData socketDomain    = "INET"
+                        serverHostName  = "127.0.0.1"
+                        serverPort      = "29123"
+            />
+
+            <Callbacks
+                type            = "debug-console"
+            />
+
+        </Transport>
+
+    </BorderPool>
+
+    <!--///////////////////////////////////////////////////////////////-->
+
+    <SS7-Stacks>
+
+        <!--///////////////////////////////////////////////////////////-->
+
+        <IntelliNet>
+
+            <ANSI-ISUP variant = "ANSI_ISUP_95" >
+
+                <StackTrace>
+                    <Critical output = "stdout"/>
+                    <Critical output = "file"/>
+                    <Error    output = "stdout"/>
+                    <Warning  output = "stdout"/>
+                    <Debug    output = "stdout"/>
+                </StackTrace>
+
+                <Link   id           = "1"
+                     family          = "ANSI"
+                     linkSet         = "0"
+                     initiallyActive = "yes"
+                     terminalFixed   = "yes"
+                     dataLinkFixed   = "yes"
+                     priority        = "0"
+                     terminal        = "0"
+                     dataLink        = "0"
+                />
+
+            </ANSI-ISUP>
+  
+        </IntelliNet>
+
+    </SS7-Stacks>
+
+ </Application>

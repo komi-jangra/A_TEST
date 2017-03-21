@@ -1,0 +1,26 @@
+
+
+ENGINE Command
+
+SYNOPSIS
+    addborder <type> <name> <family> <modifiers> <internode> 
+               <type specific args> <callbacks> <link info>
+
+
+DESCRIPTION
+    This command adds a border transport to a Accelero node.
+
+PARAMETERS
+    <type>                SS7|FIFO|GatedFIFO|ClientSocket|ServerSocket|
+                          IterativeServerSocket|               Virtual|TaskQueue
+    <name>                Test Name
+    <family>              ANSI|ITU
+    <modifiers>           DATA|RUDP|IMAL|TALI|GDI|SCTP|MTP2|MTP3|ISUP|SCCP|TCAP
+    <internode>  yes|no
+    <type specific args>  Type specific Arguments
+    <callbacks>           Callbacks
+    <link Info>           Link Info
+
+
+EXAMPLE
+

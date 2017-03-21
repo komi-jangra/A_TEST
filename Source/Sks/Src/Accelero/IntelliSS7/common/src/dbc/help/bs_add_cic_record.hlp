@@ -1,0 +1,18 @@
+BSSAP Command
+
+SYNOPSIS
+    bs_add_cic_record  <pcm> <timeslot> <network Id>
+
+DESCRIPTION
+    This command adds CIC configurations  
+
+PARAMETERS
+    pcm        (0 - 4083) 
+    timeslot   (0 - 31)
+    nwId       Network ID (0-255)
+
+EXAMPLE
+    >> bs_add_cic_record 1 0 2 
+
+    CIC rec. added pcm <1> timeslot <0>
+

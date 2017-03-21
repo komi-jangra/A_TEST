@@ -1,0 +1,20 @@
+
+ITU ISUP Command
+
+SYNOPSIS
+    ii_send_grs <opc> <dpc> <sio> <cic> <range>
+
+DESCRIPTION
+    Sends circuit group reset message to the remote side.
+
+PARAMETERS
+    opc         Origination point code.
+    dpc         Destination point code.
+    sio         Service information octet.
+    cic         Circuit code number.
+    range       Range of circuits
+
+EXAMPLE
+>> ii_send_grs 16 21 133 1 4
+
+**** Successfully sent GRS msg *******

@@ -1,0 +1,3 @@
+#!/bin/sh
+
+$ITS_ROOT/tools/bin/gendoc Support ../../doc < gendoc.in > gendoc.out

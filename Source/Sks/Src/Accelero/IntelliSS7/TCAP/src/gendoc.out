@@ -1,0 +1,273 @@
+USING INDEX ../doc/tcap_index.html
+Generating for ../include/tcap++.h
+Dumping interface notes for: TCAP_Component
+Dumping implementation notes for: TCAP_Component::TCAP_Component
+Dumping link to TCAP_Component::TCAP_Component for TCAP_Component
+Dumping implementation notes for: TCAP_Component::GetComponentType
+Dumping link to TCAP_Component::GetComponentType for TCAP_Component
+Dumping implementation notes for: TCAP_Component::GetLast
+Dumping link to TCAP_Component::GetLast for TCAP_Component
+Dumping implementation notes for: TCAP_Component::SetInvokeID
+Dumping link to TCAP_Component::SetInvokeID for TCAP_Component
+Dumping implementation notes for: TCAP_Component::GetInvokeID
+Dumping link to TCAP_Component::GetInvokeID for TCAP_Component
+Dumping implementation notes for: TCAP_Component::Print
+Dumping link to TCAP_Component::Print for TCAP_Component
+Dumping implementation notes for: TCAP_Component::SendThis
+Dumping link to TCAP_Component::SendThis for TCAP_Component
+Dumping implementation notes for: TCAP_Component::ReceiveThis
+Dumping link to TCAP_Component::ReceiveThis for TCAP_Component
+Dumping interface notes for: TCAP_Dialogue
+Dumping implementation notes for: TCAP_Dialogue::Print
+Dumping link to TCAP_Dialogue::Print for TCAP_Dialogue
+Dumping interface notes for: TCAP_Invoke
+Dumping implementation notes for: TCAP_Invoke::void SetOperation
+Dumping link to TCAP_Invoke::void SetOperation for TCAP_Invoke
+Dumping implementation notes for: TCAP_Invoke::GetOperation
+Dumping link to TCAP_Invoke::GetOperation for TCAP_Invoke
+Dumping implementation notes for: TCAP_Invoke::void SetOperation
+Dumping link to TCAP_Invoke::void SetOperation for TCAP_Invoke
+Dumping implementation notes for: TCAP_Invoke::GetOperation
+Dumping link to TCAP_Invoke::GetOperation for TCAP_Invoke
+Dumping implementation notes for: TCAP_Invoke::HasOperation
+Dumping link to TCAP_Invoke::HasOperation for TCAP_Invoke
+Dumping implementation notes for: TCAP_Invoke::SetParameter
+Dumping link to TCAP_Invoke::SetParameter for TCAP_Invoke
+Didn't match function  to any interface
+Choices were:
+tcap_component tcap_dialogue tcap_invoke 
+Dumping implementation notes for: TCAP_Invoke::SetTimeOut
+Dumping link to TCAP_Invoke::SetTimeOut for TCAP_Invoke
+Dumping implementation notes for: TCAP_Invoke::GetTimeOut
+Dumping link to TCAP_Invoke::GetTimeOut for TCAP_Invoke
+Dumping implementation notes for: TCAP_Invoke::SetClass
+Dumping link to TCAP_Invoke::SetClass for TCAP_Invoke
+Dumping implementation notes for: TCAP_Invoke::GetClass
+Dumping link to TCAP_Invoke::GetClass for TCAP_Invoke
+Dumping implementation notes for: TCAP_Invoke::SetLinkedID
+Dumping link to TCAP_Invoke::SetLinkedID for TCAP_Invoke
+Dumping implementation notes for: TCAP_Invoke::GetLinkedID
+Dumping link to TCAP_Invoke::GetLinkedID for TCAP_Invoke
+Dumping implementation notes for: TCAP_Invoke::LinkInvoke
+Dumping link to TCAP_Invoke::LinkInvoke for TCAP_Invoke
+Dumping implementation notes for: TCAP_Invoke::HasLinkedID
+Dumping link to TCAP_Invoke::HasLinkedID for TCAP_Invoke
+Didn't match function  to any interface
+Choices were:
+tcap_component tcap_dialogue tcap_invoke 
+Dumping implementation notes for: TCAP_Invoke::ReceiveThis
+Dumping link to TCAP_Invoke::ReceiveThis for TCAP_Invoke
+Dumping interface notes for: TCAP_Result
+Dumping implementation notes for: TCAP_Result::TCAP_Result::SetOperation
+Dumping link to TCAP_Result::TCAP_Result::SetOperation for TCAP_Result
+Dumping implementation notes for: TCAP_Result::TCAP_Result::GetOperation
+Dumping link to TCAP_Result::TCAP_Result::GetOperation for TCAP_Result
+Dumping implementation notes for: TCAP_Invoke::HasOperation
+Dumping link to TCAP_Invoke::HasOperation for TCAP_Invoke
+Dumping implementation notes for: TCAP_Result::SetParameter
+Dumping link to TCAP_Result::SetParameter for TCAP_Result
+Dumping implementation notes for: TCAP_Result::GetParameter
+Dumping link to TCAP_Result::GetParameter for TCAP_Result
+Dumping implementation notes for: TCAP_Result::SendThis
+Dumping link to TCAP_Result::SendThis for TCAP_Result
+Dumping implementation notes for: TCAP_Result::ReceiveThis
+Dumping link to TCAP_Result::ReceiveThis for TCAP_Result
+Dumping interface notes for: TCAP_Error
+Dumping implementation notes for: TCAP_Error::TCAP_Error::SetError
+Dumping link to TCAP_Error::TCAP_Error::SetError for TCAP_Error
+Dumping implementation notes for: TCAP_Error::TCAP_Error::GetError
+Dumping link to TCAP_Error::TCAP_Error::GetError for TCAP_Error
+Dumping implementation notes for: TCAP_Error::TCAP_Error::SetError
+Dumping link to TCAP_Error::TCAP_Error::SetError for TCAP_Error
+Dumping implementation notes for: TCAP_Error::TCAP_Error::GetError
+Dumping link to TCAP_Error::TCAP_Error::GetError for TCAP_Error
+Dumping implementation notes for: TCAP_Invoke::HasError
+Dumping link to TCAP_Invoke::HasError for TCAP_Invoke
+Dumping implementation notes for: TCAP_Error::SetParameter
+Dumping link to TCAP_Error::SetParameter for TCAP_Error
+Dumping implementation notes for: TCAP_Error::GetParameter
+Dumping link to TCAP_Error::GetParameter for TCAP_Error
+Dumping implementation notes for: TCAP_Error::SendThis
+Dumping link to TCAP_Error::SendThis for TCAP_Error
+Dumping implementation notes for: TCAP_Error::ReceiveThis
+Dumping link to TCAP_Error::ReceiveThis for TCAP_Error
+Dumping interface notes for: TCAP_Reject
+Dumping implementation notes for: TCAP_Reject::TCAP_Reject::SetProblem
+Dumping link to TCAP_Reject::TCAP_Reject::SetProblem for TCAP_Reject
+Dumping implementation notes for: TCAP_Reject::TCAP_Reject::GetProblem
+Dumping link to TCAP_Reject::TCAP_Reject::GetProblem for TCAP_Reject
+Dumping implementation notes for: TCAP_Reject::TCAP_Reject::SetProblem
+Dumping link to TCAP_Reject::TCAP_Reject::SetProblem for TCAP_Reject
+Dumping implementation notes for: TCAP_Reject::TCAP_Reject::GetProblem
+Dumping link to TCAP_Reject::TCAP_Reject::GetProblem for TCAP_Reject
+Dumping implementation notes for: TCAP_Reject::SetParameter
+Dumping link to TCAP_Reject::SetParameter for TCAP_Reject
+Dumping implementation notes for: TCAP_Reject::GetParameter
+Dumping link to TCAP_Reject::GetParameter for TCAP_Reject
+Dumping implementation notes for: TCAP_Reject::GetDialogueID
+Dumping link to TCAP_Reject::GetDialogueID for TCAP_Reject
+Dumping implementation notes for: TCAP_Reject::SendThis
+Dumping link to TCAP_Reject::SendThis for TCAP_Reject
+Dumping implementation notes for: TCAP_Reject::ReceiveThis
+Dumping link to TCAP_Reject::ReceiveThis for TCAP_Reject
+Dumping interface notes for: TCAP_Cancel
+Dumping implementation notes for: TCAP_Cancel::SendThis
+Dumping link to TCAP_Cancel::SendThis for TCAP_Cancel
+Dumping implementation notes for: TCAP_Cancel::ReceiveThis
+Dumping link to TCAP_Cancel::ReceiveThis for TCAP_Cancel
+Dumping interface notes for: TCAP_ResetTimer
+Didn't match function  to any interface
+Choices were:
+tcap_component tcap_dialogue tcap_invoke tcap_result tcap_error tcap_reject tcap_cancel tcap_resettimer 
+Dumping implementation notes for: TCAP_ResetTimer::SendThis
+Dumping link to TCAP_ResetTimer::SendThis for TCAP_ResetTimer
+Dumping implementation notes for: TCAP_ResetTimer::ReceiveThis
+Dumping link to TCAP_ResetTimer::ReceiveThis for TCAP_ResetTimer
+Dumping implementation notes for: TCAP_Component::TCAP_Component::Send
+Dumping link to TCAP_Component::TCAP_Component::Send for TCAP_Component
+Dumping interface notes for: TCAP_Unidirectional
+Dumping implementation notes for: TCAP_Unidirectional::SetOPC
+Dumping link to TCAP_Unidirectional::SetOPC for TCAP_Unidirectional
+Dumping implementation notes for: TCAP_Unidirectional::GetOPC
+Dumping link to TCAP_Unidirectional::GetOPC for TCAP_Unidirectional
+Dumping implementation notes for: TCAP_Unidirectional::SetDPC
+Dumping link to TCAP_Unidirectional::SetDPC for TCAP_Unidirectional
+Dumping implementation notes for: TCAP_Unidirectional::GetDPC
+Dumping link to TCAP_Unidirectional::GetDPC for TCAP_Unidirectional
+Dumping implementation notes for: TCAP_Unidirectional::SetOrigAddr
+Dumping link to TCAP_Unidirectional::SetOrigAddr for TCAP_Unidirectional
+Dumping implementation notes for: TCAP_Unidirectional::GetOrigAddr
+Dumping link to TCAP_Unidirectional::GetOrigAddr for TCAP_Unidirectional
+Dumping implementation notes for: TCAP_Unidirectional::SetDestAddr
+Dumping link to TCAP_Unidirectional::SetDestAddr for TCAP_Unidirectional
+Didn't match function  to any interface
+Choices were:
+tcap_component tcap_dialogue tcap_invoke tcap_result tcap_error tcap_reject tcap_cancel tcap_resettimer tcap_unidirectional 
+Dumping interface notes for: TCAP_Begin
+Dumping implementation notes for: TCAP_Unidirectional::SetOPC
+Dumping link to TCAP_Unidirectional::SetOPC for TCAP_Unidirectional
+Dumping implementation notes for: TCAP_Unidirectional::GetOPC
+Dumping link to TCAP_Unidirectional::GetOPC for TCAP_Unidirectional
+Dumping implementation notes for: TCAP_Unidirectional::SetDPC
+Dumping link to TCAP_Unidirectional::SetDPC for TCAP_Unidirectional
+Dumping implementation notes for: TCAP_Unidirectional::GetDPC
+Dumping link to TCAP_Unidirectional::GetDPC for TCAP_Unidirectional
+Dumping implementation notes for: TCAP_Unidirectional::SetOrigAddr
+Dumping link to TCAP_Unidirectional::SetOrigAddr for TCAP_Unidirectional
+Dumping implementation notes for: TCAP_Unidirectional::GetOrigAddr
+Dumping link to TCAP_Unidirectional::GetOrigAddr for TCAP_Unidirectional
+Dumping implementation notes for: TCAP_Unidirectional::SetDestAddr
+Dumping link to TCAP_Unidirectional::SetDestAddr for TCAP_Unidirectional
+Didn't match function  to any interface
+Choices were:
+tcap_component tcap_dialogue tcap_invoke tcap_result tcap_error tcap_reject tcap_cancel tcap_resettimer tcap_unidirectional tcap_begin 
+Dumping interface notes for: TCAP_Continue
+Dumping implementation notes for: TCAP_Unidirectional::SetOPC
+Dumping link to TCAP_Unidirectional::SetOPC for TCAP_Unidirectional
+Dumping implementation notes for: TCAP_Unidirectional::GetOPC
+Dumping link to TCAP_Unidirectional::GetOPC for TCAP_Unidirectional
+Dumping implementation notes for: TCAP_Unidirectional::SetOrigAddr
+Dumping link to TCAP_Unidirectional::SetOrigAddr for TCAP_Unidirectional
+Dumping implementation notes for: TCAP_Unidirectional::GetOrigAddr
+Dumping link to TCAP_Unidirectional::GetOrigAddr for TCAP_Unidirectional
+Dumping interface notes for: TCAP_End
+Dumping interface notes for: TCAP_Abort
+Dumping interface notes for: TCAP_Notice
+Dumping implementation notes for: TCAP_Dialogue::Receive
+Dumping link to TCAP_Dialogue::Receive for TCAP_Dialogue
+Generating for ../include/itu/tcap.h itu-tcap_cvt.c ansi-tcap_cvt.c ./tcap.c ../../../vendors/IntelliNet/src/ansi-tcap_ifc.c ../../../vendors/IntelliNet/src/itu-tcap_ifc.c
+Dumping interface notes for: TCAP
+Didn't match function  to any interface
+Choices were:
+tcap 
+Didn't match function  to any interface
+Choices were:
+tcap 
+Didn't match function  to any interface
+Choices were:
+tcap 
+Didn't match function  to any interface
+Choices were:
+tcap 
+Didn't match function  to any interface
+Choices were:
+tcap 
+Didn't match function  to any interface
+Choices were:
+tcap 
+Didn't match function  to any interface
+Choices were:
+tcap 
+Didn't match function  to any interface
+Choices were:
+tcap 
+Didn't match function  to any interface
+Choices were:
+tcap 
+Dumping implementation notes for: TCAP_SetVariant_CCITT
+Dumping link to TCAP_SetVariant_CCITT for TCAP
+Dumping implementation notes for: TCAP_GetVariant_CCITT
+Dumping link to TCAP_GetVariant_CCITT for TCAP
+Dumping implementation notes for: TCAP_ComponentSanityCheck_CCITT
+Dumping link to TCAP_ComponentSanityCheck_CCITT for TCAP
+Dumping implementation notes for: TCAP_VendorComponentSanityCheck_CCITT
+Dumping link to TCAP_VendorComponentSanityCheck_CCITT for TCAP
+Dumping implementation notes for: TCAP_DialogueSanityCheck_CCITT
+Dumping link to TCAP_DialogueSanityCheck_CCITT for TCAP
+Dumping implementation notes for: TCAP_VendorDialogueSanityCheck_CCITT
+Dumping link to TCAP_VendorDialogueSanityCheck_CCITT for TCAP
+Dumping implementation notes for: TCAP_PPrint_CCITT
+Dumping link to TCAP_PPrint_CCITT for TCAP
+Dumping implementation notes for: TCAP_SetVariant_ANSI
+Dumping link to TCAP_SetVariant_ANSI for TCAP
+Dumping implementation notes for: TCAP_GetVariant_ANSI
+Dumping link to TCAP_GetVariant_ANSI for TCAP
+Dumping implementation notes for: TCAP_ComponentSanityCheck_ANSI
+Dumping link to TCAP_ComponentSanityCheck_ANSI for TCAP
+Dumping implementation notes for: TCAP_VendorComponentSanityCheck_ANSI
+Dumping link to TCAP_VendorComponentSanityCheck_ANSI for TCAP
+Dumping implementation notes for: TCAP_DialogueSanityCheck_ANSI
+Dumping link to TCAP_DialogueSanityCheck_ANSI for TCAP
+Dumping implementation notes for: TCAP_VendorDialogueSanityCheck_ANSI
+Dumping link to TCAP_VendorDialogueSanityCheck_ANSI for TCAP
+Dumping implementation notes for: TCAP_PPrint_ANSI
+Dumping link to TCAP_PPrint_ANSI for TCAP
+Dumping implementation notes for: TCAP_SetVariant_PRC
+Dumping link to TCAP_SetVariant_PRC for TCAP
+Dumping implementation notes for: TCAP_GetVariant_PRC
+Dumping link to TCAP_GetVariant_PRC for TCAP
+Dumping implementation notes for: TCAP_ComponentSanityCheck_PRC
+Dumping link to TCAP_ComponentSanityCheck_PRC for TCAP
+Dumping implementation notes for: TCAP_VendorComponentSanityCheck_PRC
+Dumping link to TCAP_VendorComponentSanityCheck_PRC for TCAP
+Dumping implementation notes for: TCAP_DialogueSanityCheck_PRC
+Dumping link to TCAP_DialogueSanityCheck_PRC for TCAP
+Dumping implementation notes for: TCAP_VendorDialogueSanityCheck_PRC
+Dumping link to TCAP_VendorDialogueSanityCheck_PRC for TCAP
+Dumping implementation notes for: TCAP_PPrint_PRC
+Dumping link to TCAP_PPrint_PRC for TCAP
+Dumping implementation notes for: TCAP_SetVariant_TTC
+Dumping link to TCAP_SetVariant_TTC for TCAP
+Dumping implementation notes for: TCAP_GetVariant_TTC
+Dumping link to TCAP_GetVariant_TTC for TCAP
+Dumping implementation notes for: TCAP_ComponentSanityCheck_TTC
+Dumping link to TCAP_ComponentSanityCheck_TTC for TCAP
+Dumping implementation notes for: TCAP_VendorComponentSanityCheck_TTC
+Dumping link to TCAP_VendorComponentSanityCheck_TTC for TCAP
+Dumping implementation notes for: TCAP_DialogueSanityCheck_TTC
+Dumping link to TCAP_DialogueSanityCheck_TTC for TCAP
+Dumping implementation notes for: TCAP_VendorDialogueSanityCheck_TTC
+Dumping link to TCAP_VendorDialogueSanityCheck_TTC for TCAP
+Didn't match function  to any interface
+Choices were:
+tcap 
+Didn't match function  to any interface
+Choices were:
+tcap 
+Didn't match function  to any interface
+Choices were:
+tcap 
+Didn't match function  to any interface
+Choices were:
+tcap 
+Generating for

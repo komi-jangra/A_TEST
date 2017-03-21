@@ -1,0 +1,3 @@
+NLD /cpu 1/cmdmno -o cmdmne -set highpin off -set runnamed on &
+    -libname $nodea.csslib.nlibrary $system.system.crtlmain &
+    -obey    $system.system.libcobey -noverbose

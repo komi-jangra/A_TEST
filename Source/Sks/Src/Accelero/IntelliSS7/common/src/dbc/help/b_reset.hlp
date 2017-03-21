@@ -1,0 +1,18 @@
+
+
+ENGINE Command
+
+SYNOPSIS
+    b_reset
+
+DESCRIPTION
+    This command resets the current border transport context to
+    default values; it should be used in case the operator makes
+    a mistake with any of the other b_* commands.
+
+PARAMETERS
+    None.
+
+
+EXAMPLE
+    b_reset

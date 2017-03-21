@@ -1,0 +1,19 @@
+
+ITU ISUP Command
+
+SYNOPSIS
+    ii_send_rsc <opc> <dpc> <sio> <cic>
+
+DESCRIPTION
+    This command sends Reset circuit message to remote side.
+
+PARAMETERS
+    opc     Origination point code.
+    dpc     Destination point code.
+    sio     Service information octet.
+    cic     Circuit code number.
+
+EXAMPLE
+    >>ii_send_rsc  16 21 133 1
+
+    **** Successfully sent the msg *******

@@ -1,0 +1,4 @@
+mtp3    mtp3.mak    debug   "mtp3 - Win32 Debug ANSI"
+mtp3    mtp3.mak    release "mtp3 - Win32 Release ANSI"
+mtp3    mtp3.mak    debug   "mtp3 - Win32 Debug CCITT"
+mtp3    mtp3.mak    release "mtp3 - Win32 Release CCITT"

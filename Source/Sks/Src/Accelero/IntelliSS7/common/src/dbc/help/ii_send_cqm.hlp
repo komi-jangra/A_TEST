@@ -1,0 +1,22 @@
+
+ITU ISUP Command
+
+SYNOPSIS
+    ii_send_cqm <opc> <dpc> <sio> <cic> <range> 
+
+DESCRIPTION
+    Sends circuit query message to the remote side.
+
+PARAMETERS
+    opc         Origination point code.
+    dpc         Destination point code.
+    sio         Service information octet.
+    cic         Circuit code number.
+    range       range of circuits
+
+    Possible Values for range: 1 to 31
+
+EXAMPLE
+    >>ii_send_cqm  16 21 133 1 31
+
+    **** Successfully sent the msg *******

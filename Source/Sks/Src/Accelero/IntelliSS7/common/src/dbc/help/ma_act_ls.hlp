@@ -1,0 +1,16 @@
+
+ANSI MTP3 Command
+
+SYNOPSIS
+    ma_act_ls <linkset>
+
+DESCRIPTION
+    To activate/re-activate all links of the specified linkset 
+
+PARAMETERS
+    linkset       the link set which owns the link
+
+EXAMPLE
+    >> ma_act_ls 1 
+
+    ***Linkset 1 Activation initiated***

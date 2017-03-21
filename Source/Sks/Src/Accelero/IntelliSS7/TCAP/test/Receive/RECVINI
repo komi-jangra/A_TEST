@@ -1,0 +1,7 @@
+#
+# config file for test program
+#
+TRACE_CRITICAL=stdout
+TRACE_WARNING=stdout
+TRACE_ERROR=stdout
+TRACE_DEBUG=stdout

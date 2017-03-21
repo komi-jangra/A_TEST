@@ -1,0 +1,230 @@
+--
+-- DEFINITIONS IMPLICIT TAGS ::=
+--* ITU-Q.773-TCAP *-- ITU-TCAP DEFINITIONS ::=
+--
+
+BEGIN
+
+--
+-- EXPORTS OPERATION, ERROR, Component, InvokeIdType;
+--
+
+--
+-- Invoke Id
+--
+InvokeIdType ::= INTEGER (-128..127)
+
+--
+-- Operation
+--
+Operation ::= CHOICE {
+    localCode INTEGER (-128..127),
+    globalCode OBJECT IDENTIFIER
+}
+
+
+--
+-- Error
+--
+Error ::= CHOICE {
+    localCode INTEGER (-128..127),
+    globalCode OBJECT IDENTIFIER
+}
+
+--
+-- General Problem
+--
+GeneralProblem ::= INTEGER {
+    unrecognizedComponent(0),
+    mistypedComponent(1),
+    badlyStructuredComponent(2)
+}
+
+--
+-- Invoke Problem
+--
+InvokeProblem ::= INTEGER {
+    duplicateInvokeID(0),
+    unrecognizedOperation(1),
+    mistypedParameter(2),
+    resourceLimitation(3),
+    initiatingRelease(4),
+    unrecognizedLinkedID(5),
+    linkedResponseUnexpected(6),
+    unexpectedLinkedOperation(7)
+}
+
+--
+-- Return Result Problem
+--
+ReturnResultProblem ::= INTEGER {
+    unrecognizedInvokeID(0),
+    returnResultUnexpected(1),
+    mistypedParameter(2)
+}
+
+--
+-- Return Error Problem
+--
+ReturnErrorProblem ::= INTEGER {
+    unrecognizedInvokeID(0),
+    returnErrorUnexpected(1),
+    unrecognizedError(2),
+    unexpectedError(3),
+    mistypedParameter(4)
+}
+
+--
+-- Invoke
+--
+Invoke ::= SEQUENCE {
+    invokeID         InvokeIdType,
+    linkedID         [0] IMPLICIT InvokeIdType OPTIONAL,
+    operationCode    Operation,
+    parameter        ANY DEFINED BY operationCode OPTIONAL
+}
+
+--
+-- Return Result
+--
+ReturnResult ::= SEQUENCE {
+    invokeID         InvokeIdType,
+    result           SEQUENCE {
+        operationCode    Operation,
+        parameter        ANY DEFINED BY operationCode
+    } OPTIONAL
+}
+
+--
+-- Return Error
+--
+ReturnError ::= SEQUENCE {
+    invokeID         InvokeIdType,
+    errorCode        Error,
+    parameter        ANY DEFINED BY errorCode OPTIONAL
+}
+
+--
+-- Reject
+--
+Reject ::= SEQUENCE {
+    invokeID CHOICE {
+        derivable        InvokeIdType,
+        not-derivable    NULL
+    },
+    problem CHOICE {
+        generalProblem       [0] IMPLICIT GeneralProblem,
+        invokeProblem        [1] IMPLICIT InvokeProblem,
+        returnResultProblem  [2] IMPLICIT ReturnResultProblem,
+        returnErrorProblem   [3] IMPLICIT ReturnErrorProblem
+    }
+}
+
+--
+-- Component
+--
+ComponentPDU ::= CHOICE {
+    invoke                [1] IMPLICIT Invoke,
+    returnResultLast      [2] IMPLICIT ReturnResult,
+    returnError           [3] IMPLICIT ReturnError,
+    reject                [4] IMPLICIT Reject,
+    returnResultNotLast   [7] IMPLICIT ReturnResult
+}
+
+--
+-- ComponentPortion
+--
+ComponentPortion ::= [APPLICATION 12] IMPLICIT SEQUENCE SIZE(1..32) OF
+                         ComponentPDU
+
+--
+-- Transaction IDs
+--
+OrigTransactionID ::= [APPLICATION 8] IMPLICIT OCTET STRING (SIZE (1..4))
+DestTransactionID ::= [APPLICATION 9] IMPLICIT OCTET STRING (SIZE (1..4))
+
+--
+-- P-Abort Cause
+--
+P-AbortCause ::= [APPLICATION 10] IMPLICIT INTEGER {
+    unrecognizedMessageType(0),
+    unrecognizedTransactionID(1),
+    badlyFormattedTransactionPortion(2),
+    incorrectTransactionPortion(3),
+    resourceLimitation(4)
+}
+
+--
+-- Dialogue Portion.  It's really EXTERNAL, but this is good enough.
+--
+DialoguePortion ::= [APPLICATION 11] ANY
+
+--
+-- Unidirectional
+--
+Unidirectional ::= SEQUENCE {
+    dialoguePortion  DialoguePortion OPTIONAL,
+    components       ComponentPortion
+}
+
+--
+-- uniDialogue-as-id
+--
+-- uniDialogue-as-id OBJECT IDENTIFIER ::= { ccitt recommendation q 773 as(1)
+--                                           unidialogue-as (2) version1(1) }
+
+--
+-- Begin
+--
+Begin ::= SEQUENCE {
+    otid             OrigTransactionID,
+    dialoguePortion  DialoguePortion OPTIONAL,
+    components       ComponentPortion OPTIONAL
+}
+
+--
+-- End
+--
+End ::= SEQUENCE {
+    dtid             DestTransactionID,
+    dialoguePortion  DialoguePortion OPTIONAL,
+    components       ComponentPortion OPTIONAL
+}
+
+--
+-- Continue
+--
+Continue ::= SEQUENCE {
+    otid             OrigTransactionID,
+    dtid             DestTransactionID,
+    dialoguePortion  DialoguePortion OPTIONAL,
+    components       ComponentPortion OPTIONAL
+}
+
+--
+-- Abort
+--
+Abort ::= SEQUENCE {
+    dtid             DestTransactionID,
+    reason           CHOICE {
+        p-abort-cause    P-AbortCause,
+        dialoguePortion  DialoguePortion
+--
+-- The above is the White Book version.  Blue Book
+-- has:
+--      userInformation  UserAbortInformation
+    } OPTIONAL
+}
+
+--
+-- Message Type
+--
+MessageType ::= CHOICE {
+    unidirectional [APPLICATION 1] IMPLICIT Unidirectional,
+    begin          [APPLICATION 2] IMPLICIT Begin,
+    end            [APPLICATION 4] IMPLICIT End,
+    contin         [APPLICATION 5] IMPLICIT Continue,
+    abort          [APPLICATION 7] IMPLICIT Abort
+}
+
+END

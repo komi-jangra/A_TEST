@@ -1,0 +1,448 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE Application SYSTEM "file:D:\cvsroot\IntelliSS7\ENGINE\src\engine.dtd">
+
+<!-- Sample XML file for application configuration (INI). -->
+
+<Application name           = "test"
+             type           = "console-application"
+             globalStart    = "ITU-MTP3"
+             binding        = "C">
+
+    <AppOptions name = "traceFlushAfterWrite"         value = "no"/>
+    <AppOptions name = "memPoolChecksOn"              value = "no"/>
+
+    <Feature
+        name        = "NMS Vendor lib"
+        library     = "NMSVendorD.dll"
+        classRec    = "itsNMS_Class"
+    />
+
+    <Feature
+        name        = "IntelliNet stack"
+        library     = "BothVendorD.dll"
+        classRec    = "itsINTELLISS7_Class"
+    />
+
+    <ToolkitTrace>
+        <Critical  output = "stdout"/>
+        <Critical  output = "file"/>
+        <Error     output = "stdout"/>
+        <Error     output = "file"/>
+        <Warning   output = "stdout"/>
+        <Warning   output = "file"/>
+        <Debug     output = "file"/>
+    </ToolkitTrace>
+
+    <ApplicationTrace>
+        <Critical  output = "file"/>
+        <Error     output = "file"/>
+        <Warning   output = "file"/>
+        <Debug     output = "file"/>
+    </ApplicationTrace>
+
+    <ParserExtension    library     = "NMSVendorD.dll"
+                        elementName = "NMS_Data"
+                        startFunc   = "NMS_ParseStart"
+                        stopFunc    = "NMS_ParseEnd"
+                        xlateFunc   = "NMS_ConvertParserData"
+                        diffFunc    = "NMS_Diff"
+    />
+
+    <NMS_Data   sectionName = "NMS SS7-1"
+                boardNum    = "1"
+                mtp2SrcEnt  = "32"
+                srcInst     = "0"
+                linkSets    = "1"
+                linkCodes   = "0,1,2,3"
+    />
+
+    <!--/////////////// LINK SETS //////////////-->
+    <!-- link set for internal routing -->
+    <LinkSet id           = "0"
+             adjacentSTP  = "no"
+             numToStart   = "0">
+        <NI     value = "0x00"/>
+        <APC    value = "0x0"/>
+        <LPC    value = "0x0"/>
+    </LinkSet>
+
+    <!-- link set for external routing -->
+    <LinkSet id           = "1"
+             adjacentSTP  = "yes"
+             numToStart   = "1">
+        <NI     value = "0x0"/>
+        <APC    value = "9"/>
+        <LPC    value = "8"/>
+    </LinkSet>
+
+    <!-- route for SNMM -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0">
+        <DPC    value = "8"/>
+        <SIO    value = "0x80"/>
+    </Route>
+
+    <!-- route for SLTM REG -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0">
+        <DPC    value = "8"/>
+        <SIO    value = "0x81"/>
+    </Route>
+
+    <!-- route for SLTM SPEC -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0">
+        <DPC    value = "8"/>
+        <SIO    value = "0x82"/>
+    </Route>
+
+    <!-- route for SCCP -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0">
+        <DPC    value = "8"/>
+        <SIO    value = "0x83"/>
+    </Route>
+
+    <!-- route for TUP -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0">
+        <DPC    value = "8"/>
+        <SIO    value = "0x84"/>
+    </Route>
+
+    <!-- route for ISUP -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0">
+        <DPC    value = "8"/>
+        <SIO    value = "0x85"/>
+    </Route>
+
+    <!-- route for DUP (call setup) -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0">
+        <DPC    value = "8"/>
+        <SIO    value = "0x86"/>
+    </Route>
+
+    <!-- route for DUP (facility) -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0">
+        <DPC    value = "8"/>
+        <SIO    value = "0x87"/>
+    </Route>
+
+    <!-- route for MTP testing -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0">
+        <DPC    value = "8"/>
+        <SIO    value = "0x88"/>
+    </Route>
+
+    <!-- route for B-ISUP -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0">
+        <DPC    value = "8"/>
+        <SIO    value = "0x89"/>
+    </Route>
+
+    <!-- route for S-ISUP -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0">
+        <DPC    value = "8"/>
+        <SIO    value = "0x8a"/>
+    </Route>
+
+    <!-- route for spare UP -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0">
+        <DPC    value = "8"/>
+        <SIO    value = "0x8b"/>
+    </Route>
+
+    <!-- route for spare UP -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0">
+        <DPC    value = "8"/>
+        <SIO    value = "0x8c"/>
+    </Route>
+
+    <!-- route for reserved UP -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0">
+        <DPC    value = "8"/>
+        <SIO    value = "0x8d"/>
+    </Route>
+
+    <!-- route for reserved UP -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0">
+        <DPC    value = "8"/>
+        <SIO    value = "0x8e"/>
+    </Route>
+
+    <!-- route for spare UP -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0">
+        <DPC    value = "8"/>
+        <SIO    value = "0x8f"/>
+    </Route>
+
+    <!-- route for TCAP -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio-ssn"
+            linkSet  = "0"
+            priority = "0">
+        <DPC    value = "8"/>
+        <SIO    value = "0x83"/>
+        <SSN    value = "5"/>
+    </Route>
+
+    <!-- route for adjacent node -->
+    <Route  type    = "remoteRoute"
+            style   = "dpc-ni"
+            linkSet = "1"
+            priority = "0">
+        <DPC    value = "9"/>
+        <SIO    value = "0x80"/>
+    </Route>
+
+    <!-- route for non-adjacent node -->
+    <Route  type    = "remoteRoute"
+            style   = "dpc-ni"
+            linkSet = "1"
+            priority = "0">
+        <DPC    value = "0x000000"/>
+        <SIO    value = "0x80"/>
+    </Route>
+
+    <!--/////////////// DESTINATIONS //////////////-->
+    <!-- adjacent destination -->
+    <Destination    family      = "ITU"
+                    pointCode   = "9"
+                    networkInd  = "0x80"
+                    mtp3Variant = "WhiteBook"
+                    isupVariant = "WhiteBook"
+                    sccpVariant = "WhiteBook"
+                    tcapVariant = "WhiteBook"
+                    tupVariant  = "WhiteBook"
+                    dupVariant  = "WhiteBook"
+    />
+
+    <!-- non-adjacent destination -->
+    <Destination    family      = "ITU"
+                    pointCode   = "0"
+                    networkInd  = "0x80"
+                    mtp3Variant = "WhiteBook"
+                    isupVariant = "WhiteBook"
+                    sccpVariant = "WhiteBook"
+                    tcapVariant = "WhiteBook"
+                    tupVariant  = "WhiteBook"
+                    dupVariant  = "WhiteBook"
+    />
+
+    <!--///////////////////////////////////////////////////////////////-->
+
+    <BorderPool stackSize = "0">
+
+        <Transport  name    = "NMS SS7-1"
+                    type    = "SS7"
+                    family  = "ITU">
+                    
+            <Modifier value = "MTP2"/>
+
+            <Vendor name        = "NMS"
+                    library     = "NMSVendorD.dll"
+                    vendorRec   = "itsNMS_Class"
+            />
+
+            <Callbacks
+                type            = "blocking"
+                preInitialize   = "null"
+                postInitialize  = "null"
+                preNextEvent    = "null"
+                nextEventFailed = "null"
+                postNextEvent   = "null"
+                userMsgHandler  = "null"
+                SCCPMsgHandler  = "null"
+                ISUPMsgHandler  = "null"
+                preTerminate    = "null"
+                postTerminate   = "null"
+            />
+
+            <!-- 4 links on this transport -->
+            <Link   id              = "0"
+                    linkSet         = "1"
+                    initiallyActive = "yes"
+                    terminalFixed   = "yes"
+                    dataLinkFixed   = "yes"
+                    priority        = "0"
+                    terminal        = "0"
+                    dataLink        = "0"
+            />
+            <Link   id              = "1"
+                    linkSet         = "1"
+                    initiallyActive = "yes"
+                    terminalFixed   = "yes"
+                    dataLinkFixed   = "yes"
+                    priority        = "0"
+                    terminal        = "0"
+                    dataLink        = "0"
+            />
+            <Link   id              = "2"
+                    linkSet         = "1"
+                    initiallyActive = "yes"
+                    terminalFixed   = "yes"
+                    dataLinkFixed   = "yes"
+                    priority        = "0"
+                    terminal        = "0"
+                    dataLink        = "0"
+            />
+            <Link   id              = "3"
+                    linkSet         = "1"
+                    initiallyActive = "yes"
+                    terminalFixed   = "yes"
+                    dataLinkFixed   = "yes"
+                    priority        = "0"
+                    terminal        = "0"
+                    dataLink        = "0"
+            />
+
+        </Transport>
+
+        <Transport  name    = "User"
+                    type    = "TaskQueue"
+                    family  = "ITU">
+                    
+            <Callbacks
+                type            = "blocking"
+                preInitialize   = "TrafficGenerator"
+                postInitialize  = "null"
+                preNextEvent    = "null"
+                nextEventFailed = "null"
+                postNextEvent   = "null"
+                userMsgHandler  = "null"
+                SCCPMsgHandler  = "null"
+                ISUPMsgHandler  = "null"
+                preTerminate    = "null"
+                postTerminate   = "null"
+            />
+        </Transport>
+
+        <Transport  name    = "Debug Console"
+                    type    = "ServerSocket">
+                    
+            <StreamData socketDomain    = "INET"
+                        serverHostName  = "127.0.0.1"
+                        serverPort      = "7000"
+            />
+
+            <Callbacks
+                type            = "debug-console"
+            />
+
+        </Transport>
+
+    </BorderPool>
+
+    <!--///////////////////////////////////////////////////////////////-->
+
+    <SS7-Stacks>
+
+        <ManagementCallbacks
+            MTP3ManagementCallbackITU      = "MTP3Mgmt"
+        />
+
+        <IntelliNet>
+
+            <ITU-MTP3 variant = "WhiteBook">
+  
+                <StackTrace>
+                    <Critical output = "stdout"/>
+                    <Error    output = "stdout"/>
+                    <Warning  output = "stdout"/>
+                    <Debug    output = "stdout"/> 
+                </StackTrace>
+
+                <BehaviorControl
+                    STPFunction = "yes"
+                />
+
+                <Timers
+                     T1 = "800"
+                     T2 = "1400"
+                     T3 = "800"
+                     T4 = "800"
+                     T5 = "800"
+                     T6 = "800"
+                     T7 = "800"
+                     T8 = "800"
+                     T9 = "0"
+                    T10 = "30000"
+                    T11 = "30000"
+                    T12 = "800"
+                    T13 = "800"
+                    T14 = "2000"
+                    T15 = "2000"
+                    T16 = "1400"
+                    T17 = "800"
+                    T18 = "0"
+                    T19 = "480000"
+                    T20 = "3000"
+                    T21 = "3000"
+                    T22 = "30000"
+                    T23 = "30000"
+                    T24 = "30000"
+                    T25 = "30000"
+                    T26 = "12000"
+                    T27 = "2000"
+                    T28 = "3000"
+                    T29 = "60000"
+                    T30 = "30000"
+                    T31 = "10000"
+                    T32 = "5000"
+                    T33 = "60000"
+                    T34 = "5000"
+                    SLT-T1 = "5000"
+                    SLT-T2 = "30000"
+                />
+
+            </ITU-MTP3>
+  
+        </IntelliNet>
+
+    </SS7-Stacks>
+
+</Application>

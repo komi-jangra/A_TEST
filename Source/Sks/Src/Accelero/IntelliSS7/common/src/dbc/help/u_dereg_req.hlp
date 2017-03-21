@@ -1,0 +1,15 @@
+
+M3UA / SUA Command
+
+SYNOPSIS
+    u_dereg_req  <rCtxt>
+
+DESCRIPTION
+    This command is used to send de-register request to SG.
+
+PARAMETERS
+    rCtxt  - Routing Context. 
+
+EXAMPLE
+  >>u_dereg_req  1
+    *********** Deregistration Succesfull *************

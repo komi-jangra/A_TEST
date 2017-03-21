@@ -1,0 +1,96 @@
+--------------------------------------------------------------------------------
+--
+-- AsnCC 2.0 test.
+--
+-- Linking between different ASN.1 modules. LRF format.
+--
+--------------------------------------------------------------------------------
+
+TEST7-1 { ccitt identified-organization (4) etsi (0) version2 (2) } DEFINITIONS IMPLICIT TAGS ::=
+
+BEGIN
+
+EXPORTS
+    AuthenticationFailureReportRRL,
+    unspecified,
+    authenDirRRL
+;
+
+IMPORTS
+    Bar1,
+    Bar2
+FROM Foo-Module-1
+    Bar3,
+    Bar4
+FROM Foo-Module-2
+    C
+FROM TEST7-2
+;
+
+AuthenticationDirectiveRRL ::= [PRIVATE 18] IMPLICIT SET 
+{
+    callHistoryCount [38] IMPLICIT OCTET STRING (SIZE(1)) OPTIONAL
+}
+
+unspecified INTEGER ::= 2
+
+BarBar1 ::= [1] [2] [3] [4] AuthenticationDirectiveRRL
+
+BarBar2 ::= [1] IMPLICIT [2] EXPLICIT [3] IMPLICIT [4] EXPLICIT AuthenticationDirectiveRRL
+
+
+Foo3 ::= SET 
+{
+    field1 [1] IMPLICIT OCTET STRING OPTIONAL,
+
+    COMPONENTS OF Foo4,
+
+    field4 [4] IMPLICIT SET { foo1 INTEGER, foo2 OCTET STRING, foo3 ANY },
+
+    field5 [5] IMPLICIT OCTET STRING OPTIONAL
+}
+
+
+Foo4 ::= SET
+{
+    field2 [2] IMPLICIT OCTET STRING OPTIONAL,    
+    field3 [3] IMPLICIT OCTET STRING OPTIONAL
+}
+
+
+AuthenticationFailureReportRRL ::= SET
+{
+    authenticationAlgorithmVersion [77] IMPLICIT OCTET STRING (SIZE(1)) OPTIONAL,
+
+    denyAccess [50] IMPLICIT ENUMERATED
+    { 
+        notUsed (0),
+        unspecified (3),
+        sSDUpdateFailure (2) 
+    } OPTIONAL,
+
+    randomVariableSSD [42] IMPLICIT OCTET STRING (SIZE(7)),
+
+    COMPONENTS OF AuthenticationDirectiveRRL,
+
+    foo1 [44] BOOLEAN,
+
+    COMPONENTS OF Foo3,
+
+    foo2 [56] IA5String
+}
+
+
+authenDirRRL AuthenticationDirectiveRRL ::= { callHistoryCount '67890'H }
+
+A ::= SET
+{
+    b B OPTIONAL
+}
+
+B ::= SET
+{
+    c C OPTIONAL
+}
+
+END

@@ -1,0 +1,4 @@
+#!/bin/sh
+time ./test -appName sink -libDir ../../lib/ &
+time ./test -appName copy -libDir ../../lib/ &
+time ./test -appName source -libDir ../../lib/

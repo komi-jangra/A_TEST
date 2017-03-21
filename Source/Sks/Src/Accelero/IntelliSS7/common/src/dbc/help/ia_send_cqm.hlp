@@ -1,0 +1,19 @@
+
+ANSI ISUP Command
+
+SYNOPSIS
+    ia_send_cqm <dpc> <opc> <sio> <cic> <range> 
+
+DESCRIPTION
+    This command sends circuit query message to the remote side.
+
+PARAMETERS
+    opc         Origination point code.
+    dpc         Destination point code.
+    sio         Service information octet.
+    cic         Circuit code number.
+    range       range of circuits
+
+EXAMPLE
+    >>ia_send_cqm  16 21 133 1 23
+    **** Successfully sent the msg *******

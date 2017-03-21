@@ -1,0 +1,220 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE Application SYSTEM "file:D:/hd/cvsroot/IntelliSS7/ENGINE/src/engine.dtd">
+
+<!-- Sample XML file for application configuration (INI). -->
+
+<Application name           = "Gateway"
+             type           = "console-application"
+             globalStart    = "ITU-TCAP"
+             binding        = "CPP"
+             library        = "">
+
+    <AppOptions name = "traceFlushAfterWrite"         value = "yes"/>
+    <AppOptions name = "routeUniqueLinkCodesRequired" value = "yes"/>
+    <AppOptions name = "memPoolChecksOn"              value = "no"/>
+
+    <WindowsExtras>
+        <NetworkHome
+            localInterface  = "192.168.1.1"
+            localMask       = "255.255.0.0"
+            localBroadcast  = "192.168.255.255"
+        />
+     </WindowsExtras>
+
+    <ParserExtension
+        library         = "DSM-GCSD.dll"
+        elementName     = "DsmGcsConfig"
+        startFunc       = "DSM_GCS_ConfigParseStart"
+        stopFunc        = "DSM_GCS_ConfigParseStop"
+        xlateFunc       = "DSM_GCS_ConfigConvertParserData"
+        diffFunc        = "DSM_GCS_ConfigDiff"
+    />
+                                            
+    <FaultTolerance
+        maxNumFtGroups      = "32"
+        maxNumProcesses     = "10"
+        maxNumNodes         = "4"
+        nodeId              = "1"
+        processId           = "5"
+        tcapFtGroupId       = "1"
+        sccpFtGroupId       = "2"
+        mtp3FtGroupId       = "3"
+        isupFtGroupId       = "4"
+        routingFtGroupId    = "5"
+        timersFtGroupId     = "6"
+        mgmtDataFtGroupId   = "7"
+    >
+
+        <Procedures>
+
+            <FtmPreExecuteLogicProcedure
+                library      = "libApp.so"
+                functionName = "ft_fn1"
+            />
+
+            <FtmLoopExecuteLogicProcedure
+                library      = "libApp.so"
+                functionName = "ft_fn2"
+            />
+
+            <FtmPostExecuteLogicProcedure
+                library      = "libApp.so"
+                functionName = "ft_fn3"
+            />
+
+        </Procedures>
+
+        <Callbacks>
+
+            <MembershipChangeAllFtGroupsCallback
+                library      = "libApp.so"
+                functionName = "ft_fn4"
+            />
+
+            <MembershipChangeAllFtGroupsCallback
+                library      = "libApp.so"
+                functionName = "ft_fn5"
+            />
+
+            <EventFromAllFtGroupMembersCallback
+                library      = "libApp.so"
+                functionName = "ft_fn6"
+            />
+
+        </Callbacks>
+
+        <FtGroups>
+
+            <FtGroup 
+                ftGroupId      = "0"
+                ftGroupName    = "FtGroup0"
+            >
+
+                <!-- Note: dsmType attribute is reserved for future use. -->
+
+                <DsmConfig
+                     dsmSize         = "16777216"
+                     dsmBaseAddress  = "0x40000000"
+                     dsmMaxNumTables = "256"
+                     dsmType         = "GCS"
+                />
+
+                <DsmGcsConfig
+                     gcsFtGroupId        = "0"
+                     gcsDaemonName       = "8891@localhost"
+                     gcsSyncMemUseTcp    = "1"
+                     gcsSyncMemIpAddress = "192.168.1.62"
+                     gcsSyncMemIpPort    = "8892"
+                />
+
+                <!-- Note: DsmGcsConfig or DsmSciConfig (exclusif). -->
+   
+                <DsmSciConfig
+                     sciFtGroupId       = "0"
+                     sciSegmentNumber   = "1"
+                     sciAdapterNumber   = "1"
+                />
+
+                <!-- Note: MUST include itself. -->
+                <!-- Note: nodeName and processName are optional attributes. --> 
+
+                <FtGroupMembers>
+
+                    <FtGroupMember
+                        nodeId      = "1"
+                        nodeName    = "Node1"
+                        processId   = "5"
+                        processName = "Node1Process5"
+                    />
+
+                    <FtGroupMember
+                        nodeId      = "2"
+                        nodeName    = "Node2"
+                        processId   = "5"
+                        processName = "Node2Process5"
+                    />
+
+                    <FtGroupMember
+                        nodeId      = "3"
+                        nodeName    = "Node3"
+                        processId   = "5"
+                        processName = "Node3Process5"
+                    />
+
+                    <FtGroupMember
+                        nodeId      = "4"
+                        nodeName    = "Node4"
+                        processId   = "5"
+                        processName = "Node4Process5"
+                    />
+
+                </FtGroupMembers>
+
+                <!-- Note: Master FtGroupMembers are tried in order. -->
+                <!-- Note: MUST NOT include itself. -->
+
+                <MasterFtGroupMembers>
+
+                    <MasterFtGroupMember
+                        nodeId    = "2"
+                        processId = "5"
+                    />
+
+                    <MasterFtGroupMember
+                        nodeId    = "3"
+                        processId = "5"
+                    />
+
+                    <MasterFtGroupMember
+                        nodeId    = "4"
+                        processId = "5"
+                    />
+
+                </MasterFtGroupMembers>
+
+                <Callbacks>
+                
+                    <MembershipChangeCallback
+                        library      = "libApp.so"
+                        functionName = "ftGroup0_fn1"
+                    />
+
+                    <MembershipChangeCallback
+                        library      = "libApp.so"
+                        functionName = "ftGroup0_fn2"
+                    />
+
+                    <EventFromFtGroupMemberCallback
+                        library      = "libApp.so"
+                        functionName = "ftGroup0_fn3"
+                    />	
+
+                </Callbacks>
+
+            </FtGroup>
+
+        </FtGroups>
+
+    </FaultTolerance>
+
+    <ToolkitTrace>
+        <Critical  output = "stdout"/>
+        <Critical  output = "file"/>
+        <Error     output = "stdout"/>
+        <Error     output = "file"/>
+        <Warning   output = "stdout"/>
+        <Warning   output = "file"/>
+        <Debug     output = "file"/>
+    </ToolkitTrace>
+
+    <ApplicationTrace>
+        <Critical  output = "file"/>
+        <Error     output = "file"/>
+        <Warning   output = "file"/>
+        <Debug     output = "file"/>
+    </ApplicationTrace>
+
+
+
+</Application>

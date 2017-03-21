@@ -1,0 +1,26 @@
+include ../../../../Csapp/Util/make.opt
+
+USERLIBRARIES = $(LFLAGS) $(LIBS) -linst-DB -lmutex 
+
+COMP_FLAG = -DXUSE_SIGNAL_NUMBERS -D__C_APPL $(CFLAGS)# -DCPLUSPLUS
+
+HDRFILES = -I../../../../../Inc/Sys/ \
+           -I../../../../../Inc/Ipc/ \
+           -I../../../../../Inc/Dbs/ \
+           -I../../../../../Inc/Csapp/ \
+           -I../../../../../Inc/Oam/ \
+           -I../../../../../Inc/Oams/ \
+           -I../../../../../Inc/Bpm/ \
+           -I../../../Inc/ \
+           -I../Inc/
+
+
+
+USERTARGET = System_RM_env$(sctOEXTENSION)
+sctUSERDEFS = -g $(COMP_FLAG) $(HDRFILES)
+
+System_RM_env$(sctOEXTENSION): System_RM_env.c System_RM.ifc
+	$(sctCC) $(sctCPPFLAGS) $(sctCCFLAGS) $(sctIFDEF) System_RM_env.c -o System_RM_env$(sctOEXTENSION)
+
+clean_user_objs:
+	$(sctRM) $(USERTARGET)

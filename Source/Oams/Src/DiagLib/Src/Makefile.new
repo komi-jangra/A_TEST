@@ -1,0 +1,48 @@
+#************ START ************
+include  ../../../../Csapp/Util/make.opt
+ROOT_PATH = $(BSC_BASE)
+
+LIBRARIES = 
+#ifeq ($(OS),linux)
+ COMPILER = gcc -g
+ LINKER = gcc -g
+ BIN_PATH = ./
+ LIB_PATH = ./
+ #SYS_LIB_PATH = $(ROOT_PATH)/Bin/Host/CommonLib/CP
+ SYS_LIB_PATH = $(ROOT_PATH)/Bin/Target/CommonLib/CP
+ COMP_FLAG = -D__C_APPL 
+#endif
+
+ifeq ($(OS),montavista)
+ COMPILER = ppc_85xx-gcc -g
+ LINKER = ppc_85xx-gcc -g
+ BIN_PATH = ./
+ LIB_PATH = ./
+ SYS_LIB_PATH = $(ROOT_PATH)/Bin/Target/CommonLib/CP
+ COMP_FLAG = -D__C_APPL 
+endif 
+
+#TARGET = $(LIB_PATH)/libadaptation.so
+TARGET = $(SYS_LIB_PATH)/libdiagLibapi.so
+ERRLOG=Err.log
+HDRFILES = -I ../Inc -I $(ROOT_PATH)/Inc/Ipc -I $(ROOT_PATH)/Inc/Sys -I $(ROOT_PATH)/Inc/Oam\
+            -I $(ROOT_PATH)/Inc/Oams -I $(ROOT_PATH)/Inc/Csapp -I ../../../Inc/ -I ../Inc \
+            -I $(ROOT_PATH)/Inc/Dbs -I $(ROOT_PATH)/Source/Oams/Src/Cfg/Inc \
+	    -I $(ROOT_PATH)/Bin/Target/M2C/ICC_PP/usr/local/include
+LIBRARY_PATH = -L $(SYS_LIB_PATH) -L $(LIB_PATH)
+
+CC = $(COMPILER)  -fsigned-char $(HDRFILES)  $(COMP_FLAG)
+
+all :   $(TARGET)
+
+clean:
+	rm -rf *.o $(TARGET)
+	rm -rf $(ERRLOG)
+
+OBJS = diagLibapi.o diagFileEicFileWrite.o diagFileIccFileWrite.o \
+       diagFileFanTrayFileWrite.o diagFileHandler.o diagFilePsuFileWrite.o\
+       diagInitLib.o diagFileObmFileWrite.o diagFileObfFileWrite.o
+
+
+$(TARGET): $(OBJS)
+	$(LINKER) -shared -o $(TARGET) $(OBJS) > $(ERRLOG) 2>&1

@@ -1,0 +1,1991 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.5.4	//
+ACCEPT_SESSION	sess_types.h	124;"	d
+ACCESSCONTROLPOLICY	y.tab.c	374;"	d	file:
+ACCESSCONTROLPOLICY	y.tab.h	49;"	d
+ACM	alarm.h	69;"	d
+ACM_ACCESS_ALLOWED	acm.h	/^     ACM_ACCESS_ALLOWED,$/;"	e	enum:ACM_ReturnVal
+ACM_ACCESS_DENIED	acm.h	/^     ACM_ACCESS_DENIED,$/;"	e	enum:ACM_ReturnVal
+ACM_H	acm.h	38;"	d
+ACM_ReturnVal	acm.h	/^typedef enum ACM_ReturnVal {$/;"	g
+ACM_ReturnVal	acm.h	/^} ACM_ReturnVal;$/;"	t
+ACP_Methods	acm.c	/^static struct acp_info  ACP_Methods[MAX_AUTH_METHODS];$/;"	v	file:
+AGREED_MESS	sess_types.h	53;"	d
+AGREED_TYPE	net_types.h	47;"	d
+ALIVE_OBJ	objects.h	68;"	d
+ALIVE_TYPE	net_types.h	55;"	d
+ALL	alarm.h	73;"	d
+ALLOWEDAUTHMETHODS	y.tab.c	372;"	d	file:
+ALLOWEDAUTHMETHODS	y.tab.h	47;"	d
+ARCH_ENDIAN	arch.h	125;"	d
+ARCH_ENDIAN	arch.h	69;"	d
+ARCH_ENDIAN	arch.h	71;"	d
+ARCH_PC_WIN95	acconfig.h	82;"	d
+ARCH_SCATTER_ACCRIGHTS	acconfig.h	85;"	d
+ARCH_SCATTER_CONTROL	acconfig.h	84;"	d
+ARCH_SCATTER_CONTROL	config.h	47;"	d
+ARCH_SCATTER_NONE	acconfig.h	83;"	d
+ARCH_SCATTER_NONE	arch.h	124;"	d
+ARCH_SCATTER_SIZE	arch.h	136;"	d
+ARCH_SCATTER_SIZE	arch.h	82;"	d
+ARCH_SCATTER_SIZE	arch.h	84;"	d
+ARQ_TYPE	net_types.h	64;"	d
+ARU_UPDATE_OBJ	objects.h	65;"	d
+Accept_inet_mbox	session.c	/^static	mailbox		Accept_inet_mbox[MAX_INTERFACES_PROC];$/;"	v	file:
+Accept_inet_mbox_num	session.c	/^static  int             Accept_inet_mbox_num;$/;"	v	file:
+Accept_unix_mbox	session.c	/^static	mailbox		Accept_unix_mbox;$/;"	v	file:
+AccessControlPolicy	acm.c	/^static  int             AccessControlPolicy;$/;"	v	file:
+Acm_acp_add_method	acm.c	/^bool Acm_acp_add_method(char *name, struct acp_ops *ops)$/;"	f
+Acm_acp_fill_ops	acm.c	/^void Acm_acp_fill_ops(struct acp_ops *acp_ops_h)$/;"	f
+Acm_acp_fill_ops_byname	acm.c	/^bool Acm_acp_fill_ops_byname(char *acp_name, struct acp_ops *acp_ops_h)$/;"	f
+Acm_acp_query_allowed	acm.c	/^bool Acm_acp_query_allowed(char *acp_name)$/;"	f
+Acm_acp_set_policy	acm.c	/^bool Acm_acp_set_policy(char *policy_name)$/;"	f
+Acm_auth_add_method	acm.c	/^bool Acm_auth_add_method(char *name, struct auth_ops *ops)$/;"	f
+Acm_auth_create_sess_info	acm.c	/^struct session_auth_info *Acm_auth_create_sess_info(mailbox mbox, char *auth_name)$/;"	f
+Acm_auth_create_sess_info_forIP	acm.c	/^struct session_auth_info *Acm_auth_create_sess_info_forIP(mailbox mbox)$/;"	f
+Acm_auth_get_allowed_list	acm.c	/^char *Acm_auth_get_allowed_list(void)$/;"	f
+Acm_auth_get_auth_client_connection	acm.c	/^void *Acm_auth_get_auth_client_connection(int authid)$/;"	f
+Acm_auth_get_auth_client_connection_byname	acm.c	/^void *Acm_auth_get_auth_client_connection_byname(char *auth_name)$/;"	f
+Acm_auth_query_allowed	acm.c	/^bool Acm_auth_query_allowed(char *auth_name)$/;"	f
+Acm_auth_set_disabled	acm.c	/^bool Acm_auth_set_disabled(char *auth_name)$/;"	f
+Acm_auth_set_enabled	acm.c	/^bool Acm_auth_set_enabled(char *auth_name)$/;"	f
+Acm_auth_set_required	acm.c	/^bool Acm_auth_set_required(char *auth_name)$/;"	f
+Acm_init	acm.c	/^void Acm_init()$/;"	f
+Activate_status	monitor.c	/^static	void	Activate_status()$/;"	f	file:
+Active_priority	events.c	/^static	int		Active_priority;$/;"	v	file:
+Address	r.c	/^static	int32	Address;$/;"	v	file:
+Alarm	alarm.c	/^void Alarm( int16 priority, int32 mask, char *message, $/;"	f
+Alarm	alarm.c	/^void Alarm( int32 mask, char *message, ...)$/;"	f
+AlarmBit	config_parse.y	/^AlarmBit	:	DDEBUG { $$ = $1; }$/;"	l
+AlarmBitComp	config_parse.y	/^AlarmBitComp	:	AlarmBitComp AlarmBit$/;"	l
+AlarmInteractiveProgram	alarm.c	/^static int      AlarmInteractiveProgram = FALSE;$/;"	v	file:
+Alarm_clear_types	alarm.c	/^void Alarm_clear_types(int32 mask)$/;"	f
+Alarm_cur_priority	alarm.c	/^static  int16   Alarm_cur_priority = SPLOG_DEBUG ;$/;"	v	file:
+Alarm_disable_timestamp	alarm.c	/^void Alarm_disable_timestamp(void)$/;"	f
+Alarm_enable_timestamp	alarm.c	/^void Alarm_enable_timestamp(char *format)$/;"	f
+Alarm_get_interactive	alarm.c	/^int  Alarm_get_interactive(void)$/;"	f
+Alarm_get_priority	alarm.c	/^int16 Alarm_get_priority(void)$/;"	f
+Alarm_get_types	alarm.c	/^int32 Alarm_get_types(void)$/;"	f
+Alarm_set_interactive	alarm.c	/^void Alarm_set_interactive(void) $/;"	f
+Alarm_set_output	alarm.c	/^void Alarm_set_output(char *filename) {$/;"	f
+Alarm_set_priority	alarm.c	/^void Alarm_set_priority(int16 priority)$/;"	f
+Alarm_set_types	alarm.c	/^void Alarm_set_types(int32 mask)$/;"	f
+Alarm_timestamp_format	alarm.c	/^static char     *Alarm_timestamp_format = NULL;$/;"	v	file:
+Alarm_type_mask	alarm.c	/^static int32	Alarm_type_mask = PRINT | EXIT  ;$/;"	v	file:
+Alarmp	alarm.c	/^void Alarmp( int16 priority, int32 mask, char *message, ...)$/;"	f
+Alive_timeout	prot_body.h	/^ext	sp_time		Alive_timeout;$/;"	v
+Allow_Rules	auth-ip.c	/^static struct ip_rule *Allow_Rules;$/;"	v	file:
+Answer_retrans	protocol.c	/^static	int	Answer_retrans( int *ret_new_ptr, $/;"	f	file:
+Aru	prot_body.h	/^ext	int32		Aru;$/;"	v
+Auth_Methods	acm.c	/^static struct auth_info Auth_Methods[MAX_AUTH_METHODS];$/;"	v	file:
+BADCLOCK	arch.h	129;"	d
+BANG	y.tab.c	348;"	d	file:
+BANG	y.tab.h	23;"	d
+BASE_OBJ	objects.h	59;"	d
+BEGIN	lex.yy.c	81;"	d	file:
+BLOCK_OBJECT	memory.h	46;"	d
+BROKEN_INET_NTOA	acconfig.h	50;"	d
+BROKEN_SNPRINTF	acconfig.h	59;"	d
+BUFFER_TOO_SHORT	sess_types.h	139;"	d
+Backoff_membership	membership.c	/^static	void	Backoff_membership()$/;"	f	file:
+Badger_timeout	session.c	/^static	sp_time		Badger_timeout = { 0, 100000 };$/;"	v	file:
+Bcast_address	network.c	/^static	int32		Bcast_address;$/;"	v	file:
+Bcast_channel	network.c	/^static	channel		Bcast_channel[MAX_INTERFACES_PROC];$/;"	v	file:
+Bcast_needed	network.c	/^static	int		Bcast_needed;$/;"	v	file:
+Bcast_port	network.c	/^static	int16		Bcast_port;$/;"	v	file:
+Buffered_packets	protocol.c	/^static	packet_info	Buffered_packets[ARCH_SCATTER_SIZE];$/;"	v	file:
+Burst	s.c	/^static	int	Burst;$/;"	v	file:
+CAUSAL_MESS	sess_types.h	52;"	d
+CAUSED_BY_DISCONNECT	sess_types.h	71;"	d
+CAUSED_BY_JOIN	sess_types.h	69;"	d
+CAUSED_BY_LEAVE	sess_types.h	70;"	d
+CAUSED_BY_NETWORK	sess_types.h	72;"	d
+CC	Makefile	/^CC=gcc$/;"	m
+CC	Makefile	/^CC=ppc_82xx-gcc$/;"	m
+CFLAGS	Makefile	/^CFLAGS := $(CFLAGS) -static -g -pg -I.  -I${BPM_INC}\/..\/Sys    -I${BPM_INC}\/..\/Ipc  -I${BPM_INC} $/;"	m
+CFLAGS	Makefile	/^CFLAGS := $(CFLAGS) -static -g -pg -I. -I${BPM_INC}\/..\/Sys    -I${BPM_INC}\/..\/Ipc$/;"	m
+CLOSEBRACE	y.tab.c	344;"	d	file:
+CLOSEBRACE	y.tab.h	19;"	d
+COLON	y.tab.c	336;"	d	file:
+COLON	y.tab.h	11;"	d
+CONF	alarm.h	53;"	d
+CONNECTION_CLOSED	sess_types.h	132;"	d
+CONTROL_TYPE	net_types.h	71;"	d
+COULD_NOT_CONNECT	sess_types.h	126;"	d
+CPPFLAGS	Makefile	/^CPPFLAGS=-I. -I$(srcdir) -I$(top_srcdir)\/include -I..\/stdutil\/src -I$(top_srcdir)\/stdutil\/src  $(PATHS) -DHAVE_CONFIG_H$/;"	m
+Clear_Retransmit	sess_types.h	117;"	d
+Clear_endian	arch.h	222;"	d
+Clear_memb_session	sess_body.h	63;"	d
+Clear_op_session	sess_body.h	67;"	d
+Clear_partition_cb	network.c	/^static	void	Clear_partition_cb(int dummy, void *dummy_p)$/;"	f	file:
+Clear_preauth_session	sess_body.h	71;"	d
+Clear_routed	net_types.h	83;"	d
+Cn	membership.c	/^static	configuration	*Cn;$/;"	v	file:
+Cn	monitor.c	/^static	configuration	Cn;$/;"	v	file:
+Cn	network.c	/^static 	configuration	*Cn;$/;"	v	file:
+Commit_membership	prot_body.h	/^ext	configuration	Commit_membership;$/;"	v
+Commit_set	membership.c	/^static	members_info	Commit_set;$/;"	v	file:
+Conf	configuration.c	/^configuration	Conf()$/;"	f
+ConfStringLen	conf_body.h	/^ext     int             ConfStringLen;$/;"	v
+ConfStringRep	conf_body.h	/^ext     char            ConfStringRep[MAX_CONF_STRING];$/;"	v
+Conf_FileName	configuration.c	/^static  char    Conf_FileName[80];$/;"	v	file:
+Conf_MyName	configuration.c	/^static  char    *Conf_MyName;$/;"	v	file:
+Conf_MyName_buf	configuration.c	/^static  char    Conf_MyName_buf[80];$/;"	v	file:
+Conf_Reload_State	configuration.c	/^static  bool    Conf_Reload_State = FALSE;$/;"	v	file:
+Conf_append_id_to_seg	configuration.c	/^int     Conf_append_id_to_seg( segment *seg, int32u id)$/;"	f
+Conf_config_copy	configuration.c	/^static  void    Conf_config_copy( configuration *src_conf, configuration *dst_conf, proc *src_procs, proc *dst_procs)$/;"	f	file:
+Conf_config_lookup_id	configuration.c	/^static  int     Conf_config_lookup_id( configuration *conf, proc *procs, int32u id)$/;"	f	file:
+Conf_get_dangerous_monitor_state	configuration.c	/^bool    Conf_get_dangerous_monitor_state(void)$/;"	f
+Conf_get_group	configuration.c	/^char    *Conf_get_group(void)$/;"	f
+Conf_get_link_protocol	configuration.c	/^int     Conf_get_link_protocol(void)$/;"	f
+Conf_get_port_reuse_type	configuration.c	/^port_reuse Conf_get_port_reuse_type(void)$/;"	f
+Conf_get_runtime_dir	configuration.c	/^char    *Conf_get_runtime_dir(void)$/;"	f
+Conf_get_user	configuration.c	/^char    *Conf_get_user(void)$/;"	f
+Conf_id_in_conf	configuration.c	/^int	Conf_id_in_conf( configuration *config, int32u id )$/;"	f
+Conf_id_in_seg	configuration.c	/^int	Conf_id_in_seg( segment *seg, int32u id )$/;"	f
+Conf_id_to_str	configuration.c	/^void	Conf_id_to_str( int32u id, char *str )$/;"	f
+Conf_in_reload_state	configuration.c	/^bool    Conf_in_reload_state(void)$/;"	f
+Conf_init	configuration.c	/^void	Conf_init( char *file_name, char *my_name )$/;"	f
+Conf_last	configuration.c	/^int32u	Conf_last( configuration *config )$/;"	f
+Conf_leader	configuration.c	/^int32u	Conf_leader( configuration *config )$/;"	f
+Conf_load_conf_file	configuration.c	/^void	Conf_load_conf_file( char *file_name, char *my_name )$/;"	f
+Conf_my	configuration.c	/^proc	Conf_my()$/;"	f
+Conf_num_procs	configuration.c	/^int	Conf_num_procs( configuration *config )$/;"	f
+Conf_num_procs_in_seg	configuration.c	/^int	Conf_num_procs_in_seg( configuration *config, int16 seg_index )$/;"	f
+Conf_num_segments	configuration.c	/^int     Conf_num_segments( configuration *config )$/;"	f
+Conf_prev_proc_by_id	configuration.c	/^static  int	Conf_prev_proc_by_id( int32u id, proc *p )$/;"	f	file:
+Conf_print	configuration.c	/^char	Conf_print(configuration *config)$/;"	f
+Conf_proc_by_id	configuration.c	/^int	Conf_proc_by_id( int32u id, proc *p )$/;"	f
+Conf_proc_by_name	configuration.c	/^int 	Conf_proc_by_name( char *name, proc *p )$/;"	f
+Conf_proc_ref_by_id	configuration.c	/^static  int     Conf_proc_ref_by_id( int32u id, proc **p )$/;"	f	file:
+Conf_ref	configuration.c	/^configuration   *Conf_ref(void)$/;"	f
+Conf_reload_initiate	configuration.c	/^bool    Conf_reload_initiate(void)$/;"	f
+Conf_reload_state_begin	configuration.c	/^void    Conf_reload_state_begin(void)$/;"	f
+Conf_reload_state_end	configuration.c	/^void    Conf_reload_state_end(void)$/;"	f
+Conf_seg_last	configuration.c	/^int32u	Conf_seg_last( configuration *config, int16 seg_index )$/;"	f
+Conf_seg_leader	configuration.c	/^int32u	Conf_seg_leader( configuration *config, int16 seg_index )$/;"	f
+Conf_set_dangerous_monitor_state	configuration.c	/^void    Conf_set_dangerous_monitor_state(bool new_state)$/;"	f
+Conf_set_group	configuration.c	/^void    Conf_set_group(char *group)$/;"	f
+Conf_set_link_protocol	configuration.c	/^void    Conf_set_link_protocol(int protocol)$/;"	f
+Conf_set_port_reuse_type	configuration.c	/^void    Conf_set_port_reuse_type(port_reuse state)$/;"	f
+Conf_set_runtime_dir	configuration.c	/^void    Conf_set_runtime_dir(char *dir)$/;"	f
+Conf_set_user	configuration.c	/^void    Conf_set_user(char *user)$/;"	f
+Config	conf_body.h	/^ext     configuration	*Config;$/;"	v
+Config	config_parse.y	/^Config		:	ConfigStructs$/;"	l
+ConfigStructs	config_parse.y	/^ConfigStructs	:	SegmentStruct ConfigStructs$/;"	l
+Config_Previous	configuration.c	/^static  configuration *Config_Previous;$/;"	v	file:
+Config_Previous_Procs	configuration.c	/^static  proc    *Config_Previous_Procs;$/;"	v	file:
+Config_file	monitor.c	/^static  char		Config_file[80];$/;"	v	file:
+Config_file	spread.c	/^static	char		Config_file[80];$/;"	v	file:
+Config_procs	conf_body.h	/^ext	proc           	*Config_procs;$/;"	v
+Create_form1	membership.c	/^static	void	Create_form1()$/;"	f	file:
+DACM	y.tab.c	364;"	d	file:
+DACM	y.tab.h	39;"	d
+DAEMON_MEMBERS	objects.h	113;"	d
+DALL	y.tab.c	365;"	d	file:
+DALL	y.tab.h	40;"	d
+DANGEROUSMONITOR	y.tab.c	367;"	d	file:
+DANGEROUSMONITOR	y.tab.h	42;"	d
+DATA_LINK	alarm.h	49;"	d
+DCONF	y.tab.c	356;"	d	file:
+DCONF	y.tab.h	31;"	d
+DDATA_LINK	y.tab.c	352;"	d	file:
+DDATA_LINK	y.tab.h	27;"	d
+DDEBUG	y.tab.c	349;"	d	file:
+DDEBUG	y.tab.h	24;"	d
+DEBUG	alarm.h	43;"	d
+DEBUGFLAGS	y.tab.c	347;"	d	file:
+DEBUGFLAGS	y.tab.h	22;"	d
+DEFAULT_SPREAD_PORT	spread_params.h	46;"	d
+DEFAULT_TIMESTAMP_FORMAT	alarm.c	/^static const char *DEFAULT_TIMESTAMP_FORMAT="[%a %d %b %Y %H:%M:%S]";$/;"	v	file:
+DEFINES	Makefile	/^DEFINES:=$(DEFINES) -DPLATFORM_IMR$/;"	m
+DEFINES	Makefile	/^DEFINES:=$(DEFINES) -UPLATFORM_IMR$/;"	m
+DESTDIR	Makefile	/^DESTDIR=$/;"	m
+DEVENTS	y.tab.c	360;"	d	file:
+DEVENTS	y.tab.h	35;"	d
+DEXIT	y.tab.c	350;"	d	file:
+DEXIT	y.tab.h	25;"	d
+DFLOW_CONTROL	y.tab.c	358;"	d	file:
+DFLOW_CONTROL	y.tab.h	33;"	d
+DGROUPS	y.tab.c	361;"	d	file:
+DGROUPS	y.tab.h	36;"	d
+DL_close_channel	data_link.c	/^void    DL_close_channel(channel chan)$/;"	f
+DL_init_channel	data_link.c	/^channel	DL_init_channel( int32 channel_type, int16 port, int32 mcast_address, int32 interface_address )$/;"	f
+DL_recv	data_link.c	/^int	DL_recv( channel chan, sys_scatter *scat )$/;"	f
+DL_send	data_link.c	/^int	DL_send( channel chan, int32 address, int16 port, sys_scatter *scat )$/;"	f
+DMEMB	y.tab.c	357;"	d	file:
+DMEMB	y.tab.h	32;"	d
+DMEMORY	y.tab.c	362;"	d	file:
+DMEMORY	y.tab.h	37;"	d
+DNETWORK	y.tab.c	353;"	d	file:
+DNETWORK	y.tab.h	28;"	d
+DNONE	y.tab.c	366;"	d	file:
+DNONE	y.tab.h	41;"	d
+DOWN_LINK	objects.h	81;"	d
+DPRINT	y.tab.c	351;"	d	file:
+DPRINT	y.tab.h	26;"	d
+DPROTOCOL	y.tab.c	354;"	d	file:
+DPROTOCOL	y.tab.h	29;"	d
+DROP_RECV	sess_types.h	62;"	d
+DSESSION	y.tab.c	355;"	d	file:
+DSESSION	y.tab.h	30;"	d
+DSKIPLIST	y.tab.c	363;"	d	file:
+DSKIPLIST	y.tab.h	38;"	d
+DSTATUS	y.tab.c	359;"	d	file:
+DSTATUS	y.tab.h	34;"	d
+DUMMY_MESS	sess_types.h	85;"	d
+DaemonsList	sess_body.h	/^        stdskl          DaemonsList;    \/* (daemon_members*) -> nil *\/$/;"	m	struct:dummy_group
+Define_flow_control	monitor.c	/^static	void	Define_flow_control()$/;"	f	file:
+Define_partition	monitor.c	/^static	void	Define_partition()$/;"	f	file:
+Delay	s.c	/^static	sp_time	Delay;$/;"	v	file:
+Deliver_agreed_packets	protocol.c	/^static	void	Deliver_agreed_packets()$/;"	f	file:
+Deliver_packet	protocol.c	/^static	void	Deliver_packet( int pack_entry, int to_copy )$/;"	f	file:
+Deliver_reliable_packets	protocol.c	/^static	void	Deliver_reliable_packets( int32 start_seq, int num_packets )$/;"	f	file:
+Detailed_report	r.c	/^static	int	Detailed_report;$/;"	v	file:
+Discard_packets	protocol.c	/^void	Discard_packets()$/;"	f
+Down_queue_ptr	prot_body.h	/^ext	down_queue	*Down_queue_ptr;$/;"	v
+EAGAIN	alarm.c	44;"	d	file:
+EAGAIN	arch.h	158;"	d
+EAGAIN	arch.h	163;"	d
+EAGAIN	events.c	41;"	d	file:
+EAGAIN	log.c	42;"	d	file:
+ECHO	lex.yy.c	774;"	d	file:
+EINPROGRESS	alarm.c	46;"	d	file:
+EINPROGRESS	arch.h	160;"	d
+EINPROGRESS	arch.h	164;"	d
+EINPROGRESS	events.c	43;"	d	file:
+EINPROGRESS	log.c	44;"	d	file:
+EINTR	alarm.c	43;"	d	file:
+EINTR	arch.h	157;"	d
+EINTR	arch.h	162;"	d
+EINTR	events.c	40;"	d	file:
+EINTR	log.c	41;"	d	file:
+ENDIAN_TYPE	arch.h	217;"	d
+ENT	Makefile	/^ENT=@ENT@$/;"	m
+EOB_ACT_CONTINUE_SCAN	lex.yy.c	106;"	d	file:
+EOB_ACT_END_OF_FILE	lex.yy.c	107;"	d	file:
+EOB_ACT_LAST_MATCH	lex.yy.c	108;"	d	file:
+EQUALS	y.tab.c	345;"	d	file:
+EQUALS	y.tab.h	20;"	d
+ERRORS_H	errors.h	45;"	d
+ERR_BREAK	errors.h	58;"	d
+ERR_EMPTY	errors.h	49;"	d
+ERR_NOMEM	errors.h	51;"	d
+ERR_NOTFOUND	errors.h	50;"	d
+ERR_STAT_GROUP_EMPTY	errors.h	87;"	d
+ERR_STAT_GROUP_FULL	errors.h	86;"	d
+ERR_STAT_ILLEGAL_STATTYPE	errors.h	88;"	d
+ERR_STAT_INSERT_FAILURE	errors.h	85;"	d
+ERR_TIMEDOUT	arch.h	137;"	d
+ERR_TIMEDOUT	arch.h	90;"	d
+EVENTLOGFILE	y.tab.c	331;"	d	file:
+EVENTLOGFILE	y.tab.h	6;"	d
+EVENTPRIORITY	y.tab.c	333;"	d	file:
+EVENTPRIORITY	y.tab.h	8;"	d
+EVENTS	alarm.h	57;"	d
+EVENTTIMESTAMP	y.tab.c	332;"	d	file:
+EVENTTIMESTAMP	y.tab.h	7;"	d
+EVS	membership.h	48;"	d
+EWOULDBLOCK	alarm.c	45;"	d	file:
+EWOULDBLOCK	arch.h	159;"	d
+EWOULDBLOCK	arch.h	161;"	d
+EWOULDBLOCK	events.c	42;"	d	file:
+EWOULDBLOCK	log.c	43;"	d	file:
+EXEEXT	Makefile	/^EXEEXT=$/;"	m
+EXIT	alarm.h	44;"	d
+E_activate_fd	events.c	/^int     E_activate_fd( int fd, int fd_type )$/;"	f
+E_add_time	events.c	/^sp_time	E_add_time( sp_time t, sp_time delta_t )$/;"	f
+E_attach_fd	events.c	/^int	E_attach_fd( int fd, int fd_type,$/;"	f
+E_compare_time	events.c	/^int	E_compare_time( sp_time t1, sp_time t2 )$/;"	f
+E_deactivate_fd	events.c	/^int     E_deactivate_fd( int fd, int fd_type )$/;"	f
+E_delay	events.c	/^void	E_delay( sp_time t )$/;"	f
+E_dequeue	events.c	/^int 	E_dequeue( void (* func)( int code, void *data ), int code,$/;"	f
+E_detach_fd	events.c	/^int 	E_detach_fd( int fd, int fd_type )$/;"	f
+E_exit_events	events.c	/^void 	E_exit_events(void)$/;"	f
+E_get_time	events.c	/^sp_time	E_get_time(void)$/;"	f
+E_handle_events	events.c	/^void 	E_handle_events(void)$/;"	f
+E_init	events.c	/^int 	E_init(void)$/;"	f
+E_num_active	events.c	/^int	E_num_active( int priority )$/;"	f
+E_queue	events.c	/^int 	E_queue( void (* func)( int code, void *data ), int code, void *data,$/;"	f
+E_set_active_threshold	events.c	/^int 	E_set_active_threshold( int priority )$/;"	f
+E_sub_time	events.c	/^sp_time	E_sub_time( sp_time t, sp_time delta_t )$/;"	f
+EnableDangerousMonitor	configuration.c	/^static  bool    EnableDangerousMonitor = FALSE;$/;"	v	file:
+Exit_events	events.c	/^static	int		Exit_events;$/;"	v	file:
+FALSE	arch.h	250;"	d
+FC_TYPE	net_types.h	69;"	d
+FC_allowed	flow_control.c	/^int	FC_allowed( int flow_control, int num_retrans )$/;"	f
+FC_handle_message	flow_control.c	/^void	FC_handle_message( sys_scatter *scat )$/;"	f
+FC_init	flow_control.c	/^void	FC_init( )$/;"	f
+FC_new_configuration	flow_control.c	/^void	FC_new_configuration( )$/;"	f
+FD_SETSIZE	arch.h	148;"	d
+FIFO_MESS	sess_types.h	51;"	d
+FIFO_TYPE	net_types.h	46;"	d
+FLEX_SCANNER	lex.yy.c	7;"	d	file:
+FLOW_CONTROL	alarm.h	55;"	d
+FORM	membership.h	47;"	d
+FORM1_TYPE	net_types.h	60;"	d
+FORM2_TYPE	net_types.h	61;"	d
+FORM_TYPE	net_types.h	62;"	d
+F_members	membership.c	/^static	members_info	F_members;$/;"	v	file:
+F_reps	membership.c	/^static	reps_info	F_reps;$/;"	v	file:
+F_trans_memb_time	membership.c	/^static  int32           F_trans_memb_time;$/;"	v	file:
+Fc_buf	monitor.c	/^static	int16		Fc_buf[MAX_PROCS_RING];$/;"	v	file:
+Fd_mask	events.c	/^static	fd_set		Fd_mask[NUM_FDTYPES];$/;"	v	file:
+Fd_queue	events.c	/^static	fd_queue	Fd_queue[NUM_PRIORITY];$/;"	v	file:
+Fill_form1	membership.c	/^static	void	Fill_form1( sys_scatter *scat )$/;"	f	file:
+Flip_int16	arch.h	224;"	d
+Flip_int32	arch.h	226;"	d
+Flip_members	membership.c	/^void	Flip_members( members_info *members_ptr )$/;"	f
+Flip_mess	session.c	/^void    Flip_mess( message_header *head_ptr )$/;"	f
+Flip_pack	network.c	/^void	Flip_pack( packet_header *pack_ptr )$/;"	f
+Flip_reps	membership.c	/^void	Flip_reps( reps_info *reps_ptr )$/;"	f
+Flip_rings	membership.c	/^void	Flip_rings( char *buf )$/;"	f
+Flip_token	network.c	/^void	Flip_token( token_header *token_ptr )$/;"	f
+Flip_token_body	protocol.c	/^void	Flip_token_body( char *buf, token_header *token_ptr )$/;"	f
+Foreign_found	membership.c	/^static	int		Foreign_found;$/;"	v	file:
+Form_or_fail	membership.c	/^static	void	Form_or_fail()$/;"	f	file:
+Form_timeout	prot_body.h	/^ext	sp_time		Form_timeout;$/;"	v
+Future_commit_set	membership.c	/^static	members_info	Future_commit_set;$/;"	v	file:
+Future_membership	membership.c	/^static	configuration	Future_membership;$/;"	v	file:
+Future_membership_id	membership.c	/^static	membership_id	Future_membership_id;$/;"	v	file:
+GATHER	membership.h	46;"	d
+GGATHER	groups.h	43;"	d
+GGT	groups.h	44;"	d
+GOP	groups.h	41;"	d
+GROUP	objects.h	85;"	d
+GROUPS	alarm.h	58;"	d
+GROUPS_BUF_DAEMON_INFO_SIZE	groups.h	50;"	d
+GROUPS_BUF_GROUP_INFO_SIZE	groups.h	48;"	d
+GROUPS_BUF_LINK	objects.h	111;"	d
+GROUPS_BUF_PREAMBLE_SIZE	groups.h	47;"	d
+GROUPS_BUF_SIZE	groups.h	46;"	d
+GROUPS_DOWNQUEUE	protocol.h	57;"	d
+GROUPS_MESS	sess_types.h	83;"	d
+GROUPS_MESSAGE_LINK	objects.h	112;"	d
+GROUPS_TOO_SHORT	sess_types.h	140;"	d
+GTRANS	groups.h	42;"	d
+G_add_to_synced_set	groups.c	/^static  void  G_add_to_synced_set( synced_set *sset ) {$/;"	f	file:
+G_analize_groups	groups.c	/^int  G_analize_groups( int num_groups, char target_groups[][MAX_GROUP_NAME], int target_sessions[] )$/;"	f
+G_build_groups_buf	groups.c	/^static	int  G_build_groups_buf( char buf[], stdit *git, stdit *dit, int first_time)$/;"	f	file:
+G_build_groups_msg_hdr	groups.c	/^static  void  G_build_groups_msg_hdr( message_obj *msg, int groups_bytes )$/;"	f	file:
+G_build_memb_buf	groups.c	/^static	int  G_build_memb_buf( group *grp, message_obj *msg, char buf[], int32 caused )$/;"	f	file:
+G_build_memb_vs_buf	groups.c	/^static	int  G_build_memb_vs_buf( group *grp, message_obj *msg, char buf[], int32 caused, member *joiner )$/;"	f	file:
+G_build_new_groups_bufs	groups.c	/^static  void  G_build_new_groups_bufs()$/;"	f	file:
+G_build_trans_mess	groups.c	/^static	message_link  *G_build_trans_mess( group *grp )$/;"	f	file:
+G_check_if_changed_by_cascade	groups.c	/^static  bool  G_check_if_changed_by_cascade( group *grp ) $/;"	f	file:
+G_compare_cstrptr	groups.c	/^static int G_compare_cstrptr(const void *a, const void *b)$/;"	f	file:
+G_compare_daemon_vs_set	groups.c	/^static int G_compare_daemon_vs_set(const void *a, const void *b)$/;"	f	file:
+G_compare_memb_ids	groups.c	/^static  int  G_compare_memb_ids( const membership_id *mid1, const membership_id *mid2 )$/;"	f	file:
+G_compare_proc_ids_by_conf	groups.c	/^static int G_compare_proc_ids_by_conf(const void *a, const void *b)$/;"	f	file:
+G_compute_and_notify	groups.c	/^static	void		G_compute_and_notify()$/;"	f	file:
+G_compute_group_mask	groups.c	/^static  void  G_compute_group_mask( group *grp, char *func_name )$/;"	f	file:
+G_discard_groups_bufs	groups.c	/^static  void  G_discard_groups_bufs()$/;"	f	file:
+G_eliminate_partitioned_daemons	groups.c	/^static  void G_eliminate_partitioned_daemons( group *grp ) $/;"	f	file:
+G_eliminate_partitioned_daemons_status	groups.c	/^static  bool  G_eliminate_partitioned_daemons_status( group *grp ) $/;"	f	file:
+G_get_daemon	groups.c	/^static  daemon_members  *G_get_daemon( group *grp, int32u proc_id ) $/;"	f	file:
+G_get_group	groups.c	/^static	group		*G_get_group( char *group_name )$/;"	f	file:
+G_get_member	groups.c	/^static	member		*G_get_member( daemon_members *dmn, char *private_group_name )$/;"	f	file:
+G_get_num_local	groups.c	/^int  G_get_num_local( char *group_name )$/;"	f
+G_handle_groups	groups.c	/^void	G_handle_groups( message_link *mess_link )$/;"	f
+G_handle_join	groups.c	/^void	G_handle_join( char *private_group_name, char *group_name )$/;"	f
+G_handle_kill	groups.c	/^void	G_handle_kill( char *private_group_name )$/;"	f
+G_handle_leave	groups.c	/^void	G_handle_leave( char *private_group_name, char *group_name )$/;"	f
+G_handle_reg_memb	groups.c	/^void	G_handle_reg_memb( configuration reg_memb, membership_id reg_memb_id )$/;"	f
+G_handle_trans_memb	groups.c	/^void	G_handle_trans_memb( configuration trans_memb, membership_id trans_memb_id )$/;"	f
+G_init	groups.c	/^void	G_init()$/;"	f
+G_mess_to_groups	groups.c	/^static	int  G_mess_to_groups( message_link *mess_link, synced_set *sset )$/;"	f	file:
+G_print	groups.c	/^static	void	G_print()$/;"	f	file:
+G_print_group_id	groups.c	/^static  void  G_print_group_id( int priority, group_id g, char *func_name )$/;"	f	file:
+G_print_synced_set	groups.c	/^static  void  G_print_synced_set( int priority, synced_set *s, char *func_name ) $/;"	f	file:
+G_private_to_names	groups.c	/^int  G_private_to_names( char *private_group_name, char *private_name, char *proc_name )$/;"	f
+G_remove_daemon	groups.c	/^static  void  G_remove_daemon( group *grp, daemon_members *dmn )$/;"	f	file:
+G_remove_group	groups.c	/^static  void  G_remove_group( group *grp ) $/;"	f	file:
+G_remove_mailbox	groups.c	/^static void G_remove_mailbox( group *grp, mailbox m )$/;"	f	file:
+G_send_groups_messages	groups.c	/^static  int  G_send_groups_messages()$/;"	f	file:
+G_send_heavyweight_join	groups.c	/^static  void  G_send_heavyweight_join( group *grp, member *joiner, mailbox new_mbox )$/;"	f	file:
+G_send_heavyweight_memb	groups.c	/^static  void  G_send_heavyweight_memb( group *grp )$/;"	f	file:
+G_send_lightweight_memb	groups.c	/^static  void  G_send_lightweight_memb( group *grp, int32 caused, char *private_group_name )$/;"	f	file:
+G_send_self_leave	groups.c	/^static  void  G_send_self_leave( group *grp, int ses )$/;"	f	file:
+G_send_trans_memb	groups.c	/^static  void  G_send_trans_memb( group *grp )$/;"	f	file:
+G_set_mask	groups.c	/^void  G_set_mask( int num_groups, char target_groups[][MAX_GROUP_NAME], int32u *grp_mask )$/;"	f
+G_stamp_groups_bufs	groups.c	/^static	void  G_stamp_groups_bufs()$/;"	f	file:
+G_update_daemon_memb_ids	groups.c	/^static  void  G_update_daemon_memb_ids( group *grp ) $/;"	f	file:
+G_update_synced_set	groups.c	/^static  void  G_update_synced_set( synced_set *s, configuration *memb_p ) {$/;"	f	file:
+G_update_synced_set_status	groups.c	/^static  bool  G_update_synced_set_status( synced_set *s, configuration *memb_p ) $/;"	f	file:
+Gather_or_represented	membership.c	/^static	void	Gather_or_represented()$/;"	f	file:
+Gather_timeout	prot_body.h	/^ext	sp_time		Gather_timeout;$/;"	v
+Gathered	groups.c	/^static  groups_message_link     Gathered; \/* Groups messages *\/$/;"	v	file:
+Get_arq	net_types.h	96;"	d
+Get_endian	arch.h	219;"	d
+Get_retrans	net_types.h	98;"	d
+GlobalStatus	status.h	/^ext 	status	GlobalStatus; $/;"	v
+Group	configuration.c	/^static	char	*Group = NULL;$/;"	v	file:
+Groups	sess_body.h	/^ext	group		Groups;$/;"	v
+GroupsList	groups.c	/^static  stdskl          GroupsList;   \/* (group*) -> nil *\/$/;"	v	file:
+Groups_bufs	groups.c	/^static  groups_buf_link        *Groups_bufs;$/;"	v	file:
+Groups_bufs_fresh	groups.c	/^static  int                     Groups_bufs_fresh;$/;"	v	file:
+Groups_control_down_queue	groups.c	/^static  int             Groups_control_down_queue;$/;"	v	file:
+Gstate	groups.c	/^static	int		Gstate;$/;"	v	file:
+HAVE_ARPA_INET_H	config.h	128;"	d
+HAVE_ASSERT_H	config.h	131;"	d
+HAVE_BCOPY	config.h	95;"	d
+HAVE_CLOCK_T	acconfig.h	97;"	d
+HAVE_CLOCK_T	config.h	60;"	d
+HAVE_CLOCK_T	defines.h	225;"	d
+HAVE_CYGWIN	acconfig.h	61;"	d
+HAVE_DAEMON	acconfig.h	76;"	d
+HAVE_ERRNO_H	config.h	134;"	d
+HAVE_GETTIMEOFDAY	config.h	98;"	d
+HAVE_GOOD_VARGS	arch.h	130;"	d
+HAVE_GOOD_VARGS	arch.h	87;"	d
+HAVE_GRP_H	config.h	137;"	d
+HAVE_INET_ATON	config.h	101;"	d
+HAVE_INET_NTOA	config.h	104;"	d
+HAVE_INET_NTOP	config.h	107;"	d
+HAVE_INT64_T	acconfig.h	92;"	d
+HAVE_INT64_T	config.h	55;"	d
+HAVE_INT64_T	defines.h	187;"	d
+HAVE_INT64_T	defines.h	191;"	d
+HAVE_INTXX_T	acconfig.h	89;"	d
+HAVE_INTXX_T	config.h	52;"	d
+HAVE_LIBNSL	config.h	224;"	d
+HAVE_LIBPTHREAD	config.h	230;"	d
+HAVE_LIMITS_H	config.h	140;"	d
+HAVE_LONG_LONG_INT	defines.h	192;"	d
+HAVE_LRAND48	config.h	110;"	d
+HAVE_MEMMOVE	config.h	113;"	d
+HAVE_MODE_T	acconfig.h	98;"	d
+HAVE_NETDB_H	config.h	143;"	d
+HAVE_NETINET_IN_H	config.h	146;"	d
+HAVE_NETINET_TCP_H	config.h	149;"	d
+HAVE_NEXT	acconfig.h	64;"	d
+HAVE_PID_T	acconfig.h	99;"	d
+HAVE_PID_T	config.h	62;"	d
+HAVE_PID_T	defines.h	235;"	d
+HAVE_PTHREAD_ATFORK	config.h	42;"	d
+HAVE_PTHREAD_H	config.h	155;"	d
+HAVE_PWD_H	config.h	158;"	d
+HAVE_SA_FAMILY_T	acconfig.h	100;"	d
+HAVE_SA_FAMILY_T	config.h	63;"	d
+HAVE_SA_FAMILY_T	defines.h	230;"	d
+HAVE_SETSID	config.h	116;"	d
+HAVE_SIGNAL_H	config.h	161;"	d
+HAVE_SIZE_T	acconfig.h	95;"	d
+HAVE_SIZE_T	config.h	58;"	d
+HAVE_SIZE_T	defines.h	215;"	d
+HAVE_SNPRINTF	config.h	119;"	d
+HAVE_SOCKLEN_T	acconfig.h	94;"	d
+HAVE_SOCKLEN_T	config.h	57;"	d
+HAVE_SOCKLEN_T	defines.h	210;"	d
+HAVE_SOCKOPT_LEN_T	acconfig.h	86;"	d
+HAVE_SSIZE_T	acconfig.h	96;"	d
+HAVE_SSIZE_T	config.h	59;"	d
+HAVE_SSIZE_T	defines.h	220;"	d
+HAVE_SS_FAMILY_IN_SS	acconfig.h	107;"	d
+HAVE_SS_FAMILY_IN_SS	config.h	70;"	d
+HAVE_STDARG_H	config.h	164;"	d
+HAVE_STDINT_H	config.h	167;"	d
+HAVE_STDIO_H	config.h	170;"	d
+HAVE_STDLIB_H	config.h	173;"	d
+HAVE_STRERROR	arch.h	134;"	d
+HAVE_STRERROR	config.h	122;"	d
+HAVE_STRFTIME	config.h	14;"	d
+HAVE_STRING_H	config.h	176;"	d
+HAVE_STRUCT_ADDRINFO	acconfig.h	102;"	d
+HAVE_STRUCT_ADDRINFO	config.h	65;"	d
+HAVE_STRUCT_IN6_ADDR	acconfig.h	103;"	d
+HAVE_STRUCT_IN6_ADDR	config.h	66;"	d
+HAVE_STRUCT_SOCKADDR_IN6	acconfig.h	104;"	d
+HAVE_STRUCT_SOCKADDR_IN6	config.h	67;"	d
+HAVE_STRUCT_SOCKADDR_STORAGE	acconfig.h	101;"	d
+HAVE_STRUCT_SOCKADDR_STORAGE	config.h	64;"	d
+HAVE_STRUCT_TIMEVAL	acconfig.h	70;"	d
+HAVE_STRUCT_TIMEVAL	config.h	36;"	d
+HAVE_STRUCT_TIMEZONE	acconfig.h	87;"	d
+HAVE_STRUCT_TIMEZONE	config.h	50;"	d
+HAVE_SUN_LEN_IN_SOCKADDR_UN	acconfig.h	47;"	d
+HAVE_SYS_ERRLIST	acconfig.h	53;"	d
+HAVE_SYS_ERRLIST	config.h	27;"	d
+HAVE_SYS_IOCTL_H	config.h	185;"	d
+HAVE_SYS_NERR	acconfig.h	56;"	d
+HAVE_SYS_NERR	config.h	30;"	d
+HAVE_SYS_PARAM_H	config.h	188;"	d
+HAVE_SYS_SOCKET_H	config.h	191;"	d
+HAVE_SYS_STAT_H	config.h	194;"	d
+HAVE_SYS_TIMEB_H	config.h	200;"	d
+HAVE_SYS_TIME_H	config.h	197;"	d
+HAVE_SYS_TYPES_H	config.h	203;"	d
+HAVE_SYS_UIO_H	config.h	206;"	d
+HAVE_SYS_UN_H	config.h	209;"	d
+HAVE_TIME	config.h	125;"	d
+HAVE_TIME_H	config.h	212;"	d
+HAVE_UINTXX_T	acconfig.h	91;"	d
+HAVE_UNISTD_H	config.h	215;"	d
+HAVE_U_INT	acconfig.h	88;"	d
+HAVE_U_INT	config.h	51;"	d
+HAVE_U_INT64_T	acconfig.h	93;"	d
+HAVE_U_INT64_T	config.h	56;"	d
+HAVE_U_INT64_T	defines.h	199;"	d
+HAVE_U_INT64_T	defines.h	203;"	d
+HAVE_U_INTXX_T	acconfig.h	90;"	d
+HAVE_U_INTXX_T	config.h	53;"	d
+HAVE_U_INTXX_T	defines.h	155;"	d
+HAVE___PROGNAME	acconfig.h	73;"	d
+HAVE___PROGNAME	config.h	39;"	d
+HAVE___SS_FAMILY_IN_SS	acconfig.h	108;"	d
+HOP	alarm.h	60;"	d
+HOP_LINK_OBJ	objects.h	79;"	d
+HOP_PROT	conf_body.h	68;"	d
+HURRY_TYPE	net_types.h	53;"	d
+Handle_hurry	protocol.c	/^static	void	Handle_hurry( packet_header *pack_ptr )$/;"	f	file:
+Highest_fifo_seq	prot_body.h	/^ext	int32		Highest_fifo_seq;$/;"	v
+Highest_seq	prot_body.h	/^ext	int32		Highest_seq;$/;"	v
+Hurry_head	protocol.c	/^static	packet_header	*Hurry_head;$/;"	v	file:
+Hurry_pack	protocol.c	/^static	sys_scatter	Hurry_pack;$/;"	v	file:
+Hurry_timeout	prot_body.h	/^ext	sp_time		Hurry_timeout;$/;"	v
+ICLIENT	y.tab.c	381;"	d	file:
+ICLIENT	y.tab.h	56;"	d
+IDAEMON	y.tab.c	382;"	d	file:
+IDAEMON	y.tab.h	57;"	d
+IFTYPE_ALL	configuration.h	48;"	d
+IFTYPE_ANY	configuration.h	47;"	d
+IFTYPE_CLIENT	configuration.h	45;"	d
+IFTYPE_DAEMON	configuration.h	46;"	d
+IFTYPE_MONITOR	configuration.h	44;"	d
+ILLEGAL_GROUP	sess_types.h	138;"	d
+ILLEGAL_MESSAGE	sess_types.h	137;"	d
+ILLEGAL_SERVICE	sess_types.h	136;"	d
+ILLEGAL_SESSION	sess_types.h	135;"	d
+ILLEGAL_SPREAD	sess_types.h	125;"	d
+IMONITOR	y.tab.c	380;"	d	file:
+IMONITOR	y.tab.h	55;"	d
+INC_ALARM	alarm.h	37;"	d
+INC_ARCH	arch.h	36;"	d
+INC_AUTH_PWORD_CLIENT	auth-pword-client.h	36;"	d
+INC_CONFIGURATION	configuration.h	37;"	d
+INC_CONF_BODY	conf_body.h	42;"	d
+INC_DATA_LINK	data_link.h	37;"	d
+INC_FLOW_CONTROL	flow_control.h	37;"	d
+INC_GROUPS	groups.h	37;"	d
+INC_LOG	log.h	37;"	d
+INC_MEMBERSHIP	membership.h	37;"	d
+INC_MESSAGE	message.h	37;"	d
+INC_MUTEX	mutex.h	37;"	d
+INC_NETWORK	network.h	37;"	d
+INC_NET_TYPES	net_types.h	37;"	d
+INC_PROTOCOL	protocol.h	37;"	d
+INC_PROT_BODY	prot_body.h	37;"	d
+INC_SCATTER	scatter.h	37;"	d
+INC_SESSION	session.h	37;"	d
+INC_SESS_BODY	sess_body.h	37;"	d
+INC_SESS_TYPES	sess_types.h	37;"	d
+INC_SPREAD_PARAMS	spread_params.h	37;"	d
+INC_STATUS	status.h	37;"	d
+INITIAL	lex.yy.c	636;"	d	file:
+INSTALL	Makefile	/^INSTALL=\/usr\/bin\/install -c$/;"	m
+INT32_MAX	arch.h	197;"	d
+INTERFACE_NUM_CHECK	y.tab.c	319;"	d	file:
+INTSIZE16	arch.h	59;"	d
+INTSIZE32	arch.h	123;"	d
+INTSIZE32	arch.h	57;"	d
+INTSIZE64	arch.h	58;"	d
+IP	r.c	/^static	char	IP[16];$/;"	v	file:
+IP	s.c	/^static	char	IP[16];$/;"	v	file:
+IP1	alarm.h	114;"	d
+IP2	alarm.h	115;"	d
+IP3	alarm.h	116;"	d
+IP4	alarm.h	117;"	d
+IPADDR	y.tab.c	334;"	d	file:
+IPADDR	y.tab.h	9;"	d
+IP_File_Loaded	auth-ip.c	/^static bool IP_File_Loaded = FALSE;$/;"	v	file:
+IP_ops	auth-ip.c	/^static struct  auth_ops IP_ops = {$/;"	v	file:
+IP_to_STR	groups.c	80;"	d	file:
+IfType	config_parse.y	/^IfType  	:	IMONITOR { $$ = $1; }$/;"	l
+IfTypeComp	config_parse.y	/^IfTypeComp	:       IfTypeComp IfType$/;"	l
+In_my_component	network.c	/^static	int	In_my_component( int32	proc_id )$/;"	f	file:
+Init_mutex	monitor.c	/^    static	mutex_type	Init_mutex = {MUTEX_STATIC_INIT};$/;"	v	file:
+Init_mutex	monitor.c	/^    static      mutex_type	Init_mutex = MUTEX_STATIC_INIT;$/;"	v	file:
+Initialized	memory.c	/^ static bool Initialized;$/;"	v	file:
+Insert_member	membership.c	/^static	int	Insert_member( members_info *m, int32 proc_id )$/;"	f	file:
+Insert_rep	membership.c	/^static	int	Insert_rep( reps_info *r, rep_info rep )$/;"	f	file:
+Interface_addr	r.c	/^static 	int32	Interface_addr;$/;"	v	file:
+Interfaceparam	config_parse.y	/^Interfaceparam	:	IfTypeComp IPADDR$/;"	l
+Interfaceparams	config_parse.y	/^Interfaceparams	:	Interfaceparam Interfaceparams$/;"	l
+Invalid_privilege_decrease	spread.c	/^static	void	Invalid_privilege_decrease(char *user, char *group)$/;"	f	file:
+Is_Aru_Update_Obj	objects.h	127;"	d
+Is_IfType_Any	configuration.h	53;"	d
+Is_IfType_Client	configuration.h	50;"	d
+Is_IfType_Daemon	configuration.h	52;"	d
+Is_IfType_Monitor	configuration.h	51;"	d
+Is_Link_Ack_Obj	objects.h	126;"	d
+Is_Message_Obj	objects.h	123;"	d
+Is_Msg_Frag_Obj	objects.h	124;"	d
+Is_Msg_Meta_Obj	objects.h	128;"	d
+Is_Pack_Head_Obj	objects.h	122;"	d
+Is_Ret_Req_Obj	objects.h	125;"	d
+Is_Retransmit	sess_types.h	115;"	d
+Is_Statetrans_Obj	objects.h	129;"	d
+Is_agreed	net_types.h	77;"	d
+Is_agreed_mess	sess_types.h	93;"	d
+Is_alive	net_types.h	87;"	d
+Is_causal_mess	sess_types.h	92;"	d
+Is_caused_disconnect_mess	sess_types.h	106;"	d
+Is_caused_join_mess	sess_types.h	104;"	d
+Is_caused_leave_mess	sess_types.h	105;"	d
+Is_caused_network_mess	sess_types.h	107;"	d
+Is_conf_reload	net_types.h	104;"	d
+Is_control	net_types.h	105;"	d
+Is_drop_recv	sess_types.h	100;"	d
+Is_dummy_mess	sess_types.h	120;"	d
+Is_established_daemon	groups.c	69;"	d	file:
+Is_fc	net_types.h	103;"	d
+Is_fifo	net_types.h	76;"	d
+Is_fifo_mess	sess_types.h	91;"	d
+Is_first_message	groups.c	75;"	d	file:
+Is_form	net_types.h	92;"	d
+Is_form1	net_types.h	93;"	d
+Is_form2	net_types.h	94;"	d
+Is_groups_mess	sess_types.h	113;"	d
+Is_hurry	net_types.h	85;"	d
+Is_inited	log.c	/^static	int	Is_inited = 0;$/;"	v	file:
+Is_join	net_types.h	88;"	d
+Is_join_mess	sess_types.h	110;"	d
+Is_kill_mess	sess_types.h	112;"	d
+Is_latency_mess	sess_types.h	119;"	d
+Is_later_message	groups.c	76;"	d	file:
+Is_leave_mess	sess_types.h	111;"	d
+Is_memb_session	sess_body.h	61;"	d
+Is_membership	net_types.h	90;"	d
+Is_membership_mess	sess_types.h	108;"	d
+Is_only_regular_mess	sess_types.h	97;"	d
+Is_op_session	sess_body.h	65;"	d
+Is_partition	net_types.h	102;"	d
+Is_partitioned_daemon	groups.c	70;"	d	file:
+Is_preauth_session	sess_body.h	69;"	d
+Is_refer	net_types.h	89;"	d
+Is_reg_memb_mess	sess_types.h	102;"	d
+Is_regular	net_types.h	79;"	d
+Is_regular_mess	sess_types.h	95;"	d
+Is_reject_mess	sess_types.h	122;"	d
+Is_reliable	net_types.h	75;"	d
+Is_reliable_mess	sess_types.h	90;"	d
+Is_routed	net_types.h	81;"	d
+Is_safe	net_types.h	78;"	d
+Is_safe_mess	sess_types.h	94;"	d
+Is_self_discard	sess_types.h	99;"	d
+Is_statetrans_mess	sess_types.h	121;"	d
+Is_status	net_types.h	101;"	d
+Is_synced_set_leader	groups.c	85;"	d	file:
+Is_token_hold	protocol.c	/^static	int	Is_token_hold()$/;"	f	file:
+Is_transition_mess	sess_types.h	103;"	d
+Is_unknown_memb_id	groups.c	67;"	d	file:
+Is_unreliable	net_types.h	74;"	d
+Is_unreliable_mess	sess_types.h	89;"	d
+JOIN_MESS	sess_types.h	80;"	d
+JOIN_OBJ	objects.h	69;"	d
+JOIN_TYPE	net_types.h	56;"	d
+Join_timeout	prot_body.h	/^ext	sp_time		Join_timeout;$/;"	v
+KILL_MESS	sess_types.h	82;"	d
+Kill_spreads	monitor.c	/^static	void	Kill_spreads()$/;"	f	file:
+LATENCY_MESS	sess_types.h	78;"	d
+LBUCKET	objects.h	84;"	d
+LD	Makefile	/^LD=gcc$/;"	m
+LD	Makefile	/^LD=ppc_82xx-gcc$/;"	m
+LEAVE_MESS	sess_types.h	81;"	d
+LEX	Makefile	/^LEX=\/usr\/bin\/flex$/;"	m
+LIBS	Makefile	/^LIBS=-lm -lnsl  $/;"	m
+LINKCOST	y.tab.c	384;"	d	file:
+LINKCOST	y.tab.h	59;"	d
+LINKPROTOCOL	y.tab.c	377;"	d	file:
+LINKPROTOCOL	y.tab.h	52;"	d
+LINK_ACK_OBJ	objects.h	64;"	d
+LINK_FAIL	errors.h	64;"	d
+LINK_INVALID	errors.h	66;"	d
+LINK_LS_NOTPRESENT	errors.h	63;"	d
+LINK_NOTAVAIL	errors.h	65;"	d
+LOC_INLINE	arch.h	126;"	d
+LOC_INLINE	arch.h	74;"	d
+Last_delivered	prot_body.h	/^ext	int32		Last_delivered;$/;"	v
+Last_discarded	prot_body.h	/^ext	int32		Last_discarded;$/;"	v
+Last_num_retrans	prot_body.h	/^ext	int		Last_num_retrans;$/;"	v
+Last_num_sent	prot_body.h	/^ext	int		Last_num_sent;$/;"	v
+Last_seq	prot_body.h	/^ext	int32		Last_seq;$/;"	v
+Last_time_used	membership.c	/^static  int32           Last_time_used;$/;"	v	file:
+Last_token	prot_body.h	/^ext	token_header	*Last_token;$/;"	v
+LinkWeights	conf_body.h	/^ext     int       LinkWeights[MAX_SEGMENTS][MAX_SEGMENTS];$/;"	v
+Link_Protocol	configuration.c	/^static  int     Link_Protocol;$/;"	v	file:
+Log	spread.c	/^static	int		Log;$/;"	v	file:
+Log_alive	log.c	/^static  void	Log_alive(int dummy, void *dummy_p)$/;"	f	file:
+Log_init	log.c	/^void	Log_init()$/;"	f
+Log_membership	log.c	/^void 	Log_membership()$/;"	f
+Log_sess_connect	log.c	/^void	Log_sess_connect( mailbox mbox, int32 address, char *private_group )$/;"	f
+Log_sess_disconnect	log.c	/^void	Log_sess_disconnect( mailbox mbox, int32 address, char *private_group, int num_mess )$/;"	f
+Lookup_timeout	prot_body.h	/^ext	sp_time		Lookup_timeout;$/;"	v
+MANTYPE	acconfig.h	67;"	d
+MAX	defines.h	252;"	d
+MAXHOSTNAMELEN	arch.h	167;"	d
+MAXPATHLEN	arch.h	140;"	d
+MAXPATHLEN	defines.h	86;"	d
+MAXPATHLEN	defines.h	88;"	d
+MAX_AUTH_LIST_LEN	acm.h	45;"	d
+MAX_AUTH_METHODS	acm.h	43;"	d
+MAX_AUTH_NAME	acm.h	44;"	d
+MAX_CONF_STRING	conf_body.h	63;"	d
+MAX_EVS_ROUNDS	spread_params.h	76;"	d
+MAX_FORM_REPS	spread_params.h	69;"	d
+MAX_GROUPS_PER_MESSAGE	spread_params.h	89;"	d
+MAX_GROUP_NAME	spread_params.h	82;"	d
+MAX_INTERFACES_PROC	spread_params.h	66;"	d
+MAX_LOCAL_GROUP_MEMBERS	groups.h	52;"	d
+MAX_MEM_OBJECTS	memory.c	51;"	d	file:
+MAX_MESSAGE_BODY_LEN	sess_types.h	43;"	d
+MAX_OBJECTS	objects.h	51;"	d
+MAX_OBJ_USED	objects.h	52;"	d
+MAX_PACKETS_IN_STRUCT	spread_params.h	71;"	d
+MAX_PACKET_SIZE	data_link.h	42;"	d
+MAX_PRIVATE_NAME	spread_params.h	80;"	d
+MAX_PROCS_RING	spread_params.h	64;"	d
+MAX_PROCS_SEGMENT	spread_params.h	61;"	d
+MAX_PROC_NAME	spread_params.h	58;"	d
+MAX_PROTOCOLS	conf_body.h	71;"	d
+MAX_PWORD_CRYPTPASSWORD	auth-pword-client.h	40;"	d
+MAX_PWORD_CRYPTPASSWORD	auth-pword.c	75;"	d	file:
+MAX_PWORD_PASSWORD	auth-pword-client.h	39;"	d
+MAX_PWORD_PASSWORD	auth-pword.c	74;"	d	file:
+MAX_PWORD_USERNAME	auth-pword-client.h	38;"	d
+MAX_PWORD_USERNAME	auth-pword.c	73;"	d	file:
+MAX_REPS	spread_params.h	68;"	d
+MAX_SCATTER_ELEMENTS	scatter.h	40;"	d
+MAX_SEGMENTS	spread_params.h	63;"	d
+MAX_SEQ_GAP	spread_params.h	74;"	d
+MAX_SESSIONS	spread_params.h	85;"	d
+MAX_SESSION_MESSAGES	spread_params.h	88;"	d
+MEMB	alarm.h	54;"	d
+MEMBER	objects.h	86;"	d
+MEMBERSHIP_MESS	sess_types.h	73;"	d
+MEMBERSHIP_TYPE	net_types.h	58;"	d
+MEMB_DEPEND_MESSL	objects.h	106;"	d
+MEMB_MISSING_DAEMON	objects.h	105;"	d
+MEMB_MISSING_SEQENTRY	objects.h	104;"	d
+MEMB_SESSION	sess_body.h	57;"	d
+MEMORY	alarm.h	62;"	d
+MEMORY_H	memory.h	37;"	d
+MEM_ERR	errors.h	72;"	d
+MESSAGE_FRAG_LIST	objects.h	83;"	d
+MESSAGE_LINK	objects.h	80;"	d
+MESSAGE_META_OBJ	objects.h	96;"	d
+MESSAGE_OBJ	objects.h	61;"	d
+MESSAGE_TOO_LONG	sess_types.h	141;"	d
+MIN	defines.h	253;"	d
+MONITOR_HASH	net_types.h	108;"	d
+MONITOR_OBJS	Makefile	/^MONITOR_OBJS= monitor.o  alarm.o events.o memory.o data_link.o lex.yy.o y.tab.o configuration.o acm.o$/;"	m
+MQUEUE_ELEMENT	objects.h	94;"	d
+MSG_COMPLETE	errors.h	57;"	d
+MSG_FRAG_OBJ	objects.h	62;"	d
+MSG_LIST_ENTRY	objects.h	87;"	d
+MUTEX_STATIC_INIT	mutex.h	43;"	d
+MUTEX_STATIC_INIT	mutex.h	62;"	d
+MUTEX_STATIC_INIT	mutex.h	82;"	d
+Mem	memory.c	/^static mem_info Mem[MAX_MEM_OBJECTS];$/;"	v	file:
+MemStatus_initialized	memory.c	/^static bool MemStatus_initialized;$/;"	v	file:
+Mem_Bytes_Allocated	memory.c	/^static unsigned int     Mem_Bytes_Allocated;$/;"	v	file:
+Mem_Max_Bytes	memory.c	/^static unsigned int     Mem_Max_Bytes;$/;"	v	file:
+Mem_Max_Obj_Inuse	memory.c	/^static unsigned int     Mem_Max_Obj_Inuse;$/;"	v	file:
+Mem_Max_Objects	memory.c	/^static unsigned int     Mem_Max_Objects;$/;"	v	file:
+Mem_Obj_Allocated	memory.c	/^static unsigned int     Mem_Obj_Allocated;$/;"	v	file:
+Mem_Obj_Inuse	memory.c	/^static unsigned int     Mem_Obj_Inuse;$/;"	v	file:
+Mem_Obj_Type	memory.c	/^int32u  Mem_Obj_Type(const void *object)$/;"	f
+Mem_alloc	memory.c	/^void *          Mem_alloc( unsigned int length)$/;"	f
+Mem_bytes	memory.c	/^unsigned int Mem_bytes(int32u objtype)$/;"	f
+Mem_copy	memory.c	/^void *      Mem_copy(const void *object)$/;"	f
+Mem_init_object	memory.c	/^int            Mem_init_object(int32u obj_type, int32u size, unsigned int threshold, unsigned int initial)$/;"	f
+Mem_init_object_abort	memory.c	/^void            Mem_init_object_abort( int32u obj_type, int32u size, unsigned int threshold, unsigned int initial )$/;"	f
+Mem_init_status	memory.c	/^void    Mem_init_status()$/;"	f
+Mem_max_bytes	memory.c	/^unsigned int Mem_max_bytes(int32u objtype)$/;"	f
+Mem_max_in_app	memory.c	/^unsigned int Mem_max_in_app(int32u objtype)$/;"	f
+Mem_max_obj	memory.c	/^unsigned int Mem_max_obj(int32u objtype)$/;"	f
+Mem_obj_in_app	memory.c	/^unsigned int Mem_obj_in_app(int32u objtype)    $/;"	f
+Mem_obj_in_pool	memory.c	/^unsigned int Mem_obj_in_pool(int32u objtype)  $/;"	f
+Mem_obj_total	memory.c	/^unsigned int Mem_obj_total(int32u objtype)    $/;"	f
+Mem_total_bytes	memory.c	/^unsigned int Mem_total_bytes() $/;"	f
+Mem_total_inuse	memory.c	/^unsigned int Mem_total_inuse()$/;"	f
+Mem_total_max_bytes	memory.c	/^unsigned int Mem_total_max_bytes() $/;"	f
+Mem_total_max_inuse	memory.c	/^unsigned int Mem_total_max_inuse()$/;"	f
+Mem_total_max_obj	memory.c	/^unsigned int Mem_total_max_obj()              $/;"	f
+Mem_total_obj	memory.c	/^unsigned int Mem_total_obj()              $/;"	f
+Mem_valid_objtype	memory.c	/^int Mem_valid_objtype(int32u objtype) $/;"	f
+Memb_active_ptr	membership.c	/^configuration	*Memb_active_ptr()$/;"	f
+Memb_commit	membership.c	/^void	Memb_commit()$/;"	f
+Memb_handle_alive	membership.c	/^static	void	Memb_handle_alive( sys_scatter *scat )$/;"	f	file:
+Memb_handle_foreign	membership.c	/^static	void	Memb_handle_foreign( sys_scatter *scat )$/;"	f	file:
+Memb_handle_form1	membership.c	/^static	void	Memb_handle_form1( sys_scatter *scat )$/;"	f	file:
+Memb_handle_form2	membership.c	/^static	void	Memb_handle_form2( sys_scatter *scat )$/;"	f	file:
+Memb_handle_join	membership.c	/^static	void	Memb_handle_join( sys_scatter *scat )$/;"	f	file:
+Memb_handle_message	membership.c	/^void	Memb_handle_message( sys_scatter *scat )$/;"	f
+Memb_handle_refer	membership.c	/^static	void	Memb_handle_refer( sys_scatter *scat )$/;"	f	file:
+Memb_handle_token	membership.c	/^void	Memb_handle_token( sys_scatter *scat )$/;"	f
+Memb_id	membership.c	/^membership_id	Memb_id()$/;"	f
+Memb_init	membership.c	/^void		Memb_init()$/;"	f
+Memb_is_equal	membership.c	/^int	Memb_is_equal( membership_id m1, membership_id m2 )$/;"	f
+Memb_lookup_new_members	membership.c	/^void	Memb_lookup_new_members()$/;"	f
+Memb_print_form_token	membership.c	/^void	Memb_print_form_token( sys_scatter *scat )$/;"	f
+Memb_regular	membership.c	/^void	Memb_regular()$/;"	f
+Memb_signal_conf_reload	membership.c	/^void    Memb_signal_conf_reload(void)$/;"	f
+Memb_state	membership.c	/^int32	Memb_state()$/;"	f
+Memb_token_alive	membership.c	/^int	Memb_token_alive()$/;"	f
+Memb_token_loss	membership.c	/^void	Memb_token_loss()$/;"	f
+Memb_trans_id	membership.c	/^membership_id   Memb_trans_id()$/;"	f
+Memb_transitional	membership.c	/^void	Memb_transitional()$/;"	f
+MembersList	sess_body.h	/^        stdskl          MembersList;    \/* (member*) -> nil *\/$/;"	m	struct:dummy_daemon_members
+Membership	membership.c	/^static	configuration	Membership;$/;"	v	file:
+Membership_id	membership.c	/^static	membership_id	Membership_id;$/;"	v	file:
+Mess_buf	groups.c	/^static	char		Mess_buf[MAX_MESSAGE_BODY_LEN];$/;"	v	file:
+Message_Buffer_to_Message_Fragments	message.c	/^void            Message_Buffer_to_Message_Fragments( message_obj *msg, char buf[], int num_bytes )$/;"	f
+Message_Dec_Refcount	message.c	/^void    Message_Dec_Refcount(message_obj *msg)$/;"	f
+Message_add_oldtype_to_reject	message.c	/^void    Message_add_oldtype_to_reject( message_obj *msg, int32u old_type )$/;"	f
+Message_add_scat_element	message.c	/^void    Message_add_scat_element(message_obj *msg)$/;"	f
+Message_calculate_current_location	message.c	/^void    Message_calculate_current_location(message_obj  *msg, int len_sent, struct partial_message_info *cur_msg)$/;"	f
+Message_copy_message	message.c	/^message_obj     *Message_copy_message(message_obj *msg)$/;"	f
+Message_create_message	message.c	/^message_obj     *Message_create_message(int mess_type, char *sender_name)$/;"	f
+Message_dispose_message	message.c	/^void    Message_dispose_message(message_obj *msg)$/;"	f
+Message_dup_and_reset_old_message	message.c	/^message_obj     *Message_dup_and_reset_old_message(message_obj *msg, int len)$/;"	f
+Message_element_len_fixup	message.c	/^void    Message_element_len_fixup(message_obj *msg)$/;"	f
+Message_endian_correct_message_header	message.c	/^void    Message_endian_correct_message_header(message_obj *msg)$/;"	f
+Message_get_data_fragment_len	message.c	/^int     Message_get_data_fragment_len()$/;"	f
+Message_get_data_header_size	message.c	/^int     Message_get_data_header_size(void)$/;"	f
+Message_get_data_scatter	message.c	/^scatter *Message_get_data_scatter(message_obj *msg)$/;"	f
+Message_get_first_data_len	message.c	/^int     Message_get_first_data_len(message_obj *msg)$/;"	f
+Message_get_first_data_ptr	message.c	/^char    *Message_get_first_data_ptr(message_obj *msg)$/;"	f
+Message_get_first_group	message.c	/^char    *Message_get_first_group(message_obj *msg)$/;"	f
+Message_get_groups_array	message.c	/^char    *Message_get_groups_array(message_obj *msg)$/;"	f
+Message_get_header_size	message.c	/^int     Message_get_header_size()$/;"	f
+Message_get_message_header	message.c	/^message_header *Message_get_message_header(message_obj *msg)$/;"	f
+Message_get_non_body_header_size	message.c	/^int     Message_get_non_body_header_size()$/;"	f
+Message_get_packet_type	message.c	/^int     Message_get_packet_type(int mess_type)$/;"	f
+Message_kill_mess_fixup	message.c	/^int     Message_kill_mess_fixup(message_obj *msg, int orig_len, int mbox)$/;"	f
+Message_new_message	message.c	/^message_obj     *Message_new_message(void)$/;"	f
+Message_populate_with_buffers	message.c	/^void    Message_populate_with_buffers(message_obj *msg)$/;"	f
+Message_remove_scat_element	message.c	/^void    Message_remove_scat_element(message_obj *msg)$/;"	f
+Message_reset_current_location	message.c	/^void    Message_reset_current_location(struct partial_message_info *cur_msg)$/;"	f
+Message_set_location_begin_body	message.c	/^void    Message_set_location_begin_body(struct partial_message_info *cur_msg)$/;"	f
+Mutex_atfork	mutex.h	55;"	d
+Mutex_atfork	mutex.h	72;"	d
+Mutex_atfork	mutex.h	74;"	d
+Mutex_atfork	mutex.h	94;"	d
+Mutex_init	mutex.h	47;"	d
+Mutex_init	mutex.h	66;"	d
+Mutex_init	mutex.h	86;"	d
+Mutex_lock	mutex.h	48;"	d
+Mutex_lock	mutex.h	67;"	d
+Mutex_lock	mutex.h	87;"	d
+Mutex_trylock	mutex.h	53;"	d
+Mutex_trylock	mutex.h	69;"	d
+Mutex_trylock	mutex.h	91;"	d
+Mutex_unlock	mutex.h	49;"	d
+Mutex_unlock	mutex.h	68;"	d
+Mutex_unlock	mutex.h	88;"	d
+My	configuration.c	/^static	proc		My;$/;"	v	file:
+My	membership.c	/^static  proc            My;$/;"	v	file:
+My	monitor.c	/^static  proc            My;$/;"	v	file:
+My	network.c	/^static	proc		My;$/;"	v	file:
+My	protocol.c	/^static	proc		My;$/;"	v	file:
+My	sess_body.h	/^ext	proc		My;$/;"	v
+MySyncedSet	groups.c	/^static  synced_set      MySyncedSet;$/;"	v	file:
+My_aru	prot_body.h	/^ext	int32		My_aru;$/;"	v
+My_index	protocol.c	/^static	int		My_index;$/;"	v	file:
+My_name	log.c	/^static	char    My_name[MAX_PROC_NAME];$/;"	v	file:
+My_name	monitor.c	/^static	char		*My_name;$/;"	v	file:
+My_name	spread.c	/^static	char		*My_name;$/;"	v	file:
+My_name_buf	monitor.c	/^static	char		My_name_buf[80];$/;"	v	file:
+My_name_buf	spread.c	/^static	char		My_name_buf[80];$/;"	v	file:
+My_port	monitor.c	/^static	int		My_port;$/;"	v	file:
+My_seg_rep	membership.c	/^static	int32		My_seg_rep;$/;"	v	file:
+NEED_IN_SYSTM_H	acconfig.h	79;"	d
+NETWORK	alarm.h	50;"	d
+NET_ERROR_ON_SESSION	sess_types.h	142;"	d
+NONE	alarm.h	74;"	d
+NORMAL_DOWNQUEUE	protocol.h	56;"	d
+NOT_REGULAR_MESS	sess_types.h	57;"	d
+NULL	groups.c	60;"	d	file:
+NUMBER	y.tab.c	335;"	d	file:
+NUMBER	y.tab.h	10;"	d
+Net_bcast	network.c	/^int	Net_bcast( sys_scatter *scat )$/;"	f
+Net_bcast_channel	network.c	/^channel *Net_bcast_channel()$/;"	f
+Net_clear_partition	network.c	/^void    Net_clear_partition(void)$/;"	f
+Net_flush_bcast	network.c	/^int     Net_flush_bcast(void)$/;"	f
+Net_init	network.c	/^void	Net_init()$/;"	f
+Net_membership	network.c	/^static	configuration	Net_membership;$/;"	v	file:
+Net_num_channels	network.c	/^void     Net_num_channels(int *num_bcast, int *num_token)$/;"	f
+Net_queue_bcast	network.c	/^int	Net_queue_bcast( sys_scatter *scat )$/;"	f
+Net_recv	network.c	/^int	Net_recv ( channel fd, sys_scatter *scat )$/;"	f
+Net_recv_token	network.c	/^int	Net_recv_token( channel fd, sys_scatter *scat )$/;"	f
+Net_scast	network.c	/^int	Net_scast( int16 seg_index, sys_scatter *scat )$/;"	f
+Net_send_token	network.c	/^int	Net_send_token( sys_scatter *scat )$/;"	f
+Net_set_membership	network.c	/^void	Net_set_membership( configuration memb )$/;"	f
+Net_set_partition	network.c	/^void    Net_set_partition(int16 *new_partition)$/;"	f
+Net_signal_conf_reload	network.c	/^void    Net_signal_conf_reload(void)$/;"	f
+Net_token_channel	network.c	/^channel *Net_token_channel()$/;"	f
+Net_ucast	network.c	/^int	Net_ucast( int32 proc_id, sys_scatter *scat )$/;"	f
+Net_ucast_token	network.c	/^int	Net_ucast_token( int32 proc_id, sys_scatter *scat )$/;"	f
+New_mess	session.c	/^static	message_obj	New_mess;$/;"	v	file:
+New_pack	protocol.c	/^static	sys_scatter	New_pack;$/;"	v	file:
+New_token	protocol.c	/^static	sys_scatter	New_token;$/;"	v	file:
+Now	events.c	/^static	sp_time		Now;$/;"	v	file:
+Null_ops	auth-null.c	/^static struct  auth_ops Null_ops = {$/;"	v	file:
+Num_ACP_Methods	acm.c	/^static  int             Num_ACP_Methods;$/;"	v	file:
+Num_Auth_Methods	acm.c	/^static  int             Num_Auth_Methods;$/;"	v	file:
+Num_bcast_channels	network.c	/^static  int             Num_bcast_channels;$/;"	v	file:
+Num_bytes	s.c	/^static  int     Num_bytes;$/;"	v	file:
+Num_daemons_gathered	groups.c	/^static  int                     Num_daemons_gathered;$/;"	v	file:
+Num_groups	sess_body.h	/^ext	int		Num_groups;$/;"	v
+Num_mess_gathered	groups.c	/^static  int                     Num_mess_gathered;$/;"	v	file:
+Num_packets	s.c	/^static  int     Num_packets;$/;"	v	file:
+Num_send_needed	network.c	/^static	int		Num_send_needed;$/;"	v	file:
+Num_sessions	sess_body.h	/^ext	int		Num_sessions;$/;"	v
+Num_token_channels	network.c	/^static  int             Num_token_channels;$/;"	v	file:
+OBJECTS_H	objects.h	46;"	d
+OBJ_HANDLER	alarm.h	61;"	d
+OBJ_UNKNOWN	errors.h	78;"	d
+OK	errors.h	47;"	d
+OP	membership.h	43;"	d
+OPENBRACE	y.tab.c	343;"	d	file:
+OPENBRACE	y.tab.h	18;"	d
+OP_SESSION	sess_body.h	58;"	d
+O_NONBLOCK	defines.h	103;"	d
+Obj_Inc_Refcount	message.c	/^int32   Obj_Inc_Refcount(void *obj)$/;"	f
+Objnum_to_String	memory.c	/^char    *Objnum_to_String(int32u oid)$/;"	f
+PACKET_BODY	objects.h	107;"	d
+PACKET_MASK	spread_params.h	72;"	d
+PACK_HEAD_OBJ	objects.h	60;"	d
+PARTITION_TYPE	net_types.h	68;"	d
+PATHS	Makefile	/^PATHS= $/;"	m
+PCRITICAL	y.tab.c	341;"	d	file:
+PCRITICAL	y.tab.h	16;"	d
+PDEBUG	y.tab.c	337;"	d	file:
+PDEBUG	y.tab.h	12;"	d
+PERL	Makefile	/^PERL=\/usr\/bin\/perl$/;"	m
+PERROR	y.tab.c	340;"	d	file:
+PERROR	y.tab.h	15;"	d
+PFATAL	y.tab.c	342;"	d	file:
+PFATAL	y.tab.h	17;"	d
+PHOP	y.tab.c	378;"	d	file:
+PHOP	y.tab.h	53;"	d
+PINFO	y.tab.c	338;"	d	file:
+PINFO	y.tab.h	13;"	d
+POTENTIAL_REP	membership.c	50;"	d	file:
+PRE_AUTH_SESSION	sess_body.h	59;"	d
+PRINT	alarm.h	45;"	d
+PROCS_CHECK	y.tab.c	298;"	d	file:
+PROC_NAME_CHECK	y.tab.c	284;"	d	file:
+PROC_RECORD	objects.h	98;"	d
+PROF_FUNCT	objects.h	92;"	d
+PROTOCOL	alarm.h	51;"	d
+PROT_OBJS_H	prot_objs.h	37;"	d
+PTCPHOP	y.tab.c	379;"	d	file:
+PTCPHOP	y.tab.h	54;"	d
+PWARNING	y.tab.c	339;"	d	file:
+PWARNING	y.tab.h	14;"	d
+Pack	monitor.c	/^static	packet_header	Pack;$/;"	v	file:
+Pack	status.c	/^static	packet_header	Pack;$/;"	v	file:
+Pack_scat	monitor.c	/^static	sys_scatter	Pack_scat;$/;"	v	file:
+Packets	prot_body.h	/^ext	packet_info	Packets[MAX_PACKETS_IN_STRUCT];$/;"	v
+ParamStruct	config_parse.y	/^ParamStruct	:	DEBUGFLAGS EQUALS OPENBRACE AlarmBitComp CLOSEBRACE$/;"	l
+Partition	monitor.c	/^static	int16		Partition[MAX_PROCS_RING];$/;"	v	file:
+Partition	network.c	/^static	int16		Partition[MAX_PROCS_RING];$/;"	v	file:
+Partition_active	monitor.c	/^static  int             Partition_active = 0;$/;"	v	file:
+Partition_mutex	monitor.c	/^static  mutex_type      Partition_mutex;$/;"	v	file:
+Partition_my_index	network.c	/^static	int		Partition_my_index;$/;"	v	file:
+Partition_send_thread_routine	monitor.c	/^static	void	*Partition_send_thread_routine()$/;"	f	file:
+Partition_thread	monitor.c	/^    static	HANDLE		Partition_thread;$/;"	v	file:
+Partition_thread	monitor.c	/^    static      pthread_t	Partition_thread;$/;"	v	file:
+Partition_timeout	network.c	/^static	sp_time		Partition_timeout 	= { 60, 0};$/;"	v	file:
+Permit_ops	acp-permit.c	/^static struct  acp_ops Permit_ops = {$/;"	v	file:
+Personal_window	flow_control.c	/^static	int16	Personal_window;$/;"	v	file:
+Port	r.c	/^static	int16	Port;$/;"	v	file:
+Port	s.c	/^static	int16	Port;$/;"	v	file:
+Potential_reps	membership.c	/^static	reps_info	Potential_reps;$/;"	v	file:
+Print_flow_control	monitor.c	/^static	void	Print_flow_control( int16 fc_buf[MAX_PROCS_RING] )$/;"	f	file:
+Print_help	spread.c	/^static  void    Print_help(void)$/;"	f	file:
+Print_menu	monitor.c	/^static	void	Print_menu()$/;"	f	file:
+Print_partition	monitor.c	/^static	void	Print_partition( int16 partition[MAX_PROCS_RING] )$/;"	f	file:
+PriorityLevel	config_parse.y	/^PriorityLevel   :       PDEBUG { $$ = $1; }$/;"	l
+Prot_Create_Down_Link	protocol.c	/^down_link       *Prot_Create_Down_Link(message_obj *msg, int type, int mbox, int cur_element)$/;"	f
+Prot_Create_Local_Session	protocol.c	/^void    Prot_Create_Local_Session(session *new_sess)$/;"	f
+Prot_Destroy_Local_Session	protocol.c	/^void    Prot_Destroy_Local_Session(session *old_sess)$/;"	f
+Prot_handle_bcast	protocol.c	/^static  void	Prot_handle_bcast(channel fd, int dummy, void *dummy_p)$/;"	f	file:
+Prot_handle_conf_reload	protocol.c	/^static  void    Prot_handle_conf_reload(sys_scatter *scat)$/;"	f	file:
+Prot_handle_token	protocol.c	/^void	Prot_handle_token(channel fd, int dummy, void *dummy_p)$/;"	f
+Prot_init	protocol.c	/^void	Prot_init(void)$/;"	f
+Prot_init_down_queues	protocol.c	/^void    Prot_init_down_queues(void)$/;"	f
+Prot_kill_session	protocol.c	/^void    Prot_kill_session(message_obj *msg)$/;"	f
+Prot_new_message	protocol.c	/^void	Prot_new_message( down_link *down_ptr, int not_used_in_spread3_p )$/;"	f
+Prot_set_down_queue	protocol.c	/^void	Prot_set_down_queue( int queue_type )$/;"	f
+Prot_token_hurry	protocol.c	/^void	Prot_token_hurry()$/;"	f
+Protocol_down_queue	protocol.c	/^static	down_queue	Protocol_down_queue[2]; \/* only used in spread3 *\/$/;"	v	file:
+Protocol_threshold	session.c	/^static	int		Protocol_threshold;$/;"	v	file:
+Pword_ops	auth-pword.c	/^static struct  auth_ops Pword_ops = {$/;"	v	file:
+Q	arch.h	213;"	d
+QOS	alarm.h	64;"	d
+QQ	arch.h	214;"	d
+QUEUE	objects.h	76;"	d
+QUEUE_ELEMENT	objects.h	75;"	d
+QUEUE_SET	objects.h	93;"	d
+Queue_scat	network.c	/^static  sys_scatter     Queue_scat;$/;"	v	file:
+Queued_bytes	network.c	/^static  int             Queued_bytes = 0;$/;"	v	file:
+RAND_MAX	arch.h	94;"	d
+RECV_CHANNEL	data_link.h	45;"	d
+REFER_OBJ	objects.h	70;"	d
+REFER_TYPE	net_types.h	57;"	d
+REGULAR_MESS	sess_types.h	55;"	d
+REGULAR_TYPE	net_types.h	49;"	d
+REG_MEMB_MESS	sess_types.h	67;"	d
+REJECT	lex.yy.c	630;"	d	file:
+REJECT_AUTH	sess_types.h	133;"	d
+REJECT_ILLEGAL_NAME	sess_types.h	129;"	d
+REJECT_MESS	sess_types.h	87;"	d
+REJECT_NOT_UNIQUE	sess_types.h	130;"	d
+REJECT_NO_NAME	sess_types.h	128;"	d
+REJECT_QUOTA	sess_types.h	127;"	d
+REJECT_VERSION	sess_types.h	131;"	d
+RELIABLE_MESS	sess_types.h	50;"	d
+RELIABLE_TYPE	net_types.h	45;"	d
+RELOAD_TYPE	net_types.h	70;"	d
+REPRESENTED	membership.h	45;"	d
+REQUIREDAUTHMETHODS	y.tab.c	373;"	d	file:
+REQUIREDAUTHMETHODS	y.tab.h	48;"	d
+RETRANSMIT_TYPE	sess_types.h	75;"	d
+RETRANS_ENTRY	objects.h	77;"	d
+RETRANS_TYPE	net_types.h	65;"	d
+RET_REQ_OBJ	objects.h	63;"	d
+RING	alarm.h	65;"	d
+RING_LINK_OBJ	objects.h	78;"	d
+RING_PROT	conf_body.h	69;"	d
+RING_REP	membership.c	52;"	d	file:
+ROUTE	alarm.h	63;"	d
+ROUTED_TYPE	net_types.h	51;"	d
+ROUTEMATRIX	y.tab.c	383;"	d	file:
+ROUTEMATRIX	y.tab.h	58;"	d
+ROUTE_WEIGHTS	objects.h	91;"	d
+RUNTIMEDIR	y.tab.c	369;"	d	file:
+RUNTIMEDIR	y.tab.h	44;"	d
+Read_form2	membership.c	/^static	void	Read_form2( sys_scatter *scat )$/;"	f	file:
+Read_thread	monitor.c	/^    static	HANDLE		Read_thread;$/;"	v	file:
+Read_thread	monitor.c	/^    static      pthread_t	Read_thread;$/;"	v	file:
+Read_thread_routine	monitor.c	/^static	void	*Read_thread_routine()$/;"	f	file:
+Reg_memb	groups.c	/^static	configuration	Reg_memb;$/;"	v	file:
+Reg_memb_id	groups.c	/^static	membership_id	Reg_memb_id;$/;"	v	file:
+Reg_membership	prot_body.h	/^ext	configuration	Reg_membership;$/;"	v
+Reload_Conf	monitor.c	/^static  void    Reload_Conf()$/;"	f	file:
+Rep_timeout	prot_body.h	/^ext	sp_time		Rep_timeout;$/;"	v
+Report_channel	status.c	/^static	channel		Report_channel;$/;"	v	file:
+Report_message	monitor.c	/^static	void	Report_message(mailbox fd, int dummy, void *dummy_p)$/;"	f	file:
+Report_pack	monitor.c	/^static	packet_header	Report_pack;$/;"	v	file:
+Report_scat	monitor.c	/^static	sys_scatter	Report_scat;$/;"	v	file:
+Report_scat	status.c	/^static	sys_scatter	Report_scat;$/;"	v	file:
+Report_socket	monitor.c	/^static  channel         Report_socket;$/;"	v	file:
+RouteStruct	config_parse.y	/^RouteStruct	:    ROUTEMATRIX OPENBRACE Routevectors CLOSEBRACE$/;"	l
+Routevector	config_parse.y	/^Routevector     :       LINKCOST$/;"	l
+Routevectors	config_parse.y	/^Routevectors	:	Routevectors Routevector$/;"	l
+RuntimeDir	configuration.c	/^static  char    *RuntimeDir = NULL;$/;"	v	file:
+SAFE_MESS	sess_types.h	54;"	d
+SAFE_TYPE	net_types.h	48;"	d
+SCATTER	objects.h	74;"	d
+SECURITY	alarm.h	71;"	d
+SEG	membership.h	44;"	d
+SEGMENT	y.tab.c	330;"	d	file:
+SEGMENT	y.tab.h	5;"	d
+SEGMENT_CHECK	y.tab.c	305;"	d	file:
+SEGMENT_SIZE_CHECK	y.tab.c	312;"	d	file:
+SEG_REP	membership.c	51;"	d	file:
+SELF_DISCARD	sess_types.h	59;"	d
+SELF_LINK	errors.h	67;"	d
+SEND_CHANNEL	data_link.h	44;"	d
+SESSION	alarm.h	52;"	d
+SESSION_AUTH_INFO	objects.h	109;"	d
+SESSION_FD_HASH_SIZE	session.c	102;"	d	file:
+SESS_SEQ_ENTRY	objects.h	88;"	d
+SIZEOF_CHAR	config.h	80;"	d
+SIZEOF_INT	config.h	83;"	d
+SIZEOF_LONG_INT	config.h	86;"	d
+SIZEOF_LONG_LONG_INT	config.h	89;"	d
+SIZEOF_SHORT_INT	config.h	92;"	d
+SKIPLIST	alarm.h	68;"	d
+SOCKETPORTREUSE	y.tab.c	368;"	d	file:
+SOCKETPORTREUSE	y.tab.h	43;"	d
+SOFTLINK	Makefile	/^SOFTLINK=ln -s$/;"	m
+SPGROUP	y.tab.c	371;"	d	file:
+SPGROUP	y.tab.h	46;"	d
+SPLOG_CRITICAL	alarm.h	84;"	d
+SPLOG_DEBUG	alarm.h	77;"	d
+SPLOG_ERROR	alarm.h	83;"	d
+SPLOG_FATAL	alarm.h	86;"	d
+SPLOG_INFO	alarm.h	79;"	d
+SPLOG_PRINT	alarm.h	88;"	d
+SPLOG_PRINT_NODATE	alarm.h	89;"	d
+SPLOG_WARNING	alarm.h	81;"	d
+SPREADOBJS	Makefile	/^SPREADOBJS= spread.o protocol.o session.o groups.o alarm.o events.o memory.o membership.o data_link.o network.o status.o log.o flow_control.o message.o lex.yy.o y.tab.o configuration.o acm.o acp-permit.o auth-null.o auth-ip.o$/;"	m
+SPREAD_BUILD_DATE	spread_params.h	44;"	d
+SPREAD_ETCDIR	acconfig.h	114;"	d
+SPREAD_ETCDIR	arch.h	150;"	d
+SPREAD_ETCDIR	config.h	77;"	d
+SPREAD_PROGRAM	Makefile	/^SPREAD_PROGRAM=${exec_prefix}\/sbin\/spread$/;"	m
+SPREAD_PROTOCOL	spread_params.h	42;"	d
+SPUSER	y.tab.c	370;"	d	file:
+SPUSER	y.tab.h	45;"	d
+SP_BOOL	y.tab.c	375;"	d	file:
+SP_BOOL	y.tab.h	50;"	d
+SP_GROUP	spread_params.h	52;"	d
+SP_MAJOR_VERSION	Makefile	/^SP_MAJOR_VERSION=4$/;"	m
+SP_MAJOR_VERSION	spread_params.h	39;"	d
+SP_MINOR_VERSION	Makefile	/^SP_MINOR_VERSION=0$/;"	m
+SP_MINOR_VERSION	spread_params.h	40;"	d
+SP_PATCH_VERSION	Makefile	/^SP_PATCH_VERSION=0$/;"	m
+SP_PATCH_VERSION	spread_params.h	41;"	d
+SP_RUNTIME_DIR	spread_params.h	49;"	d
+SP_TRIVAL	y.tab.c	376;"	d	file:
+SP_TRIVAL	y.tab.h	51;"	d
+SP_USER	spread_params.h	55;"	d
+STATETRANS_MESS	sess_types.h	86;"	d
+STATETRANS_OBJ	objects.h	71;"	d
+STATUS	alarm.h	56;"	d
+STATUS_TYPE	net_types.h	67;"	d
+STAT_GROUP	objects.h	101;"	d
+STAT_RECORD	objects.h	100;"	d
+STAT_REFRECORD	objects.h	102;"	d
+STDERR_FILENO	defines.h	99;"	d
+STDIN_FILENO	defines.h	93;"	d
+STDOUT_FILENO	defines.h	96;"	d
+STRING	y.tab.c	346;"	d	file:
+STRING	y.tab.h	21;"	d
+SUN_LEN	defines.h	281;"	d
+SYSLIBS	Makefile	/^SYSLIBS := $(SYSLIBS) -L$(SYSEXE_ROOT)\/Host\/CommonLib\/CP$/;"	m
+SYSLIBS	Makefile	/^SYSLIBS := $(SYSLIBS) -L$(SYSEXE_ROOT)\/Target\/CommonLib\/CP -lplatformLib$/;"	m
+SYSTEM	alarm.h	47;"	d
+SYS_SCATTER	objects.h	99;"	d
+Same_endian	arch.h	221;"	d
+Scast_alive	membership.c	/^static	void	Scast_alive( int code, void *dummy )$/;"	f	file:
+Seg_timeout	prot_body.h	/^ext	sp_time		Seg_timeout;$/;"	v
+SegmentStruct	config_parse.y	/^SegmentStruct	:    SEGMENT IPADDR OPENBRACE Segmentparams CLOSEBRACE$/;"	l
+Segment_leader	network.c	/^static	int		Segment_leader;$/;"	v	file:
+Segmentparam	config_parse.y	/^Segmentparam	:	STRING IPADDR OPENBRACE Interfaceparams CLOSEBRACE$/;"	l
+Segmentparams	config_parse.y	/^Segmentparams	:	Segmentparam Segmentparams$/;"	l
+SendChan	monitor.c	/^static	channel		SendChan;$/;"	v	file:
+Send_address	network.c	/^static  int32		Send_address[MAX_SEGMENTS];$/;"	v	file:
+Send_channel	network.c	/^static	channel		Send_channel;$/;"	v	file:
+Send_flow_control	monitor.c	/^static	void	Send_flow_control()$/;"	f	file:
+Send_join	membership.c	/^static	void	Send_join()$/;"	f	file:
+Send_new_packets	protocol.c	/^static	int	Send_new_packets( int num_allowed )$/;"	f	file:
+Send_pack	membership.c	/^static	sys_scatter	Send_pack;$/;"	v	file:
+Send_pack	protocol.c	/^static	sys_scatter	Send_pack;$/;"	v	file:
+Send_partition	monitor.c	/^static	void	Send_partition()$/;"	f	file:
+Send_partition_timeout	monitor.c	/^static	sp_time		Send_partition_timeout = { 25, 0 };$/;"	v	file:
+Send_ports	network.c	/^static	int16		Send_ports[MAX_SEGMENTS];$/;"	v	file:
+Send_status_query	monitor.c	/^static	void 	Send_status_query()$/;"	f	file:
+Send_status_timeout	monitor.c	/^static	sp_time		Send_status_timeout;$/;"	v	file:
+Sess_accept	session.c	/^static	void	Sess_accept( mailbox mbox, int domain, void *dummy )$/;"	f	file:
+Sess_accept_continue	session.c	/^void	Sess_accept_continue(mailbox d1, int d2, void *d3)$/;"	f
+Sess_accept_continue2	session.c	/^void	Sess_accept_continue2(int d1, void *d2)$/;"	f
+Sess_activate_port_reuse	session.c	/^static  void    Sess_activate_port_reuse(mailbox mbox)$/;"	f	file:
+Sess_attach_accept	session.c	/^static	void	Sess_attach_accept()$/;"	f	file:
+Sess_badger	session.c	/^static	void	Sess_badger( mailbox mbox, void *dummy )$/;"	f	file:
+Sess_block_user	session.c	/^void    Sess_block_user(int xxx)$/;"	f
+Sess_block_users_level	session.c	/^void	Sess_block_users_level()$/;"	f
+Sess_create_reject_message	session.c	/^static  void    Sess_create_reject_message ( message_obj *msg )$/;"	f	file:
+Sess_deliver_message	session.c	/^void	Sess_deliver_message( message_link *mess_link )$/;"	f
+Sess_deliver_reg_memb	session.c	/^void	Sess_deliver_reg_memb( configuration reg_memb, membership_id reg_memb_id )$/;"	f
+Sess_deliver_reject	session.c	/^static  void    Sess_deliver_reject( message_obj *msg )$/;"	f	file:
+Sess_deliver_trans_memb	session.c	/^void	Sess_deliver_trans_memb( configuration trans_memb, membership_id trans_memb_id )$/;"	f
+Sess_detach_accept	session.c	/^static	void	Sess_detach_accept()$/;"	f	file:
+Sess_dispose_message	session.c	/^void	Sess_dispose_message( message_link *mess_link )$/;"	f
+Sess_free_session	session.c	/^static	void	Sess_free_session (session *ses)$/;"	f	file:
+Sess_get_free_session	session.c	/^static	session	*Sess_get_free_session (void)$/;"	f	file:
+Sess_get_p2p_dests	session.c	/^static  int     Sess_get_p2p_dests( int num_groups, char groups[][MAX_GROUP_NAME], char dests[][MAX_GROUP_NAME] )$/;"	f	file:
+Sess_get_session	session.c	/^int	Sess_get_session( char *name )$/;"	f
+Sess_get_session_index	session.c	/^int	Sess_get_session_index (int mbox)$/;"	f
+Sess_handle_join	session.c	/^static	void	Sess_handle_join( message_link *mess_link )$/;"	f	file:
+Sess_handle_kill	session.c	/^static	void	Sess_handle_kill( message_link *mess_link )$/;"	f	file:
+Sess_handle_leave	session.c	/^static	void	Sess_handle_leave( message_link *mess_link )$/;"	f	file:
+Sess_hash_session	session.c	/^static  void    Sess_hash_session (session *ses)$/;"	f	file:
+Sess_init	session.c	/^void	Sess_init()$/;"	f
+Sess_init_sessions	session.c	/^static	void	Sess_init_sessions (void)$/;"	f	file:
+Sess_insert_new_session	session.c	/^static	int	Sess_insert_new_session (session *where, session *template)$/;"	f	file:
+Sess_kill	session.c	/^static	void	Sess_kill( mailbox mbox )$/;"	f	file:
+Sess_read	session.c	/^static	void	Sess_read( mailbox mbox, int dummy, void *d2 )$/;"	f	file:
+Sess_recv_client_auth	session.c	/^static void    Sess_recv_client_auth(mailbox mbox, int dummy, void *dummy_p)$/;"	f	file:
+Sess_remove_session	session.c	/^static	void	Sess_remove_session (session *ses)$/;"	f	file:
+Sess_session_authorized	session.c	/^void    Sess_session_authorized(int ses)$/;"	f
+Sess_session_denied	session.c	/^void    Sess_session_denied(int ses)$/;"	f
+Sess_session_report_auth_result	session.c	/^void    Sess_session_report_auth_result(struct session_auth_info *sess_auth_h, int authenticated_p )$/;"	f
+Sess_set_active_threshold	session.c	/^void	Sess_set_active_threshold()$/;"	f
+Sess_signal_conf_reload	session.c	/^void    Sess_signal_conf_reload(void)$/;"	f
+Sess_unblock_user	session.c	/^void    Sess_unblock_user(int xxx)$/;"	f
+Sess_unblock_users_level	session.c	/^void	Sess_unblock_users_level()$/;"	f
+Sess_unhash_session	session.c	/^static  void    Sess_unhash_session (session *ses)$/;"	f	file:
+Sess_validate_read_header	session.c	/^static  int     Sess_validate_read_header( mailbox mbox, int ses, int head_size, message_header *head_ptr)$/;"	f	file:
+Sess_write	session.c	/^void    Sess_write( int ses, message_link *mess_link, int *needed )$/;"	f
+Session_threshold	sess_body.h	/^ext	int		Session_threshold;$/;"	v
+Sessions	sess_body.h	/^ext	session		Sessions[MAX_SESSIONS+1]; \/* +1 for rejecting the next one *\/$/;"	v
+Sessions_free	session.c	/^static	session		*Sessions_free;$/;"	v	file:
+Sessions_hash_head	session.c	/^static	session		*Sessions_hash_head[SESSION_FD_HASH_SIZE];$/;"	v	file:
+Sessions_head	session.c	/^static	session		*Sessions_head;$/;"	v	file:
+Sessions_tail	session.c	/^static	session		*Sessions_tail;$/;"	v	file:
+Set_Retransmit	sess_types.h	116;"	d
+Set_arq	net_types.h	97;"	d
+Set_aru	protocol.c	/^static	int32		Set_aru;$/;"	v	file:
+Set_endian	arch.h	220;"	d
+Set_first_message	groups.c	73;"	d	file:
+Set_later_message	groups.c	74;"	d	file:
+Set_memb_session	sess_body.h	62;"	d
+Set_op_session	sess_body.h	66;"	d
+Set_preauth_session	sess_body.h	70;"	d
+Set_retrans	net_types.h	99;"	d
+Set_routed	net_types.h	82;"	d
+Shift_to_gather	membership.c	/^static	void	Shift_to_gather()$/;"	f	file:
+Shift_to_represented	membership.c	/^static	void	Shift_to_represented()$/;"	f	file:
+Shift_to_seg	membership.c	/^static	void	Shift_to_seg()$/;"	f	file:
+Smallest_member	membership.c	/^static	int32	Smallest_member( members_info *m, int *index )$/;"	f	file:
+Smallest_rep	membership.c	/^static	int32	Smallest_rep( reps_info *r, int *index )$/;"	f	file:
+SocketPortReuse	configuration.c	/^static  port_reuse SocketPortReuse = port_reuse_auto;$/;"	v	file:
+Sort_members	membership.c	/^static	void	Sort_members( members_info *m )$/;"	f	file:
+Sort_reps	membership.c	/^static	void	Sort_reps( reps_info *r )$/;"	f	file:
+Spread_build_date	monitor.c	/^static  const char            Spread_build_date[] = SPREAD_BUILD_DATE;$/;"	v	file:
+Spread_build_date	spread.c	/^static  const char            Spread_build_date[] = SPREAD_BUILD_DATE;$/;"	v	file:
+Start_time	status.c	/^static	sp_time		Start_time;$/;"	v	file:
+Stat_handle_message	status.c	/^void	Stat_handle_message( sys_scatter *scat )$/;"	f
+Stat_init	status.c	/^void	Stat_init()$/;"	f
+State	membership.c	/^static	int		State;$/;"	v	file:
+Status_active	monitor.c	/^static  int             Status_active = 0;$/;"	v	file:
+Status_mutex	monitor.c	/^static	mutex_type	Status_mutex;$/;"	v	file:
+Status_send_thread_routine	monitor.c	/^static	void	*Status_send_thread_routine()$/;"	f	file:
+Status_thread	monitor.c	/^    static	HANDLE		Status_thread;$/;"	v	file:
+Status_thread	monitor.c	/^    static      pthread_t	Status_thread;$/;"	v	file:
+Status_vector	monitor.c	/^static	int		Status_vector[MAX_PROCS_RING];$/;"	v	file:
+TARGETS	Makefile	/^TARGETS=spread$(EXEEXT) spmonitor$(EXEEXT)$/;"	m
+TCP_HOP	alarm.h	66;"	d
+TCP_LINK_OBJ	objects.h	95;"	d
+TCP_PROT	conf_body.h	70;"	d
+TESTIME	alarm.h	41;"	d
+THLDFLAGS	Makefile	/^THLDFLAGS=$/;"	m
+THLIBS	Makefile	/^THLIBS=-lpthread $/;"	m
+TIME_EVENT	objects.h	89;"	d
+TMONITOR_OBJS	Makefile	/^TMONITOR_OBJS= monitor.to  alarm.to events.to memory.to data_link.to lex.yy.to y.tab.to configuration.to acm.to$/;"	m
+TOKEN_BODY_OBJ	objects.h	67;"	d
+TOKEN_HEAD_OBJ	objects.h	66;"	d
+TRANSITION_MESS	sess_types.h	68;"	d
+TREE_NODE	objects.h	82;"	d
+TRUE	arch.h	247;"	d
+Temp_buf	message.c	/^static  char Temp_buf[100000];$/;"	v	file:
+Temp_buf	sess_body.h	/^ext	char		Temp_buf[100000];$/;"	v
+Time_queue	events.c	/^static	time_event	*Time_queue;$/;"	v	file:
+To_hold_token	protocol.c	/^static	int	To_hold_token()$/;"	f	file:
+Token	protocol.c	/^static	token_header	*Token;$/;"	v	file:
+Token_address	network.c	/^static	int32		Token_address;$/;"	v	file:
+Token_alive	membership.c	/^static	int		Token_alive;$/;"	v	file:
+Token_channel	network.c	/^static  channel		Token_channel[MAX_INTERFACES_PROC];$/;"	v	file:
+Token_counter	protocol.c	/^static	int		Token_counter;$/;"	v	file:
+Token_port	network.c	/^static	int16		Token_port;$/;"	v	file:
+Token_rounds	prot_body.h	/^ext	int32		Token_rounds;$/;"	v
+Token_timeout	prot_body.h	/^ext	sp_time		Token_timeout;$/;"	v
+Trans_memb	groups.c	/^static	configuration	Trans_memb;$/;"	v	file:
+Trans_memb_id	groups.c	/^static	membership_id	Trans_memb_id;$/;"	v	file:
+Trans_memb_id	membership.c	/^static  membership_id   Trans_memb_id;$/;"	v	file:
+Trans_membership	prot_body.h	/^ext	configuration	Trans_membership;$/;"	v
+Transitional	prot_body.h	/^ext	int		Transitional;$/;"	v
+Trylock_firsttime	mutex.h	/^static	int	Trylock_firsttime = 0;$/;"	v
+Trylock_firsttime	mutex.h	/^static	int 	Trylock_firsttime = 0;$/;"	v
+UINT32_MAX	arch.h	194;"	d
+UNKNOWN_OBJ	objects.h	116;"	d
+UNRELIABLE_MESS	sess_types.h	49;"	d
+UNRELIABLE_TYPE	net_types.h	44;"	d
+USE_TIMEVAL	defines.h	291;"	d
+Up_queue	prot_body.h	/^ext	up_queue	Up_queue[MAX_PROCS_RING+1];$/;"	v
+Usage	monitor.c	/^static	void	Usage(int argc, char *argv[])$/;"	f	file:
+Usage	r.c	/^static  void    Usage(int argc, char *argv[])$/;"	f	file:
+Usage	s.c	/^static  void    Usage(int argc, char *argv[])$/;"	f	file:
+Usage	spread.c	/^static	void	Usage(int argc, char *argv[])$/;"	f	file:
+User	configuration.c	/^static	char	*User = NULL;$/;"	v	file:
+User_command	monitor.c	/^static	void	User_command()$/;"	f	file:
+Users	auth-pword.c	/^static struct user_password *Users;$/;"	v	file:
+VERSION	Makefile	/^VERSION=4.0.0$/;"	m
+WATER_MARK	spread_params.h	78;"	d
+WSAData	monitor.c	/^WSADATA		WSAData;$/;"	v
+WSAData	r.c	/^WSADATA		WSAData;$/;"	v
+WSAData	s.c	/^WSADATA		WSAData;$/;"	v
+WSAData	spread.c	/^WSADATA		WSAData;$/;"	v
+Wide_network	prot_body.h	/^ext	int		Wide_network;$/;"	v
+Window	flow_control.c	/^static	int16	Window;$/;"	v	file:
+Work_fc_buf	monitor.c	/^static	int16		Work_fc_buf[MAX_PROCS_RING];$/;"	v	file:
+Work_partition	monitor.c	/^static	int16		Work_partition[MAX_PROCS_RING];$/;"	v	file:
+YYABORT	y.tab.c	690;"	d	file:
+YYACCEPT	y.tab.c	692;"	d	file:
+YYBYACC	y.tab.c	6;"	d	file:
+YYDEBUG	y.tab.c	521;"	d	file:
+YYEMPTY	y.tab.c	10;"	d	file:
+YYERRCODE	y.tab.c	329;"	d	file:
+YYERRCODE	y.tab.h	2;"	d
+YYERROR	y.tab.c	693;"	d	file:
+YYFINAL	y.tab.c	519;"	d	file:
+YYINITSTACKSIZE	y.tab.c	631;"	d	file:
+YYLEX	y.tab.c	9;"	d	file:
+YYMAJOR	y.tab.c	7;"	d	file:
+YYMAXDEPTH	y.tab.c	621;"	d	file:
+YYMAXDEPTH	y.tab.c	622;"	d	file:
+YYMAXDEPTH	y.tab.c	628;"	d	file:
+YYMAXTOKEN	y.tab.c	523;"	d	file:
+YYMINOR	y.tab.c	8;"	d	file:
+YYPARSE_PARAM_ARG	y.tab.c	697;"	d	file:
+YYPARSE_PARAM_ARG	y.tab.c	700;"	d	file:
+YYPARSE_PARAM_ARG	y.tab.c	708;"	d	file:
+YYPARSE_PARAM_ARG	y.tab.c	711;"	d	file:
+YYPARSE_PARAM_DECL	y.tab.c	698;"	d	file:
+YYPARSE_PARAM_DECL	y.tab.c	701;"	d	file:
+YYPARSE_PARAM_DECL	y.tab.c	709;"	d	file:
+YYPARSE_PARAM_DECL	y.tab.c	712;"	d	file:
+YYPARSE_PARAM_TYPE	y.tab.c	705;"	d	file:
+YYPREFIX	y.tab.c	15;"	d	file:
+YYRECOVERING	y.tab.c	13;"	d	file:
+YYREJECT	y.tab.c	691;"	d	file:
+YYSTACKSIZE	y.tab.c	625;"	d	file:
+YYSTACKSIZE	y.tab.c	627;"	d	file:
+YYSTATE	lex.yy.c	88;"	d	file:
+YYSTYPE	conf_body.h	/^} YYSTYPE;$/;"	t
+YYSTYPE	conf_body.h	73;"	d
+YYSTYPE	y.tab.c	/^typedef int YYSTYPE;$/;"	t	file:
+YYTABLESIZE	y.tab.c	450;"	d	file:
+YY_AT_BOL	lex.yy.c	273;"	d	file:
+YY_BREAK	lex.yy.c	833;"	d	file:
+YY_BUFFER_EOF_PENDING	lex.yy.c	209;"	d	file:
+YY_BUFFER_NEW	lex.yy.c	197;"	d	file:
+YY_BUFFER_NORMAL	lex.yy.c	198;"	d	file:
+YY_BUFFER_STATE	lex.yy.c	/^typedef struct yy_buffer_state *YY_BUFFER_STATE;$/;"	t	file:
+YY_BUF_SIZE	lex.yy.c	99;"	d	file:
+YY_CHAR	lex.yy.c	/^typedef unsigned char YY_CHAR;$/;"	t	file:
+YY_CURRENT_BUFFER	lex.yy.c	218;"	d	file:
+YY_DECL	lex.yy.c	821;"	d	file:
+YY_DO_BEFORE_ACTION	lex.yy.c	292;"	d	file:
+YY_END_OF_BUFFER	lex.yy.c	300;"	d	file:
+YY_END_OF_BUFFER_CHAR	lex.yy.c	96;"	d	file:
+YY_EXIT_FAILURE	lex.yy.c	2089;"	d	file:
+YY_FATAL_ERROR	lex.yy.c	814;"	d	file:
+YY_FLEX_MAJOR_VERSION	lex.yy.c	8;"	d	file:
+YY_FLEX_MINOR_VERSION	lex.yy.c	9;"	d	file:
+YY_FLUSH_BUFFER	lex.yy.c	247;"	d	file:
+YY_INPUT	lex.yy.c	781;"	d	file:
+YY_MAY_BE_UNUSED	lex.yy.c	143;"	d	file:
+YY_MAY_BE_UNUSED	lex.yy.c	145;"	d	file:
+YY_MORE_ADJ	lex.yy.c	632;"	d	file:
+YY_NEW_FILE	lex.yy.c	94;"	d	file:
+YY_NO_POP_STATE	lex.yy.c	744;"	d	file:
+YY_NO_PUSH_STATE	lex.yy.c	743;"	d	file:
+YY_NO_TOP_STATE	lex.yy.c	745;"	d	file:
+YY_NULL	lex.yy.c	68;"	d	file:
+YY_NUM_RULES	lex.yy.c	299;"	d	file:
+YY_PROTO	lex.yy.c	62;"	d	file:
+YY_PROTO	lex.yy.c	64;"	d	file:
+YY_READ_BUF_SIZE	lex.yy.c	765;"	d	file:
+YY_RESTORE_YY_MORE_OFFSET	lex.yy.c	633;"	d	file:
+YY_RULE_SETUP	lex.yy.c	836;"	d	file:
+YY_SC_TO_UI	lex.yy.c	75;"	d	file:
+YY_SKIP_YYWRAP	lex.yy.c	277;"	d	file:
+YY_START	lex.yy.c	87;"	d	file:
+YY_START_STACK_INCR	lex.yy.c	809;"	d	file:
+YY_STATE_EOF	lex.yy.c	91;"	d	file:
+YY_USER_ACTION	lex.yy.c	828;"	d	file:
+YY_USE_CONST	lex.yy.c	33;"	d	file:
+YY_USE_CONST	lex.yy.c	40;"	d	file:
+YY_USE_CONST	lex.yy.c	50;"	d	file:
+YY_USE_PROTOS	lex.yy.c	30;"	d	file:
+YY_USE_PROTOS	lex.yy.c	39;"	d	file:
+YY_USE_PROTOS	lex.yy.c	51;"	d	file:
+Zero_timeout	membership.c	/^static	sp_time		Zero_timeout 	= {  0, 0};$/;"	v	file:
+Zero_timeout	protocol.c	/^static  sp_time         Zero_timeout    = {  0, 0};$/;"	v	file:
+_CONFIG_H	acconfig.h	38;"	d
+_CONFIG_H	config.h	6;"	d
+_DEFINES_H	defines.h	37;"	d
+_PATH_SPREAD_PIDDIR	acconfig.h	111;"	d
+_PATH_SPREAD_PIDDIR	config.h	74;"	d
+__P	defines.h	273;"	d
+__attribute__	defines.h	277;"	d
+__cplusplus	lex.yy.c	20;"	d	file:
+__inline__	arch.h	77;"	d
+acm_acpname_to_type	acm.c	/^static int acm_acpname_to_type(char *acp_name)$/;"	f	file:
+acm_authname_to_type	acm.c	/^static int acm_authname_to_type(char *auth_name)$/;"	f	file:
+acp_info	acm.c	/^struct acp_info {$/;"	s	file:
+acp_ops	acm.h	/^struct acp_ops {$/;"	s
+acp_ops	session.h	/^        struct acp_ops  acp_ops;$/;"	m	struct:dummy_session
+active	events.c	/^        int             active; \/* true if active, false if inactive *\/$/;"	m	struct:dummy_fd_event	file:
+addr	conf_body.h	/^    struct in_addr addr;$/;"	m
+address	session.h	/^	int32		address;$/;"	m	struct:dummy_session
+alarm_print_proc	y.tab.c	/^static void alarm_print_proc(proc *p, int port) {$/;"	f	file:
+align_padding	network.c	/^static  const char      align_padding[4] = "padd";$/;"	v	file:
+alive_time	log.c	/^static	sp_time	alive_time;$/;"	v	file:
+alloca	arch.h	142;"	d
+aru	membership.c	/^	int32		aru;$/;"	m	struct:dummy_ring_info	file:
+aru	net_types.h	/^	int32		aru;$/;"	m	struct:dummy_token_header
+aru	status.h	/^	int32   aru;$/;"	m	struct:dummy_status
+aru_last_id	net_types.h	/^  int32   aru_last_id;$/;"	m	struct:dummy_token_header
+auth_client_conn_read	auth-pword.c	/^static void auth_client_conn_read(mailbox mbox, int dummy, struct session_auth_info *sess_auth_p)$/;"	f	file:
+auth_client_connection	acm.h	/^       void (*auth_client_connection) (struct session_auth_info *sess_auth_p);$/;"	m	struct:auth_ops
+auth_info	acm.c	/^struct auth_info {$/;"	s	file:
+auth_monitor_connection	acm.h	/^       void (*auth_monitor_connection) (mailbox mbox, int32 ip_addr);$/;"	m	struct:auth_ops
+auth_ops	acm.h	/^struct auth_ops {$/;"	s
+authentication_configured	y.tab.c	/^ static int     authentication_configured = 0;$/;"	v	file:
+b_retrans	status.h	/^	int32	b_retrans;$/;"	m	struct:dummy_status
+base_obj	objects.h	/^} base_obj;$/;"	t
+bcast_address	configuration.h	/^	int32 	bcast_address;$/;"	m	struct:dummy_segment
+bindir	Makefile	/^bindir=${exec_prefix}\/bin$/;"	m
+block_len	memory.c	/^        size_t   block_len;$/;"	m	struct:mem_header_d	file:
+body	prot_body.h	/^	packet_body	*body;$/;"	m	struct:dummy_packet_info
+bool	arch.h	/^typedef         short           bool;$/;"	t
+boolean	conf_body.h	/^  bool boolean;$/;"	m
+breakHandler	spread.c	/^static BOOL WINAPI breakHandler(DWORD ctrlType)$/;"	f	file:
+buf	groups.c	/^  char                           buf[GROUPS_BUF_SIZE];$/;"	m	struct:dummy_groups_buf_link	file:
+buf	scatter.h	/^	char	*buf;$/;"	m	struct:dummy_scat_element
+buildtoolsdir	Makefile	/^buildtoolsdir=$(top_srcdir)\/buildtools$/;"	m
+byte	arch.h	102;"	d
+bytes	groups.c	/^  int                            bytes;$/;"	m	struct:dummy_groups_buf_link	file:
+bytes_allocated	memory.c	/^        unsigned int    bytes_allocated;$/;"	m	struct:mem_info_d	file:
+changed	sess_body.h	/^        bool            changed;$/;"	m	struct:dummy_group
+channel	arch.h	228;"	d
+check_password	auth-pword.c	/^static bool check_password(char *username, char *clear_password)$/;"	f	file:
+clock_t	defines.h	/^typedef long clock_t;$/;"	t
+close	arch.h	144;"	d
+code	events.c	/^	int		code;$/;"	m	struct:dummy_fd_event	file:
+code	events.c	/^        int             code;$/;"	m	struct:dummy_t_event	file:
+complete	groups.c	/^        int                                complete;$/;"	m	struct:dummy_groups_message_link	file:
+completed_required_auths	acm.h	/^        int completed_required_auths;$/;"	m	struct:session_auth_info
+conf_convert_version_to_string	configuration.c	/^static  int    conf_convert_version_to_string(char *segstr, int strsize)$/;"	f	file:
+conf_hash	net_types.h	/^        int32           conf_hash;$/;"	m	struct:dummy_packet_header
+conf_hash	net_types.h	/^  int32    conf_hash;$/;"	m	struct:dummy_token_header
+conf_hash_string	configuration.c	/^static LOC_INLINE int32u conf_hash_string(const void * key, int32u key_len)$/;"	f	file:
+configuration	configuration.h	/^} configuration;$/;"	t
+convert_segment_to_string	y.tab.c	/^static  int    convert_segment_to_string(char *segstr, int strsize, segment *seg)$/;"	f	file:
+cost	conf_body.h	/^  int cost[MAX_SEGMENTS];$/;"	m
+count_bits_set	session.c	/^int     count_bits_set( int32u field, int first_index, int last_index)$/;"	f
+crypt_pass	auth-pword.c	/^    char crypt_pass[MAX_PWORD_CRYPTPASSWORD + 1];$/;"	m	struct:user_password	file:
+cur_byte	session.h	/^        int     cur_byte;$/;"	m	struct:partial_message_info
+cur_element	protocol.h	/^	int		cur_element;$/;"	m	struct:dummy_down_queue
+cur_element	session.h	/^        int     cur_element;$/;"	m	struct:partial_message_info
+d_obj	objects.h	/^typedef struct d_obj {$/;"	s
+daemon_members	sess_body.h	/^} daemon_members;$/;"	t
+data	events.c	/^        void            *data;$/;"	m	struct:dummy_fd_event	file:
+data	events.c	/^        void            *data;$/;"	m	struct:dummy_t_event	file:
+data_len	net_types.h	/^	int16		data_len;$/;"	m	struct:dummy_packet_header
+data_len	sess_types.h	/^	int32	data_len;$/;"	m	struct:dummy_message_header
+deliver_authinfo	acm.h	/^       void (*deliver_authinfo) (int info_len, void *authinfo);$/;"	m	struct:auth_ops
+dispose	memory.c	/^void            dispose(void *object)$/;"	f
+down_link	protocol.h	/^} down_link;$/;"	t
+down_queue	protocol.h	/^} down_queue;$/;"	t
+down_queue	session.h	/^        int             down_queue;             \/* Down queue to protocol *\/$/;"	m	struct:dummy_session
+dummy_big_scatter	scatter.h	/^typedef struct dummy_big_scatter {$/;"	s
+dummy_configuration	configuration.h	/^typedef struct dummy_configuration{$/;"	s
+dummy_daemon_members	sess_body.h	/^typedef struct  dummy_daemon_members {$/;"	s
+dummy_down_link	protocol.h	/^typedef struct  dummy_down_link {$/;"	s
+dummy_down_queue	protocol.h	/^typedef struct  dummy_down_queue {$/;"	s
+dummy_fd_event	events.c	/^typedef struct dummy_fd_event {$/;"	s	file:
+dummy_fd_queue	events.c	/^typedef struct dummy_fd_queue {$/;"	s	file:
+dummy_group	sess_body.h	/^typedef	struct	dummy_group {$/;"	s
+dummy_group_id	arch.h	/^typedef struct	dummy_group_id {$/;"	s
+dummy_groups_buf_link	groups.c	/^typedef struct dummy_groups_buf_link {$/;"	s	file:
+dummy_groups_message_link	groups.c	/^typedef struct dummy_groups_message_link {$/;"	s	file:
+dummy_member	sess_body.h	/^typedef struct dummy_member {$/;"	s
+dummy_members_info	membership.c	/^typedef	struct	dummy_members_info{$/;"	s	file:
+dummy_membership_id	arch.h	/^typedef	struct	dummy_membership_id {$/;"	s
+dummy_message_header	sess_types.h	/^typedef	struct	dummy_message_header {$/;"	s
+dummy_message_link	session.h	/^typedef	struct	dummy_message_link {$/;"	s
+dummy_packet_header	net_types.h	/^typedef	struct	dummy_packet_header {$/;"	s
+dummy_packet_info	prot_body.h	/^typedef	struct	dummy_packet_info {$/;"	s
+dummy_port_reuse	configuration.h	/^typedef enum dummy_port_reuse {$/;"	g
+dummy_proc	configuration.h	/^typedef struct dummy_proc{$/;"	s
+dummy_rep_info	membership.c	/^typedef	struct	dummy_rep_info{$/;"	s	file:
+dummy_reps_info	membership.c	/^typedef	struct	dummy_reps_info{$/;"	s	file:
+dummy_ring_info	membership.c	/^typedef struct	dummy_ring_info{$/;"	s	file:
+dummy_ring_rtr	net_types.h	/^typedef	struct	dummy_ring_rtr {$/;"	s
+dummy_scat_element	scatter.h	/^typedef struct dummy_scat_element{$/;"	s
+dummy_scatter	scatter.h	/^typedef struct dummy_scatter {$/;"	s
+dummy_segment	configuration.h	/^typedef struct dummy_segment{$/;"	s
+dummy_session	session.h	/^typedef	struct	dummy_session {$/;"	s
+dummy_status	status.h	/^typedef	struct	dummy_status{$/;"	s
+dummy_synced_set	groups.c	/^typedef struct dummy_synced_set {$/;"	s	file:
+dummy_t_event	events.c	/^typedef	struct dummy_t_event {$/;"	s	file:
+dummy_token_header	net_types.h	/^typedef	struct	dummy_token_header {$/;"	s
+dummy_up_queue	prot_body.h	/^typedef	struct	dummy_up_queue {$/;"	s
+elements	scatter.h	/^	scat_element	elements[ARCH_SCATTER_SIZE];$/;"	m	struct:dummy_scatter
+elements	scatter.h	/^	scat_element	elements[MAX_SCATTER_ELEMENTS];$/;"	m	struct:dummy_big_scatter
+enabled	acm.c	/^    bool                enabled;$/;"	m	struct:auth_info	file:
+events	events.c	/^	fd_event	events[MAX_FD_EVENTS];$/;"	m	struct:dummy_fd_queue	file:
+exec_prefix	Makefile	/^exec_prefix=${prefix}$/;"	m
+exist	memory.c	/^        bool            exist;  \/* 1 = object registered, 0 = unused object number *\/$/;"	m	struct:mem_info_d	file:
+exist	prot_body.h	/^	int		exist;$/;"	m	struct:dummy_packet_info
+exist	prot_body.h	/^	int		exist;$/;"	m	struct:dummy_up_queue
+exitHandler	spread.c	/^static void exitHandler(int sig)$/;"	f	file:
+expand_filename	y.tab.c	/^static  void expand_filename(char *out_string, int str_size, const char *in_string)$/;"	f	file:
+ext	conf_body.h	51;"	d
+ext	conf_body.h	53;"	d
+ext	conf_body.h	55;"	d
+ext	prot_body.h	58;"	d
+ext	prot_body.h	60;"	d
+ext	prot_body.h	62;"	d
+ext	sess_body.h	95;"	d
+ext	sess_body.h	97;"	d
+ext	sess_body.h	99;"	d
+ext	status.h	73;"	d
+ext	status.h	75;"	d
+ext	status.h	77;"	d
+ext_conf_body	configuration.c	79;"	d	file:
+ext_conf_body	configuration.c	81;"	d	file:
+ext_prot_body	protocol.c	36;"	d	file:
+ext_sess_body	session.c	76;"	d	file:
+ext_sess_body	session.c	78;"	d	file:
+fd	events.c	/^	int		fd;$/;"	m	struct:dummy_fd_event	file:
+fd	log.c	/^static	FILE	*fd;$/;"	v	file:
+fd_event	events.c	/^} fd_event;$/;"	t	file:
+fd_queue	events.c	/^} fd_queue;$/;"	t	file:
+fd_type	events.c	/^	int		fd_type;$/;"	m	struct:dummy_fd_event	file:
+fifo_seq	net_types.h	/^	int32		fifo_seq;$/;"	m	struct:dummy_packet_header
+first	groups.c	/^        message_link                      *first;$/;"	m	struct:dummy_groups_message_link	file:
+first	protocol.h	/^	down_link	*first;$/;"	m	struct:dummy_down_queue
+first	session.h	/^	message_link	*first;                 \/* Write Queue to Client *\/$/;"	m	struct:dummy_session
+flow_control	net_types.h	/^	int16		flow_control;$/;"	m	struct:dummy_token_header
+func	events.c	/^	void		(* func)( int code, void *data );$/;"	m	struct:dummy_t_event	file:
+func	events.c	/^	void		(* func)( mailbox mbox, int code, void *data );$/;"	m	struct:dummy_fd_event	file:
+gcsBpmAisCallbackFunc	spread.c	/^void gcsBpmAisCallbackFunc(struct sAisParam* param)$/;"	f
+get_parsed_proc_info	y.tab.c	/^static  int 	get_parsed_proc_info( char *name, proc *p )$/;"	f	file:
+get_rand	arch.h	207;"	d
+get_rand	arch.h	209;"	d
+group	sess_body.h	/^} group;$/;"	t
+group_id	arch.h	/^} group_id;$/;"	t
+groups_buf_link	groups.c	/^} groups_buf_link;$/;"	t	file:
+groups_message_link	groups.c	/^} groups_message_link;$/;"	t	file:
+grp_id	sess_body.h	/^	group_id        grp_id;$/;"	m	struct:dummy_group
+grp_mask	sess_body.h	/^        route_mask      grp_mask;$/;"	m	struct:dummy_group
+gstate	status.h	/^	int32	gstate;$/;"	m	struct:dummy_status
+handle_sig	spread.c	/^void handle_sig()$/;"	f
+hash_code	configuration.h	/^        int32u  hash_code;$/;"	m	struct:dummy_configuration
+hash_next	session.h	/^	struct dummy_session *hash_next;$/;"	m	struct:dummy_session
+head	prot_body.h	/^	packet_header	*head;$/;"	m	struct:dummy_packet_info
+highest_seq	membership.c	/^	int32		highest_seq;$/;"	m	struct:dummy_ring_info	file:
+highest_seq	status.h	/^	int32   highest_seq;$/;"	m	struct:dummy_status
+hint	sess_types.h	/^	int32	hint;$/;"	m	struct:dummy_message_header
+host	Makefile	/^host=i686-pc-linux-gnu$/;"	m
+id	configuration.h	/^	int32u	id;$/;"	m	struct:dummy_proc
+ifc	configuration.h	/^        struct spread_if_info ifc[MAX_INTERFACES_PROC];$/;"	m	struct:dummy_proc
+in_mess_head	session.h	/^        int     in_mess_head;$/;"	m	struct:partial_message_info
+includedir	Makefile	/^includedir=${prefix}\/include$/;"	m
+index	arch.h	/^	int32		index;$/;"	m	struct:dummy_group_id
+index_in_seg	configuration.h	/^	int16	index_in_seg;$/;"	m	struct:dummy_proc
+initialize_locks	monitor.c	/^static  void    initialize_locks(void)$/;"	f	file:
+insert_ip_rule	auth-ip.c	/^static void insert_ip_rule(int32u net_address, int prefix)$/;"	f	file:
+insert_user	auth-pword.c	/^static void insert_user(char *username, char *crypt_password)$/;"	f	file:
+int16	arch.h	106;"	d
+int16	arch.h	176;"	d
+int16_t	defines.h	/^typedef long  int16_t;$/;"	t
+int16_t	defines.h	/^typedef short int int16_t;$/;"	t
+int16u	arch.h	110;"	d
+int16u	arch.h	182;"	d
+int32	arch.h	114;"	d
+int32	arch.h	186;"	d
+int32_t	defines.h	/^typedef int int32_t;$/;"	t
+int32_t	defines.h	/^typedef long  int32_t;$/;"	t
+int32u	arch.h	118;"	d
+int32u	arch.h	190;"	d
+int64_t	defines.h	/^typedef long int int64_t;$/;"	t
+int64_t	defines.h	/^typedef long long int int64_t;$/;"	t
+int8_t	defines.h	/^typedef char int8_t;$/;"	t
+ioctl	auth-pword.c	69;"	d	file:
+ioctl	monitor.c	58;"	d	file:
+ioctl	session.c	64;"	d	file:
+ip	conf_body.h	/^  } ip;$/;"	m
+ip	configuration.h	/^        int32u  ip;$/;"	m	struct:spread_if_info
+ip_auth_client_connection	auth-ip.c	/^void ip_auth_client_connection(struct session_auth_info *sess_auth_p)$/;"	f
+ip_auth_monitor_connection	auth-ip.c	/^void ip_auth_monitor_connection(mailbox mbox, int32 ip_addr)$/;"	f
+ip_init	auth-ip.c	/^void ip_init(void)$/;"	f
+ip_rule	auth-ip.c	/^struct ip_rule {$/;"	s	file:
+join_group	acm.h	/^       ACM_ReturnVal (*join_group) (char *user, char *group, void *acm_token);$/;"	m	struct:acp_ops
+last	protocol.h	/^	down_link	*last;$/;"	m	struct:dummy_down_queue
+last	session.h	/^	message_link	*last;                  \/* Write Queue to Client *\/$/;"	m	struct:dummy_session
+leader_id	status.h	/^	int32	leader_id;$/;"	m	struct:dummy_status
+leave_group	acm.h	/^       ACM_ReturnVal (*leave_group) (char *user, char *group, void *acm_token);$/;"	m	struct:acp_ops
+len	scatter.h	/^	int	len;$/;"	m	struct:dummy_scat_element
+lib_version	session.h	/^        char            lib_version[3];$/;"	m	struct:dummy_session
+libdir	Makefile	/^libdir=${exec_prefix}\/lib$/;"	m
+line_num	y.tab.c	/^        int     line_num, semantic_errors;$/;"	v
+list_head	memory.c	/^        void            **list_head;$/;"	m	struct:mem_info_d	file:
+lookup_user	auth-pword.c	/^static bool lookup_user(char *username, struct user_password **user_h)$/;"	f	file:
+mailbox	arch.h	229;"	d
+main	lex.yy.c	/^int main()$/;"	f
+main	monitor.c	/^int main( int argc, char *argv[] )$/;"	f
+main	r.c	/^int main( int argc, char *argv[] )$/;"	f
+main	s.c	/^int main( int argc, char *argv[] )$/;"	f
+main	spread.c	/^int main(int argc, char *argv[])$/;"	f
+major_version	status.h	/^	int16	major_version;$/;"	m	struct:dummy_status
+mandir	Makefile	/^mandir=${prefix}\/man$/;"	m
+mansubdir	Makefile	/^mansubdir=man$/;"	m
+mask	conf_body.h	/^  int32 mask;$/;"	m
+max_bytes	memory.c	/^        unsigned int    max_bytes;$/;"	m	struct:mem_info_d	file:
+max_obj	memory.c	/^        unsigned int    max_obj;$/;"	m	struct:mem_info_d	file:
+max_obj_inuse	memory.c	/^        unsigned int    max_obj_inuse;$/;"	m	struct:mem_info_d	file:
+mbox	acm.h	/^        mailbox mbox;$/;"	m	struct:session_auth_info
+mbox	session.h	/^	mailbox		mbox;$/;"	m	struct:dummy_session
+mboxes	sess_body.h	/^        stdarr          mboxes;         \/* (mailbox): local clients unordered *\/$/;"	m	struct:dummy_group
+mcast_send	acm.h	/^       ACM_ReturnVal (*mcast_send) (char *user, int num_groups, char groups[][MAX_GROUP_NAME], int service_type, int16 mess_type);$/;"	m	struct:acp_ops
+mem_header	memory.c	/^} mem_header;$/;"	t	file:
+mem_header_d	memory.c	/^typedef struct mem_header_d $/;"	s	file:
+mem_header_ptr	memory.c	199;"	d	file:
+mem_info	memory.c	/^} mem_info;$/;"	t	file:
+mem_info_d	memory.c	/^typedef struct mem_info_d$/;"	s	file:
+memb_id	arch.h	/^	membership_id	memb_id;$/;"	m	struct:dummy_group_id
+memb_id	membership.c	/^	membership_id	memb_id;$/;"	m	struct:dummy_ring_info	file:
+memb_id	net_types.h	/^	membership_id	memb_id;$/;"	m	struct:dummy_packet_header
+memb_id	net_types.h	/^	membership_id	memb_id;$/;"	m	struct:dummy_ring_rtr
+memb_id	sess_body.h	/^	membership_id   memb_id;        \/* used for vs_set sorting in G_build_memb_vs_buf; unknown_memb_id means partitioned. *\/$/;"	m	struct:dummy_daemon_members
+member	sess_body.h	/^} member;$/;"	t
+members	membership.c	/^	int32		members[MAX_PROCS_RING];$/;"	m	struct:dummy_members_info	file:
+members_info	membership.c	/^} members_info;$/;"	t	file:
+membership_changes	status.h	/^	int16	membership_changes;$/;"	m	struct:dummy_status
+membership_id	arch.h	/^} membership_id;$/;"	t
+memmove	defines.h	286;"	d
+mess	prot_body.h	/^	scatter 	*mess;$/;"	m	struct:dummy_up_queue
+mess	protocol.h	/^	scatter 		*mess; $/;"	m	struct:dummy_down_link
+mess	session.h	/^	message_obj			*mess;$/;"	m	struct:dummy_message_link
+message_delivered	status.h	/^	int32	message_delivered;$/;"	m	struct:dummy_status
+message_header	sess_types.h	/^} message_header;$/;"	t
+message_link	session.h	/^} message_link;$/;"	t
+message_obj	prot_objs.h	/^typedef scatter message_obj;$/;"	t
+minor_version	status.h	/^	int16	minor_version;$/;"	m	struct:dummy_status
+module_data	acm.h	/^        void *module_data;$/;"	m	struct:session_auth_info
+mutex_type	mutex.h	45;"	d
+mutex_type	mutex.h	64;"	d
+mutex_type	mutex.h	84;"	d
+my_aru	status.h	/^	int32   my_aru;$/;"	m	struct:dummy_status
+my_id	status.h	/^	int32	my_id;$/;"	m	struct:dummy_status
+name	acm.c	/^    char                name[MAX_AUTH_NAME];$/;"	m	struct:acp_info	file:
+name	acm.c	/^    char                name[MAX_AUTH_NAME];$/;"	m	struct:auth_info	file:
+name	configuration.h	/^	char	name[MAX_PROC_NAME]; $/;"	m	struct:dummy_proc
+name	sess_body.h	/^        char            name[MAX_GROUP_NAME];  \/* NOTE: groups.c depends on 'name' being the first member (GroupsList) *\/$/;"	m	struct:dummy_group
+name	sess_body.h	/^        char  name[MAX_GROUP_NAME];     \/* NOTE: groups.c depends on 'name' being first member (MembersList) *\/$/;"	m	struct:dummy_member
+name	session.h	/^	char		name[MAX_PRIVATE_NAME+1]; \/* +1 for the null *\/$/;"	m	struct:dummy_session
+name2ip	y.tab.c	/^static int32u name2ip(char *name) {$/;"	f	file:
+network_address	auth-ip.c	/^    int32u      network_address;$/;"	m	struct:ip_rule	file:
+new	memory.c	/^void *          new(int32u obj_type)$/;"	f
+next	auth-ip.c	/^    struct ip_rule *next;$/;"	m	struct:ip_rule	file:
+next	auth-pword.c	/^    struct user_password *next;$/;"	m	struct:user_password	file:
+next	events.c	/^	struct dummy_t_event	*next;$/;"	m	struct:dummy_t_event	file:
+next	groups.c	/^        struct dummy_groups_message_link  *next;$/;"	m	struct:dummy_groups_message_link	file:
+next	groups.c	/^  struct dummy_groups_buf_link  *next;$/;"	m	struct:dummy_groups_buf_link	file:
+next	protocol.h	/^	struct	dummy_down_link *next;$/;"	m	struct:dummy_down_link
+next	session.h	/^	struct	dummy_message_link	*next;$/;"	m	struct:dummy_message_link
+null_auth_client_connection	auth-null.c	/^void null_auth_client_connection(struct session_auth_info *sess_auth_p)$/;"	f
+null_auth_monitor_connection	auth-null.c	/^void null_auth_monitor_connection(mailbox mbox, int32 ip_addr)$/;"	f
+null_init	auth-null.c	/^void null_init(void)$/;"	f
+num_active_fds	events.c	/^        int             num_active_fds;$/;"	m	struct:dummy_fd_queue	file:
+num_commit	membership.c	/^	int16		num_commit;$/;"	m	struct:dummy_ring_info	file:
+num_elements	scatter.h	/^	int		num_elements;$/;"	m	struct:dummy_big_scatter
+num_elements	scatter.h	/^	int		num_elements;$/;"	m	struct:dummy_scatter
+num_fds	events.c	/^	int		num_fds;$/;"	m	struct:dummy_fd_queue	file:
+num_groups	sess_types.h	/^	int32	num_groups;$/;"	m	struct:dummy_message_header
+num_groups	status.h	/^	int16	num_groups;$/;"	m	struct:dummy_status
+num_holes	membership.c	/^	int32		num_holes;$/;"	m	struct:dummy_ring_info	file:
+num_if	configuration.h	/^        int     num_if;$/;"	m	struct:dummy_proc
+num_members	membership.c	/^	int16		num_members;$/;"	m	struct:dummy_members_info	file:
+num_members	sess_body.h	/^        int             num_members;    \/* sums over all daemons in DaemonsList *\/$/;"	m	struct:dummy_group
+num_mess	protocol.h	/^	int		num_mess;$/;"	m	struct:dummy_down_queue
+num_mess	session.h	/^	int		num_mess;               \/* Write Queue to Client *\/$/;"	m	struct:dummy_session
+num_obj	memory.c	/^        unsigned int    num_obj;$/;"	m	struct:mem_info_d	file:
+num_obj_inpool	memory.c	/^        unsigned int    num_obj_inpool;$/;"	m	struct:mem_info_d	file:
+num_obj_inuse	memory.c	/^        unsigned int    num_obj_inuse;$/;"	m	struct:mem_info_d	file:
+num_pending	membership.c	/^	int16		num_pending;$/;"	m	struct:dummy_members_info	file:
+num_procs	configuration.h	/^	int	num_procs;$/;"	m	struct:dummy_segment
+num_procs	status.h	/^	int16	num_procs;$/;"	m	struct:dummy_status
+num_procs	y.tab.c	/^ static int     num_procs = 0;$/;"	v	file:
+num_reps	membership.c	/^	int16		num_reps;$/;"	m	struct:dummy_reps_info	file:
+num_required_auths	acm.h	/^        int num_required_auths;$/;"	m	struct:session_auth_info
+num_segments	configuration.h	/^	int	num_segments;$/;"	m	struct:dummy_configuration
+num_segments	status.h	/^	int16	num_segments;$/;"	m	struct:dummy_status
+num_seq	net_types.h	/^	int16		num_seq;$/;"	m	struct:dummy_ring_rtr
+num_sessions	status.h	/^	int16	num_sessions;$/;"	m	struct:dummy_status
+num_total_procs	configuration.h	/^        int     num_total_procs;$/;"	m	struct:dummy_configuration
+num_trans	membership.c	/^	int16		num_trans;$/;"	m	struct:dummy_ring_info	file:
+number	conf_body.h	/^  int number;$/;"	m
+obj_ref_count	objects.h	/^        int32           obj_ref_count; \/* who is using it before we free it - should not be sent *\/$/;"	m	struct:d_obj
+obj_type	memory.c	/^        int32u   obj_type;$/;"	m	struct:mem_header_d	file:
+obj_type	memory.h	/^void *          new(int32u obj_type);$/;"	v
+obj_type	objects.h	/^        int32u          obj_type;$/;"	m	struct:d_obj
+open_connection	acm.h	/^       ACM_ReturnVal (*open_connection) (char *user);$/;"	m	struct:acp_ops
+open_monitor	acm.h	/^       ACM_ReturnVal (*open_monitor) (char *user); \/* not user currently *\/$/;"	m	struct:acp_ops
+ops	acm.c	/^    struct acp_ops      ops;$/;"	m	struct:acp_info	file:
+ops	acm.c	/^    struct auth_ops     ops;$/;"	m	struct:auth_info	file:
+p2p_send	acm.h	/^       ACM_ReturnVal (*p2p_send) (char *user, int num_dests, char dests[][MAX_GROUP_NAME], int service_type, int16 mess_type);$/;"	m	struct:acp_ops
+packet_body	net_types.h	/^typedef	char       packet_body[MAX_PACKET_SIZE-sizeof(packet_header)];$/;"	t
+packet_delivered	status.h	/^	int32	packet_delivered;$/;"	m	struct:dummy_status
+packet_header	net_types.h	/^} packet_header;$/;"	t
+packet_index	net_types.h	/^	int16		packet_index;$/;"	m	struct:dummy_packet_header
+packet_info	prot_body.h	/^} packet_info;$/;"	t
+packet_recv	status.h	/^	int32	packet_recv;$/;"	m	struct:dummy_status
+packet_sent	status.h	/^	int32	packet_sent;$/;"	m	struct:dummy_status
+parser_init	y.tab.c	/^void    parser_init()$/;"	f
+partial_message_info	session.h	/^struct partial_message_info {$/;"	s
+password	auth-pword-client.h	/^    char password[MAX_PWORD_PASSWORD + 1];$/;"	m	struct:user_password
+patch_version	status.h	/^	int16	patch_version;$/;"	m	struct:dummy_status
+permit_init	acp-permit.c	/^void permit_init(void)$/;"	f
+permit_join_group	acp-permit.c	/^ACM_ReturnVal permit_join_group(char *member, char *group, void *dummy_token)$/;"	f
+permit_leave_group	acp-permit.c	/^ACM_ReturnVal permit_leave_group(char *member, char *group, void *dummy_token)$/;"	f
+permit_mcast_send	acp-permit.c	/^ACM_ReturnVal permit_mcast_send(char *sender, int num_groups, char groups[][MAX_GROUP_NAME], int service_type, int16 mess_type)$/;"	f
+permit_open_connection	acp-permit.c	/^ACM_ReturnVal  permit_open_connection(char *user)$/;"	f
+permit_open_monitor	acp-permit.c	/^ACM_ReturnVal  permit_open_monitor(char *user)$/;"	f
+permit_p2p_send	acp-permit.c	/^ACM_ReturnVal permit_p2p_send(char *sender, int num_dests, char dests[][MAX_GROUP_NAME], int service_type, int16 mess_type)$/;"	f
+personal_window	status.h	/^	int16	personal_window;$/;"	m	struct:dummy_status
+pid_t	defines.h	/^typedef int pid_t;$/;"	t
+piddir	Makefile	/^piddir=\/var\/run$/;"	m
+port	conf_body.h	/^    unsigned short port;$/;"	m
+port	configuration.h	/^	int16	port;$/;"	m	struct:dummy_proc
+port	configuration.h	/^	int16	port;$/;"	m	struct:dummy_segment
+port	configuration.h	/^        int16   port;$/;"	m	struct:spread_if_info
+port_reuse	configuration.h	/^} port_reuse;$/;"	t
+port_reuse_auto	configuration.h	/^    port_reuse_auto,$/;"	e	enum:dummy_port_reuse
+port_reuse_off	configuration.h	/^    port_reuse_off$/;"	e	enum:dummy_port_reuse
+port_reuse_on	configuration.h	/^    port_reuse_on,$/;"	e	enum:dummy_port_reuse
+prefix	Makefile	/^prefix=\/usr\/local$/;"	m
+prefix_length	auth-ip.c	/^    int         prefix_length;$/;"	m	struct:ip_rule	file:
+printgroup	groups.c	/^char *printgroup(void *vgrp) {$/;"	f
+priority	session.h	/^        int             priority;$/;"	m	struct:dummy_session
+private_group_name	sess_types.h	/^	char	private_group_name[MAX_GROUP_NAME];$/;"	m	struct:dummy_message_header
+proc	configuration.h	/^} proc;$/;"	t
+proc_id	arch.h	/^	int32	proc_id;$/;"	m	struct:dummy_membership_id
+proc_id	membership.c	/^	int32		proc_id;$/;"	m	struct:dummy_rep_info	file:
+proc_id	net_types.h	/^	int32		proc_id;$/;"	m	struct:dummy_packet_header
+proc_id	net_types.h	/^	int32		proc_id;$/;"	m	struct:dummy_ring_rtr
+proc_id	net_types.h	/^	int32		proc_id;$/;"	m	struct:dummy_token_header
+proc_id	sess_body.h	/^        int32           proc_id;        \/* NOTE: groups.c depends on 'proc_id' being the first member (DaemonsList) *\/$/;"	m	struct:dummy_daemon_members
+proc_ids	groups.c	/^        int32  proc_ids[MAX_PROCS_RING];$/;"	m	struct:dummy_synced_set	file:
+proc_index	prot_body.h	/^	int		proc_index;$/;"	m	struct:dummy_packet_info
+procs	configuration.h	/^	proc    *procs[MAX_PROCS_SEGMENT];$/;"	m	struct:dummy_segment
+procs_interfaces	y.tab.c	/^ static int     procs_interfaces = 0;$/;"	v	file:
+pword_auth_client_connection	auth-pword.c	/^void pword_auth_client_connection(struct session_auth_info *sess_auth_p)$/;"	f
+pword_auth_monitor_connection	auth-pword.c	/^void pword_auth_monitor_connection(mailbox mbox, int32 ip_addr)$/;"	f
+pword_authenticate	auth-pword-client.c	/^int pword_authenticate(int fd, void *data_p)$/;"	f
+pword_init	auth-pword.c	/^void pword_init(void)$/;"	f
+read	session.h	/^        struct partial_message_info     read;   \/* Read Msg from Client *\/$/;"	m	struct:dummy_session
+read_configuration	monitor.c	/^static  void    read_configuration(void)$/;"	f	file:
+read_mess	session.h	/^        message_obj     *read_mess;             \/* Read Msg from Client *\/$/;"	m	struct:dummy_session
+rep_index	membership.c	/^	int16		rep_index;$/;"	m	struct:dummy_reps_info	file:
+rep_info	membership.c	/^} rep_info;$/;"	t	file:
+rep_proc_id	groups.c	/^        int32                              rep_proc_id;$/;"	m	struct:dummy_groups_message_link	file:
+reps	membership.c	/^	rep_info	reps[MAX_REPS];$/;"	m	struct:dummy_reps_info	file:
+reps_info	membership.c	/^} reps_info;$/;"	t	file:
+required	acm.c	/^    bool                required;$/;"	m	struct:auth_info	file:
+required_auth_methods	acm.h	/^        int required_auth_methods[MAX_AUTH_METHODS];$/;"	m	struct:session_auth_info
+required_auth_results	acm.h	/^        int required_auth_results[MAX_AUTH_METHODS];$/;"	m	struct:session_auth_info
+retrans	status.h	/^	int32	retrans;$/;"	m	struct:dummy_status
+ring_info	membership.c	/^} ring_info;$/;"	t	file:
+ring_rtr	net_types.h	/^} ring_rtr;$/;"	t
+roundup	defines.h	257;"	d
+route_mask	prot_objs.h	/^typedef int     route_mask[4];$/;"	t
+rtr_len	net_types.h	/^	int16		rtr_len;$/;"	m	struct:dummy_token_header
+rvec_num	y.tab.c	/^ static int     rvec_num = 0;$/;"	v	file:
+s_retrans	status.h	/^	int32	s_retrans;$/;"	m	struct:dummy_status
+sa_family_t	defines.h	/^typedef int sa_family_t;$/;"	t
+sbindir	Makefile	/^sbindir=${exec_prefix}\/sbin$/;"	m
+scat_element	scatter.h	/^} scat_element;$/;"	t
+scatter	scatter.h	/^} scatter;$/;"	t
+sec	status.h	/^	int32	sec;$/;"	m	struct:dummy_status
+seg_index	configuration.h	/^	int16	seg_index;$/;"	m	struct:dummy_proc
+seg_index	membership.c	/^	int16		seg_index;$/;"	m	struct:dummy_rep_info	file:
+seg_index	net_types.h	/^	int16		seg_index;$/;"	m	struct:dummy_ring_rtr
+segment	configuration.h	/^} segment;$/;"	t
+segment2str	y.tab.c	/^static char *segment2str(int seg) {$/;"	f	file:
+segment_procs	y.tab.c	/^ static int     segment_procs = 0;$/;"	v	file:
+segments	configuration.h	/^	segment	segments[MAX_SEGMENTS];$/;"	m	struct:dummy_configuration
+segments	y.tab.c	/^ static int     segments = 0;$/;"	v	file:
+semantic_errors	y.tab.c	/^        int     line_num, semantic_errors;$/;"	v
+seq	net_types.h	/^	int32		seq;$/;"	m	struct:dummy_packet_header
+seq	net_types.h	/^	int32		seq;$/;"	m	struct:dummy_token_header
+service	sess_types.h	47;"	d
+session	session.h	/^} session;$/;"	t
+session_auth_info	acm.h	/^struct session_auth_info {$/;"	s
+set_param_if_valid	configuration.c	/^static void set_param_if_valid(char **param, char *value, char *description, unsigned int max_value_len)$/;"	f	file:
+size	groups.c	/^        int32u size;$/;"	m	struct:dummy_synced_set	file:
+size	memory.c	/^        size_t          size;   \/* size of object in bytes (should be from sizeof so aligned ) *\/$/;"	m	struct:mem_info_d	file:
+size_t	defines.h	/^typedef unsigned int size_t;$/;"	t
+sizeobj	memory.c	/^static size_t sizeobj(int32u objtype)$/;"	f	file:
+slfAddr	spread.c	/^ SysAddr slfAddr;$/;"	v
+snprintf	arch.h	141;"	d
+sock_errno	arch.h	138;"	d
+sock_errno	arch.h	97;"	d
+sock_set_errno	arch.h	139;"	d
+sock_set_errno	arch.h	99;"	d
+sock_strerror	arch.c	/^char    *sock_strerror(int err)$/;"	f
+sock_strerror	arch.h	98;"	d
+sockaddr_un	defines.h	/^struct	sockaddr_un {$/;"	s
+socklen_t	arch.h	/^typedef         unsigned long   socklen_t;$/;"	t
+socklen_t	defines.h	/^typedef unsigned int socklen_t;$/;"	t
+sockopt_len_t	arch.h	/^typedef         unsigned long   sockopt_len_t;$/;"	t
+sockopt_len_t	defines.h	/^typedef int sockopt_len_t;$/;"	t
+sockopt_len_t	defines.h	/^typedef socklen_t sockopt_len_t;$/;"	t
+sort_next	session.h	/^	struct dummy_session *sort_next;$/;"	m	struct:dummy_session
+sort_prev	session.h	/^	struct dummy_session *sort_prev;$/;"	m	struct:dummy_session
+spread_if_info	configuration.h	/^struct spread_if_info {$/;"	s
+srcdir	Makefile	/^srcdir=.$/;"	m
+ss_family	defines.h	239;"	d
+ssize_t	defines.h	/^typedef int ssize_t;$/;"	t
+state	status.h	/^	int32	state;$/;"	m	struct:dummy_status
+status	session.h	/^	int		status; \/* OP_SESSION or KILLED SESSION and with or without membership *\/$/;"	m	struct:dummy_session
+status	status.h	/^} status;$/;"	t
+status_ext	monitor.c	36;"	d	file:
+status_ext	status.c	36;"	d	file:
+strerror	arch.c	/^char    *strerror(int err)$/;"	f
+string	conf_body.h	/^  char *string;$/;"	m
+sun_family	defines.h	/^	short	sun_family;		\/* AF_UNIX *\/$/;"	m	struct:sockaddr_un
+sun_path	defines.h	/^	char	sun_path[108];		\/* path name (gag) *\/$/;"	m	struct:sockaddr_un
+synced_set	groups.c	/^} synced_set;$/;"	t	file:
+sys_scatter	scatter.h	/^} sys_scatter;$/;"	t
+sysconfdir	Makefile	/^sysconfdir=${prefix}\/etc$/;"	m
+t	events.c	/^	sp_time		t;$/;"	m	struct:dummy_t_event	file:
+threshold	memory.c	/^        unsigned int    threshold;$/;"	m	struct:mem_info_d	file:
+time	arch.h	/^	int32	time;$/;"	m	struct:dummy_membership_id
+time_event	events.c	/^} time_event;$/;"	t	file:
+timersub	defines.h	261;"	d
+token_body	net_types.h	/^typedef	char       token_body[MAX_PACKET_SIZE-sizeof(token_header)];$/;"	t
+token_header	net_types.h	/^} token_header;$/;"	t
+token_hurry	status.h	/^	int32	token_hurry;$/;"	m	struct:dummy_status
+token_rounds	status.h	/^	int32	token_rounds;$/;"	m	struct:dummy_status
+top_srcdir	Makefile	/^top_srcdir=..$/;"	m
+total_bytes	session.h	/^        int     total_bytes;$/;"	m	struct:partial_message_info
+trans_time	membership.c	/^        int32           trans_time;$/;"	m	struct:dummy_ring_info	file:
+transmiter_id	net_types.h	/^	int32		transmiter_id;$/;"	m	struct:dummy_packet_header
+transmiter_id	net_types.h	/^	int32		transmiter_id;$/;"	m	struct:dummy_token_header
+type	configuration.h	/^        int16   type;$/;"	m	struct:spread_if_info
+type	membership.c	/^	int16		type;$/;"	m	struct:dummy_rep_info	file:
+type	net_types.h	/^	int32		type;$/;"	m	struct:dummy_packet_header
+type	net_types.h	/^	int32		type;$/;"	m	struct:dummy_token_header
+type	protocol.h	/^	int32			type;$/;"	m	struct:dummy_down_link
+type	sess_types.h	/^	int32u	type;$/;"	m	struct:dummy_message_header
+type	session.h	/^	int		type; \/* inet or unix *\/ $/;"	m	struct:dummy_session
+u_int	defines.h	/^typedef unsigned int u_int;$/;"	t
+u_int16_t	defines.h	/^typedef uint16_t u_int16_t;$/;"	t
+u_int16_t	defines.h	/^typedef unsigned long  u_int16_t;$/;"	t
+u_int16_t	defines.h	/^typedef unsigned short int u_int16_t;$/;"	t
+u_int32_t	defines.h	/^typedef uint32_t u_int32_t;$/;"	t
+u_int32_t	defines.h	/^typedef unsigned int u_int32_t;$/;"	t
+u_int32_t	defines.h	/^typedef unsigned long  u_int32_t;$/;"	t
+u_int64_t	defines.h	/^typedef unsigned long int u_int64_t;$/;"	t
+u_int64_t	defines.h	/^typedef unsigned long long int u_int64_t;$/;"	t
+u_int8_t	defines.h	/^typedef uint8_t u_int8_t;$/;"	t
+u_int8_t	defines.h	/^typedef unsigned char u_int8_t;$/;"	t
+u_retrans	status.h	/^	int32	u_retrans;$/;"	m	struct:dummy_status
+unknown_memb_id	groups.c	/^static  membership_id   unknown_memb_id = { -1, -1 }; \/* See explanation above. *\/$/;"	v	file:
+unput	lex.yy.c	137;"	d	file:
+up_queue	prot_body.h	/^} up_queue;$/;"	t
+user_password	auth-pword-client.h	/^struct user_password {$/;"	s
+user_password	auth-pword.c	/^struct user_password {$/;"	s	file:
+username	auth-pword-client.h	/^    char username[MAX_PWORD_USERNAME + 1];$/;"	m	struct:user_password
+username	auth-pword.c	/^    char username[MAX_PWORD_USERNAME + 1];$/;"	m	struct:user_password	file:
+window	status.h	/^	int16	window;$/;"	m	struct:dummy_status
+write	session.h	/^        struct partial_message_info     write;  \/* Write Queue to Client *\/$/;"	m	struct:dummy_session
+yy_accept	lex.yy.c	/^static yyconst short int yy_accept[401] =$/;"	v	file:
+yy_at_bol	lex.yy.c	/^	int yy_at_bol;$/;"	m	struct:yy_buffer_state	file:
+yy_base	lex.yy.c	/^static yyconst short int yy_base[409] =$/;"	v	file:
+yy_buf_pos	lex.yy.c	/^	char *yy_buf_pos;		\/* current position in input buffer *\/$/;"	m	struct:yy_buffer_state	file:
+yy_buf_size	lex.yy.c	/^	yy_size_t yy_buf_size;$/;"	m	struct:yy_buffer_state	file:
+yy_buffer_state	lex.yy.c	/^struct yy_buffer_state$/;"	s	file:
+yy_buffer_status	lex.yy.c	/^	int yy_buffer_status;$/;"	m	struct:yy_buffer_state	file:
+yy_c_buf_p	lex.yy.c	/^static char *yy_c_buf_p = (char *) 0;$/;"	v	file:
+yy_ch_buf	lex.yy.c	/^	char *yy_ch_buf;		\/* input buffer *\/$/;"	m	struct:yy_buffer_state	file:
+yy_chk	lex.yy.c	/^static yyconst short int yy_chk[580] =$/;"	v	file:
+yy_create_buffer	lex.yy.c	/^YY_BUFFER_STATE yy_create_buffer( FILE *file, int size )$/;"	f
+yy_current_buffer	lex.yy.c	/^static YY_BUFFER_STATE yy_current_buffer = 0;$/;"	v	file:
+yy_def	lex.yy.c	/^static yyconst short int yy_def[409] =$/;"	v	file:
+yy_delete_buffer	lex.yy.c	/^void yy_delete_buffer( YY_BUFFER_STATE b )$/;"	f
+yy_did_buffer_switch_on_eof	lex.yy.c	/^static int yy_did_buffer_switch_on_eof;$/;"	v	file:
+yy_ec	lex.yy.c	/^static yyconst int yy_ec[256] =$/;"	v	file:
+yy_fatal_error	lex.yy.c	/^static void yy_fatal_error( yyconst char msg[] )$/;"	f	file:
+yy_fill_buffer	lex.yy.c	/^	int yy_fill_buffer;$/;"	m	struct:yy_buffer_state	file:
+yy_flex_alloc	lex.yy.c	/^static void *yy_flex_alloc( yy_size_t size )$/;"	f	file:
+yy_flex_free	lex.yy.c	/^static void yy_flex_free( void *ptr )$/;"	f	file:
+yy_flex_realloc	lex.yy.c	/^static void *yy_flex_realloc( void *ptr, yy_size_t size )$/;"	f	file:
+yy_flex_strlen	lex.yy.c	/^static int yy_flex_strlen( yyconst char *s )$/;"	f	file:
+yy_flex_strncpy	lex.yy.c	/^static void yy_flex_strncpy( char *s1, yyconst char *s2, int n )$/;"	f	file:
+yy_flush_buffer	lex.yy.c	/^void yy_flush_buffer( YY_BUFFER_STATE b )$/;"	f
+yy_get_next_buffer	lex.yy.c	/^static int yy_get_next_buffer()$/;"	f	file:
+yy_get_previous_state	lex.yy.c	/^static yy_state_type yy_get_previous_state()$/;"	f	file:
+yy_hold_char	lex.yy.c	/^static char yy_hold_char;$/;"	v	file:
+yy_init	lex.yy.c	/^static int yy_init = 1;		\/* whether we need to initialize *\/$/;"	v	file:
+yy_init_buffer	lex.yy.c	/^void yy_init_buffer( YY_BUFFER_STATE b, FILE *file )$/;"	f
+yy_input_file	lex.yy.c	/^	FILE *yy_input_file;$/;"	m	struct:yy_buffer_state	file:
+yy_is_interactive	lex.yy.c	/^	int yy_is_interactive;$/;"	m	struct:yy_buffer_state	file:
+yy_is_our_buffer	lex.yy.c	/^	int yy_is_our_buffer;$/;"	m	struct:yy_buffer_state	file:
+yy_last_accepting_cpos	lex.yy.c	/^static char *yy_last_accepting_cpos;$/;"	v	file:
+yy_last_accepting_state	lex.yy.c	/^static yy_state_type yy_last_accepting_state;$/;"	v	file:
+yy_load_buffer_state	lex.yy.c	/^void yy_load_buffer_state( void )$/;"	f
+yy_meta	lex.yy.c	/^static yyconst int yy_meta[63] =$/;"	v	file:
+yy_n_chars	lex.yy.c	/^	int yy_n_chars;$/;"	m	struct:yy_buffer_state	file:
+yy_n_chars	lex.yy.c	/^static int yy_n_chars;		\/* number of characters read into yy_ch_buf *\/$/;"	v	file:
+yy_new_buffer	lex.yy.c	257;"	d	file:
+yy_nxt	lex.yy.c	/^static yyconst short int yy_nxt[580] =$/;"	v	file:
+yy_pop_state	lex.yy.c	/^static void yy_pop_state()$/;"	f	file:
+yy_push_state	lex.yy.c	/^static void yy_push_state( int new_state )$/;"	f	file:
+yy_scan_buffer	lex.yy.c	/^YY_BUFFER_STATE yy_scan_buffer( char *base, yy_size_t size )$/;"	f
+yy_scan_bytes	lex.yy.c	/^YY_BUFFER_STATE yy_scan_bytes( yyconst char *bytes, int len )$/;"	f
+yy_scan_string	lex.yy.c	/^YY_BUFFER_STATE yy_scan_string( yyconst char *yy_str )$/;"	f
+yy_set_bol	lex.yy.c	266;"	d	file:
+yy_set_interactive	lex.yy.c	259;"	d	file:
+yy_size_t	lex.yy.c	/^typedef unsigned int yy_size_t;$/;"	t	file:
+yy_start	lex.yy.c	/^static int yy_start = 0;	\/* start state number *\/$/;"	v	file:
+yy_start_stack	lex.yy.c	/^static int *yy_start_stack = 0;$/;"	v	file:
+yy_start_stack_depth	lex.yy.c	/^static int yy_start_stack_depth = 0;$/;"	v	file:
+yy_start_stack_ptr	lex.yy.c	/^static int yy_start_stack_ptr = 0;$/;"	v	file:
+yy_state_type	lex.yy.c	/^typedef int yy_state_type;$/;"	t	file:
+yy_switch_to_buffer	lex.yy.c	/^void yy_switch_to_buffer( YY_BUFFER_STATE new_buffer )$/;"	f
+yy_top_state	lex.yy.c	/^static int yy_top_state()$/;"	f	file:
+yy_try_NUL_trans	lex.yy.c	/^static yy_state_type yy_try_NUL_trans( yy_state_type yy_current_state )$/;"	f	file:
+yychar	y.tab.c	/^int yychar;$/;"	v
+yycheck	y.tab.c	/^const short yycheck[] = {                                     261,$/;"	v
+yyclearin	y.tab.c	11;"	d	file:
+yyconst	lex.yy.c	55;"	d	file:
+yyconst	lex.yy.c	57;"	d	file:
+yydebug	y.tab.c	/^int yydebug;$/;"	v
+yydefred	y.tab.c	/^const short yydefred[] = {                                      0,$/;"	v
+yydgoto	y.tab.c	/^const short yydgoto[] = {                                      16,$/;"	v
+yyerrflag	y.tab.c	/^int yyerrflag;$/;"	v
+yyerrok	y.tab.c	12;"	d	file:
+yyerror	y.tab.c	/^int yyerror(char *str) {$/;"	f
+yygindex	y.tab.c	/^const short yygindex[] = {                                      0,$/;"	v
+yygrowstack	y.tab.c	/^static int yygrowstack()$/;"	f	file:
+yyin	conf_body.h	/^ext     FILE		*yyin;$/;"	v
+yyin	lex.yy.c	/^FILE *yyin = (FILE *) 0, *yyout = (FILE *) 0;$/;"	v
+yyinput	lex.yy.c	/^static int yyinput()$/;"	f	file:
+yylen	y.tab.c	/^const short yylen[] = {                                         2,$/;"	v
+yyleng	lex.yy.c	/^int yyleng;$/;"	v
+yyless	lex.yy.c	126;"	d	file:
+yyless	lex.yy.c	2107;"	d	file:
+yyless	lex.yy.c	2108;"	d	file:
+yylhs	y.tab.c	/^const short yylhs[] = {                                        -1,$/;"	v
+yylval	y.tab.c	/^YYSTYPE yylval;$/;"	v
+yymore	lex.yy.c	631;"	d	file:
+yyname	y.tab.c	/^const char * const yyname[] = {$/;"	v
+yynerrs	y.tab.c	/^int yynerrs;$/;"	v
+yyout	lex.yy.c	/^FILE *yyin = (FILE *) 0, *yyout = (FILE *) 0;$/;"	v
+yyparse	y.tab.c	/^yyparse (YYPARSE_PARAM_ARG)$/;"	f
+yyrcsid	y.tab.c	/^yyrcsid[] = "$FreeBSD: src\/usr.bin\/yacc\/skeleton.c,v 1.28 2000\/01\/17 02:04:06 bde Exp $";$/;"	v	file:
+yyrestart	lex.yy.c	/^void yyrestart( FILE *input_file )$/;"	f
+yyrindex	y.tab.c	/^const short yyrindex[] = {                                    114,$/;"	v
+yyrule	y.tab.c	/^const char * const yyrule[] = {$/;"	v
+yysindex	y.tab.c	/^const short yysindex[] = {                                   -255,$/;"	v
+yyss	y.tab.c	/^short *yyss;$/;"	v
+yysslim	y.tab.c	/^short *yysslim;$/;"	v
+yyssp	y.tab.c	/^short *yyssp;$/;"	v
+yystacksize	y.tab.c	/^int yystacksize;$/;"	v
+yytable	y.tab.c	/^const short yytable[] = {                                      68,$/;"	v
+yyterminate	lex.yy.c	804;"	d	file:
+yytext	lex.yy.c	/^char *yytext;$/;"	v
+yytext_ptr	lex.yy.c	282;"	d	file:
+yyunput	lex.yy.c	/^static void yyunput( int c, register char *yy_bp )$/;"	f	file:
+yyval	y.tab.c	/^YYSTYPE yyval;$/;"	v
+yyvs	y.tab.c	/^YYSTYPE *yyvs;$/;"	v
+yyvsp	y.tab.c	/^YYSTYPE *yyvsp;$/;"	v
+yywarn	y.tab.c	/^void yywarn(char *str) {$/;"	f
+yywrap	lex.yy.c	276;"	d	file:

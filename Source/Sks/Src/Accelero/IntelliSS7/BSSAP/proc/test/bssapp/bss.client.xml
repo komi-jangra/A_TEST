@@ -1,0 +1,315 @@
+<?xml version="1.0"?>
+
+<!-- Sample XML file for application configuration (INI). -->
+ 
+<Application name           = "BSS"
+             type           = "console-application"
+             globalStart    = "ITU-SCCP"
+             binding        = "CPP"
+             library        = ""
+             appSelector    = ""
+             preFunc        = "AppPreFunc">
+ 
+    <AppOptions name = "traceFlushAfterWrite"         value = "yes"/>
+    <AppOptions name = "routeUniqueLinkCodesRequired" value = "yes"/>
+    <AppOptions name = "memPoolChecksOn"              value = "no"/>
+
+    <Feature
+        name        = "DBC Server Class"
+        library     = "libENGINED.so"
+        classRec    = "itsDBC_ServerClass"
+    />
+
+
+    <FaultTolerance
+        maxNumFtGroups      = "1"
+        maxNumProcesses     = "1"
+        maxNumNodes         = "1"
+        nodeId              = "0"
+        processId           = "0"
+        tcapFtGroupId       = "0"
+        sccpFtGroupId       = "0"
+        mtp3FtGroupId       = "0"
+        isupFtGroupId       = "0"
+        routingFtGroupId    = "0"
+        timersFtGroupId     = "0"
+        mgmtDataFtGroupId   = "0"
+    >
+
+        <Procedures>
+
+        </Procedures>
+
+        <Callbacks>
+
+        </Callbacks>
+
+        <FtGroups>
+
+            <FtGroup
+                ftGroupId      = "0"
+                ftGroupName    = "FtGroup0"
+            >
+
+                <DsmConfig
+                     dsmSize         = "20971520"
+                     dsmBaseAddress  = "0x80000000"
+                     dsmMaxNumTables = "256"
+                     dsmType         = "STUB"
+                />
+
+             <!-- Note: MUST include itself. -->
+             <!-- Note: nodeName and processName are optional attributes. -->
+
+
+                <FtGroupMembers>
+                    <FtGroupMember
+                        nodeId      = "0"
+                        nodeName    = "Node0"
+                        processId   = "0"
+                        processName = "Node0Process0"
+                    />
+
+                </FtGroupMembers>
+
+
+                <!-- Note: MUST NOT include itself. -->
+                <!-- Note: Master FtGroupMembers are tried in order. -->
+
+                <MasterFtGroupMembers>
+
+                </MasterFtGroupMembers>
+
+                <Callbacks>
+
+                </Callbacks>
+
+            </FtGroup>
+
+        </FtGroups>
+
+    </FaultTolerance>
+
+    <!--/////////////// LINK SETS //////////////-->
+
+    <!-- link set for internal routing -->
+    <LinkSet id           = "0"
+             family       = "ITU"
+             adjacentSTP  = "no"
+             numToStart   = "0">
+        <NI     value = "0"/>
+        <APC    value = "0"/>
+        <LPC    value = "1"/>
+    </LinkSet>
+
+    <!-- link set for external routing -->
+    <LinkSet id           = "1"
+             family       = "ITU"
+             adjacentSTP  = "yes"
+             numToStart   = "1">
+        <NI     value = "0"/>
+        <APC    value = "2"/>
+        <LPC    value = "1"/>
+
+    </LinkSet>
+
+    <!--///////////////Route Info //////////////-->
+
+    <!-- route for SCCP -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio-ssn"
+            family       = "ITU"
+            linkSet  = "0"
+            priority = "0">
+        <DPC    value = "2"/>
+        <SIO    value = "3"/>
+        <SSN    value = "0xFE"/>
+    </Route>
+
+    <Route  type     = "remoteRoute"
+            style    = "dpc-sio-ssn"
+            family       = "ITU"
+            linkSet  = "1"
+            priority = "0">
+        <DPC        value = "1"/>
+        <SIO        value = "3"/>
+        <SSN        value = "8"/>
+    </Route>
+
+     <!--///////////////////////////////////////////////////////////////-->
+
+    <Feature
+        name        = "Vendor Framework ITU"
+        library     = "libVFrameD.so"
+        classRec    = "itsSS7STACK_ClassCCITT"
+    />
+
+    <Feature
+        name        = "IntelliNet stack CCITT"
+        library     = "libCCITT-VENDORD.so"
+        classRec    = "itsINTELLISS7_ClassCCITT"
+    />
+
+    <Feature
+        name        = "BSSAP Stack"
+        library     = "libBSSAPStackD.so"
+        classRec    = "itsBSSAP_Class"
+    />
+
+    <Feature
+        name        = "DSM Data Class - STUB"
+        library     = "libDSM-STUBD.so"
+        classRec    = "itsDSM_StubImplClass"
+    />
+
+    <Feature       
+        name        = "Keepalive manager"
+        library     = "libENGINED.so"
+        classRec    = "itsKEEPALIVE_Class"
+    />
+
+     <Feature
+        name                = "IMAL"
+        library             = "libCCITT-IMALD.so"
+        classRec            = "itsIMAL_Class_CCITT">
+
+        <FeatureOption name = "imalTraceKeepAlives" value = "yes"/>
+        <FeatureOption name = "imalTracePayload"    value = "yes"/>
+
+    </Feature>
+
+    <ToolkitTrace>
+        <Critical  output = ""/>
+        <Error     output = ""/>
+        <Warning   output = ""/>
+        <Debug     output = ""/>
+    </ToolkitTrace>
+
+    <!--///////////////////////////////////////////////////////////////-->
+
+    <WorkerPool stackSize = "0">
+
+         <Transport  type  = "TaskQueue"
+                     count  = "20"
+                     family = "ITU">
+
+        </Transport>
+
+    </WorkerPool>
+
+    <!--///////////////////////////////////////////////////////////////-->
+
+    <BorderPool stackSize = "0">
+
+         <Transport  name    = "BSSClient"
+                    type     = "ClientSocket"
+                    family   = "ITU">
+
+             <Modifier value = "IMAL"/>
+             <Modifier value = "MTP3"/>
+
+            <StreamData socketDomain    = "INET"
+                        serverHostName  = "172.16.3.12"
+                        serverPort      = "6666"
+            />
+
+            <IMAL    imalLocalPC             = "0x01"
+                     imalAdjacentPC          = "0x02"
+                     imalKeepAliveTimer      = "60"
+            />
+
+            <Callbacks
+                library         = ""
+                type            = "blocking"
+                postNextEvent   = ""
+            />
+
+            <Link   id       = "0"
+               family        = "ITU"
+               linkSet         = "1"
+               initiallyActive = "yes"
+               terminalFixed   = "yes"
+               dataLinkFixed   = "yes"
+               priority        = "0"
+               terminal        = "0"
+               dataLink        = "0"
+            />
+
+        </Transport>
+
+    </BorderPool>
+
+    <!--///////////////////////////////////////////////////////////////-->
+
+    <SS7-Stacks>
+
+       <Codec-Stacks>
+             <BSSAP>
+                <CodecTrace>
+                    <Critical output = "stdout"/>
+                    <Error    output = "stdout"/>
+                    <Warning  output = "stdout"/>
+                    <Debug    output = "stdout"/>
+                </CodecTrace>
+
+                <Timers
+                    T305    = "1000"
+                    T308    = "1000"
+                    T313    = "1000"
+                    T303    = "1000"
+                    T310    = "1000"
+                    
+                    T1      = "1000"
+                    T4      = "10"
+                    T7      = "1000"
+                    T8      = "1000"
+                    T10     = "1000"
+                    T11     = "1000"
+                    T13     = "1000"
+                    T17     = "1000"
+                    T18     = "1000"
+                    T19     = "1000"
+                />
+             </BSSAP>
+       </Codec-Stacks>
+
+        <IntelliNet>
+
+            <ITU-SCCP variant = "WhiteBook">
+  
+                <Variant value = "WhiteBook"/>
+  
+                <StackTrace>
+                    <Critical output = "stdout"/>
+                    <Error    output = "stdout"/>
+                    <Warning  output = "stdout"/> 
+                    <Debug    output = ""/> 
+                </StackTrace>
+  
+                <Timers
+                    TstatInfo    = "30"
+                    TcoordChg    = "30"
+                    TignoreSST   = "30"
+                    TrtgStatInfo = "30"
+                    Tconnect     = "30"
+                    Trelease     = "10"
+                    Treset       = "20"
+                    Tias         = "300"
+                    Tiar         = "660"
+                    Tguard       = "240"
+                />
+  
+                <BehaviorControl
+                    PropagateIT   = "no"
+                    PropagateERR  = "no"
+                    PropagateSCMG = "no"
+                    EnableSCMG    = "no"
+                />
+  
+            </ITU-SCCP>
+  
+        </IntelliNet>
+
+    </SS7-Stacks>
+
+ </Application>

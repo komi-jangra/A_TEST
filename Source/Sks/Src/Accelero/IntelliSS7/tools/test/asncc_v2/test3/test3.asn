@@ -1,0 +1,33 @@
+--------------------------------------------------------------------------------
+--
+-- AsnCC 2.0 test.
+--
+-- Based on ANSI41 (simplified types). LRF format.
+--
+--------------------------------------------------------------------------------
+
+TEST3 DEFINITIONS IMPLICIT TAGS ::=
+
+BEGIN
+
+AuthenticationAlgorithmVersion ::= OCTET STRING (SIZE(1))
+
+DenyAccess ::= ENUMERATED 
+{
+    notUsed (0),
+    unspecified (1),
+    sSDUpdateFailure (2)
+}
+
+RandomVariableSSD ::= OCTET STRING (SIZE(7))
+
+AuthenticationFailureReportRRL ::= SET 
+{
+    authenticationAlgorithmVersion [77] AuthenticationAlgorithmVersion OPTIONAL,
+
+    denyAccess [50] DenyAccess OPTIONAL,
+
+    randomVariableSSD [42] RandomVariableSSD OPTIONAL
+}
+
+END

@@ -1,0 +1,18 @@
+
+ANSI ISUP Command
+
+SYNOPSIS
+    ia_add_variant <variant type> 
+
+DESCRIPTION
+    This command loads the given ANSI ISUP variant feature dynamically.
+
+PARAMETERS
+    variant type    ISUP ANSI Variant Type.
+                    Supported Types:
+                             "ANSI_GENERIC_92"
+                             "ANSI_ISUP_95"
+
+EXAMPLE
+>> ia_add_variant ANSI_ISUP_95 
+ *** Added Variant Successfully ***

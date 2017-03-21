@@ -1,0 +1,137 @@
+-------------------------------------------------------------------------------
+--
+-- TCAP Multi-Nodes Automatic Regression Testing.
+-- -> Test1 Node2.
+--
+
+node1 := 0
+node2 := 1
+numberOfSyncPoints := 10
+
+
+-----------------------------------------------------------
+--
+-- Initialization part.
+--
+
+InitializeNodes(node2, 2)
+InitializeNodesSyncPoints(numberOfSyncPoints)
+InitializeGcs()
+
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+--
+-- Wait for other nodes to join.
+--
+
+Print("\n\nNode 2 waiting for other node(s) to join...\n")
+
+joinTimeout := 20 -- Timeout is 20 secs.
+
+WaitForNodeJoinPoint(node1, joinTimeout)
+WaitForNodeJoinPoint(node2, joinTimeout)
+
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+--
+-- TCAP MN test.
+--
+
+Print("\n\nReady to begin TCAP MN test...\n")
+
+Sleep(1) -- Must wait for underlying transports to connect.
+
+-------------------------------------------------
+--
+-- Receiving (Begin and Invoke) part.
+--
+
+dialogueId  := 0
+event       := <<byte>>
+dialogue    := <<byte>>
+component   := <<byte>>
+
+
+res := TcapGetNextEvent(out event)
+
+if (res /= 0) then
+    Print("\n\nTcapGetNextEvent failed: " + res + "\n")
+else
+    Print("\n\nReceived event...\n")
+end
+
+if (TcapIsDialogueEvent(event) /= true) then
+    Print("\n\nReceived event is not a dialogue\n")
+end
+
+res := TcapReceiveDialogue(event, out dialogueId, out dialogue)
+
+if (res /= 0) then
+    Print("\n\nTcapReceiveDialogue failed: " + res + "\n")
+else
+    Print("\n\nReceived dialogue...\n")
+    TcapPrintDialogue(dialogueId, dialogue)
+end
+
+
+res := TcapGetNextEvent(out event)
+
+if (res /= 0) then
+    Print("\n\nTcapGetNextEvent failed: " + res + "\n")
+else
+    Print("\n\nReceived event...\n")
+end
+
+if (TcapIsComponentEvent(event) /= true) then
+    Print("\n\nReceived event is not a component\n")
+end
+
+res := TcapReceiveComponent(event, out dialogueId, out component)
+
+if (res /= 0) then
+    Print("\n\nTcapReceiveComponent failed: " + res + "\n")
+else
+    Print("\n\nReceived component...\n")
+    TcapPrintComponent(dialogueId, component)
+end
+
+PublishNodeSyncPointReached(0)
+
+-------------------------------------------------
+--
+-- Sending (End) part.
+--
+
+endDialogue := TcapAssembleEndDialogue(
+                            <<byte>>,
+                            <<byte>>,
+                            <<byte>>,
+                            false)
+
+TcapPrintDialogue(dialogueId, endDialogue)
+
+res := TcapSendDialogue(dialogueId, endDialogue)
+
+if (res /= 0) then
+    Print("\n\nTcapSendDialogue failed: " + res + "\n")
+end
+
+
+syncTimeout := 20 -- Timeout is 20 secs.
+
+WaitForNodeSyncPoint(node1, 0, syncTimeout)
+
+Print("\n\nEnd of TCAP MN test...\n")
+
+-----------------------------------------------------------
+--
+-- Termination part.
+--
+
+TerminateGcs()
+TerminateNodesSyncPoints()
+TerminateNodes()
+
+-----------------------------------------------------------

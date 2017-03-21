@@ -1,0 +1,91 @@
+-------------------------------------------------------------------------------
+--
+-- DSM Multi-Nodes Automatic Regression Testing.
+-- -> Test10 Node1.
+--
+
+node1 := 0
+node2 := 1
+numberOfSyncPoints := 10
+
+
+-----------------------------------------------------------
+--
+-- Initialization part.
+--
+
+InitializeNodes(node1, 2)
+InitializeNodesSyncPoints(numberOfSyncPoints)
+InitializeGcs()
+
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+--
+-- Wait for other nodes to join.
+--
+
+Print("\n\nNode 1 waiting for other node(s) to join...\n")
+
+joinTimeout := 20 -- Timeout is 20 secs.
+
+WaitForNodeJoinPoint(node1, joinTimeout)
+WaitForNodeJoinPoint(node2, joinTimeout)
+
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+--
+-- DSM test.
+--
+
+Print("\n\nReady to begin DSM test...\n")
+
+Print("\nNode 1 ready to go in pseudo-infinite loop...\n")
+Print("\nNode 1 will do TableLock/TableUnlock...\n")
+Print("\nUse CTRL C to stop...\n")
+
+PublishNodeSyncPointReached(0)
+
+numberOfIterations := 1000000
+
+from 
+    i := 0
+until
+    i >= numberOfIterations
+loop
+    ftGroupId   := 0
+    tableId     := 1
+
+    DsmLockTable(ftGroupId, tableId)
+    DsmLockTable(ftGroupId, tableId)
+    DsmLockTable(ftGroupId, tableId)
+
+    DsmLockTable(ftGroupId, tableId)
+    DsmUnlockTable(ftGroupId, tableId)
+    DsmLockTable(ftGroupId, tableId)
+    DsmUnlockTable(ftGroupId, tableId)
+
+    DsmUnlockTable(ftGroupId, tableId)
+    DsmUnlockTable(ftGroupId, tableId)
+    DsmUnlockTable(ftGroupId, tableId)
+
+    Print("\n\nIteration number " + i + "...\n")
+
+    i := i + 1
+end
+
+-- Not Reached (pseudo-infinite loop).
+
+Print("\n\nEnd of DSM test...\n")
+
+-----------------------------------------------------------
+--
+-- Termination part.
+--
+
+TerminateGcs()
+TerminateNodesSyncPoints()
+TerminateNodes()
+
+-----------------------------------------------------------

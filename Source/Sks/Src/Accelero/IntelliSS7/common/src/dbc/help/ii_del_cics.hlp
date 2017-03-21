@@ -1,0 +1,22 @@
+
+ITU ISUP Command
+
+SYNOPSIS
+    ii_del_cics  <opc> <dpc> <sio> <startCic> <count>
+
+DESCRIPTION
+    This command deletes a circuit or range of circuit from ISUP.
+
+PARAMETERS
+    opc      Origination point code.
+    dpc      Destination point code.
+    sio      service information octet.
+    startCic Starting Cic.
+    count    number of Cics including start Cic.
+
+EXAMPLE
+>> ii_del_cics 16 21 133 1099 1
+
+**** Successfully deleted Cic(s)
+
+

@@ -1,0 +1,19 @@
+./SCRINPUT ../../../../../../Inc/Sys/sysxxx_msgopcode.h >msgTyp.txt 2>&1
+./SCRINPUT ../../../../../../Inc/Oam/oamxxx_tableapidefs.h >>msgTyp.txt 2>&1
+
+echo "#include <oamxxx_tableapidefs.h>">>msgHdrEncDec.c
+echo "#include <sysxxx_msgopcode.h>">>msgHdrEncDec.c
+echo "#include <string.h>">>msgHdrEncDec.c
+echo "unsigned int getMsgOpCode(const char * const mName)">>msgHdrEncDec.c
+echo "{">>msgHdrEncDec.c
+for i in `cat msgTyp.txt|cut -d@ -f2|grep -v __|grep -v BASE|grep -v " WAIT"|grep -v "APP_ID"`
+do
+echo "  if (!strcmp(mName,\"$i\")) {">>msgHdrEncDec.c
+echo "    return ($i);" >>msgHdrEncDec.c
+echo "  }else " >>msgHdrEncDec.c
+done
+echo "  { return (~0);}\\">>msgHdrEncDec.c
+echo "}">>msgHdrEncDec.c
+echo " ">>msgHdrEncDec.c
+
+rm msgTyp.txt

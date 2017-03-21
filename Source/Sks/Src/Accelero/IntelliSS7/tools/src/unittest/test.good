@@ -1,0 +1,18 @@
+UnitTestUnitTest begin
+>> >> >> >> >> >> ================ C O M M A N D S ===================
+       RII <int, int>                        Read Int Int
+      RISI <int, string, int>                Read Int String Int
+       RML <data>                            Read Multi Line
+      quit                                   exit unit tester
+>> >> >> >> >> First cmd param: <768> Second cmd param: <1515>.
+>> >> >> >> >> First cmd param: <2000> Second cmd param: <remember> Third cmd param: <1997>.
+>> >> >> >> >> Enter value for UnitTestUnitTest
+Type END on a blank line to finish
+Multiline data: <input with space>.
+>> >> Enter value for UnitTestUnitTest
+Type END on a blank line to finish
+Multiline data: <multiline input
+line2
+line3
+line4>.
+>> >> >> >> >> UnitTestUnitTest done

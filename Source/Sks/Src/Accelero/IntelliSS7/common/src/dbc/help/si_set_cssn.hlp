@@ -1,0 +1,27 @@
+
+ITU SCCP Command
+
+SYNOPSIS
+    si_set_cssn <pc> <ni> <ssn> <cpc> <cssn>
+
+DESCRIPTION
+    This command adds a concerned subsystem entry. SCCP management messages
+    are sent to all concerned subsystems configured in Accelero node.
+
+PARAMETERS
+    pc    Local Point Code
+  
+    ni      Network Indicator
+    ssn     Local Subsystem Number
+    cpc     Concerned Point Code
+    cssn    Concerned Subsystem
+
+EXAMPLE
+    >> si_set_cssn 2 0 2 5 5
+    ********* SCCP Concerned Subsystem Entry Set*******
+
+NOTE -
+1. If Local pc and Local ssn are not already configured no cssn entry is not 
+   added.
+2. For sending SCCP management messages to converned subsystem you should
+   also have remote route to concerned subsystem.

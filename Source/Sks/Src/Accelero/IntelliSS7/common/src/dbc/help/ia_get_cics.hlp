@@ -1,0 +1,36 @@
+
+ANSI ISUP Command
+
+SYNOPSIS
+    ia_get_cics  <opc> <dpc> <sio>
+
+DESCRIPTION
+    THis command displays all circuit codes provisioned in the ISUP database.
+
+PARAMETERS
+    opc     Origination point code.
+    dpc     Destination point code.
+    sio     service information octet.
+
+EXAMPLE
+>> ia_get_cics 16 21 133
+
+Circuit group id = 31
+Provisioned cicRange        cicRule
+     1002-1015                 NONE
+     1017-1024                 EVEN
+
+Circuit group id = 32
+Provisioned cicRange        cicRule
+     1025-1031                 EVEN
+     1033-1047                  ODD
+     1049-1056                  ALL
+
+Circuit group id = 33
+Provisioned cicRange        cicRule
+     1057-1063                  ALL
+
+Circuit group id = 34
+Provisioned cicRange        cicRule
+     1099-1099                  ODD
+

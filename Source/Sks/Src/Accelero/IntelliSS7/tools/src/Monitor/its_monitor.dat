@@ -1,0 +1,34 @@
+//  Startup information used by Monitor service to start and monitor V7M processes.
+//  The file should be placed in the working directory.
+//
+//  
+//  # Next line specifies the directory from which the process will be running
+//  directory 
+//
+//  
+//  minimize
+//
+//  # Next line tells monitor not to start application if it exits(fails)
+//  no restart
+//
+//  # Next line specifies the executable to be spawned
+//  run 
+
+# "Task" begins the declaration of the next task and specifies the title for the process.  
+# !!! If this is a Windows application (not console) this title should much title of application.
+
+task V7M
+directory d:\cvsroot\JetCell\V7M\src\Debug
+minimize
+sleep 5
+run d:\cvsroot\JetCell\V7M\src\Debug\V7M.exe -console
+
+task VB
+directory d:\cvsroot\JetCell\V7M\test\Debug
+minimize
+sleep 5
+run d:\cvsroot\JetCell\V7M\test\Debug\SendOrReceive.exe -console
+
+
+
+

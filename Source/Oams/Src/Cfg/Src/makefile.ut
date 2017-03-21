@@ -1,0 +1,55 @@
+include  ../../../../Csapp/Util/make.opt
+HDR = -I$(BSC_BASE)/Source/Oams/Src/Cfg/Inc/ -I$(BSC_BASE)/Source/Oams/Inc/ \
+      -I$(BSC_BASE)/Source/Oams/Src/Swverparser/Inc/ \
+      -I$(BSC_BASE)/Inc/Sks/SCM/
+TARGET = OAMS_CFG_UT
+BIN_NAME= OAMS_CFG
+GCOV= -fprofile-arcs -ftest-coverage
+########################################################################
+## Define local c/cpp file(s)
+########################################################################
+COBJECTS = \
+oamscfg_main.o\
+oamscfg_initialization.o\
+oamscfg_msg_handlers.o\
+oamscfg_bss_object_handler.o\
+oamscfg_trx_object_handler.o\
+oamscfg_e1_object_handler.o\
+oamscfg_e1timeslot_object_handler.o\
+oamscfg_signal_handler.o\
+oamscfg_responses.o\
+oamscfg_cell_object_handler.o\
+oamscfg_alarm_handler.o\
+oamscfg_range_check.o\
+oamscfg_del_msg_handler.o\
+oamscfg_set_msg_handler.o \
+oamscfg_timer.o \
+oamscfg_cell_object_consistancy_check.o \
+oamscfg_bic_object_handler.o \
+oamscfg_bic_trx_ts_handler.o \
+oamscfg_sw_upgrade_handler.o \
+oamscfg_clk_object_handler.o \
+oamscfg_eic_sw_upgrade_handler.o \
+oamscfg_stack_object_handler.o \
+ute_instruments.o 
+#######################################################################
+## Define possible compiler flags
+#######################################################################
+#CC1 := $(CC) -g -save-temps -D__C_APPL -DCFG_UTE $(GCOV) $(INC) $(HDR) $(COMPILEROPT)
+CC1 := $(CC) -g -D__C_APPL -DCFG_UTE $(GCOV) $(INC) $(HDR) $(COMPILEROPT)
+#######################################################################
+## Define make targets
+#######################################################################
+RM = rm
+RM1 = rm -rf
+.PHONY: all
+all : compile install
+compile: $(COBJECTS)
+	$(CC1) $(LFLAGS) $(LIBS) -lmutex -lSwVerParser -linst-DB -o $(TARGET) $(COBJECTS)
+%.o: %.c
+	$(CC1) -c $< -o $@
+install:
+	cp -f $(TARGET) $(REL_BIN)/Exec/CP/$(BIN_NAME)-${VERSION}
+clean: 
+	rm -f $(TARGET) $(REL_BIN)/Exec/CP/$(BIN_NAME)-${VERSION} *.o *.gcno *.i *.s
+               

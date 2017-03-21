@@ -1,0 +1,19 @@
+
+ITU TCAP Command
+
+SYNOPSIS
+    ti_clr_all_peg
+
+DESCRIPTION
+    This command clears all TCAP pegs to 0.
+
+PARAMETERS
+    None.
+
+
+EXAMPLE
+>> ti_clr_all_peg
+Clearing All ITU TCAP Pegs for  Now
+
+
+

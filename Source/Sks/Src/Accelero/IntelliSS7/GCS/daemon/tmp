@@ -1,0 +1,100 @@
+ppc_82xx-gcc -g -I. -I/home3/sandeep/MTP3_FIX_CODE/MSC-Development/Source/SKS/Util/../Src/Accelero/IntelliSS7/common/include -DCCITT -D_REENTRANT -DUSING_FLEX -DUSE_HEAP -Dmvlppc -DPLATFORM=mvlppc -D_MIT_POSIX_THREADS -DHAVE_NAMESPACES -DHAVE_STD_NAMESPACE -DHAVE_THROW_SPECS -DHAVE_STL  -DNEED_LARGE_CONTEXT -DLOGGER_IMR  -DPLATFORM_IMR -DDEBUG -fpic -I.  -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM/../SYS    -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM/../IPC  -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM  -I. -I. -I../include -I../stdutil/src -I../stdutil/src   -DHAVE_CONFIG_H -c spread.c
+In file included from spread.c:47:
+alarm.h:42:1: warning: "DEBUG" redefined
+<command line>:29:1: warning: this is the location of the previous definition
+In file included from spread.c:75:
+/home4/cvsadmin/SI-INT-4.0.1/MSC-Development/Inc/IPC/ipcfrm_syslog.h:24:1: warning: "DEBUG" redefined
+In file included from spread.c:47:
+alarm.h:42:1: warning: this is the location of the previous definition
+In file included from spread.c:75:
+/home4/cvsadmin/SI-INT-4.0.1/MSC-Development/Inc/IPC/ipcfrm_syslog.h:87:1: warning: "PRINT" redefined
+In file included from spread.c:47:
+alarm.h:44:1: warning: this is the location of the previous definition
+ppc_82xx-gcc -g -I. -I/home3/sandeep/MTP3_FIX_CODE/MSC-Development/Source/SKS/Util/../Src/Accelero/IntelliSS7/common/include -DCCITT -D_REENTRANT -DUSING_FLEX -DUSE_HEAP -Dmvlppc -DPLATFORM=mvlppc -D_MIT_POSIX_THREADS -DHAVE_NAMESPACES -DHAVE_STD_NAMESPACE -DHAVE_THROW_SPECS -DHAVE_STL  -DNEED_LARGE_CONTEXT -DLOGGER_IMR  -DPLATFORM_IMR -DDEBUG -fpic -I.  -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM/../SYS    -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM/../IPC  -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM  -I. -I. -I../include -I../stdutil/src -I../stdutil/src   -DHAVE_CONFIG_H -c protocol.c
+In file included from protocol.c:51:
+alarm.h:42:1: warning: "DEBUG" redefined
+<command line>:29:1: warning: this is the location of the previous definition
+ppc_82xx-gcc -g -I. -I/home3/sandeep/MTP3_FIX_CODE/MSC-Development/Source/SKS/Util/../Src/Accelero/IntelliSS7/common/include -DCCITT -D_REENTRANT -DUSING_FLEX -DUSE_HEAP -Dmvlppc -DPLATFORM=mvlppc -D_MIT_POSIX_THREADS -DHAVE_NAMESPACES -DHAVE_STD_NAMESPACE -DHAVE_THROW_SPECS -DHAVE_STL  -DNEED_LARGE_CONTEXT -DLOGGER_IMR  -DPLATFORM_IMR -DDEBUG -fpic -I.  -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM/../SYS    -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM/../IPC  -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM  -I. -I. -I../include -I../stdutil/src -I../stdutil/src   -DHAVE_CONFIG_H -c session.c
+In file included from session.c:83:
+alarm.h:42:1: warning: "DEBUG" redefined
+<command line>:29:1: warning: this is the location of the previous definition
+ppc_82xx-gcc -g -I. -I/home3/sandeep/MTP3_FIX_CODE/MSC-Development/Source/SKS/Util/../Src/Accelero/IntelliSS7/common/include -DCCITT -D_REENTRANT -DUSING_FLEX -DUSE_HEAP -Dmvlppc -DPLATFORM=mvlppc -D_MIT_POSIX_THREADS -DHAVE_NAMESPACES -DHAVE_STD_NAMESPACE -DHAVE_THROW_SPECS -DHAVE_STL  -DNEED_LARGE_CONTEXT -DLOGGER_IMR  -DPLATFORM_IMR -DDEBUG -fpic -I.  -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM/../SYS    -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM/../IPC  -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM  -I. -I. -I../include -I../stdutil/src -I../stdutil/src   -DHAVE_CONFIG_H -c groups.c
+In file included from groups.c:51:
+alarm.h:42:1: warning: "DEBUG" redefined
+<command line>:29:1: warning: this is the location of the previous definition
+ppc_82xx-gcc -g -I. -I/home3/sandeep/MTP3_FIX_CODE/MSC-Development/Source/SKS/Util/../Src/Accelero/IntelliSS7/common/include -DCCITT -D_REENTRANT -DUSING_FLEX -DUSE_HEAP -Dmvlppc -DPLATFORM=mvlppc -D_MIT_POSIX_THREADS -DHAVE_NAMESPACES -DHAVE_STD_NAMESPACE -DHAVE_THROW_SPECS -DHAVE_STL  -DNEED_LARGE_CONTEXT -DLOGGER_IMR  -DPLATFORM_IMR -DDEBUG -fpic -I.  -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM/../SYS    -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM/../IPC  -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM  -I. -I. -I../include -I../stdutil/src -I../stdutil/src   -DHAVE_CONFIG_H -c alarm.c
+In file included from alarm.c:54:
+alarm.h:42:1: warning: "DEBUG" redefined
+<command line>:29:1: warning: this is the location of the previous definition
+ppc_82xx-gcc -g -I. -I/home3/sandeep/MTP3_FIX_CODE/MSC-Development/Source/SKS/Util/../Src/Accelero/IntelliSS7/common/include -DCCITT -D_REENTRANT -DUSING_FLEX -DUSE_HEAP -Dmvlppc -DPLATFORM=mvlppc -D_MIT_POSIX_THREADS -DHAVE_NAMESPACES -DHAVE_STD_NAMESPACE -DHAVE_THROW_SPECS -DHAVE_STL  -DNEED_LARGE_CONTEXT -DLOGGER_IMR  -DPLATFORM_IMR -DDEBUG -fpic -I.  -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM/../SYS    -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM/../IPC  -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM  -I. -I. -I../include -I../stdutil/src -I../stdutil/src   -DHAVE_CONFIG_H -c events.c
+In file included from events.c:64:
+alarm.h:42:1: warning: "DEBUG" redefined
+<command line>:29:1: warning: this is the location of the previous definition
+ppc_82xx-gcc -g -I. -I/home3/sandeep/MTP3_FIX_CODE/MSC-Development/Source/SKS/Util/../Src/Accelero/IntelliSS7/common/include -DCCITT -D_REENTRANT -DUSING_FLEX -DUSE_HEAP -Dmvlppc -DPLATFORM=mvlppc -D_MIT_POSIX_THREADS -DHAVE_NAMESPACES -DHAVE_STD_NAMESPACE -DHAVE_THROW_SPECS -DHAVE_STL  -DNEED_LARGE_CONTEXT -DLOGGER_IMR  -DPLATFORM_IMR -DDEBUG -fpic -I.  -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM/../SYS    -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM/../IPC  -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM  -I. -I. -I../include -I../stdutil/src -I../stdutil/src   -DHAVE_CONFIG_H -c memory.c
+In file included from memory.c:48:
+alarm.h:42:1: warning: "DEBUG" redefined
+<command line>:29:1: warning: this is the location of the previous definition
+ppc_82xx-gcc -g -I. -I/home3/sandeep/MTP3_FIX_CODE/MSC-Development/Source/SKS/Util/../Src/Accelero/IntelliSS7/common/include -DCCITT -D_REENTRANT -DUSING_FLEX -DUSE_HEAP -Dmvlppc -DPLATFORM=mvlppc -D_MIT_POSIX_THREADS -DHAVE_NAMESPACES -DHAVE_STD_NAMESPACE -DHAVE_THROW_SPECS -DHAVE_STL  -DNEED_LARGE_CONTEXT -DLOGGER_IMR  -DPLATFORM_IMR -DDEBUG -fpic -I.  -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM/../SYS    -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM/../IPC  -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM  -I. -I. -I../include -I../stdutil/src -I../stdutil/src   -DHAVE_CONFIG_H -c membership.c
+In file included from membership.c:48:
+alarm.h:42:1: warning: "DEBUG" redefined
+<command line>:29:1: warning: this is the location of the previous definition
+ppc_82xx-gcc -g -I. -I/home3/sandeep/MTP3_FIX_CODE/MSC-Development/Source/SKS/Util/../Src/Accelero/IntelliSS7/common/include -DCCITT -D_REENTRANT -DUSING_FLEX -DUSE_HEAP -Dmvlppc -DPLATFORM=mvlppc -D_MIT_POSIX_THREADS -DHAVE_NAMESPACES -DHAVE_STD_NAMESPACE -DHAVE_THROW_SPECS -DHAVE_STL  -DNEED_LARGE_CONTEXT -DLOGGER_IMR  -DPLATFORM_IMR -DDEBUG -fpic -I.  -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM/../SYS    -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM/../IPC  -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM  -I. -I. -I../include -I../stdutil/src -I../stdutil/src   -DHAVE_CONFIG_H -c data_link.c
+In file included from data_link.c:61:
+alarm.h:42:1: warning: "DEBUG" redefined
+<command line>:29:1: warning: this is the location of the previous definition
+ppc_82xx-gcc -g -I. -I/home3/sandeep/MTP3_FIX_CODE/MSC-Development/Source/SKS/Util/../Src/Accelero/IntelliSS7/common/include -DCCITT -D_REENTRANT -DUSING_FLEX -DUSE_HEAP -Dmvlppc -DPLATFORM=mvlppc -D_MIT_POSIX_THREADS -DHAVE_NAMESPACES -DHAVE_STD_NAMESPACE -DHAVE_THROW_SPECS -DHAVE_STL  -DNEED_LARGE_CONTEXT -DLOGGER_IMR  -DPLATFORM_IMR -DDEBUG -fpic -I.  -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM/../SYS    -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM/../IPC  -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM  -I. -I. -I../include -I../stdutil/src -I../stdutil/src   -DHAVE_CONFIG_H -c network.c
+In file included from network.c:44:
+alarm.h:42:1: warning: "DEBUG" redefined
+<command line>:29:1: warning: this is the location of the previous definition
+ppc_82xx-gcc -g -I. -I/home3/sandeep/MTP3_FIX_CODE/MSC-Development/Source/SKS/Util/../Src/Accelero/IntelliSS7/common/include -DCCITT -D_REENTRANT -DUSING_FLEX -DUSE_HEAP -Dmvlppc -DPLATFORM=mvlppc -D_MIT_POSIX_THREADS -DHAVE_NAMESPACES -DHAVE_STD_NAMESPACE -DHAVE_THROW_SPECS -DHAVE_STL  -DNEED_LARGE_CONTEXT -DLOGGER_IMR  -DPLATFORM_IMR -DDEBUG -fpic -I.  -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM/../SYS    -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM/../IPC  -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM  -I. -I. -I../include -I../stdutil/src -I../stdutil/src   -DHAVE_CONFIG_H -c status.c
+In file included from status.c:47:
+alarm.h:42:1: warning: "DEBUG" redefined
+<command line>:29:1: warning: this is the location of the previous definition
+ppc_82xx-gcc -g -I. -I/home3/sandeep/MTP3_FIX_CODE/MSC-Development/Source/SKS/Util/../Src/Accelero/IntelliSS7/common/include -DCCITT -D_REENTRANT -DUSING_FLEX -DUSE_HEAP -Dmvlppc -DPLATFORM=mvlppc -D_MIT_POSIX_THREADS -DHAVE_NAMESPACES -DHAVE_STD_NAMESPACE -DHAVE_THROW_SPECS -DHAVE_STL  -DNEED_LARGE_CONTEXT -DLOGGER_IMR  -DPLATFORM_IMR -DDEBUG -fpic -I.  -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM/../SYS    -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM/../IPC  -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM  -I. -I. -I../include -I../stdutil/src -I../stdutil/src   -DHAVE_CONFIG_H -c log.c
+In file included from log.c:55:
+alarm.h:42:1: warning: "DEBUG" redefined
+<command line>:29:1: warning: this is the location of the previous definition
+ppc_82xx-gcc -g -I. -I/home3/sandeep/MTP3_FIX_CODE/MSC-Development/Source/SKS/Util/../Src/Accelero/IntelliSS7/common/include -DCCITT -D_REENTRANT -DUSING_FLEX -DUSE_HEAP -Dmvlppc -DPLATFORM=mvlppc -D_MIT_POSIX_THREADS -DHAVE_NAMESPACES -DHAVE_STD_NAMESPACE -DHAVE_THROW_SPECS -DHAVE_STL  -DNEED_LARGE_CONTEXT -DLOGGER_IMR  -DPLATFORM_IMR -DDEBUG -fpic -I.  -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM/../SYS    -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM/../IPC  -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM  -I. -I. -I../include -I../stdutil/src -I../stdutil/src   -DHAVE_CONFIG_H -c flow_control.c
+In file included from flow_control.c:41:
+alarm.h:42:1: warning: "DEBUG" redefined
+<command line>:29:1: warning: this is the location of the previous definition
+ppc_82xx-gcc -g -I. -I/home3/sandeep/MTP3_FIX_CODE/MSC-Development/Source/SKS/Util/../Src/Accelero/IntelliSS7/common/include -DCCITT -D_REENTRANT -DUSING_FLEX -DUSE_HEAP -Dmvlppc -DPLATFORM=mvlppc -D_MIT_POSIX_THREADS -DHAVE_NAMESPACES -DHAVE_STD_NAMESPACE -DHAVE_THROW_SPECS -DHAVE_STL  -DNEED_LARGE_CONTEXT -DLOGGER_IMR  -DPLATFORM_IMR -DDEBUG -fpic -I.  -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM/../SYS    -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM/../IPC  -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM  -I. -I. -I../include -I../stdutil/src -I../stdutil/src   -DHAVE_CONFIG_H -c message.c
+In file included from message.c:45:
+alarm.h:42:1: warning: "DEBUG" redefined
+<command line>:29:1: warning: this is the location of the previous definition
+ppc_82xx-gcc -g -I. -I/home3/sandeep/MTP3_FIX_CODE/MSC-Development/Source/SKS/Util/../Src/Accelero/IntelliSS7/common/include -DCCITT -D_REENTRANT -DUSING_FLEX -DUSE_HEAP -Dmvlppc -DPLATFORM=mvlppc -D_MIT_POSIX_THREADS -DHAVE_NAMESPACES -DHAVE_STD_NAMESPACE -DHAVE_THROW_SPECS -DHAVE_STL  -DNEED_LARGE_CONTEXT -DLOGGER_IMR  -DPLATFORM_IMR -DDEBUG -fpic -I.  -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM/../SYS    -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM/../IPC  -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM  -I. -I. -I../include -I../stdutil/src -I../stdutil/src   -DHAVE_CONFIG_H -c lex.yy.c
+ppc_82xx-gcc -g -I. -I/home3/sandeep/MTP3_FIX_CODE/MSC-Development/Source/SKS/Util/../Src/Accelero/IntelliSS7/common/include -DCCITT -D_REENTRANT -DUSING_FLEX -DUSE_HEAP -Dmvlppc -DPLATFORM=mvlppc -D_MIT_POSIX_THREADS -DHAVE_NAMESPACES -DHAVE_STD_NAMESPACE -DHAVE_THROW_SPECS -DHAVE_STL  -DNEED_LARGE_CONTEXT -DLOGGER_IMR  -DPLATFORM_IMR -DDEBUG -fpic -I.  -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM/../SYS    -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM/../IPC  -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM  -I. -I. -I../include -I../stdutil/src -I../stdutil/src   -DHAVE_CONFIG_H -c y.tab.c
+In file included from ./config_parse.y:56:
+alarm.h:42:1: warning: "DEBUG" redefined
+<command line>:29:1: warning: this is the location of the previous definition
+ppc_82xx-gcc -g -I. -I/home3/sandeep/MTP3_FIX_CODE/MSC-Development/Source/SKS/Util/../Src/Accelero/IntelliSS7/common/include -DCCITT -D_REENTRANT -DUSING_FLEX -DUSE_HEAP -Dmvlppc -DPLATFORM=mvlppc -D_MIT_POSIX_THREADS -DHAVE_NAMESPACES -DHAVE_STD_NAMESPACE -DHAVE_THROW_SPECS -DHAVE_STL  -DNEED_LARGE_CONTEXT -DLOGGER_IMR  -DPLATFORM_IMR -DDEBUG -fpic -I.  -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM/../SYS    -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM/../IPC  -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM  -I. -I. -I../include -I../stdutil/src -I../stdutil/src   -DHAVE_CONFIG_H -c configuration.c
+In file included from configuration.c:83:
+alarm.h:42:1: warning: "DEBUG" redefined
+<command line>:29:1: warning: this is the location of the previous definition
+ppc_82xx-gcc -g -I. -I/home3/sandeep/MTP3_FIX_CODE/MSC-Development/Source/SKS/Util/../Src/Accelero/IntelliSS7/common/include -DCCITT -D_REENTRANT -DUSING_FLEX -DUSE_HEAP -Dmvlppc -DPLATFORM=mvlppc -D_MIT_POSIX_THREADS -DHAVE_NAMESPACES -DHAVE_STD_NAMESPACE -DHAVE_THROW_SPECS -DHAVE_STL  -DNEED_LARGE_CONTEXT -DLOGGER_IMR  -DPLATFORM_IMR -DDEBUG -fpic -I.  -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM/../SYS    -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM/../IPC  -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM  -I. -I. -I../include -I../stdutil/src -I../stdutil/src   -DHAVE_CONFIG_H -c acm.c
+In file included from acm.c:42:
+alarm.h:42:1: warning: "DEBUG" redefined
+<command line>:29:1: warning: this is the location of the previous definition
+ppc_82xx-gcc -g -I. -I/home3/sandeep/MTP3_FIX_CODE/MSC-Development/Source/SKS/Util/../Src/Accelero/IntelliSS7/common/include -DCCITT -D_REENTRANT -DUSING_FLEX -DUSE_HEAP -Dmvlppc -DPLATFORM=mvlppc -D_MIT_POSIX_THREADS -DHAVE_NAMESPACES -DHAVE_STD_NAMESPACE -DHAVE_THROW_SPECS -DHAVE_STL  -DNEED_LARGE_CONTEXT -DLOGGER_IMR  -DPLATFORM_IMR -DDEBUG -fpic -I.  -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM/../SYS    -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM/../IPC  -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM  -I. -I. -I../include -I../stdutil/src -I../stdutil/src   -DHAVE_CONFIG_H -c acp-permit.c
+In file included from acp-permit.c:43:
+alarm.h:42:1: warning: "DEBUG" redefined
+<command line>:29:1: warning: this is the location of the previous definition
+ppc_82xx-gcc -g -I. -I/home3/sandeep/MTP3_FIX_CODE/MSC-Development/Source/SKS/Util/../Src/Accelero/IntelliSS7/common/include -DCCITT -D_REENTRANT -DUSING_FLEX -DUSE_HEAP -Dmvlppc -DPLATFORM=mvlppc -D_MIT_POSIX_THREADS -DHAVE_NAMESPACES -DHAVE_STD_NAMESPACE -DHAVE_THROW_SPECS -DHAVE_STL  -DNEED_LARGE_CONTEXT -DLOGGER_IMR  -DPLATFORM_IMR -DDEBUG -fpic -I.  -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM/../SYS    -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM/../IPC  -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM  -I. -I. -I../include -I../stdutil/src -I../stdutil/src   -DHAVE_CONFIG_H -c auth-null.c
+In file included from auth-null.c:43:
+alarm.h:42:1: warning: "DEBUG" redefined
+<command line>:29:1: warning: this is the location of the previous definition
+ppc_82xx-gcc -g -I. -I/home3/sandeep/MTP3_FIX_CODE/MSC-Development/Source/SKS/Util/../Src/Accelero/IntelliSS7/common/include -DCCITT -D_REENTRANT -DUSING_FLEX -DUSE_HEAP -Dmvlppc -DPLATFORM=mvlppc -D_MIT_POSIX_THREADS -DHAVE_NAMESPACES -DHAVE_STD_NAMESPACE -DHAVE_THROW_SPECS -DHAVE_STL  -DNEED_LARGE_CONTEXT -DLOGGER_IMR  -DPLATFORM_IMR -DDEBUG -fpic -I.  -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM/../SYS    -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM/../IPC  -I/home4/cvsadmin/SI-INT-4.0.1//MSC-Development/Inc/BPM  -I. -I. -I../include -I../stdutil/src -I../stdutil/src   -DHAVE_CONFIG_H -c auth-ip.c
+In file included from auth-ip.c:48:
+alarm.h:42:1: warning: "DEBUG" redefined
+<command line>:29:1: warning: this is the location of the previous definition
+ppc_82xx-gcc -o spread spread.o protocol.o session.o groups.o alarm.o events.o memory.o membership.o data_link.o network.o status.o log.o flow_control.o message.o lex.yy.o y.tab.o configuration.o acm.o acp-permit.o auth-null.o auth-ip.o ../stdutil/lib/libstdutil-threaded-release.a  -lm -lnsl  
+spread.o(.text+0x90): In function `gcsBpmAisCallbackFunc':
+/home3/sandeep/MTP3_FIX_CODE/MSC-Development/Source/SKS/Src/Accelero/IntelliSS7/GCS_4.0.0/daemon/spread.c:120: undefined reference to `bpmRespondToAis'
+spread.o(.text+0xa4):/home3/sandeep/MTP3_FIX_CODE/MSC-Development/Source/SKS/Src/Accelero/IntelliSS7/GCS_4.0.0/daemon/spread.c:125: undefined reference to `bpmRespondToAis'
+spread.o(.text+0xb8):/home3/sandeep/MTP3_FIX_CODE/MSC-Development/Source/SKS/Src/Accelero/IntelliSS7/GCS_4.0.0/daemon/spread.c:130: undefined reference to `bpmRespondToAis'
+spread.o(.text+0x170): In function `main':
+/home3/sandeep/MTP3_FIX_CODE/MSC-Development/Source/SKS/Src/Accelero/IntelliSS7/GCS_4.0.0/daemon/spread.c:170: undefined reference to `InitLoggingUtility'
+spread.o(.text+0x58c):/home3/sandeep/MTP3_FIX_CODE/MSC-Development/Source/SKS/Src/Accelero/IntelliSS7/GCS_4.0.0/daemon/spread.c:241: undefined reference to `bpmGetComponentRegister'
+spread.o(.text+0x590):/home3/sandeep/MTP3_FIX_CODE/MSC-Development/Source/SKS/Src/Accelero/IntelliSS7/GCS_4.0.0/daemon/spread.c:242: undefined reference to `bpmComponentConfigure'
+collect2: ld returned 1 exit status
+make: *** [spread] Error 1

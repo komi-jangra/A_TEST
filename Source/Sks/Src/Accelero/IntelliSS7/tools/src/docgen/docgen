@@ -1,0 +1,856 @@
+#
+# do this at begin
+#
+BEGIN {
+    iCount = 0;
+    htmlCount = 0;
+}
+
+#
+# do this at end
+#
+END {
+    for (i = 0; i < iCount; i++)
+    {
+        ilocal = sprintf("%s/%s.html", DocDir, tolower(interfaces[i]));
+        EndInterfaceHTML(ilocal);
+    }
+}
+
+#
+# do this at start of interface processing
+#
+function StartInterfaceHTML(intFile, iface,
+# locals
+                            idx)
+{
+    printf("Dumping interface notes for: %s\n", iface);
+
+    #
+    # intFile has DocDir prepended.  Remove that
+    #
+    inamelocal = intFile
+    dirnamelocal = sprintf("%s/", DocDir);
+    if (match(inamelocal, dirnamelocal) == 1)
+    {
+        sub(dirnamelocal, "", inamelocal);
+    }
+
+    # dump the link to this interface
+    idx = sprintf("%s/%s_index.html", DocDir, tolower(Library));
+    printf("<TR><PRE>\n") >> idx;
+    printf("    <A HREF=%s>%s</A>\n", inamelocal, iface) >> idx;
+    printf("</PRE></TR>\n") >> idx;
+
+    # dump the start of the interface.
+    printf("<HTML>\n") > intFile;
+    printf("<HEAD>\n") >> intFile;
+    printf("<CENTER>\n") >> intFile;
+    printf("<H2><BIG>IntelliSS7</BIG> ") >> intFile;
+    printf("<B>Application Developer's Toolkit</B></H2>\n") >> intFile;
+    printf("</CENTER>\n") >> intFile;
+    printf("<BR>\n") >> intFile;
+    printf("</HEAD>\n") >> intFile;
+    printf("<BODY>\n") >> intFile;
+
+}
+
+#
+# start the function jump table
+#
+function StartInterfaceJumpTable(intFile)
+{
+    # start the contained method jump table
+    printf("\n") >> intFile;
+    printf("<A NAME=#topLocation></A>") >> intFile;
+    printf("<TABLE ALIGN=JUSTIFY WIDTH=100% BGCOLOR=SILVER>\n") >> intFile;
+    printf("<TR>\n") >> intFile;
+    printf("    <TD ALIGN=LEFT><B>IntelliSS7 Interfaces</B></TD>\n") >> intFile;
+    printf("    <TD ALIGN=RIGHT><B>%s Library</B></TD>\n", Library) >> intFile;
+    printf("</TR>\n") >> intFile;
+    printf("</TABLE>\n") >> intFile;
+    printf("<BR>\n") >> intFile;
+    printf("Functions in this interface:\n") >> intFile;
+    printf("<BR>\n") >> intFile;
+    printf("<TABLE WIDTH=100% BORDER=0>\n") >> intFile;
+}
+
+#
+# do this at end of interface processing
+#
+function EndInterfaceHTML(intFile)
+{
+    printf("</TABLE>\n") >> intFile;
+    printf("<BR>\n") >> intFile;
+    printf("<BR>\n") >> intFile;
+    printf("<CENTER>\n") >> intFile;
+    printf("<A HREF=%s_index.html>back</A>\n", tolower(Library)) >> intFile;
+    printf("<BR>\n") >> intFile;
+    printf("</CENTER>\n") >> intFile;
+    printf("</BODY>\n") >> intFile;
+    printf("</HTML>\n") >> intFile;
+    close(tolower(intFile));
+}
+
+#
+# do this at the beginning of dumping each implementation
+#
+function StartImplementationHTML(funcFile, funcName)
+{
+    printf("Dumping implementation notes for: %s\n", funcName);
+    printf("<HTML>\n") > funcFile;
+    printf("<HEAD>\n") >> funcFile;
+    printf("<CENTER>\n") >> funcFile;
+    printf("<H2><BIG>IntelliSS7</BIG> ") >> funcFile;
+    printf("<B>Application Developer's Toolkit</B></H2>\n") >> funcFile;
+    printf("</CENTER>\n") >> funcFile;
+    printf("<BR>\n") >> funcFile;
+    printf("</HEAD>\n") >> funcFile;
+    printf("<BODY>\n") >> funcFile;
+}
+
+#
+# do this at the end of each implementation
+#
+function EndImplementationHTML(funcFile)
+{
+    printf("</BODY>\n") >> funcFile;
+    printf("</HTML>\n") >> funcFile;
+    close(funcFile);
+}
+
+#
+# print an interface description
+#
+function PrintInterfaceTagsAndDocs(intFile, docLines, docLineCount,
+# locals
+                                   firstTime)
+{
+    printf("\n") >> intFile;
+    printf("<TABLE ALIGN=JUSTIFY WIDTH=100% BGCOLOR=SILVER>\n") >> intFile;
+    printf("<TR>\n") >> intFile;
+    printf("    <TD ALIGN=LEFT><B>IntelliSS7 Interfaces</B></TD>\n") >> intFile;
+    printf("    <TD ALIGN=RIGHT><B>%s Library</B></TD>\n", Library) >> intFile;
+    printf("</TR>\n") >> intFile;
+    printf("</TABLE>\n") >> intFile;
+    printf("<BR>\n") >> intFile;
+
+    firstTime = 1;
+    for (i = 0; i < docLineCount; i++)
+    {
+        gotOne = 0;
+        if (match(docLines[i], "^Interface:$") != 0)
+        {
+            if (firstTime)
+            {
+                firstTime = 0;
+            }
+            else
+            {
+                printf("</PRE>\n") >> intFile;
+            }
+
+            printf("<B>INTERFACE</B>\n") >> intFile;
+
+            printf("<PRE>\n") >> intFile;
+        }
+        else if (match(docLines[i], "^Purpose:$") != 0)
+        {
+            if (firstTime)
+            {
+                firstTime = 0;
+            }
+            else
+            {
+                printf("</PRE>\n") >> intFile;
+            }
+
+            printf("<B>PURPOSE</B>\n") >> intFile;
+
+            printf("<PRE>\n") >> intFile;
+        }
+        else if (match(docLines[i], "^Usage:$") != 0)
+        {
+            if (firstTime)
+            {
+                firstTime = 0;
+            }
+            else
+            {
+                printf("</PRE>\n") >> intFile;
+            }
+
+            printf("<B>USAGE</B>\n") >> intFile;
+
+            printf("<PRE>\n") >> intFile;
+        }
+        else
+        {
+            printf("    %s\n", docLines[i]) >> intFile;
+        }
+    }
+
+    if (!firstTime)
+    {
+        printf("\n</PRE>\n") >> intFile;
+    }
+    printf("<HR>\n\n") >> intFile;
+}
+
+#
+# print C-style documentation in a C-style comment block
+#
+function DumpCInterface(iname,
+# locals
+                        docLineCount, docLines, starPos, ilocal)
+{
+    docLineCount = 0;
+
+    # skip the flower box start
+    getline;
+
+    # get the comments
+    while (getline != 0)
+    {
+        # skip flowerbox end
+        if (match($0, ".*\\*\\/.*") != 0)
+        {
+            break;
+        }
+
+        docLines[docLineCount++] = $0;
+    }
+
+    # strip leading spaces and *
+    for (i = 0; i < docLineCount; i++)
+    {
+        if ((starPos = match(docLines[i], "\\*")) != 0)
+        {
+            docLines[i] = substr(docLines[i], starPos + 4 - 1);
+        }
+    }
+
+    ilocal = sprintf("%s/%s.html", DocDir, tolower(iname));
+    StartInterfaceHTML(ilocal, iname);
+    PrintInterfaceTagsAndDocs(ilocal, docLines, docLineCount);
+    StartInterfaceJumpTable(ilocal);
+}
+
+#
+# print C++-style documentation in a C++-style comment block
+#
+function DumpCPPInterface(iname,
+# locals
+                          docLineCount, docLines, starPos, ilocal)
+{
+    docLineCount = 0;
+
+    # skip the flower box start
+    getline;
+
+    # get the comments
+    while (getline != 0)
+    {
+        # skip flowerbox end
+        if (match($0, /[ \t]*\/\//) == 0)
+        {
+            docLineCount--;
+
+            break;
+        }
+
+        docLines[docLineCount++] = $0;
+    }
+
+    # strip leading spaces and //
+    for (i = 0; i < docLineCount; i++)
+    {
+        if ((starPos = match(docLines[i], "\/\/")) != 0)
+        {
+            docLines[i] = substr(docLines[i], starPos + 4);
+        }
+    }
+
+    ilocal = sprintf("%s/%s.html", DocDir, tolower(iname));
+    StartInterfaceHTML(ilocal, iname);
+    PrintInterfaceTagsAndDocs(ilocal, docLines, docLineCount);
+    StartInterfaceJumpTable(ilocal);
+}
+
+#
+# dump a link to a function into the interface file.
+#
+function DumpLink(funcFile, funcLines, funcLineCount,
+                  matchLine, class, intFile,
+# locals
+                  fnamelocal, dirnamelocal)
+{
+    #
+    # funcFile has DocDir prepended.  Remove that
+    #
+    fnamelocal = funcFile
+    dirnamelocal = sprintf("%s/", DocDir);
+    if (match(fnamelocal, dirnamelocal) == 1)
+    {
+        sub(dirnamelocal, "", fnamelocal);
+    }
+
+    # dump the link
+    printf("<TR><PRE>\n") >> intFile;
+    for (i = 0; i < funcLineCount; i++)
+    {
+        if (i == matchLine && length(class) != 0)
+        {
+            printf("    <A HREF=%s>%s::%s</A>",
+                   fnamelocal, class, funcLines[i]) >> intFile;
+        }
+        else if (i == matchLine)
+        {
+            printf("    <A HREF=%s>%s</A>",
+                   fnamelocal, funcLines[i]) >> intFile;
+        }
+        else
+        {
+            printf("    %s", funcLines[i]) >> intFile;
+        }
+
+        if (i == (funcLineCount - 1))
+        {
+            printf(";\n\n") >> intFile;
+        }
+        else
+        {
+            printf("\n") >> intFile;
+        }
+    }
+    printf("</PRE></TR>\n") >> intFile;
+}
+
+#
+# print tags and documentation lines
+#
+function PrintImplementationTagsAndDocs(funcFile, intName,
+                                        docLines, docLineCount,
+# locals
+                                        firstTime)
+{
+    firstTime = 1;
+
+    # Map the tag strings
+    for (i = 0; i < docLineCount; i++)
+    {
+        if (match(docLines[i], "^Purpose:$") != 0)
+        {
+            if (firstTime)
+            {
+                firstTime = 0;
+            }
+            else
+            {
+                printf("</PRE>\n") >> funcFile;
+            }
+
+            printf("<B>PURPOSE</B>\n") >> funcFile;
+
+            printf("<PRE>\n") >> funcFile;
+        }
+        else if (match(docLines[i], "^Input Parameters:$") != 0)
+        {
+            if (firstTime)
+            {
+                firstTime = 0;
+            }
+            else
+            {
+                printf("</PRE>\n") >> funcFile;
+            }
+
+            printf("<B>INPUT PARAMETERS</B>\n") >> funcFile;
+
+            printf("<PRE>\n") >> funcFile;
+        }
+        else if (match(docLines[i], "^Input\\/Output Parameters:$") != 0)
+        {
+            if (firstTime)
+            {
+                firstTime = 0;
+            }
+            else
+            {
+                printf("</PRE>\n") >> funcFile;
+            }
+
+            printf("<B>INPUT/OUTPUT PARAMETERS</B>\n") >> funcFile;
+
+            printf("<PRE>\n") >> funcFile;
+        }
+        else if (match(docLines[i], "^Output Parameters:$") != 0)
+        {
+            if (firstTime)
+            {
+                firstTime = 0;
+            }
+            else
+            {
+                printf("</PRE>\n") >> funcFile;
+            }
+
+            printf("<B>OUTPUT PARAMETERS</B>\n") >> funcFile;
+
+            printf("<PRE>\n") >> funcFile;
+        }
+        else if (match(docLines[i], "^Return Value:$") != 0)
+        {
+            if (firstTime)
+            {
+                firstTime = 0;
+            }
+            else
+            {
+                printf("</PRE>\n") >> funcFile;
+            }
+
+            printf("<B>RETURN VALUE</B>\n") >> funcFile;
+
+            printf("<PRE>\n") >> funcFile;
+        }
+        else if (match(docLines[i], "^Notes:$") != 0)
+        {
+            if (firstTime)
+            {
+                firstTime = 0;
+            }
+            else
+            {
+                printf("</PRE>\n") >> funcFile;
+            }
+
+            printf("<B>NOTES</B>\n") >> funcFile;
+
+            printf("<PRE>\n") >> funcFile;
+        }
+        else if (match(docLines[i], "^See Also:$") != 0)
+        {
+            if (firstTime)
+            {
+                firstTime = 0;
+            }
+            else
+            {
+                printf("</PRE>\n") >> funcFile;
+            }
+
+            printf("<B>SEE ALSO</B>\n") >> funcFile;
+
+            printf("<PRE>\n") >> funcFile;
+        }
+        else
+        {
+            printf("%s\n", docLines[i]) >> funcFile;
+        }
+    }
+
+    if (!firstTime)
+    {
+        printf("</PRE>\n") >> funcFile;
+    }
+
+    printf("<CENTER>\n") >> funcFile;
+    printf("<A HREF=%s><I>back</I></A><BR>\n<BR>\n", intName) >> funcFile;
+    printf("</CENTER>\n") >> funcFile;
+}
+
+#
+# print a function/method prototype header
+#
+function PrintImplementation(scope, class,
+                             funcLines, funcLineCount,
+                             docLines, docLineCount,
+# locals
+                             funcName, matchLine, haveOpen, haveI,
+                             maxMatchLen, intFile, intFileBase, intName,
+                             spaceEat)
+{
+    funcName = "";
+    matchLine = -1;
+    haveOpen = 0;
+
+    # look for a paren, but make sure it's not in a
+    # preprocessor argument.
+    for (i = 0; i < funcLineCount; i++)
+    {
+        parOffset = match(funcLines[i], "\\(");
+        if (match(funcLines[i], "#") == 1)
+        {
+            continue;
+        }
+        if (parOffset != 0 && !haveOpen)
+        {
+            haveOpen = 1;
+            funcName = substr(funcLines[i], 0, parOffset - 1);
+            matchLine = i;
+        }
+    }
+
+    # complain if we didn't find the signature
+    if (length(funcName) == 0)
+    {
+        printf("Didn't find the function prototype\n");
+        return;
+    }
+
+    # strip leading spaces
+    sub("[ \t]*", "", funcName);
+    # build the method name, if appropriate
+    if (length(class) != 0)
+    {
+        funcName = sprintf("%s::%s", class, funcName);
+    }
+
+    #
+    # get the funcFile. Do this by finding the longest interface
+    # that matches fnamelocal, and appending a number to that file.
+    #
+    funcFile = tolower(funcName);
+    haveI = 0;
+    maxMatchLen = 0;
+    for (i = 0; i < iCount; i++)
+    {
+        if (match(funcFile, tolower(interfaces[i])) == 1)
+        {
+            if (RLENGTH > maxMatchLen)
+            {
+                maxMatchLen = RLENGTH;
+                intFile = sprintf("%s/%s.html", DocDir, tolower(interfaces[i]));
+                intFileBase = sprintf("%s.html", tolower(interfaces[i]));
+                haveI = 1;
+                intName = interfaces[i];
+            }
+        }
+    }
+
+    if (!haveI || maxMatchLen == 0)
+    {
+        printf("Didn't match function %s to any interface\n", fnamelocal);
+        printf("Choices were:\n");
+        for (i = 0; i < iCount; i++)
+        {
+            printf("%s ", tolower(interfaces[i]));
+        }
+        printf("\n");
+        return;
+    }
+
+    funcFile = sprintf("%s/%s-%d.html",
+                       DocDir, intName, htmlCount++);
+
+    # start dumping the implementation piece
+    StartImplementationHTML(funcFile, funcName);
+
+    printf("<TABLE ALIGN=JUSTIFY WIDTH=100% BGCOLOR=SILVER>\n") >> funcFile;
+    printf("<TR>\n") >> funcFile;
+    printf("    <TD ALIGN=LEFT><B>IntelliSS7 Function</B></TD>\n") >> funcFile;
+    printf("    <TD ALIGN=RIGHT><I>%s</I></TD>\n", funcName) >> funcFile;
+    printf("</TR>\n") >> funcFile;
+    printf("</TABLE>\n") >> funcFile;
+    printf("<BR>\n<BR>\n") >> funcFile;
+    printf("<B>NAME</B>\n") >> funcFile;
+    printf("<PRE>\n") >> funcFile;
+    printf("    %s()\n", funcName) >> funcFile;
+    printf("</PRE>\n") >> funcFile;
+
+    printf("<B>SCOPE</B>\n") >> funcFile;
+    printf("<PRE>\n") >> funcFile;
+    printf("    %s\n", scope) >> funcFile;
+    printf("</PRE>\n") >> funcFile;
+
+    printf("<B>SYNOPSIS</B>\n") >> funcFile;
+    printf("<PRE>\n") >> funcFile;
+
+    #
+    # dump the signature
+    #
+    spaceEat = 0;
+
+    for (i = 0; i < funcLineCount; i++)
+    {
+        # let the type line tell us how many spaces to remove
+        if (i == 0)
+        {
+            if (match(funcLines[i], /[ \t]*/) == 1)
+            {
+                spaceEat = RLENGTH;
+            }
+        }
+
+        # eat that many
+        for (j = 0; j < spaceEat; j++)
+        {
+            sub("^[ \t]", "", funcLines[i]);
+        }
+
+        # then print
+        if (i == matchLine && length(class) != 0)
+        {
+            printf("    %s::%s", class, funcLines[i]) >> funcFile;
+        }
+        else
+        {
+            printf("    %s", funcLines[i]) >> funcFile;
+        }
+
+        if (i == (funcLineCount - 1))
+        {
+            printf(";\n\n") >> funcFile;
+        }
+        else
+        {
+            printf("\n") >> funcFile;
+        }
+    }
+    printf("</PRE>\n") >> funcFile;
+
+    # print the documentation
+    PrintImplementationTagsAndDocs(funcFile, intFileBase,
+                                   docLines, docLineCount);
+
+    # finish off the impl file.     
+    EndImplementationHTML(funcFile);
+
+    # dump the link information to the interface file.
+    printf("Dumping link to %s for %s\n", funcName, intName);
+    DumpLink(funcFile, funcLines, funcLineCount,
+             matchLine, class, intFile);
+}
+
+#
+# print C-style documentation in a C-style comment block
+#
+function DumpCImplementation(scope, modifier, class,
+# locals
+                             gettingDocs, docLineCount, funcLineCount,
+                             docLines, funcLines)
+{
+    gettingDocs = 1;
+
+    docLineCount = 0;
+    funcLineCount = 0;
+
+    # skip flowerbox start
+    getline;
+
+    # get the comments and function signature
+    while (getline != 0)
+    {
+        if (match($0, "^[ \t]*{.*"))
+        {
+            break;
+        }
+        if (match($0, "^[ \t]*:.*"))
+        {
+            break;
+        }
+        if (modifier == "abstract")
+        {
+            if ((apos = match($0, " = 0;")) != 0)
+            {
+                sub(" = 0;", "");
+                funcLines[funcLineCount++] = $0;
+                break;
+            }
+        }
+
+        # skip flowerbox end
+        if (match($0, ".*\\*\\/.*") != 0)
+        {
+            gettingDocs = 0;
+
+            continue;
+        }
+
+        if (gettingDocs)
+        {
+            docLines[docLineCount++] = $0;
+        }
+        else
+        {
+            funcLines[funcLineCount++] = $0;
+        }
+    }
+
+    # strip the comment delimiter from the docs
+    for (i = 0; i < docLineCount; i++)
+    {
+        if ((starPos = match(docLines[i], "\\*")) != 0)
+        {
+            docLines[i] = substr(docLines[i], starPos + 4 - 1);
+        }
+    }
+
+    PrintImplementation(scope, class,
+                        funcLines, funcLineCount,
+                        docLines, docLineCount);
+}
+
+#
+# print C++-style documentation in a C++-style comment block
+#
+function DumpCPPImplementation(scope, modifier, class,
+# locals
+                               gettingDocs, docLineCount, funcLineCount,
+                               docLines, funcLines)
+{
+    gettingDocs = 1;
+
+    docLineCount = 0;
+    funcLineCount = 0;
+
+    # skip flowerbox start
+    getline;
+
+    # get the comments and function signature
+    while (getline != 0)
+    {
+        if (match($0, "^[ \t]*{.*") || match($0, "^[ \t]*:.*"))
+        {
+            break;
+        }
+        if (modifier == "abstract")
+        {
+            if ((apos = match($0, " = 0;")) != 0)
+            {
+                sub(" = 0;", "");
+                funcLines[funcLineCount++] = $0;
+                break;
+            }
+        }
+
+        # skip flowerbox end
+        if (match($0, "[ \t]*//") == 0)
+        {
+            gettingDocs = 0;
+
+            docLineCount--;
+        }
+
+        if (gettingDocs)
+        {
+            docLines[docLineCount++] = $0;
+        }
+        else
+        {
+            funcLines[funcLineCount++] = $0;
+        }
+    }
+
+    # strip the comment delimiter from the docs
+    for (i = 0; i < docLineCount; i++)
+    {
+        if ((starPos = match(docLines[i], "\/\/")) != 0)
+        {
+            docLines[i] = substr(docLines[i], starPos + 4);
+        }
+    }
+
+    PrintImplementation(scope, class,
+                        funcLines, funcLineCount,
+                        docLines, docLineCount);
+}
+
+#
+# determine the scope, and modifiers/classes if present.
+#
+function GetScopeAndModifiers(line)
+{
+    tags[0] = "";
+    tags[1] = "";
+    tags[2] = "";
+
+    if ((colonPos = match($0, ":")) != 0)
+    {
+        extras = substr($0, colonPos + 1);
+
+        if ((modCount = split(extras, modArray, ",")) != 0)
+        {
+            for (i = 1; i <= modCount; i++)
+            {
+                if (modArray[i] == "extern")
+                {
+                    tags[0] = "extern";
+                }
+                else if (modArray[i] == "static")
+                {
+                    tags[0] = "static";
+                }
+                else if (modArray[i] == "public")
+                {
+                    tags[0] = "public";
+                }
+                else if (modArray[i] == "protected")
+                {
+                    tags[0] = "protected";
+                }
+                else if (modArray[i] == "private")
+                {
+                    tags[0] = "private";
+                }
+                else if (modArray[i] == "inline")
+                {
+                    tags[1] = "inline";
+                }
+                else if (modArray[i] == "abstract")
+                {
+                    tags[1] = "abstract";
+                }
+                else
+                {
+                    tags[2] = modArray[i];
+                }
+            }
+        }
+    }
+}
+
+#
+# the hard core patterns
+#
+/^[ \t]*\/\*\.interface.*/ {
+    GetScopeAndModifiers($0);
+
+    interfaces[iCount++] = tags[2];
+    DumpCInterface(tags[2]);
+}
+
+/^[ \t]*\/\/.interface.*/ {
+    GetScopeAndModifiers($0);
+
+    interfaces[iCount++] = tags[2];
+    DumpCPPInterface(tags[2]);
+}
+
+/^[ \t]*\/\*\.implementation.*/ {
+    GetScopeAndModifiers($0);
+
+    if (tags[0] == "static")
+    {
+        next;
+    }
+    else
+    {
+        DumpCImplementation(tags[0], tags[1], tags[2]);
+    }
+}
+
+/^[ \t]*\/\/.implementation.*/ {
+    GetScopeAndModifiers($0);
+
+    if (tags[0] == "static")
+    {
+        next;
+    }
+    else
+    {
+        DumpCPPImplementation(tags[0], tags[1], tags[2]);
+    }
+}
+

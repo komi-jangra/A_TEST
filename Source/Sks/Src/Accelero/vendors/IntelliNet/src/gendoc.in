@@ -1,0 +1,4 @@
+../../../IntelliSS7/TCAP/include/itu/tcap.h ansi-tcap_ifc.c itu-tcap_ifc.c
+../../../IntelliSS7/SCCP/include/itu/sccp.h ansi-sccp_ifc.c itu-sccp_ifc.c
+../../../IntelliSS7/ISUP/include/itu/isup.h ansi-isup_ifc.c itu-isup_ifc.c
+	

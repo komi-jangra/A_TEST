@@ -1,0 +1,97 @@
+
+ANSI MTP3 Command
+
+SYNOPSIS
+    ma_clr_gen_peg [<Pegid> (or) <ALL/all>]
+
+DESCRIPTION
+   This command clears a given MTP3 general peg to 0 
+
+PARAMETERS
+  
+    #peg      - The peg id to get the value
+              - ALL/all for All MTP3 PEGS Values
+
+NOTE
+    The MTP3 general peg-ids are:
+
+        PEG_MTP3_MSG_PAUSE                 0
+        PEG_MTP3_MSG_RESUME                1
+        PEG_MTP3_MSG_STATUS                2
+        PEG_MTP3_MSG_RECEIVED_INERROR      5
+        PEG_MTP3_CHANGEOVER                6
+        PEG_MTP3_CHANGEBACK                7
+        PEG_MTP3_SL_UNAVAILABLE            8
+        PEG_MTP3_LINK_INHIBIT              9
+        PEG_MTP3_LINK_UNINHIBIT            10
+        PEG_MTP3_LINK_FORCE_UNINHIBIT      11
+        PEG_MTP3_CONGESTION                12
+        PEG_MTP3_SLS_UNAVAILABLE           13
+        PEG_MTP3_TFC_RECEIVED              14
+        PEG_MTP3_TFA_RECEIVED              15
+        PEG_MTP3_ROUTESET_UNAVAILABLE      16
+        PEG_MTP3_ADJECENT_SP_UNACCESIBLE   17
+        PEG_MTP3_USERPART_ENABLE           18
+        PEG_MTP3_USERPART_DISABLE          19
+        PEG_MTP3_T1_EXPIRED                20
+        PEG_MTP3_T2_EXPIRED                21
+        PEG_MTP3_T3_EXPIRED                22
+        PEG_MTP3_T4_EXPIRED                23
+        PEG_MTP3_T5_EXPIRED                24
+        PEG_MTP3_T6_EXPIRED                25
+        PEG_MTP3_T7_EXPIRED                26
+        PEG_MTP3_T8_EXPIRED                27
+        PEG_MTP3_T9_EXPIRED                28
+        PEG_MTP3_T10_EXPIRED               29
+        PEG_MTP3_T11_EXPIRED               30
+        PEG_MTP3_T12_EXPIRED               31
+        PEG_MTP3_T13_EXPIRED               32
+        PEG_MTP3_T14_EXPIRED               33
+        PEG_MTP3_T15_EXPIRED               34
+        PEG_MTP3_T16_EXPIRED               35
+        PEG_MTP3_T17_EXPIRED               36
+        PEG_MTP3_T18_EXPIRED               37
+        PEG_MTP3_T19_EXPIRED               38
+        PEG_MTP3_T20_EXPIRED               39
+        PEG_MTP3_T21_EXPIRED               40
+        PEG_MTP3_T22_EXPIRED               41
+        PEG_MTP3_T23_EXPIRED               42
+        PEG_MTP3_T24_EXPIRED               43
+        PEG_MTP3_T25_EXPIRED               44
+        PEG_MTP3_T26_EXPIRED               45
+        PEG_MTP3_T27_EXPIRED               46
+        PEG_MTP3_T28_EXPIRED               47
+        PEG_MTP3_T29_EXPIRED               48
+        PEG_MTP3_T30_EXPIRED               49
+        PEG_MTP3_T31_EXPIRED               50
+        PEG_MTP3_T32_EXPIRED               51
+        PEG_MTP3_T33_EXPIRED               52
+        PEG_MTP3_T34_EXPIRED               53
+
+        ALL_MTP3_PEGS                      99
+
+
+EXAMPLE
+      >> ma_clr_gen_peg 1
+      Clearing the Peg for PEG_MTP3_MSG_RESUME Now
+
+
+      >> ma_clr_gen_peg all
+      Clearing All MTP3 General Pegs for Now
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~     

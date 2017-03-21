@@ -1,0 +1,1207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<u2 OMVersion="3.4" StorageVersion="4" ToolVersion="3.0.0.0.2032" xmlns="http://www.telelogic.com/tau">
+<Resource Guid="EUBEEEhLlEEEHdHBvLESm2EE">
+<cHiddenStereotypeInstance>
+<InstanceExpr Guid="3wDEEE8YIEEEMpuOCLESm2EE">
+<rInstanceOf R="uid:@Predefined@modelDependency"/>
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="SYSInclude.u2">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="strUri">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+<InstanceExpr Guid="JwDEEE8YIEEEMpuOCLESm2EE">
+<rInstanceOf R="uid:@Predefined@modelDependency"/>
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="urn:u2:etc/TTDPredefinedStereotypes.u2">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="strUri">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+<InstanceExpr Guid="KwDEEE8YIEEEMpuOCLESm2EE">
+<rInstanceOf R="uid:@Predefined@modelDependency"/>
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="urn:u2:etc/TTDMetamodel.u2">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="strUri">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+<InstanceExpr Guid="1wDEEE8YIEEEMpuOCLESm2EE">
+<rInstanceOf R="uid:@Predefined@modelDependency"/>
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="urn:u2:etc/LineStyle.u2">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="strUri">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cHiddenStereotypeInstance>
+<rRoot R="uid:yWNEEE6IVEEEAh-ivLESm2EE"/>
+</Resource>
+<Package Guid="yWNEEE6IVEEEAh-ivLESm2EE" Name="Interface">
+<cDiagram>
+<ClassDiagram Guid="B0pEEE6IVEEEDU*ivLESm2EE" Name="Interface diagram" Size="4052 5468">
+<cStereotypeInstance>
+<InstanceExpr Guid="G0pEEE6IVEEEDU*ivLESm2EE">
+<rInstanceOf R="uid:@TTDMetaModel@componentDiagram"/>
+</InstanceExpr>
+</cStereotypeInstance>
+<cHiddenStereotypeInstance>
+<InstanceExpr Guid="D0pEEE6IVEEEDU*ivLESm2EE">
+<rInstanceOf R="uid:@TTDLineStyles@presentationFont"/>
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="Arial">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="name">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@name"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="10">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="points">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@points"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+<InstanceExpr Guid="00pEEE6IVEEEDU*ivLESm2EE">
+<rInstanceOf R="uid:@TTDLineStyles@diagramAutosizing"/>
+</InstanceExpr>
+<InstanceExpr Guid="F0pEEE6IVEEEDU*ivLESm2EE">
+<rInstanceOf R="uid:@TTDLineStyles@symbolColor"/>
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="16773875">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="color">
+<rDefinition R="uid:@TTDLineStyles@symbolColor@color"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cHiddenStereotypeInstance>
+<cDiagramElement>
+<FrameSymbol Guid="C0pEEE6IVEEEDU*ivLESm2EE" Position="100 100" Size="3840 5240">
+</FrameSymbol>
+<InterfaceSymbol Guid="pFpEEE6IVEEEDU*ivLESm2EE" Position="1860 240" Size="1300 520" Autosize="true" Text="ToABIHM">
+<rDefinition R="uid:XsTEEE6IVEEERq-ivLESm2EE"/>
+<cOperationLabel>
+<OperationLabel Guid="y7VVEE6IVEEEVoOvvLESm2EE" Text="signal OAMS_BICH_ABIHM_LINK_ESTAB_REQ(I_PVoid,I_U32)">
+<rDefinition R="uid:ywVVEE6IVEEEuoOvvLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="9ptLEE6IVEEEAZOvvLESm2EE" Text="signal OAMS_BICH_ABIHM_BIC_SLOT_CONNECT(I_PVoid,I_U32)">
+<rDefinition R="uid:KFIVEE6IVEEEQpOvvLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="GFIVEE6IVEEEQpOvvLESm2EE" Text="signal OAMS_BICH_ABIHM_BIC_SLOT_DISCONNECT(I_PVoid,I_U32)">
+<rDefinition R="uid:ysIVEE6IVEEEmpOvvLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="QcnEEEXliEEE0aFB5LESm2EE" Text="signal OAMS_BICH_ABIHM_BSC_BIC_CFG_REQ ( I_PVoid, I_U32)">
+<rDefinition R="uid:vinEEEXliEEEfZFB5LESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="5N3EEERrVEEEn7bC5LESm2EE" Text="signal OAMS_BICH_ABIHM_BIC_CC_PWR_ORDER_REQ( I_PVoid, I_U32)">
+<rDefinition R="uid:YfGEEERrVEEEChbC5LESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="2cHEEERwEEEECuHR5LESm2EE" Text="signal OAMS_BICH_ABIHM_LINK_DISC_REQ(I_PVoid,I_U32)">
+<rDefinition R="uid:*gHEEERwEEEEFuHR5LESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="IAWEEEesSEEEANnVBLxjEh2E" Text="signal OAMS_BICH_ABIHM_IP_LINK_DOWN(I_PVoid,I_U32)">
+<rDefinition R="uid:qeWEEEesSEEE1NnVBLxjEh2E"/>
+</OperationLabel>
+</cOperationLabel>
+<cAttributeLabel>
+<AttributeLabel Guid="rWuLEE6IVEEE8ZOvvLESm2EE">
+</AttributeLabel>
+</cAttributeLabel>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="RgrEEE6IVEEEWW*ivLESm2EE" Position="140 1160" Size="1160 700" Autosize="true" Text="FromCFG">
+<rDefinition R="uid:4grEEE6IVEEEWW*ivLESm2EE"/>
+<cOperationLabel>
+<OperationLabel Guid="fgsEEE6IVEEEkY*ivLESm2EE" Text="signal OAMS_CFG_BICH_ADD_BIC_REQ(I_PVoid)">
+<rDefinition R="uid:ghsEEE6IVEEE6Y*ivLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="MkPEEEhLlEEEuU3BvLESm2EE" Text="signal OAMS_CFG_BICH_DEL_BIC_REQ(I_PVoid)">
+<rDefinition R="uid:ezPEEEhLlEEEX23BvLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="zegLEEmKIEEE-Dqg5LESm2EE" Text="signal OAMS_CFG_BICH_LOCK_REQ(I_PVoid)">
+<rDefinition R="uid:NQgLEEmKIEEEB0qg5LESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="TpSVEEmKIEEEJgqg5LESm2EE" Text="signal OAMS_CFG_BICH_ADD_TRX_INDICATION(I_PVoid)">
+<rDefinition R="uid:TlAVEEmKIEEEPhqg5LESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="8KcLEEg4EEEETN575LESm2EE" Text="signal OAMS_CFG_BICH_DEL_TRX_INDICATION(I_PVoid)">
+<rDefinition R="uid:2XcLEEg4EEEEfN575LESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="QlAVEEmKIEEEPhqg5LESm2EE" Text="signal OAMS_CFG_BICH_BTS_RESET(I_PVoid)">
+<rDefinition R="uid:-KAVEEmKIEEEghqg5LESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="xKAVEEmKIEEEghqg5LESm2EE" Text="signal OAMS_CFG_BICH_TRX_RESET(I_PVoid)">
+<rDefinition R="uid:haAVEEmKIEEEshqg5LESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="KQgLEEmKIEEEB0qg5LESm2EE" Text="signal OAMS_CFG_BICH_UNLOCK_REQ(I_PVoid)">
+<rDefinition R="uid:LcgLEEmKIEEEF0qg5LESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="dHGEEE0KIEEEy3R2vLESm2EE" Text="signal OAMS_CFG_BICH_INIT_ABIS_E1(I_PVoid)">
+<rDefinition R="uid:UJGEEE0KIEEESJR2vLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="RJGEEE0KIEEESJR2vLESm2EE" Text="signal OAMS_CFG_BICH_UPDATE_ABIS_E1(I_PVoid)">
+<rDefinition R="uid:RQGEEE0KIEEEPJR2vLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="RUDEEERrVEEEK9bC5LESm2EE" Text="signal OAMS_CFG_BICH_BIC_CC_PWR_ORDER_REQ ( I_PVoid)">
+<rDefinition R="uid:EACEEERrVEEE4dbC5LESm2EE"/>
+</OperationLabel>
+</cOperationLabel>
+<cAttributeLabel>
+<AttributeLabel Guid="EDFEEEXliEEEBqDB5LESm2EE">
+</AttributeLabel>
+</cAttributeLabel>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="LtsEEE6IVEEEVZ*ivLESm2EE" Position="320 220" Size="1160 620" Autosize="true" Text="FromABIHM">
+<rDefinition R="uid:rEWEEE6IVEEEwr-ivLESm2EE"/>
+<cOperationLabel>
+<OperationLabel Guid="9OuEEE6IVEEEqZ*ivLESm2EE" Text="signal CSAPP_ABIHM_BICH_BIC_HELLO(I_PVoid)">
+<rDefinition R="uid:TRuEEE6IVEEEtZ*ivLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="ic-LEE6IVEEEkjOvvLESm2EE" Text="signal CSAPP_ABIHM_BICH_LAPD_LINK_UP(I_PVoid)">
+<rDefinition R="uid:w7-LEE6IVEEEqjOvvLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="pFIVEEmKIEEEufqg5LESm2EE" Text="signal CSAPP_ABIHM_BICH_BM_HELLO(I_PVoid)">
+<rDefinition R="uid:SWIVEEmKIEEElgqg5LESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="wr-LEE6IVEEExjOvvLESm2EE" Text="signal CSAPP_ABIHM_BICH_LAPD_LINK_DOWN(I_PVoid)">
+<rDefinition R="uid:0E*LEE6IVEEEIkOvvLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="We*LEE6IVEEE5kOvvLESm2EE" Text="signal CSAPP_ABIHM_BICH_BIC_DS_LINK_EST(I_PVoid)">
+<rDefinition R="uid:dN*LEE6IVEEEPkOvvLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="na*LEE6IVEEEZkOvvLESm2EE" Text="signal CSAPP_ABIHM_BICH_BIC_DS_LINK_FAIL(I_PVoid)">
+<rDefinition R="uid:Nk*LEE6IVEEE7kOvvLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="1GmEEEIiSEEEjncT5LESm2EE" Text="signal CSAPP_ABIHM_BICH_BIC_BSC_ALARM_IND(I_PVoid)">
+<rDefinition R="uid:Z1mEEEIiSEEEnncT5LESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="bRDEEECqiEEE-gR75LESm2EE" Text="signal CSAPP_ABIHM_BICH_FAILURE_EVENT_REPORT(I_PVoid)">
+<rDefinition R="uid:Ia0EEECqiEEEj7R75LESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="JQ0EEECqiEEEM7R75LESm2EE" Text="signal CSAPP_ABIHM_BICH_IP_LINK_DOWN(I_PVoid)">
+<rDefinition R="uid:90XEEEesSEEE3PnVBLxjEh2E"/>
+</OperationLabel>
+</cOperationLabel>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="VtsEEE6IVEEEVZ*ivLESm2EE" Position="1360 1300" Size="1020 320" Autosize="true" Text="ToCFG">
+<rDefinition R="uid:cYWEEE6IVEEEMs-ivLESm2EE"/>
+<cOperationLabel>
+<OperationLabel Guid="cBtEEE6IVEEEiZ*ivLESm2EE" Text="signal OAMS_BICH_CFG_ALARM_IND(I_PVoid,I_U32)">
+<rDefinition R="uid:sKtEEE6IVEEECZ*ivLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="2s8EEEhLlEEE-s-CvLESm2EE" Text="signal OAMS_BICH_CFG_ADD_BIC_RESP(I_PVoid,I_U32)">
+<rDefinition R="uid:0OwEEEhLlEEEjt-CvLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="UQQEEEhLlEEEk23BvLESm2EE" Text="signal OAMS_BICH_CFG_DEL_BIC_RESP(I_PVoid,I_U32)">
+<rDefinition R="uid:8dQEEEhLlEEEGW3BvLESm2EE"/>
+</OperationLabel>
+</cOperationLabel>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="7RGEEE-OEEEE-NVevLESm2EE" Position="1920 1660" Size="1080 480" Autosize="true" Text="sysToBICH">
+<rDefinition R="uid:DJGEEE-OEEEE2NVevLESm2EE"/>
+<cOperationLabel>
+<OperationLabel Guid="C2GEEE-OEEEEIOVevLESm2EE" Text="signal ATTACH_INST()">
+<rDefinition R="uid:4dGEEE-OEEEEROVevLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="2znVEErqSEEEh2zGvLESm2EE" Text="signal BICH_INT_BIC_PARENT_NOT_AVAIL()">
+<rDefinition R="uid:l0oVEErqSEEENWzGvLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="AHzLEEupSEEEkw8NvLESm2EE" Text="signal BICH_INT_STOP_tWAIT_FOR_PARENT_CON_TIMER()">
+<rDefinition R="uid:cUzLEEupSEEEYx8NvLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="3ZBEEEVZIEEEWFWkeLESm2EE" Text="signal BICH_INT_SELFCARD_STATE_CHANGE(I_S32,I_S32)">
+<rDefinition R="uid:P6BEEEVZIEEEnFWkeLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="YIGEEEVZIEEErNWkeLESm2EE" Text="signal BICH_INT_ADD_TAU_INSTANCE()">
+<rDefinition R="uid:0-GEEEVZIEEE*NWkeLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="gqBEEEUoVEEEPPa6eLESm2EE" Text="signal BICH_INT_ACLIVE_CLASS_PID ()">
+<rDefinition R="uid:kxCEEEUoVEEE-Pa6eLESm2EE"/>
+</OperationLabel>
+</cOperationLabel>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="qpOEEE-OEEEE6rVevLESm2EE" Position="160 1980" Size="1120 620" Autosize="true" Text="BICHToSys">
+<rDefinition R="uid:uTOEEE-OEEEEDrVevLESm2EE"/>
+<cOperationLabel>
+<OperationLabel Guid="Q-OEEE-OEEEEesVevLESm2EE" Text="signal BICH_INT_ADD_TAU_INST_IN_INSTMAP (I_U8)">
+<rDefinition R="uid:ELPEEE-OEEEEFsVevLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="JxREEEhLlEEEDb3BvLESm2EE" Text="signal BICH_INT_FREE_INST(I_U8)">
+<rDefinition R="uid:4V4EEEhLlEEEUb3BvLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="SzJEEEV8lEEE-3MFvLESm2EE" Text="signal BICH_INT_SLOT_CONNECT(I_PVoid,I_U32)">
+<rDefinition R="uid:*AKEEEV8lEEEPJMFvLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="xAKEEEV8lEEEPJMFvLESm2EE" Text="signal BICH_INT_SLOT_DISCONNECT(I_PVoid,I_U32)">
+<rDefinition R="uid:VhKEEEV8lEEE0KMFvLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="uQvEEEzgVEEEv4cHvLESm2EE" Text="signal BICH_INT_ADD_BIC_IN_ABIS_CHAIN( I_PVoid,I_U32)">
+<rDefinition R="uid:WbvEEEzgVEEE5TcHvLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="4bvEEEzgVEEE5TcHvLESm2EE" Text="signal BICH_INT_DEL_BIC_FROM_ABIS_CHAIN(I_PVoid,I_U32)">
+<rDefinition R="uid:86vEEEzgVEEE6TcHvLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="oCeEEEzgVEEE82cHvLESm2EE" Text="signal BICH_INT_UPDATE_ABIS_CHAIN_STATUS(I_U8 , I_U8)">
+<rDefinition R="uid:KKeEEEzgVEEEQWcHvLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="j15EEExVLEEEKon6eLESm2EE" Text="signal BICH_INT_ACTIVE_CLASS_PID ()">
+<rDefinition R="uid:iW5EEExVLEEE2on6eLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="fT5EEEsuiEEE-dpneLESm2EE" Text="signal BICH_INT_SELFCARD_STATE_CHANGE_RESP()">
+<rDefinition R="uid:U95EEEsuiEEEW9pneLESm2EE"/>
+</OperationLabel>
+</cOperationLabel>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="zAJEEESWEEEE9hIcvLESm2EE" Position="1400 2420" Size="1120 320" Autosize="true" Text="ToSWMH">
+<rDefinition R="uid:-AJEEESWEEEE9hIcvLESm2EE"/>
+<cOperationLabel>
+<OperationLabel Guid="vSKEEESWEEEEA7IcvLESm2EE" Text="signal OAMS_BICH_SWMH_BIC_HELLO(I_PVoid,I_U32)">
+<rDefinition R="uid:PaKEEESWEEEEs7IcvLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="ptKEEESWEEEEVjIcvLESm2EE" Text="signal OAMS_BICH_SWMH_LAPD_LINK_UP(I_PVoid,I_U32)">
+<rDefinition R="uid:IG1EEESWEEEE7jIcvLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="*F1EEESWEEEE7jIcvLESm2EE" Text="signal OAMS_BICH_SWMH_LAPD_LINK_DOWN(I_PVoid,I_U32)">
+<rDefinition R="uid:a21EEESWEEEEujIcvLESm2EE"/>
+</OperationLabel>
+</cOperationLabel>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="bUHEEEXliEEE3sDB5LESm2EE" Position="220 2800" Size="1160 280" Autosize="true" Text="ToCCUH">
+<rDefinition R="uid:4YFEEEXliEEEdqDB5LESm2EE"/>
+<cOperationLabel>
+<OperationLabel Guid="L1KEEEXliEEEjyDB5LESm2EE" Text="signal OAMS_BICH_CCUH_LAPD_LINK_UP ( I_PVoid , I_U32)">
+<rDefinition R="uid:lLGEEEXliEEEzqDB5LESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="V1KEEEXliEEEjyDB5LESm2EE" Text="signal OAMS_BICH_CCUH_LAPD_LINK_DOWN ( I_PVoid , I_U32)">
+<rDefinition R="uid:tMGEEEXliEEE4rDB5LESm2EE"/>
+</OperationLabel>
+</cOperationLabel>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="7jHEEExVSEEECLrg5LESm2EE" Position="220 3320" Size="1160 240" Autosize="true" Text="FromTRXH">
+<rDefinition R="uid:jjHEEExVSEEECLrg5LESm2EE"/>
+<cOperationLabel>
+<OperationLabel Guid="5w3EEExVSEEEgLrg5LESm2EE" Text="signal OAMS_TRXH_BICH_OPER_STATE_CHANGE_IND(I_PVoid)">
+<rDefinition R="uid:LlJEEExVSEEEEVrg5LESm2EE"/>
+</OperationLabel>
+</cOperationLabel>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="ZrXEEEesSEEEvQnVBLxjEh2E" Position="620 3700" Size="1060 280" Autosize="true" Text="ToTRXH">
+<rDefinition R="uid:F7XEEEesSEEErPnVBLxjEh2E"/>
+<cOperationLabel>
+<OperationLabel Guid="cLYEEEesSEEEQQnVBLxjEh2E" Text="signal OAMS_BICH_TRXH_IP_LINK_DOWN(I_PVoid, I_U32)">
+<rDefinition R="uid:hvYEEEesSEEEoQnVBLxjEh2E"/>
+</OperationLabel>
+<OperationLabel Guid="uPYEEEesSEEEPRnVBLxjEh2E" Text="signal OAMS_BICH_TRXH_IP_LINK_UP(I_PVoid, I_U32)">
+<rDefinition R="uid:lYYEEEesSEEEV4nVBLxjEh2E"/>
+</OperationLabel>
+</cOperationLabel>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="*hYEEEesSEEE54nVBLxjEh2E" Position="260 4080" Size="1000 320" Autosize="true" Text="ToTB">
+<rDefinition R="uid:qW2EEEesSEEEy1nVBLxjEh2E"/>
+<cOperationLabel>
+<OperationLabel Guid="6oYEEEesSEEEN4nVBLxjEh2E" Text="signal OAMS_BICH_TB_ADD_BTS_IP(I_PVoid, I_U32)">
+<rDefinition R="uid:j8YEEEesSEEEm4nVBLxjEh2E"/>
+</OperationLabel>
+<OperationLabel Guid="f8YEEEesSEEEm4nVBLxjEh2E" Text="signal OAMS_BICH_TB_DEL_BTS_IP(I_PVoid, I_U32)">
+<rDefinition R="uid:EEZEEEesSEEEFTnVBLxjEh2E"/>
+</OperationLabel>
+<OperationLabel Guid="pSZEEEesSEEEUTnVBLxjEh2E" Text="signal OAMS_BICH_TB_IP_LINK_DOWN(I_PVoid, I_U32)">
+<rDefinition R="uid:zBZEEEesSEEEwTnVBLxjEh2E"/>
+</OperationLabel>
+</cOperationLabel>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="44ZEEEesSEEEG2nVBLxjEh2E" Position="1500 4080" Size="900 280" Autosize="true" Text="FromTB">
+<rDefinition R="uid:nf2EEEesSEEE2MnVBLxjEh2E"/>
+<cOperationLabel>
+<OperationLabel Guid="0ZZEEEesSEEET2nVBLxjEh2E" Text="signal PSAPP_TB_BICH_IP_LINK_DOWN(I_PVoid)">
+<rDefinition R="uid:IgZEEEesSEEEy2nVBLxjEh2E"/>
+</OperationLabel>
+<OperationLabel Guid="EgZEEEesSEEEy2nVBLxjEh2E" Text="signal PSAPP_TB_BICH_IP_LINK_UP(I_PVoid)">
+<rDefinition R="uid:dmZEEEesSEEENWnVBLxjEh2E"/>
+</OperationLabel>
+</cOperationLabel>
+</InterfaceSymbol>
+</cDiagramElement>
+</ClassDiagram>
+</cDiagram>
+<cOwnedMember>
+<Interface Guid="XsTEEE6IVEEERq-ivLESm2EE" Name="ToABIHM">
+<cOwnedMember>
+<Signal Guid="ywVVEE6IVEEEuoOvvLESm2EE" Name="OAMS_BICH_ABIHM_LINK_ESTAB_REQ">
+<cParameter>
+<Parameter Guid="pYHEEERwEEEEvuHR5LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:wcZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="qYHEEERwEEEEvuHR5LESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:3dZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="KFIVEE6IVEEEQpOvvLESm2EE" Name="OAMS_BICH_ABIHM_BIC_SLOT_CONNECT">
+<cParameter>
+<Parameter Guid="5o2EEEl*VEEEP2hFvLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:wcZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="Bo2EEEl*VEEEP2hFvLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:3dZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="ysIVEE6IVEEEmpOvvLESm2EE" Name="OAMS_BICH_ABIHM_BIC_SLOT_DISCONNECT">
+<cParameter>
+<Parameter Guid="ceWEEEl*VEEEW2hFvLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:wcZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="deWEEEl*VEEEW2hFvLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:3dZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="vinEEEXliEEEfZFB5LESm2EE" Name="OAMS_BICH_ABIHM_BSC_BIC_CFG_REQ">
+<cParameter>
+<Parameter Guid="9SrEEEXliEEE1rFB5LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:wcZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="fSrEEEXliEEE1rFB5LESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:3dZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="YfGEEERrVEEEChbC5LESm2EE" Name="OAMS_BICH_ABIHM_BIC_CC_PWR_ORDER_REQ">
+<cParameter>
+<Parameter Guid="XcHEEERwEEEECuHR5LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:wcZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="YcHEEERwEEEECuHR5LESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:3dZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="*gHEEERwEEEEFuHR5LESm2EE" Name="OAMS_BICH_ABIHM_LINK_DISC_REQ">
+<cParameter>
+<Parameter Guid="AAWEEEesSEEEANnVBLxjEh2E">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:wcZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="lAWEEEesSEEEANnVBLxjEh2E">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:3dZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="qeWEEEesSEEE1NnVBLxjEh2E" Name="OAMS_BICH_ABIHM_IP_LINK_DOWN">
+<cParameter>
+<Parameter Guid="pKWEEEesSEEErNnVBLxjEh2E">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:wcZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="qKWEEEesSEEErNnVBLxjEh2E">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:3dZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="rEWEEE6IVEEEwr-ivLESm2EE" Name="FromABIHM">
+<cOwnedMember>
+<Signal Guid="TRuEEE6IVEEEtZ*ivLESm2EE" Name="CSAPP_ABIHM_BICH_BIC_HELLO">
+<cParameter>
+<Parameter Guid="JMlVEE6IVEEErtOvvLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:wcZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="w7-LEE6IVEEEqjOvvLESm2EE" Name="CSAPP_ABIHM_BICH_LAPD_LINK_UP">
+<cParameter>
+<Parameter Guid="rFIVEEmKIEEEufqg5LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:wcZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="0E*LEE6IVEEEIkOvvLESm2EE" Name="CSAPP_ABIHM_BICH_LAPD_LINK_DOWN">
+<cParameter>
+<Parameter Guid="8RdEEEesSEEEAqnVBLxjEh2E">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:wcZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="dN*LEE6IVEEEPkOvvLESm2EE" Name="CSAPP_ABIHM_BICH_BIC_DS_LINK_EST">
+<cParameter>
+<Parameter Guid="TEcEEEV8lEEEN6fFvLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:wcZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="Nk*LEE6IVEEE7kOvvLESm2EE" Name="CSAPP_ABIHM_BICH_BIC_DS_LINK_FAIL">
+<cParameter>
+<Parameter Guid="pFDEEECqiEEEsgR75LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:wcZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="Z1mEEEIiSEEEnncT5LESm2EE" Name="CSAPP_ABIHM_BICH_BIC_BSC_ALARM_IND">
+<cParameter>
+<Parameter Guid="dRDEEECqiEEE-gR75LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:wcZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="SWIVEEmKIEEElgqg5LESm2EE" Name="CSAPP_ABIHM_BICH_BM_HELLO">
+<cParameter>
+<Parameter Guid="IWIVEEmKIEEElgqg5LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:wcZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="Ia0EEECqiEEEj7R75LESm2EE" Name="CSAPP_ABIHM_BICH_FAILURE_EVENT_REPORT">
+<cParameter>
+<Parameter Guid="lcWEEEesSEEECOnVBLxjEh2E">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:wcZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="90XEEEesSEEE3PnVBLxjEh2E" Name="CSAPP_ABIHM_BICH_IP_LINK_DOWN">
+<cParameter>
+<Parameter Guid="d0XEEEesSEEE3PnVBLxjEh2E">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:wcZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="cYWEEE6IVEEEMs-ivLESm2EE" Name="ToCFG">
+<cOwnedMember>
+<Signal Guid="sKtEEE6IVEEECZ*ivLESm2EE" Name="OAMS_BICH_CFG_ALARM_IND">
+<cParameter>
+<Parameter Guid="Xs8EEEhLlEEE-s-CvLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:wcZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="Ys8EEEhLlEEE-s-CvLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:3dZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="8dQEEEhLlEEEGW3BvLESm2EE" Name="OAMS_BICH_CFG_DEL_BIC_RESP">
+<cParameter>
+<Parameter Guid="tdQEEEhLlEEEGW3BvLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:wcZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="udQEEEhLlEEEGW3BvLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:3dZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="0OwEEEhLlEEEjt-CvLESm2EE" Name="OAMS_BICH_CFG_ADD_BIC_RESP">
+<cParameter>
+<Parameter Guid="COwEEEhLlEEEjt-CvLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:wcZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="DOwEEEhLlEEEjt-CvLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:3dZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="4grEEE6IVEEEWW*ivLESm2EE" Name="FromCFG">
+<cOwnedMember>
+<Signal Guid="ghsEEE6IVEEE6Y*ivLESm2EE" Name="OAMS_CFG_BICH_ADD_BIC_REQ">
+<cParameter>
+<Parameter Guid="OkPEEEhLlEEEuU3BvLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:wcZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="ezPEEEhLlEEEX23BvLESm2EE" Name="OAMS_CFG_BICH_DEL_BIC_REQ">
+<cParameter>
+<Parameter Guid="*egLEEmKIEEE-Dqg5LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:wcZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="UJGEEE0KIEEESJR2vLESm2EE" Name="OAMS_CFG_BICH_INIT_ABIS_E1">
+<cParameter>
+<Parameter Guid="jvhLEEmKIEEEO0qg5LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:wcZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="RQGEEE0KIEEEPJR2vLESm2EE" Name="OAMS_CFG_BICH_UPDATE_ABIS_E1">
+<cParameter>
+<Parameter Guid="itfLEEmKIEEEqDqg5LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:wcZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="EACEEERrVEEE4dbC5LESm2EE" Name="OAMS_CFG_BICH_BIC_CC_PWR_ORDER_REQ">
+<cParameter>
+<Parameter Guid="dkDEEERrVEEEc9bC5LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:wcZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="NQgLEEmKIEEEB0qg5LESm2EE" Name="OAMS_CFG_BICH_LOCK_REQ">
+<cParameter>
+<Parameter Guid="2pSVEEmKIEEEJgqg5LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:wcZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="LcgLEEmKIEEEF0qg5LESm2EE" Name="OAMS_CFG_BICH_UNLOCK_REQ">
+<cParameter>
+<Parameter Guid="VvcLEEg4EEEENN575LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:wcZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="TlAVEEmKIEEEPhqg5LESm2EE" Name="OAMS_CFG_BICH_ADD_TRX_INDICATION">
+<cParameter>
+<Parameter Guid="xKcLEEg4EEEETN575LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:wcZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="-KAVEEmKIEEEghqg5LESm2EE" Name="OAMS_CFG_BICH_BTS_RESET">
+<cParameter>
+<Parameter Guid="zKAVEEmKIEEEghqg5LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:wcZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="haAVEEmKIEEEshqg5LESm2EE" Name="OAMS_CFG_BICH_TRX_RESET">
+<cParameter>
+<Parameter Guid="gaAVEEmKIEEEshqg5LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:wcZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="2XcLEEg4EEEEfN575LESm2EE" Name="OAMS_CFG_BICH_DEL_TRX_INDICATION">
+<cParameter>
+<Parameter Guid="UXcLEEg4EEEEfN575LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:wcZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="DJGEEE-OEEEE2NVevLESm2EE" Name="sysToBICH">
+<cOwnedMember>
+<Signal Guid="4dGEEE-OEEEEROVevLESm2EE" Name="ATTACH_INST">
+</Signal>
+<Signal Guid="l0oVEErqSEEENWzGvLESm2EE" Name="BICH_INT_BIC_PARENT_NOT_AVAIL">
+</Signal>
+<Signal Guid="cUzLEEupSEEEYx8NvLESm2EE" Name="BICH_INT_STOP_tWAIT_FOR_PARENT_CON_TIMER">
+</Signal>
+<Signal Guid="P6BEEEVZIEEEnFWkeLESm2EE" Name="BICH_INT_SELFCARD_STATE_CHANGE">
+<cParameter>
+<Parameter Guid="4lFEEEbILEEEskGOCLESm2EE">
+<rType>
+<Ident Name="I_S32">
+<rDefinition R="uid:0dZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="TlFEEEbILEEEskGOCLESm2EE">
+<rType>
+<Ident Name="I_S32">
+<rDefinition R="uid:0dZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="0-GEEEVZIEEE*NWkeLESm2EE" Name="BICH_INT_ADD_TAU_INSTANCE">
+</Signal>
+<Signal Guid="kxCEEEUoVEEE-Pa6eLESm2EE" Name="BICH_INT_ACLIVE_CLASS_PID">
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="uTOEEE-OEEEEDrVevLESm2EE" Name="BICHToSys">
+<cOwnedMember>
+<Signal Guid="ELPEEE-OEEEEFsVevLESm2EE" Name="BICH_INT_ADD_TAU_INST_IN_INSTMAP">
+<cParameter>
+<Parameter Guid="4MJEEEV8lEEEO-KFvLESm2EE">
+<rType>
+<Ident Name="I_U8">
+<rDefinition R="uid:YdZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="4V4EEEhLlEEEUb3BvLESm2EE" Name="BICH_INT_FREE_INST">
+<cParameter>
+<Parameter Guid="lzJEEEV8lEEE-3MFvLESm2EE">
+<rType>
+<Ident Name="I_U8">
+<rDefinition R="uid:YdZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="*AKEEEV8lEEEPJMFvLESm2EE" Name="BICH_INT_SLOT_CONNECT">
+<cParameter>
+<Parameter Guid="syfEEEzgVEEEMpfHvLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:wcZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="tyfEEEzgVEEEMpfHvLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:3dZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="VhKEEEV8lEEE0KMFvLESm2EE" Name="BICH_INT_SLOT_DISCONNECT">
+<cParameter>
+<Parameter Guid="qQ5EEExVLEEEPon6eLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:wcZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="rQ5EEExVLEEEPon6eLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:3dZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="WbvEEEzgVEEE5TcHvLESm2EE" Name="BICH_INT_ADD_BIC_IN_ABIS_CHAIN">
+<cParameter>
+<Parameter Guid="bFgEEEzgVEEEZpfHvLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:wcZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="cFgEEEzgVEEEZpfHvLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:3dZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="86vEEEzgVEEE6TcHvLESm2EE" Name="BICH_INT_DEL_BIC_FROM_ABIS_CHAIN">
+<cParameter>
+<Parameter Guid="Y4gEEEzgVEEEkpfHvLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:wcZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="Z4gEEEzgVEEEkpfHvLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:3dZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="KKeEEEzgVEEEQWcHvLESm2EE" Name="BICH_INT_UPDATE_ABIS_CHAIN_STATUS">
+<cParameter>
+<Parameter Guid="pITEEEXwIEEE25hxeLESm2EE">
+<rType>
+<Ident Name="I_U8">
+<rDefinition R="uid:YdZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="qITEEEXwIEEE25hxeLESm2EE">
+<rType>
+<Ident Name="I_U8">
+<rDefinition R="uid:YdZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="iW5EEExVLEEE2on6eLESm2EE" Name="BICH_INT_ACTIVE_CLASS_PID">
+</Signal>
+<Signal Guid="U95EEEsuiEEEW9pneLESm2EE" Name="BICH_INT_SELFCARD_STATE_CHANGE_RESP">
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="-AJEEESWEEEE9hIcvLESm2EE" Name="ToSWMH">
+<cOwnedMember>
+<Signal Guid="PaKEEESWEEEEs7IcvLESm2EE" Name="OAMS_BICH_SWMH_BIC_HELLO">
+<cParameter>
+<Parameter Guid="rtKEEESWEEEEVjIcvLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:wcZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="stKEEESWEEEEVjIcvLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:3dZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="IG1EEESWEEEE7jIcvLESm2EE" Name="OAMS_BICH_SWMH_LAPD_LINK_UP">
+<cParameter>
+<Parameter Guid="LG1EEESWEEEE7jIcvLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:wcZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="VG1EEESWEEEE7jIcvLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:3dZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="a21EEESWEEEEujIcvLESm2EE" Name="OAMS_BICH_SWMH_LAPD_LINK_DOWN">
+<cParameter>
+<Parameter Guid="Y21EEESWEEEEujIcvLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:wcZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="Z21EEESWEEEEujIcvLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:3dZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="4YFEEEXliEEEdqDB5LESm2EE" Name="ToCCUH">
+<cOwnedMember>
+<Signal Guid="lLGEEEXliEEEzqDB5LESm2EE" Name="OAMS_BICH_CCUH_LAPD_LINK_UP">
+<cParameter>
+<Parameter Guid="XpqEEEXliEEEEpFB5LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:wcZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="YpqEEEXliEEEEpFB5LESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:3dZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="tMGEEEXliEEE4rDB5LESm2EE" Name="OAMS_BICH_CCUH_LAPD_LINK_DOWN">
+<cParameter>
+<Parameter Guid="3uKEEEXliEEEyzDB5LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:wcZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="JuKEEEXliEEEyzDB5LESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:3dZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="jjHEEExVSEEECLrg5LESm2EE" Name="FromTRXH">
+<cOwnedMember>
+<Signal Guid="LlJEEExVSEEEEVrg5LESm2EE" Name="OAMS_TRXH_BICH_OPER_STATE_CHANGE_IND">
+<cParameter>
+<Parameter Guid="mdREEExVSEEEgqrg5LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:wcZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="qW2EEEesSEEEy1nVBLxjEh2E" Name="ToTB">
+<cOwnedMember>
+<Signal Guid="j8YEEEesSEEEm4nVBLxjEh2E" Name="OAMS_BICH_TB_ADD_BTS_IP">
+<cParameter>
+<Parameter Guid="h8YEEEesSEEEm4nVBLxjEh2E">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:wcZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="78YEEEesSEEEm4nVBLxjEh2E">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:3dZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="EEZEEEesSEEEFTnVBLxjEh2E" Name="OAMS_BICH_TB_DEL_BTS_IP">
+<cParameter>
+<Parameter Guid="rSZEEEesSEEEUTnVBLxjEh2E">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:wcZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="sSZEEEesSEEEUTnVBLxjEh2E">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:3dZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="VSZEEEesSEEE4TnVBLxjEh2E" Name="OAMS_BICH_TB_IOP_">
+</Signal>
+<Signal Guid="zBZEEEesSEEEwTnVBLxjEh2E" Name="OAMS_BICH_TB_IP_LINK_DOWN">
+<cParameter>
+<Parameter Guid="xBZEEEesSEEEwTnVBLxjEh2E">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:wcZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="yBZEEEesSEEEwTnVBLxjEh2E">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:3dZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="nf2EEEesSEEE2MnVBLxjEh2E" Name="FromTB">
+<cOwnedMember>
+<Signal Guid="IgZEEEesSEEEy2nVBLxjEh2E" Name="PSAPP_TB_BICH_IP_LINK_DOWN">
+<cParameter>
+<Parameter Guid="VgZEEEesSEEEy2nVBLxjEh2E">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:wcZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="dmZEEEesSEEENWnVBLxjEh2E" Name="PSAPP_TB_BICH_IP_LINK_UP">
+<cParameter>
+<Parameter Guid="cmZEEEesSEEENWnVBLxjEh2E">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:wcZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="F7XEEEesSEEErPnVBLxjEh2E" Name="ToTRXH">
+<cOwnedMember>
+<Signal Guid="hvYEEEesSEEEoQnVBLxjEh2E" Name="OAMS_BICH_TRXH_IP_LINK_DOWN">
+<cParameter>
+<Parameter Guid="wPYEEEesSEEEPRnVBLxjEh2E">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:wcZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="xPYEEEesSEEEPRnVBLxjEh2E">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:3dZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="lYYEEEesSEEEV4nVBLxjEh2E" Name="OAMS_BICH_TRXH_IP_LINK_UP">
+<cParameter>
+<Parameter Guid="SYYEEEesSEEEV4nVBLxjEh2E">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:wcZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="AYYEEEesSEEEV4nVBLxjEh2E">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:3dZEEEGCSEEEItyMCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+</cOwnedMember>
+<cClientDependency>
+<Dependency Guid="H2fLEE6IVEEEM3MvvLESm2EE">
+<cStereotypeInstance>
+<InstanceExpr Guid="FXfLEE6IVEEE43MvvLESm2EE">
+<rInstanceOf>
+<Ident Name="access">
+<rDefinition R="uid:@Predefined@access"/>
+</Ident>
+</rInstanceOf>
+</InstanceExpr>
+</cStereotypeInstance>
+<rSupplier>
+<Ident Name="SYSInclude">
+<rDefinition R="uid:eVDLEE6IVEEECRLvvLESm2EE"/>
+</Ident>
+</rSupplier>
+</Dependency>
+</cClientDependency>
+</Package>
+</u2>

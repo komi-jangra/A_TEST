@@ -1,0 +1,46 @@
+
+M3UA / SUA Command
+
+SYNOPSIS
+    u_set_gen_cfg <al> <trType> <traceOutput> <ON/OFF> 
+
+DESCRIPTION
+   DESCRIPTION
+    This command sets UAL alarm and trace levels. Alarm level controls UAL 
+    alarms sent to Accelero application. Trace level controls generation of UAL 
+    execution traces. Setting the trace level will turn On/Off all UAL traces.
+
+PARAMETERS
+
+    al           Alarm Level
+                 Possible values
+                 CRITICAL
+                 MAJOR
+                 MINOR
+                 INFO
+                 OFF
+
+   trType        Trace Type
+                 Possible values
+                 DEBUG
+                 WARNING
+                 ERROR
+                 CRITICAL
+                 all - all trace types
+
+  traceOutput    Trace Output
+                 Possible values
+                 stdout
+                 file
+
+     ON/OFF      Set trace to on or off
+
+  
+
+EXAMPLE
+         >> u_set_gen_cfg  CRITICAL DEBUG file on
+    *********** UAL General Config Set*************
+
+~
+~
+~

@@ -1,0 +1,40 @@
+#!/bin/sh -x
+rm -f ../lib/*.a ../lib/*.so
+rm -f *.o */*.o
+make PROTOCOL=ANSI SCCP_PROT=ANSI DEBUG_BUILD=yes all
+rm -f *.o */*.o
+make PROTOCOL=CCITT SCCP_PROT=ANSI DEBUG_BUILD=yes all
+rm -f *.o */*.o
+make PROTOCOL=ANSI SCCP_PROT=CCITT DEBUG_BUILD=yes all
+rm -f *.o */*.o
+make PROTOCOL=CCITT SCCP_PROT=CCITT DEBUG_BUILD=yes all
+rm -f *.o */*.o
+make PROTOCOL=PRC SCCP_PROT=PRC DEBUG_BUILD=yes all
+rm -f *.o */*.o
+make PROTOCOL=TTC SCCP_PROT=TTC DEBUG_BUILD=yes all
+rm -f *.o */*.o
+make PROTOCOL=ANSI SCCP_PROT=TTC DEBUG_BUILD=yes all
+rm -f *.o */*.o
+make PROTOCOL=PRC SCCP_PROT=PRC DEBUG_BUILD=no all
+rm -f *.o */*.o
+make PROTOCOL=ANSI SCCP_PROT=PRC DEBUG_BUILD=no all
+rm -f *.o */*.o
+make PROTOCOL=PRC SCCP_PROT=PRC DEBUG_BUILD=yes all
+rm -f *.o */*.o
+make PROTOCOL=ANSI SCCP_PROT=PRC DEBUG_BUILD=yes all
+rm -f *.o */*.o
+make PROTOCOL=ANSI SCCP_PROT=ANSI DEBUG_BUILD=no all
+rm -f *.o */*.o
+make PROTOCOL=CCITT SCCP_PROT=CCITT DEBUG_BUILD=no all
+rm -f *.o */*.o
+make PROTOCOL=CCITT SCCP_PROT=ANSI DEBUG_BUILD=no all
+rm -f *.o */*.o
+make PROTOCOL=ANSI SCCP_PROT=CCITT DEBUG_BUILD=no all
+rm -f *.o */*.o
+make PROTOCOL=PRC SCCP_PROT=PRC DEBUG_BUILD=no all
+rm -f *.o */*.o
+make PROTOCOL=TTC SCCP_PROT=TTC DEBUG_BUILD=no all
+rm -f *.o */*.o
+make PROTOCOL=ANSI SCCP_PROT=TTC DEBUG_BUILD=no all
+rm -f *.o */*.o
+

@@ -1,0 +1,191 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE Application SYSTEM "file:/home/mmiers/dtd/xerces-c-src1_4_0/lib/engine.dtd">
+
+<!-- Sample XML file for application configuration (INI). -->
+
+<Application name           = "Gateway"
+             type           = "console-application"
+             globalStart    = "ITU-TCAP"
+             binding        = "CPP"
+             library        = "libAPP.so"
+             appSelector    = "RouteAPP"
+             preFunc        = "MyPreFunc"
+             postFunc       = "MyPostFunc">
+
+    <AppOptions name = "traceFlushAfterWrite"         value = "yes"/>
+    <AppOptions name = "routeUniqueLinkCodesRequired" value = "no"/>
+    <AppOptions name = "memPoolChecksOn"              value = "no"/>
+
+
+    <Feature
+        name        = "IntelliNet stack"
+        library     = "libENGINED.so"
+        classRec    = "itsINTELLISS7_Class"
+    />
+
+
+       <WorkerPool stackSize = "0">
+  
+
+           <Transport  type    = "TaskQueue"
+                       count   = "200"
+                       family  = "ITU">
+
+            <Modifier value = "SCCP"/>
+
+            <Callbacks
+                library         = "libAPP.so"
+                type            = "blocking"
+                preInitialize   = "null"
+                postInitialize  = "SccpThreadFunction"
+                preNextEvent    = "null"
+                nextEventFailed = "null"
+                postNextEvent   = "null"
+                userDispatch    = "null"
+                preTerminate    = "null"
+                postTerminate   = "null"
+            />
+
+           </Transport>
+
+   
+       </WorkerPool>
+    <ToolkitTrace>
+        <Critical  output = "null"/>
+        <Critical  output = "null"/>
+        <Error     output = "null"/>
+        <Error     output = "null"/>
+        <Warning   output = "file"/>
+        <Warning   output = "file"/>
+        <Debug     output = "file"/>
+    </ToolkitTrace>
+
+    <ApplicationTrace>
+        <Critical  output = "null"/>
+        <Error     output = "null"/>
+        <Warning   output = "file"/>
+        <Debug     output = "file"/>
+    </ApplicationTrace>
+
+    <!--///////////////////////////////////////////////////////////////-->
+
+    <!--///////////////////////////////////////////////////////////////-->
+
+	 <BorderPool stackSize = "0">
+
+           <Transport  name    = "InterV7M-1"
+                       type    = "ClientSocket"
+                       family  = "ITU">
+                       
+               <Modifier value = "SCCP"/>
+
+               <StreamData socketDomain    = "INET"
+                           serverHostName  = "127.0.0.1"
+                           serverPort      = "66672"
+               />
+
+
+               <Callbacks
+                   library         = "libAPP.so"
+                   type            = "blocking"
+                   preInitialize   = "null"
+                   postInitialize  = "null"
+                   preNextEvent    = "null"
+                   nextEventFailed = "null"
+                   postNextEvent   = "null"
+                   userDispatch    = "null"
+                   SCCPDispatch    = "null"
+                   ISUPDispatch    = "null"
+                   preTerminate    = "null"
+                   postTerminate   = "null"
+               />
+   
+               <Route  routeType    = "remoteRoute"
+                       routeStyle   = "dpc-sio-ssn">
+                   <DPC            value = "2"/>
+                   <SIO            value = "3"/>
+                   <SSN            value = "254"/>
+                   <LinkSet        value = "1"/>
+                   <LinkCode       value = "1"/>
+               </Route>
+
+           </Transport>
+
+	</BorderPool>
+    <SS7-Stacks>
+
+        <!--///////////////////////////////////////////////////////////-->
+
+        <IntelliNet>
+
+            <ITU-SCCP variant = "WhiteBook">
+  
+                <Variant value = "WhiteBook"/>
+  
+                <StackTrace>
+                    <Critical output = "null"/>
+                    <Critical output = "null"/>
+                    <Error    output = "null"/>
+                    <Error    output = "null"/>
+                    <Warning  output = "null"/>
+                    <Warning  output = "null"/> 
+                    <Debug    output = "null"/> 
+                </StackTrace>
+  
+                <Timers
+                    TstatInfo    = "30"
+                    TcoordChg    = "30"
+                    TignoreSST   = "30"
+                    TrtgStatInfo = "30"
+                    Tconnect     = "30"
+                    Trelease     = "10"
+                    Treset       = "20"
+                    Tias         = "300"
+                    Tiar         = "660"
+                    Tguard       = "240"
+                />
+  
+                <BehaviorControl
+                    PropagateIT   = "no"
+                    PropagateERR  = "no"
+                    PropagateSCMG = "no"
+                    EnableSCMG = "no"
+                />
+  
+            </ITU-SCCP>
+  
+            <!--///////////////////////////////////////////////////////////////-->
+  
+            <ITU-TCAP variant = "WhiteBook">
+  
+                <StackTrace>
+                    <Critical output = "null"/>
+                    <Critical output = "file"/>
+                    <Error    output = "null"/>
+                    <Error    output = "file"/>
+                    <Warning  output = "null"/>
+                    <Warning  output = "file"/> 
+                    <Debug    output = "file"/> 
+                </StackTrace>
+  
+                <Timers
+                    Treject = "5"
+                />
+            <Route  routeType    = "localRoute"
+                    routeStyle   = "dpc-sio-ssn">
+                <SIO        value = "3"/>
+                <DPC        value = "4114"/>
+                <SSN        value = "8"/>
+                <LinkSet    value = "1"/>
+                <LinkCode   value = "1"/>
+            </Route>
+
+  
+            </ITU-TCAP>
+
+        </IntelliNet>
+
+    </SS7-Stacks>
+
+</Application>

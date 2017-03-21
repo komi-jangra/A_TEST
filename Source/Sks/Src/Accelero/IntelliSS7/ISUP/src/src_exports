@@ -1,0 +1,5 @@
+all		cpp	both	*.cpp
+all		c	both	*.c
+all		c	both	generate
+all		c	both	Makefile
+

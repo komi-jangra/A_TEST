@@ -1,0 +1,18 @@
+
+
+ITU SCCP Command
+
+SYNOPSIS
+    si_clr_all_peg 
+
+DESCRIPTION
+    This command clears all SCCP pegs to 0.
+
+PARAMETERS
+    None.
+
+EXAMPLE
+    >> si_clr_all_peg
+    Clearing All ITU SCCP Pegs for  Now
+
+

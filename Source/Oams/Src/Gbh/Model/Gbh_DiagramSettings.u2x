@@ -1,0 +1,636 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<u2 OMVersion="3.7" StorageVersion="4" ToolVersion="4.3.0.0.14276">
+<Resource Guid="B3TEEE*QSEEE5fNRGLESm2EE">
+<cStereotypeInstance>
+<InstanceExpr Guid="F3TEEE*QSEEE5fNRGLESm2EE">
+<rInstanceOf R="uid:@Predefined@hidden"/>
+</InstanceExpr>
+</cStereotypeInstance>
+<cHiddenStereotypeInstance>
+<InstanceExpr Guid="RvHLEEyqIEEEpIz00LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="urn:u2:etc/LineStyle.u2">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="strUri">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Boolean@=@Boolean@Boolean@Boolean"/>
+<cRightOperand>
+<Ident Name="true">
+<rDefinition R="uid:@Predefined@Boolean@true"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="isLibrary">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@modelDependency"/>
+</InstanceExpr>
+<InstanceExpr Guid="4vHLEEyqIEEEpIz00LESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="urn:u2:etc/TTDPredefinedStereotypes.u2">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="strUri">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Boolean@=@Boolean@Boolean@Boolean"/>
+<cRightOperand>
+<Ident Name="true">
+<rDefinition R="uid:@Predefined@Boolean@true"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="isLibrary">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@Predefined@modelDependency"/>
+</InstanceExpr>
+</cHiddenStereotypeInstance>
+<rRoot R="uid:C3TEEE*QSEEE5fNRGLESm2EE"/>
+</Resource>
+<Package Guid="C3TEEE*QSEEE5fNRGLESm2EE" Name="TTDUserSettingsInternal">
+<cStereotypeInstance>
+<InstanceExpr Guid="D3TEEE*QSEEE5fNRGLESm2EE">
+<rInstanceOf R="uid:@TTDDiagramView@trailPackage"/>
+</InstanceExpr>
+<InstanceExpr Guid="03TEEE*QSEEE5fNRGLESm2EE">
+<rInstanceOf R="uid:@Predefined@hidden"/>
+</InstanceExpr>
+</cStereotypeInstance>
+<cHiddenStereotypeInstance>
+<InstanceExpr Guid="nvUEEE*QSEEEYfNRGLESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="0">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="panX">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="360">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="panY">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="100">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="zoomWidth">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="100">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="zoomHeight">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="FXSEEEmvAEEEdlmr5LESm2EE">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="diagramGUID">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@TTDDiagramView@diagramTrail"/>
+</InstanceExpr>
+<InstanceExpr Guid="HxNEEE1vlEEEskKTGLESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="1571">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="panX">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="1140">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="panY">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="72">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="zoomWidth">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="72">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="zoomHeight">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="DBsvEEiqiEEEvpEw5LESm2EE">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="diagramGUID">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@TTDDiagramView@diagramTrail"/>
+</InstanceExpr>
+<InstanceExpr Guid="XMREEEkZAEEEv10XGLESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="0">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="panX">
+<rDefinition R="uid:Tosl8IlD6WDLJSMYPEtpaDVI"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="60">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="panY">
+<rDefinition R="uid:-Mv70EMccEFLqUmbNEmyXPeE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="100">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="zoomWidth">
+<rDefinition R="uid:zei-*LaM4fBLcycajVaGgmaI"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="100">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="zoomHeight">
+<rDefinition R="uid:h4C2lVuNwm5Llp29hVedy1SL"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="20svEEiqiEEEvpEw5LESm2EE">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="diagramGUID">
+<rDefinition R="uid:zcpANLzVTQVLTsmhiVPT2e6I"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@TTDDiagramView@diagramTrail"/>
+</InstanceExpr>
+<InstanceExpr Guid="Q1xEEEeFEEEECI9XGLESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="0">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="panX">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="0">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="panY">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="100">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="zoomWidth">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="100">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="zoomHeight">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="ZUNEEELLAEEE6QIPGLESm2EE">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="diagramGUID">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@TTDDiagramView@diagramTrail"/>
+</InstanceExpr>
+<InstanceExpr Guid="41xEEEeFEEEEKI9XGLESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="0">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="panX">
+<rDefinition R="uid:Tosl8IlD6WDLJSMYPEtpaDVI"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="0">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="panY">
+<rDefinition R="uid:-Mv70EMccEFLqUmbNEmyXPeE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="100">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="zoomWidth">
+<rDefinition R="uid:zei-*LaM4fBLcycajVaGgmaI"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="100">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="zoomHeight">
+<rDefinition R="uid:h4C2lVuNwm5Llp29hVedy1SL"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="mFsvEEiqiEEEvpEw5LESm2EE">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="diagramGUID">
+<rDefinition R="uid:zcpANLzVTQVLTsmhiVPT2e6I"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@TTDDiagramView@diagramTrail"/>
+</InstanceExpr>
+<InstanceExpr Guid="T1xEEEeFEEEE1I9XGLESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="0">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="panX">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="1343">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="panY">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="100">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="zoomWidth">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="100">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="zoomHeight">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="LWsEEEgxVEEEkB9IBLESm2EE">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="diagramGUID">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@TTDDiagramView@diagramTrail"/>
+</InstanceExpr>
+<InstanceExpr Guid="U1xEEEeFEEEE1I9XGLESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="0">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="panX">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="60">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="panY">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="100">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="zoomWidth">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="100">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="zoomHeight">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="DGbIEELLAEEEulSPGLESm2EE">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="diagramGUID">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@TTDDiagramView@diagramTrail"/>
+</InstanceExpr>
+<InstanceExpr Guid="21xEEEeFEEEEMI9XGLESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="0">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="panX">
+<rDefinition R="uid:Tosl8IlD6WDLJSMYPEtpaDVI"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="0">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="panY">
+<rDefinition R="uid:-Mv70EMccEFLqUmbNEmyXPeE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="100">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="zoomWidth">
+<rDefinition R="uid:zei-*LaM4fBLcycajVaGgmaI"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="100">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="zoomHeight">
+<rDefinition R="uid:h4C2lVuNwm5Llp29hVedy1SL"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="n*vSEELLAEEERHSPGLESm2EE">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="diagramGUID">
+<rDefinition R="uid:zcpANLzVTQVLTsmhiVPT2e6I"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@TTDDiagramView@diagramTrail"/>
+</InstanceExpr>
+<InstanceExpr Guid="2K4EEEKYEEEEEw3qDLESm2EE">
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="0">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="panX">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="120">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="panY">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="100">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="zoomWidth">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="100">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="zoomHeight">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="LhbLEE0sAEEEtjdPBLESm2EE">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="diagramGUID">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rInstanceOf R="uid:@TTDDiagramView@diagramTrail"/>
+</InstanceExpr>
+</cHiddenStereotypeInstance>
+</Package>
+</u2>

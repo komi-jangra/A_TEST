@@ -1,0 +1,23 @@
+
+ANSI SCCP Command
+
+SYNOPSIS
+    sa_get_all_cssn
+
+DESCRIPTION
+    This command displays ANSI SCCP concerned SSN entries.
+
+PARAMETERS
+    None.
+
+EXAMPLE
+    >> sa_get_all_cssn
+    ------------------------------
+    pc           <2>
+    ni           <0>
+    ssn          <2>
+    cpc          <5>
+    cssn         <5>
+    inservice    <no>
+
+

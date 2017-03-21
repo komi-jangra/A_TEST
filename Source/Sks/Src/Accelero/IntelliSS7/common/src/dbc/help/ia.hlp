@@ -1,0 +1,37 @@
+
+ANSI ISUP Module :
+     ia_get_gen_cfg             ISUP Get General Config
+     ia_set_gen_cfg             ISUP Set General Config
+     ia_add_variant             ISUP Add Variant info
+     ia_get_dest_info           ISUP Get Destination Info
+     ia_add_dest_info           ISUP Add Destination Info
+     ia_get_timers              ISUP Get Timer Info
+     ia_set_timers              ISUP Set Timer Info
+     ia_get_cics                ISUP Get Circuit Info
+     ia_add_cics                ISUP Add Circuit Info
+     ia_del_cics                ISUP Del Circuit Info
+     ia_get_cic_state           ISUP Get specified Circuit State
+     ia_get_gen_pegid           ISUP Get General Peg Id
+     ia_get_cic_pegid           ISUP Get CIC Pegs Id
+     ia_get_gen_pegs            ISUP Get Genaral Pegs
+     ia_get_cic_pegs            ISUP Get CIC Pegs
+     ia_clr_gen_pegs            ISUP Reset a perticular gen Peg
+     ia_clr_cic_pegs            ISUP Clear perticular Cic Peg
+     ia_set_xchange_type        ISUP Set Local Exchange Type
+     ia_get_xchange_type        ISUP Get Local Exchange Type
+     ia_set_cong_lev            ISUP Set Congestion Level Threshold
+     ia_get_cong_lev            ISUP Get Congestion Level Threshold
+     ia_send_rsc                ISUP Send Reset Circuit Msg
+     ia_send_rlc                ISUP Send Release confirmation Msg
+     ia_send_ubl                ISUP Send Unblocking Msg
+     ia_send_blo                ISUP Send Blocking Msg
+     ia_send_cgb                ISUP Send Circuit group reset Msg
+     ia_send_cgu                ISUP Send Circuit group unblocking Msg
+     ia_send_grs                ISUP Send Group reset Msg
+     ia_send_cqm                ISUP Send Circuit query Msg
+     ia_get_msgsent_pegs        ISUP Get Message Sent Pegs
+     ia_get_msgrcvd_pegs        ISUP Get Message Received Pegs
+     ia_clr_msgsent_pegs        ISUP Reset Message Sent Pegs
+     ia_clr_msgrcvd_pegs        ISUP Reset Message Received Pegs
+
+For details about any command use "help <command name>"

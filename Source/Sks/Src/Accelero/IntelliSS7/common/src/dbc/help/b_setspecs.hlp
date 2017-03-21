@@ -1,0 +1,70 @@
+
+
+ENGINE Command
+
+SYNOPSIS
+    b_setspecs <type specific args>
+
+
+DESCRIPTION
+    This command sets the specific data for the different transport types.
+    This command is required to successfully add the border transport.
+    Note: the arguments depend on the type of transport set.
+
+PARAMETERS
+    Rather than describe each possible combination, we present the DTD
+    description for the attributes of each transport type.  Note: where
+    a list is indicated (by the Kleene star), the list must be specified
+    in double quotes.
+
+    <!ATTLIST Vendor name      CDATA #REQUIRED
+                 library   CDATA #IMPLIED
+                 vendorRec CDATA #REQUIRED>
+
+    <!ATTLIST StreamData socketDomain   (INET | UNIX) #REQUIRED
+                     serverHostName CDATA         #REQUIRED
+                     serverPort     CDATA         #REQUIRED>
+
+    <!ATTLIST Associate value CDATA #REQUIRED>
+
+    <!ELEMENT DatagramData (Associate*)>
+
+    <!ATTLIST DatagramData localHostName CDATA #REQUIRED
+                       localPort     CDATA #REQUIRED>
+
+    <!ATTLIST FIFOData clientPath CDATA #REQUIRED
+                   serverPath CDATA #REQUIRED>
+
+    <!ATTLIST IMAL imalLocalPC          CDATA #REQUIRED
+               imalAdjacentPC       CDATA #REQUIRED
+               imalKeepAliveTimeOut CDATA #IMPLIED>
+
+    <!ATTLIST TALI taliLocalPC              CDATA #REQUIRED
+               taliAdjacentPC           CDATA #REQUIRED
+               taliUseUpperLayer        CDATA #IMPLIED
+               taliLocallyAllowedOnOpen CDATA #IMPLIED>
+
+    <!ATTLIST GDI gdiLocalPC   CDATA #REQUIRED
+              gdiRemotePC  CDATA #REQUIRED
+              gdiRemoteSSN CDATA #REQUIRED>
+
+    <!ATTLIST OtherHome localHostName CDATA #REQUIRED>
+
+    <!ELEMENT SCTP (OtherHome*)>
+
+    <!ATTLIST SCTP maxInStreams    CDATA      #IMPLIED
+               numOutStreams   CDATA      #IMPLIED
+               maxAttempts     CDATA      #IMPLIED
+               cookieLife      CDATA      #IMPLIED
+               hbOn            CDATA      #IMPLIED
+               initTimeOut     CDATA      #IMPLIED
+               sendTimeOut     CDATA      #IMPLIED
+               recvTimeOut     CDATA      #IMPLIED
+               hbTimeOut       CDATA      #IMPLIED
+               shutdownTimeOut CDATA      #IMPLIED
+               pmtuTimeOut     CDATA      #IMPLIED
+               isClient        (yes | no) #REQUIRED
+               payloadType     CDATA      #REQUIRED>
+
+EXAMPLE
+

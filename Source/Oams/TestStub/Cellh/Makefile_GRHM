@@ -1,0 +1,24 @@
+#************ START ***********
+include   ../../../Csapp/Util/make.opt
+
+HDRFILES=-I $(BSC_BASE)/Inc/Sys \
+         -I $(BSC_BASE)/Inc/Ipc \
+	 -I $(BSC_BASE)/Inc/Dbs \
+         -I $(BSC_BASE)/Source/Oams/Inc \
+	 -I $(BSC_BASE)/Inc/Oams \
+         -I $(BSC_BASE)/Inc/Oam \
+	 -I $(BSC_BASE)/Source/Oams/Src/Cellh/CellhModel/Inc \
+         -I $(BSC_BASE)/Inc/Csapp
+								
+
+CFLAGS=-g -D__C_APPL
+COMPILER=gcc 
+USRLIBPATH=-L$(BSC_BASE)/Bin/Host/CommonLib/CP
+TARGET=TestStubGrhm
+
+USRLIB= -llog -lfrm -ltau 
+$(TARGET): ToFromGRHM.c
+	$(COMPILER) $(CFLAGS) $(HDRFILES) $(USRLIBPATH) $(USRLIB) ToFromGRHM.c -o $(TARGET)
+
+clean:
+	rm -rf *.o TestStubGrhm

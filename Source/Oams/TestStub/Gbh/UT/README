@@ -1,0 +1,91 @@
+#########################################################################################  
+#   FILE		:     README  
+#   DESCRIPTION		:     README for GBH UT Environment 
+#   REVISION HISTORY	:  
+#   DATE (mm/dd/yyyy)     	NAME          		REFERENCE       
+#   -------------------------------------------------------------------------------------
+#   24/01/2010 	             Arti Batra 		Initial Version
+#  
+#########################################################################################
+
+
+This readme has provided the stpes for the compilation of GBH for UT, configuration, 
+and running of Stubs required by GBH. 
+
+SECTION 1:	Compilation of GBH
+SECTION	2:	Compilation of Stub
+SECTION	3:	Configuring UT Environment
+
+#########################################################################################
+SECTION 1:				Compilation of GBH
+#########################################################################################
+Pre-requisites:
+1. All compilation changes done in make.opt file.
+2. All Path are configured correctly.
+
+GBH Module Compilation:
+1. Add Flag __UT_TEST in Gbh_env.tpm file:
+	COMP_FLAG = -D__UT_TEST
+
+2. Copy utenv.h file present at Path:/Source/Oams/TestStub/Gbh/ to 
+   Path:/Source/Oams/Src/Gbh/Inc/
+	
+3. Open GBH Module in TAU 4.3.
+
+4. Include utenv.h in Include files of System Inc.
+
+5. Re-Import System Inc.
+
+6. Go to Path:/Source/Oams/Src/Gbh/Src/
+
+7. Run command: make clean;make
+
+8. GBH Module is compiled.
+
+#########################################################################################
+SECTION 2:				Compilation of Stub
+#########################################################################################
+Pre-requisites:
+1. Make sure that Check is installed and Path of Installed Check is updated in makefile
+   of UT Stub present at Path: /Source/Oams/TestStub/Gbh/UT/tester/Src/makefile
+
+
+Stub Compilation:
+1. Go to Path: /Source/Oams/TestStub/Gbh/UT/tester/Src/
+
+2. Run command: make clean;make
+
+
+#########################################################################################
+SECTION 3:				Configuring UT Environment
+#########################################################################################
+Pre-requisites:
+1. TC executer must have knowledge of running Host Environment provided by VNL.
+2. TC executer must make sure that all dependencies are resolved before executing
+   Gbh UT and Host Environment is running properly.
+3. All dependent Binaries: DB, GBH, BPM Stub, Gbh UT Stub are replaced properly at 
+   there paths.
+
+GBH UT: 
+1. Copy Directory Gbh_Ut from Path: /Source/Oams/TestStub/Gbh/UT/Scripts/ to  
+   Path: /targetBin/repos/testStubs/
+
+2. Open file /Source/Oams/TestStub/Gbh/Scripts/Gbh_Ut/SetGbhUtEnv.sh and 
+   update Paths accordingly in exported variables.
+
+3. Run UT Environment
+
+4. Open new xterm (Using Option 21)
+
+5. Change directory using command: cd Gbh_Ut/
+
+6. Run Command: source SetGbhUtEnv.sh
+
+7. Run Command: source runGbhUt1.sh 
+
+8. Logs will be created at Path: /targetBin/repos/testStubs/Gbh_Ut/ with date as
+   folder name.
+
+#########################################################################################
+					END
+#########################################################################################

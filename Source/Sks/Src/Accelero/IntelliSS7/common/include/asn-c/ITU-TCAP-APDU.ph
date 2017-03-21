@@ -1,0 +1,12 @@
+0/2/1: Associate-result |encode decode print
+0/2/1: Release-request-reason |encode decode print
+0/2/1: Release-response-reason |encode decode print
+0/2/1: ABRT-source |encode decode print
+0/6/1: ApplicationContext |encode decode print
+0/16/1: UserInformation |encode decode print
+1/0/1: AARQ-apdu |encode decode print
+1/1/1: AARE-apdu |encode decode print
+1/2/1: RLRQ-apdu |encode decode print
+1/3/1: RLRE-apdu |encode decode print
+1/4/1: ABRT-apdu |encode decode print
+1/0/1: AUDT-apdu |encode decode print

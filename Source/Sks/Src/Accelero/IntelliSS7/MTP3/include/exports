@@ -1,0 +1,6 @@
+all		c	ansi	ansi/*.h
+all		c	itu	itu/*.h
+all		cpp	both	mtp3++.h
+all		c	both	m3ua.h
+all		c	both	mtp3_cmn.h
+all		c	both	mtp3_sn.h

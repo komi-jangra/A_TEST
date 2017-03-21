@@ -1,0 +1,414 @@
+# Sample file to build CCITT ISUP C messages.
+#
+# Protocol: CCITT
+#
+# 
+###############################################################
+#
+# M	MsgCode
+# P	ParCode		DataTyp		Data
+
+# NOTE: Values may not be valid for data octets
+#	
+
+# Address Complete Message
+M	6					  # ACM
+P       11      02 FD 04                          # Backward Call Indicators
+P       2C      01 81                             # GenericNotification
+P       37      01 00                             # Echo Control Information
+P       2E      01 01                             # Access Delivery Information
+P       0C      07 0A 0B 0A 04 87 76 32 19        # RedirectionNum:(407)867-2391
+P       36      01 0B                             # Call Diversion Information
+P       2F      02 01 01 01 11                    # NetworkSpecificFacility
+P       40      01 00                             # RedirectionNumRestriction
+P       32      01 80                             # RemoteOperations
+P       35      01 00                             # TransmissionMediumUsed
+P       2A      01 00                             # UserToUserIndicators
+P       20      02 07 01 05                       # UserToUserInformation
+P       03      03 F1 F2 F3                       # Access Transport
+P       01      05 03 01 02 03 02 01 02           # Call Reference
+P       12      02 40 B3                          # Cause Indicator
+P       29      01 00                             # OptBackwardCallInd
+
+## ISUP library does not recognize this parameter
+#P       E2      05 F1 F2 F3 F4 F5                 # ServiceActivation
+## ISUP Vendor LIB has problem converting this parameter
+#P       39      02 0A 99                          # ParameterCompatibilityInfo
+
+
+# Answer Message
+M	9					  # ANM
+P       20      02 01 01 00                       # UserToUserInformation
+P       2E      01 01                             # Access Delivery Information
+P       2C      01 81                             # GenericNotification
+P       2D      02 0A 0A                          # Call History Information
+P       35      01 00                             # TransmissionMediumUsed
+P       2F      02 01 01 01 11                    # NetworkSpecificFacility
+P       0C      07 0A 0B 0A 04 87 76 32 19        # RedirectionNum:(407)867-2391
+P       32      01 80                             # RemoteOperations
+P       40      01 00                             # RedirectionNumRestriction
+P       37      01 00                             # Echo Control Information
+P       C0      08 01 00 0F 0A 04 77 23 45 12     # GenericNumber: (407)732-5421
+P       03      03 F1 F2 F3                       # Access Transport
+P       11      02 FD 04                          # Backward Call Indicators
+P       01      05 03 01 02 03 02 01 02           # Call Reference
+P       29      01 00                             # OptBackwardCallInd
+P       21      03 01 13 01 35                    # Connected Number
+P       2A      01 00                             # UserToUserIndicators
+
+## ISUP library does not recognize this parameter
+#P       E2      05 F1 F2 F3 F4 F5                 # ServiceActivation
+## ISUP Vendor LIB has problem converting this parameter
+#P       39      02 0A 99                          # ParameterCompatibilityInfo
+
+
+# Call Progress Message
+M	2C					  # CPG
+P       24      01 04                             # EventInformation
+P       12      02 40 B3                          # CauseIndicator
+P       01      05 03 01 02 03 02 01 02           # Call Reference
+P       11      02 FD 04                          # Backward Call Indicators
+P       29      01 00                             # OptBackwardCallInd
+P       03      03 F1 F2 F3                       # Access Transport
+P       2A      01 00                             # UserToUserIndicators
+P       0C      07 0A 0B 0A 04 87 76 32 19        # RedirectionNum:(407)867-2391
+P       20      02 01 01 00                       # UserToUserInformation
+P       2C      01 81                             # GenericNotification
+P       2F      02 01 01 01 11                    # NetworkSpecificFacility
+P       32      01 80                             # RemoteOperations
+P       35      01 00                             # TransmissionMediumUsed
+P       2E      01 01                             # Access Delivery Information
+P       36      01 0B                             # Call Diversion Information
+P       40      01 00                             # RedirectionNumRestriction
+
+## ISUP library does not recognize this parameter
+#P       E2      05 F1 F2 F3 F4 F5                 # ServiceActivation
+## ISUP Vendor LIB has problem converting this parameter
+#P       39      02 0A 99                          # ParameterCompatibilityInfo
+
+
+# Circuit Group Query Response Message
+M	2B					  # CQR
+P       16      05 1F 00 00 00 00                 # RangeAndStatus
+P       26      01 0C                             # CircuitStateIndicators
+
+
+# Circuit Group Reset Acknowledgement Message
+M	29					  # GRA
+P       16      05 1F 00 00 00 00                 # RangeAndStatus
+
+
+# Confusion Message
+M	2F					  # CFN
+P	12	02 40 B3			  # Cause IndicatoauseIndicator
+P       00                                        # EOP
+
+
+# Connect Message
+M	07					  # CON
+P       11      02 FD 04                          # Backward Call Indicators
+
+
+#P       29      01 00                             # OptBackwardCallInd
+#P       21      03 01 13 01 35                    # Connected Number
+#P       01      05 03 01 02 03 02 01 02           # Call Reference
+#P       2A      01 00                             # UserToUserIndicators
+#P       20      02 01 01 00                       # UserToUserInformation
+#P       03      03 F1 F2 F3                       # Access Transport
+#P       2F      02 01 01 01 11                    # NetworkSpecificFacility
+#P       2C      01 81                             # GenericNotification
+#P       32      01 80                             # RemoteOperations
+#P       35      01 00                             # TransmissionMediumUsed
+#P       37      01 00                             # Echo Control Information
+#P       2E      01 01                             # Access Delivery Information
+#P       2D      02 0A 0A                          # Call History Information
+#P       0C      07 0A 0B 0A 04 87 76 32 19        # RedirectionNum:(407)867-2391
+#P       E2      05 F1 F2 F3 F4 F5                 # ServiceActivation
+#P       C0      08 01 00 0F 0A 04 77 23 45 12     # GenericNumber: (407)732-5421
+#P       40      01 00                             # RedirectionNumRestriction
+
+## ISUP Vendor LIB has problem converting this parameter
+#P       39      02 0A 99                          # ParameterCompatibilityInfo
+
+
+# Continuity Message
+M	05					  # COT
+P       10      01 01                             # Continuity Indicators
+
+
+# Information Message
+M	04				  	  # INF
+P       0F      02 13 00                          # InformationIndicators
+P       09      01 02                             # CallingParty'sCategory
+P       0A      07 01 11 0A 04 77 44 33 23        # CallingPrtyN: (407)744-3332
+P       01      05 03 01 02 03 02 01 02           # Call Reference
+P       0D      07 03 01 02 03 02 01 02 01 01     # Connected Request
+P       2F      02 01 01 01 11                    # NetworkSpecificFacility
+
+## ISUP Vendor LIB has problem converting this parameter
+#P       39      02 0A 99                          # ParameterCompatibilityInfo
+
+
+# Information Request Message
+M	03				  	  # INR
+P       0E      02 01 00                          # Information Request Indicators
+P       01      05 03 01 02 03 02 01 02           # Call Reference
+P       2F      02 01 01 01 11                    # NetworkSpecificFacility
+
+## ISUP Vendor LIB has problem converting this parameter
+#P       39      02 0A 99                          # ParameterCompatibilityInfo
+
+
+# Initial Address Message
+M	1					  # IAM
+P       06      01 00                             # NatureOfConnectionsInd
+P       07      02 02 01                          # ForwardCallIndicators
+P       09      01 02                             # CallingParty'sCategory
+P       02      01 00                             # TransmMediumRequirement
+P	04	07 01 10 0A 16 30 37 77 12     # 2 CldPrtyN IvrNor:(610)373-7721
+P       01      05 03 01 02 03 02 01 02           # Call Reference
+P       0A      07 01 11 0A 04 77 44 33 01        # CallingPrtyN: (407)744-3332
+P       08      01 00                             # OptForwardCallInd
+P       0B      07 0A 0B 0A 04 87 76 32 19        # RedirectingNum:(407)867-2391
+P       13      02 1A 1B                          # RedirectionInformation
+P       1A      04 02 01 00 02 A0 B0              # ClosedUserGroupInterlock
+P       0D      07 03 01 02 03 02 01 02 01 01     # Connected Request
+P       28      07 0A BC 0A 04 77 44 33 23        # OriglCalledNum:(407)744-3332
+P       03      03 F1 F2 F3                       # Access Transport
+P       1D      02 C0 93                          # UserServiceInfo
+P       31      02 FF FF                          # PropagationDelayCounter
+P       30      02 C0 93                          # UserServiceInfoPrime
+P       C1      06 03 0A 04 78 96 23 11           # GenericDigits: (408)769-3211
+P       2F      02 01 01 01 11                    # NetworkSpecificFacility
+P       20      02 01 01 00                       # UserToUserInformation
+P       C0      08 01 00 0F 0A 04 77 23 45 12     # GenericNumber: (407)732-5421
+P       2B      02 02 03 02                       # OriginationISCPointCode
+P       32      01 80                             # RemoteOperations
+P       3A      06 03 10 33 12 34 56              # MLPPPrecedence
+P       3E      01 00                             # TransmMedRequirementPrime
+P       3F      07 01 93 0A 04 77 23 45 12        # LocationNumber:(407)732-5421
+P       2C      01 81                             # GenericNotification
+P       2A      01 00                             # UserToUserIndicators
+
+## ISUP Tester hangs on this paramter - Not needed, see ITU spec
+#P       42      03 00 01 01                       # Generic Reference
+## ISUP Vendor LIB did not recognize this parameter
+#P       E2      05 F1 F2 F3 F4 F5                 # ServiceActivation
+## ISUP Vendor LIB has problem converting this parameter
+#P       39      02 0A 99                          # ParameterCompatibilityInfo
+
+
+# In PPAS's routing.txt file
+#P	04	07 01 10 0A 04 77 62 60 38     # 1 CldPrtyN Norm:(407)726-0683 
+#P	04	07 01 10 0A 16 30 37 77 12     # 2 CldPrtyN IvrNor:(610)373-7721
+#P	04	07 01 10 0A 03 55 36 99 60     # 3 CldPrtyN IvrDis:(305)563-9906
+#P	04	07 01 10 0A 09 84 75 99 99     # 4 CldPrtyN NoRt:(904)857-9999
+
+
+# Release 
+M	0C					  # REL
+P       12      02 80 81                          # CauseIndicator
+P       13      02 1A 1B                          # RedirectionInformation
+P       0C      07 0A 0B 0A 04 87 76 32 19        # RedirectionNum:(407)867-2391
+P       03      03 F1 F2 F3                       # Access Transport
+P       1E      02 F1 0A                          # Signalling Point Code
+
+
+#P       2E      01 01                             # Access Delivery Information
+#P       40      01 00                             # RedirectionNumRestriction
+#P       2A      01 00                             # UserToUserIndicators
+#P       27      01 01                             # Automatic Congestion Level
+#P       20      02 01 01 00                       # UserToUserInformation
+
+#P       2F      02 01 01 01 11                    # NetworkSpecificFacility
+## ISUP Vendor LIB has problem converting this parameter
+#P       39      02 0A 99                          # ParameterCompatibilityInfo
+
+
+# Release Complete Message
+M	10					  # RLC
+P       12      02 40 B3                          # CauseIndicator
+
+
+# Subsequent Address Message
+M	02					  # SAM
+P       05      06 80 0A 04 77 86 23 22           # SubsequentNum:(407)768-3222
+P       00                                        # EOP
+
+
+# User-to-user information Message
+M	2D                                        # USR
+P       20      02 01 01 00                       # UserToUserInformation
+P       03      03 F1 F2 F3                       # Access Transport
+P       00                                        # EOP
+
+
+# Forward Transfer Message
+M	08                                        # FOT
+P       01      05 03 01 02 03 02 01 02           # Call Reference
+P       00                                        # EOP
+
+
+# Resume Message
+M	0E                                        # RES
+P       22      01 00                             # SuspendResumeInd
+P       01      05 03 01 02 03 02 01 02           # Call Reference
+P       00                                        # EOP
+
+
+# Suspend Message
+M	0D			                  # SUS	
+P       22      01 00                             # SuspendResumeInd
+P       01      05 03 01 02 03 02 01 02           # Call Reference
+P       00                                        # EOP
+
+
+# Blocking Message
+M	13			                  # BLO	
+
+# Blocking Acknowledgement Message
+M	15			                  # BLA	
+
+# Continuity Check Request Message
+M	11			                  # CCR 
+
+# Loopback Acknowledgement Message
+M	24			                  # LPA	
+
+# Overload Message
+M	30			                  # OLM	
+
+# Reset Circuit Message
+M	12			                  # RSC	
+
+# Unblocking Message
+M	14			                  # UBL	
+
+# Unblocking Acknowledgement Message
+M	16			                  # UBA	
+
+# Unequipped Circuit Identification Code Message
+M	2E			                  # UCIC	
+
+
+# Circuit Group Blocking Message
+M	18			                  # CGB	
+P       15      01 03                             # CktGrpSupervisionMsgTypeInd.
+P       16      01 1F                             # RangeAndStatus
+
+
+# Circuit Group Blocking Acknowledgement Message
+M	1A			                  # CGBA	
+P       15      01 03                             # CktGrpSupervisionMsgTypeInd.
+P       16      05 1F 00 00 00 00                 # RangeAndStatus
+
+
+# Circuit Group Unblocking Message
+M	19			                  # CGU	
+P       15      01 00                             # CktGrpSupervisionMsgTypeInd.
+P       16      05 1F FF FF FF FF                 # RangeAndStatus
+
+
+# Circuit Group Unblocking Acknowledgement Message
+M	1B			                  # CGUA	
+P       15      01 00                             # CktGrpSupervisionMsgTypeInd.
+P       16      05 1F 00 00 00 00                 # RangeAndStatus
+
+
+# Circuit Group Reset Message
+M	17			                  # GRS	
+P       16      01 1F                             # RangeAndStatus
+
+
+# Circuit Group Query Message
+M	2A			                  # CQM	
+P       16      05 1F 00 00 00 00                 # RangeAndStatus
+
+
+# Facility Accepted Message
+M	20			                  # FAA	
+P       18      01 02                             # FacilityIndicator
+P       2A      01 00                             # UserToUserIndicators
+P       01      05 03 01 02 03 02 01 02           # Call Reference
+P       0D      07 03 01 02 03 02 01 02 01 01     # Connection Request
+P       00                                        # EOP
+
+## ISUP Vendor LIB has problem converting this parameter
+#P       39      02 0A 99                          # ParameterCompatibilityInfo
+
+
+# Facility Request Message
+M	1F			                  # FAR	
+P       18      01 02                             # FacilityIndicator
+P       2A      01 00                             # UserToUserIndicators
+P       01      05 03 01 02 03 02 01 02           # Call Reference
+P       0D      07 03 01 02 03 02 01 02 01 01     # Connection Request
+P       00                                        # EOP
+
+#P       39      02 0A 99                          # ParameterCompatibilityInfo
+
+
+# User Part Test Message
+M	34			                  # UPT	
+P       00                                        # EOP
+
+#P       39      02 0A 99                          # ParameterCompatibilityInfo
+
+
+# User Part Available Message
+M	35			                  # UPA	
+P       00                                        # EOP
+
+#P       39      02 0A 99                          # ParameterCompatibilityInfo
+
+
+# Facility
+M	33			                  # FAC	
+P       38      01 80                             # MsgCompatibilityInfo
+P       32      01 80                             # RemoteOperations
+P       E2      05 F1 F2 F3 F4 F5                 # ServiceActivation
+P       00                                        # EOP
+
+#P       39      02 0A 99                          # ParameterCompatibilityInfo
+
+
+# Network Resource Management Message
+M	32			                  # NRM	
+P       37      01 00                             # Echo Control Information
+P       38      02 00 00                          # MsgCompatibilityInfo
+P       35      01 00                             # TransmissionMediumUsed
+
+## ISUP Vendor LIB has problem converting this parameter
+#P       39      02 0A 99                          # ParameterCompatibilityInfo
+
+
+# Identification Request Message
+M	36			                  # IDR	
+P       3B      01 01                             # MCIDRequestIndicators
+P       38      02 00 00                          # MsgCompatibilityInfo
+
+## ISUP Vendor LIB has problem converting this parameter
+#P       39      02 0A 99                          # ParameterCompatibilityInfo
+
+
+# Identification Response Message
+M	37			                  # IRS 
+P       3C      01 03                             # MCIDResponseIndicators
+P       38      02 00 00                          # MsgCompatibilityInfo
+P       0A      07 01 11 0A 04 77 44 33 23        # CallingPrtyN: (407)744-3332
+P       03      03 F1 F2 F3                       # Access Transport
+P       C0      08 01 00 0F 0A 04 77 23 45 12     # GenericNumber: (407)732-5421
+
+## ISUP Vendor LIB has problem converting this parameter
+#P       39      02 0A 99                          # ParameterCompatibilityInfo
+
+
+# Segmentation Message
+M	38			                  # SGM 
+P       03      03 F1 F2 F3                       # Access Transport
+P       20      02 01 01 00                       # UserToUserInformation
+P       38      01 80                             # MsgCompatibilityInfo
+P       C1      06 03 0A 04 78 96 23 11           # GenericDigits: (408)769-3211
+P       2C      01 81                             # GenericNotification
+P       C0      08 01 00 0F 0A 04 77 23 45 12     # GenericNumber: (407)732-5421
+

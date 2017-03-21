@@ -1,0 +1,4 @@
+#!/bin/sh -x
+rm -f *.o */*.o
+make PROTOCOL=ANSI SCCP_PROT=ANSI DEBUG_BUILD=yes all
+rm -f *.o */*.o

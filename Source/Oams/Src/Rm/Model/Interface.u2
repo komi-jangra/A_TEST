@@ -1,0 +1,939 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<u2 OMVersion="3.4" StorageVersion="4" ToolVersion="3.0.0.0.2032" xmlns="http://www.telelogic.com/tau">
+<Resource Guid="A0IEEEBIAEEEt3L-eLESm2EE">
+<cHiddenStereotypeInstance>
+<InstanceExpr Guid="8DREEE8XVEEEMhidCLESm2EE">
+<rInstanceOf R="uid:@Predefined@modelDependency"/>
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="SYSInclude.u2">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="strUri">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+<InstanceExpr Guid="wDREEE8XVEEEMhidCLESm2EE">
+<rInstanceOf R="uid:@Predefined@modelDependency"/>
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="urn:u2:etc/TTDPredefinedStereotypes.u2">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="strUri">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+<InstanceExpr Guid="xDREEE8XVEEEMhidCLESm2EE">
+<rInstanceOf R="uid:@Predefined@modelDependency"/>
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="urn:u2:etc/LineStyle.u2">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="strUri">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cHiddenStereotypeInstance>
+<rRoot R="uid:BFIEEEBIAEEEt3L-eLESm2EE"/>
+</Resource>
+<Package Guid="BFIEEEBIAEEEt3L-eLESm2EE" Name="Interface">
+<cDiagram>
+<ClassDiagram Guid="QvSEEEBIAEEEFJL-eLESm2EE" Name="Class diagram1" Size="2026 5468">
+<cHiddenStereotypeInstance>
+<InstanceExpr Guid="4vSEEEBIAEEEFJL-eLESm2EE">
+<rInstanceOf R="uid:@TTDLineStyles@presentationFont"/>
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="Arial">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="name">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@name"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="10">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="points">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@points"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+<InstanceExpr Guid="TvSEEEBIAEEEFJL-eLESm2EE">
+<rInstanceOf R="uid:@TTDLineStyles@diagramAutosizing"/>
+</InstanceExpr>
+<InstanceExpr Guid="UvSEEEBIAEEEFJL-eLESm2EE">
+<rInstanceOf R="uid:@TTDLineStyles@symbolColor"/>
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="16773875">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="color">
+<rDefinition R="uid:@TTDLineStyles@symbolColor@color"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cHiddenStereotypeInstance>
+<cDiagramElement>
+<FrameSymbol Guid="RvSEEEBIAEEEFJL-eLESm2EE" Position="100 100" Size="1820 5240">
+</FrameSymbol>
+<InterfaceSymbol Guid="2GSEEEBIAEEEUJL-eLESm2EE" Position="500 260" Size="800 220" Autosize="true" Text="EnvToRm">
+<rDefinition R="uid:WGSEEEBIAEEEUJL-eLESm2EE"/>
+<cOperationLabel>
+<OperationLabel Guid="PuSEEEBIAEEENKL-eLESm2EE" Text="signal ENV_RM_CARD_STATE_CHANGE(I_U32)">
+<rDefinition R="uid:y8SEEEBIAEEEhKL-eLESm2EE"/>
+</OperationLabel>
+</cOperationLabel>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="v3SEEEBIAEEEWJL-eLESm2EE" Position="320 640" Size="1300 400" Text="RMtoCFG">
+<rDefinition R="uid:e3SEEEBIAEEEWJL-eLESm2EE"/>
+<cOperationLabel>
+<OperationLabel Guid="CxSEEEBIAEEEoKL-eLESm2EE" Text="signal OAMS_RM_CFG_PEER_SWITCH_CONNECT_ACK(I_PVoid,I_U32)">
+<rDefinition R="uid:8xSEEEBIAEEEqKL-eLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="sxSEEEBIAEEEqKL-eLESm2EE" Text="signal OAMS_RM_CFG_PEER_SWITCH_CONNECT_NACK(I_PVoid,I_U32)">
+<rDefinition R="uid:gySEEEBIAEEEsKL-eLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="4qeEEEASIEEEGZy*eLESm2EE" Text="signal OAMS_RM_CFG_SLOT_REQ(I_PVoid,I_U32)">
+<rDefinition R="uid:BteEEEASIEEEXZy*eLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="AweEEEASIEEEnZy*eLESm2EE" Text="signal OAMS_RM_CFG_SLOT_RESP(I_PVoid,I_U32)">
+<rDefinition R="uid:ZxeEEEASIEEE*Zy*eLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="dueEEEASIEEEgZy*eLESm2EE">
+</OperationLabel>
+<OperationLabel Guid="iteEEEASIEEEXZy*eLESm2EE">
+</OperationLabel>
+</cOperationLabel>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="nJSEEEBIAEEEYJL-eLESm2EE" Position="500 1060" Size="1000 300" Autosize="true" Text="CFGtoRM">
+<rDefinition R="uid:oJSEEEBIAEEEYJL-eLESm2EE"/>
+<cOperationLabel>
+<OperationLabel Guid="zEAEEEBIAEEED1L-eLESm2EE" Text="signal OAMS_CFG_RM_PEER_SWITCH_CONNECT(I_PVoid)">
+<rDefinition R="uid:JLAEEEBIAEEEG1L-eLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="*-eEEEASIEEEGay*eLESm2EE" Text="signal OAMS_CFG_RM_SLOT_REQ(I_PVoid)">
+<rDefinition R="uid:W*eEEEASIEEEMay*eLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="4*eEEEASIEEEMay*eLESm2EE" Text="signal OAMS_CFG_RM_SLOT_RESP(I_PVoid)">
+<rDefinition R="uid:z*eEEEASIEEEQay*eLESm2EE"/>
+</OperationLabel>
+</cOperationLabel>
+<cAttributeLabel>
+<AttributeLabel Guid="Pq5EEEASIEEEqdy*eLESm2EE">
+</AttributeLabel>
+</cAttributeLabel>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="Q1SEEEBIAEEEaJL-eLESm2EE" Position="500 1480" Size="1100 260" Autosize="true" Text="RMtoGRHM">
+<rDefinition R="uid:R1SEEEBIAEEEaJL-eLESm2EE"/>
+<cOperationLabel>
+<OperationLabel Guid="qIAEEEBIAEEEb1L-eLESm2EE" Text="signal OAMS_RM_GRHM_SWITCH_CONNECT(I_PVoid,I_U32)">
+<rDefinition R="uid:XSAEEEBIAEEEf1L-eLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="USAEEEBIAEEEf1L-eLESm2EE" Text="signal OAMS_RM_GRHM_SWITCH_RELEASE_REQ(I_PVoid,I_U32)">
+<rDefinition R="uid:0AAEEEBIAEEE71L-eLESm2EE"/>
+</OperationLabel>
+</cOperationLabel>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="INSEEEBIAEEEcJL-eLESm2EE" Position="520 1780" Size="1040 360" Autosize="true" Text="GRHMtoRM">
+<rDefinition R="uid:SNSEEEBIAEEEcJL-eLESm2EE"/>
+<cOperationLabel>
+<OperationLabel Guid="WYAEEEBIAEEEhML-eLESm2EE" Text="signal CSAPP_GRHM_RM_SWITCH_CONNECT_ACK (I_PVoid)">
+<rDefinition R="uid:8ZAEEEBIAEEEwML-eLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="tZAEEEBIAEEEwML-eLESm2EE" Text="signal CSAPP_GRHM_RM_SWITCH_CONNECT_NACK (I_PVoid)">
+<rDefinition R="uid:jbAEEEBIAEEEINL-eLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="la0EEE8XVEEEN0idCLESm2EE" Text="signal CSAPP_GRHM_RM_ACTIVE_RESP(I_PVoid)">
+<rDefinition R="uid:Ch0EEE8XVEEEb0idCLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="kzQEEE8XVEEE*gidCLESm2EE" Text="signal CSAPP_GRHM_RM_AIP_RESP(I_PVoid)">
+<rDefinition R="uid:VlREEE8XVEEE3hidCLESm2EE"/>
+</OperationLabel>
+</cOperationLabel>
+<cAttributeLabel>
+<AttributeLabel Guid="dCAEEEBIAEEEbML-eLESm2EE">
+</AttributeLabel>
+</cAttributeLabel>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="UGjLEEBIAEEEqfI-eLESm2EE" Position="460 2140" Size="1100 400" Autosize="true" Text="RMtoCPIF">
+<rDefinition R="uid:2GjLEEBIAEEEqfI-eLESm2EE"/>
+<cOperationLabel>
+<OperationLabel Guid="HsjLEEBIAEEE5gI-eLESm2EE" Text="signal OAMS_RM_CPIF_PEER_SWITCH_ACK(I_PVoid,I_U32)">
+<rDefinition R="uid:rsjLEEBIAEEE0gI-eLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="xekLEEBIAEEEWhI-eLESm2EE" Text="signal OAMS_RM_CPIF_PEER_SWITCH_NACK(I_PVoid,I_U32)">
+<rDefinition R="uid:yMkLEEBIAEEEM7I-eLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="CQkLEEBIAEEEh7I-eLESm2EE" Text="signal OAMS_RM_CPIF_PEER_SWITCH_CONNECT(I_PVoid,I_U32)">
+<rDefinition R="uid:eTkLEEBIAEEE67I-eLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="Vx5EEEASIEEEWfy*eLESm2EE" Text="signal OAMS_RM_CPIF_SLOT_REQ( I_PVoid, I_U32)">
+<rDefinition R="uid:ox5EEEASIEEEcfy*eLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="kx5EEEASIEEEcfy*eLESm2EE" Text="signal OAMS_RM_CPIF_SLOT_RESP(I_PVoid,I_U32)">
+<rDefinition R="uid:Ny5EEEASIEEEffy*eLESm2EE"/>
+</OperationLabel>
+</cOperationLabel>
+<cAttributeLabel>
+<AttributeLabel Guid="kpjLEEBIAEEEvgI-eLESm2EE">
+</AttributeLabel>
+</cAttributeLabel>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="1PjLEEBIAEEE8fI-eLESm2EE" Position="500 2560" Size="960 400" Autosize="true" Text="CPIFtoRM">
+<rDefinition R="uid:MPjLEEBIAEEE8fI-eLESm2EE"/>
+<cOperationLabel>
+<OperationLabel Guid="UVkLEEBIAEEEOgI-eLESm2EE" Text="signal TCP_CPIF_RM_PEER_SWITCH_CONNECT(I_PVoid)">
+<rDefinition R="uid:UIkLEEBIAEEEWgI-eLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="afkLEEBIAEEEcjI-eLESm2EE" Text="signal TCP_CPIF_RM_PEER_SWITCH_ACK(I_PVoid)">
+<rDefinition R="uid:B7kLEEBIAEEE9jI-eLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="v7kLEEBIAEEE9jI-eLESm2EE" Text="signal TCP_CPIF_RM_PEER_SWITCH_NACK(I_PVoid)">
+<rDefinition R="uid:7kkLEEBIAEEEhjI-eLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="Br5EEEASIEEEX9y*eLESm2EE" Text="signal TCP_CPIF_RM_SLOT_REQ(I_PVoid)">
+<rDefinition R="uid:Kt5EEEASIEEEn9y*eLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="4u5EEEASIEEE-9y*eLESm2EE" Text="signal TCP_CPIF_RM_SLOT_RESP(I_PVoid)">
+<rDefinition R="uid:Fw5EEEASIEEEDfy*eLESm2EE"/>
+</OperationLabel>
+</cOperationLabel>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="ssGEEET8lEEE0RP-eLESm2EE" Position="800 3060" Size="920 620" Autosize="true" Text="RMtoEnv">
+<rDefinition R="uid:tsGEEET8lEEE0RP-eLESm2EE"/>
+<cOperationLabel>
+<OperationLabel Guid="RyGEEET8lEEEdRP-eLESm2EE" Text="signal ENV_RM_CARD_STATE_ACK()">
+<rDefinition R="uid:D*GEEET8lEEEzRP-eLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="B*GEEET8lEEEzRP-eLESm2EE" Text="signal ENV_RM_CARD_STATE_NACK()">
+<rDefinition R="uid:oLHEEET8lEEEL4P-eLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="XrCEEERZLEEETLtbCLESm2EE" Text="signal OAMS_RM_CELLH_AIP_REQ(I_PVoid,I_U32)">
+<rDefinition R="uid:7sCEEERZLEEEkLtbCLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="X5DEEERZLEEElVtbCLESm2EE" Text="signal OAMS_RM_GRHM_AIP_REQ(I_PVoid,I_U32)">
+<rDefinition R="uid:rHDEEERZLEEEKVtbCLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="V8DEEERZLEEEbVtbCLESm2EE" Text="signal OAMS_RM_TRXH_AIP_REQ(I_PVoid,I_U32)">
+<rDefinition R="uid:pE0EEERZLEEE-VtbCLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="vmHEEEffLEEEECUcCLESm2EE" Text="signal OAMS_RM_BICH_AIP_REQ(I_PVoid,I_U32)">
+<rDefinition R="uid:Q8HEEEffLEEEOCUcCLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="KJKEEE8XVEEE2MidCLESm2EE" Text="signal OAMS_RM_GRHM_ACTIVE_REQ(I_PVoid,I_U32)">
+<rDefinition R="uid:rRKEEE8XVEEEpMidCLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="TYKEEE8XVEEEtMidCLESm2EE" Text="signal OAMS_RM_BICH_ACTIVE_REQ(I_PVoid,I_U32)">
+<rDefinition R="uid:wgKEEE8XVEEE0NidCLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="ioKEEE8XVEEEKNidCLESm2EE" Text="signal OAMS_RM_CELLH_ACTIVE_REQ(I_PVoid,I_U32)">
+<rDefinition R="uid:owKEEE8XVEEEjNidCLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="oV1EEE8XVEEEuNidCLESm2EE" Text="signal OAMS_RM_TRXH_ACTIVE_REQ(I_PVoid,I_U32)">
+<rDefinition R="uid:0B1EEE8XVEEEKOidCLESm2EE"/>
+</OperationLabel>
+</cOperationLabel>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="87FEEE8XVEEE9FidCLESm2EE" Position="160 3680" Size="840 260" Autosize="true" Text="CELLHtoRM">
+<rDefinition R="uid:w7FEEE8XVEEE9FidCLESm2EE"/>
+<cOperationLabel>
+<OperationLabel Guid="O1GEEE8XVEEEuFidCLESm2EE" Text="signal OAMS_CELLH_RM_ACTIVE_RESP(I_PVoid)">
+<rDefinition R="uid:vNGEEE8XVEEEeGidCLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="GL3EEE8XVEEEHKidCLESm2EE" Text="signal OAMS_CELLH_RM_AIP_RESP(I_PVoid)">
+<rDefinition R="uid:Ae3EEE8XVEEEYKidCLESm2EE"/>
+</OperationLabel>
+</cOperationLabel>
+<cAttributeLabel>
+<AttributeLabel Guid="RL3EEE8XVEEE3KidCLESm2EE">
+</AttributeLabel>
+</cAttributeLabel>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="waGEEE8XVEEEMGidCLESm2EE" Position="240 3920" Size="820 360" Autosize="true" Text="TRXHtoRM">
+<rDefinition R="uid:xaGEEE8XVEEEMGidCLESm2EE"/>
+<cOperationLabel>
+<OperationLabel Guid="8jGEEE8XVEEEXGidCLESm2EE" Text="signal OAMS_TRXH_RM_ACTIVE_RESP(I_PVoid)">
+<rDefinition R="uid:i6GEEE8XVEEErGidCLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="HU3EEE8XVEEEsKidCLESm2EE" Text="signal OAMS_TRXH_RM_AIP_RESP(I_PVoid)">
+<rDefinition R="uid:mc3EEE8XVEEEe1idCLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="YN3EEE8XVEEEnKidCLESm2EE">
+</OperationLabel>
+<OperationLabel Guid="gF3EEE8XVEEEhKidCLESm2EE">
+</OperationLabel>
+</cOperationLabel>
+<cAttributeLabel>
+<AttributeLabel Guid="6jGEEE8XVEEE2GidCLESm2EE">
+</AttributeLabel>
+</cAttributeLabel>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="m1JEEE8XVEEE31idCLESm2EE" Position="320 4320" Size="800 260" Text="BichtoRM">
+<rDefinition R="uid:n1JEEE8XVEEE31idCLESm2EE"/>
+<cOperationLabel>
+<OperationLabel Guid="MUJEEE8XVEEEa1idCLESm2EE" Text="signal OAMS_BICH_RM_AIP_RESP(I_PVoid)">
+<rDefinition R="uid:72JEEE8XVEEEs1idCLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="f2JEEE8XVEEEs1idCLESm2EE" Text="signal OAMS_BICH_RM_ACTIVE_RESP(I_PVoid)">
+<rDefinition R="uid:RdJEEE8XVEEEiMidCLESm2EE"/>
+</OperationLabel>
+</cOperationLabel>
+</InterfaceSymbol>
+</cDiagramElement>
+</ClassDiagram>
+</cDiagram>
+<cOwnedMember>
+<Interface Guid="WGSEEEBIAEEEUJL-eLESm2EE" Name="EnvToRm">
+<cOwnedMember>
+<Signal Guid="y8SEEEBIAEEEhKL-eLESm2EE" Name="ENV_RM_CARD_STATE_CHANGE">
+<cParameter>
+<Parameter Guid="LxGEEET8lEEEXRP-eLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:G0KEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="e3SEEEBIAEEEWJL-eLESm2EE" Name="RMtoCFG">
+<cOwnedMember>
+<Signal Guid="8xSEEEBIAEEEqKL-eLESm2EE" Name="OAMS_RM_CFG_PEER_SWITCH_CONNECT_ACK">
+<cParameter>
+<Parameter Guid="uhAEEEBIAEEEJOL-eLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:uDKEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="8hAEEEBIAEEEJOL-eLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:G0KEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="gySEEEBIAEEEsKL-eLESm2EE" Name="OAMS_RM_CFG_PEER_SWITCH_CONNECT_NACK">
+<cParameter>
+<Parameter Guid="UqeEEEASIEEEGZy*eLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:uDKEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="2qeEEEASIEEEGZy*eLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:G0KEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="BteEEEASIEEEXZy*eLESm2EE" Name="OAMS_RM_CFG_SLOT_REQ">
+<cParameter>
+<Parameter Guid="7q5EEEASIEEEi9y*eLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:uDKEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="jq5EEEASIEEEi9y*eLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:G0KEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="ZxeEEEASIEEE*Zy*eLESm2EE" Name="OAMS_RM_CFG_SLOT_RESP">
+<cParameter>
+<Parameter Guid="rzeEEEASIEEEiay*eLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:uDKEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="szeEEEASIEEEiay*eLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:G0KEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="oJSEEEBIAEEEYJL-eLESm2EE" Name="CFGtoRM">
+<cOwnedMember>
+<Signal Guid="JLAEEEBIAEEEG1L-eLESm2EE" Name="OAMS_CFG_RM_PEER_SWITCH_CONNECT">
+<cParameter>
+<Parameter Guid="L*eEEEASIEEEGay*eLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:uDKEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="W*eEEEASIEEEMay*eLESm2EE" Name="OAMS_CFG_RM_SLOT_REQ">
+<cParameter>
+<Parameter Guid="uB5EEEASIEEEFcy*eLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:uDKEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="z*eEEEASIEEEQay*eLESm2EE" Name="OAMS_CFG_RM_SLOT_RESP">
+<cParameter>
+<Parameter Guid="1i5EEEASIEEElby*eLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:uDKEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="R1SEEEBIAEEEaJL-eLESm2EE" Name="RMtoGRHM">
+<cOwnedMember>
+<Signal Guid="XSAEEEBIAEEEf1L-eLESm2EE" Name="OAMS_RM_GRHM_SWITCH_CONNECT">
+<cParameter>
+<Parameter Guid="UpjLEEBIAEEEvgI-eLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:uDKEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="2pjLEEBIAEEEvgI-eLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:G0KEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="0AAEEEBIAEEE71L-eLESm2EE" Name="OAMS_RM_GRHM_SWITCH_RELEASE_REQ">
+<cParameter>
+<Parameter Guid="qR0EEE8XVEEE00idCLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:uDKEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="rR0EEE8XVEEE00idCLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:G0KEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="SNSEEEBIAEEEcJL-eLESm2EE" Name="GRHMtoRM">
+<cOwnedMember>
+<Signal Guid="8ZAEEEBIAEEEwML-eLESm2EE" Name="CSAPP_GRHM_RM_SWITCH_CONNECT_ACK">
+<cParameter>
+<Parameter Guid="d9AEEEBIAEEESOL-eLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:uDKEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="jbAEEEBIAEEEINL-eLESm2EE" Name="CSAPP_GRHM_RM_SWITCH_CONNECT_NACK">
+<cParameter>
+<Parameter Guid="va0EEE8XVEEEN0idCLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:uDKEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="Ch0EEE8XVEEEb0idCLESm2EE" Name="CSAPP_GRHM_RM_ACTIVE_RESP">
+<cParameter>
+<Parameter Guid="mzQEEE8XVEEE*gidCLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:uDKEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="VlREEE8XVEEE3hidCLESm2EE" Name="CSAPP_GRHM_RM_AIP_RESP">
+<cParameter>
+<Parameter Guid="LlREEE8XVEEE3hidCLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:uDKEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="2GjLEEBIAEEEqfI-eLESm2EE" Name="RMtoCPIF">
+<cOwnedMember>
+<Signal Guid="rsjLEEBIAEEE0gI-eLESm2EE" Name="OAMS_RM_CPIF_PEER_SWITCH_ACK">
+<cParameter>
+<Parameter Guid="lKkLEEBIAEEEF7I-eLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:uDKEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="iKkLEEBIAEEEF7I-eLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:G0KEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="yMkLEEBIAEEEM7I-eLESm2EE" Name="OAMS_RM_CPIF_PEER_SWITCH_NACK">
+<cParameter>
+<Parameter Guid="0QkLEEBIAEEEh7I-eLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:uDKEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="FQkLEEBIAEEEh7I-eLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:G0KEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="eTkLEEBIAEEE67I-eLESm2EE" Name="OAMS_RM_CPIF_PEER_SWITCH_CONNECT">
+<cParameter>
+<Parameter Guid="Sx5EEEASIEEEWfy*eLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:uDKEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="Ax5EEEASIEEEWfy*eLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:G0KEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="ox5EEEASIEEEcfy*eLESm2EE" Name="OAMS_RM_CPIF_SLOT_REQ">
+<cParameter>
+<Parameter Guid="B*5EEEASIEEElgy*eLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:uDKEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="C*5EEEASIEEElgy*eLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:G0KEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="Ny5EEEASIEEEffy*eLESm2EE" Name="OAMS_RM_CPIF_SLOT_RESP">
+<cParameter>
+<Parameter Guid="4EBEEEASIEEEBgy*eLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:uDKEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="TEBEEEASIEEEBgy*eLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:G0KEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="MPjLEEBIAEEE8fI-eLESm2EE" Name="CPIFtoRM">
+<cOwnedMember>
+<Signal Guid="UIkLEEBIAEEEWgI-eLESm2EE" Name="TCP_CPIF_RM_PEER_SWITCH_CONNECT">
+<cParameter>
+<Parameter Guid="Jq5EEEDUlEEEEQ1-eLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:uDKEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="B7kLEEBIAEEE9jI-eLESm2EE" Name="TCP_CPIF_RM_PEER_SWITCH_ACK">
+<cParameter>
+<Parameter Guid="cpkLEEBIAEEESkI-eLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:uDKEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="7kkLEEBIAEEEhjI-eLESm2EE" Name="TCP_CPIF_RM_PEER_SWITCH_NACK">
+<cParameter>
+<Parameter Guid="Dr5EEEASIEEEX9y*eLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:uDKEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="Kt5EEEASIEEEn9y*eLESm2EE" Name="TCP_CPIF_RM_SLOT_REQ">
+<cParameter>
+<Parameter Guid="F-5EEEASIEEEEgy*eLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:uDKEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="Fw5EEEASIEEEDfy*eLESm2EE" Name="TCP_CPIF_RM_SLOT_RESP">
+<cParameter>
+<Parameter Guid="7z5EEEASIEEEwfy*eLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:uDKEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="tsGEEET8lEEE0RP-eLESm2EE" Name="RMtoEnv">
+<cOwnedMember>
+<Signal Guid="D*GEEET8lEEEzRP-eLESm2EE" Name="ENV_RM_CARD_STATE_ACK">
+</Signal>
+<Signal Guid="oLHEEET8lEEEL4P-eLESm2EE" Name="ENV_RM_CARD_STATE_NACK">
+</Signal>
+<Signal Guid="7sCEEERZLEEEkLtbCLESm2EE" Name="OAMS_RM_CELLH_AIP_REQ">
+<cParameter>
+<Parameter Guid="TI3EEEffLEEEUCUcCLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:uDKEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="UI3EEEffLEEEUCUcCLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:G0KEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="rHDEEERZLEEEKVtbCLESm2EE" Name="OAMS_RM_GRHM_AIP_REQ">
+<cParameter>
+<Parameter Guid="S4HEEEffLEEEmBUcCLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:uDKEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="A4HEEEffLEEEmBUcCLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:G0KEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="pE0EEERZLEEE-VtbCLESm2EE" Name="OAMS_RM_TRXH_AIP_REQ">
+<cParameter>
+<Parameter Guid="5mHEEEffLEEEECUcCLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:uDKEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="BmHEEEffLEEEECUcCLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:G0KEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="Q8HEEEffLEEEOCUcCLESm2EE" Name="OAMS_RM_BICH_AIP_REQ">
+<cParameter>
+<Parameter Guid="MJKEEE8XVEEE2MidCLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:uDKEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="NJKEEE8XVEEE2MidCLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:G0KEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="rRKEEE8XVEEEpMidCLESm2EE" Name="OAMS_RM_GRHM_ACTIVE_REQ">
+<cParameter>
+<Parameter Guid="2YKEEE8XVEEEtMidCLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:uDKEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="WYKEEE8XVEEEtMidCLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:G0KEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="wgKEEE8XVEEE0NidCLESm2EE" Name="OAMS_RM_BICH_ACTIVE_REQ">
+<cParameter>
+<Parameter Guid="eoKEEE8XVEEEKNidCLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:uDKEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="5oKEEE8XVEEEKNidCLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:G0KEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="owKEEE8XVEEEjNidCLESm2EE" Name="OAMS_RM_CELLH_ACTIVE_REQ">
+<cParameter>
+<Parameter Guid="qV1EEE8XVEEEuNidCLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:uDKEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="rV1EEE8XVEEEuNidCLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:G0KEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="0B1EEE8XVEEEKOidCLESm2EE" Name="OAMS_RM_TRXH_ACTIVE_REQ">
+<cParameter>
+<Parameter Guid="CB1EEE8XVEEEKOidCLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:uDKEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="DB1EEE8XVEEEKOidCLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:G0KEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="w7FEEE8XVEEE9FidCLESm2EE" Name="CELLHtoRM">
+<cOwnedMember>
+<Signal Guid="vNGEEE8XVEEEeGidCLESm2EE" Name="OAMS_CELLH_RM_ACTIVE_RESP">
+<cParameter>
+<Parameter Guid="3L3EEE8XVEEEHKidCLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:uDKEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="Ae3EEE8XVEEEYKidCLESm2EE" Name="OAMS_CELLH_RM_AIP_RESP">
+<cParameter>
+<Parameter Guid="Se3EEE8XVEEEYKidCLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:uDKEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="xaGEEE8XVEEEMGidCLESm2EE" Name="TRXHtoRM">
+<cOwnedMember>
+<Signal Guid="i6GEEE8XVEEErGidCLESm2EE" Name="OAMS_TRXH_RM_ACTIVE_RESP">
+<cParameter>
+<Parameter Guid="1U3EEE8XVEEEsKidCLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:uDKEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="mc3EEE8XVEEEe1idCLESm2EE" Name="OAMS_TRXH_RM_AIP_RESP">
+<cParameter>
+<Parameter Guid="6c3EEE8XVEEEe1idCLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:uDKEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="n1JEEE8XVEEE31idCLESm2EE" Name="BichtoRM">
+<cOwnedMember>
+<Signal Guid="72JEEE8XVEEEs1idCLESm2EE" Name="OAMS_BICH_RM_AIP_RESP">
+<cParameter>
+<Parameter Guid="h2JEEE8XVEEEs1idCLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:uDKEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="RdJEEE8XVEEEiMidCLESm2EE" Name="OAMS_BICH_RM_ACTIVE_RESP">
+<cParameter>
+<Parameter Guid="QdJEEE8XVEEEiMidCLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:uDKEEEffLEEEWGUcCLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+</cOwnedMember>
+<cClientDependency>
+<Dependency Guid="pqHEEEBIAEEEiYL-eLESm2EE">
+<cStereotypeInstance>
+<InstanceExpr Guid="srHEEEBIAEEEeYL-eLESm2EE">
+<rInstanceOf>
+<Ident Name="access">
+<rDefinition R="uid:@Predefined@access"/>
+</Ident>
+</rInstanceOf>
+</InstanceExpr>
+</cStereotypeInstance>
+<rSupplier>
+<Ident Name="SYSInclude">
+<rDefinition R="uid:rjlEEEBIAEEEvQL-eLESm2EE"/>
+</Ident>
+</rSupplier>
+</Dependency>
+</cClientDependency>
+</Package>
+</u2>

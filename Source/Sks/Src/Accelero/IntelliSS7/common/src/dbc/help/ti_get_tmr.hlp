@@ -1,0 +1,17 @@
+
+ITU TCAP Command
+
+SYNOPSIS
+    ti_get_tmr
+
+DESCRIPTION
+    This command displays ITU TCAP timers and their values. 
+    ITU TCAP has only one configurable timer.
+
+PARAMETERS
+    None.
+
+EXAMPLE
+    >> ti_get_tmr
+
+

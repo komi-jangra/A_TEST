@@ -1,0 +1,21 @@
+
+ANSI SCCP Command
+
+SYNOPSIS
+    sa_rem_rssn <pc> <ni> <ssn> 
+
+DESCRIPTION
+    This command removes remote subsystem entry corresponding to given 
+    pc, ssn and linkset.
+
+
+PARAMETERS
+    pc      Remote Point Code
+    ni      Network indicator
+    ssn     Remote Subsystem
+
+EXAMPLE
+>> sa_rem_rssn 4114 0 5
+
+********* SCCP Remote Subsystem Entry Removed ********
+

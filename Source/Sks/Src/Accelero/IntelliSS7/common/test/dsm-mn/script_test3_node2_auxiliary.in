@@ -1,0 +1,28 @@
+-------------------------------------------------------------------------------
+--
+-- DSM Multi-Nodes Automatic Regression Testing.
+-- -> Test3 Node2 Auxiliary.
+--
+
+node1 := 0
+node2 := 1
+
+
+RedirectStdout("test3_node2_auxiliary.out")
+
+Print("\nAuxiliary script running...\n")
+
+
+-----------------------------------------------------------
+--
+-- DSM test.
+--
+
+ftGroupId   := 0
+tableId     := 1
+
+-- Table dump commented out (slow).
+-- DsmTableDump(ftGroupId, tableId)
+
+
+-----------------------------------------------------------

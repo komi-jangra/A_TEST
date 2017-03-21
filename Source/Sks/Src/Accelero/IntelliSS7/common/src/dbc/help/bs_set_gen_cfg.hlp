@@ -1,0 +1,19 @@
+BSSAP Command
+
+SYNOPSIS
+    bs_set_gen_cfg  <Alarm Level> <Trace Type> <Trace Output> <On/Off> 
+
+DESCRIPTION
+    This command sets general configuration to BSSAP stack  
+
+PARAMETERS
+    Alarm Level (CRITICAL/MAJOR/MINOR/INFO/OFF)
+    Trace Type (CRITICAL/DEBUG/WARNING/ERROR/ALL)
+    Trace Output (STDOUT/FILE/SYSLOG)
+    On/Off (Traces) 
+
+EXAMPLE
+    >> bs_set_gen_cfg major debug stdout off 
+
+    *********** BSSAP General Config Set*************
+

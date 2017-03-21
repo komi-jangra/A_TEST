@@ -1,0 +1,122 @@
+--------------------------------------------------------------------------------
+--                                                                            --
+--  Copyright 1999 - 2002 IntelliNet Technologies, Inc. All Rights Reserved.  --
+--              Manufactured in the United States of America.                 --
+--        1990 W. New Haven Ste. 312, Melbourne, Florida, 32904 U.S.A.        --
+--                                                                            --
+--    This product and related documentation is protected by copyright and    --
+--    distributed under licenses restricting its use, copying, distribution   --
+--    and decompilation.  No part of this product or related documentation    --
+--    may be reproduced in any form by any means without prior written        --
+--    authorization of IntelliNet Technologies and its licensors, if any.     --
+--                                                                            --
+--    RESTRICTED RIGHTS LEGEND:  Use, duplication, or disclosure by the       --
+--    government is subject to restrictions as set forth in subparagraph      --
+--    (c)(1)(ii) of the Rights in Technical Data and Computer Software        --
+--    clause at DFARS 252.227-7013 and FAR 52.227-19.                         --
+--                                                                            --
+--------------------------------------------------------------------------------
+--                                                                            --
+-- CONTRACT: INTERNAL                                                         --
+--                                                                            --
+--------------------------------------------------------------------------------
+--
+--  ID: $Id: asncc_useful.asn,v 1.1.1.1 2007-10-08 11:12:04 bsccs2 Exp $
+--
+--------------------------------------------------------------------------------
+
+--
+-- IntelliAsnCC ASN-USEFUL type definitions.
+--
+
+ASN-USEFUL DEFINITIONS ::=
+
+BEGIN
+
+ObjectDescriptor ::= [UNIVERSAL 7]  IMPLICIT _BASE STRING
+UTF8String       ::= [UNIVERSAL 12] IMPLICIT _BASE STRING
+NumericString    ::= [UNIVERSAL 18] IMPLICIT _BASE STRING
+PrintableString  ::= [UNIVERSAL 19] IMPLICIT _BASE STRING
+TeletexString    ::= [UNIVERSAL 20] IMPLICIT _BASE STRING
+T61String        ::= [UNIVERSAL 20] IMPLICIT _BASE STRING
+VideotexString   ::= [UNIVERSAL 21] IMPLICIT _BASE STRING
+IA5String        ::= [UNIVERSAL 22] IMPLICIT _BASE STRING
+GraphicString    ::= [UNIVERSAL 25] IMPLICIT _BASE STRING
+VisibleString    ::= [UNIVERSAL 26] IMPLICIT _BASE STRING
+ISO646String     ::= [UNIVERSAL 26] IMPLICIT _BASE STRING
+GeneralString    ::= [UNIVERSAL 27] IMPLICIT _BASE STRING
+UniversalString  ::= [UNIVERSAL 28] IMPLICIT _BASE STRING
+BMPString        ::= [UNIVERSAL 30] IMPLICIT _BASE STRING
+UTCTime          ::= [UNIVERSAL 23] IMPLICIT _BASE STRING
+GeneralizedTime  ::= [UNIVERSAL 24] IMPLICIT _BASE STRING
+
+EXTERNAL         ::= [UNIVERSAL 8] IMPLICIT SEQUENCE
+{
+        direct-reference      OBJECT IDENTIFIER OPTIONAL,
+        indirect-reference    INTEGER OPTIONAL,
+        data-value-descriptor ObjectDescriptor OPTIONAL,
+        encoding CHOICE
+        {
+                single-ASN1-type [0] ANY,
+                octet-aligned    [1] IMPLICIT OCTET STRING,
+                arbitrary        [2] IMPLICIT BIT STRING
+        }
+}
+
+EMBEDDED-PDV    ::= [UNIVERSAL 11] IMPLICIT SEQUENCE
+{
+        identification  [0] EXPLICIT CHOICE
+        {
+                syntaxes                [0] IMPLICIT SEQUENCE
+                {
+                        abstract    [0] IMPLICIT OBJECT IDENTIFIER,
+                        transfer    [1] IMPLICIT OBJECT IDENTIFIER
+                },
+
+                syntax                  [1] IMPLICIT OBJECT IDENTIFIER,
+
+                presentation-context-id [2] IMPLICIT INTEGER,
+
+                context-negotiation     [3] IMPLICIT SEQUENCE
+                {
+                        presentation-context-id [0] IMPLICIT INTEGER,
+                        transfer-syntax         [1] IMPLICIT OBJECT IDENTIFIER
+                },
+
+                transfer-syntax         [4] IMPLICIT OBJECT IDENTIFIER,
+                fixed                   [5] IMPLICIT NULL
+        },
+
+        data-value      [1] IMPLICIT OCTET STRING
+}
+
+CHARACTER-STRING ::= [UNIVERSAL 29] SEQUENCE
+{
+        identification  [0] EXPLICIT CHOICE
+        {
+                syntaxes                [0] IMPLICIT SEQUENCE
+                {
+                        abstract    [0] IMPLICIT OBJECT IDENTIFIER,
+                        transfer    [1] IMPLICIT OBJECT IDENTIFIER
+                },
+
+                syntax                  [1] IMPLICIT OBJECT IDENTIFIER,
+
+                presentation-context-id [2] IMPLICIT INTEGER,
+
+                context-negotiation     [3] IMPLICIT SEQUENCE
+                {
+                        presentation-context-id [0] IMPLICIT INTEGER,
+                        transfer-syntax         [1] IMPLICIT OBJECT IDENTIFIER
+                },
+
+                transfer-syntax         [4] IMPLICIT OBJECT IDENTIFIER,
+                fixed                   [5] IMPLICIT NULL
+        },
+
+        string-value    [1] IMPLICIT OCTET STRING
+}
+        
+
+END  -- Of ASN-USEFUL type definitions.
+

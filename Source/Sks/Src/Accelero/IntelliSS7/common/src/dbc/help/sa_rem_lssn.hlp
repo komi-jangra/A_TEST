@@ -1,0 +1,21 @@
+
+ANSI SCCP Command
+
+SYNOPSIS
+    sa_rem_lssn <pc> <ni> <ssn>  
+
+DESCRIPTION
+    This command removes local sunsystem entry.
+
+
+PARAMETERS
+    pc      Local Point Code
+    ni      Network indicator
+    ssn     Local Subsystem 
+
+EXAMPLE
+>> sa_rem_lssn 1 1 5
+
+********* SCCP Local Subsystem Entry Removed *********
+
+

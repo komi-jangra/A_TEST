@@ -1,0 +1,155 @@
+  Testing Client application with ISUP Stack running as ASP(functional test)
+  -------------------------------------------------
+
+1) Building functional test App :-
+
+      cd $ITS_ROOT/test if you are not already there.
+
+   a) test application uses Make file to compile and link
+      all the files. Before that please make sure that you have
+      following evn variables set.
+
+      export ITS_ROOT= TCS_ISUP_Release1.0 directory.
+      export PLATFORM= solaris
+      export LD_LIBRARY_PATH= $ITS_ROOT/lib:$LD_LIBRARY_PATH
+      export PROTOCOL= ANSI or CCITT
+
+   b) Give make command in this directory.(Please use gnu make   
+      to build test app).
+
+   c) This will generate and executable ./ANSI/test or ./ITU/test 
+      directory depending on the PROTOCOL set.
+
+    
+2) Configuring the test application configuration(XML) file.
+
+   a) Before running test App you must have to configure the XML file.
+      test App uses xml for storing configuration information.
+      It reads config information from this file at time of
+      initialization.
+
+   b) IntelliNet provides sample XML configuration file. 
+      Open the file Client.xml and this config file requires only
+      the debug console configuration. Configure the IP address and
+      port number of Debug console server.
+
+   d) The file ansi_msg.txt contains the Messages codes.
+      You can define the Parameters and their values for
+      each msg here.The test application reads Msg codes,
+      Parameter code and values for that parameters, when
+      command is executed through Debug Client.
+
+   e) Need to configure the point codes as the list of opc-dpc-sio
+      during Initialization of test application.
+
+   f) Configure dbc_console.ini, the server Host name and port
+      number should match with the values configured the Client.xml.
+
+NOTE:
+      Every msg in the ansi_msg.txt file includes routing label
+      also, so if you change the point codes you will have to
+      change here also. 
+
+3) Running test App :-
+
+   a) Change the directory to $ITS_ROOT/test/ANSI or ITU if you are not
+      already there.
+
+   b) Make sure you have "test" executable in this directory
+      and libANSI-ClientLayerD.so and libANSI-ISUP95_CODECD.so  or
+	  libCCITT-ClientLayerD.so and libCCITT-ISUP97_CODECD.so libraries
+      in the ../../lib directory.
+      
+     Type  "./test <primaryIP> <primaryPort> <conServattempts> [ <backupIP>  <backupPort> ]" 
+     and press Enter.
+
+     There primaryIP and primaryPort number are of Iterative server socket
+     on ISUP server to which application wants to have primary connection.
+
+     conServattempts is the number of times the client tries to connect to
+     the server before exiting.
+
+	 And backupIP and backupPort are of ISUP server to which application
+     wants to have a backup connection. These are optional args.
+
+
+  c) After starting your test application, start the Debug client.
+     Using Debug client user can send text commands to application.
+	 Application understands the text commands take appropriate action.
+
+     if you not already started (Please see (4) how to start Debug client).
+
+
+4) Running the Debug client console 
+
+   a) One Debug client can connect to only one application
+      depending on the port number and IP address configured in the
+      dbc_console.ini file. 
+
+      User must run different Debug clients for different application
+      he wants to send commands.
+
+   b) Debug client executables (DBGConsole) are provided in all directories
+	  where ever user required to run. Make sure that where ever you are
+      running Debug Client you also have dbc_console.ini file in the same
+      directory.
+   c) Type ./DBGConsole -socket and press enter. 
+   d) This will give command prompt >>.
+   e) Type ? to see all the commands that are available
+      (see example 1).
+
+
+5) Running Multiple application:
+ 
+   User can run multiple copies of applications connecting different 
+   ISUP servers.
+
+   This requires to have a separate copies of executables XML and ini files.
+
+	To achieve this follow the steps bellow.
+
+    cd $ITS_ROOT/test/ANSI/ or $ITS_ROOT/test/ITU if you already no there.
+
+    a) makedir app1   	  creates directory called app1
+
+    b) cp  *  ./app1/. 	  copies all the files to the app1 directory
+
+    c) cd ./app1          change directory to app1.
+
+    follow the steps  2) , 3) and 4) from above.
+
+    Repeat the step 5) with dIfferent directory name app2 ... app6
+    to have multiple applications.
+   
+
+-----------------------------------------------------------------------
+EXAMPLE 1:
+
+   On the Debug client command prompt type.
+
+EXAMPLE 1:
+
+command: >> ?
+
+Result :    Prints the all available commands.
+
+EXAMPLE 2:
+
+command: >> iam 1 
+
+Result :    Application will sends IAM msg on circuit code 1 to stack.
+
+EXAMPLE 3:
+
+command: >> reg 16 21 133
+
+Result : Application send Register Event to
+	 registers the routing info with ISUP server.
+
+EXAMPLE 4:
+command: >> unreg 16 21 133
+
+Result : Application sends Deregister Event to
+	 deregisters the routing info with ISUP server.
+
+---------------------------- End ----------------------------------------

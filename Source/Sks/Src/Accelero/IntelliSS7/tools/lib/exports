@@ -1,0 +1,2 @@
+release		cpp	both	libUNITTEST.a	UNITTEST.lib
+debug		cpp	both	libUNITTESTD.a	UNITTESTD.lib

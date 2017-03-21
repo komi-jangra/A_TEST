@@ -1,0 +1,56 @@
+Instructions to compile CFG CS3.0 test stubs:
+----------------------------------------
+
+1. The CFG TestStubs are present at the following path:
+   CS3.0/BSC-Development/Source/Oams/TestStub/Cfg/UTStubs3.0/
+2. To generate the executable for CFG Test Stubs, run the Makefile for the TestStubs present in 
+   following directory. 
+	 -CmStub (It will generate Exe: CM_STUB)
+   -OilStub (It will generate Exe: OIL_STUB)
+   -SwmhStub (It will generate Exe: SWMH_STUB) 
+   -AfhStub (It will generate Exe: AFH_STUB)
+   -MgsStub (It will generate Exe: MGS_STUB)
+   -TrxhBichStub (It will generate Exe: TRXH_BICH_STUB)
+
+Execution Steps for Unit Testing of CFG:
+----------------------------------------
+
+1. Run IPC Framework.
+2. Run MSGDUMPER and LOGGER so as to be able to generate PRC LOGS and DUMPER traces.
+3. Delete all old .dat files and old logs.
+4. Run DB server.
+5. Run MGS_STUB
+6. Run OIL_STUB
+   For Software Offer, Activation and Delete, it will print a menu. 
+   1.SUCCESS	2.FAILURE
+   Give option 1, if you want to send Success in the response otherwise give option 2.
+7. Run SWMH_STUB   
+   For Software Download and Activation, it will print a menu. 
+   1.SUCCESS	2.FAILURE
+   Give option 1 for sending Ack and option 2 for sending Nack in the response.
+8. Run AFH_STUB
+9. Run TRXH_BICH_STUB
+   A menu is printed on the screen, Give option 1
+10.Run TRXH_BICH_STUB 
+   A menu is printed on the screen, Give option 2
+11.Run TRXH_BICH_STUB
+   A menu is printed on the screen, Give option 3
+12.Run CM_STUB
+   A test case menu is printed on the screen.
+        First enter the <Group Id> followed by <Test Case Id> to execute the test case(See Note 1).
+        Each Test case result can be viewed in the PRC_LOG.
+   This Test Stub need to be restarted for every Test Case.
+13.Run the CFG Binary(Generated CFG Code).
+
+Note 1:
+------
+ Test cases are divided into Groups:
+1) Group Id-3: These contain SwUpgrade Test cases for Download and Activation.(From Test Case Id 1 to 98). 
+2) Group Id-4: These contain Handover related test cases.(From Test Case Id 1 to 32). 
+ Test case description can be viewed from VNL_BSC_UTP_UTR_CFG(CS3.0)_v0.2
+
+---------------------------------------------
+
+
+
+

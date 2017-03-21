@@ -1,0 +1,6 @@
+gcs_client	gcs_client	both	*.c
+gcs_client	gcs_client	both	*.h
+gcs_client	gcs_client	both	*.c
+gcs_client	gcs_client	both	*.h
+gcs_client	gcs_client	both	Makefile
+

@@ -1,0 +1,4 @@
+rudp		rudp	both	*.c
+rudp		rudp	both	*.c
+rudp		rudp	both	Makefile
+

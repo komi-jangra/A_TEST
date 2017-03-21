@@ -1,0 +1,23 @@
+
+ITU SCCP Module :
+    si_get_gen_cfg        SCCP Get General Config
+    si_set_gen_cfg        SCCP Set General Config
+    si_get_all_ssn        SCCP Get All Subsystem Entries
+    si_set_rssn           SCCP Set Remote Subsystem Entry
+    si_rem_rssn           SCCP Remove Remote Subsystem Entry
+    si_set_lssn           SCCP Set Local Subsystem Entry
+    si_rem_lssn           SCCP Remove Local Subsystem Entry
+    si_get_all_cssn       SCCP Get All Concerned SSN Entry
+    si_set_cssn           SCCP Set Concerned SSN Entry
+    si_rem_cssn           SCCP Remove Concerned SSN Entry
+    si_send_ssa           SCCP Send Sub System Allowed
+    si_send_ssp           SCCP Send Sub System Prohibited
+    si_send_sst           SCCP Send Sub System Test
+    si_get_behavior       SCCP Get Behaviors
+    si_set_behavior       SCCP Set Behaviors
+    si_get_tmr            SCCP Get Timer
+    si_set_tmr            SCCP Set Timer
+    si_get_gen_peg        SCCP Get Pegs
+    si_clr_gen_peg        SCCP Clear Peg
+
+For details about any command use "help <command name>"

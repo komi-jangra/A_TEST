@@ -1,0 +1,39 @@
+
+ITU ISUP Command
+
+SYNOPSIS
+    ii_set_gen_cfg <al> <trType> <trOutput> <on/off> 
+
+DESCRIPTION
+    This command sets ITU ISUP Alarm Level and Trace Level. Alarm level controls ISUP
+    alarms sent to Accelero application. Trace level controls generation of ISUP
+    execution traces.
+
+PARAMETERS
+    al            Alarm Level.
+                  Possible values -
+                  CRITICAL
+                  MAJOR
+                  MINOR
+                  INFO
+                  OFF
+    trType        Trace Type. Possible valuse
+                  EVENT
+                  DEBUG
+                  WARNING
+                  ERROR
+                  CRITICAL
+                  all - all trace types
+    traceOutput   Trace Output. Possible Values -
+                  stdout
+                  file
+     ON/OFF       Set trace to on or off.
+
+
+EXAMPLE
+    >> ii_set_gen_cfg CRITICAL DEBUG file on
+    *********** ISUP General Config Set*************
+
+ 
+
+

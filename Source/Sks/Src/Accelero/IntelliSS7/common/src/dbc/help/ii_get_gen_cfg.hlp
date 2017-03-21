@@ -1,0 +1,28 @@
+
+ITU ISUP Command
+
+SYNOPSIS
+    ii_get_gen_cfg
+
+DESCRIPTION
+    This command displays ITU ISUP general configuration. This includes ISUP
+    Alarm Level and ISUP Trace Level. Alarm level controls ISUP alarms sent to
+    Accelero application. Trace level controls generation of ISUP execution traces.
+ 
+PARAMETERS
+    None.
+
+EXAMPLE
+
+>> ii_get_gen_cfg
+
+*********** ISUP General Config *************
+    Alarm Level = OFF
+    ISUP Trace -
+        Debug     =  stdout
+        Critical  =  stdout
+        Warning   =  stdout
+        Error     =  stdout
+        Event     = null
+*********** End of ISUP General Config ***********
+

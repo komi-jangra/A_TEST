@@ -1,0 +1,4691 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<u2 OMVersion="3.4" StorageVersion="4" ToolVersion="3.0.0.0.2032" xmlns="http://www.telelogic.com/tau">
+<Resource Guid="DIwLEETsVEEE2D1yBLESm2EE">
+<cHiddenStereotypeInstance>
+<InstanceExpr Guid="kkkEEEDESEEELzoQ0LESm2EE">
+<rInstanceOf R="uid:@Predefined@modelDependency"/>
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="urn:u2:etc/TTDFileModel.u2">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="strUri">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+<InstanceExpr Guid="6kkEEEDESEEELzoQ0LESm2EE">
+<rInstanceOf R="uid:@Predefined@modelDependency"/>
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="urn:u2:etc/CppPredefined.u2">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="strUri">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+<InstanceExpr Guid="mkkEEEDESEEELzoQ0LESm2EE">
+<rInstanceOf R="uid:@Predefined@modelDependency"/>
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="urn:u2:etc/CApplicationProfile.u2">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="strUri">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+<InstanceExpr Guid="nkkEEEDESEEELzoQ0LESm2EE">
+<rInstanceOf R="uid:@Predefined@modelDependency"/>
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="urn:u2:etc/CppImport.u2">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="strUri">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+<InstanceExpr Guid="okkEEEDESEEELzoQ0LESm2EE">
+<rInstanceOf R="uid:@Predefined@modelDependency"/>
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="urn:u2:etc/TTDPredefinedStereotypes.u2">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="strUri">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+<InstanceExpr Guid="pkkEEEDESEEELzoQ0LESm2EE">
+<rInstanceOf R="uid:@Predefined@modelDependency"/>
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="urn:u2:etc/LineStyle.u2">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="strUri">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+<InstanceExpr Guid="qkkEEEDESEEELzoQ0LESm2EE">
+<rInstanceOf R="uid:@Predefined@modelDependency"/>
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="SYSInclude.u2">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="strUri">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cHiddenStereotypeInstance>
+<rRoot R="uid:bSwLEETsVEEE2D1yBLESm2EE"/>
+</Resource>
+<Package Guid="bSwLEETsVEEE2D1yBLESm2EE" Name="BpmInclude">
+<cDiagram>
+<ClassDiagram Guid="A24EEEDESEEE1xoQ0LESm2EE" Name="C++ Imported Types" Size="1979 2836">
+<cHiddenStereotypeInstance>
+<InstanceExpr Guid="F24EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDLineStyles@diagramAutosizing"/>
+</InstanceExpr>
+</cHiddenStereotypeInstance>
+<cDiagramElement>
+<FrameSymbol Guid="l24EEEDESEEE1xoQ0LESm2EE" Position="100 100" Size="1760 2620">
+</FrameSymbol>
+<ClassSymbol Guid="i24EEEDESEEE1xoQ0LESm2EE" Position="1120 260" Size="380 240">
+<rDefinition R="uid:eU4EEEDESEEE1xoQ0LESm2EE"/>
+</ClassSymbol>
+<ClassSymbol Guid="v24EEEDESEEE1xoQ0LESm2EE" Position="620 260" Size="380 240">
+<rDefinition R="uid:s44EEEDESEEE1xoQ0LESm2EE"/>
+</ClassSymbol>
+<ClassSymbol Guid="e24EEEDESEEE1xoQ0LESm2EE" Position="120 260" Size="380 240">
+<rDefinition R="uid:b44EEEDESEEE1xoQ0LESm2EE"/>
+</ClassSymbol>
+</cDiagramElement>
+</ClassDiagram>
+</cDiagram>
+<cOwnedMember>
+<Choice Guid="xU4EEEDESEEE1xoQ0LESm2EE" Name="sDspBootInfo" External="true" Visibility="VkPublic" IsUnion="true">
+<cStereotypeInstance>
+<InstanceExpr Guid="S24EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<cHiddenStereotypeInstance>
+<InstanceExpr Guid="I24EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@Imported"/>
+</InstanceExpr>
+</cHiddenStereotypeInstance>
+<cOwnedMember>
+<Attribute Guid="*U4EEEDESEEE1xoQ0LESm2EE" Name="bscInfo" External="true" Aggregation="AkComposite" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="L24EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<rType>
+<Ident Name="sBscDspInfo">
+<rDefinition R="uid:eU4EEEDESEEE1xoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Attribute>
+<Attribute Guid="yU4EEEDESEEE1xoQ0LESm2EE" Name="mscInfo" External="true" Aggregation="AkComposite" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="-U4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<rType>
+<Ident Name="sMscDspInfo">
+<rDefinition R="uid:s44EEEDESEEE1xoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Attribute>
+</cOwnedMember>
+</Choice>
+<Class Guid="eU4EEEDESEEE1xoQ0LESm2EE" Name="sBscDspInfo" External="true" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="5U4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppPredefined@struct"/>
+</InstanceExpr>
+<InstanceExpr Guid="wU4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<cHiddenStereotypeInstance>
+<InstanceExpr Guid="8U4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@Imported"/>
+</InstanceExpr>
+</cHiddenStereotypeInstance>
+<cOwnedMember>
+<Attribute Guid="rU4EEEDESEEE1xoQ0LESm2EE" Name="dspId" External="true" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="tU4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<rType>
+<Ident Name="I_U8">
+<rDefinition R="uid:6DHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Attribute>
+<Attribute Guid="oU4EEEDESEEE1xoQ0LESm2EE" Name="bootTestResult" External="true" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="qU4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<rType>
+<Ident Name="I_U8">
+<rDefinition R="uid:6DHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Attribute>
+<Attribute Guid="6U4EEEDESEEE1xoQ0LESm2EE" Name="failureInfo" External="true" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="nU4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<rType>
+<Ident Name="I_U8">
+<rDefinition R="uid:6DHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Attribute>
+<Attribute Guid="7U4EEEDESEEE1xoQ0LESm2EE" Name="trauResource_core0" External="true" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="kU4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<rType>
+<Ident Name="I_U8">
+<rDefinition R="uid:6DHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Attribute>
+<Attribute Guid="fU4EEEDESEEE1xoQ0LESm2EE" Name="abisTsResource_core0" External="true" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="hU4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<rType>
+<Ident Name="I_U8">
+<rDefinition R="uid:6DHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Attribute>
+<Attribute Guid="cU4EEEDESEEE1xoQ0LESm2EE" Name="trauResource_core1" External="true" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="9U4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<rType>
+<Ident Name="I_U8">
+<rDefinition R="uid:6DHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Attribute>
+<Attribute Guid="ZU4EEEDESEEE1xoQ0LESm2EE" Name="abisTsResource_core1" External="true" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="bU4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<rType>
+<Ident Name="I_U8">
+<rDefinition R="uid:6DHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Attribute>
+<Attribute Guid="WU4EEEDESEEE1xoQ0LESm2EE" Name="trauResource_core2" External="true" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="YU4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<rType>
+<Ident Name="I_U8">
+<rDefinition R="uid:6DHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Attribute>
+<Attribute Guid="TU4EEEDESEEE1xoQ0LESm2EE" Name="abisTsResource_core2" External="true" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="2U4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<rType>
+<Ident Name="I_U8">
+<rDefinition R="uid:6DHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Attribute>
+<Attribute Guid="QU4EEEDESEEE1xoQ0LESm2EE" Name="trauResource_core3" External="true" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="4U4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<rType>
+<Ident Name="I_U8">
+<rDefinition R="uid:6DHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Attribute>
+<Attribute Guid="NU4EEEDESEEE1xoQ0LESm2EE" Name="abisTsResource_core3" External="true" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="PU4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<rType>
+<Ident Name="I_U8">
+<rDefinition R="uid:6DHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Attribute>
+<Attribute Guid="KU4EEEDESEEE1xoQ0LESm2EE" Name="activeChannels" External="true" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="MU4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<rType>
+<Ident Name="I_U8">
+<rDefinition R="uid:6DHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Attribute>
+<Attribute Guid="HU4EEEDESEEE1xoQ0LESm2EE" Name="swIdInfo" External="true" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="JU4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<rType>
+<TemplateInstantiation Name="CArray">
+<rDefinition R="uid:@TTDCppPredefined@CArray"/>
+<cActualTemplateParameter>
+<Ident Name="I_U8">
+<rDefinition R="uid:6DHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+<IntegerValue ValueString="3">
+</IntegerValue>
+</cActualTemplateParameter>
+</TemplateInstantiation>
+</rType>
+</Attribute>
+<Attribute Guid="0U4EEEDESEEE1xoQ0LESm2EE" Name="swVerInfo" External="true" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="GU4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<rType>
+<TemplateInstantiation Name="CArray">
+<rDefinition R="uid:@TTDCppPredefined@CArray"/>
+<cActualTemplateParameter>
+<Ident Name="I_U8">
+<rDefinition R="uid:6DHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+<IntegerValue ValueString="3">
+</IntegerValue>
+</cActualTemplateParameter>
+</TemplateInstantiation>
+</rType>
+</Attribute>
+<Attribute Guid="BU4EEEDESEEE1xoQ0LESm2EE" Name="dspCoreIpAddr" External="true" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="DU4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<rType>
+<TemplateInstantiation Name="CArray">
+<rDefinition R="uid:@TTDCppPredefined@CArray"/>
+<cActualTemplateParameter>
+<Ident Name="sIPAddr">
+<rDefinition R="uid:b44EEEDESEEE1xoQ0LESm2EE"/>
+</Ident>
+<IntegerValue ValueString="4">
+</IntegerValue>
+</cActualTemplateParameter>
+</TemplateInstantiation>
+</rType>
+</Attribute>
+</cOwnedMember>
+</Class>
+<Class Guid="s44EEEDESEEE1xoQ0LESm2EE" Name="sMscDspInfo" External="true" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="t44EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppPredefined@struct"/>
+</InstanceExpr>
+<InstanceExpr Guid="vU4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<cHiddenStereotypeInstance>
+<InstanceExpr Guid="iU4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@Imported"/>
+</InstanceExpr>
+</cHiddenStereotypeInstance>
+<cOwnedMember>
+<Attribute Guid="IU4EEEDESEEE1xoQ0LESm2EE" Name="dspId" External="true" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="AU4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<rType>
+<Ident Name="I_U8">
+<rDefinition R="uid:6DHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Attribute>
+<Attribute Guid="EU4EEEDESEEE1xoQ0LESm2EE" Name="bootTestResult" External="true" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="VU4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<rType>
+<Ident Name="I_U8">
+<rDefinition R="uid:6DHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Attribute>
+<Attribute Guid="zT4EEEDESEEE1xoQ0LESm2EE" Name="failureInfo" External="true" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="*T4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<rType>
+<Ident Name="I_U8">
+<rDefinition R="uid:6DHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Attribute>
+<Attribute Guid="wT4EEEDESEEE1xoQ0LESm2EE" Name="toneResource_core0" External="true" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="yT4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<rType>
+<Ident Name="I_U16">
+<rDefinition R="uid:dDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Attribute>
+<Attribute Guid="tT4EEEDESEEE1xoQ0LESm2EE" Name="announceResource_core0" External="true" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="8T4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<rType>
+<Ident Name="I_U16">
+<rDefinition R="uid:dDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Attribute>
+<Attribute Guid="qT4EEEDESEEE1xoQ0LESm2EE" Name="genDTMFResource_core0" External="true" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="sT4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<rType>
+<Ident Name="I_U16">
+<rDefinition R="uid:dDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Attribute>
+<Attribute Guid="nT4EEEDESEEE1xoQ0LESm2EE" Name="recDTMFResource_core0" External="true" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="pT4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<rType>
+<Ident Name="I_U16">
+<rDefinition R="uid:dDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Attribute>
+<Attribute Guid="kT4EEEDESEEE1xoQ0LESm2EE" Name="conLiResource_core0" External="true" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="mT4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<rType>
+<Ident Name="I_U16">
+<rDefinition R="uid:dDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Attribute>
+<Attribute Guid="hT4EEEDESEEE1xoQ0LESm2EE" Name="toneResource_core1" External="true" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="jT4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<rType>
+<Ident Name="I_U16">
+<rDefinition R="uid:dDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Attribute>
+<Attribute Guid="9T4EEEDESEEE1xoQ0LESm2EE" Name="announceResource_core1" External="true" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="gT4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<rType>
+<Ident Name="I_U16">
+<rDefinition R="uid:dDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Attribute>
+<Attribute Guid="bT4EEEDESEEE1xoQ0LESm2EE" Name="genDTMFResource_core1" External="true" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="dT4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<rType>
+<Ident Name="I_U16">
+<rDefinition R="uid:dDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Attribute>
+<Attribute Guid="YT4EEEDESEEE1xoQ0LESm2EE" Name="recDTMFResource_core1" External="true" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="aT4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<rType>
+<Ident Name="I_U16">
+<rDefinition R="uid:dDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Attribute>
+<Attribute Guid="2T4EEEDESEEE1xoQ0LESm2EE" Name="conLiResource_core1" External="true" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="XT4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<rType>
+<Ident Name="I_U16">
+<rDefinition R="uid:dDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Attribute>
+<Attribute Guid="4T4EEEDESEEE1xoQ0LESm2EE" Name="toneResource_core2" External="true" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="UT4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<rType>
+<Ident Name="I_U16">
+<rDefinition R="uid:dDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Attribute>
+<Attribute Guid="PT4EEEDESEEE1xoQ0LESm2EE" Name="announceResource_core2" External="true" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="RT4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<rType>
+<Ident Name="I_U16">
+<rDefinition R="uid:dDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Attribute>
+<Attribute Guid="MT4EEEDESEEE1xoQ0LESm2EE" Name="genDTMFResource_core2" External="true" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="OT4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<rType>
+<Ident Name="I_U16">
+<rDefinition R="uid:dDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Attribute>
+<Attribute Guid="JT4EEEDESEEE1xoQ0LESm2EE" Name="recDTMFResource_core2" External="true" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="1T4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<rType>
+<Ident Name="I_U16">
+<rDefinition R="uid:dDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Attribute>
+<Attribute Guid="GT4EEEDESEEE1xoQ0LESm2EE" Name="conLiResource_core2" External="true" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="3T4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<rType>
+<Ident Name="I_U16">
+<rDefinition R="uid:dDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Attribute>
+<Attribute Guid="DT4EEEDESEEE1xoQ0LESm2EE" Name="toneResource_core3" External="true" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="FT4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<rType>
+<Ident Name="I_U16">
+<rDefinition R="uid:dDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Attribute>
+<Attribute Guid="5T4EEEDESEEE1xoQ0LESm2EE" Name="announceResource_core3" External="true" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="CT4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<rType>
+<Ident Name="I_U16">
+<rDefinition R="uid:dDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Attribute>
+<Attribute Guid="iT4EEEDESEEE1xoQ0LESm2EE" Name="genDTMFResource_core3" External="true" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="eT4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<rType>
+<Ident Name="I_U16">
+<rDefinition R="uid:dDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Attribute>
+<Attribute Guid="ST4EEEDESEEE1xoQ0LESm2EE" Name="recDTMFResource_core3" External="true" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="lT4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<rType>
+<Ident Name="I_U16">
+<rDefinition R="uid:dDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Attribute>
+<Attribute Guid="LT4EEEDESEEE1xoQ0LESm2EE" Name="conLiResource_core3" External="true" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="IT4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<rType>
+<Ident Name="I_U16">
+<rDefinition R="uid:dDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Attribute>
+<Attribute Guid="-44EEEDESEEE1xoQ0LESm2EE" Name="activeChannels" External="true" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="ET4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<rType>
+<Ident Name="I_U8">
+<rDefinition R="uid:6DHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Attribute>
+<Attribute Guid="x44EEEDESEEE1xoQ0LESm2EE" Name="swIdInfo" External="true" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="z44EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<rType>
+<TemplateInstantiation Name="CArray">
+<rDefinition R="uid:@TTDCppPredefined@CArray"/>
+<cActualTemplateParameter>
+<Ident Name="I_U8">
+<rDefinition R="uid:6DHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+<IntegerValue ValueString="3">
+</IntegerValue>
+</cActualTemplateParameter>
+</TemplateInstantiation>
+</rType>
+</Attribute>
+<Attribute Guid="u44EEEDESEEE1xoQ0LESm2EE" Name="swVerInfo" External="true" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="w44EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<rType>
+<TemplateInstantiation Name="CArray">
+<rDefinition R="uid:@TTDCppPredefined@CArray"/>
+<cActualTemplateParameter>
+<Ident Name="I_U8">
+<rDefinition R="uid:6DHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+<IntegerValue ValueString="3">
+</IntegerValue>
+</cActualTemplateParameter>
+</TemplateInstantiation>
+</rType>
+</Attribute>
+</cOwnedMember>
+</Class>
+<Class Guid="b44EEEDESEEE1xoQ0LESm2EE" Name="sIPAddr" External="true" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="c44EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppPredefined@struct"/>
+</InstanceExpr>
+<InstanceExpr Guid="r44EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<cHiddenStereotypeInstance>
+<InstanceExpr Guid="q44EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@Imported"/>
+</InstanceExpr>
+</cHiddenStereotypeInstance>
+<cOwnedMember>
+<Attribute Guid="m44EEEDESEEE1xoQ0LESm2EE" Name="addr1" External="true" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="o44EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<rType>
+<Ident Name="I_U8">
+<rDefinition R="uid:6DHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Attribute>
+<Attribute Guid="j44EEEDESEEE1xoQ0LESm2EE" Name="addr2" External="true" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="644EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<rType>
+<Ident Name="I_U8">
+<rDefinition R="uid:6DHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Attribute>
+<Attribute Guid="g44EEEDESEEE1xoQ0LESm2EE" Name="addr3" External="true" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="744EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<rType>
+<Ident Name="I_U8">
+<rDefinition R="uid:6DHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Attribute>
+<Attribute Guid="d44EEEDESEEE1xoQ0LESm2EE" Name="addr4" External="true" Visibility="VkPublic">
+<cStereotypeInstance>
+<InstanceExpr Guid="f44EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cStereotypeInstance>
+<rType>
+<Ident Name="I_U8">
+<rDefinition R="uid:6DHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Attribute>
+</cOwnedMember>
+</Class>
+</cOwnedMember>
+<cStereotypeInstance>
+<InstanceExpr Guid="grwLEETsVEEEi01yBLESm2EE">
+<rInstanceOf>
+<Ident Name="C Application">
+<rDefinition R="uid:bgGJLLXuUkvLyV9X1LVTr6RV"/>
+</Ident>
+</rInstanceOf>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="C++">
+<rDefinition R="uid:*JzwzE3C6f0LmUoduVutT4nV"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="language">
+<rDefinition R="uid:QgjFbLaffviLkWB96EQH92eV"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+<InstanceExpr Guid="nrwLEETsVEEEi01yBLESm2EE">
+<rInstanceOf>
+<Ident Name="cppImportSpecification">
+<rDefinition R="uid:@TTDCppImport@cppImportSpecification"/>
+</Ident>
+</rInstanceOf>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<ListExpr>
+<cExpression>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cExpression>
+</ListExpr>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="headers">
+<rDefinition R="uid:1kVeGLtL31iL0wmciEsOK8OL"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString=" -I../../../../../Inc/Sys  -I../../../../../Inc/Bpm">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="preprocessorOptions">
+<rDefinition R="uid:wG6SSVPtVHLLC2C7IIiugamL"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="GCC">
+<rDefinition R="uid:XLm4EIPcMGlLitKkyLasY--L"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="dialect">
+<rDefinition R="uid:k*HhGVHT4FALS3pdDVC38wkE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<ListExpr>
+<cExpression>
+<CharstringValue ValueString="sIPAddr">
+</CharstringValue>
+<CharstringValue ValueString="sMscDspInfo">
+</CharstringValue>
+<CharstringValue ValueString="sBscDspInfo">
+</CharstringValue>
+<CharstringValue ValueString="sDspBootInfo">
+</CharstringValue>
+</cExpression>
+</ListExpr>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="identifiers">
+<rDefinition R="uid:eRbyoVAe8MlLeY7ZpI3fsNeL"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Boolean@=@Boolean@Boolean@Boolean"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<Ident Name="false">
+<rDefinition R="uid:@Predefined@Boolean@false"/>
+</Ident>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="depend">
+<rDefinition R="uid:Lww2SEKnsi5L*rx6kLn18vZI"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+<InstanceExpr Guid="urwLEETsVEEEi01yBLESm2EE">
+<rInstanceOf>
+<Ident Name="globalNamespace">
+<rDefinition R="uid:@TTDCppPredefined@globalNamespace"/>
+</Ident>
+</rInstanceOf>
+</InstanceExpr>
+<InstanceExpr Guid="944EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="693">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="7">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:d44EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="h44EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="692">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="7">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:g44EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="k44EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="691">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="7">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:j44EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="n44EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="690">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="7">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:m44EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="p44EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="688">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="16">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:b44EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="844EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="1755">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="7">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:u44EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="y44EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="1754">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="7">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:x44EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="*44EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="1753">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="7">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:-44EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="VT4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="1752">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="8">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:LT4EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="AT4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="1751">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="8">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:ST4EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="vT4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="1750">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="8">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:iT4EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="BT4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="1749">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="8">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:5T4EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="0T4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="1748">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="8">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:DT4EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="HT4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="1747">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="8">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:GT4EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="KT4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="1746">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="8">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:JT4EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="NT4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="1745">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="8">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:MT4EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="QT4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="1744">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="8">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:PT4EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="TT4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="1743">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="8">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:4T4EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="WT4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="1742">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="8">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:2T4EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="ZT4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="1741">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="8">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:YT4EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="cT4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="1740">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="8">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:bT4EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="fT4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="1739">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="8">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:9T4EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="7T4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="1738">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="8">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:hT4EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="6T4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="1737">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="8">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:kT4EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="oT4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="1736">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="8">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:nT4EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="rT4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="1735">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="8">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:qT4EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="uT4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="1734">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="8">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:tT4EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="xT4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="1733">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="8">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:wT4EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="-T4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="1732">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="7">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:zT4EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="LU4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="1731">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="7">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:EU4EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="SU4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="1730">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="7">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:IU4EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="lU4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="1728">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="16">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:s44EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="CU4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="1713">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="10">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:BU4EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="FU4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="1712">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="7">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:0U4EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="3U4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="1711">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="7">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:HU4EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="1U4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="1710">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="7">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:KU4EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="OU4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="1709">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="7">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:NU4EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="RU4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="1708">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="7">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:QU4EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="UU4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="1707">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="7">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:TU4EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="XU4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="1706">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="7">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:WU4EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="aU4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="1705">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="7">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:ZU4EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="dU4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="1704">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="7">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:cU4EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="gU4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="1703">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="7">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:fU4EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="jU4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="1702">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="7">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:7U4EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="mU4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="1701">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="7">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:6U4EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="pU4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="1700">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="10">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:oU4EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="sU4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="1699">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="10">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:rU4EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="uU4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="1697">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="16">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:eU4EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="zU4EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="1770">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="14">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:yU4EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="E24EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="1769">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="17">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:*U4EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+<InstanceExpr Guid="V24EEEDESEEE1xoQ0LESm2EE">
+<rInstanceOf R="uid:@TTDCppImport@sourceReference"/>
+<cExpression>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<CharstringValue ValueString="../../../../../Inc/Bpm/bpmxxx_OAM_commonDef.h">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="file">
+<rDefinition R="uid:Z0SJMI-*4bFLNMG9HImxPkvE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="1767">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="line">
+<rDefinition R="uid:DqqFLIoSdJ0LaalY6VS7nk9L"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation>
+<Ident Name="=">
+<rDefinition R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+</Ident>
+</rOperation>
+<cRightOperand>
+<IntegerValue ValueString="15">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="column">
+<rDefinition R="uid:9XFGCE3frBBLquqbpVDQCYLE"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+<rElement R="uid:xU4EEEDESEEE1xoQ0LESm2EE"/>
+</InstanceExpr>
+</cStereotypeInstance>
+<cClientDependency>
+<Dependency Guid="U8-LEETsVEEEFK1yBLESm2EE">
+<cStereotypeInstance>
+<InstanceExpr Guid="Y*-LEETsVEEEQK1yBLESm2EE">
+<rInstanceOf>
+<Ident Name="access">
+<rDefinition R="uid:@Predefined@access"/>
+</Ident>
+</rInstanceOf>
+</InstanceExpr>
+</cStereotypeInstance>
+<rSupplier>
+<Ident Name="SYSInclude">
+<rDefinition R="uid:VRbEEETRAEEEV1QflLESm2EE"/>
+</Ident>
+</rSupplier>
+</Dependency>
+</cClientDependency>
+</Package>
+</u2>

@@ -1,0 +1,4 @@
+support    support.mak    debug   "support - Win32 Debug Multithreaded"
+support    support.mak    release "support - Win32 Release Multithreaded"
+support    support.mak    debug   "support - Win32 Debug C Only Multithreaded"
+support    support.mak    release "support - Win32 Release C Only Multithreaded"

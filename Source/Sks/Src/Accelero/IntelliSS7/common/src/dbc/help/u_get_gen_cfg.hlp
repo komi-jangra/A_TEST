@@ -1,0 +1,30 @@
+
+M3UA / SUA Command
+
+SYNOPSIS
+    u_get_gen_cfg 
+
+DESCRIPTION
+    This command displays M3UA / SUA general configuration. This include UAL 
+    Alarm Level and Trace Level. Alarm level controls UAL alarms sent to
+    Accelero application. Trace level controls generation of UAL execution 
+    traces.
+
+  
+
+PARAMETERS
+    None.
+
+EXAMPLE
+    >> u_get_gen_cfg
+ 
+     *********** UAL General Config *************
+     Alarm Level = CRITICAL
+        UAL Trace -
+            Debug     =  stdout
+            Critical  =
+            Warning   =
+            Error     =
+
+    *********** End of UAL General Config *************
+

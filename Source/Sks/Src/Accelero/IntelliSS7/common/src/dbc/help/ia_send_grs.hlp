@@ -1,0 +1,32 @@
+
+ANSI ISUP Command
+
+SYNOPSIS
+    ia_send_grs <opc> <dpc> <sio> <cic> <range> <mapTpye> <CicAsignMap>
+
+DESCRIPTION
+    This command sends circuit group reset message to the remote side.
+
+PARAMETERS
+    opc         Origination point code.
+    dpc         Destination point code.
+    sio         Service information octet.
+    cic         Circuit code number.
+    range       range of circuits
+    mapType     Assignment Map type
+    CicAsignMap	Assignment Mapping for Circuits
+
+    Possible Values for mapType (6 bits) = 0 to 63
+      value  1 = DS1 map format
+      other values = spare
+
+    Possible Values for CicAsignMap ( total 3 octats) = 0 to 255 / octat
+    - Each bit position on the Map corresponds 64 kbit/s circuit is
+      used in the NxDS0 connection.
+    - Each bit can be 1 or 0
+    - 0 is for 64 kbit/s circuit is not used
+      1 is for 64 kbit/s is used          
+
+EXAMPLE
+    >>ia_send_grs  16 21 133 1 23 1 00
+    **** Successfully sent the msg *******

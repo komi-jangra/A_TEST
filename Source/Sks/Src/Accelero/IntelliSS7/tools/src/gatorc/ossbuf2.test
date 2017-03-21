@@ -1,0 +1,147 @@
+delete octets2;
+		
+	
+	if (rc = ossDecode(world, &pduNum, &encodedData, &decodedData)) {
+	    //ossPrint(world, "Decoding failed with return code = %d\n%s", rc, ossGetErrMsg(world));
+	    error = rc;
+	}
+	else {
+	
+			
+	    
+			//
+			// Copy the decoded PDU
+			//
+	    
+	    rc = ossCpyValue(world, pduNum, decodedData, &copiedValue);
+	    if (rc) {
+		
+	    }
+	    else {
+		
+			//
+			// Compare the decoded and copied PDUs
+			//
+		
+		rc = ossCmpValue(world, pduNum, data, copiedValue);
+		if (rc) {
+		  
+		    error = rc;
+		}
+		else
+		
+			//
+			// Free the copied PDU
+			//
+		if (rc = ossFreePDU(world, pduNum, copiedValue)) {
+		
+		    error = rc;
+		}
+	    }
+			//
+			// Free the decoder's output buffer
+			//
+	    if (rc = ossFreePDU(world, pduNum, decodedData)) {
+	
+		error = rc;
+	    }
+	}
+			 //
+			 // Free the encoder's output buffer
+			 //
+	
+                ossFreeBuf(world, buf);
+    }
+		 ITS_GlobalStop();
+    }
+	catch (ITS_GenericException& exp)
+    {
+        cout << endl << exp.GetDescription() << endl;
+
+        ITS_GlobalStop();
+    }
+    return error;
+}
+
+
+//
+// Function:            getMessage() formats and returns a message
+//
+// Parameters:
+//
+//   "world"        ... pointer to OSS's global data structure
+//   "buf"          ... message buffer
+//   "call"         ... enumerated indicating what is going to be called
+//   "run"          ... count of how many times ossTest() has been entered
+//
+// Return value:        pointer to the message buffer
+//
+
+
+static char *getMessage(OssGlobal *world, char *buf, enum what call, long run)
+{
+
+    unsigned int flags = ossGetEncodingFlags(world);
+    char	*newline = (run == 1 && call == encoder && flags & DEFINITE)?
+			"": "\n";
+
+
+
+    switch (ossGetEncodingRules(world)) {
+	case OSS_DER:
+	    switch (call) {
+		case encoder:
+		    sprintf(buf,
+	"\n---------- Run %ld of the DER Encoder ----------\n", run);
+		    break;
+		case decoder:
+		    sprintf(buf,
+	"\n========== Run %ld of the DER Decoder ==========\n", run);
+		    break;
+		case trace:
+		    sprintf(buf,
+			"\n\tTracing Information from the DER Encoder...\n\n");
+	    }
+	    break;
+	case OSS_BER:
+	    switch (call) {
+		case encoder:
+		    sprintf(buf, (DEFINITE & ossGetEncodingFlags(world))?
+	"%s---------- Run %ld of the BER DEFINITE-Length Encoder ----------\n":
+	"%s---------- Run %ld of the BER INDEFINITE-Length Encoder ----------\n",
+		    newline, run);
+		    break;
+		case decoder:
+		    sprintf(buf, (DEFINITE & ossGetEncodingFlags(world))?
+	"\n========== Run %ld of the BER Decoder for DEFINITE PDU ==========\n":
+	"\n========== Run %ld of the BER Decoder for INDEFINITE PDU ==========\n", run);
+		    break;
+		case trace:
+		    sprintf(buf, (DEFINITE & ossGetEncodingFlags(world))?
+			"\n\tTracing Information from the BER DEFINITE-Length Encoder...\n\n":
+			"\n\tTracing Information from the BER INDEFINITE-Length Encoder...\n\n");
+	    }
+	    break;
+	case OSS_PER_ALIGNED:
+	case OSS_PER_UNALIGNED:
+	    switch (call) {
+		case encoder:
+		    sprintf(buf, (OSS_PER_ALIGNED == ossGetEncodingRules(world))?
+	"\n---------- Run %ld of the PER ALIGNED Encoder ----------\n":
+	"\n---------- Run %ld of the PER UNALIGNED Encoder ----------\n", run);
+		    break;
+		case decoder:
+		    sprintf(buf, (OSS_PER_ALIGNED == ossGetEncodingRules(world))?
+	"\n========== Run %ld of the PER ALIGNED Decoder ==========\n":
+	"\n========== Run %ld of the PER UNALIGNED Decoder ==========\n", run);
+		    break;
+		case trace:
+		    sprintf(buf, (OSS_PER_ALIGNED == ossGetEncodingRules(world))?
+			"\n\tTracing Information from the PER ALIGNED Encoder...\n\n":
+			"\n\tTracing Information from the PER UNALIGNED Encoder...\n\n");
+	    }
+    }
+    return buf;
+}
+
+

@@ -1,0 +1,131 @@
+# This configuration file is an example for an ITU-T (CCITT) signalling point
+# with transfer (routing) capability.  It's point code is 0.1.1 and an
+# adjacent SP has the point code 0.1.2.  1 link is defined between these
+# two STP's.  The configuration for the adjacent node can be found in
+# MTP3CP2.CFG.
+#
+# Note:  The sample link shown is for a T1/E1/MVIP link.  The corresponding
+#        sample TDMCP1.TXT file is set up for a single T1.
+#        It will need to be modified for E1 or MVIP links or additional T1
+#        links.
+#        Also in this file is a sample Serial link configuration that is
+#        commented out.  Use it as a basis for configuring V.35 links.
+#
+# These files only show the use of some basic configurable parameters.
+# Please refer to the MTP3 Developer's Guide and the SS7 Installation and
+# Configuration Guide for information about all possible parameters.
+#
+#Overall MTP3 Parameters
+#-----------------------
+NODE_TYPE          SP        # choose STP [routing] or SP [non-routing]
+POINT_CODE         0x10
+RESTART_REQUIRED   TRUE
+VALIDATE_SSF       TRUE
+MAX_LINKS          8
+MAX_USERS          3          # sccp & isup
+MAX_ROUTES         64
+MAX_ROUTE_ENTRIES  32
+MAX_LINK_SETS      2
+MAX_ROUTE_MASKS    1
+ROUTE_MASK         0xFFFFFFFF
+#MTP3_DATA_TRACE    TRUE
+END
+
+#
+#Link Parameters
+#---------------
+LINK               0          #  Link number specified in MTPMGR commands
+PORT               T1         #  T<n> for T1/E1/MVIP, S<n> for serial (V.35), R for remote
+LINK_SET           1
+LINK_TYPE          ITU
+SUB_SERVICE        2
+ADJACENT_DPC       0x15      #  Other Node
+LINK_SLC           0
+LSSU_LEN           2
+END
+#
+LINK               1          #  Link number specified in MTPMGR commands
+PORT               T2         #  T<n> for T1/E1/MVIP, S<n> for serial (V.35), R for remote
+LINK_SET           1
+LINK_TYPE          ITU
+SUB_SERVICE        2
+ADJACENT_DPC       0x15      #  Other Node
+LINK_SLC           1
+LSSU_LEN           2
+END
+#
+LINK               2          #  Link number specified in MTPMGR commands
+PORT               T3         #  T<n> for T1/E1/MVIP, S<n> for serial (V.35), R for remote
+LINK_SET           1
+LINK_TYPE          ITU
+SUB_SERVICE        2
+ADJACENT_DPC       0x15      #  Other Node
+LINK_SLC           2
+LSSU_LEN           2
+END
+#
+LINK               3          #  Link number specified in MTPMGR commands
+PORT               T4         #  T<n> for T1/E1/MVIP, S<n> for serial (V.35), R for remote
+LINK_SET           1
+LINK_TYPE          ITU
+SUB_SERVICE        2
+ADJACENT_DPC       0x15      #  Other Node
+LINK_SLC           3
+LSSU_LEN           2
+END
+#
+#
+# Sample Serial (V.35) configuration
+#
+#LINK               S1         #  T<n> for T1/E1/MVIP, S<n> for serial (V.35)
+#LINK_SET           1
+#ADJACENT_DPC       1.1.2      #  Board 2
+#LINK_SLC           0
+#
+#INT_TYPE           DCE
+#BAUD               56000
+#END
+#
+#User Parameters (NSAP definition)
+#---------------------------------
+NSAP               0             # isup must be NSAP 0 if its present
+LINK_TYPE          ITU
+END
+#
+NSAP               1             # sccp can be 0 or 1, must be 1 if isup present
+LINK_TYPE          ITU
+END
+#
+NSAP               2             # sccp can be 0 or 1, must be 1 if isup present
+LINK_TYPE          ITU
+END
+#
+#Route Parameters
+#------------------
+#
+# Route UP from network to applications on this node
+#
+ROUTE            0
+DPC              0x10    # this node
+DIRECTION        UP
+LINK_TYPE        ITU
+ADJACENT_ROUTE   FALSE
+END
+#
+# Route to remote
+#
+ROUTE            1
+DPC              0x15	    # board 1's point code
+DIRECTION        DOWN
+LINK_TYPE        ITU
+END
+
+#
+# Linkset Parameters
+#-------------------
+LINK_SET_DESCRIPTOR       1
+ADJACENT_DPC              0x15       # link set to board 2
+MAX_ACTIVE_LINKS          8
+ROUTE_NUMBER              1
+END
+#

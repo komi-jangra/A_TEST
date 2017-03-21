@@ -1,0 +1,163 @@
+int DLL_ENTRY_FDEF ossTest(struct ossGlobal *world, int pduNum, void *data)
+{
+
+    int		rc, error = 0;
+    long	run = 0; // count of how many times ossTest() was entered 
+
+	//
+	// The folowing statement is needed for counting the encoder/
+	// decoder runs for each PDU.  The variable "run" may be a global
+	// one if it is "visible" only from one process at a time, but
+	// this is not the case for some environments, such as Microsoft
+	// Windows.  This use of world->userVar is just for the convenience
+	// of ossTest(); you are free to use it in whatever way you see fit.
+	//
+	// WARNING: If you did not specify -test or -wtest on the ASN.1
+	// compiler command line, you should define a variable of type
+	// long on the stack and set the pointer world->userVar to point
+	// to it, just as it is done in the ASN.1-compiler-generated control
+	// table or code file when -test or -wtest is specified.  If "run"
+	// is defined as a global variable, then you may increment it
+	// directly without the use of ossGlobal pointer world->userVar.
+	//
+    if (world->userVar)
+	run = ++*(long *)world->userVar;
+
+	// Select BER encoding 
+
+    ossSetEncodingRules(world, OSS_BER);
+
+	// Select BER DEFINITE encoding with trace information 
+
+    ossSetEncodingFlags(world, DEBUGPDU|DEFINITE|AUTOMATIC_ENCDEC);
+    ossSetDecodingFlags(world, DEBUGPDU|AUTOMATIC_ENCDEC);
+
+	// Encode using BER DEFINITE length, then decode and print 
+
+    if (rc = encodeDecodeAndPrint(world, pduNum, data, run))
+	error = rc;
+
+	
+
+#if defined(_DLL) || defined(_WINDOWS) || (defined(OS2_DLL) && defined(__WIN32__))
+    if (world->api == OSS_SPARTAN && world->ft.hWnd) {
+	if (error) 
+	    MessageBox(world->ft.hWnd,
+		"Error occurred.  No tracing info is available in the Spartan version.",
+						"Error", MB_OK|MB_ICONSTOP);
+	else
+	    MessageBox(world->ft.hWnd,
+		"All values are successfully encoded and decoded.  No tracing info is available in the Spartan version.",
+					"Info", MB_OK|MB_ICONINFORMATION);
+    }
+    else
+	if (world->api == OSS_SPARTAN && !world->ft.hWnd)
+	   
+#elif defined(__OS2__)
+	if (world->api == OSS_SPARTAN)
+	   
+#endif // _DLL || _WINDOWS 
+
+return error;
+}
+
+
+//
+// Function:            encodeDecodeAndPrint() is used for encoding, decoding,
+//                      and printing a PDU.
+//
+// Parameters:
+//
+//   "world"        ... pointer to OSS's global data structure
+//   "pduNum"       ... PDU number
+//   "data"         ... input data
+//   "run"          ... count of how many times ossTest() has been entered
+//
+// Return value:        an integer returned by ossEncode(), ossDecode(), etc.
+//
+
+static int encodeDecodeAndPrint(OssGlobal *world, int pduNum, void *data,
+				long run)
+{
+
+    char      *buf;                // Encoder output buffer address to free 
+    OssBuf     encodedData;        // OSS encoder/decoder output/input 
+    void      *decodedData;        // OSS decoder output data 
+    void      *copiedValue = NULL; // Copied PDU 
+    int        rc, error = 0;      // Return & error codes 
+    char       msgBuf[MSG_SIZE];   // Message buffer 
+	
+
+	// initialisation of intelliss7 
+	 
+         int res = ITS_SUCCESS;
+	 ITS_OCTET* octetArray   = NULL;
+	 size_t size             = 0;
+
+	 
+	 try
+    {
+      res = ITS_GlobalStart(0);
+	
+        if (res != ITS_SUCCESS)
+        {
+            throw ITS_Error(res, __FILE__, __LINE__);
+        }
+	
+
+    encodedData.value = NULL;
+    encodedData.length = 0;
+
+    getMessage(world, msgBuf, encoder, run);
+  
+	//
+	// Check constraints
+	//
+    
+    if (rc = ossCheckConstraints(world, pduNum, data)) {
+	//ossPrint(world, "OssCheckConstraints failed with return code = %d\n", rc);
+	error = rc;
+    }
+    else ;
+	
+			//
+			// Encode the data pointed to by "data"
+			//
+    getMessage(world, msgBuf, trace, run);
+	
+
+
+    if (rc = ossEncode(world, pduNum, data, &encodedData)) {
+	
+	error = rc;
+    }
+    else {
+	
+	  
+	
+	buf  = (char *)encodedData.value;
+
+			//
+			// Setting decodedData to NULL means that the
+			// decoder buffer is not provided
+			//
+	decodedData = NULL;
+	getMessage(world, msgBuf, decoder, run);
+			//
+			// Decode the PDU that was just encoded
+			//
+	
+
+
+
+ 
+        size = sizeof(data);
+		
+
+	vector<byte> encodedInsertSubscriberDataArg;
+	 
+	char	*fn = "tbcas.out";
+	Octets* octets2 = NULL;
+	
+vector<byte> encodedVect(encodedData.value, encodedData.value + encodedData.length);
+	

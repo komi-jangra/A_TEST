@@ -1,0 +1,2 @@
+exc            exc.mak            debug     "exc - Win32 Debug"
+exc            exc.mak            release   "exc - Win32 Release"

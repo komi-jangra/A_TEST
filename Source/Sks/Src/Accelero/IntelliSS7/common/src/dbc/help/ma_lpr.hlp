@@ -1,0 +1,18 @@
+
+ANSI MTP3 Command
+
+SYNOPSIS
+    ma_lpr <linkset> <linkcode>
+
+DESCRIPTION
+    Sets Local Processor recovery for the specified link
+
+PARAMETERS
+    linkset       linkset which owns the link
+    linkcode      link id within the specified linkset
+
+
+EXAMPLE
+    >> ma_lpr 1 1
+    *** sending Local Processor Recovery to MTP3 for ls:1 lc:1 ***
+

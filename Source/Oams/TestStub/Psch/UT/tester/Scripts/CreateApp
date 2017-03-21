@@ -1,0 +1,83 @@
+#!/bin/bash
+#   This scripts starts Csapp, Oams and Oam executables.
+#   Do not add any other executables to this script.
+#
+# Change History:
+#  Manu, 18-Dec-07: Created taking inputs from CreateBSCCS2App
+source SetOamEnv.sh
+export PATH=.:$PATH
+if [ -z "$version" ]; then
+	echo "error: version is not defined."
+	exit -1;
+fi
+export EXE_PATH=../releasePath/r.${version}/telecom
+export T_WAIT=1
+export j=0;
+export k=0;
+
+startExe() {
+  exe=$1;
+  j=$(($j + 20));
+  k=$(($k + 20));
+  xterm -geometry 80x05+$k+$j -fg black -bg $BGCOLOR -e "$exe" &
+  pid=$!
+  sleep $T_WAIT;
+  ps --no-heading -p $pid || echo "$exe: CRASHED"
+}
+
+#xxxxxxxxxxxxxxxIPC and DB server xxxxxxxxxxxx#
+export BGCOLOR=BLUE
+startExe "${EXE_PATH}/B${NODE_NUM}-FRMWRK 1"
+#xxxxxxxxxxxxxxxBSC CSAPP xxxxxxxxxxxxxxxxxxxx#
+export BGCOLOR=CORNSILK
+#startExe "${EXE_PATH}/B${NODE_NUM}-CSAPP_ABIHM"
+#startExe "${EXE_PATH}/B${NODE_NUM}-CSAPP_AIFDHM"
+#startExe "${EXE_PATH}/B${NODE_NUM}-CSAPP_GRHM"
+#startExe "${EXE_PATH}/B${NODE_NUM}-CSAPP_MRHM"
+#startExe "${EXE_PATH}/B${NODE_NUM}-CSAPP_CPHM"
+#startExe "${EXE_PATH}/B${NODE_NUM}-CSAPP_PHM"
+
+
+#xxxxxxxxxxxxxxxBSC OAM xxxxxxxxxxxxxxxxxxxxxx#
+export BGCOLOR=LAVENDER
+#startExe "${EXE_PATH}/B${NODE_NUM}-OAM_SNMP"
+#startExe "${EXE_PATH}/B${NODE_NUM}-OAM_AFH"
+#startExe "${EXE_PATH}/cre_OMC"
+#startExe "${EXE_PATH}/B${NODE_NUM}-OAM_PDD"
+#startExe "${EXE_PATH}/B${NODE_NUM}-OAM_CM"
+#startExe "${EXE_PATH}/B${NODE_NUM}-OAM_OIL"
+
+#xxxxxxxxxxxxxxxBSC OAMS xxxxxxxxxxxxxxxxxxxxxx#
+export BGCOLOR=AZURE
+#startExe "${EXE_PATH}/B${NODE_NUM}-OAMS_CFG"
+#startExe "${EXE_PATH}/B${NODE_NUM}-OAMS_TRXHM"
+#startExe "${EXE_PATH}/B${NODE_NUM}-OAMS_CELLHM"
+#startExe "${EXE_PATH}/B${NODE_NUM}-OAMS_BICHM"
+#startExe "${EXE_PATH}/B${NODE_NUM}-OAMS_SWMH"
+#startExe "${EXE_PATH}/B${NODE_NUM}-OAMS_RM"
+#startExe "${EXE_PATH}/B${NODE_NUM}-OAMS_GBH"
+#startExe "${EXE_PATH}/B${NODE_NUM}-OAMS_PSSCM"
+#startExe "${EXE_PATH}/B${NODE_NUM}-OAMS_PSCH"
+#startExe "${EXE_PATH}/B${NODE_NUM}-OAMS_CCUH"
+
+export BGCOLOR=AZURE
+#startExe "${EXE_PATH}/B${NODE_NUM}-OAM_PDC"
+
+#xxxxxxxxxxxxxxxPSSKS xxxxxxxxxxxxxxxxxxxxxx#
+
+export BGCOLOR=GREEN
+#startExe "${EXE_PATH}/B${NODE_NUM}-PSSKS_GSAL"
+
+#xxxxxxxxxxxxxxxPSAPP xxxxxxxxxxxxxxxxxxxxxx#
+
+export BGCOLOR=YELLOW
+#startExe "${EXE_PATH}/B${NODE_NUM}-PSAPP_PSMSH"
+#startExe "${EXE_PATH}/B${NODE_NUM}-PSAPP_TB"
+
+export BGCOLOR=WHITE
+#startExe "./Stubs/PM_SW_STUB"
+#startExe "./Stubs/TsmStub-1.0.1"
+#startExe "./Stubs/ScmStub-3.0.1"
+#startExe "./Stubs/BssapifStub-3.0.1 0"
+#startExe "./Stubs/PM_STUB_ALARM"
+

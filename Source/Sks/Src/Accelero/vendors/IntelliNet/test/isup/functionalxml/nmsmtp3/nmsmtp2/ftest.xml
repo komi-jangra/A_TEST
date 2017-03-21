@@ -1,0 +1,301 @@
+<?xml version="1.0"?>
+
+
+<!-- Sample XML file for application configuration (INI). -->
+
+<Application name           = "ISUP-FUNCTIONAL-TEST"
+             type           = "console-application"
+             globalStart    = "ITU-ISUP"
+             binding        = "C"
+             library        = "libftest-nms3-nms2-CCITT.so"
+             appSelector    = "RouteApp"
+             preFunc        = "ftestPreFunc"
+             postFunc       = "ftestPostFunc">
+
+
+    <AppOptions name = "traceFlushAfterWrite"         value = "yes"/>
+    <AppOptions name = "memPoolChecksOn"              value = "no"/>
+
+    <Feature
+        name        = "Vendor Framework"
+        library     = "libVFrameD.so"
+        classRec    = "itsSS7STACK_ClassCCITT"
+    />
+
+    <Feature
+        name        = "IntelliNet stack"
+        library     = "libCCITT-VENDORD.so"
+        classRec    = "itsINTELLISS7_ClassCCITT"
+    />
+
+    <Feature
+        name        = "NMS Vendor lib"
+        library     = "libCCITT-NMSVENDORD.so"
+        classRec    = "itsNMS_ClassCCITT"
+    />
+
+
+    <Feature
+        name        = "ITU_GENERIC_93"
+        library     = "libITU_GENERIC_93D.so"
+        classRec    = "isupITU93_Class"
+    />
+
+
+    <ToolkitTrace>
+        <Critical  output = "stdout"/>
+        <Critical  output = "file"/>
+        <Error     output = "stdout"/>
+        <Error     output = "file"/>
+        <Warning   output = "stdout"/>
+        <Warning   output = "file"/>
+        <Debug     output = "file"/>
+    </ToolkitTrace>
+
+    <ApplicationTrace>
+        <Critical  output = "file"/>
+        <Error     output = "file"/>
+        <Warning   output = "file"/>
+        <Debug     output = "file"/>
+    </ApplicationTrace>
+
+    <ParserExtension    library     = "libCCITT-NMSVENDORD.so"
+                        elementName = "NMS_Data"
+                        startFunc   = "NMS_ParseStart"
+                        stopFunc    = "NMS_ParseEnd"
+                        xlateFunc   = "NMS_ConvertParserData"
+                        diffFunc    = "NMS_Diff"
+    />
+
+    <NMS_Data   sectionName = "NMS SS7-1"
+                boardNum    = "1"
+                mtp3SapId   = "1"
+                isupSapId   = "0"
+                isupMgmtSrcEnt  = "31"
+                isupSrcEnt  = "32"
+                mtp3SrcEnt  = "33"
+                srcInst     = "0"
+                servUserId  = "0"
+                OPC         = "0x20"
+                DPC         = "0x2A"
+                SIO         = "0x85"
+                linkSets    = "1"
+                linkCodes   = "0,1,2,3"
+    />
+
+
+    <!--/////////////// LINK SETS //////////////-->
+
+    <!-- link set for internal routing -->
+    <LinkSet id           = "0"
+             adjacentSTP  = "no"
+             isCLinkSet = "no"
+             is5Bit = "no"
+             numToActivate = "1"
+             numToStart   = "1" >
+        <NI     value = "0x85"/>
+        <APC    value = "0x0"/>
+        <LPC    value = "0x10"/>
+    </LinkSet>
+
+    <!-- link set for external routing -->
+    <LinkSet id           = "1"
+             adjacentSTP  = "no"
+             numToActivate = "1"
+             numToStart   = "1">
+        <NI     value = "0x85"/>
+        <APC    value = "0x15"/>
+        <LPC    value = "0x10"/>
+    </LinkSet>
+
+    <!-- local route for ISUP -->
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0">
+        <DPC    value = "0x10"/>
+        <SIO    value = "0x85"/>
+    </Route>
+
+
+    <!-- remote route for ISUP -->
+    <Route  type    = "remoteRoute"
+            style   = "dpc-sio"
+            linkSet = "1"
+            priority = "0">
+        <DPC    value = "0x15"/>
+        <SIO    value = "0x85"/>
+    </Route>
+
+
+    <!--/////////////// DESTINATIONS //////////////-->
+    <!-- adjacent destination -->
+    <Destination    family      = "ITU"
+                    pointCode   = "0x15"
+                    networkInd  = "0x80"
+                    isupVariant = "ITU_GENERIC_93">
+
+        <ISUPAttributes localPointCode    = "0x10"
+                        SIO               = "0x85"
+                        classRec          = "isupITU93_Class"
+                        library           = "libITU_GENERIC_93D.so">
+
+              <!-- Only override timer value -->
+              <Timer name       = "T1"
+                     value      = "30"
+                     handledBy  = "STACK"/>
+              />
+
+              <!-- Turn off timer -->
+              <Timer name       = "T2"
+                     value      = "0"
+              />
+
+              <!-- Only override handling -->
+              <Timer name       = "T3"
+                     handledBy  = "APP"
+              />
+
+              <!-- Override both value and handling -->
+              <Timer name       = "T4"
+                     value      = "30"
+                     handledBy  = "APP"
+              />
+              <Timer name       = "T14"
+                     value      = "3000"
+                     handledBy  = "APP"
+              />
+              <Timer name       = "T15"
+                     value      = "30000"
+                     handledBy  = "APP"
+              />
+
+
+              <!-- Circuit Group #1 -->
+              <CircuitGroup huntRule = "DEF">
+                  <CircuitCodes start = "1"
+                                count = "24"
+                  />
+              </CircuitGroup>  
+
+        </ISUPAttributes>
+    </Destination>
+
+
+    <!--///////////////////////////////////////////////////////////////-->
+
+    <WorkerPool stackSize = "0">
+
+        <Transport type    = "TaskQueue"
+                   count   = "8"
+                   family  = "ITU">
+
+         <!--   <Modifier value = "ISUP"/> -->
+
+            <Callbacks
+                library         = "libftest-nms3-nms2-CCITT.so"
+                type            = "blocking"
+                preInitialize   = "null"
+                postInitialize  = "null"
+                preNextEvent    = "null"
+                nextEventFailed = "null"
+                postNextEvent   = "null"
+                userDispatch    = "null"
+                preTerminate    = "null"
+                postTerminate   = "null"
+            />
+
+        </Transport>
+
+     </WorkerPool>
+
+
+    <!--///////////////////////////////////////////////////////////////-->
+
+    <BorderPool stackSize = "0">
+
+        <Transport  name    = "NMS SS7-1"
+                    type    = "SS7"
+                    family  = "ITU">
+                    
+            <Modifier value = "MTP3"/>
+
+            <Vendor name        = "NMS"
+                    library     = "libCCITT-NMSVENDORD.so"
+                    vendorRec   = "itsNMS_ClassCCITT"
+            />
+
+            <Callbacks
+                library         = "libftest-nms3-nms2-CCITT.so"
+                type            = "blocking"
+                preInitialize   = "null"
+                postInitialize  = "null"
+                preNextEvent    = "null"
+                nextEventFailed = "null"
+                postNextEvent   = "null"
+                userMsgHandler  = "null"
+                SCCPMsgHandler  = "null"
+                ISUPMsgHandler  = "null"
+                preTerminate    = "null"
+                postTerminate   = "null"
+            />
+
+            <!-- 4 links on this transport -->
+            <Link   id              = "0"
+                    linkSet         = "1"
+                    initiallyActive = "yes"
+                    terminalFixed   = "yes"
+                    dataLinkFixed   = "yes"
+                    priority        = "0"
+                    terminal        = "0"
+                    dataLink        = "0"
+            />
+
+        </Transport>
+
+
+        <Transport  name    = "Debug Console"
+                    type    = "ServerSocket">
+                    
+            <StreamData socketDomain    = "INET"
+                        serverHostName  = "127.0.0.1"
+                        serverPort      = "8123"
+            />
+
+            <Callbacks
+                type            = "debug-console"
+            />
+
+        </Transport>
+
+    </BorderPool>
+
+    <!--///////////////////////////////////////////////////////////////-->
+
+    <SS7-Stacks>
+
+        <ManagementCallbacks
+            MTP3ManagementCallbackITU     = "MTP3Mgmt"
+        />
+
+
+        <IntelliNet>
+            <ITU-ISUP variant = "ITU_GENERIC_93" >
+
+                <StackTrace>
+                    <Critical output = "stdout"/>
+                    <Critical output = "file"/>
+                    <Error    output = "stdout"/>
+                    <Warning  output = "file"/>
+                    <Debug    output = "null"/>
+                </StackTrace>
+
+            </ITU-ISUP>
+
+  
+        </IntelliNet>
+
+
+    </SS7-Stacks>
+
+</Application>

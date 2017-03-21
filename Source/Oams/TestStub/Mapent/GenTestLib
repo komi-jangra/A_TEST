@@ -1,0 +1,3 @@
+gcc -shared -o libtestMapLtrxPtrxEnt.so.1 MapLtrxPtrxEntMain.o
+ln -s libtestMapLtrxPtrxEnt.so.1 libtestMapLtrxPtrxEnt.so
+

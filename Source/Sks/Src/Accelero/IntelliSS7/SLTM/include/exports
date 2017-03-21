@@ -1,0 +1,3 @@
+all		c	ansi	ansi/*.h
+all		c	itu	itu/*.h
+all		c	both	*.h

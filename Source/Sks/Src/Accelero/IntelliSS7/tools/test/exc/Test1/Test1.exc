@@ -1,0 +1,223 @@
+--------------------------------------------------------------------------------
+--
+-- Test 1 for the Exception compiler.
+--
+-- (C) IntelliNet Technologies 1998.
+--
+--------------------------------------------------------------------------------
+
+subsystem Test1
+
+	--
+	-- The subsystem number shall be unique across all the subsystems of an
+	-- application and shall belong to [2049, 65535]. The interval [1, 2048] is
+	-- reserved for IntelliSS7. The number 0 is invalid.
+	--
+
+    number      is   1999
+    prefix      is   TEST1_
+    file_name   is   "Test1Exception"
+
+	-- 
+	-- Currently no option is implemented, therefore the following is just to
+	-- test the parser.
+	--
+
+    option
+        optionName1,
+        optionName2,
+        optionName3
+    end
+
+    code_header_before is "// This is some general code header before.\n"
+                          "// This is more general code header before.\n"
+
+                          "\n"
+                          "#if defined(ITS_NAMESPACE)\n"
+                          "namespace its\n"
+						  "{\n"
+						  "#endif    // defined(ITS_NAMESPACE)\n"
+                          "\n"
+
+    code_header_after is "// This is some general code header after.\n"
+                         "// This is more general code header after.\n"
+
+                          "\n"
+                          "#if defined(ITS_NAMESPACE)\n"
+						  "}\n"
+						  "#endif    // defined(ITS_NAMESPACE)\n"
+                          "\n"
+
+    code_source_before is "// This is some general code source before.\n"
+                          "// This is more general code source before.\n"
+
+						  "\n"
+                          "#if defined(ITS_NAMESPACE)\n"
+                          "using namespace its;\n"
+						  "#endif    // defined(ITS_NAMESPACE)\n"
+                          "\n"
+
+    code_source_after is "// This is some general code source after.\n"
+                         "// This is more general code source after.\n"
+
+   
+	--------------------------------------------------
+	-- Exception1 - for testing purpose only.
+	--------------------------------------------------
+
+    exception Exception1
+
+        number is 1
+        reason is "Reason exception 1"
+
+        code_header_before is "// This is some code header before.\n"
+                              "// This is more code header before.\n"
+
+        code_header_after is  "// This is some code header after.\n"
+                              "// This is more code header after.\n"
+
+        code_source_before is "// This is some code source before.\n"
+                              "// This is more code source before.\n"
+
+        code_source_after  is "// This is some code source after.\n"
+                              "// This is more code source after.\n"
+
+        code_before is "// This is some code before.\n"
+                       "// This is more code before.\n"
+
+        -- If the following is not commented, the code of
+        -- the Initialize member function body is replaced.
+
+        -- code_body is "// This is some code body.\n"
+        --              "// This is more code body.\n"
+
+        code_after  is "// This is some code after.\n"
+                       "// This is more code after.\n"
+        
+        description information1
+        
+            value is "Exception1 string information1 <%s> <%d>"
+            
+            argument
+            
+                attribute1
+
+                    option
+                        code_after is ".c_str()"
+                    end,
+
+                attribute2
+                
+            end
+            
+        end
+
+        description information2
+
+            value is "Exception2 string information2 <%d>"
+
+            argument
+
+                attribute2
+
+            end
+
+        end
+        
+        attribute attribute1
+        
+            attribute_type is "std::string"
+            
+            parameter_type is  "const std::string&"
+
+        end
+
+        attribute attribute2
+
+            attribute_type is "unsigned long"
+
+            parameter_type is "unsigned long"
+
+        end
+
+    end
+
+	--------------------------------------------------
+	-- Exception2 - for testing purpose only.
+	--------------------------------------------------
+
+    exception Exception2
+
+        number is 2
+        reason is "Reason exception 2"
+
+        description information1
+        
+            value is "Exception2 string information1 <%s> <%s> <%d>"
+            
+            argument
+            
+                attribute1
+
+                    option
+                        code_after is ".c_str()"
+                    end,
+
+                attribute2
+                    option
+                        code_after is ".c_str()"
+                    end,
+
+                attribute3
+                
+            end
+            
+        end
+
+        attribute attribute1
+        
+            attribute_type is "std::string"
+            
+            parameter_type is  "const std::string&"
+
+        end
+
+        attribute attribute2
+        
+            attribute_type is "std::string"
+            
+            parameter_type is  "const std::string&"
+
+        end
+
+        attribute attribute3
+
+            attribute_type is "unsigned long"
+
+            parameter_type is "unsigned long"
+
+        end
+
+        attribute attribute4
+
+            attribute_type is "short"
+
+            parameter_type is "short"
+
+        end
+
+        attribute attribute5
+
+            attribute_type is "int"
+
+            parameter_type is "int"
+
+        end
+
+    end
+
+end
+
+
+--------------------------------------------------------------------------------
+

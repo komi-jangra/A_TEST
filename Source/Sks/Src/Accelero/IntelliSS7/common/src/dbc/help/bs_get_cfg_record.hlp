@@ -1,0 +1,21 @@
+BSSAP Command
+
+SYNOPSIS
+    bs_get_cfg_record  <nwId>
+
+DESCRIPTION
+    This command gets specific network configurations  
+
+PARAMETERS
+    nwId    Network ID (0-255)
+
+EXAMPLE
+    >> bs_get_cfg_record 2 
+
+    Network Id        : 2 
+    Local point code  : 2057
+    Remote point code : 4114
+    Local ssn         : 254 
+    Remote ssn        : 8
+
+

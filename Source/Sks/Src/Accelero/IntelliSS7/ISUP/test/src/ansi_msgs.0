@@ -1,0 +1,241 @@
+# Sample file to build ANSI ISUP C messages.
+#
+# Protocol: ANSI
+#
+# 
+###############################################################
+#
+# M	MsgCode
+# P	ParCode		DataTyp		Data
+
+# NOTE: Values may not be valid for data octets
+#	
+
+# Address Complete Message
+M	6				          # ACM
+P	11 	02 04 A0                          # Backward Call Indicator
+P	03	03 F1 F2 F3			  # Access Transport
+P	C6	07 AA 03 01 02 03 02 1A 1B 33	  # Business Group
+P	01	06 03 01 02 03 03 11 22 33	  # Call Reference
+P	12	02 40 B3			  # Cause Indicator
+P	0D	08 03 01 02 03 03 11 22 33 01 AA  # ConnectionRequest
+P	0F	02 AA BB			  # Information Indicators
+P	EF	09 01 02 03 04 05 06 07 08 09	  # Network Transport
+P	E1	01 33			          # Notification Indicator
+P	29	01 44				  # Opt Backward Call Indicators
+P	13	02 AB CD			  # Redirection Information
+
+
+# Answer Message
+M	9					  # ANM
+P	11	02 A1 B1			  # Backward Call Indicator
+P	03	03 F1 F2 F3			  # Access Transport
+P	C6	07 AA 03 01 02 03 02 1A 1B 33	  # Business Group
+P	01	06 03 01 02 03 03 11 22 33	  # Call Reference
+P	0D	08 03 01 02 03 03 11 22 33 01 AA  # ConnectionRequest
+P	0F	02 12 34			  # Information Indicators
+P	EF	09 11 22 33 44 55 66 77 88 99	  # Network Transport
+P	E1	01 02				  # Notification Indicator
+P	29	01 EE				  # Opt Backward Call Indicators
+
+
+# Call Progress
+M	2C					# CPG
+P	24	01 01				# Event Information
+P	03	03 F5 F4 F3			# Access Transport
+P	11	02 A1 B1			# Backward Call Indicator
+P	C6	07 AA 03 01 02 03 02 1A 1B 33	# Business Group
+P	01	06 03 01 02 03 03 11 22 33	# Call Reference
+P	12	02 40 B3			# Cause Indicator
+P	0F	02 AA BB			# Information Indicators
+P	EF	09 11 22 33 44 55 66 77 88 99	# Network Transport
+P	E1	01 33				# Notification Indicator
+P	29	01 44				# Opt Backward Call Indicators
+
+
+# Circuit Group Blocking
+M	18					# CGB
+P	15	01 01				# CircuitGrpSupervisionMsgType
+P	16	04 17 FF FF FF			# RangeandStatus
+
+
+# Circuit Group Unblocking
+M	19					# CGU
+P	15	01 01				# CircuitGrpSupervisionMsgType
+P	16	04 17 FF FF FF			# RangeandStatus
+
+
+# Confusion Message
+M	2F					# CFN
+P	12	02 40 B3			# Cause Indicator
+
+
+# Continuitry Check Request
+M	11					# CCR
+
+
+# Continuity Message
+M	05					# COT
+P	10	01 01				# Continuity Indicators
+
+
+# Circuit Query Message
+M	2A					# CQM
+P	16	01 02 00 			# RangeandStatus
+
+
+# Circuit Reservation Message
+M	EA					# CRM
+P	06	01 00				# NatureofConnectionIndicators
+
+
+# Circuit Validation Response
+M	EB					# CVR
+P	E6	01 00				# CircuitValidationResponseInd
+P	E5	01 02				# CircuitGrpCharacteristicInd
+P       E8      1A 04 01 02 03 04 0B 01 02 03 04 05 06 07 08 09 10 00 01 02 03 04 05 06 07 08 09 10 00
+P       E9      0B 01 02 03 04 05 06 07 08 09 10 11  # CLLICode
+
+
+# Circuit Validation Test 
+M	EC					# CVT
+
+
+# Exit Message
+M	ED					# EXM
+P	E7	03 12 34 56			# OutgoingTrunkGroupNumber
+
+
+# Forward Transfer
+M	08					# FOT
+P	01	06 03 11 22 33 03 0A 0B 0C	# Call Reference
+
+
+# Circuit Group Reset Message
+M	17					# GRS
+P	16	01 17				# RangeAndStatus
+
+
+# Information Message
+M	04				  	# INF
+P	0F	02 11 33			# Information Indicators
+P	03	03 F5 F4 F3			# Access Transport
+P	C6	07 AA 03 01 02 03 02 1A 1B 33	# Business Group
+P	01	06 03 11 22 33 03 0A 0B 0C	# Call Reference
+P	0A	07 01 11 0A 04 77 44 33 23	# CallingPartyNum:(407)744-3332
+P	09	01 AA				# Calling Party's Category
+P	EB	07 01 02 0A 04 77 35 82 14	# Charge Number: (407)753-2841
+P	0D	08 03 01 02 03 03 11 22 33 01 AA # ConnectionRequest
+P	EA	01 99				# Originating Line Information
+P	0B	07 0A 0B 0A 04 87 76 32 19	# RedirectingNum: (407)867-2391
+P	13	02 1A 1B			# Redirection Information
+
+
+# Information Request Mesage
+M	03					 # INR
+P	0E	02 12 34		 	 # InfoRequestIndicators
+P	01	06 03 A1 A2 A3 03 A1 B1 C1	 # Call Reference
+P	0D	08 03 01 02 03 03 11 22 33 01 AA  # ConnectionRequest
+P	EF	09 11 22 33 44 55 66 77 88 99    # Network Transport
+
+
+# Initial Address Message
+M	1					# IAM
+P	06	01 00				# NatureofConnectionIndicators
+P	07	02 01 A0			# ForwardCallIndicators
+P	09	01 0A				# CallingParty'sCategory
+P	1D	05 00 90 A2 C2 E6               # UserServiceInfo
+P	04	07 81 00 0A 04 77 62 60 38     # 1 CldPrtyN Norm:(407)726-0683
+P	03	03 F3 F4 F5			# AccessTransport
+P       C6      07 11 03 0a 0b 0c 02 0e 0f 01   # Business Group
+P	01	06 03 A1 A2 A3 03 A1 B1 C1	# CallReference
+P	0A	07 01 00 0A 04 77 44 33 23	# CallingPartyNum: (407)744-3332
+P	C5	03 AA 12 34			# CarrierIdentification
+P	EE	01 A1				# CarrierSelectionInformation
+P	EB	07 01 02 0A 04 77 35 82 14	# ChargeNumber: (407)753-2841
+P	0D	08 03 01 02 03 03 11 22 33 01 AA  # ConnectionRequest
+P	C3	05 01 02 03 04 05		# EgressServiceInfo
+P	C0	08 0A 0B 0C 0A 04 77 23 45 12	# GenericAddress: (407)732-5421
+P	C1	06 A3 0A 04 78 96 23 11		# GenericDigits: (408)769-3211
+P	0E	02 12 34			# InformationRequestIndicators
+P	C4	03 11 22 33			# Jurisdiction
+P	EF	09 11 22 33 44 55 66 77 88 99	# NetworkTransport
+P	28	07 0A BC 0A 04 77 44 33 23	# OriglCalledNum: (407)744-3332
+P	EA	01 98				# OriginatingLineInformation
+P	0B	07 0A 0B 0A 04 87 76 32 19	# RedirectingNum: (407)867-2391
+P	13	02 1A 1B			# RedirectionInformation
+P	E2	05 F1 F2 F3 F4 F5		# ServiceActivation
+P	EC	01 AC				# ServiceCode
+P	ED	01 DD				# SpecialProcessingRequest
+P	23	04 0A 04 12 34 BB		# TransitNetworkSelection
+
+
+# In PPAS's routing.txt file
+#P	E3	0F FFF 0A 12 34 56 78 90 AA BB CC DD EE	# TransactionRequest
+
+P	04	07 01 10 0A 04 77 62 60 38     # 1 CldPrtyN Norm:(407)726-0683
+P	04	07 01 10 0A 16 30 37 77 12     # 2 CldPrtyN IvrNor:(610)373-7721
+P	04	07 01 10 0A 03 55 36 99 60     # 3 CldPrtyN IvrDis:(305)563-9906
+P	04	07 01 10 0A 09 84 75 99 99     # 4 CldPrtyN NoRt:(904)857-9999
+
+# IAM Optional parameters
+P	03	03 F3 F4 F5			# AccessTransport
+P	C3	05 01 02 03 04 05		# EgressServiceInfo
+P	C0	08 0A 0B 0C 0A 04 77 23 45 12	# GenericAddress: (407)732-5421
+P	C1	06 A3 0A 04 78 96 23 11		# GenericDigits: (408)769-3211
+P	0E	02 12 34			# InformationRequestIndicators
+P	C4	03 11 22 33			# Jurisdiction
+P	EF	09 11 22 33 44 55 66 77 88 99	# NetworkTransport
+P	EA	01 98				# OriginatingLineInformation
+P	0B	07 0A 0B 0A 04 87 76 32 19	# RedirectingNum: (407)867-2391
+P	13	02 1A 1B			# RedirectionInformation
+P	E2	05 F1 F2 F3 F4 F5		# ServiceActivation
+P	EC	01 AC				# ServiceCode
+P	ED	01 DD				# SpecialProcessingRequest
+P	E3	0F FFF 0A 12 34 56 78 90 AA BB CC DD EE	# TransactionRequest
+P	23	04 0A 04 12 34 BB		# TransitNetworkSelection
+P       C6      07 11 03 0a 0b 0c 02 0e 0f 01   # Business Group
+
+
+# Pass Along Message: with Release Message
+M	28				        # PAM
+P	AA	01 0C			        # Message: REL
+P	12	02 40 B3			# CauseIndicator
+P	03	03 F3 F4 F5			# AccessTransport
+P	27	01 AA				# AutomaticCongestionLevel
+P	01	06 03 A1 A2 A3 03 A1 B1 C1	# CallReference
+P	EB	07 01 02 0A 04 77 35 82 14	# ChargeNumber: (407)753-2841
+P	C0	08 0A 0B 0C 0A 04 77 23 45 12	# GenericAddress: (407)732-5421
+P	00					# EOP
+
+
+
+# Release Message
+M	0C					# REL
+P	12	02 40 B3			# CauseIndicator
+P	03	03 F3 F4 F5			# AccessTransport
+P	27	01 AA				# AutomaticCongestionLevel
+P	01	06 03 A1 A2 A3 03 A1 B1 C1	# CallReference
+P	EB	07 01 02 0A 04 77 35 82 14	# ChargeNumber: (407)753-2841
+P	C0	08 0A 0B 0C 0A 04 77 23 45 12	# GenericAddress: (407)732-5421
+
+
+# Resume Message
+M	0E					# RES
+P	22	01 01				# SuspendResumeIndicator
+P	01	06 03 A1 A2 A3 03 A1 B1 C1	# CallReference
+
+
+# Release Complete Message
+M	10					# RLC
+
+
+# Suspend Message
+M	0D					# SUS
+P	22	01 01				# SuspendResumeIndicator
+P	01	06 03 A1 A2 A3 03 A1 B1 C1	# CallReference
+
+
+# Unequipped Circuit Identification Code
+M	2E					# UCIC
+

@@ -1,0 +1,126 @@
+
+ROUTE Command
+
+SYNOPSIS
+    rt_dump
+
+DESCRIPTION
+    Dump the status of every configured local and remote routes 
+
+PARAMETERS
+    none
+
+
+EXAMPLE
+    >> rt_dump 
+--------------------------------------------------
+-- SS7 to ID Route Hashtable Begin --
+--------------------------------------------------
+Size: <10>
+--------------------------------------------------
+------------------------------
+Type:        <Remote route>
+Style:       <DPC, NI>
+Family:      <ITU>
+DPC:         <9>
+SIO:         <0>
+OPC:         <0>
+CIC:         <0>
+SSN:         <0x00>
+Range begin: <0>
+Range end:   <0>
+IsAllowed:   <yes>
+IsUp:        <no>
+CongLevel:   <0>
+RKeyId:      <1>
+status:      <DESTINATION_AVAILABLE>
+------------------------------
+------------------------------
+Type:        <Local route>
+Style:       <DPC, SIO>
+Family:      <ITU>
+DPC:         <7>
+SIO:         <3>
+OPC:         <0>
+CIC:         <0>
+SSN:         <0x00>
+Range begin: <0>
+Range end:   <0>
+IsAllowed:   <yes>
+IsUp:        <yes>
+CongLevel:   <0>
+RKeyId:      <1>
+status:      <DESTINATION_AVAILABLE>
+------------------------------
+------------------------------
+Type:        <Local route>
+Style:       <DPC, SIO, SSN Range>
+Family:      <ITU>
+DPC:         <7>
+SIO:         <3>
+OPC:         <0>
+CIC:         <0>
+SSN:         <0x00>
+Range begin: <5>
+Range end:   <9>
+IsAllowed:   <yes>
+IsUp:        <yes>
+CongLevel:   <0>
+RKeyId:      <2>
+status:      <DESTINATION_AVAILABLE>
+------------------------------
+------------------------------
+Type:        <Local route>
+Style:       <DPC, SIO>
+Family:      <ITU>
+DPC:         <3>
+SIO:         <3>
+OPC:         <0>
+CIC:         <0>
+SSN:         <0x00>
+Range begin: <0>
+Range end:   <0>
+IsAllowed:   <yes>
+IsUp:        <yes>
+CongLevel:   <0>
+RKeyId:      <1>
+status:      <DESTINATION_AVAILABLE>
+------------------------------
+------------------------------
+Type:        <Remote route>
+Style:       <DPC, NI>
+Family:      <ITU>
+DPC:         <10>
+SIO:         <0>
+OPC:         <0>
+CIC:         <0>
+SSN:         <0x00>
+Range begin: <0>
+Range end:   <0>
+IsAllowed:   <yes>
+IsUp:        <yes>
+CongLevel:   <0>
+RKeyId:      <2>
+status:      <DESTINATION_AVAILABLE>
+------------------------------
+------------------------------
+Type:        <Remote route>
+Style:       <DPC, SIO, SSN Range>
+Family:      <ITU>
+DPC:         <10>
+SIO:         <3>
+OPC:         <0>
+CIC:         <0>
+SSN:         <0x00>
+Range begin: <5>
+Range end:   <9>
+IsAllowed:   <yes>
+IsUp:        <yes>
+CongLevel:   <0>
+RKeyId:      <1>
+status:      <DESTINATION_AVAILABLE>
+------------------------------
+--------------------------------------------------
+-- SS7 to ID Route Hashtable End --
+--------------------------------------------------
+

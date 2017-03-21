@@ -1,0 +1,39 @@
+
+ITU ISUP Command
+
+SYNOPSIS
+    ii_get_timers <opc> <dpc> <sio> <Tid> or <*>
+
+DESCRIPTION
+    This command displays given timer setting of the ISUP protocol.
+
+PARAMETERS
+    opc     Origination point code.
+    dpc     Destination point code.
+    sio     service information octet.
+    Tid     Timer Id of the ISUP protocol.
+
+    Possible Values for Tid:
+    Any value between 1 to 39
+
+    NOTE: The Timer Id is mapped directly with actual Timer symbol(eg T1<->1)
+
+EXAMPLE
+    >> ii_get_timers 16 21 133 1
+
+    Timer:   T1  Value:  15 secs   HandledBy:    STACK
+
+
+>> ii_get_timers 16 21 133 *
+
+Timer   Value    Handled By  
+        (sec)   
+
+   T1      15         STACK 
+
+   T2     180         STACK 
+
+   T3     120         STACK 
+
+   .......
+   .......

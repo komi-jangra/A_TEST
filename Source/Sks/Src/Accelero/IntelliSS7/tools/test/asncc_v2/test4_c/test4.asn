@@ -1,0 +1,57 @@
+--------------------------------------------------------------------------------
+--
+-- AsnCC 2.0 test.
+--
+-- Based on ANSI41 (simplified types). LRF format.
+--
+--------------------------------------------------------------------------------
+
+TEST4 DEFINITIONS IMPLICIT TAGS ::=
+
+BEGIN
+
+FeatureResult ::= ENUMERATED 
+{                        
+    notUsed (0),
+    unsuccessful (1),
+    successful (2)
+}
+
+GroupInformation ::= OCTET STRING (SIZE(4))
+
+ElectronicSerialNumber ::= OCTET STRING (SIZE(4))
+
+AlertCode ::= OCTET STRING (SIZE(2))
+
+LocalTermination ::= SEQUENCE 
+{
+    electronicSerialNumber [9] ElectronicSerialNumber,
+    alertCode [75] AlertCode OPTIONAL
+}
+
+DestinationDigits ::= OCTET STRING (SIZE(5..200))
+
+CarrierDigits ::= OCTET STRING (SIZE(5..200))
+
+PSTNTermination ::= SEQUENCE 
+{
+    destinationDigits [4] DestinationDigits, 
+    carrierDigits [86] CarrierDigits OPTIONAL
+}
+
+TerminationList ::= SEQUENCE SIZE(1..20) OF CHOICE 
+{ 
+    localTermination [91] LocalTermination,
+    pSTNTermination [95] PSTNTermination            
+}
+
+FeatureRequestRRL ::= SET
+{
+    featureResult [146] FeatureResult,
+
+    groupInformation [163] GroupInformation OPTIONAL,
+
+    terminationList [120] TerminationList OPTIONAL
+}
+
+END

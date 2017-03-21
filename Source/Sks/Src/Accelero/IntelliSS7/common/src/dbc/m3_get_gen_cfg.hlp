@@ -1,0 +1,28 @@
+
+M3UA Command
+
+SYNOPSIS
+    m3_get_gen_cfg
+
+DESCRIPTION
+    This command displays M3UA general configuration. This include M3UA 
+    Alarm Level and M3UA Trace Level.  Alarm level controls M3UA alarms 
+    sent to Accelero application. Trace level controls generation of M3UA 
+    execution traces.
+
+PARAMETERS
+    None.
+
+EXAMPLE
+    >> m3_get_gen_cfg
+
+        Alarm Level = CRITICAL
+        M3UA Trace -
+            Debug     =  stdout
+            Critical  = 
+            Warning   = 
+            Error     = 
+    *********** End of M3UA General Config *************
+
+
+

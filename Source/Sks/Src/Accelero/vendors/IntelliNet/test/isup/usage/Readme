@@ -1,0 +1,12 @@
+This module shows some of the IntelliNet ISUP APIs and their usage.
+
+*** "Intention is to show the usage of IntelliNet ISUP APIs only."
+
+This application is 'not completely written' to fit into Accelero. So don't try to run the application coz you will see Engine related errors for missing libraries.
+
+To have a feel of ISUP in action, please refer to our isup test applications.
+
+Following Header Files contain the ISUP API signatures:
+./includes/itu/isup.h
+
+

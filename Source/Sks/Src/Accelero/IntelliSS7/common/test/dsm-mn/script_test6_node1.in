@@ -1,0 +1,152 @@
+-------------------------------------------------------------------------------
+--
+-- DSM Multi-Nodes Automatic Regression Testing.
+-- -> Test6 Node1.
+--
+
+node1 := 0
+node2 := 1
+numberOfSyncPoints := 10
+
+
+-----------------------------------------------------------
+--
+-- Initialization part.
+--
+
+InitializeNodes(node1, 2)
+InitializeNodesSyncPoints(numberOfSyncPoints)
+InitializeGcs()
+
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+--
+-- Wait for other nodes to join.
+--
+
+Print("\n\nNode 1 waiting for other node(s) to join...\n")
+
+joinTimeout := 20 -- Timeout is 20 secs.
+
+WaitForNodeJoinPoint(node1, joinTimeout)
+WaitForNodeJoinPoint(node2, joinTimeout)
+
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+--
+-- DSM test.
+--
+
+Print("\n\nReady to begin DSM test...\n")
+
+Print("\nNode 1 ready to go in pseudo-infinite loop...\n")
+Print("\nNode 1 will do Allocate/Commit/Find/Free...\n")
+Print("\nUse CTRL C to stop...\n")
+
+PublishNodeSyncPointReached(0)
+
+numberOfIterations := 1000000
+
+objectDataSuffix := " -- abcdefghijklmnopqrstuvwxyz"
+
+from 
+    i := 0
+until
+    i >= numberOfIterations
+loop
+    from
+        j := 0
+    until
+        j >= 32
+    loop
+        key := "keyNode1" + i + j
+
+        ftGroupId   := 0
+        tableId     := 1
+        objectSize  := 128
+        error       := 0
+
+        objectPtr := DsmAllocateRow(
+                                ftGroupId,
+                                tableId,
+                                key,
+                                objectSize,
+                                out error)
+
+        if (error /= 0) then
+            Print("\n\nDsmAllocateRow failed: " + error + "\n")
+        end    
+
+        objectData := "Node1" + i + j + objectDataSuffix
+
+        DsmWriteStringToAddress(objectPtr, objectData)
+
+        res := DsmCommitRow(
+                        ftGroupId,
+                        tableId,
+                        key,
+                        objectPtr)
+
+        if (res /= 0) then
+            Print("\n\nDsmCommitRow failed: " + res + "\n")
+        end
+
+        objectPtrArray[j] := objectPtr
+
+        j := j + 1
+    end
+
+    from
+        j := 0
+    until
+        j >= 32
+    loop
+        key := "keyNode1" + i + j
+        
+        tableId := 1
+        error   := 0
+        
+        -- Call to DSM Find is mandatory to lock row.
+        
+        dummyObjectPtr := DsmFindRow(
+                                ftGroupId,
+                                tableId,
+                                key,
+                                out error)
+                                
+        if (error /= 0) then
+            Print("\n\nDsmFindRow failed: " + error + "\n")
+        end
+        
+        res := DsmFreeRow(
+                        ftGroupId,
+                        tableId,
+                        key,
+                        objectPtrArray[j])
+
+        if (res /= 0) then
+            Print("\n\nDsmFreeRow failed: " + res + "\n")
+        end
+
+        j := j + 1
+    end
+
+    i := i + 1
+end
+
+-- Not Reached (pseudo-infinite loop).
+
+Print("\n\nEnd of DSM test...\n")
+
+-----------------------------------------------------------
+--
+-- Termination part.
+--
+
+TerminateGcs()
+TerminateNodesSyncPoints()
+TerminateNodes()
+
+-----------------------------------------------------------

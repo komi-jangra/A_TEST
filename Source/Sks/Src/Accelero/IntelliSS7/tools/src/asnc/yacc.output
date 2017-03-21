@@ -1,0 +1,4986 @@
+State 119 conflicts: 1 shift/reduce
+State 136 conflicts: 1 shift/reduce
+State 150 conflicts: 1 reduce/reduce
+State 153 conflicts: 1 reduce/reduce
+State 161 conflicts: 1 shift/reduce
+State 165 conflicts: 1 shift/reduce
+State 184 conflicts: 1 shift/reduce
+State 198 conflicts: 2 reduce/reduce
+State 202 conflicts: 3 shift/reduce
+State 203 conflicts: 2 reduce/reduce
+State 229 conflicts: 1 shift/reduce
+State 230 conflicts: 1 shift/reduce
+State 249 conflicts: 1 shift/reduce, 1 reduce/reduce
+State 250 conflicts: 1 shift/reduce
+State 287 conflicts: 2 reduce/reduce
+State 306 conflicts: 1 shift/reduce
+State 307 conflicts: 1 shift/reduce
+State 313 conflicts: 1 shift/reduce
+State 322 conflicts: 1 shift/reduce
+
+
+Grammar
+
+    0 $accept: ModuleDefinition $end
+
+    1 @1: /* empty */
+
+    2 @2: /* empty */
+
+    3 ModuleDefinition: ModuleIdentifier DEFINITIONS TagDefault CCE @1 ModulePrefixes @2 BGIN ModuleBody END
+
+    4 TagDefault: EXPLICIT TAGS
+    5           | IMPLICIT TAGS
+    6           | /* empty */
+
+    7 ModuleIdentifier: ID AssignedIdentifier
+
+    8 AssignedIdentifier: ObjectIdentifierValue
+    9                   | /* empty */
+
+   10 ModulePrefixes: PREFIXES String String String
+   11               | /* empty */
+
+   12 ModuleBody: Exports Imports AssignmentList
+
+   13 @3: /* empty */
+
+   14 Exports: EXPORTS @3 SymbolsExported SEMICOLON
+   15        | /* empty */
+
+   16 SymbolsExported: SymbolList
+   17                | /* empty */
+
+   18 @4: /* empty */
+
+   19 Imports: IMPORTS @4 SymbolsImported SEMICOLON
+   20        | /* empty */
+
+   21 SymbolsImported: SymbolsFromModuleList
+   22                | /* empty */
+
+   23 SymbolsFromModuleList: SymbolsFromModuleList SymbolsFromModule
+   24                      | SymbolsFromModule
+
+   25 SymbolsFromModule: SymbolList FROM ModuleIdentifier
+
+   26 SymbolList: SymbolList COMMA Symbol
+   27           | Symbol
+   28           | SymbolList COMMA MINUS Symbol
+   29           | MINUS Symbol
+   30           | SymbolList COMMA PLUS Symbol
+   31           | PLUS Symbol
+
+   32 Symbol: ID
+   33       | NAME
+
+   34 AssignmentList: AssignmentList Assignment
+   35               | /* empty */
+
+   36 String: ID
+   37       | NAME
+
+   38 Assignment: Typeassignment
+   39           | Valueassignment
+
+   40 Typeassignment: ID ParameterType CCE Type
+
+   41 Type: BuiltinType
+   42     | DefinedType
+   43     | SubType
+
+   44 Control: CONTROL
+   45        | /* empty */
+
+   46 ParameterType: PARAMETERTYPE
+   47              | /* empty */
+
+   48 Valtype: VALTYPE
+   49        | /* empty */
+
+   50 BuiltinType: BOOLEAN_kw PassBool
+   51            | INTEGER PassInt NNlist
+   52            | ENUMERATED PassInt LBRACE NamedNumberList RBRACE
+   53            | Bitstring PassBit NNlist
+   54            | Octetstring PassString
+   55            | NIL
+   56            | SEQUENCE Sctrl PassAny
+   57            | SequenceOf Sctrl Valtype Control Type
+   58            | SEQUENCE Sctrl Valtype LBRACE ElementTypes RBRACE
+   59            | SET Sctrl PassAny
+   60            | SetOf Sctrl Valtype Control Type
+   61            | SET Sctrl Valtype LBRACE MemberTypes RBRACE
+   62            | Tag IMPLICIT Type
+   63            | Tag EXPLICIT Type
+   64            | Tag Type
+   65            | CHOICE Sctrl Valtype Control LBRACE AlternativeTypeList RBRACE
+   66            | NAME LANGLE Type
+   67            | AnyType PassAny
+   68            | STAR AnyType PassAny
+   69            | OBJECT IDENTIFIER PassOid
+   70            | ENCRYPTED Type
+   71            | REAL PassReal
+
+   72 NNlist: LBRACE NamedNumberList RBRACE
+   73       | /* empty */
+
+   74 DefinedType: ID PassValue ValParameter
+   75            | ID DOT ID PassValue ValParameter
+
+   76 PassValue: VALA
+   77          | VALB
+   78          | VALI
+   79          | VALX VLENGTH
+   80          | VALOID
+   81          | VALR
+   82          | VALT
+   83          | PassString
+
+   84 AnyType: ANY
+   85        | ANY DEFINED BY NAME
+
+   86 PassOid: VALOID
+   87        | /* empty */
+
+   88 PassAny: VALA
+   89        | /* empty */
+
+   90 PassBool: VALB
+   91         | /* empty */
+
+   92 PassInt: VALI
+   93        | /* empty */
+
+   94 PassBit: VALX VLENGTH
+   95        | VALT
+   96        | NullPass
+
+   97 PassString: VALS
+   98           | VALO VLENGTH
+   99           | VALQ
+  100           | NullPass
+
+  101 PassReal: VALR
+  102         | /* empty */
+
+  103 NullPass: /* empty */
+
+  104 ValParameter: VALP
+  105             | /* empty */
+
+  106 NamedNumberList: NamedNumber
+  107                | NamedNumberList COMMA NamedNumber
+
+  108 NamedNumber: NAME LPAREN NumericValue RPAREN
+
+  109 NumericValue: LITNUMBER
+  110             | DefinedValue
+
+  111 ElementTypes: OptionalTypeList
+  112             | /* empty */
+
+  113 MemberTypes: OptionalTypeList
+  114            | /* empty */
+
+  115 OptionalTypeList: OptionalType
+  116                 | OptionalTypeList COMMA OptionalType
+
+  117 OptionalType: NamedType
+  118             | NamedType OPTIONAL_kw Control
+  119             | NamedType DEFAULT Value Control
+  120             | ComponentsOf
+  121             | NAME ComponentsOf
+
+  122 NamedType: NAME Type
+  123          | Type
+
+  124 ComponentsOf: Components Type
+
+  125 AlternativeTypeList: NamedType
+  126                    | AlternativeTypeList COMMA NamedType
+
+  127 Tag: LBRACKET Class NumericValue RBRACKET
+
+  128 Class: UNIVERSAL
+  129      | APPLICATION
+  130      | PRIVATE
+  131      | /* empty */
+
+  132 Valueassignment: NAME Type CCE Value
+
+  133 Value: BuiltinValue
+  134      | DefinedValue
+
+  135 BuiltinValue: L_TRUE
+  136             | L_FALSE
+  137             | LITNUMBER
+  138             | BSTRING
+  139             | HSTRING
+  140             | LBRACE ID IdentifierList RBRACE
+  141             | LITSTRING
+  142             | NIL
+  143             | LBRACE Values RBRACE
+  144             | NAME Value
+  145             | Type Value
+  146             | RealValue
+
+  147 RealValue: NumericRealValue
+  148          | SpecialRealValue
+
+  149 SpecialRealValue: PLUSINFINITY
+  150                 | MINUSINFINITY
+
+  151 NumericRealValue: LBRACE LITNUMBER COMMA LITNUMBER COMMA LITNUMBER RBRACE
+
+  152 DefinedValue: ID
+  153             | NAME
+  154             | ID DOT ID
+
+  155 IdentifierList: COMMA ID IdentifierList
+  156               | /* empty */
+
+  157 Values: NamedValueList
+  158       | /* empty */
+
+  159 NamedValueList: NamedValue
+  160               | NamedValueList COMMA NamedValue
+
+  161 NamedValue: Value
+
+  162 Octetstring: OCTET STRING
+  163            | OCTETSTRING
+
+  164 Bitstring: BITSTRING
+  165          | BIT STRING
+
+  166 SequenceOf: SEQUENCEOF
+  167           | SEQUENCE OF_kw
+
+  168 SetOf: SETOF
+  169      | SET OF_kw
+
+  170 Components: COMPONENTSOF
+  171           | COMPONENTS OF_kw
+
+  172 ObjectIdentifierValue: LBRACE ObjIdComponentList RBRACE
+
+  173 ObjIdComponentList: ObjIdComponent
+  174                   | ObjIdComponentList ObjIdComponent
+
+  175 ObjIdComponent: NumberForm
+  176               | NameAndNumberForm
+
+  177 NumberForm: LITNUMBER
+  178           | DefinedValue
+
+  179 NameAndNumberForm: NAME LPAREN NumberForm RPAREN
+
+  180 SubType: Type SubtypeSpec
+  181        | SET SizeConstraint OF_kw Sctrl Control Type
+  182        | SEQUENCE SizeConstraint OF_kw Sctrl Control Type
+
+  183 SubtypeSpec: LPAREN SubtypeAlternative SubtypeAlternativeList RPAREN
+
+  184 SubtypeAlternative: SubtypeValueSet
+  185                   | SubtypeConstraint
+
+  186 SubtypeAlternativeList: BAR SubtypeAlternative SubtypeAlternativeList
+  187                       | /* empty */
+
+  188 SubtypeValueSet: Value
+  189                | ContainedSubType
+  190                | ValueRange
+  191                | PermittedAlphabet
+
+  192 SubtypeConstraint: SizeConstraint
+  193                  | InnerTypeConstraint
+
+  194 ContainedSubType: INCLUDES Type
+
+  195 ValueRange: LowerEndPoint DOTDOT UpperEndpoint
+
+  196 LowerEndPoint: LowerEndValue
+  197              | LowerEndValue LANGLE
+
+  198 UpperEndpoint: UpperEndValue
+  199              | LANGLE UpperEndValue
+
+  200 LowerEndValue: Value
+  201              | MIN
+
+  202 UpperEndValue: Value
+  203              | MAX
+
+  204 SizeConstraint: SIZE_kw SubtypeSpec
+
+  205 PermittedAlphabet: FROM SubtypeSpec
+
+  206 InnerTypeConstraint: WITH COMPONENT SingleTypeConstraint
+  207                    | WITH COMPONENTS MultipleTypeConstraints
+
+  208 SingleTypeConstraint: SubtypeSpec
+
+  209 MultipleTypeConstraints: FullSpecification
+  210                        | PartialSpecification
+
+  211 FullSpecification: LBRACE TypeConstraints RBRACE
+
+  212 PartialSpecification: LBRACE DOTDOTDOT COMMA TypeConstraints RBRACE
+
+  213 TypeConstraints: NamedConstraint
+  214                | NamedConstraint COMMA TypeConstraints
+
+  215 NamedConstraint: NAME Constraint
+  216                | Constraint
+
+  217 Constraint: ValueConstraint
+  218           | PresenceConstraint
+  219           | /* empty */
+
+  220 ValueConstraint: SubtypeSpec
+
+  221 PresenceConstraint: PRESENT
+  222                   | ABSENT
+
+  223 Sctrl: SCTRL
+  224      | /* empty */
+
+
+Terminals, with rules where they appear
+
+$end (0) 0
+error (256)
+ABSENT (258) 222
+ANY (259) 84 85
+APPLICATION (260) 129
+BAR (261) 186
+BGIN (262) 3
+BIT (263) 165
+BITSTRING (264) 164
+BOOLEAN_kw (265) 50
+BSTRING (266) 138
+BY (267) 85
+CCE (268) 3 40 132
+CHOICE (269) 65
+COMMA (270) 26 28 30 107 116 126 151 155 160 212 214
+COMPONENT (271) 206
+COMPONENTS (272) 171 207
+COMPONENTSOF (273) 170
+CONTROL (274) 44
+DEFAULT (275) 119
+DEFINED (276) 85
+DEFINITIONS (277) 3
+DOT (278) 75 154
+DOTDOT (279) 195
+DOTDOTDOT (280) 212
+ENCRYPTED (281) 70
+END (282) 3
+ENUMERATED (283) 52
+EXPORTS (284) 14
+EXPLICIT (285) 4 63
+L_FALSE (286) 136
+FROM (287) 25 205
+HSTRING (288) 139
+ID (289) 7 32 36 40 74 75 140 152 154 155
+IDENTIFIER (290) 69
+IMPLICIT (291) 5 62
+IMPORTS (292) 19
+INCLUDES (293) 194
+INTEGER (294) 51
+LANGLE (295) 66 197 199
+LBRACE (296) 52 58 61 65 72 140 143 151 172 211 212
+LBRACKET (297) 127
+LITNUMBER (298) 109 137 151 177
+LITSTRING (299) 141
+LPAREN (300) 108 179 183
+MIN (301) 201
+MINUS (302) 28 29
+MAX (303) 203
+NAME (304) 33 37 66 85 108 121 122 132 144 153 179 215
+NIL (305) 55 142
+OBJECT (306) 69
+OCTET (307) 162
+OCTETSTRING (308) 163
+OF_kw (309) 167 169 171 181 182
+OPTIONAL_kw (310) 118
+PARAMETERTYPE (311) 46
+PLUS (312) 30 31
+PREFIXES (313) 10
+PRESENT (314) 221
+PRIVATE (315) 130
+RBRACE (316) 52 58 61 65 72 140 143 151 172 211 212
+RBRACKET (317) 127
+REAL (318) 71
+RPAREN (319) 108 179 183
+STAR (320) 68
+SEMICOLON (321) 14 19
+SEQUENCE (322) 56 58 167 182
+SEQUENCEOF (323) 166
+SET (324) 59 61 169 181
+SETOF (325) 168
+SIZE_kw (326) 204
+STRING (327) 162 165
+TAGS (328) 4 5
+L_TRUE (329) 135
+UNIVERSAL (330) 128
+VALA (331) 76 88
+VALB (332) 77 90
+VALI (333) 78 92
+VALS (334) 97
+VALP (335) 104
+VALO (336) 98
+VALOID (337) 80 86
+VALR (338) 81 101
+VALT (339) 82 95
+VALTYPE (340) 48
+VALQ (341) 99
+VALX (342) 79 94
+VLENGTH (343) 79 94 98
+WITH (344) 206 207
+SCTRL (345) 223
+PLUSINFINITY (346) 149
+MINUSINFINITY (347) 150
+
+
+Nonterminals, with rules where they appear
+
+$accept (93)
+    on left: 0
+ModuleDefinition (94)
+    on left: 3, on right: 0
+@1 (95)
+    on left: 1, on right: 3
+@2 (96)
+    on left: 2, on right: 3
+TagDefault (97)
+    on left: 4 5 6, on right: 3
+ModuleIdentifier (98)
+    on left: 7, on right: 3 25
+AssignedIdentifier (99)
+    on left: 8 9, on right: 7
+ModulePrefixes (100)
+    on left: 10 11, on right: 3
+ModuleBody (101)
+    on left: 12, on right: 3
+Exports (102)
+    on left: 14 15, on right: 12
+@3 (103)
+    on left: 13, on right: 14
+SymbolsExported (104)
+    on left: 16 17, on right: 14
+Imports (105)
+    on left: 19 20, on right: 12
+@4 (106)
+    on left: 18, on right: 19
+SymbolsImported (107)
+    on left: 21 22, on right: 19
+SymbolsFromModuleList (108)
+    on left: 23 24, on right: 21 23
+SymbolsFromModule (109)
+    on left: 25, on right: 23 24
+SymbolList (110)
+    on left: 26 27 28 29 30 31, on right: 16 25 26 28 30
+Symbol (111)
+    on left: 32 33, on right: 26 27 28 29 30 31
+AssignmentList (112)
+    on left: 34 35, on right: 12 34
+String (113)
+    on left: 36 37, on right: 10
+Assignment (114)
+    on left: 38 39, on right: 34
+Typeassignment (115)
+    on left: 40, on right: 38
+Type (116)
+    on left: 41 42 43, on right: 40 57 60 62 63 64 66 70 122 123 124
+    132 145 180 181 182 194
+Control (117)
+    on left: 44 45, on right: 57 60 65 118 119 181 182
+ParameterType (118)
+    on left: 46 47, on right: 40
+Valtype (119)
+    on left: 48 49, on right: 57 58 60 61 65
+BuiltinType (120)
+    on left: 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67
+    68 69 70 71, on right: 41
+NNlist (121)
+    on left: 72 73, on right: 51 53
+DefinedType (122)
+    on left: 74 75, on right: 42
+PassValue (123)
+    on left: 76 77 78 79 80 81 82 83, on right: 74 75
+AnyType (124)
+    on left: 84 85, on right: 67 68
+PassOid (125)
+    on left: 86 87, on right: 69
+PassAny (126)
+    on left: 88 89, on right: 56 59 67 68
+PassBool (127)
+    on left: 90 91, on right: 50
+PassInt (128)
+    on left: 92 93, on right: 51 52
+PassBit (129)
+    on left: 94 95 96, on right: 53
+PassString (130)
+    on left: 97 98 99 100, on right: 54 83
+PassReal (131)
+    on left: 101 102, on right: 71
+NullPass (132)
+    on left: 103, on right: 96 100
+ValParameter (133)
+    on left: 104 105, on right: 74 75
+NamedNumberList (134)
+    on left: 106 107, on right: 52 72 107
+NamedNumber (135)
+    on left: 108, on right: 106 107
+NumericValue (136)
+    on left: 109 110, on right: 108 127
+ElementTypes (137)
+    on left: 111 112, on right: 58
+MemberTypes (138)
+    on left: 113 114, on right: 61
+OptionalTypeList (139)
+    on left: 115 116, on right: 111 113 116
+OptionalType (140)
+    on left: 117 118 119 120 121, on right: 115 116
+NamedType (141)
+    on left: 122 123, on right: 117 118 119 125 126
+ComponentsOf (142)
+    on left: 124, on right: 120 121
+AlternativeTypeList (143)
+    on left: 125 126, on right: 65 126
+Tag (144)
+    on left: 127, on right: 62 63 64
+Class (145)
+    on left: 128 129 130 131, on right: 127
+Valueassignment (146)
+    on left: 132, on right: 39
+Value (147)
+    on left: 133 134, on right: 119 132 144 145 161 188 200 202
+BuiltinValue (148)
+    on left: 135 136 137 138 139 140 141 142 143 144 145 146,
+    on right: 133
+RealValue (149)
+    on left: 147 148, on right: 146
+SpecialRealValue (150)
+    on left: 149 150, on right: 148
+NumericRealValue (151)
+    on left: 151, on right: 147
+DefinedValue (152)
+    on left: 152 153 154, on right: 110 134 178
+IdentifierList (153)
+    on left: 155 156, on right: 140 155
+Values (154)
+    on left: 157 158, on right: 143
+NamedValueList (155)
+    on left: 159 160, on right: 157 160
+NamedValue (156)
+    on left: 161, on right: 159 160
+Octetstring (157)
+    on left: 162 163, on right: 54
+Bitstring (158)
+    on left: 164 165, on right: 53
+SequenceOf (159)
+    on left: 166 167, on right: 57
+SetOf (160)
+    on left: 168 169, on right: 60
+Components (161)
+    on left: 170 171, on right: 124
+ObjectIdentifierValue (162)
+    on left: 172, on right: 8
+ObjIdComponentList (163)
+    on left: 173 174, on right: 172 174
+ObjIdComponent (164)
+    on left: 175 176, on right: 173 174
+NumberForm (165)
+    on left: 177 178, on right: 175 179
+NameAndNumberForm (166)
+    on left: 179, on right: 176
+SubType (167)
+    on left: 180 181 182, on right: 43
+SubtypeSpec (168)
+    on left: 183, on right: 180 204 205 208 220
+SubtypeAlternative (169)
+    on left: 184 185, on right: 183 186
+SubtypeAlternativeList (170)
+    on left: 186 187, on right: 183 186
+SubtypeValueSet (171)
+    on left: 188 189 190 191, on right: 184
+SubtypeConstraint (172)
+    on left: 192 193, on right: 185
+ContainedSubType (173)
+    on left: 194, on right: 189
+ValueRange (174)
+    on left: 195, on right: 190
+LowerEndPoint (175)
+    on left: 196 197, on right: 195
+UpperEndpoint (176)
+    on left: 198 199, on right: 195
+LowerEndValue (177)
+    on left: 200 201, on right: 196 197
+UpperEndValue (178)
+    on left: 202 203, on right: 198 199
+SizeConstraint (179)
+    on left: 204, on right: 181 182 192
+PermittedAlphabet (180)
+    on left: 205, on right: 191
+InnerTypeConstraint (181)
+    on left: 206 207, on right: 193
+SingleTypeConstraint (182)
+    on left: 208, on right: 206
+MultipleTypeConstraints (183)
+    on left: 209 210, on right: 207
+FullSpecification (184)
+    on left: 211, on right: 209
+PartialSpecification (185)
+    on left: 212, on right: 210
+TypeConstraints (186)
+    on left: 213 214, on right: 211 212 214
+NamedConstraint (187)
+    on left: 215 216, on right: 213 214
+Constraint (188)
+    on left: 217 218 219, on right: 215 216
+ValueConstraint (189)
+    on left: 220, on right: 217
+PresenceConstraint (190)
+    on left: 221 222, on right: 218
+Sctrl (191)
+    on left: 223 224, on right: 56 57 58 59 60 61 65 181 182
+
+
+state 0
+
+    0 $accept: . ModuleDefinition $end
+
+    ID  shift, and go to state 1
+
+    ModuleDefinition  go to state 2
+    ModuleIdentifier  go to state 3
+
+
+state 1
+
+    7 ModuleIdentifier: ID . AssignedIdentifier
+
+    LBRACE  shift, and go to state 4
+
+    $default  reduce using rule 9 (AssignedIdentifier)
+
+    AssignedIdentifier     go to state 5
+    ObjectIdentifierValue  go to state 6
+
+
+state 2
+
+    0 $accept: ModuleDefinition . $end
+
+    $end  shift, and go to state 7
+
+
+state 3
+
+    3 ModuleDefinition: ModuleIdentifier . DEFINITIONS TagDefault CCE @1 ModulePrefixes @2 BGIN ModuleBody END
+
+    DEFINITIONS  shift, and go to state 8
+
+
+state 4
+
+  172 ObjectIdentifierValue: LBRACE . ObjIdComponentList RBRACE
+
+    ID         shift, and go to state 9
+    LITNUMBER  shift, and go to state 10
+    NAME       shift, and go to state 11
+
+    DefinedValue        go to state 12
+    ObjIdComponentList  go to state 13
+    ObjIdComponent      go to state 14
+    NumberForm          go to state 15
+    NameAndNumberForm   go to state 16
+
+
+state 5
+
+    7 ModuleIdentifier: ID AssignedIdentifier .
+
+    $default  reduce using rule 7 (ModuleIdentifier)
+
+
+state 6
+
+    8 AssignedIdentifier: ObjectIdentifierValue .
+
+    $default  reduce using rule 8 (AssignedIdentifier)
+
+
+state 7
+
+    0 $accept: ModuleDefinition $end .
+
+    $default  accept
+
+
+state 8
+
+    3 ModuleDefinition: ModuleIdentifier DEFINITIONS . TagDefault CCE @1 ModulePrefixes @2 BGIN ModuleBody END
+
+    EXPLICIT  shift, and go to state 17
+    IMPLICIT  shift, and go to state 18
+
+    $default  reduce using rule 6 (TagDefault)
+
+    TagDefault  go to state 19
+
+
+state 9
+
+  152 DefinedValue: ID .
+  154             | ID . DOT ID
+
+    DOT  shift, and go to state 20
+
+    $default  reduce using rule 152 (DefinedValue)
+
+
+state 10
+
+  177 NumberForm: LITNUMBER .
+
+    $default  reduce using rule 177 (NumberForm)
+
+
+state 11
+
+  153 DefinedValue: NAME .
+  179 NameAndNumberForm: NAME . LPAREN NumberForm RPAREN
+
+    LPAREN  shift, and go to state 21
+
+    $default  reduce using rule 153 (DefinedValue)
+
+
+state 12
+
+  178 NumberForm: DefinedValue .
+
+    $default  reduce using rule 178 (NumberForm)
+
+
+state 13
+
+  172 ObjectIdentifierValue: LBRACE ObjIdComponentList . RBRACE
+  174 ObjIdComponentList: ObjIdComponentList . ObjIdComponent
+
+    ID         shift, and go to state 9
+    LITNUMBER  shift, and go to state 10
+    NAME       shift, and go to state 11
+    RBRACE     shift, and go to state 22
+
+    DefinedValue       go to state 12
+    ObjIdComponent     go to state 23
+    NumberForm         go to state 15
+    NameAndNumberForm  go to state 16
+
+
+state 14
+
+  173 ObjIdComponentList: ObjIdComponent .
+
+    $default  reduce using rule 173 (ObjIdComponentList)
+
+
+state 15
+
+  175 ObjIdComponent: NumberForm .
+
+    $default  reduce using rule 175 (ObjIdComponent)
+
+
+state 16
+
+  176 ObjIdComponent: NameAndNumberForm .
+
+    $default  reduce using rule 176 (ObjIdComponent)
+
+
+state 17
+
+    4 TagDefault: EXPLICIT . TAGS
+
+    TAGS  shift, and go to state 24
+
+
+state 18
+
+    5 TagDefault: IMPLICIT . TAGS
+
+    TAGS  shift, and go to state 25
+
+
+state 19
+
+    3 ModuleDefinition: ModuleIdentifier DEFINITIONS TagDefault . CCE @1 ModulePrefixes @2 BGIN ModuleBody END
+
+    CCE  shift, and go to state 26
+
+
+state 20
+
+  154 DefinedValue: ID DOT . ID
+
+    ID  shift, and go to state 27
+
+
+state 21
+
+  179 NameAndNumberForm: NAME LPAREN . NumberForm RPAREN
+
+    ID         shift, and go to state 9
+    LITNUMBER  shift, and go to state 10
+    NAME       shift, and go to state 28
+
+    DefinedValue  go to state 12
+    NumberForm    go to state 29
+
+
+state 22
+
+  172 ObjectIdentifierValue: LBRACE ObjIdComponentList RBRACE .
+
+    $default  reduce using rule 172 (ObjectIdentifierValue)
+
+
+state 23
+
+  174 ObjIdComponentList: ObjIdComponentList ObjIdComponent .
+
+    $default  reduce using rule 174 (ObjIdComponentList)
+
+
+state 24
+
+    4 TagDefault: EXPLICIT TAGS .
+
+    $default  reduce using rule 4 (TagDefault)
+
+
+state 25
+
+    5 TagDefault: IMPLICIT TAGS .
+
+    $default  reduce using rule 5 (TagDefault)
+
+
+state 26
+
+    3 ModuleDefinition: ModuleIdentifier DEFINITIONS TagDefault CCE . @1 ModulePrefixes @2 BGIN ModuleBody END
+
+    $default  reduce using rule 1 (@1)
+
+    @1  go to state 30
+
+
+state 27
+
+  154 DefinedValue: ID DOT ID .
+
+    $default  reduce using rule 154 (DefinedValue)
+
+
+state 28
+
+  153 DefinedValue: NAME .
+
+    $default  reduce using rule 153 (DefinedValue)
+
+
+state 29
+
+  179 NameAndNumberForm: NAME LPAREN NumberForm . RPAREN
+
+    RPAREN  shift, and go to state 31
+
+
+state 30
+
+    3 ModuleDefinition: ModuleIdentifier DEFINITIONS TagDefault CCE @1 . ModulePrefixes @2 BGIN ModuleBody END
+
+    PREFIXES  shift, and go to state 32
+
+    $default  reduce using rule 11 (ModulePrefixes)
+
+    ModulePrefixes  go to state 33
+
+
+state 31
+
+  179 NameAndNumberForm: NAME LPAREN NumberForm RPAREN .
+
+    $default  reduce using rule 179 (NameAndNumberForm)
+
+
+state 32
+
+   10 ModulePrefixes: PREFIXES . String String String
+
+    ID    shift, and go to state 34
+    NAME  shift, and go to state 35
+
+    String  go to state 36
+
+
+state 33
+
+    3 ModuleDefinition: ModuleIdentifier DEFINITIONS TagDefault CCE @1 ModulePrefixes . @2 BGIN ModuleBody END
+
+    $default  reduce using rule 2 (@2)
+
+    @2  go to state 37
+
+
+state 34
+
+   36 String: ID .
+
+    $default  reduce using rule 36 (String)
+
+
+state 35
+
+   37 String: NAME .
+
+    $default  reduce using rule 37 (String)
+
+
+state 36
+
+   10 ModulePrefixes: PREFIXES String . String String
+
+    ID    shift, and go to state 34
+    NAME  shift, and go to state 35
+
+    String  go to state 38
+
+
+state 37
+
+    3 ModuleDefinition: ModuleIdentifier DEFINITIONS TagDefault CCE @1 ModulePrefixes @2 . BGIN ModuleBody END
+
+    BGIN  shift, and go to state 39
+
+
+state 38
+
+   10 ModulePrefixes: PREFIXES String String . String
+
+    ID    shift, and go to state 34
+    NAME  shift, and go to state 35
+
+    String  go to state 40
+
+
+state 39
+
+    3 ModuleDefinition: ModuleIdentifier DEFINITIONS TagDefault CCE @1 ModulePrefixes @2 BGIN . ModuleBody END
+
+    EXPORTS  shift, and go to state 41
+
+    $default  reduce using rule 15 (Exports)
+
+    ModuleBody  go to state 42
+    Exports     go to state 43
+
+
+state 40
+
+   10 ModulePrefixes: PREFIXES String String String .
+
+    $default  reduce using rule 10 (ModulePrefixes)
+
+
+state 41
+
+   14 Exports: EXPORTS . @3 SymbolsExported SEMICOLON
+
+    $default  reduce using rule 13 (@3)
+
+    @3  go to state 44
+
+
+state 42
+
+    3 ModuleDefinition: ModuleIdentifier DEFINITIONS TagDefault CCE @1 ModulePrefixes @2 BGIN ModuleBody . END
+
+    END  shift, and go to state 45
+
+
+state 43
+
+   12 ModuleBody: Exports . Imports AssignmentList
+
+    IMPORTS  shift, and go to state 46
+
+    $default  reduce using rule 20 (Imports)
+
+    Imports  go to state 47
+
+
+state 44
+
+   14 Exports: EXPORTS @3 . SymbolsExported SEMICOLON
+
+    ID     shift, and go to state 48
+    MINUS  shift, and go to state 49
+    NAME   shift, and go to state 50
+    PLUS   shift, and go to state 51
+
+    $default  reduce using rule 17 (SymbolsExported)
+
+    SymbolsExported  go to state 52
+    SymbolList       go to state 53
+    Symbol           go to state 54
+
+
+state 45
+
+    3 ModuleDefinition: ModuleIdentifier DEFINITIONS TagDefault CCE @1 ModulePrefixes @2 BGIN ModuleBody END .
+
+    $default  reduce using rule 3 (ModuleDefinition)
+
+
+state 46
+
+   19 Imports: IMPORTS . @4 SymbolsImported SEMICOLON
+
+    $default  reduce using rule 18 (@4)
+
+    @4  go to state 55
+
+
+state 47
+
+   12 ModuleBody: Exports Imports . AssignmentList
+
+    $default  reduce using rule 35 (AssignmentList)
+
+    AssignmentList  go to state 56
+
+
+state 48
+
+   32 Symbol: ID .
+
+    $default  reduce using rule 32 (Symbol)
+
+
+state 49
+
+   29 SymbolList: MINUS . Symbol
+
+    ID    shift, and go to state 48
+    NAME  shift, and go to state 50
+
+    Symbol  go to state 57
+
+
+state 50
+
+   33 Symbol: NAME .
+
+    $default  reduce using rule 33 (Symbol)
+
+
+state 51
+
+   31 SymbolList: PLUS . Symbol
+
+    ID    shift, and go to state 48
+    NAME  shift, and go to state 50
+
+    Symbol  go to state 58
+
+
+state 52
+
+   14 Exports: EXPORTS @3 SymbolsExported . SEMICOLON
+
+    SEMICOLON  shift, and go to state 59
+
+
+state 53
+
+   16 SymbolsExported: SymbolList .
+   26 SymbolList: SymbolList . COMMA Symbol
+   28           | SymbolList . COMMA MINUS Symbol
+   30           | SymbolList . COMMA PLUS Symbol
+
+    COMMA  shift, and go to state 60
+
+    $default  reduce using rule 16 (SymbolsExported)
+
+
+state 54
+
+   27 SymbolList: Symbol .
+
+    $default  reduce using rule 27 (SymbolList)
+
+
+state 55
+
+   19 Imports: IMPORTS @4 . SymbolsImported SEMICOLON
+
+    ID     shift, and go to state 48
+    MINUS  shift, and go to state 49
+    NAME   shift, and go to state 50
+    PLUS   shift, and go to state 51
+
+    $default  reduce using rule 22 (SymbolsImported)
+
+    SymbolsImported        go to state 61
+    SymbolsFromModuleList  go to state 62
+    SymbolsFromModule      go to state 63
+    SymbolList             go to state 64
+    Symbol                 go to state 54
+
+
+state 56
+
+   12 ModuleBody: Exports Imports AssignmentList .
+   34 AssignmentList: AssignmentList . Assignment
+
+    ID    shift, and go to state 65
+    NAME  shift, and go to state 66
+
+    $default  reduce using rule 12 (ModuleBody)
+
+    Assignment       go to state 67
+    Typeassignment   go to state 68
+    Valueassignment  go to state 69
+
+
+state 57
+
+   29 SymbolList: MINUS Symbol .
+
+    $default  reduce using rule 29 (SymbolList)
+
+
+state 58
+
+   31 SymbolList: PLUS Symbol .
+
+    $default  reduce using rule 31 (SymbolList)
+
+
+state 59
+
+   14 Exports: EXPORTS @3 SymbolsExported SEMICOLON .
+
+    $default  reduce using rule 14 (Exports)
+
+
+state 60
+
+   26 SymbolList: SymbolList COMMA . Symbol
+   28           | SymbolList COMMA . MINUS Symbol
+   30           | SymbolList COMMA . PLUS Symbol
+
+    ID     shift, and go to state 48
+    MINUS  shift, and go to state 70
+    NAME   shift, and go to state 50
+    PLUS   shift, and go to state 71
+
+    Symbol  go to state 72
+
+
+state 61
+
+   19 Imports: IMPORTS @4 SymbolsImported . SEMICOLON
+
+    SEMICOLON  shift, and go to state 73
+
+
+state 62
+
+   21 SymbolsImported: SymbolsFromModuleList .
+   23 SymbolsFromModuleList: SymbolsFromModuleList . SymbolsFromModule
+
+    ID     shift, and go to state 48
+    MINUS  shift, and go to state 49
+    NAME   shift, and go to state 50
+    PLUS   shift, and go to state 51
+
+    $default  reduce using rule 21 (SymbolsImported)
+
+    SymbolsFromModule  go to state 74
+    SymbolList         go to state 64
+    Symbol             go to state 54
+
+
+state 63
+
+   24 SymbolsFromModuleList: SymbolsFromModule .
+
+    $default  reduce using rule 24 (SymbolsFromModuleList)
+
+
+state 64
+
+   25 SymbolsFromModule: SymbolList . FROM ModuleIdentifier
+   26 SymbolList: SymbolList . COMMA Symbol
+   28           | SymbolList . COMMA MINUS Symbol
+   30           | SymbolList . COMMA PLUS Symbol
+
+    COMMA  shift, and go to state 60
+    FROM   shift, and go to state 75
+
+
+state 65
+
+   40 Typeassignment: ID . ParameterType CCE Type
+
+    PARAMETERTYPE  shift, and go to state 76
+
+    $default  reduce using rule 47 (ParameterType)
+
+    ParameterType  go to state 77
+
+
+state 66
+
+  132 Valueassignment: NAME . Type CCE Value
+
+    ANY          shift, and go to state 78
+    BIT          shift, and go to state 79
+    BITSTRING    shift, and go to state 80
+    BOOLEAN_kw   shift, and go to state 81
+    CHOICE       shift, and go to state 82
+    ENCRYPTED    shift, and go to state 83
+    ENUMERATED   shift, and go to state 84
+    ID           shift, and go to state 85
+    INTEGER      shift, and go to state 86
+    LBRACKET     shift, and go to state 87
+    NAME         shift, and go to state 88
+    NIL          shift, and go to state 89
+    OBJECT       shift, and go to state 90
+    OCTET        shift, and go to state 91
+    OCTETSTRING  shift, and go to state 92
+    REAL         shift, and go to state 93
+    STAR         shift, and go to state 94
+    SEQUENCE     shift, and go to state 95
+    SEQUENCEOF   shift, and go to state 96
+    SET          shift, and go to state 97
+    SETOF        shift, and go to state 98
+
+    Type         go to state 99
+    BuiltinType  go to state 100
+    DefinedType  go to state 101
+    AnyType      go to state 102
+    Tag          go to state 103
+    Octetstring  go to state 104
+    Bitstring    go to state 105
+    SequenceOf   go to state 106
+    SetOf        go to state 107
+    SubType      go to state 108
+
+
+state 67
+
+   34 AssignmentList: AssignmentList Assignment .
+
+    $default  reduce using rule 34 (AssignmentList)
+
+
+state 68
+
+   38 Assignment: Typeassignment .
+
+    $default  reduce using rule 38 (Assignment)
+
+
+state 69
+
+   39 Assignment: Valueassignment .
+
+    $default  reduce using rule 39 (Assignment)
+
+
+state 70
+
+   28 SymbolList: SymbolList COMMA MINUS . Symbol
+
+    ID    shift, and go to state 48
+    NAME  shift, and go to state 50
+
+    Symbol  go to state 109
+
+
+state 71
+
+   30 SymbolList: SymbolList COMMA PLUS . Symbol
+
+    ID    shift, and go to state 48
+    NAME  shift, and go to state 50
+
+    Symbol  go to state 110
+
+
+state 72
+
+   26 SymbolList: SymbolList COMMA Symbol .
+
+    $default  reduce using rule 26 (SymbolList)
+
+
+state 73
+
+   19 Imports: IMPORTS @4 SymbolsImported SEMICOLON .
+
+    $default  reduce using rule 19 (Imports)
+
+
+state 74
+
+   23 SymbolsFromModuleList: SymbolsFromModuleList SymbolsFromModule .
+
+    $default  reduce using rule 23 (SymbolsFromModuleList)
+
+
+state 75
+
+   25 SymbolsFromModule: SymbolList FROM . ModuleIdentifier
+
+    ID  shift, and go to state 1
+
+    ModuleIdentifier  go to state 111
+
+
+state 76
+
+   46 ParameterType: PARAMETERTYPE .
+
+    $default  reduce using rule 46 (ParameterType)
+
+
+state 77
+
+   40 Typeassignment: ID ParameterType . CCE Type
+
+    CCE  shift, and go to state 112
+
+
+state 78
+
+   84 AnyType: ANY .
+   85        | ANY . DEFINED BY NAME
+
+    DEFINED  shift, and go to state 113
+
+    $default  reduce using rule 84 (AnyType)
+
+
+state 79
+
+  165 Bitstring: BIT . STRING
+
+    STRING  shift, and go to state 114
+
+
+state 80
+
+  164 Bitstring: BITSTRING .
+
+    $default  reduce using rule 164 (Bitstring)
+
+
+state 81
+
+   50 BuiltinType: BOOLEAN_kw . PassBool
+
+    VALB  shift, and go to state 115
+
+    $default  reduce using rule 91 (PassBool)
+
+    PassBool  go to state 116
+
+
+state 82
+
+   65 BuiltinType: CHOICE . Sctrl Valtype Control LBRACE AlternativeTypeList RBRACE
+
+    SCTRL  shift, and go to state 117
+
+    $default  reduce using rule 224 (Sctrl)
+
+    Sctrl  go to state 118
+
+
+state 83
+
+   70 BuiltinType: ENCRYPTED . Type
+
+    ANY          shift, and go to state 78
+    BIT          shift, and go to state 79
+    BITSTRING    shift, and go to state 80
+    BOOLEAN_kw   shift, and go to state 81
+    CHOICE       shift, and go to state 82
+    ENCRYPTED    shift, and go to state 83
+    ENUMERATED   shift, and go to state 84
+    ID           shift, and go to state 85
+    INTEGER      shift, and go to state 86
+    LBRACKET     shift, and go to state 87
+    NAME         shift, and go to state 88
+    NIL          shift, and go to state 89
+    OBJECT       shift, and go to state 90
+    OCTET        shift, and go to state 91
+    OCTETSTRING  shift, and go to state 92
+    REAL         shift, and go to state 93
+    STAR         shift, and go to state 94
+    SEQUENCE     shift, and go to state 95
+    SEQUENCEOF   shift, and go to state 96
+    SET          shift, and go to state 97
+    SETOF        shift, and go to state 98
+
+    Type         go to state 119
+    BuiltinType  go to state 100
+    DefinedType  go to state 101
+    AnyType      go to state 102
+    Tag          go to state 103
+    Octetstring  go to state 104
+    Bitstring    go to state 105
+    SequenceOf   go to state 106
+    SetOf        go to state 107
+    SubType      go to state 108
+
+
+state 84
+
+   52 BuiltinType: ENUMERATED . PassInt LBRACE NamedNumberList RBRACE
+
+    VALI  shift, and go to state 120
+
+    $default  reduce using rule 93 (PassInt)
+
+    PassInt  go to state 121
+
+
+state 85
+
+   74 DefinedType: ID . PassValue ValParameter
+   75            | ID . DOT ID PassValue ValParameter
+
+    DOT     shift, and go to state 122
+    VALA    shift, and go to state 123
+    VALB    shift, and go to state 124
+    VALI    shift, and go to state 125
+    VALS    shift, and go to state 126
+    VALO    shift, and go to state 127
+    VALOID  shift, and go to state 128
+    VALR    shift, and go to state 129
+    VALT    shift, and go to state 130
+    VALQ    shift, and go to state 131
+    VALX    shift, and go to state 132
+
+    $default  reduce using rule 103 (NullPass)
+
+    PassValue   go to state 133
+    PassString  go to state 134
+    NullPass    go to state 135
+
+
+state 86
+
+   51 BuiltinType: INTEGER . PassInt NNlist
+
+    VALI  shift, and go to state 120
+
+    $default  reduce using rule 93 (PassInt)
+
+    PassInt  go to state 136
+
+
+state 87
+
+  127 Tag: LBRACKET . Class NumericValue RBRACKET
+
+    APPLICATION  shift, and go to state 137
+    PRIVATE      shift, and go to state 138
+    UNIVERSAL    shift, and go to state 139
+
+    $default  reduce using rule 131 (Class)
+
+    Class  go to state 140
+
+
+state 88
+
+   66 BuiltinType: NAME . LANGLE Type
+
+    LANGLE  shift, and go to state 141
+
+
+state 89
+
+   55 BuiltinType: NIL .
+
+    $default  reduce using rule 55 (BuiltinType)
+
+
+state 90
+
+   69 BuiltinType: OBJECT . IDENTIFIER PassOid
+
+    IDENTIFIER  shift, and go to state 142
+
+
+state 91
+
+  162 Octetstring: OCTET . STRING
+
+    STRING  shift, and go to state 143
+
+
+state 92
+
+  163 Octetstring: OCTETSTRING .
+
+    $default  reduce using rule 163 (Octetstring)
+
+
+state 93
+
+   71 BuiltinType: REAL . PassReal
+
+    VALR  shift, and go to state 144
+
+    $default  reduce using rule 102 (PassReal)
+
+    PassReal  go to state 145
+
+
+state 94
+
+   68 BuiltinType: STAR . AnyType PassAny
+
+    ANY  shift, and go to state 78
+
+    AnyType  go to state 146
+
+
+state 95
+
+   56 BuiltinType: SEQUENCE . Sctrl PassAny
+   58            | SEQUENCE . Sctrl Valtype LBRACE ElementTypes RBRACE
+  167 SequenceOf: SEQUENCE . OF_kw
+  182 SubType: SEQUENCE . SizeConstraint OF_kw Sctrl Control Type
+
+    OF_kw    shift, and go to state 147
+    SIZE_kw  shift, and go to state 148
+    SCTRL    shift, and go to state 117
+
+    $default  reduce using rule 224 (Sctrl)
+
+    SizeConstraint  go to state 149
+    Sctrl           go to state 150
+
+
+state 96
+
+  166 SequenceOf: SEQUENCEOF .
+
+    $default  reduce using rule 166 (SequenceOf)
+
+
+state 97
+
+   59 BuiltinType: SET . Sctrl PassAny
+   61            | SET . Sctrl Valtype LBRACE MemberTypes RBRACE
+  169 SetOf: SET . OF_kw
+  181 SubType: SET . SizeConstraint OF_kw Sctrl Control Type
+
+    OF_kw    shift, and go to state 151
+    SIZE_kw  shift, and go to state 148
+    SCTRL    shift, and go to state 117
+
+    $default  reduce using rule 224 (Sctrl)
+
+    SizeConstraint  go to state 152
+    Sctrl           go to state 153
+
+
+state 98
+
+  168 SetOf: SETOF .
+
+    $default  reduce using rule 168 (SetOf)
+
+
+state 99
+
+  132 Valueassignment: NAME Type . CCE Value
+  180 SubType: Type . SubtypeSpec
+
+    CCE     shift, and go to state 154
+    LPAREN  shift, and go to state 155
+
+    SubtypeSpec  go to state 156
+
+
+state 100
+
+   41 Type: BuiltinType .
+
+    $default  reduce using rule 41 (Type)
+
+
+state 101
+
+   42 Type: DefinedType .
+
+    $default  reduce using rule 42 (Type)
+
+
+state 102
+
+   67 BuiltinType: AnyType . PassAny
+
+    VALA  shift, and go to state 157
+
+    $default  reduce using rule 89 (PassAny)
+
+    PassAny  go to state 158
+
+
+state 103
+
+   62 BuiltinType: Tag . IMPLICIT Type
+   63            | Tag . EXPLICIT Type
+   64            | Tag . Type
+
+    ANY          shift, and go to state 78
+    BIT          shift, and go to state 79
+    BITSTRING    shift, and go to state 80
+    BOOLEAN_kw   shift, and go to state 81
+    CHOICE       shift, and go to state 82
+    ENCRYPTED    shift, and go to state 83
+    ENUMERATED   shift, and go to state 84
+    EXPLICIT     shift, and go to state 159
+    ID           shift, and go to state 85
+    IMPLICIT     shift, and go to state 160
+    INTEGER      shift, and go to state 86
+    LBRACKET     shift, and go to state 87
+    NAME         shift, and go to state 88
+    NIL          shift, and go to state 89
+    OBJECT       shift, and go to state 90
+    OCTET        shift, and go to state 91
+    OCTETSTRING  shift, and go to state 92
+    REAL         shift, and go to state 93
+    STAR         shift, and go to state 94
+    SEQUENCE     shift, and go to state 95
+    SEQUENCEOF   shift, and go to state 96
+    SET          shift, and go to state 97
+    SETOF        shift, and go to state 98
+
+    Type         go to state 161
+    BuiltinType  go to state 100
+    DefinedType  go to state 101
+    AnyType      go to state 102
+    Tag          go to state 103
+    Octetstring  go to state 104
+    Bitstring    go to state 105
+    SequenceOf   go to state 106
+    SetOf        go to state 107
+    SubType      go to state 108
+
+
+state 104
+
+   54 BuiltinType: Octetstring . PassString
+
+    VALS  shift, and go to state 126
+    VALO  shift, and go to state 127
+    VALQ  shift, and go to state 131
+
+    $default  reduce using rule 103 (NullPass)
+
+    PassString  go to state 162
+    NullPass    go to state 135
+
+
+state 105
+
+   53 BuiltinType: Bitstring . PassBit NNlist
+
+    VALT  shift, and go to state 163
+    VALX  shift, and go to state 164
+
+    $default  reduce using rule 103 (NullPass)
+
+    PassBit   go to state 165
+    NullPass  go to state 166
+
+
+state 106
+
+   57 BuiltinType: SequenceOf . Sctrl Valtype Control Type
+
+    SCTRL  shift, and go to state 117
+
+    $default  reduce using rule 224 (Sctrl)
+
+    Sctrl  go to state 167
+
+
+state 107
+
+   60 BuiltinType: SetOf . Sctrl Valtype Control Type
+
+    SCTRL  shift, and go to state 117
+
+    $default  reduce using rule 224 (Sctrl)
+
+    Sctrl  go to state 168
+
+
+state 108
+
+   43 Type: SubType .
+
+    $default  reduce using rule 43 (Type)
+
+
+state 109
+
+   28 SymbolList: SymbolList COMMA MINUS Symbol .
+
+    $default  reduce using rule 28 (SymbolList)
+
+
+state 110
+
+   30 SymbolList: SymbolList COMMA PLUS Symbol .
+
+    $default  reduce using rule 30 (SymbolList)
+
+
+state 111
+
+   25 SymbolsFromModule: SymbolList FROM ModuleIdentifier .
+
+    $default  reduce using rule 25 (SymbolsFromModule)
+
+
+state 112
+
+   40 Typeassignment: ID ParameterType CCE . Type
+
+    ANY          shift, and go to state 78
+    BIT          shift, and go to state 79
+    BITSTRING    shift, and go to state 80
+    BOOLEAN_kw   shift, and go to state 81
+    CHOICE       shift, and go to state 82
+    ENCRYPTED    shift, and go to state 83
+    ENUMERATED   shift, and go to state 84
+    ID           shift, and go to state 85
+    INTEGER      shift, and go to state 86
+    LBRACKET     shift, and go to state 87
+    NAME         shift, and go to state 88
+    NIL          shift, and go to state 89
+    OBJECT       shift, and go to state 90
+    OCTET        shift, and go to state 91
+    OCTETSTRING  shift, and go to state 92
+    REAL         shift, and go to state 93
+    STAR         shift, and go to state 94
+    SEQUENCE     shift, and go to state 95
+    SEQUENCEOF   shift, and go to state 96
+    SET          shift, and go to state 97
+    SETOF        shift, and go to state 98
+
+    Type         go to state 169
+    BuiltinType  go to state 100
+    DefinedType  go to state 101
+    AnyType      go to state 102
+    Tag          go to state 103
+    Octetstring  go to state 104
+    Bitstring    go to state 105
+    SequenceOf   go to state 106
+    SetOf        go to state 107
+    SubType      go to state 108
+
+
+state 113
+
+   85 AnyType: ANY DEFINED . BY NAME
+
+    BY  shift, and go to state 170
+
+
+state 114
+
+  165 Bitstring: BIT STRING .
+
+    $default  reduce using rule 165 (Bitstring)
+
+
+state 115
+
+   90 PassBool: VALB .
+
+    $default  reduce using rule 90 (PassBool)
+
+
+state 116
+
+   50 BuiltinType: BOOLEAN_kw PassBool .
+
+    $default  reduce using rule 50 (BuiltinType)
+
+
+state 117
+
+  223 Sctrl: SCTRL .
+
+    $default  reduce using rule 223 (Sctrl)
+
+
+state 118
+
+   65 BuiltinType: CHOICE Sctrl . Valtype Control LBRACE AlternativeTypeList RBRACE
+
+    VALTYPE  shift, and go to state 171
+
+    $default  reduce using rule 49 (Valtype)
+
+    Valtype  go to state 172
+
+
+state 119
+
+   70 BuiltinType: ENCRYPTED Type .
+  180 SubType: Type . SubtypeSpec
+
+    LPAREN  shift, and go to state 155
+
+    LPAREN    [reduce using rule 70 (BuiltinType)]
+    $default  reduce using rule 70 (BuiltinType)
+
+    SubtypeSpec  go to state 156
+
+
+state 120
+
+   92 PassInt: VALI .
+
+    $default  reduce using rule 92 (PassInt)
+
+
+state 121
+
+   52 BuiltinType: ENUMERATED PassInt . LBRACE NamedNumberList RBRACE
+
+    LBRACE  shift, and go to state 173
+
+
+state 122
+
+   75 DefinedType: ID DOT . ID PassValue ValParameter
+
+    ID  shift, and go to state 174
+
+
+state 123
+
+   76 PassValue: VALA .
+
+    $default  reduce using rule 76 (PassValue)
+
+
+state 124
+
+   77 PassValue: VALB .
+
+    $default  reduce using rule 77 (PassValue)
+
+
+state 125
+
+   78 PassValue: VALI .
+
+    $default  reduce using rule 78 (PassValue)
+
+
+state 126
+
+   97 PassString: VALS .
+
+    $default  reduce using rule 97 (PassString)
+
+
+state 127
+
+   98 PassString: VALO . VLENGTH
+
+    VLENGTH  shift, and go to state 175
+
+
+state 128
+
+   80 PassValue: VALOID .
+
+    $default  reduce using rule 80 (PassValue)
+
+
+state 129
+
+   81 PassValue: VALR .
+
+    $default  reduce using rule 81 (PassValue)
+
+
+state 130
+
+   82 PassValue: VALT .
+
+    $default  reduce using rule 82 (PassValue)
+
+
+state 131
+
+   99 PassString: VALQ .
+
+    $default  reduce using rule 99 (PassString)
+
+
+state 132
+
+   79 PassValue: VALX . VLENGTH
+
+    VLENGTH  shift, and go to state 176
+
+
+state 133
+
+   74 DefinedType: ID PassValue . ValParameter
+
+    VALP  shift, and go to state 177
+
+    $default  reduce using rule 105 (ValParameter)
+
+    ValParameter  go to state 178
+
+
+state 134
+
+   83 PassValue: PassString .
+
+    $default  reduce using rule 83 (PassValue)
+
+
+state 135
+
+  100 PassString: NullPass .
+
+    $default  reduce using rule 100 (PassString)
+
+
+state 136
+
+   51 BuiltinType: INTEGER PassInt . NNlist
+
+    LBRACE  shift, and go to state 179
+
+    LBRACE    [reduce using rule 73 (NNlist)]
+    $default  reduce using rule 73 (NNlist)
+
+    NNlist  go to state 180
+
+
+state 137
+
+  129 Class: APPLICATION .
+
+    $default  reduce using rule 129 (Class)
+
+
+state 138
+
+  130 Class: PRIVATE .
+
+    $default  reduce using rule 130 (Class)
+
+
+state 139
+
+  128 Class: UNIVERSAL .
+
+    $default  reduce using rule 128 (Class)
+
+
+state 140
+
+  127 Tag: LBRACKET Class . NumericValue RBRACKET
+
+    ID         shift, and go to state 9
+    LITNUMBER  shift, and go to state 181
+    NAME       shift, and go to state 28
+
+    NumericValue  go to state 182
+    DefinedValue  go to state 183
+
+
+state 141
+
+   66 BuiltinType: NAME LANGLE . Type
+
+    ANY          shift, and go to state 78
+    BIT          shift, and go to state 79
+    BITSTRING    shift, and go to state 80
+    BOOLEAN_kw   shift, and go to state 81
+    CHOICE       shift, and go to state 82
+    ENCRYPTED    shift, and go to state 83
+    ENUMERATED   shift, and go to state 84
+    ID           shift, and go to state 85
+    INTEGER      shift, and go to state 86
+    LBRACKET     shift, and go to state 87
+    NAME         shift, and go to state 88
+    NIL          shift, and go to state 89
+    OBJECT       shift, and go to state 90
+    OCTET        shift, and go to state 91
+    OCTETSTRING  shift, and go to state 92
+    REAL         shift, and go to state 93
+    STAR         shift, and go to state 94
+    SEQUENCE     shift, and go to state 95
+    SEQUENCEOF   shift, and go to state 96
+    SET          shift, and go to state 97
+    SETOF        shift, and go to state 98
+
+    Type         go to state 184
+    BuiltinType  go to state 100
+    DefinedType  go to state 101
+    AnyType      go to state 102
+    Tag          go to state 103
+    Octetstring  go to state 104
+    Bitstring    go to state 105
+    SequenceOf   go to state 106
+    SetOf        go to state 107
+    SubType      go to state 108
+
+
+state 142
+
+   69 BuiltinType: OBJECT IDENTIFIER . PassOid
+
+    VALOID  shift, and go to state 185
+
+    $default  reduce using rule 87 (PassOid)
+
+    PassOid  go to state 186
+
+
+state 143
+
+  162 Octetstring: OCTET STRING .
+
+    $default  reduce using rule 162 (Octetstring)
+
+
+state 144
+
+  101 PassReal: VALR .
+
+    $default  reduce using rule 101 (PassReal)
+
+
+state 145
+
+   71 BuiltinType: REAL PassReal .
+
+    $default  reduce using rule 71 (BuiltinType)
+
+
+state 146
+
+   68 BuiltinType: STAR AnyType . PassAny
+
+    VALA  shift, and go to state 157
+
+    $default  reduce using rule 89 (PassAny)
+
+    PassAny  go to state 187
+
+
+state 147
+
+  167 SequenceOf: SEQUENCE OF_kw .
+
+    $default  reduce using rule 167 (SequenceOf)
+
+
+state 148
+
+  204 SizeConstraint: SIZE_kw . SubtypeSpec
+
+    LPAREN  shift, and go to state 155
+
+    SubtypeSpec  go to state 188
+
+
+state 149
+
+  182 SubType: SEQUENCE SizeConstraint . OF_kw Sctrl Control Type
+
+    OF_kw  shift, and go to state 189
+
+
+state 150
+
+   56 BuiltinType: SEQUENCE Sctrl . PassAny
+   58            | SEQUENCE Sctrl . Valtype LBRACE ElementTypes RBRACE
+
+    VALA     shift, and go to state 157
+    VALTYPE  shift, and go to state 171
+
+    LBRACE    reduce using rule 49 (Valtype)
+    LBRACE    [reduce using rule 89 (PassAny)]
+    $default  reduce using rule 89 (PassAny)
+
+    Valtype  go to state 190
+    PassAny  go to state 191
+
+
+state 151
+
+  169 SetOf: SET OF_kw .
+
+    $default  reduce using rule 169 (SetOf)
+
+
+state 152
+
+  181 SubType: SET SizeConstraint . OF_kw Sctrl Control Type
+
+    OF_kw  shift, and go to state 192
+
+
+state 153
+
+   59 BuiltinType: SET Sctrl . PassAny
+   61            | SET Sctrl . Valtype LBRACE MemberTypes RBRACE
+
+    VALA     shift, and go to state 157
+    VALTYPE  shift, and go to state 171
+
+    LBRACE    reduce using rule 49 (Valtype)
+    LBRACE    [reduce using rule 89 (PassAny)]
+    $default  reduce using rule 89 (PassAny)
+
+    Valtype  go to state 193
+    PassAny  go to state 194
+
+
+state 154
+
+  132 Valueassignment: NAME Type CCE . Value
+
+    ANY            shift, and go to state 78
+    BIT            shift, and go to state 79
+    BITSTRING      shift, and go to state 80
+    BOOLEAN_kw     shift, and go to state 81
+    BSTRING        shift, and go to state 195
+    CHOICE         shift, and go to state 82
+    ENCRYPTED      shift, and go to state 83
+    ENUMERATED     shift, and go to state 84
+    L_FALSE        shift, and go to state 196
+    HSTRING        shift, and go to state 197
+    ID             shift, and go to state 198
+    INTEGER        shift, and go to state 86
+    LBRACE         shift, and go to state 199
+    LBRACKET       shift, and go to state 87
+    LITNUMBER      shift, and go to state 200
+    LITSTRING      shift, and go to state 201
+    NAME           shift, and go to state 202
+    NIL            shift, and go to state 203
+    OBJECT         shift, and go to state 90
+    OCTET          shift, and go to state 91
+    OCTETSTRING    shift, and go to state 92
+    REAL           shift, and go to state 93
+    STAR           shift, and go to state 94
+    SEQUENCE       shift, and go to state 95
+    SEQUENCEOF     shift, and go to state 96
+    SET            shift, and go to state 97
+    SETOF          shift, and go to state 98
+    L_TRUE         shift, and go to state 204
+    PLUSINFINITY   shift, and go to state 205
+    MINUSINFINITY  shift, and go to state 206
+
+    Type              go to state 207
+    BuiltinType       go to state 100
+    DefinedType       go to state 101
+    AnyType           go to state 102
+    Tag               go to state 103
+    Value             go to state 208
+    BuiltinValue      go to state 209
+    RealValue         go to state 210
+    SpecialRealValue  go to state 211
+    NumericRealValue  go to state 212
+    DefinedValue      go to state 213
+    Octetstring       go to state 104
+    Bitstring         go to state 105
+    SequenceOf        go to state 106
+    SetOf             go to state 107
+    SubType           go to state 108
+
+
+state 155
+
+  183 SubtypeSpec: LPAREN . SubtypeAlternative SubtypeAlternativeList RPAREN
+
+    ANY            shift, and go to state 78
+    BIT            shift, and go to state 79
+    BITSTRING      shift, and go to state 80
+    BOOLEAN_kw     shift, and go to state 81
+    BSTRING        shift, and go to state 195
+    CHOICE         shift, and go to state 82
+    ENCRYPTED      shift, and go to state 83
+    ENUMERATED     shift, and go to state 84
+    L_FALSE        shift, and go to state 196
+    FROM           shift, and go to state 214
+    HSTRING        shift, and go to state 197
+    ID             shift, and go to state 198
+    INCLUDES       shift, and go to state 215
+    INTEGER        shift, and go to state 86
+    LBRACE         shift, and go to state 199
+    LBRACKET       shift, and go to state 87
+    LITNUMBER      shift, and go to state 200
+    LITSTRING      shift, and go to state 201
+    MIN            shift, and go to state 216
+    NAME           shift, and go to state 202
+    NIL            shift, and go to state 203
+    OBJECT         shift, and go to state 90
+    OCTET          shift, and go to state 91
+    OCTETSTRING    shift, and go to state 92
+    REAL           shift, and go to state 93
+    STAR           shift, and go to state 94
+    SEQUENCE       shift, and go to state 95
+    SEQUENCEOF     shift, and go to state 96
+    SET            shift, and go to state 97
+    SETOF          shift, and go to state 98
+    SIZE_kw        shift, and go to state 148
+    L_TRUE         shift, and go to state 204
+    WITH           shift, and go to state 217
+    PLUSINFINITY   shift, and go to state 205
+    MINUSINFINITY  shift, and go to state 206
+
+    Type                 go to state 207
+    BuiltinType          go to state 100
+    DefinedType          go to state 101
+    AnyType              go to state 102
+    Tag                  go to state 103
+    Value                go to state 218
+    BuiltinValue         go to state 209
+    RealValue            go to state 210
+    SpecialRealValue     go to state 211
+    NumericRealValue     go to state 212
+    DefinedValue         go to state 213
+    Octetstring          go to state 104
+    Bitstring            go to state 105
+    SequenceOf           go to state 106
+    SetOf                go to state 107
+    SubType              go to state 108
+    SubtypeAlternative   go to state 219
+    SubtypeValueSet      go to state 220
+    SubtypeConstraint    go to state 221
+    ContainedSubType     go to state 222
+    ValueRange           go to state 223
+    LowerEndPoint        go to state 224
+    LowerEndValue        go to state 225
+    SizeConstraint       go to state 226
+    PermittedAlphabet    go to state 227
+    InnerTypeConstraint  go to state 228
+
+
+state 156
+
+  180 SubType: Type SubtypeSpec .
+
+    $default  reduce using rule 180 (SubType)
+
+
+state 157
+
+   88 PassAny: VALA .
+
+    $default  reduce using rule 88 (PassAny)
+
+
+state 158
+
+   67 BuiltinType: AnyType PassAny .
+
+    $default  reduce using rule 67 (BuiltinType)
+
+
+state 159
+
+   63 BuiltinType: Tag EXPLICIT . Type
+
+    ANY          shift, and go to state 78
+    BIT          shift, and go to state 79
+    BITSTRING    shift, and go to state 80
+    BOOLEAN_kw   shift, and go to state 81
+    CHOICE       shift, and go to state 82
+    ENCRYPTED    shift, and go to state 83
+    ENUMERATED   shift, and go to state 84
+    ID           shift, and go to state 85
+    INTEGER      shift, and go to state 86
+    LBRACKET     shift, and go to state 87
+    NAME         shift, and go to state 88
+    NIL          shift, and go to state 89
+    OBJECT       shift, and go to state 90
+    OCTET        shift, and go to state 91
+    OCTETSTRING  shift, and go to state 92
+    REAL         shift, and go to state 93
+    STAR         shift, and go to state 94
+    SEQUENCE     shift, and go to state 95
+    SEQUENCEOF   shift, and go to state 96
+    SET          shift, and go to state 97
+    SETOF        shift, and go to state 98
+
+    Type         go to state 229
+    BuiltinType  go to state 100
+    DefinedType  go to state 101
+    AnyType      go to state 102
+    Tag          go to state 103
+    Octetstring  go to state 104
+    Bitstring    go to state 105
+    SequenceOf   go to state 106
+    SetOf        go to state 107
+    SubType      go to state 108
+
+
+state 160
+
+   62 BuiltinType: Tag IMPLICIT . Type
+
+    ANY          shift, and go to state 78
+    BIT          shift, and go to state 79
+    BITSTRING    shift, and go to state 80
+    BOOLEAN_kw   shift, and go to state 81
+    CHOICE       shift, and go to state 82
+    ENCRYPTED    shift, and go to state 83
+    ENUMERATED   shift, and go to state 84
+    ID           shift, and go to state 85
+    INTEGER      shift, and go to state 86
+    LBRACKET     shift, and go to state 87
+    NAME         shift, and go to state 88
+    NIL          shift, and go to state 89
+    OBJECT       shift, and go to state 90
+    OCTET        shift, and go to state 91
+    OCTETSTRING  shift, and go to state 92
+    REAL         shift, and go to state 93
+    STAR         shift, and go to state 94
+    SEQUENCE     shift, and go to state 95
+    SEQUENCEOF   shift, and go to state 96
+    SET          shift, and go to state 97
+    SETOF        shift, and go to state 98
+
+    Type         go to state 230
+    BuiltinType  go to state 100
+    DefinedType  go to state 101
+    AnyType      go to state 102
+    Tag          go to state 103
+    Octetstring  go to state 104
+    Bitstring    go to state 105
+    SequenceOf   go to state 106
+    SetOf        go to state 107
+    SubType      go to state 108
+
+
+state 161
+
+   64 BuiltinType: Tag Type .
+  180 SubType: Type . SubtypeSpec
+
+    LPAREN  shift, and go to state 155
+
+    LPAREN    [reduce using rule 64 (BuiltinType)]
+    $default  reduce using rule 64 (BuiltinType)
+
+    SubtypeSpec  go to state 156
+
+
+state 162
+
+   54 BuiltinType: Octetstring PassString .
+
+    $default  reduce using rule 54 (BuiltinType)
+
+
+state 163
+
+   95 PassBit: VALT .
+
+    $default  reduce using rule 95 (PassBit)
+
+
+state 164
+
+   94 PassBit: VALX . VLENGTH
+
+    VLENGTH  shift, and go to state 231
+
+
+state 165
+
+   53 BuiltinType: Bitstring PassBit . NNlist
+
+    LBRACE  shift, and go to state 179
+
+    LBRACE    [reduce using rule 73 (NNlist)]
+    $default  reduce using rule 73 (NNlist)
+
+    NNlist  go to state 232
+
+
+state 166
+
+   96 PassBit: NullPass .
+
+    $default  reduce using rule 96 (PassBit)
+
+
+state 167
+
+   57 BuiltinType: SequenceOf Sctrl . Valtype Control Type
+
+    VALTYPE  shift, and go to state 171
+
+    $default  reduce using rule 49 (Valtype)
+
+    Valtype  go to state 233
+
+
+state 168
+
+   60 BuiltinType: SetOf Sctrl . Valtype Control Type
+
+    VALTYPE  shift, and go to state 171
+
+    $default  reduce using rule 49 (Valtype)
+
+    Valtype  go to state 234
+
+
+state 169
+
+   40 Typeassignment: ID ParameterType CCE Type .
+  180 SubType: Type . SubtypeSpec
+
+    LPAREN  shift, and go to state 155
+
+    $default  reduce using rule 40 (Typeassignment)
+
+    SubtypeSpec  go to state 156
+
+
+state 170
+
+   85 AnyType: ANY DEFINED BY . NAME
+
+    NAME  shift, and go to state 235
+
+
+state 171
+
+   48 Valtype: VALTYPE .
+
+    $default  reduce using rule 48 (Valtype)
+
+
+state 172
+
+   65 BuiltinType: CHOICE Sctrl Valtype . Control LBRACE AlternativeTypeList RBRACE
+
+    CONTROL  shift, and go to state 236
+
+    $default  reduce using rule 45 (Control)
+
+    Control  go to state 237
+
+
+state 173
+
+   52 BuiltinType: ENUMERATED PassInt LBRACE . NamedNumberList RBRACE
+
+    NAME  shift, and go to state 238
+
+    NamedNumberList  go to state 239
+    NamedNumber      go to state 240
+
+
+state 174
+
+   75 DefinedType: ID DOT ID . PassValue ValParameter
+
+    VALA    shift, and go to state 123
+    VALB    shift, and go to state 124
+    VALI    shift, and go to state 125
+    VALS    shift, and go to state 126
+    VALO    shift, and go to state 127
+    VALOID  shift, and go to state 128
+    VALR    shift, and go to state 129
+    VALT    shift, and go to state 130
+    VALQ    shift, and go to state 131
+    VALX    shift, and go to state 132
+
+    $default  reduce using rule 103 (NullPass)
+
+    PassValue   go to state 241
+    PassString  go to state 134
+    NullPass    go to state 135
+
+
+state 175
+
+   98 PassString: VALO VLENGTH .
+
+    $default  reduce using rule 98 (PassString)
+
+
+state 176
+
+   79 PassValue: VALX VLENGTH .
+
+    $default  reduce using rule 79 (PassValue)
+
+
+state 177
+
+  104 ValParameter: VALP .
+
+    $default  reduce using rule 104 (ValParameter)
+
+
+state 178
+
+   74 DefinedType: ID PassValue ValParameter .
+
+    $default  reduce using rule 74 (DefinedType)
+
+
+state 179
+
+   72 NNlist: LBRACE . NamedNumberList RBRACE
+
+    NAME  shift, and go to state 238
+
+    NamedNumberList  go to state 242
+    NamedNumber      go to state 240
+
+
+state 180
+
+   51 BuiltinType: INTEGER PassInt NNlist .
+
+    $default  reduce using rule 51 (BuiltinType)
+
+
+state 181
+
+  109 NumericValue: LITNUMBER .
+
+    $default  reduce using rule 109 (NumericValue)
+
+
+state 182
+
+  127 Tag: LBRACKET Class NumericValue . RBRACKET
+
+    RBRACKET  shift, and go to state 243
+
+
+state 183
+
+  110 NumericValue: DefinedValue .
+
+    $default  reduce using rule 110 (NumericValue)
+
+
+state 184
+
+   66 BuiltinType: NAME LANGLE Type .
+  180 SubType: Type . SubtypeSpec
+
+    LPAREN  shift, and go to state 155
+
+    LPAREN    [reduce using rule 66 (BuiltinType)]
+    $default  reduce using rule 66 (BuiltinType)
+
+    SubtypeSpec  go to state 156
+
+
+state 185
+
+   86 PassOid: VALOID .
+
+    $default  reduce using rule 86 (PassOid)
+
+
+state 186
+
+   69 BuiltinType: OBJECT IDENTIFIER PassOid .
+
+    $default  reduce using rule 69 (BuiltinType)
+
+
+state 187
+
+   68 BuiltinType: STAR AnyType PassAny .
+
+    $default  reduce using rule 68 (BuiltinType)
+
+
+state 188
+
+  204 SizeConstraint: SIZE_kw SubtypeSpec .
+
+    $default  reduce using rule 204 (SizeConstraint)
+
+
+state 189
+
+  182 SubType: SEQUENCE SizeConstraint OF_kw . Sctrl Control Type
+
+    SCTRL  shift, and go to state 117
+
+    $default  reduce using rule 224 (Sctrl)
+
+    Sctrl  go to state 244
+
+
+state 190
+
+   58 BuiltinType: SEQUENCE Sctrl Valtype . LBRACE ElementTypes RBRACE
+
+    LBRACE  shift, and go to state 245
+
+
+state 191
+
+   56 BuiltinType: SEQUENCE Sctrl PassAny .
+
+    $default  reduce using rule 56 (BuiltinType)
+
+
+state 192
+
+  181 SubType: SET SizeConstraint OF_kw . Sctrl Control Type
+
+    SCTRL  shift, and go to state 117
+
+    $default  reduce using rule 224 (Sctrl)
+
+    Sctrl  go to state 246
+
+
+state 193
+
+   61 BuiltinType: SET Sctrl Valtype . LBRACE MemberTypes RBRACE
+
+    LBRACE  shift, and go to state 247
+
+
+state 194
+
+   59 BuiltinType: SET Sctrl PassAny .
+
+    $default  reduce using rule 59 (BuiltinType)
+
+
+state 195
+
+  138 BuiltinValue: BSTRING .
+
+    $default  reduce using rule 138 (BuiltinValue)
+
+
+state 196
+
+  136 BuiltinValue: L_FALSE .
+
+    $default  reduce using rule 136 (BuiltinValue)
+
+
+state 197
+
+  139 BuiltinValue: HSTRING .
+
+    $default  reduce using rule 139 (BuiltinValue)
+
+
+state 198
+
+   74 DefinedType: ID . PassValue ValParameter
+   75            | ID . DOT ID PassValue ValParameter
+  152 DefinedValue: ID .
+  154             | ID . DOT ID
+
+    DOT     shift, and go to state 248
+    VALA    shift, and go to state 123
+    VALB    shift, and go to state 124
+    VALI    shift, and go to state 125
+    VALS    shift, and go to state 126
+    VALO    shift, and go to state 127
+    VALOID  shift, and go to state 128
+    VALR    shift, and go to state 129
+    VALT    shift, and go to state 130
+    VALQ    shift, and go to state 131
+    VALX    shift, and go to state 132
+
+    BAR       reduce using rule 152 (DefinedValue)
+    COMMA     reduce using rule 152 (DefinedValue)
+    CONTROL   reduce using rule 152 (DefinedValue)
+    DOTDOT    reduce using rule 152 (DefinedValue)
+    END       reduce using rule 152 (DefinedValue)
+    ID        reduce using rule 103 (NullPass)
+    ID        [reduce using rule 152 (DefinedValue)]
+    LANGLE    reduce using rule 152 (DefinedValue)
+    NAME      reduce using rule 103 (NullPass)
+    NAME      [reduce using rule 152 (DefinedValue)]
+    RBRACE    reduce using rule 152 (DefinedValue)
+    RPAREN    reduce using rule 152 (DefinedValue)
+    $default  reduce using rule 103 (NullPass)
+
+    PassValue   go to state 133
+    PassString  go to state 134
+    NullPass    go to state 135
+
+
+state 199
+
+  140 BuiltinValue: LBRACE . ID IdentifierList RBRACE
+  143             | LBRACE . Values RBRACE
+  151 NumericRealValue: LBRACE . LITNUMBER COMMA LITNUMBER COMMA LITNUMBER RBRACE
+
+    ANY            shift, and go to state 78
+    BIT            shift, and go to state 79
+    BITSTRING      shift, and go to state 80
+    BOOLEAN_kw     shift, and go to state 81
+    BSTRING        shift, and go to state 195
+    CHOICE         shift, and go to state 82
+    ENCRYPTED      shift, and go to state 83
+    ENUMERATED     shift, and go to state 84
+    L_FALSE        shift, and go to state 196
+    HSTRING        shift, and go to state 197
+    ID             shift, and go to state 249
+    INTEGER        shift, and go to state 86
+    LBRACE         shift, and go to state 199
+    LBRACKET       shift, and go to state 87
+    LITNUMBER      shift, and go to state 250
+    LITSTRING      shift, and go to state 201
+    NAME           shift, and go to state 202
+    NIL            shift, and go to state 203
+    OBJECT         shift, and go to state 90
+    OCTET          shift, and go to state 91
+    OCTETSTRING    shift, and go to state 92
+    REAL           shift, and go to state 93
+    STAR           shift, and go to state 94
+    SEQUENCE       shift, and go to state 95
+    SEQUENCEOF     shift, and go to state 96
+    SET            shift, and go to state 97
+    SETOF          shift, and go to state 98
+    L_TRUE         shift, and go to state 204
+    PLUSINFINITY   shift, and go to state 205
+    MINUSINFINITY  shift, and go to state 206
+
+    $default  reduce using rule 158 (Values)
+
+    Type              go to state 207
+    BuiltinType       go to state 100
+    DefinedType       go to state 101
+    AnyType           go to state 102
+    Tag               go to state 103
+    Value             go to state 251
+    BuiltinValue      go to state 209
+    RealValue         go to state 210
+    SpecialRealValue  go to state 211
+    NumericRealValue  go to state 212
+    DefinedValue      go to state 213
+    Values            go to state 252
+    NamedValueList    go to state 253
+    NamedValue        go to state 254
+    Octetstring       go to state 104
+    Bitstring         go to state 105
+    SequenceOf        go to state 106
+    SetOf             go to state 107
+    SubType           go to state 108
+
+
+state 200
+
+  137 BuiltinValue: LITNUMBER .
+
+    $default  reduce using rule 137 (BuiltinValue)
+
+
+state 201
+
+  141 BuiltinValue: LITSTRING .
+
+    $default  reduce using rule 141 (BuiltinValue)
+
+
+state 202
+
+   66 BuiltinType: NAME . LANGLE Type
+  144 BuiltinValue: NAME . Value
+  153 DefinedValue: NAME .
+
+    ANY            shift, and go to state 78
+    BIT            shift, and go to state 79
+    BITSTRING      shift, and go to state 80
+    BOOLEAN_kw     shift, and go to state 81
+    BSTRING        shift, and go to state 195
+    CHOICE         shift, and go to state 82
+    ENCRYPTED      shift, and go to state 83
+    ENUMERATED     shift, and go to state 84
+    L_FALSE        shift, and go to state 196
+    HSTRING        shift, and go to state 197
+    ID             shift, and go to state 198
+    INTEGER        shift, and go to state 86
+    LANGLE         shift, and go to state 141
+    LBRACE         shift, and go to state 199
+    LBRACKET       shift, and go to state 87
+    LITNUMBER      shift, and go to state 200
+    LITSTRING      shift, and go to state 201
+    NAME           shift, and go to state 202
+    NIL            shift, and go to state 203
+    OBJECT         shift, and go to state 90
+    OCTET          shift, and go to state 91
+    OCTETSTRING    shift, and go to state 92
+    REAL           shift, and go to state 93
+    STAR           shift, and go to state 94
+    SEQUENCE       shift, and go to state 95
+    SEQUENCEOF     shift, and go to state 96
+    SET            shift, and go to state 97
+    SETOF          shift, and go to state 98
+    L_TRUE         shift, and go to state 204
+    PLUSINFINITY   shift, and go to state 205
+    MINUSINFINITY  shift, and go to state 206
+
+    ID        [reduce using rule 153 (DefinedValue)]
+    LANGLE    [reduce using rule 153 (DefinedValue)]
+    NAME      [reduce using rule 153 (DefinedValue)]
+    $default  reduce using rule 153 (DefinedValue)
+
+    Type              go to state 207
+    BuiltinType       go to state 100
+    DefinedType       go to state 101
+    AnyType           go to state 102
+    Tag               go to state 103
+    Value             go to state 255
+    BuiltinValue      go to state 209
+    RealValue         go to state 210
+    SpecialRealValue  go to state 211
+    NumericRealValue  go to state 212
+    DefinedValue      go to state 213
+    Octetstring       go to state 104
+    Bitstring         go to state 105
+    SequenceOf        go to state 106
+    SetOf             go to state 107
+    SubType           go to state 108
+
+
+state 203
+
+   55 BuiltinType: NIL .
+  142 BuiltinValue: NIL .
+
+    BAR       reduce using rule 142 (BuiltinValue)
+    COMMA     reduce using rule 142 (BuiltinValue)
+    CONTROL   reduce using rule 142 (BuiltinValue)
+    DOTDOT    reduce using rule 142 (BuiltinValue)
+    END       reduce using rule 142 (BuiltinValue)
+    ID        reduce using rule 55 (BuiltinType)
+    ID        [reduce using rule 142 (BuiltinValue)]
+    LANGLE    reduce using rule 142 (BuiltinValue)
+    NAME      reduce using rule 55 (BuiltinType)
+    NAME      [reduce using rule 142 (BuiltinValue)]
+    RBRACE    reduce using rule 142 (BuiltinValue)
+    RPAREN    reduce using rule 142 (BuiltinValue)
+    $default  reduce using rule 55 (BuiltinType)
+
+
+state 204
+
+  135 BuiltinValue: L_TRUE .
+
+    $default  reduce using rule 135 (BuiltinValue)
+
+
+state 205
+
+  149 SpecialRealValue: PLUSINFINITY .
+
+    $default  reduce using rule 149 (SpecialRealValue)
+
+
+state 206
+
+  150 SpecialRealValue: MINUSINFINITY .
+
+    $default  reduce using rule 150 (SpecialRealValue)
+
+
+state 207
+
+  145 BuiltinValue: Type . Value
+  180 SubType: Type . SubtypeSpec
+
+    ANY            shift, and go to state 78
+    BIT            shift, and go to state 79
+    BITSTRING      shift, and go to state 80
+    BOOLEAN_kw     shift, and go to state 81
+    BSTRING        shift, and go to state 195
+    CHOICE         shift, and go to state 82
+    ENCRYPTED      shift, and go to state 83
+    ENUMERATED     shift, and go to state 84
+    L_FALSE        shift, and go to state 196
+    HSTRING        shift, and go to state 197
+    ID             shift, and go to state 198
+    INTEGER        shift, and go to state 86
+    LBRACE         shift, and go to state 199
+    LBRACKET       shift, and go to state 87
+    LITNUMBER      shift, and go to state 200
+    LITSTRING      shift, and go to state 201
+    LPAREN         shift, and go to state 155
+    NAME           shift, and go to state 202
+    NIL            shift, and go to state 203
+    OBJECT         shift, and go to state 90
+    OCTET          shift, and go to state 91
+    OCTETSTRING    shift, and go to state 92
+    REAL           shift, and go to state 93
+    STAR           shift, and go to state 94
+    SEQUENCE       shift, and go to state 95
+    SEQUENCEOF     shift, and go to state 96
+    SET            shift, and go to state 97
+    SETOF          shift, and go to state 98
+    L_TRUE         shift, and go to state 204
+    PLUSINFINITY   shift, and go to state 205
+    MINUSINFINITY  shift, and go to state 206
+
+    Type              go to state 207
+    BuiltinType       go to state 100
+    DefinedType       go to state 101
+    AnyType           go to state 102
+    Tag               go to state 103
+    Value             go to state 256
+    BuiltinValue      go to state 209
+    RealValue         go to state 210
+    SpecialRealValue  go to state 211
+    NumericRealValue  go to state 212
+    DefinedValue      go to state 213
+    Octetstring       go to state 104
+    Bitstring         go to state 105
+    SequenceOf        go to state 106
+    SetOf             go to state 107
+    SubType           go to state 108
+    SubtypeSpec       go to state 156
+
+
+state 208
+
+  132 Valueassignment: NAME Type CCE Value .
+
+    $default  reduce using rule 132 (Valueassignment)
+
+
+state 209
+
+  133 Value: BuiltinValue .
+
+    $default  reduce using rule 133 (Value)
+
+
+state 210
+
+  146 BuiltinValue: RealValue .
+
+    $default  reduce using rule 146 (BuiltinValue)
+
+
+state 211
+
+  148 RealValue: SpecialRealValue .
+
+    $default  reduce using rule 148 (RealValue)
+
+
+state 212
+
+  147 RealValue: NumericRealValue .
+
+    $default  reduce using rule 147 (RealValue)
+
+
+state 213
+
+  134 Value: DefinedValue .
+
+    $default  reduce using rule 134 (Value)
+
+
+state 214
+
+  205 PermittedAlphabet: FROM . SubtypeSpec
+
+    LPAREN  shift, and go to state 155
+
+    SubtypeSpec  go to state 257
+
+
+state 215
+
+  194 ContainedSubType: INCLUDES . Type
+
+    ANY          shift, and go to state 78
+    BIT          shift, and go to state 79
+    BITSTRING    shift, and go to state 80
+    BOOLEAN_kw   shift, and go to state 81
+    CHOICE       shift, and go to state 82
+    ENCRYPTED    shift, and go to state 83
+    ENUMERATED   shift, and go to state 84
+    ID           shift, and go to state 85
+    INTEGER      shift, and go to state 86
+    LBRACKET     shift, and go to state 87
+    NAME         shift, and go to state 88
+    NIL          shift, and go to state 89
+    OBJECT       shift, and go to state 90
+    OCTET        shift, and go to state 91
+    OCTETSTRING  shift, and go to state 92
+    REAL         shift, and go to state 93
+    STAR         shift, and go to state 94
+    SEQUENCE     shift, and go to state 95
+    SEQUENCEOF   shift, and go to state 96
+    SET          shift, and go to state 97
+    SETOF        shift, and go to state 98
+
+    Type         go to state 258
+    BuiltinType  go to state 100
+    DefinedType  go to state 101
+    AnyType      go to state 102
+    Tag          go to state 103
+    Octetstring  go to state 104
+    Bitstring    go to state 105
+    SequenceOf   go to state 106
+    SetOf        go to state 107
+    SubType      go to state 108
+
+
+state 216
+
+  201 LowerEndValue: MIN .
+
+    $default  reduce using rule 201 (LowerEndValue)
+
+
+state 217
+
+  206 InnerTypeConstraint: WITH . COMPONENT SingleTypeConstraint
+  207                    | WITH . COMPONENTS MultipleTypeConstraints
+
+    COMPONENT   shift, and go to state 259
+    COMPONENTS  shift, and go to state 260
+
+
+state 218
+
+  188 SubtypeValueSet: Value .
+  200 LowerEndValue: Value .
+
+    DOTDOT    reduce using rule 200 (LowerEndValue)
+    LANGLE    reduce using rule 200 (LowerEndValue)
+    $default  reduce using rule 188 (SubtypeValueSet)
+
+
+state 219
+
+  183 SubtypeSpec: LPAREN SubtypeAlternative . SubtypeAlternativeList RPAREN
+
+    BAR  shift, and go to state 261
+
+    $default  reduce using rule 187 (SubtypeAlternativeList)
+
+    SubtypeAlternativeList  go to state 262
+
+
+state 220
+
+  184 SubtypeAlternative: SubtypeValueSet .
+
+    $default  reduce using rule 184 (SubtypeAlternative)
+
+
+state 221
+
+  185 SubtypeAlternative: SubtypeConstraint .
+
+    $default  reduce using rule 185 (SubtypeAlternative)
+
+
+state 222
+
+  189 SubtypeValueSet: ContainedSubType .
+
+    $default  reduce using rule 189 (SubtypeValueSet)
+
+
+state 223
+
+  190 SubtypeValueSet: ValueRange .
+
+    $default  reduce using rule 190 (SubtypeValueSet)
+
+
+state 224
+
+  195 ValueRange: LowerEndPoint . DOTDOT UpperEndpoint
+
+    DOTDOT  shift, and go to state 263
+
+
+state 225
+
+  196 LowerEndPoint: LowerEndValue .
+  197              | LowerEndValue . LANGLE
+
+    LANGLE  shift, and go to state 264
+
+    $default  reduce using rule 196 (LowerEndPoint)
+
+
+state 226
+
+  192 SubtypeConstraint: SizeConstraint .
+
+    $default  reduce using rule 192 (SubtypeConstraint)
+
+
+state 227
+
+  191 SubtypeValueSet: PermittedAlphabet .
+
+    $default  reduce using rule 191 (SubtypeValueSet)
+
+
+state 228
+
+  193 SubtypeConstraint: InnerTypeConstraint .
+
+    $default  reduce using rule 193 (SubtypeConstraint)
+
+
+state 229
+
+   63 BuiltinType: Tag EXPLICIT Type .
+  180 SubType: Type . SubtypeSpec
+
+    LPAREN  shift, and go to state 155
+
+    LPAREN    [reduce using rule 63 (BuiltinType)]
+    $default  reduce using rule 63 (BuiltinType)
+
+    SubtypeSpec  go to state 156
+
+
+state 230
+
+   62 BuiltinType: Tag IMPLICIT Type .
+  180 SubType: Type . SubtypeSpec
+
+    LPAREN  shift, and go to state 155
+
+    LPAREN    [reduce using rule 62 (BuiltinType)]
+    $default  reduce using rule 62 (BuiltinType)
+
+    SubtypeSpec  go to state 156
+
+
+state 231
+
+   94 PassBit: VALX VLENGTH .
+
+    $default  reduce using rule 94 (PassBit)
+
+
+state 232
+
+   53 BuiltinType: Bitstring PassBit NNlist .
+
+    $default  reduce using rule 53 (BuiltinType)
+
+
+state 233
+
+   57 BuiltinType: SequenceOf Sctrl Valtype . Control Type
+
+    CONTROL  shift, and go to state 236
+
+    $default  reduce using rule 45 (Control)
+
+    Control  go to state 265
+
+
+state 234
+
+   60 BuiltinType: SetOf Sctrl Valtype . Control Type
+
+    CONTROL  shift, and go to state 236
+
+    $default  reduce using rule 45 (Control)
+
+    Control  go to state 266
+
+
+state 235
+
+   85 AnyType: ANY DEFINED BY NAME .
+
+    $default  reduce using rule 85 (AnyType)
+
+
+state 236
+
+   44 Control: CONTROL .
+
+    $default  reduce using rule 44 (Control)
+
+
+state 237
+
+   65 BuiltinType: CHOICE Sctrl Valtype Control . LBRACE AlternativeTypeList RBRACE
+
+    LBRACE  shift, and go to state 267
+
+
+state 238
+
+  108 NamedNumber: NAME . LPAREN NumericValue RPAREN
+
+    LPAREN  shift, and go to state 268
+
+
+state 239
+
+   52 BuiltinType: ENUMERATED PassInt LBRACE NamedNumberList . RBRACE
+  107 NamedNumberList: NamedNumberList . COMMA NamedNumber
+
+    COMMA   shift, and go to state 269
+    RBRACE  shift, and go to state 270
+
+
+state 240
+
+  106 NamedNumberList: NamedNumber .
+
+    $default  reduce using rule 106 (NamedNumberList)
+
+
+state 241
+
+   75 DefinedType: ID DOT ID PassValue . ValParameter
+
+    VALP  shift, and go to state 177
+
+    $default  reduce using rule 105 (ValParameter)
+
+    ValParameter  go to state 271
+
+
+state 242
+
+   72 NNlist: LBRACE NamedNumberList . RBRACE
+  107 NamedNumberList: NamedNumberList . COMMA NamedNumber
+
+    COMMA   shift, and go to state 269
+    RBRACE  shift, and go to state 272
+
+
+state 243
+
+  127 Tag: LBRACKET Class NumericValue RBRACKET .
+
+    $default  reduce using rule 127 (Tag)
+
+
+state 244
+
+  182 SubType: SEQUENCE SizeConstraint OF_kw Sctrl . Control Type
+
+    CONTROL  shift, and go to state 236
+
+    $default  reduce using rule 45 (Control)
+
+    Control  go to state 273
+
+
+state 245
+
+   58 BuiltinType: SEQUENCE Sctrl Valtype LBRACE . ElementTypes RBRACE
+
+    ANY           shift, and go to state 78
+    BIT           shift, and go to state 79
+    BITSTRING     shift, and go to state 80
+    BOOLEAN_kw    shift, and go to state 81
+    CHOICE        shift, and go to state 82
+    COMPONENTS    shift, and go to state 274
+    COMPONENTSOF  shift, and go to state 275
+    ENCRYPTED     shift, and go to state 83
+    ENUMERATED    shift, and go to state 84
+    ID            shift, and go to state 85
+    INTEGER       shift, and go to state 86
+    LBRACKET      shift, and go to state 87
+    NAME          shift, and go to state 276
+    NIL           shift, and go to state 89
+    OBJECT        shift, and go to state 90
+    OCTET         shift, and go to state 91
+    OCTETSTRING   shift, and go to state 92
+    REAL          shift, and go to state 93
+    STAR          shift, and go to state 94
+    SEQUENCE      shift, and go to state 95
+    SEQUENCEOF    shift, and go to state 96
+    SET           shift, and go to state 97
+    SETOF         shift, and go to state 98
+
+    $default  reduce using rule 112 (ElementTypes)
+
+    Type              go to state 277
+    BuiltinType       go to state 100
+    DefinedType       go to state 101
+    AnyType           go to state 102
+    ElementTypes      go to state 278
+    OptionalTypeList  go to state 279
+    OptionalType      go to state 280
+    NamedType         go to state 281
+    ComponentsOf      go to state 282
+    Tag               go to state 103
+    Octetstring       go to state 104
+    Bitstring         go to state 105
+    SequenceOf        go to state 106
+    SetOf             go to state 107
+    Components        go to state 283
+    SubType           go to state 108
+
+
+state 246
+
+  181 SubType: SET SizeConstraint OF_kw Sctrl . Control Type
+
+    CONTROL  shift, and go to state 236
+
+    $default  reduce using rule 45 (Control)
+
+    Control  go to state 284
+
+
+state 247
+
+   61 BuiltinType: SET Sctrl Valtype LBRACE . MemberTypes RBRACE
+
+    ANY           shift, and go to state 78
+    BIT           shift, and go to state 79
+    BITSTRING     shift, and go to state 80
+    BOOLEAN_kw    shift, and go to state 81
+    CHOICE        shift, and go to state 82
+    COMPONENTS    shift, and go to state 274
+    COMPONENTSOF  shift, and go to state 275
+    ENCRYPTED     shift, and go to state 83
+    ENUMERATED    shift, and go to state 84
+    ID            shift, and go to state 85
+    INTEGER       shift, and go to state 86
+    LBRACKET      shift, and go to state 87
+    NAME          shift, and go to state 276
+    NIL           shift, and go to state 89
+    OBJECT        shift, and go to state 90
+    OCTET         shift, and go to state 91
+    OCTETSTRING   shift, and go to state 92
+    REAL          shift, and go to state 93
+    STAR          shift, and go to state 94
+    SEQUENCE      shift, and go to state 95
+    SEQUENCEOF    shift, and go to state 96
+    SET           shift, and go to state 97
+    SETOF         shift, and go to state 98
+
+    $default  reduce using rule 114 (MemberTypes)
+
+    Type              go to state 277
+    BuiltinType       go to state 100
+    DefinedType       go to state 101
+    AnyType           go to state 102
+    MemberTypes       go to state 285
+    OptionalTypeList  go to state 286
+    OptionalType      go to state 280
+    NamedType         go to state 281
+    ComponentsOf      go to state 282
+    Tag               go to state 103
+    Octetstring       go to state 104
+    Bitstring         go to state 105
+    SequenceOf        go to state 106
+    SetOf             go to state 107
+    Components        go to state 283
+    SubType           go to state 108
+
+
+state 248
+
+   75 DefinedType: ID DOT . ID PassValue ValParameter
+  154 DefinedValue: ID DOT . ID
+
+    ID  shift, and go to state 287
+
+
+state 249
+
+   74 DefinedType: ID . PassValue ValParameter
+   75            | ID . DOT ID PassValue ValParameter
+  140 BuiltinValue: LBRACE ID . IdentifierList RBRACE
+  152 DefinedValue: ID .
+  154             | ID . DOT ID
+
+    COMMA   shift, and go to state 288
+    DOT     shift, and go to state 248
+    VALA    shift, and go to state 123
+    VALB    shift, and go to state 124
+    VALI    shift, and go to state 125
+    VALS    shift, and go to state 126
+    VALO    shift, and go to state 127
+    VALOID  shift, and go to state 128
+    VALR    shift, and go to state 129
+    VALT    shift, and go to state 130
+    VALQ    shift, and go to state 131
+    VALX    shift, and go to state 132
+
+    COMMA     [reduce using rule 152 (DefinedValue)]
+    RBRACE    reduce using rule 152 (DefinedValue)
+    RBRACE    [reduce using rule 156 (IdentifierList)]
+    $default  reduce using rule 103 (NullPass)
+
+    PassValue       go to state 133
+    PassString      go to state 134
+    NullPass        go to state 135
+    IdentifierList  go to state 289
+
+
+state 250
+
+  137 BuiltinValue: LITNUMBER .
+  151 NumericRealValue: LBRACE LITNUMBER . COMMA LITNUMBER COMMA LITNUMBER RBRACE
+
+    COMMA  shift, and go to state 290
+
+    COMMA     [reduce using rule 137 (BuiltinValue)]
+    $default  reduce using rule 137 (BuiltinValue)
+
+
+state 251
+
+  161 NamedValue: Value .
+
+    $default  reduce using rule 161 (NamedValue)
+
+
+state 252
+
+  143 BuiltinValue: LBRACE Values . RBRACE
+
+    RBRACE  shift, and go to state 291
+
+
+state 253
+
+  157 Values: NamedValueList .
+  160 NamedValueList: NamedValueList . COMMA NamedValue
+
+    COMMA  shift, and go to state 292
+
+    $default  reduce using rule 157 (Values)
+
+
+state 254
+
+  159 NamedValueList: NamedValue .
+
+    $default  reduce using rule 159 (NamedValueList)
+
+
+state 255
+
+  144 BuiltinValue: NAME Value .
+
+    $default  reduce using rule 144 (BuiltinValue)
+
+
+state 256
+
+  145 BuiltinValue: Type Value .
+
+    $default  reduce using rule 145 (BuiltinValue)
+
+
+state 257
+
+  205 PermittedAlphabet: FROM SubtypeSpec .
+
+    $default  reduce using rule 205 (PermittedAlphabet)
+
+
+state 258
+
+  180 SubType: Type . SubtypeSpec
+  194 ContainedSubType: INCLUDES Type .
+
+    LPAREN  shift, and go to state 155
+
+    $default  reduce using rule 194 (ContainedSubType)
+
+    SubtypeSpec  go to state 156
+
+
+state 259
+
+  206 InnerTypeConstraint: WITH COMPONENT . SingleTypeConstraint
+
+    LPAREN  shift, and go to state 155
+
+    SubtypeSpec           go to state 293
+    SingleTypeConstraint  go to state 294
+
+
+state 260
+
+  207 InnerTypeConstraint: WITH COMPONENTS . MultipleTypeConstraints
+
+    LBRACE  shift, and go to state 295
+
+    MultipleTypeConstraints  go to state 296
+    FullSpecification        go to state 297
+    PartialSpecification     go to state 298
+
+
+state 261
+
+  186 SubtypeAlternativeList: BAR . SubtypeAlternative SubtypeAlternativeList
+
+    ANY            shift, and go to state 78
+    BIT            shift, and go to state 79
+    BITSTRING      shift, and go to state 80
+    BOOLEAN_kw     shift, and go to state 81
+    BSTRING        shift, and go to state 195
+    CHOICE         shift, and go to state 82
+    ENCRYPTED      shift, and go to state 83
+    ENUMERATED     shift, and go to state 84
+    L_FALSE        shift, and go to state 196
+    FROM           shift, and go to state 214
+    HSTRING        shift, and go to state 197
+    ID             shift, and go to state 198
+    INCLUDES       shift, and go to state 215
+    INTEGER        shift, and go to state 86
+    LBRACE         shift, and go to state 199
+    LBRACKET       shift, and go to state 87
+    LITNUMBER      shift, and go to state 200
+    LITSTRING      shift, and go to state 201
+    MIN            shift, and go to state 216
+    NAME           shift, and go to state 202
+    NIL            shift, and go to state 203
+    OBJECT         shift, and go to state 90
+    OCTET          shift, and go to state 91
+    OCTETSTRING    shift, and go to state 92
+    REAL           shift, and go to state 93
+    STAR           shift, and go to state 94
+    SEQUENCE       shift, and go to state 95
+    SEQUENCEOF     shift, and go to state 96
+    SET            shift, and go to state 97
+    SETOF          shift, and go to state 98
+    SIZE_kw        shift, and go to state 148
+    L_TRUE         shift, and go to state 204
+    WITH           shift, and go to state 217
+    PLUSINFINITY   shift, and go to state 205
+    MINUSINFINITY  shift, and go to state 206
+
+    Type                 go to state 207
+    BuiltinType          go to state 100
+    DefinedType          go to state 101
+    AnyType              go to state 102
+    Tag                  go to state 103
+    Value                go to state 218
+    BuiltinValue         go to state 209
+    RealValue            go to state 210
+    SpecialRealValue     go to state 211
+    NumericRealValue     go to state 212
+    DefinedValue         go to state 213
+    Octetstring          go to state 104
+    Bitstring            go to state 105
+    SequenceOf           go to state 106
+    SetOf                go to state 107
+    SubType              go to state 108
+    SubtypeAlternative   go to state 299
+    SubtypeValueSet      go to state 220
+    SubtypeConstraint    go to state 221
+    ContainedSubType     go to state 222
+    ValueRange           go to state 223
+    LowerEndPoint        go to state 224
+    LowerEndValue        go to state 225
+    SizeConstraint       go to state 226
+    PermittedAlphabet    go to state 227
+    InnerTypeConstraint  go to state 228
+
+
+state 262
+
+  183 SubtypeSpec: LPAREN SubtypeAlternative SubtypeAlternativeList . RPAREN
+
+    RPAREN  shift, and go to state 300
+
+
+state 263
+
+  195 ValueRange: LowerEndPoint DOTDOT . UpperEndpoint
+
+    ANY            shift, and go to state 78
+    BIT            shift, and go to state 79
+    BITSTRING      shift, and go to state 80
+    BOOLEAN_kw     shift, and go to state 81
+    BSTRING        shift, and go to state 195
+    CHOICE         shift, and go to state 82
+    ENCRYPTED      shift, and go to state 83
+    ENUMERATED     shift, and go to state 84
+    L_FALSE        shift, and go to state 196
+    HSTRING        shift, and go to state 197
+    ID             shift, and go to state 198
+    INTEGER        shift, and go to state 86
+    LANGLE         shift, and go to state 301
+    LBRACE         shift, and go to state 199
+    LBRACKET       shift, and go to state 87
+    LITNUMBER      shift, and go to state 200
+    LITSTRING      shift, and go to state 201
+    MAX            shift, and go to state 302
+    NAME           shift, and go to state 202
+    NIL            shift, and go to state 203
+    OBJECT         shift, and go to state 90
+    OCTET          shift, and go to state 91
+    OCTETSTRING    shift, and go to state 92
+    REAL           shift, and go to state 93
+    STAR           shift, and go to state 94
+    SEQUENCE       shift, and go to state 95
+    SEQUENCEOF     shift, and go to state 96
+    SET            shift, and go to state 97
+    SETOF          shift, and go to state 98
+    L_TRUE         shift, and go to state 204
+    PLUSINFINITY   shift, and go to state 205
+    MINUSINFINITY  shift, and go to state 206
+
+    Type              go to state 207
+    BuiltinType       go to state 100
+    DefinedType       go to state 101
+    AnyType           go to state 102
+    Tag               go to state 103
+    Value             go to state 303
+    BuiltinValue      go to state 209
+    RealValue         go to state 210
+    SpecialRealValue  go to state 211
+    NumericRealValue  go to state 212
+    DefinedValue      go to state 213
+    Octetstring       go to state 104
+    Bitstring         go to state 105
+    SequenceOf        go to state 106
+    SetOf             go to state 107
+    SubType           go to state 108
+    UpperEndpoint     go to state 304
+    UpperEndValue     go to state 305
+
+
+state 264
+
+  197 LowerEndPoint: LowerEndValue LANGLE .
+
+    $default  reduce using rule 197 (LowerEndPoint)
+
+
+state 265
+
+   57 BuiltinType: SequenceOf Sctrl Valtype Control . Type
+
+    ANY          shift, and go to state 78
+    BIT          shift, and go to state 79
+    BITSTRING    shift, and go to state 80
+    BOOLEAN_kw   shift, and go to state 81
+    CHOICE       shift, and go to state 82
+    ENCRYPTED    shift, and go to state 83
+    ENUMERATED   shift, and go to state 84
+    ID           shift, and go to state 85
+    INTEGER      shift, and go to state 86
+    LBRACKET     shift, and go to state 87
+    NAME         shift, and go to state 88
+    NIL          shift, and go to state 89
+    OBJECT       shift, and go to state 90
+    OCTET        shift, and go to state 91
+    OCTETSTRING  shift, and go to state 92
+    REAL         shift, and go to state 93
+    STAR         shift, and go to state 94
+    SEQUENCE     shift, and go to state 95
+    SEQUENCEOF   shift, and go to state 96
+    SET          shift, and go to state 97
+    SETOF        shift, and go to state 98
+
+    Type         go to state 306
+    BuiltinType  go to state 100
+    DefinedType  go to state 101
+    AnyType      go to state 102
+    Tag          go to state 103
+    Octetstring  go to state 104
+    Bitstring    go to state 105
+    SequenceOf   go to state 106
+    SetOf        go to state 107
+    SubType      go to state 108
+
+
+state 266
+
+   60 BuiltinType: SetOf Sctrl Valtype Control . Type
+
+    ANY          shift, and go to state 78
+    BIT          shift, and go to state 79
+    BITSTRING    shift, and go to state 80
+    BOOLEAN_kw   shift, and go to state 81
+    CHOICE       shift, and go to state 82
+    ENCRYPTED    shift, and go to state 83
+    ENUMERATED   shift, and go to state 84
+    ID           shift, and go to state 85
+    INTEGER      shift, and go to state 86
+    LBRACKET     shift, and go to state 87
+    NAME         shift, and go to state 88
+    NIL          shift, and go to state 89
+    OBJECT       shift, and go to state 90
+    OCTET        shift, and go to state 91
+    OCTETSTRING  shift, and go to state 92
+    REAL         shift, and go to state 93
+    STAR         shift, and go to state 94
+    SEQUENCE     shift, and go to state 95
+    SEQUENCEOF   shift, and go to state 96
+    SET          shift, and go to state 97
+    SETOF        shift, and go to state 98
+
+    Type         go to state 307
+    BuiltinType  go to state 100
+    DefinedType  go to state 101
+    AnyType      go to state 102
+    Tag          go to state 103
+    Octetstring  go to state 104
+    Bitstring    go to state 105
+    SequenceOf   go to state 106
+    SetOf        go to state 107
+    SubType      go to state 108
+
+
+state 267
+
+   65 BuiltinType: CHOICE Sctrl Valtype Control LBRACE . AlternativeTypeList RBRACE
+
+    ANY          shift, and go to state 78
+    BIT          shift, and go to state 79
+    BITSTRING    shift, and go to state 80
+    BOOLEAN_kw   shift, and go to state 81
+    CHOICE       shift, and go to state 82
+    ENCRYPTED    shift, and go to state 83
+    ENUMERATED   shift, and go to state 84
+    ID           shift, and go to state 85
+    INTEGER      shift, and go to state 86
+    LBRACKET     shift, and go to state 87
+    NAME         shift, and go to state 308
+    NIL          shift, and go to state 89
+    OBJECT       shift, and go to state 90
+    OCTET        shift, and go to state 91
+    OCTETSTRING  shift, and go to state 92
+    REAL         shift, and go to state 93
+    STAR         shift, and go to state 94
+    SEQUENCE     shift, and go to state 95
+    SEQUENCEOF   shift, and go to state 96
+    SET          shift, and go to state 97
+    SETOF        shift, and go to state 98
+
+    Type                 go to state 277
+    BuiltinType          go to state 100
+    DefinedType          go to state 101
+    AnyType              go to state 102
+    NamedType            go to state 309
+    AlternativeTypeList  go to state 310
+    Tag                  go to state 103
+    Octetstring          go to state 104
+    Bitstring            go to state 105
+    SequenceOf           go to state 106
+    SetOf                go to state 107
+    SubType              go to state 108
+
+
+state 268
+
+  108 NamedNumber: NAME LPAREN . NumericValue RPAREN
+
+    ID         shift, and go to state 9
+    LITNUMBER  shift, and go to state 181
+    NAME       shift, and go to state 28
+
+    NumericValue  go to state 311
+    DefinedValue  go to state 183
+
+
+state 269
+
+  107 NamedNumberList: NamedNumberList COMMA . NamedNumber
+
+    NAME  shift, and go to state 238
+
+    NamedNumber  go to state 312
+
+
+state 270
+
+   52 BuiltinType: ENUMERATED PassInt LBRACE NamedNumberList RBRACE .
+
+    $default  reduce using rule 52 (BuiltinType)
+
+
+state 271
+
+   75 DefinedType: ID DOT ID PassValue ValParameter .
+
+    $default  reduce using rule 75 (DefinedType)
+
+
+state 272
+
+   72 NNlist: LBRACE NamedNumberList RBRACE .
+
+    $default  reduce using rule 72 (NNlist)
+
+
+state 273
+
+  182 SubType: SEQUENCE SizeConstraint OF_kw Sctrl Control . Type
+
+    ANY          shift, and go to state 78
+    BIT          shift, and go to state 79
+    BITSTRING    shift, and go to state 80
+    BOOLEAN_kw   shift, and go to state 81
+    CHOICE       shift, and go to state 82
+    ENCRYPTED    shift, and go to state 83
+    ENUMERATED   shift, and go to state 84
+    ID           shift, and go to state 85
+    INTEGER      shift, and go to state 86
+    LBRACKET     shift, and go to state 87
+    NAME         shift, and go to state 88
+    NIL          shift, and go to state 89
+    OBJECT       shift, and go to state 90
+    OCTET        shift, and go to state 91
+    OCTETSTRING  shift, and go to state 92
+    REAL         shift, and go to state 93
+    STAR         shift, and go to state 94
+    SEQUENCE     shift, and go to state 95
+    SEQUENCEOF   shift, and go to state 96
+    SET          shift, and go to state 97
+    SETOF        shift, and go to state 98
+
+    Type         go to state 313
+    BuiltinType  go to state 100
+    DefinedType  go to state 101
+    AnyType      go to state 102
+    Tag          go to state 103
+    Octetstring  go to state 104
+    Bitstring    go to state 105
+    SequenceOf   go to state 106
+    SetOf        go to state 107
+    SubType      go to state 108
+
+
+state 274
+
+  171 Components: COMPONENTS . OF_kw
+
+    OF_kw  shift, and go to state 314
+
+
+state 275
+
+  170 Components: COMPONENTSOF .
+
+    $default  reduce using rule 170 (Components)
+
+
+state 276
+
+   66 BuiltinType: NAME . LANGLE Type
+  121 OptionalType: NAME . ComponentsOf
+  122 NamedType: NAME . Type
+
+    ANY           shift, and go to state 78
+    BIT           shift, and go to state 79
+    BITSTRING     shift, and go to state 80
+    BOOLEAN_kw    shift, and go to state 81
+    CHOICE        shift, and go to state 82
+    COMPONENTS    shift, and go to state 274
+    COMPONENTSOF  shift, and go to state 275
+    ENCRYPTED     shift, and go to state 83
+    ENUMERATED    shift, and go to state 84
+    ID            shift, and go to state 85
+    INTEGER       shift, and go to state 86
+    LANGLE        shift, and go to state 141
+    LBRACKET      shift, and go to state 87
+    NAME          shift, and go to state 88
+    NIL           shift, and go to state 89
+    OBJECT        shift, and go to state 90
+    OCTET         shift, and go to state 91
+    OCTETSTRING   shift, and go to state 92
+    REAL          shift, and go to state 93
+    STAR          shift, and go to state 94
+    SEQUENCE      shift, and go to state 95
+    SEQUENCEOF    shift, and go to state 96
+    SET           shift, and go to state 97
+    SETOF         shift, and go to state 98
+
+    Type          go to state 315
+    BuiltinType   go to state 100
+    DefinedType   go to state 101
+    AnyType       go to state 102
+    ComponentsOf  go to state 316
+    Tag           go to state 103
+    Octetstring   go to state 104
+    Bitstring     go to state 105
+    SequenceOf    go to state 106
+    SetOf         go to state 107
+    Components    go to state 283
+    SubType       go to state 108
+
+
+state 277
+
+  123 NamedType: Type .
+  180 SubType: Type . SubtypeSpec
+
+    LPAREN  shift, and go to state 155
+
+    $default  reduce using rule 123 (NamedType)
+
+    SubtypeSpec  go to state 156
+
+
+state 278
+
+   58 BuiltinType: SEQUENCE Sctrl Valtype LBRACE ElementTypes . RBRACE
+
+    RBRACE  shift, and go to state 317
+
+
+state 279
+
+  111 ElementTypes: OptionalTypeList .
+  116 OptionalTypeList: OptionalTypeList . COMMA OptionalType
+
+    COMMA  shift, and go to state 318
+
+    $default  reduce using rule 111 (ElementTypes)
+
+
+state 280
+
+  115 OptionalTypeList: OptionalType .
+
+    $default  reduce using rule 115 (OptionalTypeList)
+
+
+state 281
+
+  117 OptionalType: NamedType .
+  118             | NamedType . OPTIONAL_kw Control
+  119             | NamedType . DEFAULT Value Control
+
+    DEFAULT      shift, and go to state 319
+    OPTIONAL_kw  shift, and go to state 320
+
+    $default  reduce using rule 117 (OptionalType)
+
+
+state 282
+
+  120 OptionalType: ComponentsOf .
+
+    $default  reduce using rule 120 (OptionalType)
+
+
+state 283
+
+  124 ComponentsOf: Components . Type
+
+    ANY          shift, and go to state 78
+    BIT          shift, and go to state 79
+    BITSTRING    shift, and go to state 80
+    BOOLEAN_kw   shift, and go to state 81
+    CHOICE       shift, and go to state 82
+    ENCRYPTED    shift, and go to state 83
+    ENUMERATED   shift, and go to state 84
+    ID           shift, and go to state 85
+    INTEGER      shift, and go to state 86
+    LBRACKET     shift, and go to state 87
+    NAME         shift, and go to state 88
+    NIL          shift, and go to state 89
+    OBJECT       shift, and go to state 90
+    OCTET        shift, and go to state 91
+    OCTETSTRING  shift, and go to state 92
+    REAL         shift, and go to state 93
+    STAR         shift, and go to state 94
+    SEQUENCE     shift, and go to state 95
+    SEQUENCEOF   shift, and go to state 96
+    SET          shift, and go to state 97
+    SETOF        shift, and go to state 98
+
+    Type         go to state 321
+    BuiltinType  go to state 100
+    DefinedType  go to state 101
+    AnyType      go to state 102
+    Tag          go to state 103
+    Octetstring  go to state 104
+    Bitstring    go to state 105
+    SequenceOf   go to state 106
+    SetOf        go to state 107
+    SubType      go to state 108
+
+
+state 284
+
+  181 SubType: SET SizeConstraint OF_kw Sctrl Control . Type
+
+    ANY          shift, and go to state 78
+    BIT          shift, and go to state 79
+    BITSTRING    shift, and go to state 80
+    BOOLEAN_kw   shift, and go to state 81
+    CHOICE       shift, and go to state 82
+    ENCRYPTED    shift, and go to state 83
+    ENUMERATED   shift, and go to state 84
+    ID           shift, and go to state 85
+    INTEGER      shift, and go to state 86
+    LBRACKET     shift, and go to state 87
+    NAME         shift, and go to state 88
+    NIL          shift, and go to state 89
+    OBJECT       shift, and go to state 90
+    OCTET        shift, and go to state 91
+    OCTETSTRING  shift, and go to state 92
+    REAL         shift, and go to state 93
+    STAR         shift, and go to state 94
+    SEQUENCE     shift, and go to state 95
+    SEQUENCEOF   shift, and go to state 96
+    SET          shift, and go to state 97
+    SETOF        shift, and go to state 98
+
+    Type         go to state 322
+    BuiltinType  go to state 100
+    DefinedType  go to state 101
+    AnyType      go to state 102
+    Tag          go to state 103
+    Octetstring  go to state 104
+    Bitstring    go to state 105
+    SequenceOf   go to state 106
+    SetOf        go to state 107
+    SubType      go to state 108
+
+
+state 285
+
+   61 BuiltinType: SET Sctrl Valtype LBRACE MemberTypes . RBRACE
+
+    RBRACE  shift, and go to state 323
+
+
+state 286
+
+  113 MemberTypes: OptionalTypeList .
+  116 OptionalTypeList: OptionalTypeList . COMMA OptionalType
+
+    COMMA  shift, and go to state 318
+
+    $default  reduce using rule 113 (MemberTypes)
+
+
+state 287
+
+   75 DefinedType: ID DOT ID . PassValue ValParameter
+  154 DefinedValue: ID DOT ID .
+
+    VALA    shift, and go to state 123
+    VALB    shift, and go to state 124
+    VALI    shift, and go to state 125
+    VALS    shift, and go to state 126
+    VALO    shift, and go to state 127
+    VALOID  shift, and go to state 128
+    VALR    shift, and go to state 129
+    VALT    shift, and go to state 130
+    VALQ    shift, and go to state 131
+    VALX    shift, and go to state 132
+
+    BAR       reduce using rule 154 (DefinedValue)
+    COMMA     reduce using rule 154 (DefinedValue)
+    CONTROL   reduce using rule 154 (DefinedValue)
+    DOTDOT    reduce using rule 154 (DefinedValue)
+    END       reduce using rule 154 (DefinedValue)
+    ID        reduce using rule 103 (NullPass)
+    ID        [reduce using rule 154 (DefinedValue)]
+    LANGLE    reduce using rule 154 (DefinedValue)
+    NAME      reduce using rule 103 (NullPass)
+    NAME      [reduce using rule 154 (DefinedValue)]
+    RBRACE    reduce using rule 154 (DefinedValue)
+    RPAREN    reduce using rule 154 (DefinedValue)
+    $default  reduce using rule 103 (NullPass)
+
+    PassValue   go to state 241
+    PassString  go to state 134
+    NullPass    go to state 135
+
+
+state 288
+
+  155 IdentifierList: COMMA . ID IdentifierList
+
+    ID  shift, and go to state 324
+
+
+state 289
+
+  140 BuiltinValue: LBRACE ID IdentifierList . RBRACE
+
+    RBRACE  shift, and go to state 325
+
+
+state 290
+
+  151 NumericRealValue: LBRACE LITNUMBER COMMA . LITNUMBER COMMA LITNUMBER RBRACE
+
+    LITNUMBER  shift, and go to state 326
+
+
+state 291
+
+  143 BuiltinValue: LBRACE Values RBRACE .
+
+    $default  reduce using rule 143 (BuiltinValue)
+
+
+state 292
+
+  160 NamedValueList: NamedValueList COMMA . NamedValue
+
+    ANY            shift, and go to state 78
+    BIT            shift, and go to state 79
+    BITSTRING      shift, and go to state 80
+    BOOLEAN_kw     shift, and go to state 81
+    BSTRING        shift, and go to state 195
+    CHOICE         shift, and go to state 82
+    ENCRYPTED      shift, and go to state 83
+    ENUMERATED     shift, and go to state 84
+    L_FALSE        shift, and go to state 196
+    HSTRING        shift, and go to state 197
+    ID             shift, and go to state 198
+    INTEGER        shift, and go to state 86
+    LBRACE         shift, and go to state 199
+    LBRACKET       shift, and go to state 87
+    LITNUMBER      shift, and go to state 200
+    LITSTRING      shift, and go to state 201
+    NAME           shift, and go to state 202
+    NIL            shift, and go to state 203
+    OBJECT         shift, and go to state 90
+    OCTET          shift, and go to state 91
+    OCTETSTRING    shift, and go to state 92
+    REAL           shift, and go to state 93
+    STAR           shift, and go to state 94
+    SEQUENCE       shift, and go to state 95
+    SEQUENCEOF     shift, and go to state 96
+    SET            shift, and go to state 97
+    SETOF          shift, and go to state 98
+    L_TRUE         shift, and go to state 204
+    PLUSINFINITY   shift, and go to state 205
+    MINUSINFINITY  shift, and go to state 206
+
+    Type              go to state 207
+    BuiltinType       go to state 100
+    DefinedType       go to state 101
+    AnyType           go to state 102
+    Tag               go to state 103
+    Value             go to state 251
+    BuiltinValue      go to state 209
+    RealValue         go to state 210
+    SpecialRealValue  go to state 211
+    NumericRealValue  go to state 212
+    DefinedValue      go to state 213
+    NamedValue        go to state 327
+    Octetstring       go to state 104
+    Bitstring         go to state 105
+    SequenceOf        go to state 106
+    SetOf             go to state 107
+    SubType           go to state 108
+
+
+state 293
+
+  208 SingleTypeConstraint: SubtypeSpec .
+
+    $default  reduce using rule 208 (SingleTypeConstraint)
+
+
+state 294
+
+  206 InnerTypeConstraint: WITH COMPONENT SingleTypeConstraint .
+
+    $default  reduce using rule 206 (InnerTypeConstraint)
+
+
+state 295
+
+  211 FullSpecification: LBRACE . TypeConstraints RBRACE
+  212 PartialSpecification: LBRACE . DOTDOTDOT COMMA TypeConstraints RBRACE
+
+    ABSENT     shift, and go to state 328
+    DOTDOTDOT  shift, and go to state 329
+    LPAREN     shift, and go to state 155
+    NAME       shift, and go to state 330
+    PRESENT    shift, and go to state 331
+
+    $default  reduce using rule 219 (Constraint)
+
+    SubtypeSpec         go to state 332
+    TypeConstraints     go to state 333
+    NamedConstraint     go to state 334
+    Constraint          go to state 335
+    ValueConstraint     go to state 336
+    PresenceConstraint  go to state 337
+
+
+state 296
+
+  207 InnerTypeConstraint: WITH COMPONENTS MultipleTypeConstraints .
+
+    $default  reduce using rule 207 (InnerTypeConstraint)
+
+
+state 297
+
+  209 MultipleTypeConstraints: FullSpecification .
+
+    $default  reduce using rule 209 (MultipleTypeConstraints)
+
+
+state 298
+
+  210 MultipleTypeConstraints: PartialSpecification .
+
+    $default  reduce using rule 210 (MultipleTypeConstraints)
+
+
+state 299
+
+  186 SubtypeAlternativeList: BAR SubtypeAlternative . SubtypeAlternativeList
+
+    BAR  shift, and go to state 261
+
+    $default  reduce using rule 187 (SubtypeAlternativeList)
+
+    SubtypeAlternativeList  go to state 338
+
+
+state 300
+
+  183 SubtypeSpec: LPAREN SubtypeAlternative SubtypeAlternativeList RPAREN .
+
+    $default  reduce using rule 183 (SubtypeSpec)
+
+
+state 301
+
+  199 UpperEndpoint: LANGLE . UpperEndValue
+
+    ANY            shift, and go to state 78
+    BIT            shift, and go to state 79
+    BITSTRING      shift, and go to state 80
+    BOOLEAN_kw     shift, and go to state 81
+    BSTRING        shift, and go to state 195
+    CHOICE         shift, and go to state 82
+    ENCRYPTED      shift, and go to state 83
+    ENUMERATED     shift, and go to state 84
+    L_FALSE        shift, and go to state 196
+    HSTRING        shift, and go to state 197
+    ID             shift, and go to state 198
+    INTEGER        shift, and go to state 86
+    LBRACE         shift, and go to state 199
+    LBRACKET       shift, and go to state 87
+    LITNUMBER      shift, and go to state 200
+    LITSTRING      shift, and go to state 201
+    MAX            shift, and go to state 302
+    NAME           shift, and go to state 202
+    NIL            shift, and go to state 203
+    OBJECT         shift, and go to state 90
+    OCTET          shift, and go to state 91
+    OCTETSTRING    shift, and go to state 92
+    REAL           shift, and go to state 93
+    STAR           shift, and go to state 94
+    SEQUENCE       shift, and go to state 95
+    SEQUENCEOF     shift, and go to state 96
+    SET            shift, and go to state 97
+    SETOF          shift, and go to state 98
+    L_TRUE         shift, and go to state 204
+    PLUSINFINITY   shift, and go to state 205
+    MINUSINFINITY  shift, and go to state 206
+
+    Type              go to state 207
+    BuiltinType       go to state 100
+    DefinedType       go to state 101
+    AnyType           go to state 102
+    Tag               go to state 103
+    Value             go to state 303
+    BuiltinValue      go to state 209
+    RealValue         go to state 210
+    SpecialRealValue  go to state 211
+    NumericRealValue  go to state 212
+    DefinedValue      go to state 213
+    Octetstring       go to state 104
+    Bitstring         go to state 105
+    SequenceOf        go to state 106
+    SetOf             go to state 107
+    SubType           go to state 108
+    UpperEndValue     go to state 339
+
+
+state 302
+
+  203 UpperEndValue: MAX .
+
+    $default  reduce using rule 203 (UpperEndValue)
+
+
+state 303
+
+  202 UpperEndValue: Value .
+
+    $default  reduce using rule 202 (UpperEndValue)
+
+
+state 304
+
+  195 ValueRange: LowerEndPoint DOTDOT UpperEndpoint .
+
+    $default  reduce using rule 195 (ValueRange)
+
+
+state 305
+
+  198 UpperEndpoint: UpperEndValue .
+
+    $default  reduce using rule 198 (UpperEndpoint)
+
+
+state 306
+
+   57 BuiltinType: SequenceOf Sctrl Valtype Control Type .
+  180 SubType: Type . SubtypeSpec
+
+    LPAREN  shift, and go to state 155
+
+    LPAREN    [reduce using rule 57 (BuiltinType)]
+    $default  reduce using rule 57 (BuiltinType)
+
+    SubtypeSpec  go to state 156
+
+
+state 307
+
+   60 BuiltinType: SetOf Sctrl Valtype Control Type .
+  180 SubType: Type . SubtypeSpec
+
+    LPAREN  shift, and go to state 155
+
+    LPAREN    [reduce using rule 60 (BuiltinType)]
+    $default  reduce using rule 60 (BuiltinType)
+
+    SubtypeSpec  go to state 156
+
+
+state 308
+
+   66 BuiltinType: NAME . LANGLE Type
+  122 NamedType: NAME . Type
+
+    ANY          shift, and go to state 78
+    BIT          shift, and go to state 79
+    BITSTRING    shift, and go to state 80
+    BOOLEAN_kw   shift, and go to state 81
+    CHOICE       shift, and go to state 82
+    ENCRYPTED    shift, and go to state 83
+    ENUMERATED   shift, and go to state 84
+    ID           shift, and go to state 85
+    INTEGER      shift, and go to state 86
+    LANGLE       shift, and go to state 141
+    LBRACKET     shift, and go to state 87
+    NAME         shift, and go to state 88
+    NIL          shift, and go to state 89
+    OBJECT       shift, and go to state 90
+    OCTET        shift, and go to state 91
+    OCTETSTRING  shift, and go to state 92
+    REAL         shift, and go to state 93
+    STAR         shift, and go to state 94
+    SEQUENCE     shift, and go to state 95
+    SEQUENCEOF   shift, and go to state 96
+    SET          shift, and go to state 97
+    SETOF        shift, and go to state 98
+
+    Type         go to state 315
+    BuiltinType  go to state 100
+    DefinedType  go to state 101
+    AnyType      go to state 102
+    Tag          go to state 103
+    Octetstring  go to state 104
+    Bitstring    go to state 105
+    SequenceOf   go to state 106
+    SetOf        go to state 107
+    SubType      go to state 108
+
+
+state 309
+
+  125 AlternativeTypeList: NamedType .
+
+    $default  reduce using rule 125 (AlternativeTypeList)
+
+
+state 310
+
+   65 BuiltinType: CHOICE Sctrl Valtype Control LBRACE AlternativeTypeList . RBRACE
+  126 AlternativeTypeList: AlternativeTypeList . COMMA NamedType
+
+    COMMA   shift, and go to state 340
+    RBRACE  shift, and go to state 341
+
+
+state 311
+
+  108 NamedNumber: NAME LPAREN NumericValue . RPAREN
+
+    RPAREN  shift, and go to state 342
+
+
+state 312
+
+  107 NamedNumberList: NamedNumberList COMMA NamedNumber .
+
+    $default  reduce using rule 107 (NamedNumberList)
+
+
+state 313
+
+  180 SubType: Type . SubtypeSpec
+  182        | SEQUENCE SizeConstraint OF_kw Sctrl Control Type .
+
+    LPAREN  shift, and go to state 155
+
+    LPAREN    [reduce using rule 182 (SubType)]
+    $default  reduce using rule 182 (SubType)
+
+    SubtypeSpec  go to state 156
+
+
+state 314
+
+  171 Components: COMPONENTS OF_kw .
+
+    $default  reduce using rule 171 (Components)
+
+
+state 315
+
+  122 NamedType: NAME Type .
+  180 SubType: Type . SubtypeSpec
+
+    LPAREN  shift, and go to state 155
+
+    $default  reduce using rule 122 (NamedType)
+
+    SubtypeSpec  go to state 156
+
+
+state 316
+
+  121 OptionalType: NAME ComponentsOf .
+
+    $default  reduce using rule 121 (OptionalType)
+
+
+state 317
+
+   58 BuiltinType: SEQUENCE Sctrl Valtype LBRACE ElementTypes RBRACE .
+
+    $default  reduce using rule 58 (BuiltinType)
+
+
+state 318
+
+  116 OptionalTypeList: OptionalTypeList COMMA . OptionalType
+
+    ANY           shift, and go to state 78
+    BIT           shift, and go to state 79
+    BITSTRING     shift, and go to state 80
+    BOOLEAN_kw    shift, and go to state 81
+    CHOICE        shift, and go to state 82
+    COMPONENTS    shift, and go to state 274
+    COMPONENTSOF  shift, and go to state 275
+    ENCRYPTED     shift, and go to state 83
+    ENUMERATED    shift, and go to state 84
+    ID            shift, and go to state 85
+    INTEGER       shift, and go to state 86
+    LBRACKET      shift, and go to state 87
+    NAME          shift, and go to state 276
+    NIL           shift, and go to state 89
+    OBJECT        shift, and go to state 90
+    OCTET         shift, and go to state 91
+    OCTETSTRING   shift, and go to state 92
+    REAL          shift, and go to state 93
+    STAR          shift, and go to state 94
+    SEQUENCE      shift, and go to state 95
+    SEQUENCEOF    shift, and go to state 96
+    SET           shift, and go to state 97
+    SETOF         shift, and go to state 98
+
+    Type          go to state 277
+    BuiltinType   go to state 100
+    DefinedType   go to state 101
+    AnyType       go to state 102
+    OptionalType  go to state 343
+    NamedType     go to state 281
+    ComponentsOf  go to state 282
+    Tag           go to state 103
+    Octetstring   go to state 104
+    Bitstring     go to state 105
+    SequenceOf    go to state 106
+    SetOf         go to state 107
+    Components    go to state 283
+    SubType       go to state 108
+
+
+state 319
+
+  119 OptionalType: NamedType DEFAULT . Value Control
+
+    ANY            shift, and go to state 78
+    BIT            shift, and go to state 79
+    BITSTRING      shift, and go to state 80
+    BOOLEAN_kw     shift, and go to state 81
+    BSTRING        shift, and go to state 195
+    CHOICE         shift, and go to state 82
+    ENCRYPTED      shift, and go to state 83
+    ENUMERATED     shift, and go to state 84
+    L_FALSE        shift, and go to state 196
+    HSTRING        shift, and go to state 197
+    ID             shift, and go to state 198
+    INTEGER        shift, and go to state 86
+    LBRACE         shift, and go to state 199
+    LBRACKET       shift, and go to state 87
+    LITNUMBER      shift, and go to state 200
+    LITSTRING      shift, and go to state 201
+    NAME           shift, and go to state 202
+    NIL            shift, and go to state 203
+    OBJECT         shift, and go to state 90
+    OCTET          shift, and go to state 91
+    OCTETSTRING    shift, and go to state 92
+    REAL           shift, and go to state 93
+    STAR           shift, and go to state 94
+    SEQUENCE       shift, and go to state 95
+    SEQUENCEOF     shift, and go to state 96
+    SET            shift, and go to state 97
+    SETOF          shift, and go to state 98
+    L_TRUE         shift, and go to state 204
+    PLUSINFINITY   shift, and go to state 205
+    MINUSINFINITY  shift, and go to state 206
+
+    Type              go to state 207
+    BuiltinType       go to state 100
+    DefinedType       go to state 101
+    AnyType           go to state 102
+    Tag               go to state 103
+    Value             go to state 344
+    BuiltinValue      go to state 209
+    RealValue         go to state 210
+    SpecialRealValue  go to state 211
+    NumericRealValue  go to state 212
+    DefinedValue      go to state 213
+    Octetstring       go to state 104
+    Bitstring         go to state 105
+    SequenceOf        go to state 106
+    SetOf             go to state 107
+    SubType           go to state 108
+
+
+state 320
+
+  118 OptionalType: NamedType OPTIONAL_kw . Control
+
+    CONTROL  shift, and go to state 236
+
+    $default  reduce using rule 45 (Control)
+
+    Control  go to state 345
+
+
+state 321
+
+  124 ComponentsOf: Components Type .
+  180 SubType: Type . SubtypeSpec
+
+    LPAREN  shift, and go to state 155
+
+    $default  reduce using rule 124 (ComponentsOf)
+
+    SubtypeSpec  go to state 156
+
+
+state 322
+
+  180 SubType: Type . SubtypeSpec
+  181        | SET SizeConstraint OF_kw Sctrl Control Type .
+
+    LPAREN  shift, and go to state 155
+
+    LPAREN    [reduce using rule 181 (SubType)]
+    $default  reduce using rule 181 (SubType)
+
+    SubtypeSpec  go to state 156
+
+
+state 323
+
+   61 BuiltinType: SET Sctrl Valtype LBRACE MemberTypes RBRACE .
+
+    $default  reduce using rule 61 (BuiltinType)
+
+
+state 324
+
+  155 IdentifierList: COMMA ID . IdentifierList
+
+    COMMA  shift, and go to state 288
+
+    $default  reduce using rule 156 (IdentifierList)
+
+    IdentifierList  go to state 346
+
+
+state 325
+
+  140 BuiltinValue: LBRACE ID IdentifierList RBRACE .
+
+    $default  reduce using rule 140 (BuiltinValue)
+
+
+state 326
+
+  151 NumericRealValue: LBRACE LITNUMBER COMMA LITNUMBER . COMMA LITNUMBER RBRACE
+
+    COMMA  shift, and go to state 347
+
+
+state 327
+
+  160 NamedValueList: NamedValueList COMMA NamedValue .
+
+    $default  reduce using rule 160 (NamedValueList)
+
+
+state 328
+
+  222 PresenceConstraint: ABSENT .
+
+    $default  reduce using rule 222 (PresenceConstraint)
+
+
+state 329
+
+  212 PartialSpecification: LBRACE DOTDOTDOT . COMMA TypeConstraints RBRACE
+
+    COMMA  shift, and go to state 348
+
+
+state 330
+
+  215 NamedConstraint: NAME . Constraint
+
+    ABSENT   shift, and go to state 328
+    LPAREN   shift, and go to state 155
+    PRESENT  shift, and go to state 331
+
+    $default  reduce using rule 219 (Constraint)
+
+    SubtypeSpec         go to state 332
+    Constraint          go to state 349
+    ValueConstraint     go to state 336
+    PresenceConstraint  go to state 337
+
+
+state 331
+
+  221 PresenceConstraint: PRESENT .
+
+    $default  reduce using rule 221 (PresenceConstraint)
+
+
+state 332
+
+  220 ValueConstraint: SubtypeSpec .
+
+    $default  reduce using rule 220 (ValueConstraint)
+
+
+state 333
+
+  211 FullSpecification: LBRACE TypeConstraints . RBRACE
+
+    RBRACE  shift, and go to state 350
+
+
+state 334
+
+  213 TypeConstraints: NamedConstraint .
+  214                | NamedConstraint . COMMA TypeConstraints
+
+    COMMA  shift, and go to state 351
+
+    $default  reduce using rule 213 (TypeConstraints)
+
+
+state 335
+
+  216 NamedConstraint: Constraint .
+
+    $default  reduce using rule 216 (NamedConstraint)
+
+
+state 336
+
+  217 Constraint: ValueConstraint .
+
+    $default  reduce using rule 217 (Constraint)
+
+
+state 337
+
+  218 Constraint: PresenceConstraint .
+
+    $default  reduce using rule 218 (Constraint)
+
+
+state 338
+
+  186 SubtypeAlternativeList: BAR SubtypeAlternative SubtypeAlternativeList .
+
+    $default  reduce using rule 186 (SubtypeAlternativeList)
+
+
+state 339
+
+  199 UpperEndpoint: LANGLE UpperEndValue .
+
+    $default  reduce using rule 199 (UpperEndpoint)
+
+
+state 340
+
+  126 AlternativeTypeList: AlternativeTypeList COMMA . NamedType
+
+    ANY          shift, and go to state 78
+    BIT          shift, and go to state 79
+    BITSTRING    shift, and go to state 80
+    BOOLEAN_kw   shift, and go to state 81
+    CHOICE       shift, and go to state 82
+    ENCRYPTED    shift, and go to state 83
+    ENUMERATED   shift, and go to state 84
+    ID           shift, and go to state 85
+    INTEGER      shift, and go to state 86
+    LBRACKET     shift, and go to state 87
+    NAME         shift, and go to state 308
+    NIL          shift, and go to state 89
+    OBJECT       shift, and go to state 90
+    OCTET        shift, and go to state 91
+    OCTETSTRING  shift, and go to state 92
+    REAL         shift, and go to state 93
+    STAR         shift, and go to state 94
+    SEQUENCE     shift, and go to state 95
+    SEQUENCEOF   shift, and go to state 96
+    SET          shift, and go to state 97
+    SETOF        shift, and go to state 98
+
+    Type         go to state 277
+    BuiltinType  go to state 100
+    DefinedType  go to state 101
+    AnyType      go to state 102
+    NamedType    go to state 352
+    Tag          go to state 103
+    Octetstring  go to state 104
+    Bitstring    go to state 105
+    SequenceOf   go to state 106
+    SetOf        go to state 107
+    SubType      go to state 108
+
+
+state 341
+
+   65 BuiltinType: CHOICE Sctrl Valtype Control LBRACE AlternativeTypeList RBRACE .
+
+    $default  reduce using rule 65 (BuiltinType)
+
+
+state 342
+
+  108 NamedNumber: NAME LPAREN NumericValue RPAREN .
+
+    $default  reduce using rule 108 (NamedNumber)
+
+
+state 343
+
+  116 OptionalTypeList: OptionalTypeList COMMA OptionalType .
+
+    $default  reduce using rule 116 (OptionalTypeList)
+
+
+state 344
+
+  119 OptionalType: NamedType DEFAULT Value . Control
+
+    CONTROL  shift, and go to state 236
+
+    $default  reduce using rule 45 (Control)
+
+    Control  go to state 353
+
+
+state 345
+
+  118 OptionalType: NamedType OPTIONAL_kw Control .
+
+    $default  reduce using rule 118 (OptionalType)
+
+
+state 346
+
+  155 IdentifierList: COMMA ID IdentifierList .
+
+    $default  reduce using rule 155 (IdentifierList)
+
+
+state 347
+
+  151 NumericRealValue: LBRACE LITNUMBER COMMA LITNUMBER COMMA . LITNUMBER RBRACE
+
+    LITNUMBER  shift, and go to state 354
+
+
+state 348
+
+  212 PartialSpecification: LBRACE DOTDOTDOT COMMA . TypeConstraints RBRACE
+
+    ABSENT   shift, and go to state 328
+    LPAREN   shift, and go to state 155
+    NAME     shift, and go to state 330
+    PRESENT  shift, and go to state 331
+
+    $default  reduce using rule 219 (Constraint)
+
+    SubtypeSpec         go to state 332
+    TypeConstraints     go to state 355
+    NamedConstraint     go to state 334
+    Constraint          go to state 335
+    ValueConstraint     go to state 336
+    PresenceConstraint  go to state 337
+
+
+state 349
+
+  215 NamedConstraint: NAME Constraint .
+
+    $default  reduce using rule 215 (NamedConstraint)
+
+
+state 350
+
+  211 FullSpecification: LBRACE TypeConstraints RBRACE .
+
+    $default  reduce using rule 211 (FullSpecification)
+
+
+state 351
+
+  214 TypeConstraints: NamedConstraint COMMA . TypeConstraints
+
+    ABSENT   shift, and go to state 328
+    LPAREN   shift, and go to state 155
+    NAME     shift, and go to state 330
+    PRESENT  shift, and go to state 331
+
+    $default  reduce using rule 219 (Constraint)
+
+    SubtypeSpec         go to state 332
+    TypeConstraints     go to state 356
+    NamedConstraint     go to state 334
+    Constraint          go to state 335
+    ValueConstraint     go to state 336
+    PresenceConstraint  go to state 337
+
+
+state 352
+
+  126 AlternativeTypeList: AlternativeTypeList COMMA NamedType .
+
+    $default  reduce using rule 126 (AlternativeTypeList)
+
+
+state 353
+
+  119 OptionalType: NamedType DEFAULT Value Control .
+
+    $default  reduce using rule 119 (OptionalType)
+
+
+state 354
+
+  151 NumericRealValue: LBRACE LITNUMBER COMMA LITNUMBER COMMA LITNUMBER . RBRACE
+
+    RBRACE  shift, and go to state 357
+
+
+state 355
+
+  212 PartialSpecification: LBRACE DOTDOTDOT COMMA TypeConstraints . RBRACE
+
+    RBRACE  shift, and go to state 358
+
+
+state 356
+
+  214 TypeConstraints: NamedConstraint COMMA TypeConstraints .
+
+    $default  reduce using rule 214 (TypeConstraints)
+
+
+state 357
+
+  151 NumericRealValue: LBRACE LITNUMBER COMMA LITNUMBER COMMA LITNUMBER RBRACE .
+
+    $default  reduce using rule 151 (NumericRealValue)
+
+
+state 358
+
+  212 PartialSpecification: LBRACE DOTDOTDOT COMMA TypeConstraints RBRACE .
+
+    $default  reduce using rule 212 (PartialSpecification)

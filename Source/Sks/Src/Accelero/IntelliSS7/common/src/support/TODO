@@ -1,0 +1,24 @@
+ o Need AIX support.   Never have had an AIX client.
+ o Need SGI support?   Never have had an SGI client.
+ o Think about IMAL for UDP [specifically this is broken write now
+   due to Read/Write extension missing for IMAL UDP].
+ o We need to add a KAFIFOTRAN class for keepalives on fifos.  Extra
+   work, I know, but it turned out this was easier than adding KA
+   behavior to all transports - what would that mean for SS7 and tqueues
+   anyway.
+ o Think about UNIX domain DATAGRAM sockets.  Should we unlink on open
+   here?  Dunno.  Are UNIX domain datagram sockets bidirectional?  See
+   about adding domain to EndPointTrans to use this.  Affects SCTP in
+   some ways.
+ o M2UA and M2PA
+ o MGCP, MEGACO, SIP
+ o General stack "FIXME"s
+ o There is a wide-open race with the MTP3 implementation.  If the
+   border transports representing SS7 links (M2PA or MTP2) have not
+   started when MTP3 starts, it is possible that TRANSPORT_PutEvent
+   will fail, perhaps messily depending on the circumstances.  We
+   need a synchronization mechanism to delay MTP3's start until the
+   vendor libs are active.  The initial MTP3 start delay accomplishes
+   this, but is hardly deterministic.
+ o Think about SAAL links - the max msg size goes to 4096.  MTP3 and
+   SCCP need to be adjusted appropriately.

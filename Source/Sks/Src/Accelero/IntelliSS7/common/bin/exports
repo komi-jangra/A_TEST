@@ -1,0 +1,6 @@
+release		cpp	both	DBGConsole	DBGConsole.exe
+debug		cpp	both	DBGConsole	DBGConsole.exe
+release		c	both	prlicense	prlicense.exe
+debug		c	both	prlicenseD	prlicenseD.exe
+release		c	both	vrlicense	vrlicense.exe
+debug		c	both	vrlicenseD	vrlicenseD.exe

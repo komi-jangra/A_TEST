@@ -1,0 +1,578 @@
+make: Warning: File `/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/lib/macros.mk' has modification time 1.3e+08 s in the future
+<command line>:7:12: warning: extra tokens at end of #undef directive
+<command line>:8:10: warning: extra tokens at end of #undef directive
+<command line>:9:13: warning: extra tokens at end of #undef directive
+In file included from /home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_dbf.h:22,
+                 from /home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_stgl.h:23,
+                 from bs_main.c:40:
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_cdef.h:29:1: warning: "COMPARE_ITU" redefined
+<command line>:20:1: warning: this is the location of the previous definition
+In file included from bs_main.c:41:
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_debug.h:24:1: warning: "LOGGER_IMR" redefined
+<command line>:13:1: warning: this is the location of the previous definition
+In file included from /home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_debug.h:29,
+                 from bs_main.c:41:
+/home5/itikasinghal/VNL-NIIB-VAR1/Tools/Bsc_build/../..//../VNL-NIIB-VAR1/Inc/Bpm/../Ipc/ipcfrm_syslog.h:24:1: warning: "LOG_DEBUG" redefined
+In file included from /usr/include/syslog.h:1,
+                 from /home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/h/bssap.h:13,
+                 from bs_main.c:34:
+/usr/include/sys/syslog.h:58:1: warning: this is the location of the previous definition
+In file included from /home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_debug.h:29,
+                 from bs_main.c:41:
+/home5/itikasinghal/VNL-NIIB-VAR1/Tools/Bsc_build/../..//../VNL-NIIB-VAR1/Inc/Bpm/../Ipc/ipcfrm_syslog.h:25:1: warning: "LOG_INFO" redefined
+In file included from /usr/include/syslog.h:1,
+                 from /home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/h/bssap.h:13,
+                 from bs_main.c:34:
+/usr/include/sys/syslog.h:57:1: warning: this is the location of the previous definition
+In file included from bs_main.c:42:
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bssap_port.h:88:17: warning: ISO C requires whitespace after the macro name
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bssap_port.h:89:17: warning: ISO C requires whitespace after the macro name
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bssap_port.h:89:1: warning: "SCCP_MAX" redefined
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bssap_port.h:88:1: warning: this is the location of the previous definition
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bssap_port.h:90:17: warning: ISO C requires whitespace after the macro name
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bssap_port.h:90:1: warning: "SCCP_MAX" redefined
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bssap_port.h:89:1: warning: this is the location of the previous definition
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bssap_port.h:91:17: warning: ISO C requires whitespace after the macro name
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bssap_port.h:91:1: warning: "SCCP_MAX" redefined
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bssap_port.h:90:1: warning: this is the location of the previous definition
+bs_main.c:76: warning: function declaration isn't a prototype
+In file included from bs_main.c:87:
+/home5/itikasinghal/VNL-NIIB-VAR1/Tools/Bsc_build/../..//../VNL-NIIB-VAR1/Inc/Bpm/bpmxxx_platformLib.h:57: warning: function declaration isn't a prototype
+bs_main.c:97:1: warning: "SS7_SUCCESS" redefined
+In file included from bs_main.c:36:
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/s7_typ.h:60:1: warning: this is the location of the previous definition
+bs_main.c: In function `user_intf_api_notification_hndlr':
+bs_main.c:237: warning: return makes integer from pointer without a cast
+bs_main.c:239: warning: implicit declaration of function `ss7_dispatch_buffer'
+bs_main.c:244: warning: return makes integer from pointer without a cast
+bs_main.c: In function `user_sock_recv_data':
+bs_main.c:267: warning: control reaches end of non-void function
+bs_main.c: In function `sigtran_sccp_if_api_notification_hndlr':
+bs_main.c:334: warning: return makes integer from pointer without a cast
+bs_main.c:339: warning: return makes integer from pointer without a cast
+bs_main.c:342: warning: return makes integer from pointer without a cast
+bs_main.c: In function `sigtran_sccp_if_sock_recv_data':
+bs_main.c:366: warning: control reaches end of non-void function
+bs_main.c: At top level:
+bs_main.c:411: warning: return type defaults to `int'
+bs_main.c: In function `user_tcp_sock_init':
+bs_main.c:424: warning: passing arg 1 of `inet_addr' from incompatible pointer type
+bs_main.c:437: warning: passing arg 2 of `bind' from incompatible pointer type
+bs_main.c:450: warning: control reaches end of non-void function
+bs_main.c: At top level:
+bs_main.c:454: warning: return type defaults to `int'
+bs_main.c: In function `sigtran_sccp_if_tcp_sock_init':
+bs_main.c:467: warning: passing arg 1 of `inet_addr' from incompatible pointer type
+bs_main.c:481: warning: passing arg 2 of `bind' from incompatible pointer type
+bs_main.c:494: warning: control reaches end of non-void function
+bs_main.c: At top level:
+bs_main.c:798: warning: return type defaults to `int'
+bs_main.c:798: warning: function declaration isn't a prototype
+bs_main.c: In function `bssap_init':
+bs_main.c:843: warning: implicit declaration of function `ss7_bssap_init'
+bs_main.c:847: warning: control reaches end of non-void function
+bs_main.c: At top level:
+bs_main.c:923: warning: function declaration isn't a prototype
+bs_main.c:923: warning: return type of 'main' is not `int'
+bs_main.c: In function `main':
+bs_main.c:945: warning: implicit declaration of function `bssap_read_conf_file'
+bs_main.c:964: warning: `return' with a value, in function returning void
+bs_main.c: In function `bssap_read_conf_file':
+bs_main.c:999: warning: implicit declaration of function `bssap_get_conf_file'
+bs_main.c:1006: warning: char format, pointer arg (arg 4)
+bs_main.c:1301: warning: control reaches end of non-void function
+bs_main.c: In function `bssap_get_conf_file':
+bs_main.c:1329: warning: control reaches end of non-void function
+bs_main.c: In function `bsc_sighandler':
+bs_main.c:1510: warning: implicit declaration of function `strsignal'
+bs_main.c: At top level:
+bs_main.c:1526: warning: function declaration isn't a prototype
+<command line>:7:12: warning: extra tokens at end of #undef directive
+<command line>:8:10: warning: extra tokens at end of #undef directive
+<command line>:9:13: warning: extra tokens at end of #undef directive
+In file included from /home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_dbf.h:22,
+                 from /home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_stgl.h:23,
+                 from bs_sys.c:16:
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_cdef.h:29:1: warning: "COMPARE_ITU" redefined
+<command line>:20:1: warning: this is the location of the previous definition
+In file included from bs_sys.c:17:
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_debug.h:24:1: warning: "LOGGER_IMR" redefined
+<command line>:13:1: warning: this is the location of the previous definition
+bs_sys.c: In function `bssap_malloc':
+bs_sys.c:52: warning: implicit declaration of function `pthread_self'
+bs_sys.c: In function `sccp_sendto_sm':
+bs_sys.c:246: warning: implicit declaration of function `sccp_api_detail_trace'
+<command line>:7:12: warning: extra tokens at end of #undef directive
+<command line>:8:10: warning: extra tokens at end of #undef directive
+<command line>:9:13: warning: extra tokens at end of #undef directive
+In file included from bs_apphdl.c:22:
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_trace.h:151:1: warning: "BSDATA_BLOCK_TIMER" redefined
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_trace.h:148:1: warning: this is the location of the previous definition
+In file included from bs_apphdl.c:34:
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_debug.h:24:1: warning: "LOGGER_IMR" redefined
+<command line>:13:1: warning: this is the location of the previous definition
+In file included from /home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_debug.h:29,
+                 from bs_apphdl.c:34:
+/home5/itikasinghal/VNL-NIIB-VAR1/Tools/Bsc_build/../..//../VNL-NIIB-VAR1/Inc/Bpm/../Ipc/ipcfrm_syslog.h:21:1: warning: "CRITICAL" redefined
+In file included from bs_apphdl.c:22:
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_trace.h:20:1: warning: this is the location of the previous definition
+bs_apphdl.c: In function `BsDispatchSccpIndToApp':
+bs_apphdl.c:230: warning: implicit declaration of function `send_from_bssap_to_user'
+bs_apphdl.c: In function `BsDispatchDtapToApp':
+bs_apphdl.c:346: warning: implicit declaration of function `Prnt_Dtap'
+bs_apphdl.c: In function `BsDispatchMapToApp':
+bs_apphdl.c:1343: warning: long unsigned int format, U32bit arg (arg 2)
+bs_apphdl.c:1343: warning: long unsigned int format, U32bit arg (arg 3)
+bs_apphdl.c:1343: warning: long unsigned int format, uint32_t arg (arg 4)
+bs_apphdl.c:1343: warning: long unsigned int format, uint32_t arg (arg 5)
+<command line>:7:12: warning: extra tokens at end of #undef directive
+<command line>:8:10: warning: extra tokens at end of #undef directive
+<command line>:9:13: warning: extra tokens at end of #undef directive
+In file included from bs_map.c:23:
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_trace.h:151:1: warning: "BSDATA_BLOCK_TIMER" redefined
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_trace.h:148:1: warning: this is the location of the previous definition
+In file included from /home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_dbf.h:22,
+                 from /home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_stgl.h:23,
+                 from bs_map.c:34:
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_cdef.h:29:1: warning: "COMPARE_ITU" redefined
+<command line>:20:1: warning: this is the location of the previous definition
+In file included from bs_map.c:36:
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_debug.h:24:1: warning: "LOGGER_IMR" redefined
+<command line>:13:1: warning: this is the location of the previous definition
+In file included from /home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_debug.h:29,
+                 from bs_map.c:36:
+/home5/itikasinghal/VNL-NIIB-VAR1/Tools/Bsc_build/../..//../VNL-NIIB-VAR1/Inc/Bpm/../Ipc/ipcfrm_syslog.h:21:1: warning: "CRITICAL" redefined
+In file included from bs_map.c:23:
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_trace.h:20:1: warning: this is the location of the previous definition
+bs_map.c: In function `BsSendFailureMsg':
+bs_map.c:136: warning: implicit declaration of function `BsEncode'
+bs_map.c: In function `BsSendUDataReq':
+bs_map.c:294: warning: implicit declaration of function `sccp_addr_len'
+bs_map.c:302: warning: implicit declaration of function `bssap_malloc'
+bs_map.c:302: warning: assignment makes pointer from integer without a cast
+bs_map.c:305: warning: `return' with no value, in function returning non-void
+bs_map.c:308: warning: implicit declaration of function `sccp_fill_api_header'
+bs_map.c:313: warning: implicit declaration of function `sccp_encode_sccp_addr'
+bs_map.c:313: warning: assignment makes pointer from integer without a cast
+bs_map.c:318: warning: assignment makes pointer from integer without a cast
+bs_map.c:343: warning: implicit declaration of function `send_from_bssap_to_sccp'
+bs_map.c:346: warning: implicit declaration of function `bssap_free'
+bs_map.c: In function `BsSendDataReq':
+bs_map.c:404: warning: `return' with no value, in function returning non-void
+bs_map.c: In function `BsSendDisReq':
+bs_map.c:472: warning: implicit declaration of function `bsBldDisEvt'
+bs_map.c: In function `BsSendConResp':
+bs_map.c:549: warning: `return' with no value, in function returning non-void
+bs_map.c:571: warning: assignment makes pointer from integer without a cast
+bs_map.c: In function `BsSendConReq':
+bs_map.c:696: warning: assignment makes pointer from integer without a cast
+bs_map.c:709: warning: assignment makes pointer from integer without a cast
+bs_map.c: In function `BsProcessInBSSMAPMessage':
+bs_map.c:872: warning: implicit declaration of function `BsDispatchMapToApp'
+bs_map.c: In function `BsProcessInBSSMAPUDTMessage':
+bs_map.c:929: warning: implicit declaration of function `BsDispatchMapUDTtoApp'
+bs_map.c: In function `BsHandleDecodeFailure':
+bs_map.c:1029: warning: implicit declaration of function `BsDispatchErrorToApp'
+bs_map.c:1047: warning: implicit declaration of function `BsDispatchMapErrToApp'
+bs_map.c: In function `BsProcessCOMapProcedures':
+bs_map.c:1499: warning: implicit declaration of function `BsProcessAssignmentRequest'
+bs_map.c:1502: warning: implicit declaration of function `BsProcessClearCommand'
+bs_map.c:1505: warning: implicit declaration of function `BsProcessInternalHandoverCmd'
+bs_map.c:1508: warning: implicit declaration of function `BsProcessInternalHandoverRequiredReject'
+bs_map.c:1511: warning: implicit declaration of function `BsProcessHandoverRequest'
+bs_map.c:1642: warning: implicit declaration of function `BsProcessCompleteLayer3Info'
+bs_map.c:1645: warning: implicit declaration of function `BsProcessAssignmentComplete'
+bs_map.c:1648: warning: implicit declaration of function `BsProcessAssignmentFailure'
+bs_map.c:1696: warning: implicit declaration of function `BsProcessClearRequest'
+bs_map.c:1704: warning: implicit declaration of function `BsProcessHandoverRequired'
+bs_map.c:1707: warning: implicit declaration of function `BsProcessHandoverFailure'
+bs_map.c:1710: warning: implicit declaration of function `BsProcessHandoverReqAck'
+bs_map.c:1723: warning: implicit declaration of function `BsProcessHandoverPerformed'
+bs_map.c:1726: warning: implicit declaration of function `BsProcessChangeCircuitAck'
+bs_map.c:1729: warning: implicit declaration of function `BsProcessInternalHandoverRequired'
+bs_map.c: In function `BsProcessUDTMapProcedures':
+bs_map.c:1796: warning: implicit declaration of function `BsProcessBlockInd'
+bs_map.c:1800: warning: implicit declaration of function `BsProcessBlockAckInd'
+bs_map.c:1804: warning: implicit declaration of function `BsProcessUnBlockInd'
+bs_map.c:1807: warning: implicit declaration of function `BsProcessUnBlockAckInd'
+bs_map.c:1811: warning: implicit declaration of function `BsProcessResetAckInd'
+bs_map.c:1815: warning: implicit declaration of function `BsProcessResetInd'
+bs_map.c:1819: warning: implicit declaration of function `BsProcessResetCktInd'
+bs_map.c:1823: warning: implicit declaration of function `BsProcessResetCktAckInd'
+bs_map.c:1827: warning: implicit declaration of function `BsProcessUnequippedCktInd'
+bs_map.c:1831: warning: implicit declaration of function `BsProcessOverloadInd'
+bs_map.c:1834: warning: implicit declaration of function `BsProcessCktGroupBlockInd'
+bs_map.c:1838: warning: implicit declaration of function `BsProcessCktGroupBlockAckInd'
+bs_map.c:1842: warning: implicit declaration of function `BsProcessCktGroupUnBlockInd'
+bs_map.c:1846: warning: implicit declaration of function `BsProcessCktGroupUnBlockAckInd'
+bs_map.c:1879: warning: implicit declaration of function `BsProcessResetIPAckInd'
+bs_map.c:1892: warning: implicit declaration of function `BsProcessBlockRequest'
+bs_map.c:1896: warning: implicit declaration of function `BsProcessBlockAckReq'
+bs_map.c:1900: warning: implicit declaration of function `BsProcessUnBlockRequest'
+bs_map.c:1904: warning: implicit declaration of function `BsProcessResetReq'
+bs_map.c:1908: warning: implicit declaration of function `BsProcessResetAckReq'
+bs_map.c:1912: warning: implicit declaration of function `BsProcessResetCktReq'
+bs_map.c:1916: warning: implicit declaration of function `BsProcessResetCktAckReq'
+bs_map.c:1919: warning: implicit declaration of function `BsProcessUnequippedCktReq'
+bs_map.c:1937: warning: implicit declaration of function `BsProcessCktGroupBlockReq'
+bs_map.c:1940: warning: implicit declaration of function `BsProcessCktGroupUnblockReq'
+bs_map.c:1954: warning: implicit declaration of function `BsProcessResetIPReq'
+bs_map.c: At top level:
+bs_map.c:1998: warning: function declaration isn't a prototype
+bs_map.c: In function `BsProcessOutBSSMAPMessage':
+bs_map.c:2197: warning: implicit declaration of function `BsDecode'
+<command line>:7:12: warning: extra tokens at end of #undef directive
+<command line>:8:10: warning: extra tokens at end of #undef directive
+<command line>:9:13: warning: extra tokens at end of #undef directive
+In file included from bs_bdy5.c:23:
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_trace.h:151:1: warning: "BSDATA_BLOCK_TIMER" redefined
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_trace.h:148:1: warning: this is the location of the previous definition
+In file included from /home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_dbf.h:22,
+                 from /home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_stgl.h:23,
+                 from bs_bdy5.c:34:
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_cdef.h:29:1: warning: "COMPARE_ITU" redefined
+<command line>:20:1: warning: this is the location of the previous definition
+In file included from bs_bdy5.c:36:
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_debug.h:24:1: warning: "LOGGER_IMR" redefined
+<command line>:13:1: warning: this is the location of the previous definition
+In file included from /home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_debug.h:29,
+                 from bs_bdy5.c:36:
+/home5/itikasinghal/VNL-NIIB-VAR1/Tools/Bsc_build/../..//../VNL-NIIB-VAR1/Inc/Bpm/../Ipc/ipcfrm_syslog.h:21:1: warning: "CRITICAL" redefined
+In file included from bs_bdy5.c:23:
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_trace.h:20:1: warning: this is the location of the previous definition
+bs_bdy5.c: In function `bsFindCall':
+bs_bdy5.c:167: warning: passing arg 3 of `HashListTbSearch' from incompatible pointer type
+bs_bdy5.c: In function `bsBldDisEvt':
+bs_bdy5.c:356: warning: implicit declaration of function `sccp_addr_len'
+bs_bdy5.c:370: warning: implicit declaration of function `bssap_malloc'
+bs_bdy5.c:373: warning: `return' with no value, in function returning non-void
+bs_bdy5.c:376: warning: implicit declaration of function `sccp_fill_api_header'
+bs_bdy5.c:403: warning: implicit declaration of function `sccp_encode_sccp_addr'
+bs_bdy5.c:403: warning: assignment makes pointer from integer without a cast
+bs_bdy5.c:434: warning: implicit declaration of function `send_from_bssap_to_sccp'
+bs_bdy5.c:437: warning: implicit declaration of function `bssap_free'
+bs_bdy5.c: In function `bsCreate_InsertConRef':
+bs_bdy5.c:641: warning: assignment from incompatible pointer type
+bs_bdy5.c:653: warning: assignment from incompatible pointer type
+bs_bdy5.c:684: warning: passing arg 4 of `HashListTbInsert' from incompatible pointer type
+bs_bdy5.c: In function `bsDeallocateConRef':
+bs_bdy5.c:761: warning: passing arg 4 of `HashListTbDelete' from incompatible pointer type
+bs_bdy5.c: In function `bsCfgIntfCb':
+bs_bdy5.c:1033: warning: assignment from incompatible pointer type
+<command line>:7:12: warning: extra tokens at end of #undef directive
+<command line>:8:10: warning: extra tokens at end of #undef directive
+<command line>:9:13: warning: extra tokens at end of #undef directive
+In file included from bs_bdy7.c:24:
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_trace.h:151:1: warning: "BSDATA_BLOCK_TIMER" redefined
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_trace.h:148:1: warning: this is the location of the previous definition
+In file included from /home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_dbf.h:22,
+                 from /home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_stgl.h:23,
+                 from bs_bdy7.c:31:
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_cdef.h:29:1: warning: "COMPARE_ITU" redefined
+<command line>:20:1: warning: this is the location of the previous definition
+In file included from bs_bdy7.c:33:
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_debug.h:24:1: warning: "LOGGER_IMR" redefined
+<command line>:13:1: warning: this is the location of the previous definition
+In file included from /home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_debug.h:29,
+                 from bs_bdy7.c:33:
+/home5/itikasinghal/VNL-NIIB-VAR1/Tools/Bsc_build/../..//../VNL-NIIB-VAR1/Inc/Bpm/../Ipc/ipcfrm_syslog.h:21:1: warning: "CRITICAL" redefined
+In file included from bs_bdy7.c:24:
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_trace.h:20:1: warning: this is the location of the previous definition
+bs_bdy7.c: In function `bsHandleAssignReqTimeout':
+bs_bdy7.c:161: warning: implicit declaration of function `BsSendFailureMsg'
+bs_bdy7.c:162: warning: implicit declaration of function `BsDispatchErrorToApp'
+bs_bdy7.c:169: warning: implicit declaration of function `BsDispatchAOIPProtocolErrToApp'
+bs_bdy7.c: In function `bsProcessBlockTimeout':
+bs_bdy7.c:367: warning: implicit declaration of function `BsSendUDataReq'
+bs_bdy7.c:369: warning: implicit declaration of function `BsIncrPegsCounter'
+bs_bdy7.c: In function `bsHandleResetTimeout':
+bs_bdy7.c:624: warning: implicit declaration of function `bsGetIntfPtr'
+bs_bdy7.c:624: warning: assignment makes pointer from integer without a cast
+bs_bdy7.c:628: warning: `return' with a value, in function returning void
+bs_bdy7.c:639: warning: implicit declaration of function `bssap_malloc'
+bs_bdy7.c:643: warning: `return' with a value, in function returning void
+bs_bdy7.c:647: warning: implicit declaration of function `bssap_free'
+bs_bdy7.c: In function `bsHandleResetIPTimeout':
+bs_bdy7.c:753: warning: implicit declaration of function `BsDecode'
+bs_bdy7.c:760: warning: implicit declaration of function `BsFindIE'
+bs_bdy7.c: In function `bsHandleResetGuardTimeout':
+bs_bdy7.c:823: warning: implicit declaration of function `bsGetIntfPtrFrmDPC'
+bs_bdy7.c:823: warning: assignment makes pointer from integer without a cast
+bs_bdy7.c:827: warning: `return' with a value, in function returning void
+bs_bdy7.c:831: warning: implicit declaration of function `BsDispatchTimeoutErrorToApp'
+bs_bdy7.c: In function `bsRmvConTq':
+bs_bdy7.c:1161: warning: `return' with no value, in function returning non-void
+bs_bdy7.c:1166: warning: passing arg 2 of `ss7_stop_timer' makes pointer from integer without a cast
+bs_bdy7.c: In function `bsRmvCirTq':
+bs_bdy7.c:1568: warning: `return' with no value, in function returning non-void
+bs_bdy7.c:1572: warning: passing arg 2 of `ss7_stop_timer' makes pointer from integer without a cast
+bs_bdy7.c: In function `bsRmvIntfTq':
+bs_bdy7.c:1694: warning: `return' with no value, in function returning non-void
+bs_bdy7.c:1699: warning: passing arg 2 of `ss7_stop_timer' makes pointer from integer without a cast
+<command line>:7:12: warning: extra tokens at end of #undef directive
+<command line>:8:10: warning: extra tokens at end of #undef directive
+<command line>:9:13: warning: extra tokens at end of #undef directive
+In file included from /home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_dbf.h:22,
+                 from /home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_stgl.h:23,
+                 from bs_clc.c:18:
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_cdef.h:29:1: warning: "COMPARE_ITU" redefined
+<command line>:20:1: warning: this is the location of the previous definition
+In file included from bs_clc.c:35:
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_trace.h:151:1: warning: "BSDATA_BLOCK_TIMER" redefined
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_trace.h:148:1: warning: this is the location of the previous definition
+In file included from bs_clc.c:42:
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_debug.h:24:1: warning: "LOGGER_IMR" redefined
+<command line>:13:1: warning: this is the location of the previous definition
+In file included from /home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_debug.h:29,
+                 from bs_clc.c:42:
+/home5/itikasinghal/VNL-NIIB-VAR1/Tools/Bsc_build/../..//../VNL-NIIB-VAR1/Inc/Bpm/../Ipc/ipcfrm_syslog.h:21:1: warning: "CRITICAL" redefined
+In file included from bs_clc.c:35:
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_trace.h:20:1: warning: this is the location of the previous definition
+bs_clc.c: In function `sccp_n_state_ind':
+bs_clc.c:133: warning: implicit declaration of function `bsGetIntfPtrFrmDPC'
+bs_clc.c:133: warning: assignment makes pointer from integer without a cast
+bs_clc.c:155: warning: implicit declaration of function `BsDispatchPcStatusToApp'
+bs_clc.c: In function `sccp_n_pcstate_ind':
+bs_clc.c:248: warning: assignment makes pointer from integer without a cast
+bs_clc.c: In function `sccp_n_unitdata_ind':
+bs_clc.c:330: warning: implicit declaration of function `sccp_decode_sccp_addr'
+bs_clc.c:408: warning: assignment makes pointer from integer without a cast
+bs_clc.c:449: warning: implicit declaration of function `BsProcessUserData'
+bs_clc.c: In function `sccp_n_connect_ind':
+bs_clc.c:560: warning: implicit declaration of function `sccp_addr_len'
+bs_clc.c:629: warning: assignment makes pointer from integer without a cast
+bs_clc.c:640: warning: implicit declaration of function `BsSendDisReq'
+bs_clc.c:715: warning: implicit declaration of function `BsSendConResp'
+bs_clc.c: In function `sccp_n_connect_cnf':
+bs_clc.c:897: warning: assignment makes pointer from integer without a cast
+bs_clc.c:935: warning: implicit declaration of function `BsDispatchSccpIndToApp'
+bs_clc.c:954: warning: passing arg 4 of `HashListTbUpdate' from incompatible pointer type
+bs_clc.c: In function `sccp_n_data_ind':
+bs_clc.c:1078: warning: implicit declaration of function `bsGetIntfPtr'
+bs_clc.c:1078: warning: assignment makes pointer from integer without a cast
+bs_clc.c:1090: warning: implicit declaration of function `bsFindCallUsingspInstId'
+bs_clc.c:1090: warning: assignment makes pointer from integer without a cast
+bs_clc.c:1136: warning: passing arg 4 of `HashListTbUpdate' from incompatible pointer type
+bs_clc.c: In function `sccp_n_disconnect_ind':
+bs_clc.c:1306: warning: assignment makes pointer from integer without a cast
+bs_clc.c:1319: warning: assignment makes pointer from integer without a cast
+<command line>:7:12: warning: extra tokens at end of #undef directive
+<command line>:8:10: warning: extra tokens at end of #undef directive
+<command line>:9:13: warning: extra tokens at end of #undef directive
+In file included from bs_mptop.c:24:
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_trace.h:151:1: warning: "BSDATA_BLOCK_TIMER" redefined
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_trace.h:148:1: warning: this is the location of the previous definition
+In file included from /home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_dbf.h:22,
+                 from /home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_stgl.h:23,
+                 from bs_mptop.c:39:
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_cdef.h:29:1: warning: "COMPARE_ITU" redefined
+<command line>:20:1: warning: this is the location of the previous definition
+In file included from bs_mptop.c:40:
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_debug.h:24:1: warning: "LOGGER_IMR" redefined
+<command line>:13:1: warning: this is the location of the previous definition
+In file included from /home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_debug.h:29,
+                 from bs_mptop.c:40:
+/home5/itikasinghal/VNL-NIIB-VAR1/Tools/Bsc_build/../..//../VNL-NIIB-VAR1/Inc/Bpm/../Ipc/ipcfrm_syslog.h:21:1: warning: "CRITICAL" redefined
+In file included from bs_mptop.c:24:
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_trace.h:20:1: warning: this is the location of the previous definition
+In file included from bs_mptop.c:41:
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bssap_port.h:88:17: warning: ISO C requires whitespace after the macro name
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bssap_port.h:89:17: warning: ISO C requires whitespace after the macro name
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bssap_port.h:89:1: warning: "SCCP_MAX" redefined
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bssap_port.h:88:1: warning: this is the location of the previous definition
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bssap_port.h:90:17: warning: ISO C requires whitespace after the macro name
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bssap_port.h:90:1: warning: "SCCP_MAX" redefined
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bssap_port.h:89:1: warning: this is the location of the previous definition
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bssap_port.h:91:17: warning: ISO C requires whitespace after the macro name
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bssap_port.h:91:1: warning: "SCCP_MAX" redefined
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bssap_port.h:90:1: warning: this is the location of the previous definition
+bs_mptop.c: In function `bssap_process_mesg':
+bs_mptop.c:127: warning: implicit declaration of function `pthread_self'
+bs_mptop.c:128: warning: implicit declaration of function `bssap_free'
+bs_mptop.c:178: warning: implicit declaration of function `bssap_malloc'
+bs_mptop.c: In function `BsAppProcessSCCPMessage':
+bs_mptop.c:317: warning: implicit declaration of function `bsFindCallForAbnormalRLSD'
+bs_mptop.c:317: warning: assignment makes pointer from integer without a cast
+bs_mptop.c:332: warning: implicit declaration of function `BsSendDisReq'
+bs_mptop.c: In function `BsAppProcessBSSAPMessage':
+bs_mptop.c:437: warning: implicit declaration of function `BsProcessOutBSSAPMessage'
+bs_mptop.c: In function `bssap_handle_timeout':
+bs_mptop.c:486: warning: implicit declaration of function `bsHandleBlkUnBlkTimeout'
+bs_mptop.c:490: warning: implicit declaration of function `bsHandleResetTimeout'
+bs_mptop.c:500: warning: implicit declaration of function `bsHandleAssignReqTimeout'
+bs_mptop.c:507: warning: implicit declaration of function `bsHandleResetGuardTimeout'
+bs_mptop.c:517: warning: implicit declaration of function `bsHandleResetCktTimeout'
+bs_mptop.c:521: warning: implicit declaration of function `bsHandleCktGrpBlkUnBlkTimeout'
+bs_mptop.c:525: warning: implicit declaration of function `bsHandleResetIPTimeout'
+bs_mptop.c: In function `bssap_handle_ll_api':
+bs_mptop.c:666: warning: implicit declaration of function `sccp_n_unitdata_ind'
+bs_mptop.c:670: warning: implicit declaration of function `sccp_n_state_ind'
+bs_mptop.c:673: warning: implicit declaration of function `sccp_n_pcstate_ind'
+bs_mptop.c:677: warning: implicit declaration of function `sccp_n_connect_ind'
+bs_mptop.c:681: warning: implicit declaration of function `sccp_n_connect_cnf'
+bs_mptop.c:685: warning: implicit declaration of function `sccp_n_data_ind'
+bs_mptop.c:689: warning: implicit declaration of function `sccp_n_disconnect_ind'
+<command line>:7:12: warning: extra tokens at end of #undef directive
+<command line>:8:10: warning: extra tokens at end of #undef directive
+<command line>:9:13: warning: extra tokens at end of #undef directive
+In file included from bs_msg.c:24:
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_trace.h:151:1: warning: "BSDATA_BLOCK_TIMER" redefined
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_trace.h:148:1: warning: this is the location of the previous definition
+In file included from /home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_dbf.h:22,
+                 from /home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_stgl.h:23,
+                 from bs_msg.c:29:
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_cdef.h:29:1: warning: "COMPARE_ITU" redefined
+<command line>:20:1: warning: this is the location of the previous definition
+In file included from bs_msg.c:30:
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_debug.h:24:1: warning: "LOGGER_IMR" redefined
+<command line>:13:1: warning: this is the location of the previous definition
+In file included from /home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_debug.h:29,
+                 from bs_msg.c:30:
+/home5/itikasinghal/VNL-NIIB-VAR1/Tools/Bsc_build/../..//../VNL-NIIB-VAR1/Inc/Bpm/../Ipc/ipcfrm_syslog.h:21:1: warning: "CRITICAL" redefined
+In file included from bs_msg.c:24:
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_trace.h:20:1: warning: this is the location of the previous definition
+bs_msg.c:85: warning: function declaration isn't a prototype
+bs_msg.c: In function `BsProcessAssignmentRequest':
+bs_msg.c:173: warning: implicit declaration of function `BsSendFailureMsg'
+bs_msg.c:213: warning: implicit declaration of function `bsStartConTmr'
+bs_msg.c:291: warning: implicit declaration of function `BsSendCktMsg'
+bs_msg.c:297: warning: implicit declaration of function `BsDispatchErrorToApp'
+bs_msg.c: In function `BsProcessHandoverRequest':
+bs_msg.c:677: warning: implicit declaration of function `BsDispatchMapErrToApp'
+bs_msg.c: In function `BsProcessCompleteLayer3Info':
+bs_msg.c:1594: warning: implicit declaration of function `BsSendConReq'
+bs_msg.c: In function `BsProcessOverloadInd':
+bs_msg.c:1750: warning: implicit declaration of function `bsStartIntfTmr'
+bs_msg.c: In function `BsProcessBlockRequest':
+bs_msg.c:1869: warning: implicit declaration of function `bsStopCirTmr'
+bs_msg.c:1908: warning: implicit declaration of function `bssap_malloc'
+bs_msg.c:1916: warning: implicit declaration of function `bsStartCirTmr'
+bs_msg.c: In function `BsProcessBlockAckInd':
+bs_msg.c:1988: warning: implicit declaration of function `bssap_free'
+bs_msg.c: At top level:
+bs_msg.c:2630: warning: function declaration isn't a prototype
+bs_msg.c:2695:8: warning: extra tokens at end of #endif directive
+bs_msg.c: In function `BsProcessUnBlockAckReq':
+bs_msg.c:2672: warning: suggest explicit braces to avoid ambiguous `else'
+bs_msg.c: In function `BsProcessUnequippedCktReq':
+bs_msg.c:3502: warning: implicit declaration of function `BsGetStatusBit'
+bs_msg.c: At top level:
+bs_msg.c:3772: warning: function declaration isn't a prototype
+bs_msg.c: In function `BsProcessInternalHandoverRequired':
+bs_msg.c:3860: warning: implicit declaration of function `BsDispatchAOIPProtocolErrToApp'
+bs_msg.c: In function `BsProcessCktGroupBlockAckInd':
+bs_msg.c:4818: warning: implicit declaration of function `BsSetStatusBit'
+bs_msg.c: At top level:
+bs_msg.c:5103: warning: function declaration isn't a prototype
+<command line>:7:12: warning: extra tokens at end of #undef directive
+<command line>:8:10: warning: extra tokens at end of #undef directive
+<command line>:9:13: warning: extra tokens at end of #undef directive
+In file included from bs_sccphdl.c:22:
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_trace.h:151:1: warning: "BSDATA_BLOCK_TIMER" redefined
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_trace.h:148:1: warning: this is the location of the previous definition
+In file included from bs_sccphdl.c:27:
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_debug.h:24:1: warning: "LOGGER_IMR" redefined
+<command line>:13:1: warning: this is the location of the previous definition
+In file included from /home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_debug.h:29,
+                 from bs_sccphdl.c:27:
+/home5/itikasinghal/VNL-NIIB-VAR1/Tools/Bsc_build/../..//../VNL-NIIB-VAR1/Inc/Bpm/../Ipc/ipcfrm_syslog.h:21:1: warning: "CRITICAL" redefined
+In file included from bs_sccphdl.c:22:
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_trace.h:20:1: warning: this is the location of the previous definition
+bs_sccphdl.c: In function `BsProcessUserData':
+bs_sccphdl.c:125: warning: implicit declaration of function `BsHandleDecodeFailure'
+bs_sccphdl.c:137: warning: implicit declaration of function `BsSendFailureMsg'
+bs_sccphdl.c:141: warning: implicit declaration of function `BsIncrPegsCounter'
+bs_sccphdl.c:143: warning: implicit declaration of function `BsDispatchDtapToApp'
+bs_sccphdl.c:151: warning: implicit declaration of function `BsProcessInBSSMAPMessage'
+bs_sccphdl.c:156: warning: implicit declaration of function `BsProcessInBSSMAPUDTMessage'
+bs_sccphdl.c: At top level:
+bs_sccphdl.c:308: warning: function declaration isn't a prototype
+bs_sccphdl.c:701: warning: function declaration isn't a prototype
+bs_sccphdl.c:1274: warning: function declaration isn't a prototype
+<command line>:7:12: warning: extra tokens at end of #undef directive
+<command line>:8:10: warning: extra tokens at end of #undef directive
+<command line>:9:13: warning: extra tokens at end of #undef directive
+In file included from /home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_dbf.h:22,
+                 from /home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_stgl.h:23,
+                 from bssap_task.c:23:
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_cdef.h:29:1: warning: "COMPARE_ITU" redefined
+<command line>:20:1: warning: this is the location of the previous definition
+In file included from bssap_task.c:24:
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bssap_port.h:20:1: warning: "LOGGER_IMR" redefined
+<command line>:13:1: warning: this is the location of the previous definition
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bssap_port.h:88:17: warning: ISO C requires whitespace after the macro name
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bssap_port.h:89:17: warning: ISO C requires whitespace after the macro name
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bssap_port.h:89:1: warning: "SCCP_MAX" redefined
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bssap_port.h:88:1: warning: this is the location of the previous definition
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bssap_port.h:90:17: warning: ISO C requires whitespace after the macro name
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bssap_port.h:90:1: warning: "SCCP_MAX" redefined
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bssap_port.h:89:1: warning: this is the location of the previous definition
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bssap_port.h:91:17: warning: ISO C requires whitespace after the macro name
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bssap_port.h:91:1: warning: "SCCP_MAX" redefined
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bssap_port.h:90:1: warning: this is the location of the previous definition
+bssap_task.c:66:1: warning: "MAX_MESSAGE_SIZE" redefined
+In file included from /home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs.x:22,
+                 from bssap_task.c:28:
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_hashFunc.h:10:1: warning: this is the location of the previous definition
+bssap_task.c: In function `ss7_bssap_timer_handler':
+bssap_task.c:117: warning: implicit declaration of function `bssap_process_mesg'
+bssap_task.c: In function `bssap_initialization':
+bssap_task.c:156: warning: implicit declaration of function `bssap_malloc'
+bssap_task.c:156: warning: assignment from incompatible pointer type
+bssap_task.c:174: warning: passing arg 3 of `pthread_create' from incompatible pointer type
+bssap_task.c: In function `ss7_bssap_init':
+bssap_task.c:378: warning: passing arg 2 of `sl_module_register' from incompatible pointer type
+bssap_task.c: In function `send_from_bssap_to_sccp':
+bssap_task.c:399: warning: implicit declaration of function `bssap_free'
+bssap_task.c: In function `RecvDataFromSCM':
+bssap_task.c:575: warning: cast to pointer from integer of different size
+bssap_task.c:575: warning: assignment makes integer from pointer without a cast
+<command line>:7:12: warning: extra tokens at end of #undef directive
+<command line>:8:10: warning: extra tokens at end of #undef directive
+<command line>:9:13: warning: extra tokens at end of #undef directive
+In file included from /home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_dbf.h:22,
+                 from /home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_stgl.h:23,
+                 from bssap_port.c:24:
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bs_cdef.h:29:1: warning: "COMPARE_ITU" redefined
+<command line>:20:1: warning: this is the location of the previous definition
+In file included from bssap_port.c:28:
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bssap_port.h:20:1: warning: "LOGGER_IMR" redefined
+<command line>:13:1: warning: this is the location of the previous definition
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bssap_port.h:88:17: warning: ISO C requires whitespace after the macro name
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bssap_port.h:89:17: warning: ISO C requires whitespace after the macro name
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bssap_port.h:89:1: warning: "SCCP_MAX" redefined
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bssap_port.h:88:1: warning: this is the location of the previous definition
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bssap_port.h:90:17: warning: ISO C requires whitespace after the macro name
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bssap_port.h:90:1: warning: "SCCP_MAX" redefined
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bssap_port.h:89:1: warning: this is the location of the previous definition
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bssap_port.h:91:17: warning: ISO C requires whitespace after the macro name
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bssap_port.h:91:1: warning: "SCCP_MAX" redefined
+/home5/itikasinghal/VNL-NIIB-VAR1/Source/Sks/Src/BSSAP/bssapStack/BsStk/bssap/h/bssap_port.h:90:1: warning: this is the location of the previous definition
+<command line>:7:12: warning: extra tokens at end of #undef directive
+<command line>:8:10: warning: extra tokens at end of #undef directive
+<command line>:9:13: warning: extra tokens at end of #undef directive
+cm_hash.c:77:1: warning: "LOGGER_IMR" redefined
+<command line>:13:1: warning: this is the location of the previous definition
+cm_hash.c: In function `print_key':
+cm_hash.c:599: warning: implicit declaration of function `pthread_self'
+<command line>:7:12: warning: extra tokens at end of #undef directive
+<command line>:8:10: warning: extra tokens at end of #undef directive
+<command line>:9:13: warning: extra tokens at end of #undef directive
+bs_hashFunc.c:24:1: warning: "LOGGER_IMR" redefined
+<command line>:13:1: warning: this is the location of the previous definition
+bs_hashFunc.c: In function `Tcp_ClientFunc':
+bs_hashFunc.c:266: warning: implicit declaration of function `pselect'
+bs_hashFunc.c: In function `BsHashCreateMutex':
+bs_hashFunc.c:1481: warning: implicit declaration of function `pthread_mutexattr_settype'
+bs_hashFunc.c: In function `DeleteEntryTcp':
+bs_hashFunc.c:1718: warning: passing arg 4 of `HashListTbDelete' from incompatible pointer type
+bs_hashFunc.c:1795: warning: control reaches end of non-void function
+bs_hashFunc.c: In function `RecvCalldbUpdData':
+bs_hashFunc.c:2125: warning: implicit declaration of function `bssap_malloc'
+bs_hashFunc.c:2125: warning: assignment from incompatible pointer type
+bs_hashFunc.c:2131: warning: assignment from incompatible pointer type
+bs_hashFunc.c: In function `ProcessIntfDelUpdFrmPeer':
+bs_hashFunc.c:2202: warning: implicit declaration of function `bssap_free'
+bs_hashFunc.c: In function `ProcessIntfAddUpdFrmPeer':
+bs_hashFunc.c:2306: warning: implicit declaration of function `bs_mem_zero'
+make: warning:  Clock skew detected.  Your build may be incomplete.

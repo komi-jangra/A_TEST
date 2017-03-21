@@ -1,0 +1,20 @@
+
+
+ENGINE Command
+
+SYNOPSIS
+    b_settype <type>
+
+
+DESCRIPTION
+    This command sets the type for the current border transport context.
+    This command must be invoked before all other b_* commands.  This
+    establishes what type of border transport will be added.
+
+PARAMETERS
+    <type>                SS7|FIFO|GatedFIFO|ClientSocket|ServerSocket|
+                          IterativeServerSocket|               Virtual|TaskQueue
+
+EXAMPLE
+
+    b_settype   ClientSocket

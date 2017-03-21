@@ -1,0 +1,79 @@
+
+ANSI SCCP Command
+
+SYNOPSIS
+    sa_clr_gen_peg <pg>
+
+DESCRIPTION
+    This command clears a given SCCP peg type to 0.
+
+PARAMETERS
+
+    #pg         - peg id to be cleared
+
+                - ALL/all for All SCCP PEGS Values
+
+NOTE
+    The SCCP pegs ids are:
+
+    PEG_SCCP_USER_MSG_SENT                   0
+    PEG_SCCP_REMOTE_MSG_RECEIVED             1
+    PEG_SCCP_ROUTING_FAILURE                 2
+    PEG_SCCP_REMOTE_GTT_REQUEST              3
+    PEG_SCCP_REMOTE_GTT_SUCCESS              4
+    PEG_SCCP_REMOTE_GTT_FAILURE              5
+    PEG_SCCP_REMOTE_MSG_DECODE_ERR           6
+    PEG_SCCP_USER_MSG_ENCODE_ERR             7
+    PEG_SCCP_REMOTE_REASSEMBLE_ERR           8
+    PEG_SCCP_HOP_COUNTER_VIOLATION_ERR       9
+    PEG_SCCP_USER_SEGMENTATION_ERR          10
+    PEG_SCCP_TIMER_TIAR_EXPIRY              11
+    PEG_SCCP_USER_INITIATED_RLS             12
+    PEG_SCCP_USER_INITITATED_RESET          13
+    PEG_SCCP_REMOTE_UDT_RCVD                14
+    PEG_SCCP_REMOTE_XUDT_RCVD               15
+    PEG_SCCP_REMOTE_UDTS_RCVD               16
+    PEG_SCCP_REMOTE_XUDTS_RCVD              17
+    PEG_SCCP_REMOTE_LUDT_RCVD               18
+    PEG_SCCP_REMOTE_LUDTS_RCVD              19
+    PEG_SCCP_USER_UDT_SENT                  20
+    PEG_SCCP_USER_XUDT_SENT                 21
+    PEG_SCCP_USER_UDTS_SENT                 22
+    PEG_SCCP_USER_XUDTS_SENT                23
+    PEG_SCCP_USER_LUDT_SENT                 24
+    PEG_SCCP_USER_LUDTS_SENT                25
+    PEG_SCCP_USER_CR_SENT                   26
+    PEG_SCCP_CREF_TO_REMOTE_SENT            27
+    PEG_SCCP_RSR_TO_REMOTE_SENT             28
+    PEG_SCCP_ERR_TO_REMOTE_SENT             29
+    PEG_SCCP_REMOTE_CR_RCVD                 30
+    PEG_SCCP_REMOTE_CREF_RCVD               31
+    PEG_SCCP_REMOTE_RSR_RCVD                32
+    PEG_SCCP_REMOTE_ERR_RCVD                33
+    PEG_SCCP_REMOTE_MSG_FOR_LOCAL_SS_RCVD   34
+    PEG_SCCP_USER_DT1_SENT                  35
+    PEG_SCCP_REMOTE_DT1_RCVD                36
+    PEG_SCCP_USER_DT2_SENT                  37
+    PEG_SCCP_REMOTE_DT2_RCVD                38
+    PEG_SCCP_USER_ED_SENT                   39
+    PEG_SCCP_REMOTE_ED_RCVD                 40
+    PEG_SCCP_REMOTE_SSP_RCVD                41
+    PEG_SCCP_REMOTE_SSA_RCVD                42
+    PEG_SCCP_REMOTE_SSC_RCVD                43
+    PEG_SCCP_LOCAL_SS_PROHIBITED            44
+    PEG_SCCP_LOCAL_SS_ALLOWED               45
+    PEG_SCCP_LOCAL_SS_CONGESTED             46
+
+    ALL_SCCP_PEGS		            99
+
+
+EXAMPLE
+
+>> sa_clr_gen_peg 1
+Clearing the Pegs for PEG_SCCP_REMOTE_MSG_RECEIVED Now
+
+>> sa_clr_gen_peg all
+Clearing All ANSI SCCP Pegs for  Now
+
+
+

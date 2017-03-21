@@ -1,0 +1,26 @@
+../../include/its_list.h ./its_list++.cpp ./its_list.c
+../../include/its_mlist.h ./its_mlist++.cpp ./its_mlist.c
+../../include/its_emlist.h ./its_emlist++.cpp ./its_emlist.c
+../../include/its_fifo.h ./its_fifo++.cpp ./platforms/WIN32/its_fifo.c
+../../include/its_fifo_trans.h ./its_fifo_trans++.cpp ./its_fifo_trans.c
+../../include/its_gfifo_trans.h ./its_gfifo_trans++.cpp ./its_gfifo_trans.c
+../../include/its_gfifo.h ./its_gfifo++.cpp
+../../include/its_gsockets.h ./its_gsockets++.cpp
+../../include/its_hash.h ./its_hash.c
+../../include/its_iniparse.h ./its_iniparse++.cpp ./its_iniparse.c
+../../include/its_route.h ./its_route.c
+../../include/its_semaphore.h ./its_semaphore++.cpp ./platforms/WIN32/its_semaphore.c
+../../include/its_sockets.h ./its_sockets++.cpp ./platforms/WIN32/its_sockets.c
+../../include/its_ss7_trans.h ./its_ss7_trans++.cpp ./its_ss7_trans.c
+../../include/its_thread.h ./its_thread++.cpp ./platforms/WIN32/its_thread.c
+../../include/its_timers.h ./its_timers.c
+../../include/its_tq_trans.h ./its_task_trans++.cpp ./its_task_trans.c
+../../include/its_transports.h ./its_transports++.cpp ./its_transports.c
+../../include/its_worker.h ./its_worker++.cpp ./its_worker.c
+../../include/its_event_log.h ./its_event_log.cpp
+../../include/its_exception.h ./its_exception.cpp
+../../include/its_exception_log.h ./its_exception_log.cpp
+../../include/its_ip_trans.h ./its_ipclient_trans.cpp ./its_ipserv_trans.cpp ./its_ip_trans.c
+../../include/its_service.h ./platforms/WIN32/its_service.cpp
+../../include/its_thread_pool.h ./its_thread_pool++.cpp
+../../include/its_fsm.h

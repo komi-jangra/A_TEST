@@ -1,0 +1,18 @@
+
+ITU MTP3 Command
+
+SYNOPSIS
+    mi_deact_link <linkset> <linkcode>
+
+DESCRIPTION
+    To deactivate an MTP3 link
+
+PARAMETERS
+    linkset       the link set which owns the link
+    linkcode      link id within the specified linkset
+
+
+EXAMPLE
+    >> mi_deact_link 1 3
+
+    ***Link 1:3  Deactivation initiated***

@@ -1,0 +1,952 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<u2 OMVersion="3.4" StorageVersion="4" ToolVersion="3.0.0.0.2032" xmlns="http://www.telelogic.com/tau">
+<Resource Guid="RDVEEEBJiEEE46uPlLESm2EE">
+<cHiddenStereotypeInstance>
+<InstanceExpr Guid="I2REEElGEEEEPz*e0LESm2EE">
+<rInstanceOf R="uid:@Predefined@modelDependency"/>
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="urn:u2:etc/TTDPredefinedStereotypes.u2">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="strUri">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+<InstanceExpr Guid="S2REEElGEEEEPz*e0LESm2EE">
+<rInstanceOf R="uid:@Predefined@modelDependency"/>
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="urn:u2:etc/LineStyle.u2">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="strUri">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+<InstanceExpr Guid="A2REEElGEEEEPz*e0LESm2EE">
+<rInstanceOf R="uid:@Predefined@modelDependency"/>
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="SYSInclude.u2">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="strUri">
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cHiddenStereotypeInstance>
+<rRoot R="uid:A0VEEEBJiEEE46uPlLESm2EE"/>
+</Resource>
+<Package Guid="A0VEEEBJiEEE46uPlLESm2EE" Name="Interfaces">
+<cDiagram>
+<ClassDiagram Guid="dfVEEEBJiEEE6tuPlLESm2EE" Name="InterfaceDiag" Size="6078 2734">
+<cHiddenStereotypeInstance>
+<InstanceExpr Guid="ffVEEEBJiEEE6tuPlLESm2EE">
+<rInstanceOf R="uid:@TTDLineStyles@presentationFont"/>
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Collection@=@Collection@Collection@Collection"/>
+<cRightOperand>
+<CharstringValue ValueString="Arial">
+</CharstringValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="name">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@name"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="10">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="points">
+<rDefinition R="uid:@TTDLineStyles@presentationFont@points"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+<InstanceExpr Guid="gfVEEEBJiEEE6tuPlLESm2EE">
+<rInstanceOf R="uid:@TTDLineStyles@diagramAutosizing"/>
+</InstanceExpr>
+<InstanceExpr Guid="hfVEEEBJiEEE6tuPlLESm2EE">
+<rInstanceOf R="uid:@TTDLineStyles@symbolColor"/>
+<cExpression>
+<BinaryExpr>
+<rOperation R="uid:@Predefined@Integer@=@Integer@Integer@Integer"/>
+<cRightOperand>
+<IntegerValue ValueString="16773875">
+</IntegerValue>
+</cRightOperand>
+<cLeftOperand>
+<Ident Name="color">
+<rDefinition R="uid:@TTDLineStyles@symbolColor@color"/>
+</Ident>
+</cLeftOperand>
+</BinaryExpr>
+</cExpression>
+</InstanceExpr>
+</cHiddenStereotypeInstance>
+<cDiagramElement>
+<FrameSymbol Guid="9fVEEEBJiEEE6tuPlLESm2EE" Position="100 100" Size="5939 2639">
+</FrameSymbol>
+<InterfaceSymbol Guid="qrVEEEBJiEEEx8uPlLESm2EE" Position="300 640" Size="1280 300" Autosize="true" Text="ToTRXHandler">
+<rDefinition R="uid:rrVEEEBJiEEEx8uPlLESm2EE"/>
+<cOperationLabel>
+<OperationLabel Guid="dCvLEEKqLEEEXdTZlLESm2EE" Text="signal OAMS_CELLH_TRXH_CRE_LTRX_PTRX_MAPPING_IND ( I_PVoid,I_U32)">
+<rDefinition R="uid:VkLLEEKqLEEEX-DZlLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="ikSEEEtLIEEEBgVglLxXVh2E" Text="signal OAMS_CELLH_TRXH_DEL_PTRX_LTRX_MAPPING_REQ ( I_PVoid, I_U32)">
+<rDefinition R="uid:6-BLEEKqLEEEpqWZlLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="riYEEEBlIEEEwWW-BLESm2EE" Text="signal OAMS_CELLH_TRXH_UPDATE_PS_CELL_ATTR(I_PVoid, I_U32)">
+<rDefinition R="uid:UMYEEEBlIEEEIXW-BLESm2EE"/>
+</OperationLabel>
+</cOperationLabel>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="UFgEEEipAEEEgOYflLESm2EE" Position="260 1080" Size="1060 480" Autosize="true" Text="FromCFG">
+<rDefinition R="uid:YwFLEEAzEEEEvlTblLESm2EE"/>
+<cOperationLabel>
+<OperationLabel Guid="UGgEEEipAEEErOYflLESm2EE" Text="signal OAMS_CFG_CELLH_UNLOCK_REQ ( I_PVoid)">
+<rDefinition R="uid:MlGLEEAzEEEEZlTblLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="2GgEEEipAEEErOYflLESm2EE" Text="signal OAMS_CFG_CELLH_LOCK_REQ ( I_PVoid)">
+<rDefinition R="uid:hPGLEEAzEEEE5iTblLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="WGgEEEipAEEErOYflLESm2EE" Text="signal OAMS_CFG_CELLH_CELL_BAR_ACCESS ( I_PVoid)">
+<rDefinition R="uid:ZH3LEEAzEEEEteTblLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="XGgEEEipAEEErOYflLESm2EE" Text="signal OAMS_CFG_CELLH_BLOCK_IND ( I_PVoid)">
+<rDefinition R="uid:OvlEEEHBSEEE7bTblLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="16KLEEk9VEEEnnBmvLESm2EE" Text="signal OAMS_CFG_CELLH_CSNEIGHCELLS_CHANGE ( I_PVoid)">
+<rDefinition R="uid:myKLEEk9VEEErnBmvLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="cjDEEE5FLEEETvNUeLESm2EE" Text="signal OAMS_CFG_CELLH_E1_UNLOCK_REQ ( I_PVoid)">
+<rDefinition R="uid:4tDEEE5FLEEEqvNUeLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="4L0EEE5FLEEELeNUeLESm2EE" Text="signal OAMS_CFG_CELLH_E1_LOCK_REQ ( I_PVoid)">
+<rDefinition R="uid:c30EEE5FLEEE5eNUeLESm2EE"/>
+</OperationLabel>
+</cOperationLabel>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="CASEEEtLIEEEP9VglLxXVh2E" Position="2260 800" Size="1060 400" Autosize="true" Text="ToCFG">
+<rDefinition R="uid:azCLEEAzEEEEdVTblLESm2EE"/>
+<cOperationLabel>
+<OperationLabel Guid="peSEEEtLIEEEa9VglLxXVh2E" Text="signal OAMS_CELLH_CFG_ALARM_IND ( I_PVoid, I_U32)">
+<rDefinition R="uid:qJDLEEAzEEEECITblLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="qeSEEEtLIEEEa9VglLxXVh2E" Text="signal OAMS_CELLH_CFG_LOCK_RESP ( I_PVoid, I_U32)">
+<rDefinition R="uid:mtGLEEAzEEEEgiTblLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="reSEEEtLIEEEa9VglLxXVh2E" Text="signal OAMS_CELLH_CFG_UNLOCK_RESP ( I_PVoid, I_U32)">
+<rDefinition R="uid:aHKLEEAzEEEEWCTblLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="E80EEE5FLEEEweNUeLESm2EE" Text="signal OAMS_CELLH_CFG_E1_UNLOCK_RESP ( I_PVoid, I_U32)">
+<rDefinition R="uid:FVFEEE5FLEEEF5NUeLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="BVFEEE5FLEEEF5NUeLESm2EE" Text="signal OAMS_CELLH_CFG_E1_LOCK_RESP ( I_PVoid, I_U32)">
+<rDefinition R="uid:N0FEEE5FLEEE45NUeLESm2EE"/>
+</OperationLabel>
+</cOperationLabel>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="O3SEEEtLIEEEDfVglLxXVh2E" Position="2200 1340" Size="980 260" Autosize="true" Text="ToABIHM">
+<rDefinition R="uid:VyiLEEAzEEEENZ4blLESm2EE"/>
+<cOperationLabel>
+<OperationLabel Guid="IMSEEEtLIEEEJfVglLxXVh2E" Text="signal OAMS_CELLH_ABIHM_BCCH_INFO ( I_PVoid, I_U32)">
+<rDefinition R="uid:VivLEEAzEEEEbZ4blLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="SMSEEEtLIEEEJfVglLxXVh2E" Text="signal OAMS_CELLH_ABIHM_SACCH_FILL ( I_PVoid, I_U32)">
+<rDefinition R="uid:wDvLEEAzEEEEgZ4blLESm2EE"/>
+</OperationLabel>
+</cOperationLabel>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="q6HEEE5gIEEExWAglLxXVh2E" Position="2220 200" Size="940 360" Autosize="true" Text="ToEnv">
+<rDefinition R="uid:cC0EEE5gIEEEAQAglLxXVh2E"/>
+<cOperationLabel>
+<OperationLabel Guid="poHEEE5gIEEELXAglLxXVh2E" Text="signal OAMS_ADD_TAU_INST_IN_INSTMAP ()">
+<rDefinition R="uid:MP0EEE5gIEEEGQAglLxXVh2E"/>
+</OperationLabel>
+<OperationLabel Guid="GYBEEE8XiEEEuHVV5LESm2EE" Text="signal OAMS_FREE_INST ()">
+<rDefinition R="uid:jYBEEE8XiEEEV3VV5LESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="zgBEEE8XiEEEwPVV5LESm2EE" Text="signal CELLH_INT_ACTIVE_CLASS_PID ()">
+<rDefinition R="uid:HhBEEE8XiEEE*PVV5LESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="WfBEEE8XiEEE2PVV5LESm2EE" Text="signal CELLH_INT_SELFCARD_STATE_CHANGE_RESP()">
+<rDefinition R="uid:igBEEE8XiEEEdPVV5LESm2EE"/>
+</OperationLabel>
+</cOperationLabel>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="bKXSEEbLAEEEEh3plLxXVh2E" Position="2180 1660" Size="1080 260" Autosize="true" Text="ToMapEnt">
+<rDefinition R="uid:HHMEEEpiLEEE8B1nlLxXVh2E"/>
+<cOperationLabel>
+<OperationLabel Guid="rXXSEEbLAEEEoh3plLxXVh2E" Text="signal OAMS_CELLH_MAPENT_CRE_MAP_REQ ( I_PVoid, I_U32)">
+<rDefinition R="uid:DbMEEEpiLEEEvC1nlLxXVh2E"/>
+</OperationLabel>
+<OperationLabel Guid="sXXSEEbLAEEEoh3plLxXVh2E" Text="signal OAMS_CELLH_MAPENT_DEL_MAP_REQ ( I_PVoid, I_U32)">
+<rDefinition R="uid:LJiEEEUoVEEEMeNnlLxXVh2E"/>
+</OperationLabel>
+</cOperationLabel>
+<cAttributeLabel>
+<AttributeLabel Guid="*KXSEEbLAEEEVh3plLxXVh2E">
+</AttributeLabel>
+</cAttributeLabel>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="1QXSEEbLAEEE4h3plLxXVh2E" Position="2220 1980" Size="980 220" Autosize="true" Text="FromMapEnt">
+<rDefinition R="uid:u3eEEEUoVEEESMNnlLxXVh2E"/>
+<cOperationLabel>
+<OperationLabel Guid="y4XSEEbLAEEEWh3plLxXVh2E" Text="signal OAMS_MAPENT_CELLH_DEL_MAP_RESP ( I_PVoid)">
+<rDefinition R="uid:FceEEEUoVEEEOMNnlLxXVh2E"/>
+</OperationLabel>
+</cOperationLabel>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="lpGEEEI5LEEEPmBnvLESm2EE" Position="2140 2320" Size="1180 220" Autosize="true" Text="ToMrhm">
+<rDefinition R="uid:GZBEEEI5LEEETcBnvLESm2EE"/>
+<cOperationLabel>
+<OperationLabel Guid="d0HEEEI5LEEEwmBnvLESm2EE" Text="signal OAMS_CELLH_MRHM_CSNEIGHCELLS_CHANGE(I_PVoid, I_U32)">
+<rDefinition R="uid:XGHEEEI5LEEEPnBnvLESm2EE"/>
+</OperationLabel>
+</cOperationLabel>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="rfHEEE0VSEEEh5PV5LESm2EE" Position="380 1720" Size="1080 400" Autosize="true" Text="FromEnv">
+<rDefinition R="uid:9OHEEE0VSEEEK5PV5LESm2EE"/>
+<cOperationLabel>
+<OperationLabel Guid="XhHEEE0VSEEEcBPV5LESm2EE" Text="signal CELLH_INT_ADD_TAU_INSTANCE ()">
+<rDefinition R="uid:F7HEEE0VSEEE6BPV5LESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="9G3EEE0VSEEEu0PV5LESm2EE" Text="signal CELLH_INT_SELFCARD_STATE_CHANGE(I_S32,I_S32)">
+<rDefinition R="uid:bH3EEE0VSEEEHFPV5LESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="aKGEEEqBVEEEK8JMCLESm2EE" Text="signal CELLH_INT_CHECK_CONTEXT_SWITCHOVER(I_U32,I_U32)">
+<rDefinition R="uid:u9GEEEqBVEEEHwJMCLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="BE1EEE5gLEEEeJfQCLESm2EE" Text="signal CELLH_INT_PREP_SYS_INFO_SWITCHOVER(I_U32,I_U32)">
+<rDefinition R="uid:2W1EEE5gLEEEfJfQCLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="HYJEEElGEEEEOh*e0LESm2EE" Text="signal CHECK_CELL_LOCK_PROC()">
+<rDefinition R="uid:FEKEEElGEEEEfh*e0LESm2EE"/>
+</OperationLabel>
+</cOperationLabel>
+<cAttributeLabel>
+<AttributeLabel Guid="ShHEEE0VSEEEbBPV5LESm2EE">
+</AttributeLabel>
+</cAttributeLabel>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="RqgVEECRVEEEhWk1BLESm2EE" Position="3820 320" Size="1100 300" Autosize="true" Text="ToGrhm">
+<rDefinition R="uid:4qgVEECRVEEEhWk1BLESm2EE"/>
+<cOperationLabel>
+<OperationLabel Guid="BwqLEE-MlEEEvLdwBLESm2EE" Text="signal OAMS_CELLH_GRHM_CRE_CELL_MAP_IND (I_PVoid, I_U32)">
+<rDefinition R="uid:f5rLEE-MlEEEHLdwBLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="HFbEEEBlIEEEcwW-BLESm2EE" Text="signal OAMS_CELLH_GRHM_DEL_CELL_MAP_IND(I_PVoid, I_U32)">
+<rDefinition R="uid:tTbEEEBlIEEE7wW-BLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="wWcEEEBlIEEEaxW-BLESm2EE" Text="signal OAMS_CELLH_GRHM_CRS_IND(I_PVoid, I_U32)">
+<rDefinition R="uid:a6cEEEBlIEEEkxW-BLESm2EE"/>
+</OperationLabel>
+</cOperationLabel>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="Wn4EEElrIEEEDem7BLESm2EE" Position="360 2420" Size="940 220" Text="FromCbsh">
+<rDefinition R="uid:Xn4EEElrIEEEDem7BLESm2EE"/>
+<cOperationLabel>
+<OperationLabel Guid="wr4EEElrIEEEWem7BLESm2EE" Text="signal CSAPP_CBSH_CELLH_SI_MODIFY_REQ (I_PVoid)">
+<rDefinition R="uid:Mt4EEElrIEEEC5m7BLESm2EE"/>
+</OperationLabel>
+</cOperationLabel>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="lebEEEBlIEEEwsW-BLESm2EE" Position="3560 1360" Size="1000 260" Autosize="true" Text="FromPSCH">
+<rDefinition R="uid:fkZEEEBlIEEERqW-BLESm2EE"/>
+<cOperationLabel>
+<OperationLabel Guid="RebEEEBlIEEEVtW-BLESm2EE" Text="signal OAMS_PSCH_CELLH_PS_CELL_ENABLED ( I_PVoid)">
+<rDefinition R="uid:gkZEEEBlIEEERqW-BLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="4ebEEEBlIEEEVtW-BLESm2EE" Text="signal OAMS_PSCH_CELLH_PS_CELL_DISABLED ( I_PVoid)">
+<rDefinition R="uid:7kZEEEBlIEEERqW-BLESm2EE"/>
+</OperationLabel>
+</cOperationLabel>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="RjQLEEBlIEEEkD9-BLESm2EE" Position="4020 880" Size="1160 260" Autosize="true" Text="ToPSMSH">
+<rDefinition R="uid:kkZEEEBlIEEERqW-BLESm2EE"/>
+<cOperationLabel>
+<OperationLabel Guid="GkQLEEBlIEEErD9-BLESm2EE" Text="signal OAMS_CELLH_PSMSH_ADD_BCCH_TRX_INFO ( I_PVoid, I_U32)">
+<rDefinition R="uid:6kZEEEBlIEEERqW-BLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="HkQLEEBlIEEErD9-BLESm2EE" Text="signal OAMS_CELLH_PSMSH_DEL_BCCH_TRX_INFO ( I_PVoid, I_U32)">
+<rDefinition R="uid:okZEEEBlIEEERqW-BLESm2EE"/>
+</OperationLabel>
+</cOperationLabel>
+</InterfaceSymbol>
+<InterfaceSymbol Guid="unLLEEZRSEEE*1z-BLESm2EE" Position="300 260" Size="980 360" Autosize="true" Text="FromTRXHandler">
+<rDefinition R="uid:jfVEEEBJiEEEstuPlLESm2EE"/>
+<cOperationLabel>
+<OperationLabel Guid="ToLLEEZRSEEEDMz-BLESm2EE" Text="signal OAMS_TRXH_CELLH_BCCH_AVAIL ( I_PVoid)">
+<rDefinition R="uid:KWALEEKqLEEEAPTZlLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="UoLLEEZRSEEEDMz-BLESm2EE" Text="signal OAMS_TRXH_CELLH_BCCH_UNAVAIL ( I_PVoid)">
+<rDefinition R="uid:LBCLEEKqLEEEjyWZlLESm2EE"/>
+</OperationLabel>
+<OperationLabel Guid="2oLLEEZRSEEEDMz-BLESm2EE" Text="signal OAMS_TRXH_CELLH_SEND_SACCH_INFO ( I_PVoid)">
+<rDefinition R="uid:qt2EEEaYVEEEDWHulLxXVh2E"/>
+</OperationLabel>
+<OperationLabel Guid="xHXEEEqBVEEEhHKMCLESm2EE" Text="signal OAMS_TRXH_CELLH_OPER_STATE_IND(I_PVoid)">
+<rDefinition R="uid:C7XEEEqBVEEEI3KMCLESm2EE"/>
+</OperationLabel>
+</cOperationLabel>
+</InterfaceSymbol>
+</cDiagramElement>
+</ClassDiagram>
+</cDiagram>
+<cOwnedMember>
+<Interface Guid="jfVEEEBJiEEEstuPlLESm2EE" Name="FromTRXHandler">
+<cOwnedMember>
+<Signal Guid="KWALEEKqLEEEAPTZlLESm2EE" Name="OAMS_TRXH_CELLH_BCCH_AVAIL">
+<cParameter>
+<Parameter Guid="W7ALEEZRSEEEkl5*BLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:iDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="LBCLEEKqLEEEjyWZlLESm2EE" Name="OAMS_TRXH_CELLH_BCCH_UNAVAIL">
+<cParameter>
+<Parameter Guid="K9GEEEyRiEEESImflLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:iDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="qt2EEEaYVEEEDWHulLxXVh2E" Name="OAMS_TRXH_CELLH_SEND_SACCH_INFO">
+<cParameter>
+<Parameter Guid="zHXEEEqBVEEEhHKMCLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:iDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="C7XEEEqBVEEEI3KMCLESm2EE" Name="OAMS_TRXH_CELLH_OPER_STATE_IND">
+<cParameter>
+<Parameter Guid="B7XEEEqBVEEEI3KMCLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:iDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="rrVEEEBJiEEEx8uPlLESm2EE" Name="ToTRXHandler">
+<cOwnedMember>
+<Signal Guid="VkLLEEKqLEEEX-DZlLESm2EE" Name="OAMS_CELLH_TRXH_CRE_LTRX_PTRX_MAPPING_IND">
+<cParameter>
+<Parameter Guid="8v*EEEipAEEEDQkflLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:8vPEEE6-EEEE5Js0GLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="wv*EEEipAEEEDQkflLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:HePEEE6-EEEE5Js0GLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="6-BLEEKqLEEEpqWZlLESm2EE" Name="OAMS_CELLH_TRXH_DEL_PTRX_LTRX_MAPPING_REQ">
+<cParameter>
+<Parameter Guid="tiYEEEBlIEEEwWW-BLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:8vPEEE6-EEEE5Js0GLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="uiYEEEBlIEEEwWW-BLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:HePEEE6-EEEE5Js0GLESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="UMYEEEBlIEEEIXW-BLESm2EE" Name="OAMS_CELLH_TRXH_UPDATE_PS_CELL_ATTR">
+<cParameter>
+<Parameter Guid="4MYEEEBlIEEEIXW-BLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:iDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="TMYEEEBlIEEEIXW-BLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:2DHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="VyiLEEAzEEEENZ4blLESm2EE" Name="ToABIHM">
+<cOwnedMember>
+<Signal Guid="VivLEEAzEEEEbZ4blLESm2EE" Name="OAMS_CELLH_ABIHM_BCCH_INFO">
+<cParameter>
+<Parameter Guid="YjOEEEipAEEEqfXflLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:iDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="0qOEEEipAEEE8fXflLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:2DHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="wDvLEEAzEEEEgZ4blLESm2EE" Name="OAMS_CELLH_ABIHM_SACCH_FILL">
+<cParameter>
+<Parameter Guid="xiPEEEipAEEEigXflLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:iDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="d0PEEEipAEEEDgXflLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:2DHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="azCLEEAzEEEEdVTblLESm2EE" Name="ToCFG">
+<cOwnedMember>
+<Signal Guid="qJDLEEAzEEEECITblLESm2EE" Name="OAMS_CELLH_CFG_ALARM_IND">
+<cParameter>
+<Parameter Guid="btgVEECRVEEEiXk1BLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:iDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="ctgVEECRVEEEiXk1BLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:2DHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="mtGLEEAzEEEEgiTblLESm2EE" Name="OAMS_CELLH_CFG_LOCK_RESP">
+<cParameter>
+<Parameter Guid="Hl3EEEipAEEEo2XflLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:iDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="jC3EEEipAEEEu2XflLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:2DHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="aHKLEEAzEEEEWCTblLESm2EE" Name="OAMS_CELLH_CFG_UNLOCK_RESP">
+<cParameter>
+<Parameter Guid="V80EEE5FLEEEweNUeLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:iDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="I80EEE5FLEEEweNUeLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:2DHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="FVFEEE5FLEEEF5NUeLESm2EE" Name="OAMS_CELLH_CFG_E1_UNLOCK_RESP">
+<cParameter>
+<Parameter Guid="DVFEEE5FLEEEF5NUeLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:iDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="0VFEEE5FLEEEF5NUeLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:2DHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="N0FEEE5FLEEE45NUeLESm2EE" Name="OAMS_CELLH_CFG_E1_LOCK_RESP">
+<cParameter>
+<Parameter Guid="68gVEECRVEEEkXk1BLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:iDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="m8gVEECRVEEEkXk1BLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:2DHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="YwFLEEAzEEEEvlTblLESm2EE" Name="FromCFG">
+<cOwnedMember>
+<Signal Guid="MlGLEEAzEEEEZlTblLESm2EE" Name="OAMS_CFG_CELLH_UNLOCK_REQ">
+<cParameter>
+<Parameter Guid="wS*EEEipAEEE01kflLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:iDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="hPGLEEAzEEEE5iTblLESm2EE" Name="OAMS_CFG_CELLH_LOCK_REQ">
+<cParameter>
+<Parameter Guid="kgGEEEipAEEEBTXflLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:iDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="ZH3LEEAzEEEEteTblLESm2EE" Name="OAMS_CFG_CELLH_CELL_BAR_ACCESS">
+<cParameter>
+<Parameter Guid="DwGEEEipAEEEnTXflLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:iDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="OvlEEEHBSEEE7bTblLESm2EE" Name="OAMS_CFG_CELLH_BLOCK_IND">
+<cParameter>
+<Parameter Guid="H3yEEEQ0VEEE14gJBLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:iDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="myKLEEk9VEEErnBmvLESm2EE" Name="OAMS_CFG_CELLH_CSNEIGHCELLS_CHANGE">
+<cParameter>
+<Parameter Guid="*O3EEE0VSEEE5GPV5LESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:iDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="4tDEEE5FLEEEqvNUeLESm2EE" Name="OAMS_CFG_CELLH_E1_UNLOCK_REQ">
+<cParameter>
+<Parameter Guid="BPFEEE5FLEEEb5NUeLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:iDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="c30EEE5FLEEE5eNUeLESm2EE" Name="OAMS_CFG_CELLH_E1_LOCK_REQ">
+<cParameter>
+<Parameter Guid="mh0EEE5FLEEEMeNUeLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:iDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="cC0EEE5gIEEEAQAglLxXVh2E" Name="ToEnv">
+<cOwnedMember>
+<Signal Guid="MP0EEE5gIEEEGQAglLxXVh2E" Name="OAMS_ADD_TAU_INST_IN_INSTMAP">
+</Signal>
+<Signal Guid="jYBEEE8XiEEEV3VV5LESm2EE" Name="OAMS_FREE_INST">
+</Signal>
+<Signal Guid="igBEEE8XiEEEdPVV5LESm2EE" Name="CELLH_INT_SELFCARD_STATE_CHANGE_RESP">
+</Signal>
+<Signal Guid="HhBEEE8XiEEE*PVV5LESm2EE" Name="CELLH_INT_ACTIVE_CLASS_PID">
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="HHMEEEpiLEEE8B1nlLxXVh2E" Name="ToMapEnt">
+<cOwnedMember>
+<Signal Guid="DbMEEEpiLEEEvC1nlLxXVh2E" Name="OAMS_CELLH_MAPENT_CRE_MAP_REQ">
+<cParameter>
+<Parameter Guid="ak7SEEbLAEEEiiJplLxXVh2E">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:iDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="Zk7SEEbLAEEEiiJplLxXVh2E">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:2DHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="LJiEEEUoVEEEMeNnlLxXVh2E" Name="OAMS_CELLH_MAPENT_DEL_MAP_REQ">
+<cParameter>
+<Parameter Guid="kf7SEEbLAEEELiJplLxXVh2E">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:iDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="jf7SEEbLAEEELiJplLxXVh2E">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:2DHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="u3eEEEUoVEEESMNnlLxXVh2E" Name="FromMapEnt">
+<cOwnedMember>
+<Signal Guid="FceEEEUoVEEEOMNnlLxXVh2E" Name="OAMS_MAPENT_CELLH_DEL_MAP_RESP">
+<cParameter>
+<Parameter Guid="oQFEEEqBVEEEcuJMCLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:iDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="GZBEEEI5LEEETcBnvLESm2EE" Name="ToMrhm">
+<cOwnedMember>
+<Signal Guid="XGHEEEI5LEEEPnBnvLESm2EE" Name="OAMS_CELLH_MRHM_CSNEIGHCELLS_CHANGE">
+<cParameter>
+<Parameter Guid="KaoEEEI5LEEEHkFnvLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:iDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="1aoEEEI5LEEEHkFnvLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:2DHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="9OHEEE0VSEEEK5PV5LESm2EE" Name="FromEnv">
+<cOwnedMember>
+<Signal Guid="F7HEEE0VSEEE6BPV5LESm2EE" Name="CELLH_INT_ADD_TAU_INSTANCE">
+</Signal>
+<Signal Guid="bH3EEE0VSEEEHFPV5LESm2EE" Name="CELLH_INT_SELFCARD_STATE_CHANGE">
+<cParameter>
+<Parameter Guid="cKGEEEqBVEEEK8JMCLESm2EE">
+<rType>
+<Ident Name="I_S32">
+<rDefinition R="uid:RDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="dKGEEEqBVEEEK8JMCLESm2EE">
+<rType>
+<Ident Name="I_S32">
+<rDefinition R="uid:RDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="u9GEEEqBVEEEHwJMCLESm2EE" Name="CELLH_INT_CHECK_CONTEXT_SWITCHOVER">
+<cParameter>
+<Parameter Guid="8t1EEEmHSEEEFQImGLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:2DHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="wt1EEEmHSEEEFQImGLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:2DHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="2W1EEE5gLEEEfJfQCLESm2EE" Name="CELLH_INT_PREP_SYS_INFO_SWITCHOVER">
+<cParameter>
+<Parameter Guid="JYJEEElGEEEEOh*e0LESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:2DHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="KYJEEElGEEEEOh*e0LESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:2DHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="FEKEEElGEEEEfh*e0LESm2EE" Name="CHECK_CELL_LOCK_PROC">
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="4qgVEECRVEEEhWk1BLESm2EE" Name="ToGrhm">
+<cOwnedMember>
+<Signal Guid="f5rLEE-MlEEEHLdwBLESm2EE" Name="OAMS_CELLH_GRHM_CRE_CELL_MAP_IND">
+<cParameter>
+<Parameter Guid="JFbEEEBlIEEEcwW-BLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:iDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="KFbEEEBlIEEEcwW-BLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:2DHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="tTbEEEBlIEEE7wW-BLESm2EE" Name="OAMS_CELLH_GRHM_DEL_CELL_MAP_IND">
+<cParameter>
+<Parameter Guid="yWcEEEBlIEEEaxW-BLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:iDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="zWcEEEBlIEEEaxW-BLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:2DHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="a6cEEEBlIEEEkxW-BLESm2EE" Name="OAMS_CELLH_GRHM_CRS_IND">
+<cParameter>
+<Parameter Guid="Y6cEEEBlIEEEkxW-BLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:iDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="Z6cEEEBlIEEEkxW-BLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:2DHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="Xn4EEElrIEEEDem7BLESm2EE" Name="FromCbsh">
+<cOwnedMember>
+<Signal Guid="Mt4EEElrIEEEC5m7BLESm2EE" Name="CSAPP_CBSH_CELLH_SI_MODIFY_REQ">
+<cParameter>
+<Parameter Guid="2u4EEElrIEEEX5m7BLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:iDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="kkZEEEBlIEEERqW-BLESm2EE" Name="ToPSMSH">
+<cOwnedMember>
+<Signal Guid="6kZEEEBlIEEERqW-BLESm2EE" Name="OAMS_CELLH_PSMSH_ADD_BCCH_TRX_INFO">
+<cParameter>
+<Parameter Guid="v6QLEEBlIEEES09-BLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:iDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="e6QLEEBlIEEES09-BLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:2DHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="okZEEEBlIEEERqW-BLESm2EE" Name="OAMS_CELLH_PSMSH_DEL_BCCH_TRX_INFO">
+<cParameter>
+<Parameter Guid="gQPLEEBlIEEE-59-BLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:iDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+<Parameter Guid="hQPLEEBlIEEE-59-BLESm2EE">
+<rType>
+<Ident Name="I_U32">
+<rDefinition R="uid:2DHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+<Interface Guid="fkZEEEBlIEEERqW-BLESm2EE" Name="FromPSCH">
+<cOwnedMember>
+<Signal Guid="gkZEEEBlIEEERqW-BLESm2EE" Name="OAMS_PSCH_CELLH_PS_CELL_ENABLED">
+<cParameter>
+<Parameter Guid="hkZEEEBlIEEERqW-BLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:iDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+<Signal Guid="7kZEEEBlIEEERqW-BLESm2EE" Name="OAMS_PSCH_CELLH_PS_CELL_DISABLED">
+<cParameter>
+<Parameter Guid="jkZEEEBlIEEERqW-BLESm2EE">
+<rType>
+<Ident Name="I_PVoid">
+<rDefinition R="uid:iDHEEEDESEEEpuoQ0LESm2EE"/>
+</Ident>
+</rType>
+</Parameter>
+</cParameter>
+</Signal>
+</cOwnedMember>
+</Interface>
+</cOwnedMember>
+<cClientDependency>
+<Dependency Guid="qp2EEEczEEEEgnVtlLESm2EE">
+<cStereotypeInstance>
+<InstanceExpr Guid="mq2EEEczEEEEknVtlLESm2EE">
+<rInstanceOf>
+<Ident Name="access">
+<rDefinition R="uid:@Predefined@access"/>
+</Ident>
+</rInstanceOf>
+</InstanceExpr>
+</cStereotypeInstance>
+<rSupplier>
+<Ident Name="SYSInclude">
+<rDefinition R="uid:VRbEEETRAEEEV1QflLESm2EE"/>
+</Ident>
+</rSupplier>
+</Dependency>
+</cClientDependency>
+</Package>
+</u2>

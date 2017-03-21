@@ -1,0 +1,116 @@
+-------------------------------------------------------------------------------
+--
+-- DSM Multi-Nodes Automatic Regression Testing.
+-- -> Test6 Node2 Auxiliary.
+--
+
+node1 := 0
+node2 := 1
+
+
+RedirectStdout("test6_node2_auxiliary.out")
+
+Print("\nAuxiliary script running...\n")
+
+-----------------------------------------------------------
+--
+-- DSM test.
+--
+
+numberOfIterations := 1
+
+objectDataSuffix := " -- abcdefghijklmnopqrstuvwxyz"
+
+from 
+    i := 0
+until
+    i >= numberOfIterations
+loop
+    from
+        j := 0
+    until
+        j >= 32
+    loop
+        key := "keyNode2" + i + j
+
+        ftGroupId   := 0
+        tableId     := 1
+        objectSize  := 128
+        error       := 0
+
+        objectPtr := DsmAllocateRow(
+                                ftGroupId,
+                                tableId,
+                                key,
+                                objectSize,
+                                out error)
+
+        if (error /= 0) then
+            Print("\n\nDsmAllocateRow failed: " + error + "\n")
+        end    
+
+        objectData := "Node2" + i + j + objectDataSuffix
+
+        DsmWriteStringToAddress(objectPtr, objectData)
+
+        res := DsmCommitRow(
+                        ftGroupId,
+                        tableId,
+                        key,
+                        objectPtr)
+
+        if (res /= 0) then
+            Print("\n\nDsmCommitRow failed: " + res + "\n")
+        end
+
+        objectPtrArray[j] := objectPtr
+
+        j := j + 1
+    end
+
+    from
+        j := 0
+    until
+        j >= 32
+    loop
+        key := "keyNode2" + i + j
+        
+        ftGroupId   := 0
+        tableId     := 1
+        error       := 0
+        
+        -- Call to DSM Find is mandatory to lock row.
+        
+        dummyObjectPtr := DsmFindRow(
+                                ftGroupId,
+                                tableId,
+                                key,
+                                out error)
+                                
+        if (error /= 0) then
+            Print("\n\nDsmFindRow failed: " + error + "\n")
+        end
+        
+        res := DsmFreeRow(
+                        ftGroupId,
+                        tableId,
+                        key,
+                        objectPtrArray[j])
+
+        if (res /= 0) then
+            Print("\n\nDsmFreeRow failed: " + res + "\n")
+        end
+
+        j := j + 1
+    end
+
+    i := i + 1
+end
+
+Print("\nReady to sleep 5 seconds...\n") 
+
+Sleep(5)
+
+DsmTableDump(ftGroupId, tableId)
+
+-----------------------------------------------------------

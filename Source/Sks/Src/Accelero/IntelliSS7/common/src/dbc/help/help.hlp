@@ -1,0 +1,266 @@
+IntelliSS7 MML Command Summary -
+
+ENGINE Module
+    b_addborder             Add Border Transport
+    b_settype               Set Border Transport Type
+    b_addlink               Add link Information
+    b_reset                 Reset current border context.
+    b_setcallbacks          Set Callback Functions to border transport
+    b_setfamily             Set border transport family
+    b_setmods               Set border transport modifiers
+    b_setspecs              Set border transport specific parameters
+    b_getborders            Get All Border Transports
+
+Common Module -
+    ansi_dumpls           Dump ANSI Linkset Table
+    itu_dumpls            Dump ITU Linkset Table
+
+ROUTING Module :
+    rt_add                ROUTE Add a route entry
+    rt_del                ROUTE Delete a route entry
+    rt_dump               ROUTE Dump Routing Table data
+
+LINK/LINKSET Module :
+    ls_add                LINKSET Add a linkset
+    ls_del                LINKSET Delete a linkset
+    ln_add                LINK    Add a link
+    ln_del                LINK    Delete a link
+
+MTP2 Module :
+    m2_get_gen_cfg        MTP2 Get General Config
+    m2_set_gen_cfg        MTP2 Set General Config
+    m2_get_gen_peg        MTP2 Get General Peg
+    m2_clr_gen_peg        MTP2 Clear General Peg
+    m2_get_all_link_pegs  MTP2 Get All Link Pegs
+    m2_clr_all_link_pegs  MTP2 Clear All Link Pegs
+
+ITU MTP3 Module :
+    mi_start              MTP3 Start Link Alignment
+    mi_get_gen_cfg        MTP3 Get General Config
+    mi_set_gen_cfg        MTP3 Set General Config
+    mi_in_link            MTP3 Inhibit Link
+    mi_unin_link          MTP3 Unhibit Link
+    mi_deact_link         MTP3 Deactivate Link
+    mi_act_link           MTP3 Activate Link
+    mi_deact_ls           MTP3 Deactivate Link Set
+    mi_act_ls             MTP3 Activate Link Set
+    mi_get_link           MTP3 Get Info on specific link
+    mi_get_ls             MTP3 Dump Link Set
+    mi_get_gen_peg        MTP3 Get General Pegs
+    mi_get_link_peg       MTP3 Get Link Pegs
+    mi_clr_gen_peg        MTP3 Clear General Peg
+    mi_clr_link_peg       MTP3 Clear link Peg
+    mi_set_rpc            MTP3 Set Remote Point code
+    mi_rem_rpc            MTP3 Remove Remote Point code
+    mi_get_all_rpc        MTP3 Get All Remote Point codes
+    mi_get_all_lpc        MTP3 Get All Local Point codes
+    mi_shutdown           MTP3 Gracefully Shutdown node
+
+ANSI MTP3 Module :
+    ma_start              MTP3 Start Link Alignment
+    ma_get_gen_cfg        MTP3 Get General Config
+    ma_set_gen_cfg        MTP3 Set General Config
+    ma_in_link            MTP3 Inhibit Link
+    ma_unin_link          MTP3 Unhibit Link
+    ma_deact_link         MTP3 Deactivate Link
+    ma_act_link           MTP3 Activate Link
+    ma_deact_ls           MTP3 Deactivate Link Set
+    ma_act_ls             MTP3 Activate Link Set
+    ma_get_link           MTP3 Get Info on specific link
+    ma_get_ls             MTP3 Dump Link Set
+    ma_get_gen_peg        MTP3 Get General Peg
+    ma_get_link_peg       MTP3 Get Link Pegs
+    ma_clr_gen_peg        MTP3 Clear General Peg
+    ma_clr_link_peg       MTP3 Clear Link Peg
+    ma_set_rpc            MTP3 Set Remote Point code
+    ma_rem_rpc            MTP3 Remove Remote Point code
+    ma_get_all_rpc        MTP3 Get All Remote Point codes
+    ma_get_all_lpc        MTP3 Get All Local Point codes
+    ma_shutdown           MTP3 Gracefully Shutdown node
+
+ITU SCCP Module :
+    si_get_gen_cfg        SCCP Get General Config
+    si_set_gen_cfg        SCCP Set General Config
+    si_get_all_ssn        SCCP Get All Subsystem Entries
+    si_set_rssn           SCCP Set Remote Subsystem Entry
+    si_rem_rssn           SCCP Remove Remote Subsystem Entry
+    si_set_lssn           SCCP Set Local Subsystem Entry
+    si_rem_lssn           SCCP Remove Local Subsystem Entry
+    si_get_all_cssn       SCCP Get All Concerned SSN Entry
+    si_set_cssn           SCCP Set Concerned SSN Entry
+    si_rem_cssn           SCCP Remove Concerned SSN Entry
+    si_send_ssa           SCCP Send Sub System Allowed
+    si_send_ssp           SCCP Send Sub System Prohibited
+    si_send_sst           SCCP Send Sub System Test
+    si_get_behavior       SCCP Get Behaviors
+    si_set_behavior       SCCP Set Behaviors
+    si_get_tmr            SCCP Get Timer
+    si_set_tmr            SCCP Set Timer
+    si_get_gen_peg        SCCP Get Peg
+    si_clr_gen_peg        SCCP Clear Peg
+
+ANSI SCCP Module :
+    sa_get_gen_cfg        SCCP Get General Config
+    sa_set_gen_cfg        SCCP Set General Config
+    sa_get_all_ssn        SCCP Get All Subsystem Entries
+    sa_set_rssn           SCCP Set Remote Subsystem Entry
+    sa_rem_rssn           SCCP Remove Remote Subsystem Entry
+    sa_set_lssn           SCCP Set Local Subsystem Entry
+    sa_rem_lssn           SCCP Remove Local Subsystem Entry
+    sa_get_all_cssn       SCCP Get All Concerned SSN Entry
+    sa_set_cssn           SCCP Set Concerned SSN Entry
+    sa_rem_cssn           SCCP Remove Concerned SSN Entry
+    sa_get_behavior       SCCP Get Behaviors
+    sa_set_behavior       SCCP Set Behaviors
+    sa_send_ssa           SCCP Send Sub System Allowed
+    sa_send_ssp           SCCP Send Sub System Prohibited
+    sa_send_sst           SCCP Send Sub System Test
+    sa_get_tmr            SCCP Get All Timers
+    sa_set_tmr            SCCP Set Timer
+    sa_get_gen_peg        SCCP Get Peg
+    sa_clr_gen_peg        SCCP Clear Peg
+
+ITU TCAP Module :
+    ti_get_gen_cfg        TCAP Get General Config
+    ti_set_gen_cfg        TCAP Set General Config
+    ti_get_tmr            TCAP Get Timers
+    ti_set_tmr            TCAP Set Timers
+    ti_behavior           TCAP Get Behaviors
+    ti_set_behavior       TCAP Set Behaviors
+    ti_get_gen_peg        TCAP Get Peg
+    ti_clr_gen_peg        TCAP Clear Peg
+
+ANSI TCAP Module :
+    ta_get_gen_cfg        TCAP Get General Config
+    ta_set_gen_cfg        TCAP Set General Config
+    ta_behavior           TCAP Get Behaviors
+    ta_set_behavior       TCAP Set Behaviors
+    ta_get_gen_peg        TCAP Get Peg
+    ta_clr_gen_peg        TCAP Clear Peg
+
+Sigtran UAL (SUA / M3UA) :
+    u_get_gen_cfg         UAL Get General Config
+    u_set_gen_cfg         UAL Set General Config
+    u_asptbl              UAL View ASP Table
+    u_astbl               UAL View AS Table
+    u_add_rkey            UAL Add Routing Key
+    u_aspup               UAL Send ASP UP
+    u_aspdown             UAL Send ASP DOWN
+    u_aspactive           UAL Send ASP ACTIVE
+    u_aspinactive         UAL Send ASP INACTIVE
+    u_get_gen_peg	  UAL Get Peg
+    u_clr_gen_peg         UAL Clear Peg
+
+ANSI ISUP Module :
+     ia_get_gen_cfg             ISUP Get General Config
+     ia_set_gen_cfg             ISUP Set General Config
+     ia_add_variant             ISUP Add Variant info
+     ia_get_dest_info           ISUP Get Destination Info
+     ia_add_dest_info           ISUP Add Destination Info
+     ia_get_timers              ISUP Get Timer Info
+     ia_set_timers              ISUP Set Timer Info
+     ia_get_cics                ISUP Get Circuit Info
+     ia_add_cics                ISUP Add Circuit Info
+     ia_del_cics                ISUP Del Circuit Info
+     ia_get_cic_state           ISUP Get specified Circuit State
+     ia_get_gen_pegid           ISUP Get General Peg Id
+     ia_get_cic_pegid           ISUP Get CIC Pegs Id
+     ia_get_gen_pegs            ISUP Get Genaral Pegs
+     ia_get_cic_pegs            ISUP Get CIC Pegs
+     ia_clr_gen_pegs            ISUP Reset a perticular gen Peg
+     ia_clr_cic_pegs            ISUP Clear perticular Cic Peg
+     ia_set_xchange_type        ISUP Set Local Exchange Type
+     ia_get_xchange_type        ISUP Get Local Exchange Type
+     ia_set_cong_lev            ISUP Set Congestion Level Threshold
+     ia_get_cong_lev            ISUP Get Congestion Level Threshold
+     ia_send_rsc                ISUP Send Reset Circuit Msg
+     ia_send_rlc                ISUP Send Release confirmation Msg
+     ia_send_ubl                ISUP Send Unblocking Msg
+     ia_send_blo                ISUP Send Blocking Msg
+     ia_send_cgb                ISUP Send Circuit group reset Msg
+     ia_send_cgu                ISUP Send Circuit group unblocking Msg
+     ia_send_grs                ISUP Send Group reset Msg
+     ia_send_cqm                ISUP Send Circuit query Msg
+     ia_get_msgsent_pegs        ISUP Get Message Sent Pegs
+     ia_get_msgrcvd_pegs        ISUP Get Message Received Pegs
+     ia_clr_msgsent_pegs        ISUP Reset Message Sent Pegs
+     ia_clr_msgrcvd_pegs        ISUP Reset Message Received Pegs
+
+ITU ISUP Module :
+     ii_get_gen_cfg             ISUP Get General Config
+     ii_set_gen_cfg             ISUP Set General Config
+     ii_add_variant             ISUP Add Variant info
+     ii_get_dest_info           ISUP Get Destination Info
+     ii_add_dest_info           ISUP Add Destination Info
+     ii_get_timers              ISUP Get Timer Info
+     ii_set_timers              ISUP Set Timer Info
+     ii_get_cics                ISUP Get Circuit Info
+     ii_add_cics                ISUP Add Circuit Info
+     ii_del_cics                ISUP Del Circuit Info
+     ii_get_cic_state           ISUP Get specified Circuit State
+     ii_get_gen_pegs            ISUP Get Genaral Pegs
+     ii_get_cic_pegs            ISUP Get CIC Pegs
+     ii_get_gen_pegid           ISUP Get General Peg Id
+     ii_get_cic_pegid           ISUP Get CIC Pegs Id
+     ii_clr_gen_pegs            ISUP Reset a perticular gen Peg
+     ii_clr_cic_pegs            ISUP Clear perticular Cic Peg
+     ii_set_cong_lev            ISUP Set Congestion Level Threshold
+     ii_get_cong_lev            ISUP Get Congestion Level Threshold
+     ii_set_xchange_type        ISUP Set Local Exchange Type
+     ii_get_xchange_type        ISUP Get Local Exchamge Type
+     ii_set_segsup_status       ISUP Set Segmentation Supported Status
+     ii_get_segsup_status       ISUP Get Segmentation Supported Status
+     ii_send_rsc                ISUP Send Reset Circuit Msg
+     ii_send_rlc                ISUP Send Release confirmation Msg
+     ii_send_ubl                ISUP Send Unblocking Msg
+     ii_send_blo                ISUP Send Blocking Msg
+     ii_send_cgb                ISUP Send Circuit group reset Msg
+     ii_send_cgu                ISUP Send Circuit group unblocking Msg
+     ii_send_grs                ISUP Send Group reset Msg
+     ii_send_cqm                ISUP Send Circuit query Msg
+     ii_get_msgsent_pegs        ISUP Get Message Sent Pegs
+     ii_get_msgrcvd_pegs        ISUP Get Message Received Pegs
+     ii_clr_msgsent_pegs        ISUP Reset Message Sent Pegs
+     ii_clr_msgrcvd_pegs        ISUP Reset Message Received Pegs
+
+Sigtran M2UA :
+     mu_get_gen_cfg             M2UA Get General Config
+     mu_set_gen_cfg             M2UA Set General Config
+     mu_get_all_iids            M2UA Retreive all IID
+     mu_rem_iid                 M2UA remove IID
+     mu_set_iid                 M2UA Add new IID
+
+SCTP Module :
+    s_get_gen_cfg        	SCTP Get General Config
+    s_set_gen_cfg        	SCTP Set General Config
+    s_get_gen_peg       	SCTP Get Peg
+    s_clr_gen_peg        	SCTP Clear Peg
+
+BSSAP Module :
+    bs_add_cfg_record           BSSAP add net config
+    bs_rem_cfg_record           BSSAP remove net config
+    bs_get_all_cfg_record       BSSAP get all net config 
+    bs_get_cfg_record           BSSAP get single net config
+    bs_add_cic_record           BSSAP add CIC config 
+    bs_rem_cic_record           BSSAP remove CIC config
+    bs_get_all_cic_record       BSSAP get all CIC config
+    bs_get_cic_record           BSSAP get single CIC config
+    bs_get_call_detail          BSSAP get all CDR
+    bs_set_timer                BSSAP set specific timer value
+    bs_set_timer_tries          BSSAP set specific timer tries
+    bs_get_all_timer_tries      BSSAP get specific timer tries
+    bs_get_all_timers           BSSAP get specific timer values 
+    bs_set_gen_cfg              BSSAP set general config details 
+    bs_get_gen_cfg              BSSAP get general config details
+
+For command list for a subsystem use "help <substem name>
+Subsystem names - eng - ENGINE, com - common, rt - ROUTING 
+                  ls - LINKSET  , ln - LINK
+                  ma - ANSI MTP3, mi - ITU MTP3
+                  sa - ANSI SCCP, si - ITU SCCP 
+                  ta - ANSI TCAP, ti - ITU TCAP
+                  ia - ANSI ISUP, ii - ITU ISUP
+                  u  - UAL (M3UA / SUA),
+                  mu - M2UA,      bs - BSSAP
+ 
+

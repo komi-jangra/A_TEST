@@ -1,0 +1,38 @@
+include ../../../../Csapp/Util/make.opt
+
+USERLIBRARIES = $(LFLAGS) $(LIBS) -linst-DB -lmutex 
+
+COMP_FLAG = -DXUSE_SIGNAL_NUMBERS -D__C_APPL $(CFLAGS)# -DCPLUSPLUS
+
+HDRFILES = -I../../../../../Inc/Sys/ \
+ 	   -I../../../../../Inc/Ipc/ \
+           -I../../../../../Inc/Dbs/ \
+           -I../../../../../Inc/Csapp/ \
+           -I../../../../../Inc/Oam/ \
+           -I../../../../../Inc/Oams/ \
+           -I../../../../../Inc/Bpm/ \
+           -I../../../../../Inc/Dsp/ \
+           -I../../../Inc/ \
+           -I../Inc/
+
+
+USERTARGET = System_CellHandler_env$(sctOEXTENSION) oamscellh_ltrxidgen.o oamscellh_mapltrxptrent.o oamscellh_sysinfo_encoder.o bsc_sig_hdlr.o
+sctUSERDEFS = -g $(COMP_FLAG) $(HDRFILES) -DTAU_MODEL
+
+System_CellHandler_env$(sctOEXTENSION): System_CellHandler_env.c System_CellHandler.ifc oamscellh_ltrxidgen.o oamscellh_mapltrxptrent.o oamscellh_sysinfo_encoder.o
+	$(sctCC) $(sctCPPFLAGS) $(sctCCFLAGS) $(sctIFDEF) -UTAU_MODEL System_CellHandler_env.c -o System_CellHandler_env$(sctOEXTENSION)
+
+oamscellh_ltrxidgen.o: oamscellh_ltrxidgen.c ../Inc/oamscellh_ltrxidgen.h
+	$(sctCC) $(sctCPPFLAGS) $(sctCCFLAGS) $(sctIFDEF) -DTAU_MODEL oamscellh_ltrxidgen.c -o oamscellh_ltrxidgen.o
+
+oamscellh_mapltrxptrent.o: oamscellh_mapltrxptrent.c ../Inc/oamscellh_mapltrxptrent.h
+	$(sctCC) $(sctCPPFLAGS) $(sctCCFLAGS) $(sctIFDEF) -UTAU_MODEL oamscellh_mapltrxptrent.c -o oamscellh_mapltrxptrent.o
+
+oamscellh_sysinfo_encoder.o: oamscellh_sysinfo_encoder.c ../Inc/oamscellh_sysinfo_encoder.h
+	$(sctCC) $(sctCPPFLAGS) $(sctCCFLAGS) $(sctIFDEF) -UTAU_MODEL oamscellh_sysinfo_encoder.c -o oamscellh_sysinfo_encoder.o
+
+bsc_sig_hdlr.o: bsc_sig_hdlr.c
+	$(sctCC) $(sctCPPFLAGS) $(sctCCFLAGS) -UTAU_MODEL $(sctIFDEF) bsc_sig_hdlr.c -o bsc_sig_hdlr.o
+
+clean_user_objs:
+	$(sctRM) $(USERTARGET)

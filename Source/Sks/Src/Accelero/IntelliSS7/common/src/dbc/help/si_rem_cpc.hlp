@@ -1,0 +1,20 @@
+
+ITU SCCP Command
+
+SYNOPSIS
+    si_rem_cpc <sspc> <ni> <ssn> <cpc>
+
+DESCRIPTION
+    This command removes concerned point code entry corresponding to given 
+    pc, ni, ssn, cpc.
+
+PARAMETERS
+    sspc    Local Point Code
+    ni      Network Indicator
+    ssn     Local Subsystem
+    cpc     concerned Point Code
+
+EXAMPLE
+    >> si_rem_cpc 2 0 2 5
+    ****** SCCP Concerned Point Code Entry Removed***
+

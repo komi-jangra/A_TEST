@@ -1,0 +1,2 @@
+asn_c            asn_c.mak            debug     "asn_c - Win32 Debug"
+asn_c            asn_c.mak            release   "asn_c - Win32 Release"

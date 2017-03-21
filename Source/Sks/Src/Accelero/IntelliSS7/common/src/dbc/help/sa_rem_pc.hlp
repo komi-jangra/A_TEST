@@ -1,0 +1,19 @@
+
+ANSI SCCP Command
+
+SYNOPSIS
+    sa_rem_pc <pc> <linkset>
+
+DESCRIPTION
+    This command removes point code entry corresponding to given 
+    pc, linkset.
+
+PARAMETERS
+    pc      Point Code
+    linkset Link Set
+
+EXAMPLE
+    >> sa_rem_pc 6 1
+    ********* SCCP Point Code Entry Removed********
+
+

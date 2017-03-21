@@ -1,0 +1,39 @@
+
+SCTP Command
+
+SYNOPSIS
+    s_set_gen_cfg <al>  <trType> <trOutput> <on/off>
+
+DESCRIPTION
+    This command sets SCTP alarm and trace level. Alarm level controls SCTP 
+    alarms sent to Accelero application. Trace level controls generation of SCTP 
+    execution traces.
+
+PARAMETERS
+    al            Alarm Level.
+                  Possible values -
+                  CRITICAL
+                  MAJOR 
+                  MINOR
+                  INFO
+                  OFF
+
+    trType        Trace Type. Possible values
+                  DEBUG
+                  WARNING
+                  ERROR
+                  CRITICAL
+                  all - all trace types
+
+    traceOutput   Trace Output. Possible Values -
+                  stdout
+                  file
+
+     ON/OFF       Set trace to on or off.
+
+
+EXAMPLE
+    >> s_set_gen_cfg CRITICAL DEBUG file on  
+    *********** SCTP General Config Set*************
+
+

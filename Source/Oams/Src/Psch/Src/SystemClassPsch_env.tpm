@@ -1,0 +1,18 @@
+
+include   ../../../../Csapp/Util/make.opt
+
+USERTARGET = SystemClassPsch_env$(sctOEXTENSION)
+USERLIBRARIES = $(LFLAGS) $(LIBS) -linst-DB -lsemaphore
+
+COMP_FLAG = -DXUSE_SIGNAL_NUMBERS -D__C_APPL $(CFLAGS)# -DCPLUSPLUS
+USER_FLAG = -D__UT_TEST
+
+HDRFILES = -I../../../Inc/ -I../Inc/
+
+SystemClassPsch_env$(sctOEXTENSION): SystemClassPsch_env.c SystemClassPsch.ifc
+	$(sctCC) $(sctCPPFLAGS) $(sctCCFLAGS) $(sctIFDEF) SystemClassPsch_env.c -o SystemClassPsch_env$(sctOEXTENSION)
+
+sctUSERDEFS = -g $(COMP_FLAG) $(USER_FLAG) $(HDRFILES)
+
+clean_user_objs:
+	$(sctRM) $(USERTARGET)

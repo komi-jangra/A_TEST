@@ -1,0 +1,36 @@
+
+
+ENGINE Command
+
+SYNOPSIS
+    b_setcallbacks <type> <libName> <preInit> <postInit>
+                   <preNext> <nextFailed> <postNext>
+                   <dispUser> <dispISUP> <dispSCCP>
+                   <preAccept> <onAccept> <preTerm> <postTerm>
+
+
+DESCRIPTION
+    This command sets the callback functions for the current border
+    transport context.  Note that the b_settype, b_setfamily, and b_setmods
+    commands must be executed before this one.  Any callback can be declared
+    "null" if no implementation will be provided.
+
+PARAMETERS
+    <type>              blocking|non-blocking|debug-console
+    <libName>           the library name containing the callback function(s)
+    <preInit>           function to call before ITS_Initialize()
+    <postInit>          function to call after ITS_Initialize()
+    <preNext>           function to call before invoking GetNextEvent() or PeekNextEvent()
+    <nextFailed>        function to call if GetNextEvent()/PeekNextEvent() failed
+    <postNext>          function to call after GetNextEvent()/PeekNextEvent()
+    <dispUser>          function to call if incoming event isn't SS7 related
+    <dispISUP>          function to call if incoming event is ISUP
+    <dispSCCP>          function to call if incoming event is SCCP
+    <preAccept>         function to call before accept() is called (iterative servers)
+    <onAccept>          function to call after accept() returns (iterative servers)
+    <preTerm>           function to call after the event loop ends but before ITS_Terminate()
+    <postTerm>          function to call after ITS_Terminate()
+
+EXAMPLE
+
+    b_setcallbacks blocking libFOO.so null null null null null null null null null null null null

@@ -1,0 +1,13 @@
+#!/bin/sh
+
+if [ $# != 2 ]
+then
+    echo "Usage: %0 <major-number> <minor_number>"
+    exit 0
+fi
+
+#
+# tag the tree
+#
+cvs tag -b -RF ProductionRelease$1.$2 ../IntelliSS7
+

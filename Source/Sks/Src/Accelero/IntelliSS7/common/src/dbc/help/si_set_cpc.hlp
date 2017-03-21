@@ -1,0 +1,26 @@
+
+ITU SCCP Command
+
+SYNOPSIS
+    si_set_cpc <sspc> <ni> <ssn> <cpc>
+
+DESCRIPTION
+    This command adds a concerned point code entry.  SCCP management messages
+    are sent to all concerned subsystems configured in Accelero node.
+
+PARAMETERS
+    sspc    Local Point Code
+    ni      Network Indicator
+    ssn     Local Subsystem Number
+    cpc     Concerned Point Code
+
+EXAMPLE
+    >> si_set_cpc 2 0 2 5
+    ******* SCCP Concerned Point Code Entry Set********
+
+
+NOTE -
+1. If Local sspc and Local ssn are not already configured no cpc entry is not 
+   added.
+2. For sending SCCP management messages to converned point code you should
+   also have remote route to concerned point code.

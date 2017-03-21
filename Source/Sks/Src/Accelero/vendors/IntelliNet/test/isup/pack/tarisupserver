@@ -1,0 +1,198 @@
+############################################################################
+#                                                                          #
+#     Copyright 2002 IntelliNet Technologies, Inc. All Rights Reserved.    #
+#             Manufactured in the United States of America.                #
+#       1990 W. New Haven Ste. 312, Melbourne, Florida, 32904 U.S.A.       #
+#                                                                          #
+#   This product and related documentation is protected by copyright and   #
+#   distributed under licenses restricting its use, copying, distribution  #
+#   and decompilation.  No part of this product or related documentation   #
+#   may be reproduced in any form by any means without prior written       #
+#   authorization of IntelliNet Technologies and its licensors, if any.    #
+#                                                                          #
+#   RESTRICTED RIGHTS LEGEND:  Use, duplication, or disclosure by the      #
+#   government is subject to restrictions as set forth in subparagraph     #
+#   (c)(1)(ii) of the Rights in Technical Data and Computer Software       #
+#   clause at DFARS 252.227-7013 and FAR 52.227-19.                        #
+#                                                                          #
+############################################################################
+#                                                                          #
+# CONTRACT: INTERNAL                                                       #
+#                                                                          #
+#     FILE: tarisupMultiClients                                                #    #
+#                                                                          #
+############################################################################
+
+
+#
+# PUBLIC ACCESS - CHANGE ACCORDINGLY
+#
+TYPE="INELLINET ISUP Over SIGTRAN FUNCTIONAL TEST" # Specify FUNCTIONAL or LOAD
+PROTOCOL="ANSI" # Specify ANSI or CCITT
+DBGSUFFIX=D
+
+BASESYSTEM=$HOME/cvsroot
+ITS_ROOT=$BASESYSTEM/IntelliSS7
+VENDOR_ROOT=$BASESYSTEM/vendors
+
+TESTDIR=$ITS_ROOT/ISUP/test/testclient
+SERVBINDIR=$VENDOR_ROOT/IntelliNet/bin
+HELPDIR=$ITS_ROOT/common/src/dbc/help
+
+#
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+# PRIVATE ACCESS - USERS STAY OUT
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+#
+
+#set -x
+umask 022
+echo "$0"
+echo "Preparing Files needed for $TYPE"
+
+REL_TAG=0.5
+REL_PACKAGE=TCS_ISUP_Release$REL_TAG
+TARGET=$REL_PACKAGE
+
+echo "*$TARGET"
+
+mkdir $REL_PACKAGE
+
+(cd $REL_PACKAGE; \
+echo "entering $(pwd)"; \
+mkdir bin lib include doc help test; \
+echo "leaving $(pwd)")
+echo "Current: $(pwd)"
+echo "Created the directory structure"
+
+RELEASE_BIN_DIR=$REL_PACKAGE/bin
+RELEASE_LIB_DIR=$REL_PACKAGE/lib
+RELEASE_INC_DIR=$REL_PACKAGE/include
+RELEASE_DOC_DIR=$REL_PACKAGE/doc
+RELEASE_HELP_DIR=$REL_PACKAGE/help
+RELEASE_TEST_DIR=$REL_PACKAGE/test
+
+
+#Libraries
+INCLUDES="\
+    $ITS_ROOT/common/include/* \
+    $ITS_ROOT/ISUP/include/* \
+    $ITS_ROOT/MTP3/include/* \
+    $VENDOR_ROOT/IntelliNet/include/* \
+    "
+cp -r $INCLUDES $RELEASE_INC_DIR
+echo "Copied includes"
+
+# Need to delete all CVS dirs and Readme,exports files
+
+#start deleting
+
+cvs=`find . -name CVS | awk '{print $1}'`
+for name in $cvs
+do
+    rm -rf $name
+done
+
+readme=`find . -name README | awk '{print $1}'`
+for name in $readme
+do
+    rm $name
+done
+
+exports=`find . -name exports | awk '{print $1}'`
+for name in $exports
+do
+    rm $name
+done
+#end of deleting
+
+#Libraries
+LIBRARIES="\
+    $ITS_ROOT/common/lib/libDRIVER$DBGSUFFIX.so \
+    $ITS_ROOT/common/lib/libENGINE$DBGSUFFIX.so \
+    $ITS_ROOT/common/lib/libDSM-STUB$DBGSUFFIX.so \
+    $ITS_ROOT/common/lib/libDISPATCH$DBGSUFFIX.so \
+    $ITS_ROOT/common/lib/libVFrame$DBGSUFFIX.so \
+    $ITS_ROOT/common/lib/libSCTP$DBGSUFFIX.so \
+    $ITS_ROOT/common/lib/libUAL$DBGSUFFIX.so \
+    $ITS_ROOT/ISUP/lib/libClient-Layer$DBGSUFFIX.so \
+    $ITS_ROOT/ISUP/lib/lib$PROTOCOL-ISUP-Codec95$DBGSUFFIX.so \
+    $ITS_ROOT/MTP3/lib/lib$PROTOCOL-M3UA$DBGSUFFIX.so \
+    $VENDOR_ROOT/IntelliNet/lib/lib$PROTOCOL-VENDOR$DBGSUFFIX.so \
+    $VENDOR_ROOT/IntelliNet/lib/lib"$PROTOCOL"_GENERIC_92$DBGSUFFIX.so \
+    $VENDOR_ROOT/IntelliNet/lib/lib"$PROTOCOL"_ISUP_95$DBGSUFFIX.so \
+    "
+cp $LIBRARIES $RELEASE_LIB_DIR
+echo "Copied libraries"
+
+#Test files and configuration files
+
+TESTFILES="\
+    $TESTDIR/* \
+    $TESTDIR/../printISUP*.* \
+    $TESTDIR/../read*.* \
+    $TESTDIR/../send*.* \
+    "
+cp $TESTFILES $RELEASE_TEST_DIR
+echo "Copied TestFiles"
+
+SERV_EXECUTABLES="\
+    $SERVBINDIR/run_ISUP \
+    $SERVBINDIR/isup.xml \
+    $SERVBINDIR/DBGConsole$DBGSUFFIX \
+    $SERVBINDIR/dbc_console.ini \
+    "
+cp $SERV_EXECUTABLES $RELEASE_BIN_DIR
+echo "Copied Executables"
+
+
+HELPFILES="\
+    $HELPDIR/*.* \
+    "
+cp $HELPFILES $RELEASE_HELP_DIR
+echo "Copied Help Files"
+
+# Future use:
+DOCS="\
+     $TESTDIR/Readme.ISUPClientApp \
+     $SERVBINDIR/Readme.ISUPServer \
+     "
+
+cp $DOCS $RELEASE_DOC_DIR
+
+DIRS="$RELEASE_BIN_DIR $RELEASE_LIB_DIR $RELEASE_INC_DIR 
+      $RELEASE_DOC_DIR $RELEASE_HELP_DIR $RELEASE_TEST_DIR"
+
+#
+# Take the tar now
+#
+
+tar cvf $REL_PACKAGE/$TARGET.tar $DIRS
+if [[ $? -eq 0 ]]
+then
+tar tf $REL_PACKAGE/$TARGET.tar |tee $RELEASE_DOC_DIR/contents
+fi
+echo "Date    : $NOW" >> $RELEASE_DOC_DIR/contents
+echo "TAGGED  : $TAG" >> $RELEASE_DOC_DIR/contents
+echo "PROTOCOL: $PROTOCOL" >> $RELEASE_DOC_DIR/contents
+echo "TYPE    : $TYPE" >> $RELEASE_DOC_DIR/contents
+tar uf $REL_PACKAGE/$TARGET.tar $RELEASE_DOC_DIR/contents
+echo 'PATH=.:$PATH' > $RELEASE_BIN_DIR/exports
+echo 'LD_LIBRARY_PATH=../lib:.:$LD_LIBRARY_PATH' >> $RELEASE_BIN_DIR/exports
+echo "export PATH LD_LIBRARY_PATH" >> $RELEASE_BIN_DIR/exports
+tar uf $REL_PACKAGE/$TARGET.tar $RELEASE_BIN_DIR/exports
+(cd $REL_PACKAGE; \
+echo "Zipping the target: $TARGET......."; \
+gzip "$TARGET.tar";)&
+typeset -i t=15
+while [[ t -gt 0 ]]
+do
+sleep 1
+echo "...\c"
+t=t-1
+done
+
+echo "\n$TYPE Tar completed!"
+#
+# END
+#

@@ -1,0 +1,68 @@
+ITU ISUP Command
+
+SYNOPSIS
+    ii_get_msgrcvd_pegs <opc> <dpc> <sio> 
+
+DESCRIPTION
+
+  Displays the Message Received Pegs 
+
+PARAMETERS
+    dpc     Destination point code.
+    opc     Origination point code.
+    sio     Service information octet.
+
+EXAMPLE
+
+>> ii_get_msgrcvd_pegs 16 21 133
+
+     Peg Name                                Peg Count 
+     --------                                ------
+
+PEG_ISUP_REMOTE_IAM_RCVD                  0
+PEG_ISUP_REMOTE_ACM_RCVD                  0
+PEG_ISUP_REMOTE_ANM_RCVD                  0
+PEG_ISUP_REMOTE_REL_RCVD                  0
+PEG_ISUP_REMOTE_RLC_RCVD                  0
+PEG_ISUP_REMOTE_BLO_RCVD                  0
+PEG_ISUP_REMOTE_UBL_RCVD                  0
+PEG_ISUP_REMOTE_BLA_RCVD                  0
+PEG_ISUP_REMOTE_CPG_RCVD                  0
+PEG_ISUP_REMOTE_CGB_RCVD                  0
+PEG_ISUP_REMOTE_CGBA_RCVD                 0
+PEG_ISUP_REMOTE_CQM_RCVD                  0
+PEG_ISUP_REMOTE_CQR_RCVD                  0
+PEG_ISUP_REMOTE_GRS_RCVD                  0
+PEG_ISUP_REMOTE_GRA_RCVD                  0
+PEG_ISUP_REMOTE_CGU_RCVD                  0
+PEG_ISUP_REMOTE_CGUA_RCVD                 0
+PEG_ISUP_REMOTE_CRG_RCVD                  0
+PEG_ISUP_REMOTE_CFN_RCVD                  0
+PEG_ISUP_REMOTE_COT_RCVD                  0
+PEG_ISUP_REMOTE_CCR_RCVD                  0
+PEG_ISUP_REMOTE_FOT_RCVD                  0
+PEG_ISUP_REMOTE_INF_RCVD                  0
+PEG_ISUP_REMOTE_INR_RCVD                  0
+PEG_ISUP_REMOTE_LPA_RCVD                  0
+PEG_ISUP_REMOTE_PAM_RCVD                  0
+PEG_ISUP_REMOTE_RSC_RCVD                  0
+PEG_ISUP_REMOTE_RES_RCVD                  0
+PEG_ISUP_REMOTE_SUS_RCVD                  0
+PEG_ISUP_REMOTE_UBA_RCVD                  0
+PEG_ISUP_REMOTE_UCIC_RCVD                 0
+PEG_ISUP_REMOTE_IDR_RCVD                  0
+PEG_ISUP_REMOTE_IRS_RCVD                  0
+PEG_ISUP_REMOTE_FAA_RCVD                  0
+PEG_ISUP_REMOTE_CON_RCVD                  0
+PEG_ISUP_REMOTE_FRJ_RCVD                  0
+PEG_ISUP_REMOTE_FAC_RCVD                  0
+PEG_ISUP_REMOTE_FAR_RCVD                  0
+PEG_ISUP_REMOTE_NRM_RCVD                  0
+PEG_ISUP_REMOTE_OLM_RCVD                  0
+PEG_ISUP_REMOTE_SAM_RCVD                  0
+PEG_ISUP_REMOTE_SGM_RCVD                  0
+PEG_ISUP_REMOTE_UPA_RCVD                  0
+PEG_ISUP_REMOTE_UPT_RCVD                  0
+PEG_ISUP_REMOTE_USR_RCVD                  0
+PEG_ISUP_REMOTE_LOP_RCVD                  0
+

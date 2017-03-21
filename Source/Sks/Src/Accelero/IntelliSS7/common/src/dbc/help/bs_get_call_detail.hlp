@@ -1,0 +1,20 @@
+BSSAP Command
+
+SYNOPSIS
+    bs_get_call_detail
+
+DESCRIPTION
+    This command lists all CDR
+
+PARAMETERS
+    NONE
+
+EXAMPLE
+    >> bs_get_call_detail 
+
+        Call Type   : MO CALL
+        SLR         : 1
+        DLR         : 2
+        CIC         : 122
+        NetworkId   : 1
+

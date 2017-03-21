@@ -1,0 +1,21 @@
+
+ITU ISUP Command
+
+SYNOPSIS
+    ii_get_gen_pegid
+
+DESCRIPTION
+    This command displays the id for a general peg type. 
+
+PARAMETERS
+    NONE
+
+
+EXAMPLE
+>> ii_get_gen_pegid
+
+     Peg Name              Peg id 
+     --------              ------
+PEG_ISUP_TOT_MSGS_SENT        7
+PEG_ISUP_TOT_MSGS_RCVD        8
+

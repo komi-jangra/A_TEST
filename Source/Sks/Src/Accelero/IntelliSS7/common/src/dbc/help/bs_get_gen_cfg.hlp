@@ -1,0 +1,23 @@
+BSSAP Command
+
+SYNOPSIS
+    bs_get_gen_cfg
+
+DESCRIPTION
+    This command gets the configuration info about BSSAP stack  
+
+PARAMETERS
+    None
+
+EXAMPLE
+    >> bs_get_gen_cfg
+
+>> bs_get_gen_cfg
+*********** BSSAP General Config *************
+    Alarm Level = MAJOR
+    BSSAP Trace -
+        Debug     =  stdout
+        Critical  =  stdout file
+        Warning   =  stdout
+        Error     =  stdout
+

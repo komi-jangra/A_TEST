@@ -1,0 +1,403 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE Application SYSTEM "file:/home/mmiers/dtd/engine.dtd">
+
+<!-- Sample XML file for application configuration (INI). -->
+ 
+<Application name           = "sctpEPv10"
+             type           = "console-application"
+             globalStart    = "ITU-ISUP"
+             binding        = "C"
+             library        = "lib-SCTPD.so"
+             appSelector    = "RouteApp"
+             preFunc        = "ftestPreFunc"
+             postFunc       = "ftestPostFunc">
+ 
+    <AppOptions name = "traceFlushAfterWrite"         value = "yes"/>
+    <AppOptions name = "routeUniqueLinkCodesRequired" value = "yes"/>
+    <AppOptions name = "memPoolChecksOn"              value = "no"/>
+    />
+    <FaultTolerance
+        maxNumFtGroups      = "8"
+        maxNumProcesses     = "6"
+        maxNumNodes         = "1"
+        nodeId              = "0"
+        processId           = "5"
+        tcapFtGroupId       = "0"
+        sccpFtGroupId       = "0"
+        mtp3FtGroupId       = "0"
+        isupFtGroupId       = "0"
+        routingFtGroupId    = "0"
+        timersFtGroupId     = "0"
+        mgmtDataFtGroupId   = "0"
+    >
+
+        <Procedures>
+
+        </Procedures>
+
+        <Callbacks>
+
+        </Callbacks>
+
+        <FtGroups>
+
+            <FtGroup
+                ftGroupId      = "0"
+                ftGroupName    = "FtGroup0"
+            >
+
+                <DsmConfig
+                     dsmSize         = "20971520"
+                     dsmBaseAddress  = "0x80000000"
+                     dsmMaxNumTables = "256"
+                     dsmType         = "STUB"
+                />
+
+                <!-- Note: MUST include itself. -->
+                <!-- Note: nodeName and processName are optional attributes. -->
+
+                <FtGroupMembers>
+
+                    <FtGroupMember
+                        nodeId      = "0"
+                        nodeName    = "Node0"
+                        processId   = "5"
+                        processName = "Node0Process5"
+                    />
+
+                </FtGroupMembers>
+
+
+                <!-- Note: MUST NOT include itself. -->
+                <!-- Note: Master FtGroupMembers are tried in order. -->
+
+                <MasterFtGroupMembers>
+
+                </MasterFtGroupMembers>
+
+                <Callbacks>
+
+                </Callbacks>
+
+            </FtGroup>
+
+        </FtGroups>
+
+    </FaultTolerance>
+    <!--/////////////// LINK SETS //////////////-->
+
+    <LinkSet id           = "0"
+             adjacentSTP  = "no"
+             numToStart   = "0">
+        <NI     value = "0x00"/>
+        <APC    value = "0x00"/>
+        <LPC    value = "0x00"/>
+    </LinkSet>
+
+    <!-- link set for external routing -->
+    <LinkSet id           = "1"
+             adjacentSTP  = "yes"
+             numToStart   = "1">
+        <NI     value = "0x00"/>
+        <APC    value = "0x15"/>
+        <LPC    value = "0x10"/>
+    </LinkSet>
+
+    <!--///////////////END of LINK SETS //////////////-->
+ 
+    <!--///////////////Route Info //////////////-->
+
+    <Route  type     = "localRoute"
+            style    = "dpc-sio"
+            linkSet  = "0"
+            priority = "0">
+        <DPC    value = "0x10"/>
+        <SIO    value = "0x05"/>
+    </Route>
+
+    <Route   type     = "remoteRoute"
+             style    = "dpc-sio"
+             linkSet  = "1"
+             priority = "0">
+
+           <DPC   value = "0x15"/>
+           <SIO   value = "0x05"/>
+
+    </Route>
+
+    <Route  type     = "routingKeyRoute"
+            style    = "dpc-sio">
+       
+        <routingKey value = "0x01"/> 
+        <DPC        value = "0x10"/>
+        <SIO        value = "0x05"/>
+
+    </Route>
+             
+    <Feature
+        name        = "Vendor Framework CCITT"
+        library     = "libVFrameD.so"
+        classRec    = "itsSS7STACK_ClassCCITT"
+    />
+
+    <Feature
+        name        = "IntelliNet stack CCITT"
+        library     = "libCCITT-VENDORD.so"
+        classRec    = "itsINTELLISS7_ClassCCITT"
+    />
+<!--
+    <Feature
+        name        = "DSM Data Class - STUB"
+        library     = "libDSM-STUBD.so"
+        classRec    = "itsDSM_StubImplClass"
+    />
+-->
+
+    <Feature
+        name        = "SCTP"
+        library     = "libSCTPD.so"
+        classRec    = "itsSCTP_Class"
+    />
+
+    <Feature
+        name        = "ITU_GENERIC_93"
+        library     = "libITU_GENERIC_93D.so"
+        classRec    = "isupITU93_Class"
+    />
+
+    <!--/////////////////////////////////////////////////////////////////////////-->
+    <!--///////////////// UAL Manager config for M3UADraft ver 10 ///////////////-->
+    <!--/////////////////////////////////////////////////////////////////////////-->
+
+    <Feature
+        name        = "CCITT-M3UA"
+        library     = "libCCITT-M3UAD.so"
+        classRec    = "itsM3UA_Class_CCITT"
+    />
+ 
+    <ParserExtension library     = "libUALD.so"
+                     elementName = "UAL_Manager"
+                     startFunc   = "UAL_ParseStartFunc"
+                     stopFunc    = "UAL_ParseStop"
+                     xlateFunc   = "UAL_ResourceXlate"
+                     diffFunc    = "UAL_ExtensionDiff"
+    />
+
+    <UAL_Manager   useSCMGCallBack   = "no"
+                   heartBeat         = "off"
+                   hbInterval        = "5"
+                   ackTimer          = "600"
+                   pendingTimer      = "2"
+                   interworkingMode  = "endPointMode"
+                   localPointCode    = "0x10"
+                   version           = "1">
+
+              <AsInfo   routingKey       = "1"
+                        isMember         = "yes"
+                        asTrafficMode    = "overRideMode"> 
+              </AsInfo>
+            
+    </UAL_Manager>
+
+    <Feature
+        name        = "UAL_Manager"
+        library     = "libUALD.so"
+        classRec    = "itsUAL_Class"
+    />
+
+    <!--/////////////////////////////////////////////////////////////////////////-->
+    <!--///////////////// End of UAL Manager config /////////////////////////////-->
+    <!--/////////////////////////////////////////////////////////////////////////-->
+
+    <Destination    family      = "ITU"
+                    pointCode   = "0x15"
+                    networkInd  = "0x00"
+                    mtp3Variant = "WhiteBook_97"
+                    isupVariant = "ITU_GENERIC_93"
+                    sccpVariant = "WhiteBook_97"
+                    tcapVariant = "WhiteBook_97"
+                    tupVariant  = "WhiteBook_97"
+                    dupVariant  = "WhiteBook_97">
+
+        <ISUPAttributes localPointCode    = "0x10"
+                        SIO               = "0x05"
+                        classRec          = "isupITU93_Class"
+                        library           = "libITU_GENERIC_93D.so">
+
+              <!-- Only override timer value -->
+              <Timer name       = "T1"
+                     value      = "30"
+                     handledBy  = "STACK"/>
+              />
+
+              <!-- Turn off timer -->
+              <Timer name       = "T2"
+                     value      = "0"
+              />
+
+              <!-- Only override handling -->
+              <Timer name       = "T3"
+                     handledBy  = "APP"
+              />
+
+              <!-- Override both value and handling -->
+              <Timer name       = "T4"
+                     value      = "3"
+                     handledBy  = "APP"
+              />
+              <Timer name       = "T14"
+                     value      = "3000"
+                     handledBy  = "APP"
+              />
+              <Timer name       = "T15"
+                     value      = "30000"
+                     handledBy  = "APP"
+              />
+              <!-- Circuit Group #1 -->
+              <CircuitGroup huntRule = "DEF">
+                  <CircuitCodes start = "1"
+                                count = "24"
+                  />
+              </CircuitGroup>
+
+        </ISUPAttributes>
+    </Destination>
+
+    <ToolkitTrace>
+        <Critical  output = "stdout"/>
+        <Error     output = "stdout"/>
+        <Warning   output = "stdout"/>
+        <Debug     output = "0"/>
+    </ToolkitTrace>
+
+    <!--///////////////////////////////////////////////////////////////-->
+
+    <WorkerPool stackSize = "0">
+
+        <Transport  type   = "TaskQueue"
+                    count  = "6"
+                    family = "ITU">
+
+             <Modifier value = "MTP3"/>
+             <Modifier value = "ISUP"/>
+
+             <Callbacks
+                 library          = "lib-SCTPD.so"
+                 type             = "blocking"
+                 postInitialize   = ""
+             />
+
+        </Transport> 
+
+    </WorkerPool>
+
+    <!--///////////////////////////////////////////////////////////////-->
+
+    <BorderPool stackSize = "0">
+
+        <Transport  name    = "Test SCTP"
+                    type    = "Datagram"
+                    family  = "ITU">
+
+            <Modifier value = "SCTP"/>
+            <Modifier value = "MTP3"/>
+
+            <DatagramData   localHostName   = "192.168.2.10"
+                            localPort       = "2960">
+
+                 <Associate  value  = "ASP 1"/>
+
+            </DatagramData>
+
+            <SCTP   maxInStreams      = "32"
+                    numOutStreams     = "32"
+                    maxAttempts       = "5"
+                    cookieLife        = "30"
+                    hbOn              = "yes"
+                    initTimeOut       = "5,0"
+                    sendTimeOut       = "5,0"
+                    recvTimeOut       = "0,300"
+                    hbTimeOut         = "10,0"
+                    shutdownTimeOut   = "5,0"
+                    pmtuTimeOut       = "600,0"
+                    isClient          = "yes"
+                    payloadType       = "CCITT-M3UA">
+            </SCTP>
+
+            <Callbacks
+                library         = "lib-SCTPD.so"
+                type            = "blocking"
+                preInitialize   = ""
+                postInitialize  = ""
+                postNextEvent   = ""
+                userDispatch    = ""
+            />
+
+       </Transport>
+
+       <Transport   name    = "ASP 1"
+                    type    = "Virtual"
+                    family  = "ITU">
+
+            <Modifier value = "SCTP"/>
+
+            <DatagramData   socketDomain    = "INET"
+                            serverHostName  = "10.1.5.61"
+                            serverPort      = "2960">
+
+            </DatagramData>
+
+            <Link        id             = "0"
+                         linkSet        = "1"
+                         initialActive  = "yes"
+                         terminalFixed  = "yes"
+                         dataLinkFixed  = "yes"
+                         priority       = "0"
+                         terminal       = "0"
+                         dataLink       = "0"
+            />
+
+       </Transport>
+
+        <Transport  name    = "Debug Console"
+                    type    = "ServerSocket">
+
+            <StreamData socketDomain    = "INET"
+                        serverHostName  = "127.0.0.1"
+                        serverPort      = "29123"
+            />
+
+            <Callbacks
+                type            = "debug-console"
+            />
+
+        </Transport>
+
+    </BorderPool>
+
+    <!--///////////////////////////////////////////////////////////////-->
+
+    <SS7-Stacks>
+
+        <!--///////////////////////////////////////////////////////////-->
+
+        <IntelliNet>
+
+            <ITU-ISUP variant = "ITU_GENERIC_93" >
+
+                <StackTrace>
+                    <Critical output = "stdout"/>
+                    <Critical output = "file"/>
+                    <Error    output = "stdout"/>
+                    <Warning  output = "file"/>
+                    <Debug    output = "stdout"/>
+                </StackTrace>
+
+            </ITU-ISUP>
+  
+        </IntelliNet>
+
+    </SS7-Stacks>
+
+ </Application>

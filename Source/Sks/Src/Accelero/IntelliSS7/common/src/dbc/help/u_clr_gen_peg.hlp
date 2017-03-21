@@ -1,0 +1,46 @@
+M3UA / SUA Command
+
+SYNOPSIS
+    u_clr_gen_peg <trid> <pegid>
+
+DESCRIPTION
+    This command resets peg count for given transport id and peg type.
+
+PARAMETERS
+    trid    - transport id
+    peg Id  - The peg id to get the peg
+              ALL/all for All M3UA/SUA PEGS Values
+
+    Different UAL peg types and corresponding values are given below -
+
+    Peg Type                   Peg ID
+    ---------------------------------
+    UAL_PEG_UP_ID                0
+    UAL_PEG_UPACK_ID             1
+    UAL_PEG_DN_ID                2
+    UAL_PEG_DNACK_ID             3
+    UAL_PEG_AC_ID                4
+    UAL_PEG_ACACK_ID             5
+    UAL_PEG_IA_ID                6
+    UAL_PEG_IAACK_ID             7
+    UAL_PEG_NOTIFY_ID            8
+    UAL_PEG_DAUD_ID              9
+    UAL_PEG_DAVA_ID              10
+    UAL_PEG_DUPU_ID              11
+    UAL_PEG_DATA_IN_ID           12
+    UAL_PEG_DATA_OUT_ID          13
+    UAL_PEG_ERR_IN_ID            14
+    UAL_EEG_ERR_OUT_ID           15
+    UAL_PEG_SCON_IN_ID           16
+    UAL_PEG_SCON_OUT_ID          17
+    UAL_PEG_INVALID_ID           18
+
+EXAMPLE
+    >> u_clr_gen_peg 0x4e22 2
+
+    value of peg id 2 set to 0
+
+   >> u_clr_gen_peg 0x4e22 all
+
+    value of all peg ids set to 0  
+

@@ -1,0 +1,167 @@
+USING INDEX ../doc/mtp3_index.html
+Generating for ../include/mtp3++.h
+Dumping interface notes for: MTP3PointCode
+Didn't match function  to any interface
+Choices were:
+mtp3pointcode 
+Didn't match function  to any interface
+Choices were:
+mtp3pointcode 
+Didn't match function  to any interface
+Choices were:
+mtp3pointcode 
+Didn't match function  to any interface
+Choices were:
+mtp3pointcode 
+Didn't match function  to any interface
+Choices were:
+mtp3pointcode 
+Didn't match function  to any interface
+Choices were:
+mtp3pointcode 
+Didn't match function  to any interface
+Choices were:
+mtp3pointcode 
+Didn't match function  to any interface
+Choices were:
+mtp3pointcode 
+Didn't match function  to any interface
+Choices were:
+mtp3pointcode 
+Didn't match function  to any interface
+Choices were:
+mtp3pointcode 
+Didn't match function  to any interface
+Choices were:
+mtp3pointcode 
+Didn't match function  to any interface
+Choices were:
+mtp3pointcode 
+Didn't match function  to any interface
+Choices were:
+mtp3pointcode 
+Didn't match function  to any interface
+Choices were:
+mtp3pointcode 
+Didn't match function  to any interface
+Choices were:
+mtp3pointcode 
+Didn't match function  to any interface
+Choices were:
+mtp3pointcode 
+Didn't match function  to any interface
+Choices were:
+mtp3pointcode 
+Didn't match function  to any interface
+Choices were:
+mtp3pointcode 
+Didn't match function  to any interface
+Choices were:
+mtp3pointcode 
+Didn't match function  to any interface
+Choices were:
+mtp3pointcode 
+Dumping interface notes for: MTP3_Message
+Dumping implementation notes for: MTP3_Message::MTP3_Header
+Dumping link to MTP3_Message::MTP3_Header for MTP3_Message
+Dumping implementation notes for: MTP3_Message::MTP3_Header
+Dumping link to MTP3_Message::MTP3_Header for MTP3_Message
+Dumping implementation notes for: MTP3_Message::virtual ~MTP3_Header
+Dumping link to MTP3_Message::virtual ~MTP3_Header for MTP3_Message
+Dumping implementation notes for: MTP3_Message::SetHeader
+Dumping link to MTP3_Message::SetHeader for MTP3_Message
+Dumping implementation notes for: MTP3_Message::GetHeader
+Dumping link to MTP3_Message::GetHeader for MTP3_Message
+Dumping implementation notes for: MTP3_Message::HasOPC
+Dumping link to MTP3_Message::HasOPC for MTP3_Message
+Dumping implementation notes for: MTP3_Message::SetOPC
+Dumping link to MTP3_Message::SetOPC for MTP3_Message
+Dumping implementation notes for: MTP3_Message::SetOPC
+Dumping link to MTP3_Message::SetOPC for MTP3_Message
+Dumping implementation notes for: MTP3_Message::SetOPC
+Dumping link to MTP3_Message::SetOPC for MTP3_Message
+Dumping implementation notes for: MTP3_Message::GetOPC
+Dumping link to MTP3_Message::GetOPC for MTP3_Message
+Dumping implementation notes for: MTP3_Message::GetOPC
+Dumping link to MTP3_Message::GetOPC for MTP3_Message
+Dumping implementation notes for: MTP3_Message::HasDPC
+Dumping link to MTP3_Message::HasDPC for MTP3_Message
+Dumping implementation notes for: MTP3_Message::SetDPC
+Dumping link to MTP3_Message::SetDPC for MTP3_Message
+Dumping implementation notes for: MTP3_Message::SetDPC
+Dumping link to MTP3_Message::SetDPC for MTP3_Message
+Dumping implementation notes for: MTP3_Message::SetDPC
+Dumping link to MTP3_Message::SetDPC for MTP3_Message
+Dumping implementation notes for: MTP3_Message::GetDPC
+Dumping link to MTP3_Message::GetDPC for MTP3_Message
+Dumping implementation notes for: MTP3_Message::GetDPC
+Dumping link to MTP3_Message::GetDPC for MTP3_Message
+Dumping implementation notes for: MTP3_Message::SetSIO
+Dumping link to MTP3_Message::SetSIO for MTP3_Message
+Dumping implementation notes for: MTP3_Message::GetSIO
+Dumping link to MTP3_Message::GetSIO for MTP3_Message
+Dumping implementation notes for: MTP3_Message::HasNetworkIndicator
+Dumping link to MTP3_Message::HasNetworkIndicator for MTP3_Message
+Dumping implementation notes for: MTP3_Message::SetNetworkIndicator
+Dumping link to MTP3_Message::SetNetworkIndicator for MTP3_Message
+Dumping implementation notes for: MTP3_Message::GetNetworkIndicator
+Dumping link to MTP3_Message::GetNetworkIndicator for MTP3_Message
+Dumping implementation notes for: MTP3_Message::HasPriority
+Dumping link to MTP3_Message::HasPriority for MTP3_Message
+Dumping implementation notes for: MTP3_Message::SetPriority
+Dumping link to MTP3_Message::SetPriority for MTP3_Message
+Dumping implementation notes for: MTP3_Message::GetPriority
+Dumping link to MTP3_Message::GetPriority for MTP3_Message
+Dumping implementation notes for: MTP3_Message::HasUserPart
+Dumping link to MTP3_Message::HasUserPart for MTP3_Message
+Dumping implementation notes for: MTP3_Message::SetUserPart
+Dumping link to MTP3_Message::SetUserPart for MTP3_Message
+Dumping implementation notes for: MTP3_Message::GetUserPart
+Dumping link to MTP3_Message::GetUserPart for MTP3_Message
+Dumping implementation notes for: MTP3_Message::HasSLS
+Dumping link to MTP3_Message::HasSLS for MTP3_Message
+Dumping implementation notes for: MTP3_Message::SetSLS
+Dumping link to MTP3_Message::SetSLS for MTP3_Message
+Dumping implementation notes for: MTP3_Message::GetSLS
+Dumping link to MTP3_Message::GetSLS for MTP3_Message
+Dumping interface notes for: MTP3_Message
+Dumping implementation notes for: MTP3_Message::MTP3_Message
+Dumping link to MTP3_Message::MTP3_Message for MTP3_Message
+Dumping implementation notes for: MTP3_Message::~MTP3_Message
+Dumping link to MTP3_Message::~MTP3_Message for MTP3_Message
+Dumping implementation notes for: MTP3_Message::SetPayload
+Dumping link to MTP3_Message::SetPayload for MTP3_Message
+Dumping implementation notes for: MTP3_Message::SetPayload
+Dumping link to MTP3_Message::SetPayload for MTP3_Message
+Dumping implementation notes for: MTP3_Message::GetPayload
+Dumping link to MTP3_Message::GetPayload for MTP3_Message
+Dumping implementation notes for: MTP3_Message::GetPayload
+Dumping link to MTP3_Message::GetPayload for MTP3_Message
+Dumping implementation notes for: MTP3_Message::Encode
+Dumping link to MTP3_Message::Encode for MTP3_Message
+Dumping interface notes for: MTP3_UserData
+Dumping implementation notes for: MTP3_Message::MTP3_UserData
+Dumping link to MTP3_Message::MTP3_UserData for MTP3_Message
+Dumping interface notes for: MTP3_Pause
+Dumping implementation notes for: MTP3_Message::MTP3_Pause
+Dumping link to MTP3_Message::MTP3_Pause for MTP3_Message
+Dumping implementation notes for: MTP3_Message::GetAffectedPC
+Dumping link to MTP3_Message::GetAffectedPC for MTP3_Message
+Dumping implementation notes for: MTP3_Message::GetAffectedPC
+Dumping link to MTP3_Message::GetAffectedPC for MTP3_Message
+Dumping interface notes for: MTP3_Resume
+Dumping implementation notes for: MTP3_Message::MTP3_Resume
+Dumping link to MTP3_Message::MTP3_Resume for MTP3_Message
+Dumping implementation notes for: MTP3_Message::GetAffectedPC
+Dumping link to MTP3_Message::GetAffectedPC for MTP3_Message
+Dumping implementation notes for: MTP3_Message::GetAffectedPC
+Dumping link to MTP3_Message::GetAffectedPC for MTP3_Message
+Dumping interface notes for: MTP3_Status
+Dumping implementation notes for: MTP3_Message::MTP3_Status
+Dumping link to MTP3_Message::MTP3_Status for MTP3_Message
+Dumping implementation notes for: MTP3_Message::GetAffectedPC
+Dumping link to MTP3_Message::GetAffectedPC for MTP3_Message
+Dumping implementation notes for: MTP3_Message::GetAffectedPC
+Dumping link to MTP3_Message::GetAffectedPC for MTP3_Message
+Dumping implementation notes for: MTP3_Message::GetStatus
+Dumping link to MTP3_Message::GetStatus for MTP3_Message

@@ -1,0 +1,20 @@
+--------------------------------------------------------------------------------
+--
+-- AsnCC 2.0 test.
+--
+-- Based on GSM MAP. Multiple namespaces. For V4 and V2 at the same time.
+--
+--------------------------------------------------------------------------------
+
+-- TEST10-1 => to simulate MAP V2.
+
+
+TEST10-1 DEFINITIONS ::=
+
+BEGIN
+
+TeleserviceCode ::= OCTET STRING (SIZE(1))
+
+TeleserviceList ::= SEQUENCE SIZE(1..20) OF TeleserviceCode
+
+END

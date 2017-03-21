@@ -1,0 +1,5 @@
+all		c	ansi	ansi/*.h
+all		c	itu	itu/*.h
+all		cpp	both	tcap++.h
+all		c	both	tcap_cmn.h
+all		c	both	tcap_sn.h

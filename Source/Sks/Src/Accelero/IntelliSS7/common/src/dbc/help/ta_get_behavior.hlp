@@ -1,0 +1,24 @@
+
+ANSI TCAP Command
+
+SYNOPSIS
+    ta_get_behavior
+
+DESCRIPTION
+
+    This command displays ANSI TCAP behavior. If this behavior is set then
+    TCAP layer uses network indicator value of 0xc0 (Reserved NI) inside
+    routing label while sending messages to SCCP.
+    If this behavior is Unset TCAP layer uses network indicator value of
+    Ox80 insdie routing lable while sending message to SCCP.
+
+
+
+PARAMETERS
+    None.
+
+EXAMPLE
+  >> ta_get_behavior
+      TCAP_B_use_reserved_NI    <no> 
+
+

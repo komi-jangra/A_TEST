@@ -1,0 +1,660 @@
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:49,
+                 from oamcfg_main.c:38:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:854:1: warning: "TO_GSAL_MSG_NS_BLOCK_REQUEST" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:843:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:859:1: warning: "TO_GSAL_MSG_NS_PROV_NSVCI" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:850:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:860:1: warning: "TO_GSAL_MSG_NS_UNPROV_NSVCI" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:851:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:900:1: warning: "FRM_GSAL_MSG_NS_UNPROV_FR_LINK_CNF" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:894:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:901:1: warning: "FRM_GSAL_MSG_NS_BLOCK_CNF" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:884:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:902:1: warning: "FRM_GSAL_MSG_NS_UNBLOCK_CNF" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:885:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:76,
+                 from oamcfg_main.c:38:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_hashdefs.h:86:1: warning: "BUSY" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_main.c:38:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:593:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_main.c:38:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:74:1: warning: "TN1" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_main.c:38:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:582:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_main.c:38:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:75:1: warning: "TN2" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_main.c:38:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:583:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_main.c:38:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:76:1: warning: "TN3" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_main.c:38:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:584:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_main.c:38:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:77:1: warning: "TN4" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_main.c:38:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:585:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:49,
+                 from oamcfg_initialization.c:50:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:854:1: warning: "TO_GSAL_MSG_NS_BLOCK_REQUEST" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:843:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:859:1: warning: "TO_GSAL_MSG_NS_PROV_NSVCI" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:850:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:860:1: warning: "TO_GSAL_MSG_NS_UNPROV_NSVCI" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:851:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:900:1: warning: "FRM_GSAL_MSG_NS_UNPROV_FR_LINK_CNF" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:894:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:901:1: warning: "FRM_GSAL_MSG_NS_BLOCK_CNF" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:884:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:902:1: warning: "FRM_GSAL_MSG_NS_UNBLOCK_CNF" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:885:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:76,
+                 from oamcfg_initialization.c:50:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_hashdefs.h:86:1: warning: "BUSY" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_initialization.c:50:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:593:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_initialization.c:50:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:74:1: warning: "TN1" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_initialization.c:50:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:582:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_initialization.c:50:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:75:1: warning: "TN2" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_initialization.c:50:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:583:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_initialization.c:50:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:76:1: warning: "TN3" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_initialization.c:50:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:584:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_initialization.c:50:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:77:1: warning: "TN4" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_initialization.c:50:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:585:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:49,
+                 from oamcfg_msg_handlers.c:50:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:854:1: warning: "TO_GSAL_MSG_NS_BLOCK_REQUEST" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:843:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:859:1: warning: "TO_GSAL_MSG_NS_PROV_NSVCI" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:850:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:860:1: warning: "TO_GSAL_MSG_NS_UNPROV_NSVCI" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:851:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:900:1: warning: "FRM_GSAL_MSG_NS_UNPROV_FR_LINK_CNF" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:894:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:901:1: warning: "FRM_GSAL_MSG_NS_BLOCK_CNF" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:884:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:902:1: warning: "FRM_GSAL_MSG_NS_UNBLOCK_CNF" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:885:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:76,
+                 from oamcfg_msg_handlers.c:50:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_hashdefs.h:86:1: warning: "BUSY" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_msg_handlers.c:50:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:593:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_msg_handlers.c:50:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:74:1: warning: "TN1" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_msg_handlers.c:50:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:582:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_msg_handlers.c:50:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:75:1: warning: "TN2" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_msg_handlers.c:50:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:583:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_msg_handlers.c:50:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:76:1: warning: "TN3" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_msg_handlers.c:50:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:584:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_msg_handlers.c:50:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:77:1: warning: "TN4" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_msg_handlers.c:50:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:585:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:49,
+                 from oamcfg_bss_object_handler.c:49:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:854:1: warning: "TO_GSAL_MSG_NS_BLOCK_REQUEST" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:843:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:859:1: warning: "TO_GSAL_MSG_NS_PROV_NSVCI" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:850:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:860:1: warning: "TO_GSAL_MSG_NS_UNPROV_NSVCI" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:851:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:900:1: warning: "FRM_GSAL_MSG_NS_UNPROV_FR_LINK_CNF" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:894:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:901:1: warning: "FRM_GSAL_MSG_NS_BLOCK_CNF" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:884:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:902:1: warning: "FRM_GSAL_MSG_NS_UNBLOCK_CNF" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:885:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:76,
+                 from oamcfg_bss_object_handler.c:49:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_hashdefs.h:86:1: warning: "BUSY" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_bss_object_handler.c:49:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:593:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_bss_object_handler.c:49:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:74:1: warning: "TN1" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_bss_object_handler.c:49:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:582:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_bss_object_handler.c:49:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:75:1: warning: "TN2" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_bss_object_handler.c:49:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:583:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_bss_object_handler.c:49:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:76:1: warning: "TN3" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_bss_object_handler.c:49:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:584:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_bss_object_handler.c:49:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:77:1: warning: "TN4" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_bss_object_handler.c:49:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:585:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:49,
+                 from oamcfg_trx_object_handler.c:48:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:854:1: warning: "TO_GSAL_MSG_NS_BLOCK_REQUEST" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:843:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:859:1: warning: "TO_GSAL_MSG_NS_PROV_NSVCI" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:850:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:860:1: warning: "TO_GSAL_MSG_NS_UNPROV_NSVCI" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:851:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:900:1: warning: "FRM_GSAL_MSG_NS_UNPROV_FR_LINK_CNF" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:894:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:901:1: warning: "FRM_GSAL_MSG_NS_BLOCK_CNF" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:884:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:902:1: warning: "FRM_GSAL_MSG_NS_UNBLOCK_CNF" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:885:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:76,
+                 from oamcfg_trx_object_handler.c:48:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_hashdefs.h:86:1: warning: "BUSY" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_trx_object_handler.c:48:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:593:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_trx_object_handler.c:48:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:74:1: warning: "TN1" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_trx_object_handler.c:48:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:582:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_trx_object_handler.c:48:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:75:1: warning: "TN2" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_trx_object_handler.c:48:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:583:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_trx_object_handler.c:48:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:76:1: warning: "TN3" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_trx_object_handler.c:48:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:584:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_trx_object_handler.c:48:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:77:1: warning: "TN4" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_trx_object_handler.c:48:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:585:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:49,
+                 from oamcfg_e1_object_handler.c:48:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:854:1: warning: "TO_GSAL_MSG_NS_BLOCK_REQUEST" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:843:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:859:1: warning: "TO_GSAL_MSG_NS_PROV_NSVCI" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:850:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:860:1: warning: "TO_GSAL_MSG_NS_UNPROV_NSVCI" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:851:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:900:1: warning: "FRM_GSAL_MSG_NS_UNPROV_FR_LINK_CNF" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:894:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:901:1: warning: "FRM_GSAL_MSG_NS_BLOCK_CNF" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:884:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:902:1: warning: "FRM_GSAL_MSG_NS_UNBLOCK_CNF" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:885:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:76,
+                 from oamcfg_e1_object_handler.c:48:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_hashdefs.h:86:1: warning: "BUSY" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_e1_object_handler.c:48:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:593:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_e1_object_handler.c:48:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:74:1: warning: "TN1" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_e1_object_handler.c:48:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:582:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_e1_object_handler.c:48:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:75:1: warning: "TN2" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_e1_object_handler.c:48:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:583:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_e1_object_handler.c:48:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:76:1: warning: "TN3" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_e1_object_handler.c:48:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:584:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_e1_object_handler.c:48:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:77:1: warning: "TN4" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_e1_object_handler.c:48:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:585:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:49,
+                 from oamcfg_e1timeslot_object_handler.c:49:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:854:1: warning: "TO_GSAL_MSG_NS_BLOCK_REQUEST" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:843:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:859:1: warning: "TO_GSAL_MSG_NS_PROV_NSVCI" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:850:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:860:1: warning: "TO_GSAL_MSG_NS_UNPROV_NSVCI" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:851:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:900:1: warning: "FRM_GSAL_MSG_NS_UNPROV_FR_LINK_CNF" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:894:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:901:1: warning: "FRM_GSAL_MSG_NS_BLOCK_CNF" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:884:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:902:1: warning: "FRM_GSAL_MSG_NS_UNBLOCK_CNF" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:885:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:76,
+                 from oamcfg_e1timeslot_object_handler.c:49:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_hashdefs.h:86:1: warning: "BUSY" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_e1timeslot_object_handler.c:49:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:593:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_e1timeslot_object_handler.c:49:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:74:1: warning: "TN1" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_e1timeslot_object_handler.c:49:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:582:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_e1timeslot_object_handler.c:49:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:75:1: warning: "TN2" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_e1timeslot_object_handler.c:49:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:583:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_e1timeslot_object_handler.c:49:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:76:1: warning: "TN3" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_e1timeslot_object_handler.c:49:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:584:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_e1timeslot_object_handler.c:49:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:77:1: warning: "TN4" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_e1timeslot_object_handler.c:49:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:585:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:49,
+                 from oamcfg_responses.c:46:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:854:1: warning: "TO_GSAL_MSG_NS_BLOCK_REQUEST" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:843:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:859:1: warning: "TO_GSAL_MSG_NS_PROV_NSVCI" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:850:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:860:1: warning: "TO_GSAL_MSG_NS_UNPROV_NSVCI" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:851:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:900:1: warning: "FRM_GSAL_MSG_NS_UNPROV_FR_LINK_CNF" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:894:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:901:1: warning: "FRM_GSAL_MSG_NS_BLOCK_CNF" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:884:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:902:1: warning: "FRM_GSAL_MSG_NS_UNBLOCK_CNF" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:885:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:76,
+                 from oamcfg_responses.c:46:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_hashdefs.h:86:1: warning: "BUSY" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_responses.c:46:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:593:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_responses.c:46:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:74:1: warning: "TN1" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_responses.c:46:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:582:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_responses.c:46:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:75:1: warning: "TN2" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_responses.c:46:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:583:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_responses.c:46:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:76:1: warning: "TN3" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_responses.c:46:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:584:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_responses.c:46:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:77:1: warning: "TN4" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_responses.c:46:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:585:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:49,
+                 from oamcfg_cell_object_handler.c:49:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:854:1: warning: "TO_GSAL_MSG_NS_BLOCK_REQUEST" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:843:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:859:1: warning: "TO_GSAL_MSG_NS_PROV_NSVCI" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:850:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:860:1: warning: "TO_GSAL_MSG_NS_UNPROV_NSVCI" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:851:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:900:1: warning: "FRM_GSAL_MSG_NS_UNPROV_FR_LINK_CNF" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:894:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:901:1: warning: "FRM_GSAL_MSG_NS_BLOCK_CNF" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:884:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:902:1: warning: "FRM_GSAL_MSG_NS_UNBLOCK_CNF" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:885:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:76,
+                 from oamcfg_cell_object_handler.c:49:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_hashdefs.h:86:1: warning: "BUSY" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_cell_object_handler.c:49:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:593:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_cell_object_handler.c:49:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:74:1: warning: "TN1" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_cell_object_handler.c:49:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:582:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_cell_object_handler.c:49:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:75:1: warning: "TN2" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_cell_object_handler.c:49:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:583:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_cell_object_handler.c:49:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:76:1: warning: "TN3" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_cell_object_handler.c:49:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:584:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_cell_object_handler.c:49:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:77:1: warning: "TN4" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_cell_object_handler.c:49:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:585:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:49,
+                 from oamcfg_alarm_handler.c:49:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:854:1: warning: "TO_GSAL_MSG_NS_BLOCK_REQUEST" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:843:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:859:1: warning: "TO_GSAL_MSG_NS_PROV_NSVCI" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:850:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:860:1: warning: "TO_GSAL_MSG_NS_UNPROV_NSVCI" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:851:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:900:1: warning: "FRM_GSAL_MSG_NS_UNPROV_FR_LINK_CNF" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:894:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:901:1: warning: "FRM_GSAL_MSG_NS_BLOCK_CNF" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:884:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:902:1: warning: "FRM_GSAL_MSG_NS_UNBLOCK_CNF" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:885:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:76,
+                 from oamcfg_alarm_handler.c:49:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_hashdefs.h:86:1: warning: "BUSY" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_alarm_handler.c:49:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:593:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_alarm_handler.c:49:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:74:1: warning: "TN1" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_alarm_handler.c:49:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:582:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_alarm_handler.c:49:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:75:1: warning: "TN2" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_alarm_handler.c:49:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:583:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_alarm_handler.c:49:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:76:1: warning: "TN3" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_alarm_handler.c:49:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:584:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_alarm_handler.c:49:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:77:1: warning: "TN4" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_alarm_handler.c:49:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:585:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:49,
+                 from oamcfg_range_check.c:50:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:854:1: warning: "TO_GSAL_MSG_NS_BLOCK_REQUEST" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:843:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:859:1: warning: "TO_GSAL_MSG_NS_PROV_NSVCI" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:850:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:860:1: warning: "TO_GSAL_MSG_NS_UNPROV_NSVCI" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:851:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:900:1: warning: "FRM_GSAL_MSG_NS_UNPROV_FR_LINK_CNF" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:894:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:901:1: warning: "FRM_GSAL_MSG_NS_BLOCK_CNF" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:884:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:902:1: warning: "FRM_GSAL_MSG_NS_UNBLOCK_CNF" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:885:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:76,
+                 from oamcfg_range_check.c:50:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_hashdefs.h:86:1: warning: "BUSY" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_range_check.c:50:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:593:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_range_check.c:50:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:74:1: warning: "TN1" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_range_check.c:50:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:582:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_range_check.c:50:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:75:1: warning: "TN2" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_range_check.c:50:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:583:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_range_check.c:50:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:76:1: warning: "TN3" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_range_check.c:50:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:584:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_range_check.c:50:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:77:1: warning: "TN4" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_range_check.c:50:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:585:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:49,
+                 from oamcfg_delmsghandler.c:48:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:854:1: warning: "TO_GSAL_MSG_NS_BLOCK_REQUEST" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:843:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:859:1: warning: "TO_GSAL_MSG_NS_PROV_NSVCI" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:850:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:860:1: warning: "TO_GSAL_MSG_NS_UNPROV_NSVCI" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:851:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:900:1: warning: "FRM_GSAL_MSG_NS_UNPROV_FR_LINK_CNF" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:894:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:901:1: warning: "FRM_GSAL_MSG_NS_BLOCK_CNF" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:884:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:902:1: warning: "FRM_GSAL_MSG_NS_UNBLOCK_CNF" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:885:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:76,
+                 from oamcfg_delmsghandler.c:48:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_hashdefs.h:86:1: warning: "BUSY" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_delmsghandler.c:48:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:593:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_delmsghandler.c:48:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:74:1: warning: "TN1" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_delmsghandler.c:48:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:582:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_delmsghandler.c:48:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:75:1: warning: "TN2" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_delmsghandler.c:48:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:583:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_delmsghandler.c:48:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:76:1: warning: "TN3" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_delmsghandler.c:48:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:584:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_delmsghandler.c:48:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:77:1: warning: "TN4" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_delmsghandler.c:48:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:585:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:49,
+                 from oamcfg_setmsghandler.c:48:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:854:1: warning: "TO_GSAL_MSG_NS_BLOCK_REQUEST" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:843:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:859:1: warning: "TO_GSAL_MSG_NS_PROV_NSVCI" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:850:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:860:1: warning: "TO_GSAL_MSG_NS_UNPROV_NSVCI" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:851:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:900:1: warning: "FRM_GSAL_MSG_NS_UNPROV_FR_LINK_CNF" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:894:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:901:1: warning: "FRM_GSAL_MSG_NS_BLOCK_CNF" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:884:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:902:1: warning: "FRM_GSAL_MSG_NS_UNBLOCK_CNF" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:885:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:76,
+                 from oamcfg_setmsghandler.c:48:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_hashdefs.h:86:1: warning: "BUSY" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_setmsghandler.c:48:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:593:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_setmsghandler.c:48:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:74:1: warning: "TN1" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_setmsghandler.c:48:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:582:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_setmsghandler.c:48:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:75:1: warning: "TN2" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_setmsghandler.c:48:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:583:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_setmsghandler.c:48:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:76:1: warning: "TN3" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_setmsghandler.c:48:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:584:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_setmsghandler.c:48:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:77:1: warning: "TN4" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_setmsghandler.c:48:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:585:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:49,
+                 from oamcfg_timer.c:6:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:854:1: warning: "TO_GSAL_MSG_NS_BLOCK_REQUEST" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:843:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:859:1: warning: "TO_GSAL_MSG_NS_PROV_NSVCI" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:850:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:860:1: warning: "TO_GSAL_MSG_NS_UNPROV_NSVCI" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:851:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:900:1: warning: "FRM_GSAL_MSG_NS_UNPROV_FR_LINK_CNF" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:894:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:901:1: warning: "FRM_GSAL_MSG_NS_BLOCK_CNF" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:884:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:902:1: warning: "FRM_GSAL_MSG_NS_UNBLOCK_CNF" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:885:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:76,
+                 from oamcfg_timer.c:6:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_hashdefs.h:86:1: warning: "BUSY" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_timer.c:6:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:593:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_timer.c:6:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:74:1: warning: "TN1" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_timer.c:6:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:582:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_timer.c:6:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:75:1: warning: "TN2" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_timer.c:6:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:583:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_timer.c:6:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:76:1: warning: "TN3" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_timer.c:6:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:584:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_timer.c:6:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:77:1: warning: "TN4" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_timer.c:6:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:585:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:49,
+                 from oamcfg_cell_object_consistancy_check.c:49:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:854:1: warning: "TO_GSAL_MSG_NS_BLOCK_REQUEST" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:843:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:859:1: warning: "TO_GSAL_MSG_NS_PROV_NSVCI" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:850:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:860:1: warning: "TO_GSAL_MSG_NS_UNPROV_NSVCI" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:851:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:900:1: warning: "FRM_GSAL_MSG_NS_UNPROV_FR_LINK_CNF" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:894:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:901:1: warning: "FRM_GSAL_MSG_NS_BLOCK_CNF" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:884:1: warning: this is the location of the previous definition
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:902:1: warning: "FRM_GSAL_MSG_NS_UNBLOCK_CNF" redefined
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_msgopcode.h:885:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:76,
+                 from oamcfg_cell_object_consistancy_check.c:49:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_hashdefs.h:86:1: warning: "BUSY" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_cell_object_consistancy_check.c:49:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:593:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_cell_object_consistancy_check.c:49:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:74:1: warning: "TN1" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_cell_object_consistancy_check.c:49:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:582:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_cell_object_consistancy_check.c:49:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:75:1: warning: "TN2" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_cell_object_consistancy_check.c:49:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:583:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_cell_object_consistancy_check.c:49:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:76:1: warning: "TN3" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_cell_object_consistancy_check.c:49:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:584:1: warning: this is the location of the previous definition
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:90,
+                 from oamcfg_cell_object_consistancy_check.c:49:
+/home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_setdelmsghandler.h:77:1: warning: "TN4" redefined
+In file included from /home/bgh12573/VnlBsc/Src/Oams/Src/Cfg/Inc/oamcfg_includes.h:48,
+                 from oamcfg_cell_object_consistancy_check.c:49:
+/home/bgh12573/VnlBsc/Inc/Sys/sysxxx_hashdefs.h:585:1: warning: this is the location of the previous definition

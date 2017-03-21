@@ -1,0 +1,17 @@
+USERLIBRARIES =$(LFLAGS) $(LIBS) -linst-DB -lsemaphore
+
+COMP_FLAG = -DXUSE_SIGNAL_NUMBERS -D__C_APPL -DCPLUSPLUS -DFRMWRK_TIMER_ENABLED -D_EXTERN
+
+HDRFILES = -I../../../Inc/ 
+sctUSERDEFS = $(COMP_FLAG) $(HDRFILES) $(CFLAGS) -DTAU_MODEL
+
+sctCC=$(CXX)
+sctLD=$(LDXX)
+
+USERTARGET = System_DSPH_env$(sctOEXTENSION)
+
+System_DSPH_env$(sctOEXTENSION): System_DSPH_env.c System_DSPH.ifc
+	$(sctCC) $(sctCPPFLAGS) $(sctCCFLAGS) -UTAU_MODEL $(sctIFDEF) System_DSPH_env.c -o System_DSPH_env$(sctOEXTENSION)
+
+clean_user_objs:
+	$(sctRM) $(USERTARGET)

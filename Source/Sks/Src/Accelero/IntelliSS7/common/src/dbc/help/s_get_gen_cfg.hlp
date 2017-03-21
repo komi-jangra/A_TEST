@@ -1,0 +1,26 @@
+
+SCTP Command
+
+SYNOPSIS
+    s_get_gen_cfg
+
+DESCRIPTION
+    This command displays SCTP general configuration. This include SCTP 
+    Alarm Level and SCTP Trace Level. Alarm level controls SCTP alarms sent to 
+    Accelero application. Trace level controls generation of SCTP execution traces.
+
+PARAMETERS
+    None.
+
+EXAMPLE
+    >> s_get_gen_cfg
+    *********** SCTP General Config *************
+        Alarm Level = CRITICAL
+        SCTP Trace -
+            Debug     =  stdout
+            Critical  = 
+            Warning   = 
+            Error     = 
+    *********** End of SCTP General Config *************
+
+

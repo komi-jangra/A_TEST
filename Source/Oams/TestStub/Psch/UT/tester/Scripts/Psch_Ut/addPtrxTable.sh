@@ -1,0 +1,31 @@
+# Add Data in Bss Table
+Table_Num=8
+ptrxId=1
+oprState=1
+mapAllowed=1
+mappingStatus=1
+bandCapability=1
+pwrCapability=1
+staticPwrRed=1
+hoppingSupport=1
+gprsCapability=1
+ltrxId=1
+bcchFlag=1
+$EXE_PATH/DB_TOOL << %% > /dev/null
+$Table_Num
+4
+n
+$ptrxId
+$oprState
+$mapAllowed
+$mappingStatus
+$bandCapability
+$pwrCapability
+$staticPwrRed
+$hoppingSupport
+$gprsCapability
+$ltrxId
+$bcchFlag
+n
+999
+%%

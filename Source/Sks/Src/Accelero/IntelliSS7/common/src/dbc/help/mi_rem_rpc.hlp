@@ -1,0 +1,36 @@
+
+Remove RPC Command
+
+SYNOPSIS
+    mi_rem_rpc <Remote pointcode> <ni> <linkSet> <family> 
+
+DESCRIPTION
+   This command deletes a remote pointcode dynamically .
+
+PARAMETERS
+    Remote Pointcode : 
+
+         The Pointcode to delete.
+
+    ni 
+         0x00 : International
+         0x40 : International Reserved
+         0x80 : National
+         0xC0 : National Spare
+
+    linkSet
+
+         Any valid configured linkset.
+
+    family 
+
+       ANSI|ITU
+
+NOTE: the NI parameter must be specified in decimal
+
+EXAMPLE
+
+>> mi_rem_rpc 20 128 12 ANSI
+*********** Deleting Remote pointcode 20**********
+
+

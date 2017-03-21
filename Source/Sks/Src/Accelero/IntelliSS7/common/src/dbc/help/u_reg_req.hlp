@@ -1,0 +1,18 @@
+
+M3UA / SUA Command
+
+SYNOPSIS
+    u_reg_req  <dpc> <sio> <tm> 
+
+DESCRIPTION
+    This command is used to register AS with SG.
+
+PARAMETERS
+    pc      Destination Point Code
+    sio     SIO
+    tm      Traffice Mode. Possible values overRideMode|loadShareMode|broadcast
+
+EXAMPLE
+  >>u_reg_req 2 3 overRideMode 
+    *********** Registration Succesfull *************
+
